@@ -7,6 +7,9 @@ Document-first security research repository covering browser, operating system, 
 - Chromium architecture and vulnerability research
 - Linux kernel security research
 - macOS/XNU architecture, exploitation, and mitigation research
+- Android architecture, vulnerability landscape, and CVE research
+- CPU protection rings — vulnerabilities and exploitation from userland to Ring −3
+- Zero-day research and exploit development — fundamentals through advanced kernel exploitation
 - A focused Android Binder CVE case study (`CVE-2023-20938`)
 - OSEE / EXP-401 study and reference material
 
@@ -28,6 +31,9 @@ If you are new to the repo, start with one of these entry documents:
 | Android Binder CVE case study | [`CVE-2023-20938/CVE-2023-20938_FINAL_REPORT.md`](CVE-2023-20938/CVE-2023-20938_FINAL_REPORT.md) |
 | Linux kernel research | [`linux_kernel/docs/FINAL_REPORT.md`](linux_kernel/docs/FINAL_REPORT.md) |
 | macOS research | [`MacOS/docs/00_FINAL_REPORT_macOS_Architecture_Vulnerabilities_Exploits.md`](MacOS/docs/00_FINAL_REPORT_macOS_Architecture_Vulnerabilities_Exploits.md) |
+| Android architecture & CVEs | [`android_and_CVEs/FINAL_REPORT_Android_Architecture_Vulnerabilities_and_CVEs.md`](android_and_CVEs/FINAL_REPORT_Android_Architecture_Vulnerabilities_and_CVEs.md) |
+| CPU rings & vulnerabilities | [`ring_and_vulns/FULL_REPORT.md`](ring_and_vulns/FULL_REPORT.md) |
+| Zero-day research & exploit development | [`zero_day/docs/00_MASTER_REPORT.md`](zero_day/docs/00_MASTER_REPORT.md) |
 | OSEE / EXP-401 reference track | [`OSEE/docs/01a_osee_overview_history.md`](OSEE/docs/01a_osee_overview_history.md) |
 
 ## Repository structure
@@ -36,8 +42,10 @@ If you are new to the repo, start with one of these entry documents:
 - `CVE-2023-20938/` — deep dive into an Android Binder use-after-free privilege-escalation vulnerability
 - `linux_kernel/` — large Linux kernel corpus covering architecture, vulnerability classes, exploitation, fuzzing, and defenses
 - `MacOS/` — macOS/XNU security architecture, vulnerabilities, post-exploitation themes, malware, and mitigations
+- `android_and_CVEs/` — Android system architecture, security model, kernel/application/framework vulnerability classes, CVE statistics and trends, and patch management
+- `ring_and_vulns/` — CPU protection rings (Ring 3 → Ring 0 → Ring −1/−2/−3), vulnerabilities at each privilege level, cross-ring exploitation chains, and CVE references
+- `zero_day/` — zero-day vulnerability research and exploit development curriculum: fundamentals, fuzzing, userspace/kernel exploitation, mitigation bypass, CTF strategy, and ethics/disclosure
 - `OSEE/` — OSEE / EXP-401 study material focused on advanced exploitation and practitioner preparation
-- `docs/` — repository-level notes and generated meta-documentation
 
 ## How to navigate
 
