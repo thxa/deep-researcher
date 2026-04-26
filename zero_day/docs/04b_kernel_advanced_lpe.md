@@ -1970,8 +1970,8 @@ clean:
 1. [Linux Kernel Source — kernel/cred.c, kernel/bpf/](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git) — Credential and eBPF subsystem implementation
 2. [Linux Kernel Module Programming Guide](https://sysprog21.github.io/lkmpg/) — Kernel module development reference
 3. [Phrack — Linux Kernel Exploitation](http://phrack.org/) — Seminal kernel exploit technique publications
-4. [CTF Wiki — Kernel Pwn](https://ctf-wiki.org/pwn/linux/kernel/) — Kernel challenge techniques and writeups
-5. [Auth-GFx — Linux Kernel Pwn Guide](https://github.com/Abyss-w/lkpg) — Progressive kernel exploitation exercises
+4. [CTF Wiki — Kernel Pwn](https://ctf-wiki.org/) — Kernel challenge techniques and writeups
+5. [Linux Kernel Exploitation](https://github.com/yuawn/Linux-Kernel-Exploitation) — Progressive kernel exploitation exercises
 6. [Linux Kernel Security — Self-Protection](https://www.kernel.org/doc/html/latest/security/self-protection.html) — Kernel security hardening documentation
 7. [eBPF Documentation](https://ebpf.io/) — BPF subsystem architecture and security model
 8. [io_uring Security Analysis](https://kernel.dk/) — Jens Axboe's io_uring documentation and security considerations

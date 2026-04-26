@@ -686,7 +686,7 @@ The Linux kernel security landscape represents a continuous arms race between ex
 
 1. Download a known reproducer for a real Linux kernel bug:
    ```bash
-   curl -o repro.c 'https://syzkaller.appspot.com/x/repro.c?x=12345'  # use a real syzkaller bug ID
+   # Visit https://syzkaller.appspot.com and locate a bug, then use its repro link
    ```
    Or create a simple test from syzkaller's bug reports manually.
 2. Compile the reproducer statically:

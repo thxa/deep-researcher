@@ -338,7 +338,7 @@ curl --form token=$TOKEN \
      --form file=@linux-kernel.tgz \
      --form version="6.x" \
      --form description="Linux kernel scan" \
-     https://scan.coverity.com/builds?project=linux
+     https://scan.coverity.com/projects/linux
 ```
 
 **Limitations**:
@@ -1255,7 +1255,7 @@ Despite these challenges, the trajectory is clear: AI/ML tools are becoming incr
 
 ### AI/ML Research
 - DARPA AIxCC: https://aicyberchallenge.com/
-- Google Security Research -- kernelCTF: https://google.github.io/security-research/kernelctf/
+- Google Security Research: https://google.github.io/security-research/
 - DeepBugs (ETH Zurich): "DeepBugs: A Learning Approach to Name-based Bug Detection" (OOPSLA 2018)
 - VulDeePecker: "VulDeePecker: A Deep Learning-Based System for Vulnerability Detection" (NDSS 2018)
 - Devign: "Devign: Effective Vulnerability Identification by Learning Comprehensive Program Semantics via Graph Neural Networks" (NeurIPS 2019)

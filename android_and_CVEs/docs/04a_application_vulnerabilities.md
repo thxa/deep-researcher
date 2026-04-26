@@ -348,7 +348,7 @@ The shift toward declarative security policies (Network Security Configuration, 
 - OWASP Mobile Application Security Verification Standard (MASVS): https://mas.owasp.org/MASVS/
 - Stagefright: Zimperium Research, July 2015
 - Cloak and Dagger: Fratantonio et al., IEEE S&P 2017
-- EvilParcel / LaunchAnyWhere: https://github.com/aspect-apps/aspect-evilparcel
+- EvilParcel / LaunchAnyWhere: documented in Android Security Bulletins (see [source.android.com/docs/security](https://source.android.com/docs/security))
 - Man-in-the-Disk: Check Point Research, August 2018
 - StrandHogg 2.0: Promon Research, May 2020
 - CVE-2020-8913 (Play Core Library): Oversecured, August 2020

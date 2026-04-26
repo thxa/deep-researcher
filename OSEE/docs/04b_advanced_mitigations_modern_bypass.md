@@ -1515,7 +1515,7 @@ _SEP_TOKEN_PRIVILEGES:
 6. **Connor McGarr: Exploit Development Research** — HVCI bypass, PTE manipulation techniques
 7. **Morten Schenk: "Taking Windows 10 Kernel Exploitation to the Next Level"** — kASLR bypass, PTE base randomization
 8. **j00ru (Mateusz Jurczyk): Windows kernel security research** — Pool internals, heap hardening
-9. **Microsoft: HVCI-Compatible Driver Development** — https://learn.microsoft.com/en-us/windows-hardware/drivers/driversecurity/use-hvci
+9. **Microsoft: HVCI and VBS** — https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/device-guard-and-credential-guard
 10. **Project Zero: Windows kernel vulnerability research** — Various blog posts on NT kernel bug classes
 
 ---

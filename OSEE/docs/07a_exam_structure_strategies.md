@@ -692,7 +692,7 @@ OffSec does not officially publish pass rates for any of their exams. However, b
 These readings are officially recommended by OffSec for EXP-401 preparation:
 
 1. **DEP Bypass:** http://uninformed.org/?v=2&a=4
-2. **Return-Oriented Programming:** http://cseweb.ucsd.edu/~hovav/dist/geometry.pdf
+2. **Return-Oriented Programming:** https://hovav.net/ucsd/dist/geometry.pdf
 3. **ASLR Bypass:** BlackHat US 2012 - Serna "Leak Era" slides
 4. **Sandboxing:** https://en.wikipedia.org/wiki/Sandbox_(computer_security)
 5. **Windows 10 Mitigations:** BlackHat US 2016 - Weston "Windows 10 Mitigation Improvements"

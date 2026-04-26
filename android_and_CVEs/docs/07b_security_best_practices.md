@@ -474,5 +474,5 @@ Reports with a complete, functional exploit chain and a high-quality writeup rec
 11. Play Integrity API: https://developer.android.com/google/play/integrity
 12. Frida Documentation: https://frida.re/docs/
 13. MobSF: https://github.com/MobSF/Mobile-Security-Framework-MobSF
-14. NISTIR 8144: https://csrc.nist.gov/publications/detail/nistir/8144/final
-15. Google Android VRP Rules: https://bughunters.google.com/about/rules/android
+14. NISTIR 8144 — Guidelines for Smart Grid Cyber Security (2016): NIST Interagency Report on smart grid cybersecurity approach
+15. Google Android VRP Rules: https://bughunters.google.com/

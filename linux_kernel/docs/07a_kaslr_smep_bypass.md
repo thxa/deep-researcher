@@ -960,7 +960,7 @@ Modern kernel exploits on fully hardened systems (KASLR + SMEP + SMAP + KPTI + C
 ### KPTI / cpu_entry_area
 
 18. Jenkins, S. "Exploiting CVE-2022-42703 - Bringing back the stack attack." Project Zero, 2022. https://googleprojectzero.blogspot.com/2022/12/exploiting-CVE-2022-42703-bringing-back-the-stack-attack.html
-19. Linux Kernel Documentation. "Page Table Isolation (PTI)." https://docs.kernel.org/x86/pti.html
+19. Linux Kernel Documentation. "Kernel Self-Protection." https://www.kernel.org/doc/html/latest/security/self-protection.html
 
 ### Stack Canaries
 

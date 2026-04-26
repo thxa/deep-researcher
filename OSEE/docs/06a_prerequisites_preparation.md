@@ -338,13 +338,13 @@ These blog series and posts cover topics directly relevant to EXP-401 content:
 
 - https://github.com/wetw0rk/Exploit-Development/tree/master/HEVD-Exploits
 - https://github.com/FuzzySecurity/HackSysTeam-PSKernelPwn
-- https://github.com/FULLSHADE/Windows-Kernel-Exploitation-HEVD
+- https://github.com/mgeeky/HEVD_Kernel_Exploit
 - https://github.com/tekwizz123/HEVD-Exploit-Solutions
 - https://github.com/sizzop/HEVD-Exploits
 - https://github.com/GradiusX/HEVD-Python-Solutions
 - https://github.com/theevilbit/exploits/tree/master/HEVD
 - https://github.com/w4fz5uck5/3XPL01t5/tree/master/OSEE_Training
-- https://github.com/badd1e/bug-free-adventure
+- https://github.com/badd1e/Exploits
 
 #### Other Practice Targets
 
@@ -358,7 +358,7 @@ These blog series and posts cover topics directly relevant to EXP-401 content:
 ### 3.5 Exploit Development CTF Challenges
 
 - **pwn.college** -- kernel exploitation modules
-- **Google kernelCTF** -- https://google.github.io/security-research/kernelctf/
+- **Google kernelCTF** -- https://google.github.io/security-research/
 - **Hack The Box** -- some machines and challenges involve Windows exploit development
 - **OffSec Proving Grounds** -- practice targets for maintaining OSCP-level skills
 - **CTFtime.org** -- search for kernel pwn challenges from major CTFs (HITCON, 0CTF, Google CTF)
@@ -538,7 +538,7 @@ These talks cover topics directly relevant to EXP-401 preparation:
 | Repository | Content |
 |---|---|
 | **hacksysteam/HackSysExtremeVulnerableDriver** | The primary practice driver for kernel exploitation |
-| **FULLSHADE/Windows-Kernel-Exploitation-HEVD** | Comprehensive HEVD solutions collection |
+| **mgeeky/HEVD_Kernel_Exploit** | HEVD kernel exploit solutions collection |
 | **wetw0rk/Exploit-Development** | HEVD exploits and general exploit development resources |
 | **FuzzySecurity/HackSysTeam-PSKernelPwn** | PowerShell-based HEVD exploitation |
 | **connormcgarr/Kernel-Exploits** | Connor McGarr's kernel exploit collection |

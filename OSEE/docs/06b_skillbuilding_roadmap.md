@@ -750,7 +750,7 @@ After you have attempted each exercise independently, compare your solution:
 - FuzzySecurity/HackSysTeam-PSKernelPwn (PowerShell-based)
 - GradiusX/HEVD-Python-Solutions
 - wetw0rk/Exploit-Development (comprehensive, with blog series)
-- FULLSHADE/Windows-Kernel-Exploitation-HEVD
+- mgeeky/HEVD_Kernel_Exploit
 - w4fz5uck5/3XPL01t5/OSEE_Training
 
 ### 7.3 Windows Exploit Development Challenges

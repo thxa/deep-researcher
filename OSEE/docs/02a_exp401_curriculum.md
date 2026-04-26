@@ -453,7 +453,7 @@ OffSec officially recommends the following reading materials:
 | Topic | Resource |
 |-------|----------|
 | DEP Bypass | [Uninformed - Bypassing DEP](http://uninformed.org/?v=2&a=4) |
-| Advanced DEP Bypass | [The Geometry of Innocent Flesh on the Bone](http://cseweb.ucsd.edu/~hovav/dist/geometry.pdf) |
+| Advanced DEP Bypass | [The Geometry of Innocent Flesh on the Bone](https://hovav.net/ucsd/dist/geometry.pdf) |
 | ASLR Bypass | [The Info Leak Era - Black Hat US 2012 (Fermin Serna)](https://media.blackhat.com/bh-us-12/Briefings/Serna/BH_US_12_Serna_Leak_Era_Slides.pdf) |
 | Sandboxing | [Wikipedia: Sandbox (computer security)](https://en.wikipedia.org/wiki/Sandbox_(computer_security)) |
 | Windows 10 Mitigations | [Windows 10 Mitigation Improvements - Black Hat US 2016 (Matt Miller, David Weston)](https://www.blackhat.com/docs/us-16/materials/us-16-Weston-Windows-10-Mitigation-Improvements.pdf) |

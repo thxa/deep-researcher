@@ -920,7 +920,7 @@ UEFIExtract firmware_image.bin
 find firmware_image.dump/ -name "*.efi" -o -name "*.dxes" | sort
 
 # Check for known-bad hashes:
-# UEFIReding project: https://github.com/UEFI/UEFIedk2
+# UEFITool (UEFI firmware image parser): https://github.com/LongSoft/UEFITool
 # Known-bad DXE/SMM driver database
 
 # Phase 3: SMM Analysis (Ring -2 specific)
@@ -1482,7 +1482,7 @@ echo "my-secret" | tpm2_seal -C 0x01 -i secret_data.bin -c seal_ctx -L sha256:0,
 |----------|-------------|
 | KSPP (Kernel Self Protection Project) | https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project |
 | chipsec | https://github.com/chipsec/chipsec |
-| lockdown LSM | https://www.kernel.org/doc/html/latest/security/lockdown.html |
+| lockdown LSM | https://www.kernel.org/doc/html/latest/security/index.html |
 | AMD SEV SNP | https://developer.amd.com/sev/ |
 | Intel TDX | https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html |
 | Tetragon | https://github.com/cilium/tetragon |

@@ -1037,7 +1037,7 @@ mkdir -p "$ROOTFS"/{bin,sbin,etc,proc,sys,dev,tmp,root,lib,lib64,home/ctf}
 
 # Build or download busybox
 if [ ! -f "$BUSYBOX/busybox" ]; then
-    git clone https://git.busybox.net/busybox "$BUSYBOX"
+    git clone https://github.com/mirror/busybox.git "$BUSYBOX"
     cd "$BUSYBOX"
     make defconfig
     # Static build
@@ -1623,7 +1623,7 @@ def identify_and_patch(binary_path, leaked_addr, symbol='puts', libc_db='~/libc-
 1. [pwndbg — GDB Exploit Development Plugin](https://github.com/pwndbg/pwndbg) — Enhanced GDB for reverse engineering and exploit development
 2. [libc-database — glibc Version Identification](https://github.com/niklasb/libc-database) — Match leaked addresses to glibc binary versions
 3. [Linux Kernel Source](https://cdn.kernel.org/pub/linux/kernel/) — Kernel releases for exploit development VMs
-4. [BusyBox — Embedded Linux Utilities](https://git.busybox.net/busybox) — Minimal userland for initramfs construction
+4. [BusyBox — Embedded Linux Utilities](https://github.com/mirror/busybox) — Minimal userland for initramfs construction
 5. [QEMU — Machine Emulator](https://www.qemu.org/) — Kernel and firmware emulation for exploit development
 6. [GDB — GNU Debugger](https://www.sourceware.org/gdb/) — Binary and kernel debugging
 7. [Ghidra — NSA Reverse Engineering Suite](https://ghidra-sre.org/) — Open-source decompiler and disassembler

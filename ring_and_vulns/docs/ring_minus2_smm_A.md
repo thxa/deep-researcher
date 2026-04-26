@@ -1058,7 +1058,7 @@ The **ghidra-uefi-reloader** plugin enables reverse engineering of extracted SMM
 
 ```bash
 # Install Ghidra UEFI plugin
-git clone https://github.com/ghidraninja/ghidra-uefi-reloader
+git clone https://github.com/al3xtjames/ghidra-firmware-utils
 
 # Analyze extracted SMM module
 # 1. Load SmmVariable.efi into Ghidra

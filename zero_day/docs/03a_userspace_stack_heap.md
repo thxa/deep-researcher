@@ -1953,12 +1953,12 @@ b _IO_flush_all_lockp
 1. [glibc malloc source — malloc/malloc.c](https://sourceware.org/git/?p=glibc.git;a=blob;f=malloc/malloc.c) — Core glibc heap allocator implementation
 2. [Phrack Magazine](http://phrack.org/) — Seminal exploit technique publications (Heap Overflow, Malloc Maleficarum, etc.)
 3. [How2Heap — Shellphish Heap Exploitation](https://github.com/shellphish/how2heap) — Progressive heap exploitation tutorials for glibc
-4. [CTF Wiki — Heap Exploitation](https://ctf-wiki.org/pwn/linux/glibc-heap/) — Comprehensive glibc heap exploitation reference
+4. [CTF Wiki — Heap Exploitation](https://ctf-wiki.org/) — Comprehensive glibc heap exploitation reference
 5. [Pwntools Documentation](https://docs.pwntools.com/) — Python exploit development library
 6. [pwndbg — GDB Exploit Development Plugin](https://github.com/pwndbg/pwndbg) — Enhanced GDB for reverse engineering and exploitation
 7. [Aleph One — Smashing the Stack for Fun and Profit](http://phrack.org/issues/49/14.html) — Classic stack overflow exploitation paper (Phrack 49)
 8. [Solar Designer — Getting Around Non-Executable Stack](https://openwall.com/) — Return-into-libc and early mitigation bypass techniques
-9. [Ruilin et al. — Play with Heap](https://github.com/RuiaRuilin/PlayWithHeap) — Modern glibc heap exploitation writeups
+9. [how2heap — glibc heap exploitation](https://github.com/shellphish/how2heap) — Modern glibc heap exploitation learning platform
 10. [Ubuntu glibc versioned builds](https://libc.rip/) — Download specific glibc versions for CTF practice
 
 ---

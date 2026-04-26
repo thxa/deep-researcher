@@ -1511,10 +1511,10 @@ log.failure(f"Exploit failed")
 
 1. [Phrack — Format String Vulnerabilities](http://phrack.org/issues/57/13.html) — Classic format string exploitation primer (Scut / team teso)
 2. [Phrack — Advanced return-into-libc](http://phrack.org/issues/58/4.html) — Return-into-libc and return-oriented programming foundations
-3. [CTF Wiki — Format String](https://ctf-wiki.org/pwn/linux/fmt-str/) — Comprehensive format string exploitation reference
-4. [CTF Wiki — ROP and Advanced ROP](https://ctf-wiki.org/pwn/linux/rop/) — Return-oriented programming techniques and gadgets
+3. [CTF Wiki — Format String](https://ctf-wiki.org/) — Comprehensive format string exploitation reference
+4. [CTF Wiki — ROP and Advanced ROP](https://ctf-wiki.org/) — Return-oriented programming techniques and gadgets
 5. [ROPgadget — Tool for ROP Chain Generation](https://github.com/JonathanSalwan/ROPgadget) — Automated gadget search and chain building
-6. [pwntools — Shellcraft Module](https://docs.pwntools.com/en/stable/shellcraft/) — Shellcode generation for multiple architectures
+6. [pwntools — Shellcraft Module](https://docs.pwntools.com/en/stable/shellcraft.html) — Shellcode generation for multiple architectures
 7. [Shellstorm — Shellcode Database](http://shell-storm.org/shellcode/) — Public shellcode archive and testing
 8. [How2Heap — Glibc Exploitation Techniques](https://github.com/shellphish/how2heap) — Progressive heap exploitation tutorials
 9. [One Gadget — glibc execve Constraint Solver](https://github.com/david942j/one_gadget) — Find single-gadget execve offsets in glibc

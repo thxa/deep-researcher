@@ -761,7 +761,7 @@ The role of kernel vulnerabilities in attack chains has driven specific defensiv
 17. Yanglingxi (N. Wu). "Dirty Pagetable: A Novel Exploitation Technique To Rule Linux Kernel." https://yanglingxi1993.github.io/dirty_pagetable/dirty_pagetable.html
 18. pqlqpql (D. Bouman). "How The Tables Have Turned: An analysis of two new Linux vulnerabilities in nf_tables." April 2022. https://blog.dbouman.nl/2022/04/02/How-The-Tables-Have-Turned-CVE-2022-1015-1016/
 19. Smallkirby. "modprobe_path exploitation technique." https://github.com/smallkirby/kernelpwn/blob/master/technique/modprobe_path.md
-20. Google. "KernelCTF rules." https://google.github.io/security-research/kernelctf/rules.html
+20. Google. "KernelCTF." https://google.github.io/security-research/
 21. Crusaders of Rust. "CVE-2022-0185 Exploit." https://github.com/Crusaders-of-Rust/CVE-2022-0185
 22. willsroot. "CVE-2022-0185 Write-up." https://www.willsroot.io/2022/01/cve-2022-0185.html
 23. DiShen. "The Art of Exploiting Unconventional Use-after-free Bugs in Android Kernel." Code Blue 2017.

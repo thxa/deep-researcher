@@ -1257,7 +1257,7 @@ gdb.attach(io, '''
 6. [One Gadget — glibc execve Solver](https://github.com/david942j/one_gadget) — Find single-gadget execve RCE offsets
 7. [Libc Database](https://github.com/niklasb/libc-database) — Identify glibc version from leaked addresses
 8. [How2Heap — Shellphish](https://github.com/shellphish/how2heap) — Progressive heap exploitation tutorials
-9. [pwntools — Shellcraft](https://docs.pwntools.com/en/stable/shellcraft/) — Shellcode and template generation
+9. [pwntools — Shellcraft](https://docs.pwntools.com/en/stable/shellcraft.html) — Shellcode and template generation
 10. [LiveOverflow — Binary Exploitation YouTube](https://www.youtube.com/c/LiveOverflow) — Video CTF training and binary exploitation walkthroughs
 11. [Pwn College](https://pwn.college/) — Interactive binary exploitation training platform
 
