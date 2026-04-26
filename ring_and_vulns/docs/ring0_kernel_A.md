@@ -1467,4 +1467,19 @@ Beyond basic text randomization, modern Linux implements:
 
 ---
 
+## References
+
+1. Love, R. "Linux Kernel Development." Addison-Wesley, 3rd Edition, 2010.
+2. Corbet, J., Rubini, A., Kroah-Hartman, G. "Linux Device Drivers." O'Reilly, 2005.
+3. Intel. "Intel 64 and IA-32 Architectures Software Developer's Manual." Volume 3A: System Programming Guide — IDT, TSS, paging, SMEP/SMAP.
+4. AMD. "AMD64 Architecture Programmer's Manual Volume 2." System Programming — SYSCALL/SYSRET, CPL, MSR handling.
+5. Shacham, H. "The Geometry of Innocent Flesh on the Bone: Return-Oriented Programming." CCS, 2007.
+6. Abadi, M., et al. "Control-Flow Integrity." CCS, 2005.
+7. NIST. "National Vulnerability Database." CVE entries: CVE-2016-5195 (Dirty COW), CVE-2022-0847 (Dirty Pipe), CVE-2017-1000364 (Stack Clash), CVE-2021-22555, CVE-2020-8835, CVE-2016-8655.
+8. Pawlicki, A., et al. "STACKDETECT: Automatic Stack Clash Detection." AsiaCCS, 2018.
+9. Dullien, T. "A Brief History of Linux Kernel Exploitation." OffensiveCon, 2020.
+10. KASLR original paper: Team, P. "KASLR: Kernel Address Space Layout Randomization." 2005.
+
+---
+
 *This document was prepared for security research and educational purposes. All CVE information is sourced from public vulnerability databases and security research publications.*

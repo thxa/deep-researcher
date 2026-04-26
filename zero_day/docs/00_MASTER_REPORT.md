@@ -2,6 +2,8 @@
 
 ## For CTF Competitors, Security Researchers, and Exploit Developers
 
+> **Difficulty:** 🟡 Intermediate to 🔴 Advanced | **Prerequisites:** C/C++, x86 assembly, basic exploitation concepts | **Estimated reading time:** ~30 minutes (master index; full corpus ~8 hours)
+>
 > **81,000+ words of expert-level content** covering zero-day fundamentals through advanced kernel exploitation, designed to take you from intermediate CTF player to world-class competitor.
 
 ---
@@ -253,6 +255,16 @@ qemu-system-x86_64 \
 | pwntools code examples | 40+ |
 | GDB commands documented | 50+ |
 | Kernel exploitation techniques | 30+ |
+
+---
+
+## Related Tracks
+
+- [**Linux Kernel Vulnerabilities & Exploitation**](../../linux_kernel/docs/FINAL_REPORT.md) — Kernel exploitation is a core topic in this reference; the linux_kernel report provides the comprehensive technical deep-dive into kernel vulnerability classes and exploitation techniques.
+- [**CPU Protection Rings & Vulnerabilities**](../../ring_and_vulns/FULL_REPORT.md) — Privilege rings (Ring 3 userland → Ring 0 kernel → Ring -1 hypervisor) define the escalation targets in exploitation; understanding ring boundaries is fundamental to LPE methodology.
+- [**Android Architecture, Vulnerabilities & CVEs**](../../android_and_CVEs/FINAL_REPORT_Android_Architecture_Vulnerabilities_and_CVEs.md) — Mobile exploitation is a major branch of zero-day research; Android kernel exploitation and defense-in-depth provide real-world context.
+- [**Chromium Architecture & Vulnerability**](../../Chromium_Architecture_and_Vulnerability/Chromium_Architecture_and_Vulnerability_Report.md) — Browser exploitation (V8 JIT, sandbox escape) is the most active zero-day target class; Chromium's multi-process architecture defines modern browser exploit chain methodology.
+- [**OSEE Certification**](../../OSEE/docs/01a_osee_overview_history.md) — The OSEE represents the pinnacle of exploit development certification; the methodology and techniques covered here directly support OSEE-level expertise.
 
 ---
 

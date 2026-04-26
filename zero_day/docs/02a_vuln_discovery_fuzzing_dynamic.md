@@ -1314,6 +1314,21 @@ gdb -batch -ex run -ex bt -ex "info registers" --args ./target crash_file
 ASAN_OPTIONS=abort_on_error=1 gdb ./target_asan crash_file
 ```
 
+## References
+
+1. [AFL++ — American Fuzzy Lop Plus Plus](https://github.com/AFLplusplus/AFLplusplus) — State-of-the-art mutation-based fuzzer
+2. [libprotobuf-mutator](https://github.com/google/libprotobuf-mutator) — Structure-aware fuzzing with Protocol Buffers
+3. [Grammar-Mutator](https://github.com/AFLplusplus/Grammar-Mutator) — Grammar-based input mutation for AFL++
+4. [syzkaller — Kernel Fuzzer](https://github.com/google/syzkaller) — Coverage-guided syscall fuzzing for Linux kernels
+5. [Mozilla Central Repository](https://hg.mozilla.org/mozilla-central/) — Firefox source for browser fuzzing targets
+6. [PANDA — Platform for Architecture-Neutral Dynamic Analysis](https://github.com/panda-re/panda) — Record/replay framework for taint analysis
+7. [Google OSS-Fuzz](https://github.com/google/oss-fuzz) — Continuous fuzzing infrastructure for open-source projects
+8. [LLVM libFuzzer Documentation](https://llvm.org/docs/LibFuzzer.html) — In-process, coverage-guided fuzzing engine
+9. [Honggfuzz](https://github.com/google/honggfuzz) — Feedback-driven fuzzing with hardware counters
+10. [AFL — American Fuzzy Lop (Original)](https://lcamtuf.coredump.cx/afl/) — Michal Zalewski's original coverage-guided fuzzer
+11. [CVE — Common Vulnerabilities and Exposures](https://cve.mitre.org/) — Standardized vulnerability identifier database
+12. [Vincent Arciuli — Fuzzing101](https://github.com/antonio-morales/Fuzzing101) — Step-by-step fuzzing tutorials for beginners
+
 ---
 
 *This document serves as a comprehensive reference for fuzzing and dynamic analysis techniques in vulnerability research. For static analysis and vulnerability assessment methodology, see the companion document on static analysis.*

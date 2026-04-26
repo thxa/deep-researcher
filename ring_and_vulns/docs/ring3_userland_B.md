@@ -2038,6 +2038,23 @@ struct cred {
 
 ---
 
+## References
+
+1. Van Schaik, S., et al. "Dirty Pipe: Unprivileged pipe_buffer overwrite (CVE-2022-0847)." 2022.
+2. Qualys. "PwnKit: Local Privilege Escalation in polkit's pkexec (CVE-2021-4034)." 2022.
+3. Cowan, C., et al. "StackGuard: Automatic Adaptive Detection and Prevention of Buffer-Overflow Attacks." USENIX Security, 1998.
+4. Shacham, H. "The Geometry of Innocent Flesh on the Bone: Return-Oriented Programming." CCS, 2007.
+5. Hu, H., et al. "Data-Oriented Programming: On the Expressiveness of Non-Control Data Attacks." IEEE S&P, 2016.
+6. Carlini, N., Wagner, D. "ROP is Still Dangerous: Breaking Modern Defenses." USENIX Security, 2014.
+7. Abadi, M., et al. "Control-Flow Integrity." CCS, 2005.
+8. Google. [syzkaller — Linux kernel syscall fuzzer](https://github.com/google/syzkaller) — continuous fuzzing infrastructure for Linux kernel bug discovery.
+9. NIST. "National Vulnerability Database." CVE entries: CVE-2022-0847, CVE-2021-4154, CVE-2019-18683, CVE-2023-0386, CVE-2021-4034, CVE-2016-0728, CVE-2021-3156, CVE-2016-5195.
+10. Dullien, T. "A Brief History of Linux Kernel Exploitation." OffensiveCon, 2020.
+11. Corbet, J., et al. "Linux Device Drivers." O'Reilly, 2005.
+12. Osborne, M., et al. "eBPF: A New Approach to Observability and Security." Linux Plumbers Conference, 2019.
+
+---
+
 *Document version: 2026-04-26*
 *Classification: Technical Research — Attack Methodology*
 *Scope: Linux Kernel (x86-64), Versions 5.4 through 6.x*

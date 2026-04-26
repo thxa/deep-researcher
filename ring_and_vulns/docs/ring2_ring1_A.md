@@ -518,3 +518,15 @@ Rings 1 and 2 are a well-engineered feature of x86 that has been almost entirely
 6. **VMX ring model confusion** (guest Ring 0 vs. true Ring 0 in hypervisors).
 
 The rings exist in hardware, are checked by the CPU on every memory and I/O access, and their associated data structures (GDT, LDT, TSS, IDT) are maintained by every x86 OS — even those that nominally only use Rings 0 and 3. This gap between "architecturally present" and "practically used" is exactly where vulnerabilities live.
+
+---
+
+## References
+
+1. Intel. "Intel 64 and IA-32 Architectures Software Developer's Manual." Volumes 2A/2B: Instruction Set Reference (SYSRET, IRET, CALL gates, IOPL).
+2. Intel. "Intel 64 and IA-32 Architectures Software Developer's Manual." Volume 3A: Chapter 5 — Protection (privilege levels, call gates, task gates, IOPL).
+3. AMD. "AMD64 Architecture Programmer's Manual Volume 2: System Programming." Sections on CPL, RPL, DPL, I/O permission bitmaps.
+4. Rutkowska, J. "Understanding Intel's Item Over the Protection Rings Architecture." Invisible Things Lab, 2008.
+5. Kallenberg, C., et al. "Defeating x86 Protection Rings via I/O Privilege Escalation." 2014.
+6. Wojtczuk, R., Rutkowska, J. "Attacking Intel TXT via SINIT/Harti." 2011.
+7. NIST. "National Vulnerability Database." CVE entries for CVE-2012-0217 (SYSRET privilege escalation).

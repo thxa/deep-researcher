@@ -1,17 +1,19 @@
 # deep-researcher
 
+> **~1.2 million words** of security research documentation across 8 interconnected tracks.
+
 Document-first security research repository covering browser, operating system, and exploit-development topics. The repo is organized as long-form Markdown reports and chaptered notes rather than as an application or library codebase.
 
 ## What this repository contains
 
-- Chromium architecture and vulnerability research
-- Linux kernel security research
-- macOS/XNU architecture, exploitation, and mitigation research
-- Android architecture, vulnerability landscape, and CVE research
-- CPU protection rings — vulnerabilities and exploitation from userland to Ring −3
-- Zero-day research and exploit development — fundamentals through advanced kernel exploitation
-- A focused Android Binder CVE case study (`CVE-2023-20938`)
-- OSEE / EXP-401 study and reference material
+- 🌐 **Chromium** architecture and vulnerability research
+- 🐧 **Linux kernel** security research
+- 🍎 **macOS/XNU** architecture, exploitation, and mitigation research
+- 📱 **Android** architecture, vulnerability landscape, and CVE research
+- 💍 **CPU protection rings** — vulnerabilities and exploitation from userland to Ring −3
+- 🎯 **Zero-day** research and exploit development — fundamentals through advanced kernel exploitation
+- 🔬 **CVE-2023-20938** — a focused Android Binder use-after-free case study
+- 🎓 **OSEE / EXP-401** — study and reference material for the most advanced exploitation certification
 
 ## What this repository is not
 
@@ -19,57 +21,168 @@ Document-first security research repository covering browser, operating system, 
 - Not a root-level lab environment with install/build/test workflows
 - Not a ready-to-run exploit toolkit
 
-Most directories are best approached as reading tracks.
+## Quick reference
+
+| Resource | Description |
+|----------|-------------|
+| [`docs/GLOSSARY.md`](docs/GLOSSARY.md) | 320+ terms — exploitation, mitigations, kernel, Android, macOS, Chromium, CPU rings, fuzzing, CTF jargon |
+| [`docs/TIMELINE.md`](docs/TIMELINE.md) | Chronological map of vulnerabilities, exploits, and mitigations across all tracks (pre-2005 → 2026) |
+
+Every directory also has its own **cheat sheet** for fast lookup during research or CTFs:
+
+| Track | Cheat sheet |
+|-------|-------------|
+| Android | [`android_and_CVEs/CHEATSHEET.md`](android_and_CVEs/CHEATSHEET.md) |
+| Chromium | [`Chromium_Architecture_and_Vulnerability/CHEATSHEET.md`](Chromium_Architecture_and_Vulnerability/CHEATSHEET.md) |
+| CVE-2023-20938 | [`CVE-2023-20938/CHEATSHEET.md`](CVE-2023-20938/CHEATSHEET.md) |
+| Linux kernel | [`linux_kernel/CHEATSHEET.md`](linux_kernel/CHEATSHEET.md) |
+| macOS | [`MacOS/CHEATSHEET.md`](MacOS/CHEATSHEET.md) |
+| OSEE / EXP-401 | [`OSEE/CHEATSHEET.md`](OSEE/CHEATSHEET.md) |
+| CPU rings | [`ring_and_vulns/CHEATSHEET.md`](ring_and_vulns/CHEATSHEET.md) |
+| Zero-day | [`zero_day/CHEATSHEET.md`](zero_day/CHEATSHEET.md) |
+
+## Learning paths
+
+The tracks are organized by **topic**, but learners think in **goals**. Pick a path below based on what you want to achieve.
+
+### 🟢 Beginner → Exploit Developer
+
+Start with foundational concepts and work toward professional exploitation skills:
+
+> **zero_day** (fundamentals & methodology) → **linux_kernel** (kernel internals) → **ring_and_vulns** (privilege escalation context) → **OSEE** (certification-level mastery)
+
+### 📱 Mobile Security Specialist
+
+Understand the full Android attack surface from architecture to specific exploits:
+
+> **android_and_CVEs** (Android architecture & landscape) → **CVE-2023-20938** (concrete kernel UAF case study) → **linux_kernel** (kernel exploitation deep dive)
+
+### 🌐 Browser Security Researcher
+
+Cover browser internals, sandboxing, and the modern browser exploit chain:
+
+> **Chromium_Architecture_and_Vulnerability** (browser architecture & V8) → **zero_day** (Parts 03a/03b for userspace exploitation) → **ring_and_vulns** (Ring 3 sandbox boundaries)
+
+### 🔐 Kernel Hardening & Internals
+
+Deep comparative study of kernel security across operating systems:
+
+> **linux_kernel** (Linux kernel architecture & hardening) → **MacOS** (XNU & macOS mitigations) → **android_and_CVEs** (Android's kernel hardening: GKI, SELinux, seccomp) → **ring_and_vulns** (Ring 0 → Ring −3 escalation)
+
+### 🏆 CTF Competitor
+
+Practical exploit development for competition:
+
+> **zero_day** (full curriculum including CTF strategy) → **linux_kernel** (kernel pwn) → **OSEE** (advanced Windows exploitation) → any cheat sheet during competition
+
+### 💍 Firmware & Hardware Security
+
+From userland down to the Management Engine:
+
+> **ring_and_vulns** (Ring −3 to Ring 3全覆盖) → **linux_kernel** (kernel attack surface) → **MacOS** (Apple Silicon & Secure Enclave)
+
+### 🎓 OSEE Exam Preparation
+
+Structured preparation for the most advanced exploitation certification:
+
+> **OSEE** (curriculum overview & exam strategy) → **zero_day** (exploitation methodology) → **ring_and_vulns** (privilege rings context) → **linux_kernel** (kernel exploitation foundations)
 
 ## Start here
 
 If you are new to the repo, start with one of these entry documents:
 
-| Topic | Entry point |
-| --- | --- |
-| Chromium research | [`Chromium_Architecture_and_Vulnerability/Chromium_Architecture_and_Vulnerability_Report.md`](Chromium_Architecture_and_Vulnerability/Chromium_Architecture_and_Vulnerability_Report.md) |
-| Android Binder CVE case study | [`CVE-2023-20938/CVE-2023-20938_FINAL_REPORT.md`](CVE-2023-20938/CVE-2023-20938_FINAL_REPORT.md) |
-| Linux kernel research | [`linux_kernel/docs/FINAL_REPORT.md`](linux_kernel/docs/FINAL_REPORT.md) |
-| macOS research | [`MacOS/docs/00_FINAL_REPORT_macOS_Architecture_Vulnerabilities_Exploits.md`](MacOS/docs/00_FINAL_REPORT_macOS_Architecture_Vulnerabilities_Exploits.md) |
-| Android architecture & CVEs | [`android_and_CVEs/FINAL_REPORT_Android_Architecture_Vulnerabilities_and_CVEs.md`](android_and_CVEs/FINAL_REPORT_Android_Architecture_Vulnerabilities_and_CVEs.md) |
-| CPU rings & vulnerabilities | [`ring_and_vulns/FULL_REPORT.md`](ring_and_vulns/FULL_REPORT.md) |
-| Zero-day research & exploit development | [`zero_day/docs/00_MASTER_REPORT.md`](zero_day/docs/00_MASTER_REPORT.md) |
-| OSEE / EXP-401 reference track | [`OSEE/docs/01a_osee_overview_history.md`](OSEE/docs/01a_osee_overview_history.md) |
+| Topic | Difficulty | Entry point |
+|-------|-----------|-------------|
+| Chromium research | 🔴 Advanced | [`Chromium_Architecture_and_Vulnerability/`](Chromium_Architecture_and_Vulnerability/) |
+| Android Binder CVE case study | 🔴 Advanced | [`CVE-2023-20938/`](CVE-2023-20938/) |
+| Linux kernel research | 🔴 Advanced | [`linux_kernel/`](linux_kernel/) |
+| macOS research | 🟡 Intermediate→Advanced | [`MacOS/`](MacOS/) |
+| Android architecture & CVEs | 🟡 Intermediate | [`android_and_CVEs/`](android_and_CVEs/) |
+| CPU rings & vulnerabilities | 🔴 Advanced | [`ring_and_vulns/`](ring_and_vulns/) |
+| Zero-day research & exploit dev | 🟡→🔴 Progressive | [`zero_day/`](zero_day/) |
+| OSEE / EXP-401 | 🔴 Expert | [`OSEE/`](OSEE/) |
+
+Each directory has its own **README.md** with reading order, prerequisites, and estimated reading time.
 
 ## Repository structure
 
-- `Chromium_Architecture_and_Vulnerability/` — Chromium internals, sandboxing, V8/Blink, exploit chains, and CVE case studies
-- `CVE-2023-20938/` — deep dive into an Android Binder use-after-free privilege-escalation vulnerability
-- `linux_kernel/` — large Linux kernel corpus covering architecture, vulnerability classes, exploitation, fuzzing, and defenses
-- `MacOS/` — macOS/XNU security architecture, vulnerabilities, post-exploitation themes, malware, and mitigations
-- `android_and_CVEs/` — Android system architecture, security model, kernel/application/framework vulnerability classes, CVE statistics and trends, and patch management
-- `ring_and_vulns/` — CPU protection rings (Ring 3 → Ring 0 → Ring −1/−2/−3), vulnerabilities at each privilege level, cross-ring exploitation chains, and CVE references
-- `zero_day/` — zero-day vulnerability research and exploit development curriculum: fundamentals, fuzzing, userspace/kernel exploitation, mitigation bypass, CTF strategy, and ethics/disclosure
-- `OSEE/` — OSEE / EXP-401 study material focused on advanced exploitation and practitioner preparation
+```
+deep-researcher/
+├── android_and_CVEs/           📱 Android architecture, security model, CVEs, patch management
+│   ├── README.md               Entry point, reading order, prerequisites
+│   ├── CHEATSHEET.md           Quick reference: ADB commands, CVEs, mitigations
+│   ├── FINAL_REPORT_...md      Main report (~95,500 words)
+│   └── docs/                   16 numbered chapter documents
+│
+├── Chromium_Architecture_and_Vulnerability/  🌐 Chrome internals, V8, sandboxing, exploit chains
+│   ├── README.md
+│   ├── CHEATSHEET.md
+│   ├── Chromium_Architecture_and_Vulnerability_Report.md
+│   └── docs/                   20 numbered chapter documents
+│
+├── CVE-2023-20938/             🔬 Binder UAF deep-dive case study
+│   ├── README.md
+│   ├── CHEATSHEET.md
+│   ├── CVE-2023-20938_FINAL_REPORT.md
+│   └── docs/                   12 numbered chapter documents
+│
+├── linux_kernel/               🐧 Largest track (~247,700 words): kernel security end-to-end
+│   ├── README.md
+│   ├── CHEATSHEET.md
+│   └── docs/                   20 numbered chapter documents + FINAL_REPORT.md
+│
+├── MacOS/                      🍎 XNU, SIP, IOKit, malware, mitigations
+│   ├── README.md
+│   ├── CHEATSHEET.md
+│   └── docs/                   16 numbered chapter documents + FINAL_REPORT
+│
+├── ring_and_vulns/             💍 Ring 3 → Ring −3: vulnerabilities at every privilege level
+│   ├── README.md
+│   ├── CHEATSHEET.md
+│   ├── FULL_REPORT.md
+│   └── docs/                   12 topic-based chapter documents
+│
+├── zero_day/                   🎯 Zero-day research & exploit dev curriculum
+│   ├── README.md
+│   ├── CHEATSHEET.md
+│   └── docs/                   12 numbered chapter documents + MASTER_REPORT
+│
+├── OSEE/                       🎓 EXP-401 / OSEE certification prep
+│   ├── README.md
+│   ├── CHEATSHEET.md
+│   └── docs/                   15 numbered chapter documents
+│
+└── docs/                       📚 Cross-cutting reference material
+    ├── GLOSSARY.md             320+ term glossary across all tracks
+    └── TIMELINE.md             Chronological vulnerability & mitigation map
+```
 
 ## How to navigate
 
-1. Pick a topic directory.
-2. Start with that directory's main report when one exists.
-3. Continue into the numbered files under its `docs/` directory.
-4. Treat numbered filenames as the intended reading order.
-
-Note: structure is slightly uneven across tracks. Some topics expose a top-level report at the directory root, while others keep the main entry document inside `docs/`.
+1. **Pick a learning path** from the section above, or pick a topic directory that interests you.
+2. **Start with the directory's README.md** — it lists prerequisites, reading order, and related tracks.
+3. **Read the main report** for a high-level overview of the topic.
+4. **Dive into the numbered docs/** files for deep chapters.
+5. **Use the cheat sheet** for quick reference during research or CTFs.
+6. **Follow cross-references** to related tracks when you hit a concept covered more deeply elsewhere.
+7. **Consult the glossary** [`docs/GLOSSARY.md`](docs/GLOSSARY.md) when you encounter unfamiliar terminology.
 
 ## Intended audience
 
 This repository is most useful for:
 
-- security researchers
-- exploit developers and red teamers
-- security engineers and defenders who need architecture-level context
-- advanced learners studying operating-system, browser, and vulnerability research topics
+- Security researchers studying vulnerability classes and exploitation techniques
+- Exploit developers and red teamers needing architecture-level context
+- Security engineers and defenders understanding attack surfaces and mitigations
+- CTF competitors building exploitation skills from intermediate to world-class
+- Advanced learners studying operating-system, browser, and vulnerability research topics
+- OSEE/EXP-401 candidates preparing for the certification exam
 
-Some sections assume familiarity with systems internals, debugging, exploit-development concepts, and security terminology.
+Some sections assume familiarity with systems internals, debugging, exploit-development concepts, and security terminology. The **glossary** [`docs/GLOSSARY.md`](docs/GLOSSARY.md) covers 320+ specialized terms used throughout.
 
 ## Usage expectations
 
-You generally only need a Markdown-capable editor or viewer to use this repository. Expect substantial reading, cross-references, and report-style material rather than runnable code.
+You generally only need a Markdown-capable editor or viewer to use this repository. Expect substantial reading, cross-references, and report-style material rather than runnable code. For hands-on practice, see the lab sections in the `zero_day/` and `OSEE/` tracks.
 
 ## Safety and responsible use
 
@@ -81,6 +194,7 @@ This repository contains dual-use security material, including discussion of vul
 
 ## Notes
 
-- This repo is best understood as a living reference collection.
-- Depth and document structure vary by topic.
-- Some tracks are polished report sets; others are more handbook-like study material.
+- This repo is a living reference collection of approximately **1.2 million words** across **131 Markdown files**.
+- Depth and document structure vary by topic. Some tracks are polished report sets; others are more handbook-like study material.
+- Tracks cross-reference each other. When a concept is covered more deeply in another track, you'll find a link.
+- Each directory's README provides prerequisites, estimated reading time, and a complete reading-order table.

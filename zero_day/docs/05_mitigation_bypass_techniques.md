@@ -1503,3 +1503,17 @@ Kernel Exploit:
 ```
 
 Each mitigation raises the bar, but no single mitigation is sufficient. Security requires **defense in depth** — stacking mitigations so that bypassing one still leaves others. The attacker must bypass every mitigation in the chain; the defender only needs the chain to hold at one link.
+
+## References
+
+1. [PaX Team — PAGEEXEC and SEGMEXEC](https://pax.grsecurity.net/) — Original NX/DEP implementation and documentation
+2. [Shacham — The Geometry of Innocent Flesh on the Bone](https://cseweb.ucsd.edu/~hovav/papers/h7-shacham.pdf) — Return-oriented programming theoretic foundation
+3. [ASLR — PaX Address Space Layout Randomization](https://pax.grsecurity.net/docs/aslr.txt) — Original ASLR design and implementation
+4. [Stack Canary — ProPolice/SSP](https://www.research.ibm.com/trl/projects/security/ssp/) — Stack-smashing protection implementation
+5. [PT TLS — Position-Independent Executables](https://en.wikipedia.org/wiki/Position-independent_executable) — PIE and ASLR interaction
+6. [RELRO — Read-Only Relocations](https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html) — GNU RELRO documentation
+7. [Grsecurity — Kernel Self-Protection](https://grsecurity.net/) — Kernel hardening patches and documentation
+8. [Linux Kernel Security Documentation](https://www.kernel.org/doc/html/latest/security/self-protection.html) — Kernel security features (SMEP, SMAP, KASLR, KPTI)
+9. [Checksec — Security Property Checker](https://github.com/slimm609/checksec.sh) — Tool for checking binary and kernel security properties
+10. [One Gadget — glibc execve Constraints](https://github.com/david942j/one_gadget) — Find single-gadget RCE in glibc under RELRO
+11. [CTF Wiki — Mitigation Bypass](https://ctf-wiki.org/pwn/linux/mitigation/) — Practical bypass techniques for CTFs

@@ -1638,6 +1638,19 @@ spatch --sp-file find_memcpy_overflow.cocci --dir linux/drivers/
 | XOR decryption loop | `xor [reg], reg; loop/jnz` | String obfuscation |
 | `ptrace(PTRACE_TRACEME)` | Anti-debug: `cmp rax, 0; je ok` | Debug detection |
 
+## References
+
+1. [Linux Kernel — Torvalds Git](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git) — Mainline Linux kernel source repository
+2. [GitHub CodeQL](https://github.com/github/codeql-cli-binaries/releases/latest/download/codeql-linux64.zip) — Semantic code analysis engine for vulnerability discovery
+3. [Elixir Cross Referencer](https://elixir.bootlin.com) — Browse kernel source with cross-references and symbol navigation
+4. [Diaphora — Binary Diffing Tool](https://github.com/joxeankoret/diaphora) — Firmware and binary patch diffing for vulnerability research
+5. [Ghidra — NSA Reverse Engineering Framework](https://ghidra-sre.org/) — Open-source decompiler and disassembler
+6. [Binwalk — Firmware Analysis Tool](https://github.com/ReFirmLabs/binwalk) — Firmware extraction and analysis
+7. [CISA BOD 22-01 — Known Exploited Vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) — Binding directive for vulnerability management
+8. [semgrep — Static Analysis](https://semgrep.dev/) — Pattern-based static analysis for multiple languages
+9. [Joern — Code Property Graph](https://joern.io/) — Static analysis using code property graphs
+10. [BinDiff — Binary Diffing](https://zynamics.com/software.html) — Commercial binary diffing tool (now free)
+
 ---
 
 *This document serves as both a learning resource and a field reference. The methodology described here has been applied to discover numerous CVEs across operating systems, device drivers, and application software. Always practice responsible disclosure.*

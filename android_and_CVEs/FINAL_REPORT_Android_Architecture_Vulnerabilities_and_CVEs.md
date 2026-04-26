@@ -1,6 +1,8 @@
 # Android Architecture, Vulnerabilities, and CVEs
 ## Comprehensive Security Research Report
 
+> **Difficulty:** 🟡 Intermediate | **Prerequisites:** Linux basics, operating system concepts | **Estimated reading time:** ~60 minutes
+
 **Date:** April 2026  
 **Classification:** Public Research  
 **Total Research Corpus:** 71,000+ words across 16 specialized documents
@@ -140,7 +142,7 @@ Key security-relevant architectural changes:
 - **Android 14**: Credential Manager, enhanced MTE support
 - **Android 15**: Privacy Sandbox, advanced theft protection
 
-> **Detailed analysis:** See `docs/01_android_architecture_technical.md` and `docs/01_android_architecture_security_perspective.md`
+> **Detailed analysis:** See `docs/01a_android_architecture_technical.md` and `docs/01b_android_architecture_security_perspective.md`
 
 ---
 
@@ -199,7 +201,7 @@ Google's adoption of Rust for new Android code has produced measurable results:
 - **Google Play Protect**: ML-based app scanning (~125 billion scans daily)
 - **Seccomp-BPF**: Syscall filtering reducing kernel attack surface by ~71%
 
-> **Detailed analysis:** See `docs/02_android_security_model.md` and `docs/02_android_defense_mechanisms.md`
+> **Detailed analysis:** See `docs/02a_android_security_model.md` and `docs/02b_android_defense_mechanisms.md`
 
 ---
 
@@ -274,7 +276,7 @@ Key techniques:
 - **Pipe buffer exploitation**: Dirty Pipe technique and variations
 - **io_uring attack surface**: So problematic that Android disabled io_uring entirely
 
-> **Detailed analysis:** See `docs/03_kernel_vulnerabilities.md` and `docs/03_kernel_exploitation_techniques.md`
+> **Detailed analysis:** See `docs/03a_kernel_vulnerabilities.md` and `docs/03b_kernel_exploitation_techniques.md`
 
 ---
 
@@ -303,7 +305,7 @@ Key techniques:
 | **Settings/UI** | CVE-2023-21036 (aCropalypse) | Markup tool leaking original image data from cropped screenshots |
 | **Lock Screen** | Multiple across versions | Physical access bypasses through edge cases in call handling, notifications |
 
-> **Detailed analysis:** See `docs/04_application_vulnerabilities.md` and `docs/04_framework_vulnerabilities.md`
+> **Detailed analysis:** See `docs/04a_application_vulnerabilities.md` and `docs/04b_framework_vulnerabilities.md`
 
 ---
 
@@ -350,7 +352,7 @@ Exploited the fact that APK files (ZIP format) are parsed from the end while DEX
 | CVE-2017-0561 | Broadpwn | 2017 | Zero-click wormable WiFi RCE (CVSS 9.8) |
 | CVE-2020-0069 | MediaTek-SU | 2020 | CMDQ driver root exploit, 14-month patch gap |
 
-> **Detailed analysis:** See `docs/05_major_historical_cves.md`
+> **Detailed analysis:** See `docs/05a_major_historical_cves.md`
 
 ---
 
@@ -430,7 +432,7 @@ The price parity with (and in some cases exceeding) iOS reflects Android's signi
 | Samsung Mobile Security Rewards | $200,000 | Not disclosed |
 | Qualcomm Bug Bounty | $100,000+ | Not disclosed |
 
-> **Detailed analysis:** See `docs/05_cve_statistics_and_trends.md`
+> **Detailed analysis:** See `docs/05b_cve_statistics_and_trends.md`
 
 ---
 
@@ -481,7 +483,7 @@ A typical modern Android zero-click chain requires 3-5 vulnerabilities:
 5. Persistence mechanism (optional)
 ```
 
-> **Detailed analysis:** See `docs/06_exploitation_techniques.md` and `docs/06_real_world_exploitation.md`
+> **Detailed analysis:** See `docs/06a_exploitation_techniques.md` and `docs/06b_real_world_exploitation.md`
 
 ---
 
@@ -524,7 +526,7 @@ Google AOSP → SoC Vendors → OEMs → Carriers → Users
 | **Tier 3** | Motorola, Nokia | 2-4 months |
 | **Tier 4** | Budget/regional OEMs | 6+ months or never |
 
-> **Detailed analysis:** See `docs/07_patch_management.md` and `docs/07_security_best_practices.md`
+> **Detailed analysis:** See `docs/07a_patch_management.md` and `docs/07b_security_best_practices.md`
 
 ---
 
@@ -572,7 +574,7 @@ Google AOSP → SoC Vendors → OEMs → Carriers → Users
 - **Automotive Android**: AAOS security boundaries, infotainment-to-CAN bus risks, long vehicle lifecycles
 - **Post-quantum cryptography**: Android 17 expected to include PQC primitives to protect against future quantum threats
 
-> **Detailed analysis:** See `docs/08_recent_cves_and_emerging_threats.md` and `docs/08_threat_landscape_and_future.md`
+> **Detailed analysis:** See `docs/08a_recent_cves_and_emerging_threats.md` and `docs/08b_threat_landscape_and_future.md`
 
 ---
 
@@ -627,7 +629,120 @@ Google's data shows memory safety bugs declining from 76% to under 24% of Androi
 - Strengthen regulations around commercial spyware vendors
 - Implement post-quantum cryptography before quantum computing threats materialize
 
-> **Detailed analysis:** See `docs/07_security_best_practices.md` and `docs/08_threat_landscape_and_future.md`
+> **Detailed analysis:** See `docs/07b_security_best_practices.md` and `docs/08b_threat_landscape_and_future.md`
+
+---
+
+## Practice & Lab Exercises
+
+### Exercise 1: ADB Security Property Inspection 🟢 Beginner
+
+**Prerequisites:** Android device or emulator with USB debugging enabled, `adb` installed on host.
+
+1. Connect to the device and dump all security-related system properties:
+   ```bash
+   adb shell getprop | grep -E 'security|selinux|ro.debuggable|ro.build.type|ro.boot.verifiedbootstate'
+   ```
+2. Identify whether the build is `user` or `userdebug`/`eng`, and check the verified boot state.
+3. Check whether ADB runs as root by default:
+   ```bash
+   adb shell whoami
+   adb shell id
+   ```
+4. List all dangerous permission groups visible to the shell user:
+   ```bash
+   adb shell pm list permissions -g -d
+   ```
+
+**Expected output:** You should see `ro.build.type`, `ro.debuggable`, verified boot state, and SELinux mode. A `user` build with `ro.debuggable=0` and `enforcing` SELinux indicates a production-hardened device. A `userdebug` build with `ro.debuggable=1` indicates a test configuration — a significantly larger attack surface.
+
+---
+
+### Exercise 2: Examining SELinux Policies 🟡 Intermediate
+
+**Prerequisites:** Rooted Android device or emulator, `selinux` and `sepolicy` tools (or `sesearch`/`seinfo` on host).
+
+1. Check the current SELinux enforcement mode and policy version:
+   ```bash
+   adb shell getenforce
+   adb shell cat /sys/fs/selinux/policyvers
+   ```
+2. Dump the SELinux policy to a file on the host for offline analysis:
+   ```bash
+   adb pull /sys/fs/selinux/policy sepolicy_dump
+   seinfo -t sepolicy_dump | head -30
+   ```
+3. Search for permissive domains (commonly left open during development):
+   ```bash
+   sesearch --allow -c sepolicy_dump | grep permissive
+   ```
+4. Identify which domains can write to `/data` or `/system`:
+   ```bash
+   sesearch --allow -s unlabeled -c file -p write sepolicy_dump
+   ```
+
+**Expected output:** A production device should show `Enforcing` and have no permissive domains. Finding permissive domains on a test device is expected but reveals which attack surfaces are unguarded — e.g., `untrusted_app` in permissive mode eliminates the primary sandbox boundary.
+
+---
+
+### Exercise 3: Analyzing Kernel Config for Hardening 🟡 Intermediate
+
+**Prerequisites:** Android device with `adb` access, or extract the kernel config from a boot image using `extract-ikconfig`.
+
+1. Retrieve the running kernel config (if `/proc/config.gz` is accessible):
+   ```bash
+   adb shell cat /proc/config.gz | gunzip > kernel_config
+   ```
+2. Search for critical security hardening options:
+   ```bash
+   grep -E 'CONFIG_HARDENED_USERCOPY|CONFIG_KASAN|CONFIG_KCFI|CONFIG_STATIC_USERMODEHELPER|CONFIG_STACKPROTECTOR|CONFIG_RANDOMIZE_BASE|CONFIG_CFI' kernel_config
+   ```
+3. Check for Android-specific hardening:
+   ```bash
+   grep -E 'CONFIG_ANDROID|CONFIG_BINFMT' kernel_config
+   ```
+4. Compare the found options against the recommended Android kernel hardening baseline. Note which protections are missing.
+
+**Expected output:** A modern Android 14+ kernel should have `CONFIG_KASAN=y`, `CONFIG_KCFI=y`, `CONFIG_HARDENED_USERCOPY=y`, and `CONFIG_RANDOMIZE_BASE=y`. Missing options (e.g., no `CONFIG_STACKPROTECTOR`) indicate areas where the kernel is less hardened and potentially exploitable.
+
+---
+
+### Exercise 4: Enumerating Attack Surfaces with `dumpsys` 🔴 Advanced
+
+**Prerequisites:** Android device or emulator with ADB access.
+
+1. List all running services exposed via Binder:
+   ```bash
+   adb shell service list
+   ```
+2. Dump the package manager to enumerate all installed packages and their permissions:
+   ```bash
+   adb shell dumpsys package | grep -E 'Package \[|granted=true' | head -80
+   ```
+3. Identify services that export Binder interfaces to untrusted apps:
+   ```bash
+   adb shell dumpsys activity services | grep -E 'ServiceRecord|Intent'
+   ```
+4. Check the `dumpsys` surface for information leakage — dump connectivity, wifi, and network stats:
+   ```bash
+   adb shell dumpsys wifi
+   adb shell dumpsys netstats
+   ```
+5. Enumerate content providers (a major IPC attack surface):
+   ```bash
+   adb shell dumpsys activity providers | grep -E 'ContentProviderRecord|authority'
+   ```
+
+**Expected output:** You should see dozens of system services and content providers. Counting exported vs. non-exported components reveals the device's IPC attack surface. Services like `package` or `activity` that respond to untrusted app intents are high-value targets — many historical CVEs (e.g., CVE-2023-20938) originate at these boundaries.
+
+---
+
+## Related Tracks
+
+- [**Linux Kernel Vulnerabilities & Exploitation**](../linux_kernel/docs/FINAL_REPORT.md) — Android builds on the Linux kernel; kernel-level vulnerabilities, exploit primitives (Dirty COW, Dirty Pipe), and mitigation bypass techniques directly apply to Android exploitation.
+- [**CVE-2023-20938 (Binder UAF)**](../CVE-2023-20938/CVE-2023-20938_FINAL_REPORT.md) — A deep-dive into a specific Android Binder vulnerability that exemplifies the kernel attack surface discussed in this report.
+- [**Zero-Day Research & Exploit Development**](../zero_day/docs/00_MASTER_REPORT.md) — Covers the broader methodology behind zero-day discovery and exploitation relevant to Android vulnerability research.
+- [**CPU Protection Rings & Vulnerabilities**](../ring_and_vulns/FULL_REPORT.md) — Provides the privilege escalation context (Ring 3 → Ring 0) for Android kernel exploitation techniques.
 
 ---
 
@@ -637,22 +752,22 @@ This report synthesizes findings from 16 specialized research documents totaling
 
 | # | Document | Words | Focus |
 |---|----------|-------|-------|
-| 1 | `01_android_architecture_technical.md` | 4,159 | Detailed technical architecture analysis |
-| 2 | `01_android_architecture_security_perspective.md` | 4,624 | Attack surface mapping by architectural layer |
-| 3 | `02_android_security_model.md` | 4,112 | Security mechanisms: sandboxing, SELinux, AVB, FBE, permissions |
-| 4 | `02_android_defense_mechanisms.md` | 4,078 | Compiler mitigations, kernel hardening, Rust adoption |
-| 5 | `03_kernel_vulnerabilities.md` | 5,328 | GPU, Binder, and vendor kernel CVEs with CVSS scores |
-| 6 | `03_kernel_exploitation_techniques.md` | 4,084 | Heap exploitation, KASLR bypass, SELinux bypass techniques |
-| 7 | `04_application_vulnerabilities.md` | 4,119 | Intent, WebView, Content Provider, serialization bugs |
-| 8 | `04_framework_vulnerabilities.md` | 5,002 | System services, Bluetooth, WiFi, NFC, telephony CVEs |
-| 9 | `05_major_historical_cves.md` | 6,349 | Stagefright, Dirty COW, Dirty Pipe, Bad Binder deep-dives |
-| 10 | `05_cve_statistics_and_trends.md` | 4,805 | CVE volume, severity, component distribution, bug bounties |
-| 11 | `06_exploitation_techniques.md` | 4,336 | Attack vectors, rooting, physical attacks, side-channels |
-| 12 | `06_real_world_exploitation.md` | 3,414 | Pegasus, Predator, Candiru, banking trojans, forensics |
-| 13 | `07_patch_management.md` | 3,883 | Security bulletins, Treble, Mainline, GKI, OEM comparison |
-| 14 | `07_security_best_practices.md` | 4,447 | User/developer/enterprise guidance, tools, NIST/CIS |
-| 15 | `08_recent_cves_and_emerging_threats.md` | 4,427 | 2023-2026 CVEs, Android 14/15 features, emerging threats |
-| 16 | `08_threat_landscape_and_future.md` | 3,840 | Threat actors, zero-day economics, AI, automotive, IoT |
+| 1 | `01a_android_architecture_technical.md` | 4,159 | Detailed technical architecture analysis |
+| 2 | `01b_android_architecture_security_perspective.md` | 4,624 | Attack surface mapping by architectural layer |
+| 3 | `02a_android_security_model.md` | 4,112 | Security mechanisms: sandboxing, SELinux, AVB, FBE, permissions |
+| 4 | `02b_android_defense_mechanisms.md` | 4,078 | Compiler mitigations, kernel hardening, Rust adoption |
+| 5 | `03a_kernel_vulnerabilities.md` | 5,328 | GPU, Binder, and vendor kernel CVEs with CVSS scores |
+| 6 | `03b_kernel_exploitation_techniques.md` | 4,084 | Heap exploitation, KASLR bypass, SELinux bypass techniques |
+| 7 | `04a_application_vulnerabilities.md` | 4,119 | Intent, WebView, Content Provider, serialization bugs |
+| 8 | `04b_framework_vulnerabilities.md` | 5,002 | System services, Bluetooth, WiFi, NFC, telephony CVEs |
+| 9 | `05a_major_historical_cves.md` | 6,349 | Stagefright, Dirty COW, Dirty Pipe, Bad Binder deep-dives |
+| 10 | `05b_cve_statistics_and_trends.md` | 4,805 | CVE volume, severity, component distribution, bug bounties |
+| 11 | `06a_exploitation_techniques.md` | 4,336 | Attack vectors, rooting, physical attacks, side-channels |
+| 12 | `06b_real_world_exploitation.md` | 3,414 | Pegasus, Predator, Candiru, banking trojans, forensics |
+| 13 | `07a_patch_management.md` | 3,883 | Security bulletins, Treble, Mainline, GKI, OEM comparison |
+| 14 | `07b_security_best_practices.md` | 4,447 | User/developer/enterprise guidance, tools, NIST/CIS |
+| 15 | `08a_recent_cves_and_emerging_threats.md` | 4,427 | 2023-2026 CVEs, Android 14/15 features, emerging threats |
+| 16 | `08b_threat_landscape_and_future.md` | 3,840 | Threat actors, zero-day economics, AI, automotive, IoT |
 
 ---
 

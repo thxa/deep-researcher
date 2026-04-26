@@ -1247,6 +1247,20 @@ gdb.attach(io, '''
 | modprobe_path | Arbitrary kernel write | `CONFIG_STATIC_USERMODEHELPER` |
 | cred overwrite | Arbitrary kernel write to current task's cred | Various hardening |
 
+## References
+
+1. [CTFtime — Global CTF Tracker](https://ctftime.org/) — CTF event calendar, ratings, and writeup archive
+2. [CTF Wiki](https://ctf-wiki.org/) — Comprehensive CTF technique reference (pwn, web, crypto, reverse)
+3. [Pwntools Documentation](https://docs.pwntools.com/) — Python exploit development framework
+4. [pwndbg — GDB Exploit Plugin](https://github.com/pwndbg/pwndbg) — Enhanced GDB for CTF and exploit development
+5. [ROPgadget](https://github.com/JonathanSalwan/ROPgadget) — Automated ROP gadget search and chain generation
+6. [One Gadget — glibc execve Solver](https://github.com/david942j/one_gadget) — Find single-gadget execve RCE offsets
+7. [Libc Database](https://github.com/niklasb/libc-database) — Identify glibc version from leaked addresses
+8. [How2Heap — Shellphish](https://github.com/shellphish/how2heap) — Progressive heap exploitation tutorials
+9. [pwntools — Shellcraft](https://docs.pwntools.com/en/stable/shellcraft/) — Shellcode and template generation
+10. [LiveOverflow — Binary Exploitation YouTube](https://www.youtube.com/c/LiveOverflow) — Video CTF training and binary exploitation walkthroughs
+11. [Pwn College](https://pwn.college/) — Interactive binary exploitation training platform
+
 ---
 
 *This guide is a living document. Update it with every CTF you play. Every technique you learn. Every mistake you make. That's how champions are built — one writeup, one exploit, one flag at a time.*

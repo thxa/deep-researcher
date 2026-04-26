@@ -986,17 +986,20 @@ Info leak (heap addr)    →   Defeat ASLR                 →  Precise ROP/JOP 
 
 ---
 
-## Appendix: Key References
+## References
 
 1. Akyaz et al., "A Study of the Security Vulnerabilities in the Linux Kernel," 2012.
-2. Google Project Zero, "0day "In the Wild" database," https://googleprojectzero.blogspot.com/
+2. [Google Project Zero — 0day "In the Wild" Database](https://googleprojectzero.blogspot.com/) — Tracking actively exploited zero-day vulnerabilities
 3. Microsoft MSTIC, "Nation-state threat actors," various reports.
-4. MITRE ATT&CK, "Exploit Public-Facing Application," T1190.
-5. MITRE CWE Top 25: https://cwe.mitre.org/top25/
+4. [MITRE ATT&CK — Exploit Public-Facing Application (T1190)](https://attack.mitre.org/techniques/T1190/) — Adversarial technique reference
+5. [MITRE CWE Top 25 Most Dangerous Software Weaknesses](https://cwe.mitre.org/top25/) — Ranked list of most prevalent and critical weaknesses
 6. Bromium, "Into the Web of Profit," zero-day market economics.
-7. RAND Corporation, "Zero-Day Vulnerability Lifetimes," 2017.
+7. [RAND Corporation — Zero-Day Vulnerability Lifetimes](https://www.rand.org/pubs/research_reports/RR2264.html) — Empirical study on zero-day discovery and lifetimes
 8. Xiao et al., "Motive: A Practical Memory Error Vulnerability Mitigation Approach," 2023.
 9. Larabel, "Linux Kernel 2024 Security Report," Phoronix.
+10. [CVE Program — Common Vulnerabilities and Exposures](https://www.cve.org/) — Standardized vulnerability identification system
+11. [NIST National Vulnerability Database](https://nvd.nist.gov/) — US government vulnerability database and severity scoring
+12. [CISA Known Exploited Vulnerabilities Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) — Federally tracked actively exploited vulnerabilities
 
 ---
 

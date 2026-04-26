@@ -1971,4 +1971,19 @@ KASLR entropy:     ~512 positions (9 bits) for _text
 
 ---
 
+## References
+
+1. Rutkowska, J. "Subverting Vista Kernel For Fun And Profit." Black Hat, 2006.
+2. Shacham, H. "The Geometry of Innocent Flesh on the Bone: Return-Oriented Programming." CCS, 2007.
+3. Carlini, N., Wagner, D. "ROP is Still Dangerous: Breaking Modern Defenses." USENIX Security, 2014.
+4. Abadi, M., et al. "Control-Flow Integrity." CCS, 2005.
+5. Hu, H., et al. "Data-Oriented Programming: On the Expressiveness of Non-Control Data Attacks." IEEE S&P, 2016.
+6. Van Schaik, S., et al. "Dirty Pipe: Unprivileged pipe_buffer overwrite (CVE-2022-0847)." 2022.
+7. Qualys. "PwnKit: Local Privilege Escalation in polkit's pkexec (CVE-2021-4034)." 2022.
+8. NIST. "National Vulnerability Database." CVE entries: CVE-2022-2588, CVE-2020-29374, CVE-2021-1732, CVE-2020-1472, CVE-2022-32250, CVE-2022-29581, CVE-2021-4147, CVE-2022-1016.
+9. Microsoft. "Windows Kernel Exploitation: A History." Microsoft Security Response Center, 2021.
+10. Dullien, T. "A Brief History of Linux Kernel Exploitation." OffensiveCon, 2020.
+
+---
+
 *End of report. This document covers offensive techniques for authorized security research and defensive understanding only.*

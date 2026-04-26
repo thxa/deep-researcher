@@ -2,6 +2,8 @@
 
 ## Certification Overview, History, and Place in the OffSec Hierarchy
 
+> **Difficulty:** 🔴 Advanced (expert) | **Prerequisites:** OSCP/OSCE3 or equivalent, C/C++, x86 assembly, exploit development fundamentals | **Estimated reading time:** ~25 minutes
+
 ---
 
 ## 1. What is OSEE?
@@ -396,6 +398,15 @@ The OSEE (Offensive Security Exploitation Expert) stands as the **most prestigio
 With an estimated few hundred holders worldwide, OSEE is extraordinarily rare. Its position at the apex of the OffSec hierarchy (above OSCP at the 200-level and OSCE3 at the 300-level) reflects both its extreme technical demands and its recognition within the industry as a true marker of elite exploitation capability.
 
 For anyone pursuing the deepest levels of offensive security expertise, OSEE remains the definitive goal and the ultimate professional credential.
+
+---
+
+## Related Tracks
+
+- [**Zero-Day Research & Exploit Development**](../zero_day/docs/00_MASTER_REPORT.md) — The OSEE certification tests exploit development methodology that is systematically covered in this reference, from foundational techniques through advanced kernel exploitation.
+- [**Linux Kernel Vulnerabilities & Exploitation**](../linux_kernel/docs/FINAL_REPORT.md) — While OSEE focuses on Windows exploitation, the kernel exploitation concepts (privilege escalation, mitigation bypass, memory corruption) are universally applicable.
+- [**CPU Protection Rings & Vulnerabilities**](../ring_and_vulns/FULL_REPORT.md) — Understanding Ring 0 kernel exploitation and Ring transitions is fundamental to OSEE's kernel exploitation module and mitigation bypass techniques.
+- [**Chromium Architecture & Vulnerability**](../Chromium_Architecture_and_Vulnerability/Chromium_Architecture_and_Vulnerability_Report.md) — Browser exploitation is a key OSEE module; Chromium's V8 JIT exploitation and sandbox escape concepts parallel the Windows browser exploitation content.
 
 ---
 

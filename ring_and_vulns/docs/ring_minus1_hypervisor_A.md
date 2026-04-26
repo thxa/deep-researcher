@@ -866,4 +866,19 @@ AMD's SEV (Secure Encrypted Virtualization) adds memory encryption to guests, wh
 
 ---
 
+## References
+
+1. Intel. "Intel 64 and IA-32 Architectures Software Developer's Manual." Volume 3C: Chapter 24–33 — VMX (Virtual Machine Extensions).
+2. AMD. "AMD64 Architecture Programmer's Manual Volume 2." Chapter 15 — Secure Virtual Machine (SVM).
+3. Rutkowska, J. "Subverting Vista Kernel For Fun And Profit." Black Hat, 2006.
+4. King, S.T., et al. "SubVirt: Implementing Malware with Virtual Machines." IEEE S&P, 2006.
+5. Geffner, J. "VENOM: A Virtual Environment Not Operating as Meant." CrowdStrike, 2015.
+6. Lipp, M., et al. "Meltdown: Reading Kernel Memory from User Space." USENIX Security, 2018.
+7. Kocher, P., et al. "Spectre Attacks: Exploiting Speculative Execution." IEEE S&P, 2019.
+8. Yarom, Y., Falkner, K. "Flush+Reload: A High Resolution, Low Noise, L3 Cache Side-Channel Attack." USENIX Security, 2014.
+9. NIST. "National Vulnerability Database." CVE entries: CVE-2015-3456 (VENOM), CVE-2015-5165 (QEMU RTL8139), CVE-2019-6974 (KVM UAF), CVE-2021-28476 (Hyper-V race), CVE-2018-8897 (MOV SS debug exception).
+10. AMD. "SEV-SNP: Strengthening VM Isolation with Integrity." AMD Developer Documentation, 2022.
+
+---
+
 *Report covering Ring -1 hypervisor architecture, VMX/SVM operation, VM escapes, device emulation vulnerabilities, vCPU attacks, EPT/NPT exploitation, and deduplication side channels.*

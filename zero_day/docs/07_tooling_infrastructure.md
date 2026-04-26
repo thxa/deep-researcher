@@ -1618,6 +1618,20 @@ def identify_and_patch(binary_path, leaked_addr, symbol='puts', libc_db='~/libc-
 | Build initramfs | `find . \| cpio -o -H newc \| gzip > rootfs.cpio.gz` |
 | Search format offset | `for i in $(seq 1 20); do echo "%$i\$p"; done` |
 
+## References
+
+1. [pwndbg — GDB Exploit Development Plugin](https://github.com/pwndbg/pwndbg) — Enhanced GDB for reverse engineering and exploit development
+2. [libc-database — glibc Version Identification](https://github.com/niklasb/libc-database) — Match leaked addresses to glibc binary versions
+3. [Linux Kernel Source](https://cdn.kernel.org/pub/linux/kernel/) — Kernel releases for exploit development VMs
+4. [BusyBox — Embedded Linux Utilities](https://git.busybox.net/busybox) — Minimal userland for initramfs construction
+5. [QEMU — Machine Emulator](https://www.qemu.org/) — Kernel and firmware emulation for exploit development
+6. [GDB — GNU Debugger](https://www.sourceware.org/gdb/) — Binary and kernel debugging
+7. [Ghidra — NSA Reverse Engineering Suite](https://ghidra-sre.org/) — Open-source decompiler and disassembler
+8. [Rizin — Reverse Engineering Framework](https://rizin.re/) — Open-source binary analysis (Cutter GUI)
+9. [pwntools — Exploit Development Library](https://github.com/Gallopsled/pwntools) — Python CTF framework and utilities
+10. [Docker Hub — Vulnerable Containers](https://hub.docker.com/) — Pre-built vulnerable environments (e.g., rickwang129/vulhub)
+11. [Kernel Newbies — Kernel Development](https://kernelnewbies.org/) — Kernel development resources and documentation
+
 ---
 
 *This chapter provides the complete toolchain foundation. Every exploit in this reference depends on these tools being properly configured. Revisit this chapter whenever setting up a new environment — the scripts here are battle-tested in CTF competitions and real vulnerability research alike.*

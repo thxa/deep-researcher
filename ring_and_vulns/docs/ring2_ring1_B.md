@@ -736,4 +736,17 @@ The only remaining use of Rings 1/2 is in legacy 32-bit x86 systems and niche em
 
 ---
 
+## References
+
+1. Intel. "Intel 64 and IA-32 Architectures Software Developer's Manual." Volume 3A: Sections on call gates, IOPL, TSS I/O permission bitmaps.
+2. AMD. "AMD64 Architecture Programmer's Manual Volume 2." Sections on SYSCALL/SYSRET, CPL transitions, I/O privilege mechanisms.
+3. Kallenberg, C., et al. "Defeating x86 Protection Rings via I/O Privilege Escalation." 2014.
+4. Rutkowska, J. "Understanding Intel's Item Over the Protection Rings Architecture." Invisible Things Lab, 2008.
+5. Wojtczuk, R. "Adventures with a Certain Xen Vulnerability (XSA-19)." 2013.
+6. NIST. "National Vulnerability Database." CVE entries: CVE-2012-0217, CVE-2014-9090, CVE-2015-5157, CVE-2018-5333, CVE-2020-10752.
+7. Ortolani, S., Criswell, B. "Unboxing the x86: Gatekeeping the Legacy Rings." IEEE S&P, 2020.
+8. Heasman, J. "Attacking Intel BIOS via SMM." 2007.
+
+---
+
 *Document version: 2026-04-26 | Classification: Technical Research | Author: Security Research Team*

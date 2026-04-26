@@ -2,6 +2,7 @@
 
 ## A Comprehensive Technical Reference
 
+> **Difficulty:** 🔴 Advanced | **Prerequisites:** x86 architecture, operating system fundamentals | **Estimated reading time:** ~60 minutes
 > **Classification**: Security Research Technical Report  
 > **Version**: 1.0 — April 2026  
 > **Scope**: x86/x86-64 Privilege Rings 3 → 2/1 → 0 → -1 → -2 → -3  
@@ -52,6 +53,26 @@ This report synthesizes research across all seven privilege levels, documenting:
 
 ### 2.1 Privilege Hierarchy
 
+<!-- Diagram: CPU protection ring hierarchy from least to most privileged -->
+```mermaid
+flowchart TD
+    R3["Ring 3 — Userland<br/>CPL=3 | Applications, browsers, servers<br/><i>x86 i286, 1982</i>"]
+    R2["Ring 2 — I/O Services (unused)<br/>CPL=2 | IOPL, IOPB"]
+    R1["Ring 1 — Device Drivers (unused)<br/>CPL=1 | Call gates, TSS stack"]
+    R0["Ring 0 — Kernel / Supervisor<br/>CPL=0 | Full privilege, all instructions"]
+    RM1["Ring -1 — Hypervisor / VMM<br/>VMX Root | VT-x/AMD-V, VMCS, EPT/NPT"]
+    RM2["Ring -2 — System Management Mode<br/>SMM Mode | SMI#, SMRR, SMRAM"]
+    RM3["Ring -3 — Intel ME / AMD PSP<br/>Independent MCU | Separate processor, DMA"]
+
+    R3 --> R2 --> R1 --> R0 --> RM1 --> RM2 --> RM3
+
+    style R3 fill:#93c5fd,color:#000
+    style R2 fill:#818cf8,color:#000
+    style R1 fill:#a78bfa,color:#fff
+    style R0 fill:#a855f7,color:#fff
+    style RM1 fill:#e879f9,color:#fff
+    style RM2 fill:#f472b6,color:#fff
+    style RM3 fill:#fb7185,color:#fff
 ```
 ┌──────────────────────────────────────────────────────────────────────┐
 │  Ring 3   Userland                                                   │
@@ -313,17 +334,21 @@ uint64_t chain[] = {
 
 Ring -1 is created by hardware virtualization extensions (Intel VT-x, AMD-V). The hypervisor runs in VMX Root mode with full hardware control, while guest OSes run in VMX Non-Root mode believing they have Ring 0 privilege.
 
-```
-VMX Root Mode (Ring -1)
-├── Hypervisor (KVM, Xen, VMware, Hyper-V)
-├── Full hardware access
-├── Controls VMCS/VMCB
-└── Intercepts privileged guest operations via VM Exits
-
-VMX Non-Root Mode (Guest perceives as Ring 0)
-├── Guest kernel (thinks it's Ring 0)
-├── Guest userland (Ring 3 inside VM)
-└── Certain instructions cause VM Exits (cli, hlt, wrmsr, invlpg, cpuid)
+<!-- Diagram: VMX Root and Non-Root mode architecture showing hypervisor and guest components -->
+```mermaid
+flowchart LR
+    subgraph Root["VMX Root Mode (Ring -1)"]
+        H["Hypervisor<br/>KVM, Xen, VMware, Hyper-V"]
+        HW["Full hardware access"]
+        VMCS["Controls VMCS/VMCB"]
+        Exit["Intercepts privileged<br/>guest ops via VM Exits"]
+    end
+    subgraph NonRoot["VMX Non-Root Mode (Guest perceives Ring 0)"]
+        GK["Guest kernel<br/>(thinks it's Ring 0)"]
+        GU["Guest userland<br/>(Ring 3 inside VM)"]
+        VE["VM Exits on:<br/>cli, hlt, wrmsr, invlpg, cpuid"]
+    end
+    Root -.->|VM Entry/VM Exit| NonRoot
 ```
 
 ### 6.2 VM Escape CVEs
@@ -492,32 +517,30 @@ The Intel ME is a complete autonomous computer system embedded in the PCH/SoC:
 
 ### 9.1 Attack Path: Ring 3 → Ring 0 → Ring -1 → Ring -2 → Ring -3
 
-```
-[Ring 3 Compromise]           Initial access: phishing, 0-day, supply chain
-       │
-       ▼
-[Ring 3 → Ring 0 LPE]         CVE-2022-0847 (Dirty Pipe) or similar kernel exploit
-       │
-       ▼
-[Ring 0 Persistence]           Bootkit, kernel module rootkit
-       │
-       ▼
-[Ring 0 → Ring -1]             VM escape (CVE-2015-3456) or hyperjacking
-       │
-       ▼
-[Ring -1 Persistence]           Hypervisor implant
-       │
-       ▼
-[Ring -1 → Ring -2]            SMI handler modification via SPI flash write
-       │
-       ▼
-[Ring -2 Persistence]           SMM rootkit in SPI flash (survives reinstall)
-       │
-       ▼
-[Ring -2 → Ring -3]            ME firmware modification (CP HAP bit, ROM patching)
-       │
-       ▼
-[Ring -3 Persistence]           ME implant (survives everything short of chip replacement)
+<!-- Diagram: Cross-ring exploitation chain from userland to firmware -->
+```mermaid
+flowchart TD
+    A["Ring 3 Compromise<br/>Initial access: phishing, 0-day, supply chain"]
+    B["Ring 3 → Ring 0 LPE<br/>CVE-2022-0847 Dirty Pipe or similar kernel exploit"]
+    C["Ring 0 Persistence<br/>Bootkit, kernel module rootkit"]
+    D["Ring 0 → Ring -1<br/>VM escape CVE-2015-3456 or hyperjacking"]
+    E["Ring -1 Persistence<br/>Hypervisor implant"]
+    F["Ring -1 → Ring -2<br/>SMI handler modification via SPI flash write"]
+    G["Ring -2 persistence<br/>SMM rootkit in SPI flash (survives reinstall)"]
+    H["Ring -2 → Ring -3<br/>ME firmware modification (CP HAP bit, ROM patching)"]
+    I["Ring -3 persistence<br/>ME implant (survives everything short of chip replacement)"]
+
+    A --> B --> C --> D --> E --> F --> G --> H --> I
+
+    style A fill:#93c5fd,color:#000
+    style B fill:#a78bfa,color:#fff
+    style C fill:#a855f7,color:#fff
+    style D fill:#e879f9,color:#fff
+    style E fill:#d946ef,color:#fff
+    style F fill:#f472b6,color:#fff
+    style G fill:#fb7185,color:#fff
+    style H fill:#ef4444,color:#fff
+    style I fill:#b91c1c,color:#fff
 ```
 
 ### 9.2 Real-World Cross-Ring Attacks
@@ -699,6 +722,148 @@ CONFIG_INIT_ON_ALLOC_DEFAULT_ON=y
 | -1 | Hypervisor introspection | VMCS tampering, EPT anomalies |
 | -2 | TPM Measured Boot | Firmware modification, SMI count changes |
 | -3 | ME version audit | ME firmware tampering |
+
+---
+
+## Practice & Lab Exercises
+
+### Exercise 1: Using CPUID to Check CPU Feature Flags 🟢 Beginner
+
+**Prerequisites:** Linux system with `cpuid` tool installed (`sudo apt install cpuid`), or use inline assembly.
+
+1. Install and run `cpuid` to dump all CPU feature flags:
+   ```bash
+   cpuid | grep -E 'SMEP|SMAP|VMX|SGX|TXT|LM|NX|LM'
+   ```
+2. Alternatively, read CPU flags directly from `/proc/cpuinfo`:
+   ```bash
+   grep -o 'smep\|smap\|vmx\|sgx\|txt\|lm\|nx\|pku\|sme\|sev' /proc/cpuinfo | sort -u
+   ```
+3. Check whether specific ring-protection features are active:
+   ```bash
+   cat /proc/cpuinfo | grep flags | head -1 | tr ' ' '\n' | grep -E 'smep|smap|vmx|mpx|pku|cet_ibs'
+   ```
+4. Determine your CPU's supported privilege levels using the CPUID.01h leaf:
+   ```bash
+   cpuid -l 0x1 | grep -E 'VMX|SMX|NX'
+   ```
+
+**Expected output:** You should see which CPU security features are present. `smep` and `smap` indicate Ring 0 cannot execute/read Ring 3 memory. `vmx` indicates hypervisor (Ring -1) support. Missing features (e.g., no `pku` = no Memory Protection Keys for userspace) reveal which hardware-enforced boundaries your system lacks — directly relevant to the ring transitions and bypasses discussed in Sections 5-7.
+
+---
+
+### Exercise 2: Examining MSR Values on Your System 🟡 Intermediate
+
+**Prerequisites:** Linux system with `msr` kernel module loaded, `rdmsr`/`wrmsr` from `msr-tools`.
+
+1. Load the MSR module and verify:
+   ```bash
+   sudo modprobe msr
+   ls /dev/cpu/*/msr
+   ```
+2. Read the `IA32_FEATURE_CONTROL` MSR (address 0x3A) — controls VMX and SMX enablement:
+   ```bash
+   sudo rdmsr -p0 0x3a
+   ```
+3. Read the `IA32_MISC_ENABLE` MSR (address 0x1A0) — contains security-related bits:
+   ```bash
+   sudo rdmsr -p0 0x1a0
+   ```
+4. Read the `EFER` MSR (address 0xC0000080) — controls NX, SCE, LMA:
+   ```bash
+   sudo rdmsr -p0 0xc0000080
+   ```
+5. Decode the `IA32_FEATURE_CONTROL` bits (bit 0 = lock, bit 1 = VMX outside SMX, bit 2 = VMX inside SMX):
+   ```bash
+   val=$(sudo rdmsr -p0 0x3a); echo "Feature Control: $val"; echo "  Locked: $(( 0x$val & 1 ))"; echo "  VMX outside SMX: $(( (0x$val >> 1) & 1 ))"; echo "  VMX inside SMX: $(( (0x$val >> 2) & 1 ))"
+   ```
+
+**Expected output:** `IA32_FEATURE_CONTROL` shows whether VMX (Ring -1 capability) is locked and enabled. The EFER register reveals whether NX (No-Execute) is set. If bit 0 of `IA32_FEATURE_CONTROL` is set, the configuration is hardware-locked until next reset — this is the Ring 0 mechanism that prevents software from re-enabling VMX after the BIOS locks it, a critical trust boundary described in Section 6.
+
+---
+
+### Exercise 3: Using `dmesg` to Observe Active Rings and Features 🟢 Beginner
+
+**Prerequisites:** Linux system, `dmesg` access.
+
+1. Check `dmesg` for kernel-level security feature announcements:
+   ```bash
+   dmesg | grep -iE 'SMEP|SMAP|KASLR|KPTI|NX|Page Table Isolation'
+   ```
+2. Look for hypervisor detection messages (Ring -1):
+   ```bash
+   dmesg | grep -iE 'hypervisor|virtualization|VMX|kvm|vmware|virtualbox'
+   ```
+3. Check for SMM (Ring -2) or firmware-related messages:
+   ```bash
+   dmesg | grep -iE 'firmware|uefi|smm|acpi|bios'
+   ```
+4. Inspect which mitigations are active at boot:
+   ```bash
+   dmesg | grep -iE 'mitigation|spectre|meltdown|mds|l1tf|tsx|sgx'
+   ```
+5. Check for Memory Encryption (SME/SEV) — Ring -1 memory isolation:
+   ```bash
+   dmesg | grep -iE 'SME|SEV|secure.*encrypt|memory.*encrypt'
+   ```
+
+**Expected output:** On a bare-metal system, you should see `SMEP` and `SMAP` enabled messages, hypervisor detection (`Running on hypervisor: 0` or similar), and active mitigations for Spectre/Meltdown. On a VM, `dmesg` will report `Hypervisor detected: KVM` (or similar), confirming Ring -1 is active. The absence of SME/SEV messages means your RAM is not encrypted against Ring -1 access — a key insight from Section 7 on cross-ring attacks.
+
+---
+
+### Exercise 4: Setting Up a Basic QEMU Hypervisor to Observe VMX Transitions 🔴 Advanced
+
+**Prerequisites:** QEMU with KVM support, a Linux kernel image, root access.
+
+1. Verify KVM (hardware virtualization / Ring -1) is available:
+   ```bash
+   ls /dev/kvm
+   cat /proc/cpuinfo | grep -o 'vmx\|svm' | sort -u
+   ```
+2. Create a minimal VM disk image:
+   ```bash
+   qemu-img create -f qcow2 vm_disk.qcow2 4G
+   ```
+3. Launch QEMU with KVM acceleration and VMX tracing:
+   ```bash
+   qemu-system-x86_64 \
+     -enable-kvm \
+     -m 1024 \
+     -smp 1 \
+     -kernel /boot/vmlinuz-$(uname -r) \
+     -append "console=ttyS0 root=/dev/sda nokaslr" \
+     -drive file=vm_disk.qcow2,format=qcow2 \
+     -nographic \
+     -serial mon:stdio \
+     -cpu host,+vmx \
+     -d int,cpu_reset 2>qemu_trace.log &
+   ```
+4. Inside the VM, check that VMX is available:
+   ```bash
+   cat /proc/cpuinfo | grep vmx
+   dmesg | grep -i vmx
+   ```
+5. Observe VMX transitions in the trace log:
+   ```bash
+   grep -E 'VM_EXIT|VM_ENTRY|vmx' qemu_trace.log | head -20
+   ```
+6. Load the `kvm_intel` module to see Ring -1 activity:
+   ```bash
+   sudo modprobe kvm_intel
+   sudo rdmsr -p0 0x480 2>/dev/null || echo "MSR 0x480 (VMX_BASIC) requires root + msr module"
+   ```
+
+**Expected output:** The VM boots with KVM acceleration confirmed. `/proc/cpuinfo` inside the VM shows `vmx` in flags. The QEMU trace log (`-d int`) shows VM exit and entry events — these are the Ring 0 ↔ Ring -1 transitions described in Section 6. Each VM exit costs ~1000 CPU cycles, which is why high VMM exit rates degrade performance. The `IA32_VMX_BASIC` MSR (0x480) contains the VMX capability bitmap that defines which Ring -1 features the processor supports.
+
+---
+
+## Related Tracks
+
+- [**Linux Kernel Vulnerabilities & Exploitation**](../linux_kernel/docs/FINAL_REPORT.md) — Ring 0 is the kernel; this report provides the deep technical dive into kernel vulnerability classes, exploitation primitives, and mitigation bypasses that complement the Ring 0 section here.
+- [**Zero-Day Research & Exploit Development**](../zero_day/docs/00_MASTER_REPORT.md) — Exploitation at every ring level — from Ring 3 userland through Ring 0 kernel to Ring -2 firmware — is covered with practical methodology in this reference.
+- [**Android Architecture, Vulnerabilities & CVEs**](../android_and_CVEs/FINAL_REPORT_Android_Architecture_Vulnerabilities_and_CVEs.md) — Android's kernel-level security (SELinux, seccomp-BPF, GKI) maps to Ring 0 hardening strategies discussed here.
+- [**macOS Architecture & Exploitation**](../MacOS/docs/00_FINAL_REPORT_macOS_Architecture_Vulnerabilities_Exploits.md) — XNU kernel exploits target Ring 0 on Apple Silicon; PAC/KTRR/PPL are hardware-enforced Ring 0 protections unique to macOS.
+- [**CVE-2023-20938 (Binder UAF)**](../CVE-2023-20938/CVE-2023-20938_FINAL_REPORT.md) — A concrete example of a Ring 3 → Ring 0 privilege escalation through the Android Binder kernel driver.
 
 ---
 

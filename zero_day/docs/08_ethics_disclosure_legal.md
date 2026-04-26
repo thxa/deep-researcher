@@ -392,6 +392,19 @@ The most effective career strategy combines several of these: compete in CTFs, p
 - **Van Buren v. United States**, 593 U.S. ___ (2021)
 - **DOJ Charging Policy for CFAA** (2022 revision)
 
+## References
+
+1. [CVE Program — Common Vulnerabilities and Exposures](https://www.cve.org/) — Standardized vulnerability identifier system
+2. [CVSS — Common Vulnerability Scoring System](https://www.first.org/cvss/) — Quantitative vulnerability severity measurement
+3. [ISO 29147 — Vulnerability Disclosure](https://www.iso.org/standard/72391.html) — International standard for vulnerability disclosure processes
+4. [ISO 30111 — Vulnerability Handling](https://www.iso.org/standard/69325.html) — International standard for vulnerability handling processes
+5. [CISA — Vulnerability Disclosure Policy](https://www.cisa.gov/vulnerability-disclosure-policy) — US Government VDP template and guidance
+6. [Bugcrowd — Vulnerability Disclosure Programs](https://www.bugcrowd.com/) — Coordinated vulnerability disclosure platform
+7. [HackerOne — Bug Bounty Platform](https://www.hackerone.com/) — Vulnerability coordination and bug bounty platform
+8. [C2 — Council to Secure the Digital Economy](https://www.c2sec.org/) — Vulnerability disclosure framework and best practices
+9. [EFF — CFAA Legal Guide](https://www.eff.org/issues/cfaa) — Computer Fraud and Abuse Act legal resource
+10. [NIST — Vulnerability Disclosure Framework](https://www.nist.gov/) — National vulnerability disclosure and coordination standards
+
 ---
 
 *This document is intended as a reference and does not constitute legal advice. Laws and policies change; consult qualified legal counsel for jurisdiction-specific guidance.*
