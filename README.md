@@ -1,6 +1,6 @@
 # deep-researcher
 
-> **~1.2 million words** of security research documentation across 8 interconnected tracks.
+> **~780,000 words** of security research documentation across **9 interconnected tracks** — 156 Markdown files.
 
 Document-first security research repository covering browser, operating system, and exploit-development topics. The repo is organized as long-form Markdown reports and chaptered notes rather than as an application or library codebase.
 
@@ -8,12 +8,13 @@ Document-first security research repository covering browser, operating system, 
 
 - 🌐 **Chromium** architecture and vulnerability research
 - 🐧 **Linux kernel** security research
-- 🍎 **macOS/XNU** architecture, exploitation, and mitigation research
+- 🍎 **macOS / XNU** architecture, exploitation, and mitigation research
 - 📱 **Android** architecture, vulnerability landscape, and CVE research
 - 💍 **CPU protection rings** — vulnerabilities and exploitation from userland to Ring −3
 - 🎯 **Zero-day** research and exploit development — fundamentals through advanced kernel exploitation
 - 🔬 **CVE-2023-20938** — a focused Android Binder use-after-free case study
 - 🎓 **OSEE / EXP-401** — study and reference material for the most advanced exploitation certification
+- 🧩 **Most Complex Exploit Ever** — cross-domain ranking of 80+ exploits; FORCEDENTRY, Stuxnet, and more
 
 ## What this repository is not
 
@@ -79,13 +80,19 @@ Practical exploit development for competition:
 
 From userland down to the Management Engine:
 
-> **ring_and_vulns** (Ring −3 to Ring 3全覆盖) → **linux_kernel** (kernel attack surface) → **MacOS** (Apple Silicon & Secure Enclave)
+> **ring_and_vulns** (Ring −3 to Ring 3 coverage) → **linux_kernel** (kernel attack surface) → **MacOS** (Apple Silicon & Secure Enclave)
 
 ### 🎓 OSEE Exam Preparation
 
 Structured preparation for the most advanced exploitation certification:
 
 > **OSEE** (curriculum overview & exam strategy) → **zero_day** (exploitation methodology) → **ring_and_vulns** (privilege rings context) → **linux_kernel** (kernel exploitation foundations)
+
+### 🧩 Exploit Complexity & Advanced Case Studies
+
+Study the most sophisticated exploits ever discovered across all domains:
+
+> **most_complex_exploit_ever** (80+ exploits ranked across 8 categories) → **zero_day** (exploitation curriculum) → **CVE-2023-20938** (deep-dive kernel UAF case study)
 
 ## Start here
 
@@ -101,60 +108,65 @@ If you are new to the repo, start with one of these entry documents:
 | CPU rings & vulnerabilities | 🔴 Advanced | [`ring_and_vulns/`](ring_and_vulns/) |
 | Zero-day research & exploit dev | 🟡→🔴 Progressive | [`zero_day/`](zero_day/) |
 | OSEE / EXP-401 | 🔴 Expert | [`OSEE/`](OSEE/) |
+| Most Complex Exploit Ever | 🔴 Advanced | [`most_complex_exploit_ever/FINAL_REPORT.md`](most_complex_exploit_ever/FINAL_REPORT.md) |
 
-Each directory has its own **README.md** with reading order, prerequisites, and estimated reading time.
+Each directory has its own **README.md** with reading order, prerequisites, and estimated reading time (except `most_complex_exploit_ever/`, which starts directly from its `FINAL_REPORT.md`).
 
 ## Repository structure
 
 ```
 deep-researcher/
-├── android_and_CVEs/           📱 Android architecture, security model, CVEs, patch management
-│   ├── README.md               Entry point, reading order, prerequisites
-│   ├── CHEATSHEET.md           Quick reference: ADB commands, CVEs, mitigations
-│   ├── FINAL_REPORT_...md      Main report (~95,500 words)
-│   └── docs/                   16 numbered chapter documents
+├── android_and_CVEs/                          📱 Android architecture, security model, CVEs, patch management
+│   ├── README.md                              Entry point, reading order, prerequisites
+│   ├── CHEATSHEET.md                          Quick reference: ADB commands, CVEs, mitigations
+│   ├── FINAL_REPORT_Android_Architecture...md  Main report (~78,700 words)
+│   └── docs/                                  16 numbered chapter documents (01a–08b)
 │
-├── Chromium_Architecture_and_Vulnerability/  🌐 Chrome internals, V8, sandboxing, exploit chains
+├── Chromium_Architecture_and_Vulnerability/   🌐 Chrome internals, V8, sandboxing, exploit chains
 │   ├── README.md
 │   ├── CHEATSHEET.md
 │   ├── Chromium_Architecture_and_Vulnerability_Report.md
-│   └── docs/                   20 numbered chapter documents
+│   └── docs/                                  20 numbered chapter documents (01–10b)
 │
-├── CVE-2023-20938/             🔬 Binder UAF deep-dive case study
+├── CVE-2023-20938/                            🔬 Binder UAF deep-dive case study
 │   ├── README.md
 │   ├── CHEATSHEET.md
 │   ├── CVE-2023-20938_FINAL_REPORT.md
-│   └── docs/                   12 numbered chapter documents
+│   └── docs/                                  12 numbered chapter documents (01–06b)
 │
-├── linux_kernel/               🐧 Largest track (~247,700 words): kernel security end-to-end
+├── linux_kernel/                              🐧 Kernel security end-to-end (~137,000 words)
 │   ├── README.md
 │   ├── CHEATSHEET.md
-│   └── docs/                   20 numbered chapter documents + FINAL_REPORT.md
+│   └── docs/                                  21 files: 20 numbered chapter docs (01a–10b) + FINAL_REPORT.md
 │
-├── MacOS/                      🍎 XNU, SIP, IOKit, malware, mitigations
+├── MacOS/                                     🍎 XNU, SIP, IOKit, malware, mitigations
 │   ├── README.md
 │   ├── CHEATSHEET.md
-│   └── docs/                   16 numbered chapter documents + FINAL_REPORT
+│   └── docs/                                  17 files: 16 numbered chapter docs (01a–08b) + FINAL_REPORT
 │
-├── ring_and_vulns/             💍 Ring 3 → Ring −3: vulnerabilities at every privilege level
+├── ring_and_vulns/                            💍 Ring 3 → Ring −3: vulnerabilities at every privilege level
 │   ├── README.md
 │   ├── CHEATSHEET.md
 │   ├── FULL_REPORT.md
-│   └── docs/                   12 topic-based chapter documents
+│   └── docs/                                  12 topic-based chapter documents (Ring −3 through Ring 3)
 │
-├── zero_day/                   🎯 Zero-day research & exploit dev curriculum
+├── zero_day/                                  🎯 Zero-day research & exploit dev curriculum
 │   ├── README.md
 │   ├── CHEATSHEET.md
-│   └── docs/                   12 numbered chapter documents + MASTER_REPORT
+│   └── docs/                                  13 chapter documents: 00_MASTER_REPORT + 01a through 08
 │
-├── OSEE/                       🎓 EXP-401 / OSEE certification prep
+├── OSEE/                                      🎓 EXP-401 / OSEE certification prep
 │   ├── README.md
 │   ├── CHEATSHEET.md
-│   └── docs/                   15 numbered chapter documents
+│   └── docs/                                  15 numbered chapter documents (01a–08b)
 │
-└── docs/                       📚 Cross-cutting reference material
-    ├── GLOSSARY.md             320+ term glossary across all tracks
-    └── TIMELINE.md             Chronological vulnerability & mitigation map
+├── most_complex_exploit_ever/                 🧩 Cross-domain ranking of the most sophisticated exploits
+│   ├── FINAL_REPORT.md                        Main report: FORCEDENTRY as #1, Stuxnet as top weapon
+│   └── docs/                                  6 research reports by domain (kernel, hardware, browser, crypto, supply chain, APT)
+│
+└── docs/                                      📚 Cross-cutting reference material
+    ├── GLOSSARY.md                            320+ term glossary across all tracks
+    └── TIMELINE.md                            Chronological vulnerability & mitigation map (1982–2026)
 ```
 
 ## How to navigate
@@ -176,7 +188,7 @@ This repository is most useful for:
 - Security engineers and defenders understanding attack surfaces and mitigations
 - CTF competitors building exploitation skills from intermediate to world-class
 - Advanced learners studying operating-system, browser, and vulnerability research topics
-- OSEE/EXP-401 candidates preparing for the certification exam
+- OSEE / EXP-401 candidates preparing for the certification exam
 
 Some sections assume familiarity with systems internals, debugging, exploit-development concepts, and security terminology. The **glossary** [`docs/GLOSSARY.md`](docs/GLOSSARY.md) covers 320+ specialized terms used throughout.
 
@@ -194,7 +206,12 @@ This repository contains dual-use security material, including discussion of vul
 
 ## Notes
 
-- This repo is a living reference collection of approximately **1.2 million words** across **131 Markdown files**.
+- This repo is a living reference collection of approximately **780,000 words** across **156 Markdown files** spanning 9 tracks.
 - Depth and document structure vary by topic. Some tracks are polished report sets; others are more handbook-like study material.
 - Tracks cross-reference each other. When a concept is covered more deeply in another track, you'll find a link.
 - Each directory's README provides prerequisites, estimated reading time, and a complete reading-order table.
+- The `most_complex_exploit_ever/` track starts directly from its [`FINAL_REPORT.md`](most_complex_exploit_ever/FINAL_REPORT.md) — no separate README.
+
+---
+
+**Repository:** [github.com/thxa/deep-researcher](https://github.com/thxa/deep-researcher)
