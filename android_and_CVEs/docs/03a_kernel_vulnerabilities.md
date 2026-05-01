@@ -491,3 +491,24 @@ Stage 6: Post-Exploitation
 *Document version: 1.0*
 *Last updated: April 2026*
 *Sources: NVD (NIST), Android Security Bulletins (Google), CISA KEV Catalog, Google Threat Analysis Group reports, Project Zero disclosures, Qualcomm Product Security Bulletins*
+
+## References
+
+1. Android Security Bulletins — https://source.android.com/security/bulletin
+2. NVD (National Vulnerability Database) — https://nvd.nist.gov/
+3. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+4. Android Security & Privacy Year in Review — https://security.googleblog.com/
+5. Google Project Zero, "Deleting Unsafe Code" and zero-day tracking — https://googleprojectzero.blogspot.com/
+6. Qualcomm Product Security Bulletins — https://www.qualcomm.com/products/product-security
+7. ARM Mali GPU Security Advisories — https://developer.arm.com/documentation/109870/latest
+8. Maddie Stone, "Zero-Click Exploits, One Year Later" (Project Zero) — https://googleprojectzero.blogspot.com/
+9. CVE-2019-2215 NVD Entry — https://nvd.nist.gov/vuln/detail/CVE-2019-2215
+10. CVE-2022-0847 (Dirty Pipe) — https://dirtypipe.cm4all.com/
+11. CVE-2016-5195 (Dirty COW) — https://nvd.nist.gov/vuln/detail/CVE-2016-5195
+12. Kaspersky Securelist: Mobile Threats — https://securelist.com/
+13. Linux Kernel Security — https://www.kernel.org/doc/html/latest/security/index.html
+14. Roden, M. "DirtyCred: Generic Escalation Technique." Black Hat USA, 2022.
+16. Linux Kernel. "KASAN Documentation." https://www.kernel.org/doc/html/latest/dev-tools/kasan.html. 2024.
+17. Matusiewicz, K. & Pęczkowski, M. "Dirty Page Tables: Unprivileged Memory Corruption." *Black Hat Europe*. 2024.
+18. Google Security Blog. "Eliminating Memory Safety Vulnerabilities at the Source." https://security.googleblog.com/. 2024.
+19. Google & Arm. "Raising The Bar on GPU Security." *Google Security Blog*. 2024.

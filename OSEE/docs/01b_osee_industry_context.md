@@ -414,3 +414,16 @@ For organizations that need exploit developers, vulnerability researchers, or ad
 ---
 
 *Document prepared as part of an OSEE study and research initiative. Information sourced from OffSec official documentation, OffSec Support Portal, Wikipedia, and industry analysis. Last updated April 2026.*
+
+## References
+
+1. Offensive Security, "OSEE Certification," https://www.offsec.com/courses/osee/
+2. Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
+3. SANS Institute, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+4. Mark Russinovich, David Solomon & Alex Ionescu, "Windows Internals," 7th Edition, Microsoft Press.
+5. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+6. MITRE ATT&CK Framework, https://attack.mitre.org/
+7. Microsoft Security Response Center (MSRC) Blog, https://msrc.microsoft.com/blog/
+8. (ISC)², "CCISO and CAP Certification Overview," https://www.isc2.org/
+9. CEH vs OSCP vs OSEE comparisons — various industry analyses (Pentest Magazine, InfoSec Institute)
+10. Offensive Security Support Portal, https://help.offsec.com/

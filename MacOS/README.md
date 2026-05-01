@@ -37,3 +37,18 @@ A deep technical exploration of macOS security internals — from the XNU hybrid
 - **[Linux Kernel](../linux_kernel/)** — Kernel architecture comparison (Monolithic vs. hybrid XNU)
 - **[Ring & Vulnerabilities](../ring_and_vulns/)** — Privilege levels and ring protection overlap with macOS kernel/user boundary
 - **[Zero-Day Exploit Development](../zero_day/)** — Advanced exploit development techniques applicable to macOS targets
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- XNU Source Code: https://opensource.apple.com/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- *The Art of Mac Malware* by Patrick Wardle (No Starch Press, 2022)
+- Ian Beer / Project Zero iOS/macOS Research: https://googleprojectzero.blogspot.com/
+- Kaspersky Operation Triangulation Report: https://securelist.com/operation-triangulation/109842/
+- Citizen Lab FORCEDENTRY Report: https://citizenlab.ca/2021/09/forcedentry-nso-group-iphone-zero-click-zero-day-exploit-captured-in-the-wild/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Objective-See Mac Security Tools: https://objective-see.org/
+- Apple Security Releases: https://support.apple.com/en-us/HT201222

@@ -175,3 +175,13 @@ Pre-2012:  ret2usr           → Direct user-code execution from ring 0
 2020-23:   CFI era           → Data-only attacks (DirtyCred, modprobe_path)
 2024+:     Full hardening    → Cross-cache, page-level, coprocessor exploitation
 ```
+
+## References
+
+- Robert Love, "Linux Kernel Development," 3rd Ed., Addison-Wesley, 2010
+- Linux Kernel Documentation, https://www.kernel.org/doc/html/latest/
+- KSPP (Kernel Self-Protection Project), https://kernsec.org/wiki/
+- Google Project Zero Blog, https://googleprojectzero.blogspot.com/
+- LWN.net, https://lwn.net/
+- NIST NVD, https://nvd.nist.gov/
+- Phrack Magazine, http://www.phrack.org/

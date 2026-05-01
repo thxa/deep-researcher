@@ -31,3 +31,16 @@ A comprehensive technical reference covering the x86/x86-64 privilege hierarchy 
 - [Zero-day exploit development](../zero_day/) — Exploitation techniques for 0-day vulnerability research
 - [CVE-2023-20938](../CVE-2023-20938/) — Kernel use-after-free case study (Ring 0)
 - [MacOS](../MacOS/) — macOS kernel exploit mitigations and comparison with Linux hardening
+## References
+
+- Intel 64 and IA-32 Architecture Software Developer's Manual. Intel Corporation.
+- AMD64 Architecture Programmer's Manual. AMD.
+- UEFI Specification, Version 2.10. Unified Extensible Firmware Interface Forum.
+- Rafal Wojtczuk, "Attacking Intel BIOS," coreboot/CHIPSEC research.
+- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018.
+- Kaspersky, "MoonBounce: Dark side of the UEFI bootkit," 2022.
+- Kaspersky, "CosmicStrand: Sophisticated UEFI bootkit," 2022.
+- Intel Management Engine research — Igor Skochinsky, Positive Technologies.
+- Positive Technologies, "Intel ME: Myths and Reality."
+- CVE-2015-3456 (VENOM) — QEMU Floppy Disk Controller Heap Overflow.
+- Android Security Bulletin — https://source.android.com/docs/security/bulletin

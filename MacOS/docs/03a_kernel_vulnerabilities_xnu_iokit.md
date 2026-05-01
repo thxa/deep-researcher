@@ -240,3 +240,16 @@ This transition fundamentally reduces the kernel attack surface. However, the ke
 ## Summary
 
 The XNU kernel presents a multifaceted attack surface spanning Mach IPC, BSD syscalls, IOKit drivers, and virtual memory management. Historical CVE patterns reveal recurring themes: reference counting errors in Mach ports and IOKit objects, integer overflows in size calculations, race conditions in concurrent object access, and type confusion in C++ dispatch. Apple's mitigations—including zone isolation (kalloc_type), PPL, KTRR, PAC, and the shift to DriverKit—have significantly raised the bar, but the fundamental complexity of a hybrid kernel ensures that the XNU attack surface remains an active area of vulnerability research.
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- XNU Source Code: https://opensource.apple.com/
+- Ian Beer / Project Zero: https://googleprojectzero.blogspot.com/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Apple Security Releases: https://support.apple.com/en-us/HT201222/
+- CVE Records: https://cve.mitre.org/
+- Pwn2Own macOS Exploitation Writeups: https://zerodayinitiative.com/blog/

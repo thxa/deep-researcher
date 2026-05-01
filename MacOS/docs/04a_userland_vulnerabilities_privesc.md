@@ -221,3 +221,15 @@ The `com.apple.security.cs.disable-library-validation` entitlement (or the absen
 5. **Validate launchd plists** — ensure `Program` paths are absolute, signed, and non-writable by unprivileged users.
 6. **Use `@loader_path`** instead of `@rpath` where possible and ensure all rpath search directories are non-writable.
 7. **Strip `DYLD_*` environment variables** in setuid contexts and enforce library validation.
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Patrick Wardle, *The Art of Mac Malware* (No Starch Press, 2022)
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- Ian Beer / Project Zero: https://googleprojectzero.blogspot.com/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Apple Security Releases: https://support.apple.com/en-us/HT201222/
+- Objective-See Research: https://objective-see.org/blog.html

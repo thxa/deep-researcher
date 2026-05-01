@@ -1238,3 +1238,18 @@ intelmetool -s   # Show ME status
 ---
 
 *Document version: 2025-04-26 | Author: Security Research Report | Classification: Technical Reference*
+## References
+
+- Intel 64 and IA-32 Architecture Software Developer's Manual, Volume 3B: Intel Corporation.
+- Intel Management Engine (ME) documentation — Intel Corporation. https://www.intel.com/content/www/us/en/support/articles/000026220/technologies.html
+- Igor Skochinsky, "Intel ME: Myths and Reality," REcon, Positive Technologies.
+- Positive Technologies, "Intel Management Engine: From Chipset to Exploitation." https://positive.tech/
+- Maxim Goryachy, Mark Ermolov, "How to Hack a Turned-Off Computer," Black Hat EU, 2017.
+- CVE-2017-5705 through CVE-2017-5715 — Intel-SA-00086. https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00086.html
+- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-carry-sednit/
+- AMD Platform Security Processor (PSP) documentation — AMD. https://developer.amd.com/
+- me_cleaner — Tool for disabling Intel ME. https://github.com/corna/me_cleaner
+- CHIPSEC — Platform Security Assessment Framework. https://chipsec.github.io/
+- Intel Active Management Technology (AMT) — https://www.intel.com/content/www/us/en/architecture-and-technology/intel-active-management-technology.html
+- Nikolay Ermishkin, "Intel ME Vulnerabilities," 2017.
+- Ron Minnich, "The Intel ME: An Overview," Google.

@@ -247,3 +247,15 @@ The SSV means that even with root access and SIP disabled, directly modifying th
 ## Summary
 
 XNU's hybrid architecture — Mach's capability-based IPC and VM primitives, BSD's battle-tested POSIX layer, and IOKit's object-oriented driver model — creates a complex kernel with multiple interacting subsystems. Each boundary between these subsystems (Mach trap handlers, BSD syscall entries, IOKit external methods, MIG-generated dispatch routines) represents a distinct attack surface with its own class of potential vulnerabilities. Understanding the architecture at this level is a prerequisite for both defending and auditing macOS at the kernel level.
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- XNU Source Code: https://opensource.apple.com/
+- Ian Beer / Project Zero macOS Research: https://googleprojectzero.blogspot.com/
+- Apple Developer Documentation — Kernel Framework: https://developer.apple.com/documentation/kernel/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- CVE Records: https://cve.mitre.org/

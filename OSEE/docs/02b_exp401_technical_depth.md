@@ -1405,3 +1405,21 @@ Students must:
 ---
 
 *This document was compiled for OSEE certification preparation. The techniques described are intended for authorized security research and educational purposes only. Unauthorized exploitation of computer systems is illegal.*
+
+## References
+
+1. Offensive Security. "EXP-401: Advanced Windows Exploitation." https://www.offsec.com/courses/exp-401/. 2024.
+2. Russinovich, M. et al. "Windows Internals." 7th Ed. *Microsoft Press*. 2021.
+3. Schenck, M. "Swimming In The (Kernel) Pool." *Black Hat USA*. 2021.
+4. Shafir, Y. & Bayet, C. "Scoop the Windows 10 Pool!" *Black Hat USA*. 2021.
+5. Mandt, T. "Kernel Pool Exploitation on Windows 7." *Black Hat DC*. 2011.
+6. j00ru (Jurczyk, M.). "One Font Vulnerability to Rule Them All." *Google Project Zero*. 2015.
+7. McGarr, C. "Windows Kernel Exploitation." https://connormcgarr.github.io/. 2024.
+8. Corelan Team. "Exploit Writing Tutorials." https://www.corelan.be/. 2024.
+9. HackSysTeam. "HackSys Extreme Vulnerable Driver (HEVD)." https://github.com/hacksysteam/HackSysExtremeVulnerableDriver. 2024.
+10. Microsoft. "WinDbg Documentation." https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/. 2024.
+11. LOLDrivers Project. "Bring Your Own Vulnerable Driver." https://www.loldrivers.io/. 2024.
+12. Perla, E. & Oldani, M. "A Guide to Kernel Exploitation: Attacking the Core." *Syngress*. 2010.
+13. FuzzySecurity. "Windows Exploitation Tutorials." https://www.fuzzysecurity.com/. 2024.
+14. SANS. "SEC760: Advanced Exploit Development." https://www.sans.org/cyber-security-courses/advanced-exploit-development/. 2024.
+15. MITRE. "ATT&CK: Privilege Escalation Techniques." https://attack.mitre.org/techniques/enterprise/. 2024.

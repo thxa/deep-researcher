@@ -1081,3 +1081,18 @@ The fundamental challenge is that UAF is one symptom of the broader problem of *
 17. **grsecurity**, "How AUTOSLAB Changes the Memory Unsafety Game," 2022. Discussion of slab isolation improvements.
 
 18. **duasynt**, "Linux kernel heap feng shui in 2022," 2022. Comprehensive guide to heap manipulation including CONFIG_MEMCG_KMEM effects.
+
+## References
+
+1. CVE-2022-29582. "io_uring UAF in timeout handling." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2022-29582. 2022.
+2. CVE-2023-32233. "UAF in nf_tables anonymous sets." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-32233. 2023.
+3. CVE-2021-4159. "io_uring UAF." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2021-4159. 2021.
+4. CVE-2023-0266. "ALSA PCM sound timer UAF." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-0266. 2023.
+5. Roden, M. "DirtyCred: Generic Escalation Technique." *Black Hat USA*. 2022.
+6. Matusiewicz, K. & Pęczkowski, M. "Dirty Page Tables: Unprivileged Memory Corruption." *Black Hat Europe*. 2024.
+7. Bhattacharya, P. "Linux Kernel Exploit Development — SLUB Allocator Internals." *Phrack*. 2021.
+8. Linux Kernel Documentation. "KASAN." https://www.kernel.org/doc/html/latest/dev-tools/kasan.html. 2024.
+9. Linux Kernel Documentation. "KFENCE." https://www.kernel.org/doc/html/latest/dev-tools/kfence.html. 2024.
+10. Serebryany, K. et al. "AddressSanitizer: A Fast Memory Error Detector." *USENIX ATC*. 2012.
+11. Google. "syzkaller: Kernel Fuzzer." https://github.com/google/syzkaller. 2024.
+12. Linux Kernel Documentation. "Slub Freelist Hardening." https://www.kernel.org/doc/html/latest/mm/slab_debug.html. 2024.

@@ -765,3 +765,18 @@ No entries for Y.
 ---
 
 *Last updated: 2026-04-26 | 295 entries*
+
+---
+
+## References
+
+- MITRE CWE — https://cwe.mitre.org/
+- NVD — https://nvd.nist.gov/
+- OWASP — https://owasp.org/
+- Intel 64 and IA-32 Architecture Software Developer's Manual — Intel Corporation
+- ARM Architecture Reference Manual (ARMv8-A) — ARM Holdings
+- Linux Kernel documentation — https://www.kernel.org/doc/html/latest/
+- Android Security documentation — https://source.android.com/security
+- Apple Platform Security Guide — https://support.apple.com/guide/security/welcome/web
+- Chromium design documents — https://chromium.googlesource.com/chromium/src/+/main/docs/
+- Windows Internals (7th Ed.) — Russinovich, M. & Solomon, D., Microsoft Press, 2021

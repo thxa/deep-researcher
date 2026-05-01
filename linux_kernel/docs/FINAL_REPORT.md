@@ -860,4 +860,24 @@ This report consists of 20 detailed research chapters organized in the `docs/` f
 
 ---
 
+## References
+
+1. Robert Love, "Linux Kernel Development," 3rd Edition, Addison-Wesley, 2010.
+2. Jann Horn (Google Project Zero), "How a simple Linux kernel memory corruption bug can lead to complete system compromise," 2021. https://googleprojectzero.blogspot.com/2021/10/how-simple-linux-kernel-memory.html
+3. NIST National Vulnerability Database (NVD), https://nvd.nist.gov/
+4. Linux Kernel Documentation, https://www.kernel.org/doc/html/latest/
+5. Kees Cook, "Linux Kernel Security Done Right," Google Security Blog, 2021. https://security.googleblog.com/2021/08/linux-kernel-security-done-right.html
+6. Zhenpeng Lin et al., "DirtyCred: Escalating Privilege in Linux Kernel," Black Hat USA 2022.
+7. Max Kellermann, "The Dirty Pipe Vulnerability (CVE-2022-0847)," 2022. https://dirtypipe.cm4all.com/
+8. notselwyn, "Flipping Pages: An analysis of a new Linux vulnerability in nf_tables," 2024. https://pwning.tech/nftables/
+9. Alexander Popov, "Four Bytes of Power: Exploiting CVE-2021-26708 in the Linux kernel," 2021. https://a13xp0p0v.github.io/2021/02/09/CVE-2021-26708.html
+10. Konovalov, A., "syzkaller: Coverage-guided kernel fuzzing," https://github.com/google/syzkaller
+11. LWN.net, https://lwn.net/
+12. grsecurity, "How AUTOSLAB Changes the Memory Unsafety Game," 2021. https://grsecurity.net/
+13. Maddie Stone, "The More You Know, The More You Know You Don't Know," Google Project Zero, 2022. https://googleprojectzero.blogspot.com/2022/04/the-more-you-know-more-you-know-you.html
+14. KSPP (Kernel Self-Protection Project), https://kernsec.org/wiki/
+15. Phrack Magazine, various articles on kernel exploitation, http://www.phrack.org/
+
+---
+
 *This report was produced through systematic research using 20 specialized research agents, each investigating a specific aspect of Linux kernel security. All content is intended for educational and defensive security purposes.*

@@ -699,3 +699,21 @@ The March 2020 patch addressed the vulnerability by:
 4. **OEM customizations** (Samsung Qmage, Certifi-gate, Samsung Phone app) consistently introduce vulnerabilities absent from stock Android. The Android security team has expanded CTS (Compatibility Test Suite) security requirements and encouraged OEMs to minimize custom native code.
 
 5. **The patching gap** remains the most persistent challenge. MediaTek-SU was publicly known for 14 months before appearing in an official Android Security Bulletin. Project Mainline (APEX modules) and GKI aim to decouple critical security components from OEM update cycles, allowing Google to deliver fixes directly through Play System Updates.
+
+## References
+
+1. Android Security Bulletins — https://source.android.com/security/bulletin
+2. NVD (National Vulnerability Database) — https://nvd.nist.gov/
+3. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+4. Josh Drake, Stagefright disclosure (Black Hat 2015) — https://www.blackhat.com/us-15/briefings.html
+5. CVE-2015-1538 (Stagefright) NVD Entry — https://nvd.nist.gov/vuln/detail/CVE-2015-1538
+6. CVE-2016-5195 (Dirty COW) — https://nvd.nist.gov/vuln/detail/CVE-2016-5195
+7. CVE-2022-0847 (Dirty Pipe) — https://dirtypipe.cm4all.com/
+8. CVE-2017-13156 (Janus) NVD Entry — https://nvd.nist.gov/vuln/detail/CVE-2017-13156
+9. Google Project Zero, NSO Group / Pegasus research — https://googleprojectzero.blogspot.com/
+10. Amnesty International Security Lab, Pegasus forensic analysis — https://securitylab.amnesty.org/
+11. Kaspersky Securelist: Mobile Threats — https://securelist.com/
+12. Qualcomm Product Security Bulletins — https://www.qualcomm.com/products/product-security
+13. Android Security & Privacy Year in Review — https://security.googleblog.com/
+14. Artenstein, N. "Broadpwn: Remotely Compromising Android and iOS via Broadcom Wi-Fi." Black Hat USA, 2017.
+15. Drake, J. "Stagefright: Scary Code in the Heart of Android." Black Hat USA, 2015.

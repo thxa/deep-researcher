@@ -178,3 +178,16 @@ The macOS userland attack surface is broad and multi-layered. Browser exploitati
 ---
 
 *Document version 1.0 — macOS Userland Application & IPC Vulnerability Research*
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Patrick Wardle, *The Art of Mac Malware* (No Starch Press, 2022)
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- WebKit Security Documentation: https://webkit.org/
+- Ian Beer / Project Zero: https://googleprojectzero.blogspot.com/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Apple XPC Documentation: https://developer.apple.com/documentation/xpc/
+- Objective-See Research: https://objective-see.org/blog.html

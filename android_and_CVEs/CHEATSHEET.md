@@ -187,3 +187,20 @@ adb shell ss -tlnp                                 # Listening TCP sockets
 - [ ] **HAL processes** — HIDL/AIDL interfaces; stepping stones from framework to kernel
 - [ ] **TEE/TrustZone** — Keymaster, Gatekeeper; targeted via side-channels and fault injection
 - [ ] **Bootloader** — EDL/Download mode; forensic extraction and bypass vector
+
+## References
+
+1. Android Security Overview — https://source.android.com/security
+2. Android Security Bulletins — https://source.android.com/security/bulletin
+3. Android SELinux Documentation — https://source.android.com/docs/security/features/selinux
+4. Android Verified Boot (AVB) — https://source.android.com/docs/security/features/verifiedboot
+5. Android GKI Documentation — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image
+6. NVD (National Vulnerability Database) — https://nvd.nist.gov/
+7. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+8. Google Project Zero Blog — https://googleprojectzero.blogspot.com/
+9. Android Kernel Config Hardening — https://source.android.com/docs/security/features/kernel
+10. Android Control-Flow Integrity — https://source.android.com/docs/security/features/cfi
+11. ARM MTE Documentation — https://developer.arm.com/documentation/109870/latest
+12. Project Treble — https://source.android.com/docs/core/architecture/treble
+13. CVE-2022-0847 (Dirty Pipe) — https://dirtypipe.cm4all.com/
+

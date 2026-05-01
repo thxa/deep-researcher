@@ -1279,6 +1279,19 @@ lockdown constraints.
 
 ---
 
-*Sources: Linux kernel documentation (docs.kernel.org), Intel SDM, ARM Architecture
-Reference Manual, kernel source (security/, arch/x86/, arch/arm64/), Android
-Open Source Project documentation, distribution kernel config files.*
+## References
+
+1. Intel Control-flow Enforcement Technology (CET) Specification, https://www.intel.com/content/www/us/en/en/develop/articles/control-flow-enforcement-technology.html
+2. ARM Architecture Reference Manual, ARMv8-A, https://developer.arm.com/documentation/
+3. Intel 64 and IA-32 Architectures Software Developer's Manual, https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
+4. Linux Kernel Documentation — Security Self-Protection, https://www.kernel.org/doc/html/latest/security/self-protection.html
+5. Kees Cook, "Kernel Self-Protection Project," https://kernsec.org/wiki/
+6. Google Project Zero, "Mitigations are attack surface, too," Jann Horn, 2020. https://googleprojectzero.blogspot.com/2020/02/mitigations-are-attack-surface-too.html
+7. KASAN Documentation, https://www.kernel.org/doc/html/latest/dev-tools/kasan.html
+8. KSAN (Kernel Sanitizers), https://www.kernel.org/doc/html/latest/dev-tools/index.html
+9. grsecurity/PaX Documentation, https://grsecurity.net/
+10. Android Open Source Project — Kernel Configs, https://source.android.com/docs/core/architecture/kernel
+11. Canonical Ubuntu Kernel Security Features, https://wiki.ubuntu.com/Security/Features
+12. Red Hat Enterprise Linux — Kernel Hardening, https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/
+13. Mohan Kumar & Sharan Sanjay, "ARM Memory Tagging Extension and Its Impact on Security," ARM, 2020.
+14. Koczka, T., "Learnings from kCTF VRP's 42 Linux kernel exploits submissions," Google Security Blog, 2023. https://security.googleblog.com/2023/06/learnings-from-kctf-vrps-42-linux.html

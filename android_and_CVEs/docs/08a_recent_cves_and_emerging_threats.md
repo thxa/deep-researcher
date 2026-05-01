@@ -362,3 +362,21 @@ Upcoming and ongoing kernel hardening efforts include:
 10. Palo Alto Unit 42, "Landfall: New Commercial-Grade Android Spyware," November 2025.
 11. Android Security Bulletins 2023-2026, source.android.com.
 12. Alexopoulos et al., "How Long Do Vulnerabilities Live in the Code?" USENIX Security 2022.
+
+## References
+
+1. Google Project Zero. "A 0-click exploit chain for the Pixel 9." *Google Project Zero Blog*. 2026.
+2. Google Project Zero. "A look at an Android ITW DNG exploit." *Google Project Zero Blog*. 2025.
+3. CISA. "Known Exploited Vulnerabilities Catalog." https://www.cisa.gov/known-exploited-vulnerabilities-catalog. 2026.
+4. Google Security Blog. "Google & Arm — Raising The Bar on GPU Security." https://security.googleblog.com/. 2024.
+5. Google Security Blog. "Eliminating Memory Safety Vulnerabilities at the Source." https://security.googleblog.com/. 2024.
+6. Qualcomm. "Qualcomm Product Security Bulletins." https://www.qualcomm.com/products/product-security. 2024.
+7. Arm. "Arm Security Bulletins." https://developer.arm.com/support/Arm-Security-Center. 2024.
+8. Samsung. "Samsung Mobile Security Updates." https://security.samsungmobile.com/. 2024.
+9. Palo Alto Unit 42. "Landfall: New Commercial-Grade Android Spyware." 2025.
+10. NIST. "National Vulnerability Database (NVD)." https://nvd.nist.gov/. 2024.
+11. Amnesty International Security Lab. "Pegasus Project Technical Analysis." *Amnesty International*. 2021.
+12. Google Project Zero. "Defeating KASLR by Doing Nothing at All." *Google Project Zero Blog*. 2025.
+13. Google. "Android Security Bulletins (2015–2026)." https://source.android.com/security/bulletin. 2024.
+14. CVE-2024-43047. "Qualcomm DSP FASTRPC UAF." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2024-43047. 2024.
+15. CVE-2025-54957. "Dolby Unified Decoder vulnerability." *Google Project Zero*. 2026.

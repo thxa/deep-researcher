@@ -36,3 +36,14 @@ A comprehensive zero-day vulnerability research and exploit development curricul
 - [Ring & Vulnerabilities](../ring_and_vulns/) — Privilege ring architecture and hardware-enforced security boundaries
 - [Chromium](../Chromium_Architecture_and_Vulnerability/) — Browser exploitation, V8, sandbox escapes
 - [OSEE](../OSEE/) — Advanced exploitation certification preparation (CREST OSWE/OSEE level)
+## References
+
+- Project Zero Blog — Google. https://googleprojectzero.blogspot.com/
+- "A Guide to Kernel Exploitation," Enno Rey, ERNW / DEF CON
+- "Return-Oriented Programming: Systems, Languages, and Applications," Roemer et al., University of California, San Diego, 2012
+- "Fuzzing: Brute Force Vulnerability Discovery," Sutton et al., McGraw-Hill, 2007
+- Pwn College, Arizona State University. https://pwn.college/
+- MITRE CWE — Common Weakness Enumeration. https://cwe.mitre.org/
+- NVD — National Vulnerability Database. https://nvd.nist.gov/
+- CVE records as cited throughout the corpus
+- Various vulnerability research blog posts and conference proceedings (DEF CON, Black Hat, CCC)

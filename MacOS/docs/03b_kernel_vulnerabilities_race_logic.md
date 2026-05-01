@@ -174,3 +174,15 @@ DriverKit's isolation guarantees have practical limitations:
 ## Summary
 
 The XNU kernel's attack surface spans Mach IPC, filesystem parsing, network protocol handling, and driver interfaces. Race conditions exploit the gap between validation and use across XNU's multi-core execution model. Logic bugs bypass security checks without corrupting memory, making them invisible to traditional mitigations like KASAN or PAC. DriverKit reduces but does not eliminate the kernel's exposure to driver bugs. The ongoing migration of subsystems out of the kernel, combined with hardware-enforced isolation (PPL, IOMMU/DART, PAC), progressively shrinks the exploitable surface — but the kernel's inherent complexity ensures that each new feature introduces new attack vectors requiring continuous analysis.
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- XNU Source Code: https://opensource.apple.com/
+- Ian Beer / Project Zero: https://googleprojectzero.blogspot.com/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Apple Security Releases: https://support.apple.com/en-us/HT201222/
+- CVE Records: https://cve.mitre.org/

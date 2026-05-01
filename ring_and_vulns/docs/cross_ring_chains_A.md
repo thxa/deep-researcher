@@ -1832,3 +1832,21 @@ is_anomalous = clf.predict(features)
 ---
 
 *This document is intended for authorized security research and defensive purposes only. The techniques described are documented to enable defenders to understand and mitigate cross-ring attacks.*
+
+## References
+
+1. Intel. "Intel 64 and IA-32 Architectures Software Developer's Manual, Volume 3." *Intel*. 2024.
+2. AMD. "AMD64 Architecture Programmer's Manual, Volume 2." *AMD*. 2023.
+3. Russinovich, M. et al. "Windows Internals." 7th Ed. *Microsoft Press*. 2021.
+4. Love, R. "Linux Kernel Development." 3rd Ed. *Addison-Wesley*. 2010.
+5. Rutkowska, J. "Intel x86 Considered Harmful." *Black Hat USA*. 2006.
+6. Lipp, M. et al. "Meltdown: Reading Kernel Memory from User Space." *USENIX Security*. 2018.
+7. Kocher, P. et al. "Spectre Attacks: Exploiting Speculative Execution." *IEEE S&P*. 2019.
+8. CVE-2022-0847. "Dirty Pipe: stale PIPE_BUF_FLAG_CAN_MERGE." *NVD*. 2022.
+9. CVE-2016-5195. "Dirty COW: race condition in mm/gup.c." *NVD*. 2016.
+10. Roden, M. "DirtyCred: Generic Escalation Technique." *Black Hat USA*. 2022.
+11. Matusiewicz, K. & Pęczkowski, M. "Dirty Page Tables: Unprivileged Memory Corruption." *Black Hat Europe*. 2024.
+12. Triplett, D. "Survey of Remote Attestation Techniques." 2022.
+13. skape. "A Guide to Kernel Exploitation: Attacking the Core." *Phrack*. 2007.
+14. MITRE. "ATT&CK: Privilege Escalation Techniques." https://attack.mitre.org/techniques/enterprise/. 2024.
+15. Perla, E. & Oldani, M. "A Guide to Kernel Exploitation: Attacking the Core." *Syngress*. 2010.

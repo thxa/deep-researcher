@@ -476,3 +476,20 @@ Reports with a complete, functional exploit chain and a high-quality writeup rec
 13. MobSF: https://github.com/MobSF/Mobile-Security-Framework-MobSF
 14. NISTIR 8144 — Guidelines for Smart Grid Cyber Security (2016): NIST Interagency Report on smart grid cybersecurity approach
 15. Google Android VRP Rules: https://bughunters.google.com/
+
+## References
+
+1. Google. "Android Security Overview." https://source.android.com/security. 2024.
+2. OWASP. "OWASP MASVS v2.0." https://mas.owasp.org/MASVS/. 2024.
+3. OWASP. "OWASP MASTG." https://mas.owasp.org/MASTG/. 2024.
+4. CIS. "CIS Benchmark for Android." https://www.cisecurity.org/benchmark/google_android. 2024.
+5. NIST. "SP 800-124 Rev. 2: Guidelines for Managing the Security of Mobile Devices." https://csrc.nist.gov/publications/detail/sp/800-124/rev-2/final. 2020.
+6. NIST. "SP 800-163 Rev. 1: Vetting the Security of Mobile Applications." https://csrc.nist.gov/publications/detail/sp/800-163/rev-1/final. 2015.
+7. Google. "Android Keystore System." https://developer.android.com/training/articles/keystore. 2024.
+8. Google. "Network Security Configuration." https://developer.android.com/training/articles/security-config. 2024.
+9. Google. "Play Integrity API." https://developer.android.com/google/play/integrity. 2024.
+10. Frida. "Dynamic Instrumentation Toolkit." https://frida.re/. 2024.
+11. MobSF. "Mobile Security Framework." https://github.com/MobSF/Mobile-Security-Framework-MobSF. 2024.
+12. Google. "Android Vulnerability Rewards Program." https://bughunters.google.com/. 2024.
+13. Strazzere, T. "Android Security Internals: Digging into the Android OS." *No Starch Press*. 2014.
+14. Drake, J. & Lanier, Z. "Android Hacker's Handbook." *Wiley*. 2014.

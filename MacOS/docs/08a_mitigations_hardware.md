@@ -159,3 +159,17 @@ All signed applications on macOS must opt into the Hardened Runtime, which enabl
 ### T2 vs. Integrated Secure Enclave
 
 The T2 chip on 2018–2020 Intel Macs was a discrete Apple silicon chip (based on A10) handling SSD encryption, secure boot, and sensor processing. Communication between the Intel CPU and T2 occurred over an internal PCIe link, introducing latency and a probeable hardware interface. On Apple Silicon, the SEP is on-die with a direct fabric interconnect — lower latency, no external bus to probe, and a tighter trust boundary. The T2 ran bridgeOS (a watchOS variant), while Apple Silicon's SEP runs sepOS directly, reducing firmware complexity and attack surface.
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- Ian Beer / Project Zero — PAC and Hardware Exploitation Research: https://googleprojectzero.blogspot.com/
+- ARM Architecture Reference Manual (ARMv8-A): https://developer.arm.com/documentation/
+- Kaspersky Operation Triangulation: https://securelist.com/operation-triangulation/109842/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Apple Security Releases: https://support.apple.com/en-us/HT201222/
+- PACMAN Attack (MIT): https://gdao118.github.io/pacman_attack/
+- CTFech — Apple Silicon Security: https://cft2e.github.io/

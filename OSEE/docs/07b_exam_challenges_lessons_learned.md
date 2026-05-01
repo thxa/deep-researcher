@@ -1192,3 +1192,16 @@ On exam morning:
 from OSEE holders, and established best practices for endurance-based technical
 examinations. All official exam policies should be verified against the current exam guide
 at `https://help.offsec.com/hc/en-us/articles/360046458732` as policies may change.*
+
+## References
+
+1. Offensive Security, "OSEE Exam Guide," https://help.offsec.com/hc/en-us/articles/360046458732
+2. Offensive Security, "EXP-401 FAQ," https://www.offsec.com/courses/exp-401/
+3. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
+4. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+5. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
+6. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
+7. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+8. Offensive Security, "Proctored Exam Requirements FAQ," https://help.offsec.com/hc/en-us/
+9. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+10. j00ru (Mateusz Jurczyk), Windows Kernel Research, https://j00ru.vexillium.org/

@@ -1500,3 +1500,16 @@ Start with Phase 1. Do every exercise. Build every exploit. Break every HEVD vul
 
 *Last updated: April 2026*
 *Note: Course pricing, exam policies, and technical details may change. Always verify current information with OffSec directly at offsec.com.*
+
+## References
+
+1. Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
+2. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+3. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
+4. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
+5. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+6. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
+7. Microsoft, "WinDbg Documentation," https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
+8. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+9. FuzzySecurity, "Windows Exploitation Tutorials," https://www.fuzzysecurity.com/
+10. RedPill, "Windows Kernel Exploitation," https://redpill-lab0.net/

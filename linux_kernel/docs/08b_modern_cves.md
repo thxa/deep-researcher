@@ -775,3 +775,16 @@ The role of kernel vulnerabilities in attack chains has driven specific defensiv
 ---
 
 *Last updated: April 2026. This document covers publicly disclosed vulnerabilities and exploitation techniques for educational and defensive security purposes.*
+
+## References
+
+1. CVE-2024-1086. "Double-free in nft_verdict_init() enables universal LPE." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2024-1086. 2024.
+2. CVE-2022-0847. "Dirty Pipe: stale PIPE_BUF_FLAG_CAN_MERGE." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2022-0847. 2022.
+3. CVE-2023-32233. "UAF in nf_tables anonymous sets." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-32233. 2023.
+4. CVE-2022-29582. "io_uring UAF in timeout handling." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2022-29582. 2022.
+5. Roden, M. "DirtyCred: Generic Escalation Technique." *Black Hat USA*. 2022.
+6. Matusiewicz, K. & Pęczkowski, M. "Dirty Page Tables: Unprivileged Memory Corruption." *Black Hat Europe*. 2024.
+7. Kellermann, M. "The Dirty Pipe Vulnerability." https://dirtypipe.cm4all.com/. 2022.
+8. Google. "syzkaller: Kernel Fuzzer." https://github.com/google/syzkaller. 2024.
+9. NIST. "National Vulnerability Database." https://nvd.nist.gov/. 2024.
+10. Google Project Zero. "0-day 'In the Wild' Database." https://googleprojectzero.blogspot.com/p/0day-in-wild.html. 2024.

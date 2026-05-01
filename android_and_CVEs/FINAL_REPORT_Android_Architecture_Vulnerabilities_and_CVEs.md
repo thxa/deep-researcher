@@ -772,3 +772,23 @@ This report synthesizes findings from 16 specialized research documents totaling
 ---
 
 *Report compiled from research conducted by 16 specialized agents. All CVE data sourced from NVD, Google Android Security Bulletins, Google TAG/Project Zero publications, and vendor security advisories.*
+
+## References
+
+1. Android Security Overview — https://source.android.com/security
+2. Android Security Bulletins — https://source.android.com/security/bulletin
+3. NVD (National Vulnerability Database) — https://nvd.nist.gov/
+4. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+5. Google Project Zero Blog — https://googleprojectzero.blogspot.com/
+6. Kaspersky Securelist: Mobile Threats — https://securelist.com/
+7. Android GKI Documentation — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image
+8. Android SELinux — https://source.android.com/docs/security/features/selinux
+9. ARM Mali GPU Security Advisories — https://developer.arm.com/documentation/109870/latest
+10. Qualcomm Product Security Bulletins — https://www.qualcomm.com/products/product-security
+11. Maddie Stone / Project Zero Android Research — https://googleprojectzero.blogspot.com/
+12. Android Security & Privacy Year-in-Review — https://security.googleblog.com/
+13. Citizen Lab, University of Toronto — https://citizenlab.ca/
+14. Amnesty International Security Lab — https://securitylab.amnesty.org/
+15. Android Verified Boot (AVB) — https://source.android.com/docs/security/features/verifiedboot
+
+

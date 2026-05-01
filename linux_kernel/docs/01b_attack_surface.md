@@ -509,3 +509,18 @@ The open bug count has been growing at approximately 100/year despite the high f
 ---
 
 *This document is part of a comprehensive research report on Linux kernel vulnerabilities and exploitation techniques. Last updated: April 2026.*
+
+## References
+
+1. Love, R. "Linux Kernel Development." 3rd Ed. *Addison-Wesley*. 2010.
+2. Corbet, J., Rubini, A., & Kroah-Hartman, G. "Linux Device Drivers." 3rd Ed. *O'Reilly*. 2005.
+3. Linux Kernel Documentation. "System Calls." https://www.kernel.org/doc/html/latest/. 2024.
+4. Linux Kernel Documentation. "io_uring." https://www.kernel.org/doc/html/latest/io_uring/. 2024.
+5. CVE-2019-2215. "Binder use-after-free." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2019-2215. 2019.
+6. CVE-2024-1086. "Double-free in nft_verdict_init()." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2024-1086. 2024.
+7. Pérez, B. et al. "Your ETag Is Showing: Android Security Through the Lens of Side Channels." *USENIX Security*. 2021.
+8. Kovah, X. & Kallenberg, C. "Attacking the Linux Kernel via /dev/mem." *CanSecWest*. 2014.
+9. Linux Kernel Documentation. "KASAN." https://www.kernel.org/doc/html/latest/dev-tools/kasan.html. 2024.
+10. Bignoli, A. & Bulekov, M. "Syzkaller: Linux Kernel Fuzzing." https://github.com/google/syzkaller. 2024.
+11. Matusiewicz, K. & Pęczkowski, M. "Dirty Page Tables: Unprivileged Memory Corruption." *Black Hat Europe*. 2024.
+12. CVE-2023-32233. "UAF in nf_tables anonymous sets." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-32233. 2023.

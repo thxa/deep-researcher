@@ -1523,3 +1523,16 @@ _SEP_TOKEN_PRIVILEGES:
 *Document version: 1.0 — April 2026*
 *Applicable to: Windows 10 21H2 through Windows 11 24H2*
 *OSEE Exam Relevance: High — covers all major mitigation bypass strategies tested in current curriculum*
+
+## References
+
+1. Microsoft, "Virtualization-based Security (VBS)," https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/virtualization-based-security
+2. Microsoft, "Hypervisor-Protected Code Integrity (HVCI)," https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/
+3. Intel, "Control-flow Enforcement Technology (CET) Specification," https://www.intel.com/content/www/us/en/developer/articles/technical/control-flow-enforcement-technology.html
+4. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
+5. Yarden Shafir, "Beyond the Edge: HVCI and Kernel Exploitation Defenses," OffSec, 2023.
+6. Connor McGarr, "Windows Kernel Exploitation: CFG and Beyond," https://connormcgarr.github.io/
+7. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+8. MITRE ATT&CK — Windows Mitigation Bypass Techniques, https://attack.mitre.org/techniques/enterprise/
+9. Microsoft Security Response Center (MSRC) Blog, https://msrc.microsoft.com/blog/
+10. "Bring Your Own Vulnerable Driver (BYOVD)" research — LOLDrivers Project, https://www.loldrivers.io/

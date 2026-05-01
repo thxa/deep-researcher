@@ -36,3 +36,16 @@ A comprehensive security research track covering Android's layered architecture,
 ## Quick Reference
 
 See [`CHEATSHEET.md`](CHEATSHEET.md) for ADB commands, key CVEs, mitigation configs, and attack surface checklists.
+
+## References
+
+1. Android Security Overview — https://source.android.com/security
+2. Android Security Bulletins — https://source.android.com/security/bulletin
+3. Android Security & Privacy 2024 Year in Review — https://security.googleblog.com/2025/02/android-security-privacy-2024-year-in.html
+4. Google Project Zero Blog — https://googleprojectzero.blogspot.com/
+5. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
+6. NVD (National Vulnerability Database) — https://nvd.nist.gov/
+7. Android Generic Kernel Image (GKI) — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image
+8. Android Security Rewards Program — https://bughunters.google.com/
+9. Kaspersky Securelist: Mobile Threat Reports — https://securelist.com/
+10. Citizen Lab, University of Toronto — https://citizenlab.ca/

@@ -631,10 +631,16 @@ Understanding this architecture is fundamental to evaluating kernel vulnerabilit
 
 ---
 
-*References and Sources:*
-- Linux kernel documentation: kernel.org/doc/html/latest/
-- Linux kernel source: git.kernel.org (Documentation/x86/x86_64/mm.txt)
-- LWN.net: "Anatomy of a system call" (David Drysdale, 2014)
-- Linux kernel self-protection project documentation
-- Wikipedia: "Linux kernel", "Microkernel"
-- Asia-Pacific Systems Conference 2018: Microkernel CVE analysis study
+## References
+
+1. Robert Love, "Linux Kernel Development," 3rd Edition, Addison-Wesley, 2010.
+2. Linux Kernel Documentation, https://www.kernel.org/doc/html/latest/
+3. Linux Kernel Source Tree, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+4. David Drysdale, "Anatomy of a system call," LWN.net, 2014. https://lwn.net/Articles/604515/
+5. Linux Kernel Self-Protection Project (KSPP), https://kernsec.org/wiki/
+6. Daniel P. Bovet & Marco Cesati, "Understanding the Linux Kernel," 3rd Edition, O'Reilly, 2005.
+7. Jonathan Corbet, Alessandro Rubini & Greg Kroah-Hartman, "Linux Device Drivers," 3rd Edition, O'Reilly, 2005.
+8. LWN.net, https://lwn.net/
+9. AMD64 Architecture Programmer's Manual, https://developer.amd.com/resources/developer-guides-manuals/
+10. Intel 64 and IA-32 Architectures Software Developer's Manual, https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
+11. Andrew Tanenbaum & Linus Torvalds, "The Tanenbaum-Torvalds Debate," comp.os.minix, 1992. https://www.oreilly.com/openbook/opensources/book/appa.html

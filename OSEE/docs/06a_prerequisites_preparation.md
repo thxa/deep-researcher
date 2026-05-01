@@ -633,3 +633,16 @@ If you have gaps, use the resources in this guide to close them systematically. 
 ---
 
 *This guide was compiled from official OffSec documentation (EXP-401 course page, EXP-401 FAQ, OSEE Exam Guide), Corelan training resources, the HEVD project, and community knowledge. All URLs and references were verified at time of writing.*
+
+## References
+
+1. Offensive Security, "EXP-401 Prerequisites," https://www.offsec.com/courses/exp-401/
+2. Offensive Security, "OSEE Exam Guide," https://help.offsec.com/hc/en-us/articles/360046458732
+3. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+4. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
+5. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
+6. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+7. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
+8. Microsoft, "WinDbg Documentation," https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
+9. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+10. Enrico Perla & Massimiliano Oldani, "A Guide to Kernel Exploitation," Syngress, 2010.

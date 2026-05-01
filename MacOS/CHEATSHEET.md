@@ -252,3 +252,19 @@ FORCEDENTRY (NSO Group, 2021):
                        → BlastDoor sandbox escape
                        → kernel exploit → full device compromise
 ```
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- XNU Source Code: https://opensource.apple.com/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- Ian Beer / Project Zero iOS Research: https://googleprojectzero.blogspot.com/
+- Kaspersky Operation Triangulation: https://securelist.com/operation-triangulation/109842/
+- Citizen Lab FORCEDENTRY Report: https://citizenlab.ca/2021/09/forcedentry-nso-group-iphone-zero-click-zero-day-exploit-captured-in-the-wild/
+- Patrick Wardle, *The Art of Mac Malware* (No Starch Press, 2022)
+- Objective-See Tools: https://objective-see.org/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Apple Security Releases: https://support.apple.com/en-us/HT201222
+- CVE Records: https://cve.mitre.org/

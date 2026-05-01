@@ -2447,3 +2447,16 @@ This pattern — kernel-mode parsing of user-influenced file formats — is a co
 ---
 
 *This document is part of the OSEE (Offensive Security Exploitation Expert) reference series. The techniques and tools described are intended for authorized security research and certification preparation only.*
+
+## References
+
+1. IDA Pro, Hex-Rays Decompiler, https://hex-rays.com/ida-pro/
+2. Ghidra, NSA Reverse Engineering Framework, https://ghidra-sre.org/
+3. Microsoft, "WinDbg Preview," https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
+4. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
+5. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+6. j00ru (Mateusz Jurczyk), Windows Kernel Research, https://j00ru.vexillium.org/
+7. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
+8. Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
+9. fuzzing.wordpress.com — Guided fuzzing research and Windows-specific fuzzing techniques
+10. Microsoft, "Attack Surface Analyzer," https://www.microsoft.com/en-us/garage/wall/attack-surface-analyzer/

@@ -368,3 +368,19 @@ OEM security update performance varies dramatically. The following comparison re
 The Android security update ecosystem has improved dramatically since the pre-2015 era when no regular patch cadence existed. Google's monthly bulletin process, the dual patch level system, Project Treble, Project Mainline, and GKI collectively represent a systematic effort to dismantle the structural barriers to timely security updates. However, the fundamental tension between Android's open, diverse ecosystem and the need for rapid, universal security patching remains unresolved for a large fraction of the global device population. The billions of devices in the long tail -- budget handsets, older models, devices in markets where carriers and OEMs have little economic incentive to invest in updates -- continue to represent a persistent and significant security gap.
 
 For security-conscious users and organizations, the clearest mitigation remains device selection: choosing devices from OEMs with strong update commitments (Google Pixel, Samsung flagships), purchasing unlocked variants where possible, and leveraging Android Enterprise management to enforce minimum patch level compliance.
+
+## References
+
+1. Android Security Bulletins — https://source.android.com/security/bulletin
+2. Android Security Overview — https://source.android.com/security
+3. Project Treble Documentation — https://source.android.com/docs/core/architecture/treble
+4. Project Mainline (APEX Modules) — https://source.android.com/docs/core/ota/modular-system
+5. Android Generic Kernel Image (GKI) — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image
+6. Android Enterprise Security — https://www.android.com/enterprise/security/
+7. Samsung Knox Platform — https://www.samsungknox.com/
+8. Samsung Mobile Security Updates — https://security.samsungmobile.com/
+9. Qualcomm Security Bulletins — https://www.qualcomm.com/products/product-security
+10. Android Security & Privacy 2024 Year in Review — https://security.googleblog.com/
+11. Google Pixel Update Policy — https://support.google.com/pixelphone/answer/10946406
+12. Android Verified Boot Documentation — https://source.android.com/docs/security/features/verifiedboot
+13. GSMA Mobile Device Security Index — https://www.gsma.com/newsroom/wp-content/uploads/mobile-security-index-2024.pdf

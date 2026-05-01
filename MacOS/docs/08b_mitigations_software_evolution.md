@@ -189,3 +189,16 @@ Despite extensive mitigation, several attack surfaces persist:
 - **Userland complexity**: WebKit, ImageIO, CoreMedia, and PDFKit parse extraordinarily complex input formats. Despite sandboxing and Lockdown Mode restrictions, parser vulnerabilities in these components remain the most common entry point in real-world exploit chains, as demonstrated by NSO Group's FORCEDENTRY (2021) and subsequent zero-click exploits targeting iMessage and WebKit.
 
 The trajectory of macOS security is one of defense in depth: no single mitigation is assumed sufficient, and each new hardware generation introduces primitives that raise the cost of exploitation across the entire stack. The critical challenge remains closing the gap between mitigation deployment and attacker adaptation, particularly for logic bugs and novel hardware attack classes that existing defenses are structurally unable to address.
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- XNU Source Code: https://opensource.apple.com/
+- Ian Beer / Project Zero: https://googleprojectzero.blogspot.com/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Apple Security Releases: https://support.apple.com/en-us/HT201222/
+- Apple Rapid Security Responses: https://support.apple.com/en-us/HT201374/
+- macOS Hardening Guide: https://support.apple.com/guide/mac-help/protect-your-mac-from-malware-mh40584/mac/

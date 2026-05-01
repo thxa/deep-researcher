@@ -164,3 +164,18 @@ Ring 3 ──[CVE-2022-0847 / CVE-2021-4034]──→ Ring 0 ──[VM escape]�
 | −1 | Xen debug keys, QEMU monitor, KVM tracing, Hyper-V debug, TPM attestation | VMCS integrity checks, EPT dump, virtio queue inspection, hypervisor log analysis |
 | −2 | Chipsec, UEFI SCT, IBV firmware debug, SPI programmer, TPM event logs | SMI count monitoring (MSR `0x34`), SPI flash dump vs baseline, SMRAM integrity, TCG event log comparison |
 | −3 | Intel MEI tools, `mei-amt-check`, JTAG/SPI flash programmer, power analysis | ME version audit, firmware hash verification, JTAG debug port monitoring, BMC log analysis |
+## References
+
+- Intel 64 and IA-32 Architecture Software Developer's Manual. Intel Corporation.
+- AMD64 Architecture Programmer's Manual. AMD.
+- UEFI Specification — https://uefi.org/specifications
+- CVE-2015-3456 (VENOM) — QEMU Floppy Disk Controller Heap Overflow
+- CVE-2017-5705–5715 — Intel ME/SA vulnerabilities (INTEL-SA-00086)
+- ESET, "LoJax: First UEFI bootkit," 2018
+- Kaspersky, "MoonBounce" and "CosmicStrand" UEFI bootkits, 2022
+- Rafal Wojtczuk, "Attacking Intel BIOS," coreboot
+- Igor Skochinsky, Positive Technologies — Intel ME research
+- CHIPSEC — https://chipsec.github.io/
+- me_cleaner — https://github.com/corna/me_cleaner
+- KASAN / KFENCE — https://www.kernel.org/doc/html/latest/dev-tools/
+- SELinux — https://source.android.com/docs/security/features/selinux

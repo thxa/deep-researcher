@@ -1499,3 +1499,19 @@ echo "my-secret" | tpm2_seal -C 0x01 -i secret_data.bin -c seal_ctx -L sha256:0,
 ---
 
 *Document generated as a comprehensive defensive reference for security engineers. All techniques should be tested in controlled environments before production deployment. Ring -2 and -3 forensics require specialized hardware and should be performed by trained professionals.*
+## References
+
+- Intel 64 and IA-32 Architecture Software Developer's Manual. Intel Corporation.
+- AMD64 Architecture Programmer's Manual. AMD.
+- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-carry-sednit/
+- Kaspersky, "MoonBounce: The dark side of the UEFI bootkit." https://securelist.com/moonbounce-uefi-bootkit/105924/
+- Kaspersky, "CosmicStrand: A sophisticated UEFI bootkit." https://securelist.com/cosmicstrand-uefi-bootkit/106778/
+- CHIPSEC — Platform Security Assessment Framework. https://chipsec.github.io/
+- NIST Cybersecurity Framework — https://www.nist.gov/cyberframework
+- MITRE ATT&CK — https://attack.mitre.org/
+- Linux kernel hardening documentation — https://www.kernel.org/doc/html/latest/security/
+- SELinux documentation — https://source.android.com/docs/security/features/selinux
+- OSSEC / Wazuh — Host-based intrusion detection. https://wazuh.com/
+- AIDE — Advanced Intrusion Detection Environment. https://aide.github.io/
+- Coreboot — https://www.coreboot.org/
+- UEFI Specification — https://uefi.org/specifications

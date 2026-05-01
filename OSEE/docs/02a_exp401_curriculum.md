@@ -498,3 +498,16 @@ OffSec officially recommends the following reading materials:
 ---
 
 *Document compiled from official OffSec course pages, exam guides, FAQ materials, and publicly available information about the AWE/EXP-401 course curriculum. Specific CVEs and detailed lab contents may differ between course offerings as OffSec periodically updates the material.*
+
+## References
+
+1. Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
+2. Offensive Security, "OSEE Exam Guide," https://help.offsec.com/hc/en-us/articles/360046458732
+3. Mark Russinovich, David Solomon & Alex Ionescu, "Windows Internals," 7th Edition, Microsoft Press.
+4. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+5. Morten Schenk, "Swimming In The (Kernel) Pool — Leveraging Pool Vulnerabilities From Low-Integrity Exploits," 2021.
+6. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
+7. Tarjei Mandt, "Kernel Pool Exploitation on Windows 7," BlackHat DC 2011.
+8. Yarden Shafir & Corentin Bayet, "Scoop the Windows 10 Pool!," BlackHat USA 2021.
+9. j00ru (Mateusz Jurczyk), "One font vulnerability to rule them all," Google Project Zero, 2015.
+10. Microsoft, "Kernel-Mode Driver Architecture," https://docs.microsoft.com/en-us/windows-hardware/drivers/kernel/

@@ -463,3 +463,20 @@ The Android Security Bulletin includes an acknowledgments section for each month
 *Data sources: Google Android Security Bulletins (2015–2025), NVD/NIST, Google Project Zero 0-day In-the-Wild Tracking, Citizen Lab, Amnesty International, Zerodium (public pricing), Crowdfense, CVEDetails, academic security research publications, Google VRP Year-in-Review reports, Samsung Mobile Security documentation.*
 
 *Last updated: April 2025*
+
+## References
+
+1. Android Security Bulletins (2015–2025) — https://source.android.com/security/bulletin
+2. NVD (National Vulnerability Database) — https://nvd.nist.gov/
+3. CVEDetails: Android Statistics — https://www.cvedetails.com/
+4. Google Android Security Rewards Program — https://bughunters.google.com/
+5. Google Project Zero, Zero-Day In-the-Wild Tracking — https://docs.google.com/spreadsheets/d/1kDO6BomMOlYX2ROp9csFYMW3DFTW5eoDeG6CA6O0GSA
+6. Citizen Lab, University of Toronto — https://citizenlab.ca/
+7. Amnesty International Security Lab — https://securitylab.amnesty.org/
+8. Zerodium Exploit Acquisition Program — https://zerodium.com/
+9. Crowdfense Exploit Acquisition — https://crowdfense.com/
+10. Samsung Mobile Security — https://security.samsungmobile.com/
+11. Qualcomm Product Security — https://www.qualcomm.com/products/product-security
+12. ARM Mali GPU Security Advisories — https://developer.arm.com/documentation/109870/latest
+13. Android Security & Privacy Year-in-Review Blog Posts — https://security.googleblog.com/
+14. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog

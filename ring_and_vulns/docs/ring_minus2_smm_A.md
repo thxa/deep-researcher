@@ -1386,3 +1386,20 @@ A comprehensive checklist for SMRR auditing:
 ---
 
 *This document is part of a security research series on x86 privilege escalation and firmware security. For questions, clarifications, or contributions, please refer to the primary sources listed above.*
+## References
+
+- Intel 64 and IA-32 Architecture Software Developer's Manual, Volume 3B: System Programming Guide, Part 2 — Chapter 34: System Management Mode (SMM). Intel Corporation.
+- UEFI Specification, Version 2.10. Unified Extensible Firmware Interface Forum. https://uefi.org/specifications
+- Rafal Wojtczuk, "Attacking Intel BIOS," coreboot. https://coreboot.org/
+- Corey Kallenberg, "System Management Mode Hijacking," LegbaCore/Batelle, 2015.
+- CHIPSEC — Platform Security Assessment Framework. https://chipsec.github.io/
+- RTE — Runtime EFI Readiness Tool. https://github.com/torvalds/rte
+- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-carry-sednit/
+- Kaspersky, "MoonBounce: The dark side of the UEFI bootkit," 2022. https://securelist.com/moonbounce-uefi-bootkit/105924/
+- Mickey Shkatov, "Attacking UEFI Boot, SMM, and BIOS," Black Hat USA, 2013–2015.
+- Alexander Tereshkin, "SMI Handlers Security," 2006–2008.
+- SMRAM (System Management RAM) — Intel BIOS Writer's Guide and SMM programming documentation.
+- SMRR (System Management Range Register) — Intel SDM Volume 3B, MSRs 0x1EF/0x1F0.
+- ACPI Specification — https://uefi.org/specifications
+- Coreboot — https://www.coreboot.org/
+- Tianocore/EDK2 — https://github.com/tianocore/edk2

@@ -36,3 +36,15 @@ If you're preparing for OSEE or want to understand the highest level of hands-on
 - **Linux kernel research** → [`../linux_kernel/`](../linux_kernel/) — Kernel exploitation foundations (Linux side)
 - **Ring & vulnerabilities** → [`../ring_and_vulns/`](../ring_and_vulns/) — Privilege escalation from Ring 3 to Ring 0+ context
 - **Chromium research** → [`../Chromium_Architecture_and_Vulnerability/`](../Chromium_Architecture_and_Vulnerability/) — Browser exploitation techniques
+
+## References
+
+- Offensive Security, "OSEE Certification," https://www.offsec.com/courses/osee/
+- Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
+- Mark Russinovich, David Solomon & Alex Ionescu, "Windows Internals," 7th Edition, Microsoft Press.
+- Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+- Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+- Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
+- MITRE ATT&CK — Windows Techniques, https://attack.mitre.org/techniques/enterprise/
+- Microsoft Security Response Center (MSRC) Blog, https://msrc.microsoft.com/blog/
+- j00ru (Mateusz Jurczyk), Windows Kernel Research, https://j00ru.vexillium.org/

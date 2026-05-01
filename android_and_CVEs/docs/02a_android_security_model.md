@@ -375,3 +375,31 @@ Android's security model is not defined by any single mechanism but by the inter
 | Ecosystem | Play Integrity, app signing, Play Protect | Tampered apps, compromised devices |
 
 Each layer is designed to assume the others may be compromised. SELinux constrains root processes. Verified Boot detects kernel modifications. MTE catches memory corruption that CFI misses. FBE protects data even if the filesystem is physically extracted. This defense-in-depth philosophy is why modern Android exploitation typically requires chaining multiple vulnerabilities across multiple layers, driving up the cost and complexity of attacks significantly. High-value exploit chains targeting fully-patched Android devices on the open market routinely command prices in the millions of dollars, reflecting the cumulative difficulty of defeating these layered defenses.
+
+## References
+
+1. Android Security Overview — https://source.android.com/security
+2. Android SELinux Documentation — https://source.android.com/docs/security/features/selinux
+3. Android Verified Boot (AVB) — https://source.android.com/docs/security/features/verifiedboot
+4. Android File-Based Encryption — https://source.android.com/docs/security/features/encryption
+5. Android Seccomp-BPF Filter — https://source.android.com/docs/security/features/selinux/seccomp
+6. ARM Memory Tagging Extension (MTE) — https://developer.arm.com/documentation/109870/latest
+7. ARM Pointer Authentication on ARMv8.3 — https://developer.arm.com/documentation/100690/latest
+8. Android Security & Privacy 2024 Year in Review — https://security.googleblog.com/2025/02/android-security-privacy-2024-year-in.html
+9. Google Project Zero Blog — https://googleprojectzero.blogspot.com/
+10. Android Control-Flow Integrity (CFI) — https://source.android.com/docs/security/features/cfi
+11. Android Play Integrity API — https://developer.android.com/google/play/integrity
+12. Android GKI Documentation — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image
+13. Strazzere, T. "Android Security Internals: Digging into the Android OS." No Starch Press, 2014.
+14. Google Security Blog, "Eliminating Memory Safety Vulnerabilities at the Source," 2024.
+2. Android SELinux Documentation — https://source.android.com/docs/security/features/selinux
+3. Android Verified Boot (AVB) — https://source.android.com/docs/security/features/verifiedboot
+4. Android File-Based Encryption — https://source.android.com/docs/security/features/encryption
+5. Android Seccomp-BPF Filter — https://source.android.com/docs/security/features/selinux/seccomp
+6. ARM Memory Tagging Extension (MTE) — https://developer.arm.com/documentation/109870/latest
+7. ARM Pointer Authentication on ARMv8.3 — https://developer.arm.com/documentation/100690/latest
+8. Android Security & Privacy 2024 Year in Review — https://security.googleblog.com/2025/02/android-security-privacy-2024-year-in.html
+9. Google Project Zero Blog — https://googleprojectzero.blogspot.com/
+10. Android Control-Flow Integrity (CFI) — https://source.android.com/docs/security/features/cfi
+11. Android Play Integrity API — https://developer.android.com/google/play/integrity
+12. Android GKI Documentation — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image

@@ -244,3 +244,15 @@ These subsystems do not operate in isolation. A complete attack chain against a 
 4. **Data access**: Bypass TCC to access camera, microphone, or user files
 
 Each layer adds cost to exploitation. Apple's security model assumes individual layers will be breached and designs each successive layer to independently limit the impact of such breaches. This architectural principle — that no single bypass should compromise the entire system — is the defining characteristic of macOS security in its current form.
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- Patrick Wardle, *The Art of Mac Malware* (No Starch Press, 2022)
+- Apple Code Signing Guide: https://developer.apple.com/library/archive/documentation/Security/Conceptual/CodeSigningGuide/
+- Gatekeeper and Notarization Documentation: https://developer.apple.com/documentation/security/notarizing_macos_app_before_distribution/
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
+- Ian Beer / Project Zero: https://googleprojectzero.blogspot.com/

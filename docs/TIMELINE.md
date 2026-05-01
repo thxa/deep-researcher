@@ -1,8 +1,8 @@
 # Security Evolution Timeline: Vulnerabilities, Exploits, and Mitigations
 
-## A Cross-Track Chronological Map Across All 8 Research Tracks
+## A Cross-Track Chronological Map Across All 18 Research Tracks
 
-> **Scope**: Android · Chromium · CVE-2023-20938 · Linux Kernel · macOS/XNU · OSEE/EXP-401 · CPU Rings · Zero-Day Research
+> **Scope**: Android · Chromium · Cloud & Container Security · Cryptography · CVE-2023-20938 · Fuzzing & Vuln Research · IoT & Embedded Security · Linux Kernel · macOS/XNU · Network & Protocol Security · OSEE/EXP-401 · AI/ML Security · Reverse Engineering · Supply Chain Security · CPU Rings · Web Application Security · Windows Security · Zero-Day Research
 
 ---
 
@@ -13,14 +13,21 @@ The era of no meaningful memory protections. Stack overflows were trivial, shell
 | Year | Event | Track |
 |------|-------|-------|
 | 1982 | **x86 ring architecture introduced** (i286) — Rings 0-3 defined; Rings 1-2 never adopted by mainstream OSes | [CPU Rings](../ring_and_vulns/) |
+| 1988 | **Barton Miller fuzzing research at UW-Madison** — Foundational work on fuzz testing UNIX utilities with random input; coinage of the term "fuzz" in software testing | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
+| 1990 | **"An Empirical Study of the Reliability of UNIX Utilities" published** — Miller et al. demonstrate that 25-33% of UNIX utilities crash or hang when fed random input; formalizes fuzzing methodology | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
 | 1990 | **Intel 386SL introduces SMM** (Ring -2) — System Management Mode provides hidden execution invisible to OS | [CPU Rings](../ring_and_vulns/) |
 | 1996 | **"Smashing the Stack for Fun and Profit"** (Aleph One) — Canonical Phrack article on stack buffer overflow exploitation | [Zero-Day](../zero_day/) |
 | 1996 | **Linux kernel grows monolithic** — By 2.x era, codebase already massive; all drivers share ring 0 address space | [Linux Kernel](../linux_kernel/) |
-| 1999 | **Windows DEP introduced** (software DEP/SafeSEH for exception handlers) — Minimal NX enforcement, easily bypassed | [OSEE](../OSEE/) |
+| 1996 | **Kocher timing attacks on RSA** — Paul Kocher demonstrates practical side-channel timing attacks on RSA and Diffie-Hellman implementations; foundational work in cryptographic side-channel analysis | [Cryptography](../cryptography/) |
+| 1998 | **Bleichenbacher adaptive chosen-ciphertext attack** — Polynomial-time attack on RSA PKCS#1 v1.5 padding oracle; enables RSA decryption without private key; forces fundamental TLS protocol redesign | [Cryptography](../cryptography/) [Web Security](../web_security/) |
+| 1999 | **Windows 2000 released with DEP basics** — Software DEP/SafeSEH for exception handlers; minimal NX enforcement, easily bypassed | [OSEE](../OSEE/) [Windows Security](../windows_security/) |
 | 2001 | **Code Red & Nimda worms** — Mass exploitation of IIS buffer overflows; no ASLR, no DEP to stop propagation | [OSEE](../OSEE/) |
+| 2003 | **Windows Server 2003 security improvements** — Enhanced security configuration, IE Enhanced Security Configuration, Windows Firewall enabled by default; marks shift toward secure-by-default posture | [Windows Security](../windows_security/) |
 | 2003 | **adore-ng rootkit** — Kernel module rootkit operating at Ring 0, hooking syscalls and hiding processes in `/proc` | [CPU Rings](../ring_and_vulns/) |
 | 2004 | **Slammer worm** — Exploits MS03-026 buffer overflow in SQL Server; spreads worldwide in <15 minutes; no NX enforcement | [OSEE](../OSEE/) |
 | 2004 | **PaX/grsecurity patches** — Early Linux kernel hardening: ASLR (PaX), non-executable pages, and kernel protection | [Linux Kernel](../linux_kernel/) |
+| 2004 | **MD5 collision demonstrated** — Xiaoyun Wang et al. produce practical MD5 hash collisions; beginning of end for MD5 in security contexts; demonstrates hash function fragility | [Cryptography](../cryptography/) |
+| 2004 | **Windows XP SP2: DEP/NX becomes standard** — Hardware-enforced NX bit prevents code execution on stack/heap; researchers immediately pivot to Return-Oriented Programming (ROP) | [OSEE](../OSEE/) [Windows Security](../windows_security/) |
 | 2005 | **OSX.RSPlug** — First macOS financial trojan; marks beginning of meaningful macOS malware targeting | [macOS](../MacOS/) |
 
 ---
@@ -31,20 +38,29 @@ Mitigations are deployed. Attackers respond with ROP, info leaks, and heap feng 
 
 | Year | Event | Track |
 |------|-------|-------|
-| 2005 | **Windows XP SP2: DEP/NX becomes standard** — Hardware-enforced NX bit prevents code execution on stack/heap; researchers immediately pivot to Return-Oriented Programming (ROP) | [OSEE](../OSEE/) |
 | 2005 | **Intel VT-x released** — Hardware virtualization introduces Ring -1, creating new hypervisor attack surface | [CPU Rings](../ring_and_vulns/) |
+| 2005 | **Web 2.0 Ajax revolution** — XMLHttpRequest and dynamic page updates create massive new attack surface; XSS and CSRF become dominant web vulnerabilities | [Web Security](../web_security/) |
 | 2006 | **Offensive Security founded** — OSCP certification launched; beginning of formalized offensive security training | [OSEE](../OSEE/) |
-| 2007 | **Windows Vista ships with ASLR** — Address Space Layout Randomization makes hardcoded addresses unreliable; info leak vulnerabilities become critical | [OSEE](../OSEE/) |
+| 2006 | **AWS launch** — Amazon Web Services launches; beginning of the cloud computing era; fundamentally reshapes infrastructure attack surface | [Cloud & Container Security](../cloud_security/) |
+| 2007 | **Windows Vista ships with ASLR** — Address Space Layout Randomization makes hardcoded addresses unreliable; info leak vulnerabilities become critical | [OSEE](../OSEE/) [Windows Security](../windows_security/) |
 | 2007 | **Linux PaX ASLR upstreamed** — `randomize_va_space=2` shipped, randomizing stack, heap, mmap, and VDSO | [Linux Kernel](../linux_kernel/) |
 | 2007 | **Dirty COW bug introduced** — Race condition in `mm/gup.c` copy-on-write handling; latent for 9 years before discovery (CVE-2016-5195) | [Linux Kernel](../linux_kernel/) |
+| 2007 | **CORS specification published** — Cross-Origin Resource Sharing formalized to enable controlled cross-domain requests; simultaneously opens new attack vectors if misconfigured | [Web Security](../web_security/) |
 | 2008 | **Chrome multi-process architecture launches** — Sandboxed renderer processes require 2-3 independent bugs for full compromise; revolutionary defense-in-depth | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
+| 2008 | **Dan Kaminsky DNS cache poisoning attack** — Fundamental flaw in DNS protocol allows spoofing authoritative responses; leads to massive coordinated patch effort and DNSSEC acceleration | [Network Security](../network_security/) |
 | 2008 | **Android 1.0 released** — Linux kernel + application sandbox model; SELinux in permissive mode initially | [Android](../android_and_CVEs/) |
-| 2008-2009 | **AWE course first delivered at Black Hat** — Advanced Windows Exploitation becomes OffSec's most elite course | [OSEE](../OSEE/) |
+| 2008–2009 | **AWE course first delivered at Black Hat** — Advanced Windows Exploitation becomes OffSec's most elite course | [OSEE](../OSEE/) |
 | 2009 | **iOS 3.0: Code signing enforced** — Apple mandates code signing; jailbreak community responds with kernel exploits and code signing bypasses | [macOS](../MacOS/) |
 | 2010 | **ROP formalized** — Academic and practical works establish Return-Oriented Programming as the standard DEP bypass technique | [Zero-Day](../zero_day/) |
+| 2010 | **AWS IAM launch** — AWS Identity and Access Management introduces cloud identity primitives; misconfigured IAM policies become top cloud vulnerability for years | [Cloud & Container Security](../cloud_security/) |
+| 2010 | **Firesheep released** — Firefox extension demonstrating HTTP session hijacking on open WiFi networks; forces industry-wide HTTPS adoption acceleration | [Web Security](../web_security/) |
+| 2011 | **BEAST attack on TLS** — Brahim et al. demonstrate chosen-plaintext attack against TLS 1.0 CBC mode; forces TLS 1.1/1.2 adoption | [Web Security](../web_security/) [Cryptography](../cryptography/) |
 | 2011 | **Android 4.3: SELinux permissive mode** — Mandatory access control introduced but not enforced; experimental phase | [Android](../android_and_CVEs/) |
 | 2012 | **Android 4.1-4.2: ASLR improvements** — Position-independent executables (PIE), read-only relocations (RELRO), and padding for ASLR entropy | [Android](../android_and_CVEs/) |
 | 2012 | **CVE-2012-0217 (sysret bug)** — `sysret` instruction on x86-64 presents as Ring 0 #GP after CPL has changed to Ring 3; exploited via non-canonical RIP addresses | [CPU Rings](../ring_and_vulns/) |
+| 2012 | **CRIME attack on TLS compression** — Practical compression side-channel attack against TLS/SPDY; forces disabling of TLS-level compression | [Web Security](../web_security/) [Cryptography](../cryptography/) |
+| 2012 | **Windows 8 ships with Secure Boot** — UEFI Secure Boot mandates kernel-mode driver signing; raises bar for bootkits and rootkits | [Windows Security](../windows_security/) |
+| 2012 | **Flame malware MD5 collision attack** — State-sponsored malware uses MD5 collision to forge Microsoft code-signing certificates; demonstrates cryptographic attacks as offensive tool | [Cryptography](../cryptography/) |
 
 ---
 
@@ -56,24 +72,52 @@ SMEP, SMAP, KPTI, CFI, and sophisticated sandboxing raise the exploitation bar d
 |------|-------|-------|
 | 2013 | **Chrome Blink fork from WebKit** — Google diverges rendering engine; Oilpan GC development begins to reduce UAF bugs in renderer | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
 | 2013 | **CVE-2013-2094 (perf_event)** — Linux kernel `perf_swevent_init` integer overflow leading to privilege escalation; exploited in the wild | [Linux Kernel](../linux_kernel/) |
-| 2014 | **Shellshock (CVE-2014-6271)** — Bash function definition parsing vulnerability; critical infrastructure affected; CVSS 10.0 | [Linux Kernel](../linux_kernel/) |
+| 2013 | **Docker launches** — Container revolution begins; OS-level virtualization provides lightweight isolation but introduces new attack surface (cgroups, namespaces, seccomp) | [Cloud & Container Security](../cloud_security/) |
+| 2013 | **BREACH attack on HTTP compression** — Extension of CRIME to HTTPS responses; demonstrates compression-oracle attacks against encrypted web traffic | [Web Security](../web_security/) [Cryptography](../cryptography/) |
+| 2013 | **Snowden revelations on NSA cryptanalysis** — Leaked documents reveal bulk surveillance, deliberate weakening of standards (Dual_EC_DRBG), and interception of encrypted traffic; fundamentally changes trust model | [Cryptography](../cryptography/) |
+| 2013 | **AFL released by Michał Zalewski** — American Fuzzy Lop revolutionizes coverage-guided fuzzing; dominates vulnerability discovery for next decade | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
+| 2014 | **Shellshock (CVE-2014-6271)** — Bash function definition parsing vulnerability; critical infrastructure affected; CVSS 10.0 | [Linux Kernel](../linux_kernel/) [Web Security](../web_security/) |
+| 2014 | **Heartbleed (CVE-2014-0160)** — OpenSSL heartbeat extension buffer over-read; leaks private keys and session data from ~17% of HTTPS servers; forces mass re-keying | [Network Security](../network_security/) [Cryptography](../cryptography/) |
+| 2014 | **POODLE (SSLv3)** — Padding oracle attack against SSLv3 CBC mode; forces final deprecation of SSLv3 across the internet | [Web Security](../web_security/) [Cryptography](../cryptography/) |
 | 2014 | **FakeID (CVE-2014-8609)** — Android certificate chain validation bypass; allows malicious APK signing | [Android](../android_and_CVEs/) |
+| 2014 | **Goodfellow et al. introduce generative adversarial networks** — GANs enable realistic synthetic data generation; later weaponized for deepfakes and adversarial evasion | [AI/ML Security](../ai_security/) |
+| 2014 | **Kubernetes announced by Google** — Container orchestration platform; revolutionizes cloud-native deployment; introduces new RBAC and networking attack surfaces | [Cloud & Container Security](../cloud_security/) |
 | 2015 | **Stagefright (CVE-2015-1538)** — Integer overflows in `libstagefright` media framework; ~950M Android devices vulnerable via MMS zero-click; transforms Android security | [Android](../android_and_CVEs/) |
-| 2015 | **VENOM (CVE-2015-3456)** — QEMU floppy controller heap overflow; VM escape from guest to host via emulated device; CVSS 10.0 | [CPU Rings](../ring_and_vulns/) |
+| 2015 | **VENOM (CVE-2015-3456)** — QEMU floppy controller heap overflow; VM escape from guest to host via emulated device; CVSS 10.0 | [CPU Rings](../ring_and_vulns/) [Cloud & Container Security](../cloud_security/) |
 | 2015 | **Intel SA-00086 (ME vulnerabilities)** — CVE-2017-5705 through CVE-2017-5715; remote code execution on Intel ME processor itself (Ring -3); firmware-level compromise | [CPU Rings](../ring_and_vulns/) |
 | 2015 | **QEMU PCNET heap overflow (CVE-2015-7504)** — Another hypervisor device emulation bug enabling VM escape from guest | [CPU Rings](../ring_and_vulns/) |
+| 2015 | **FREAK and Logjam export-grade attacks** — Forcing downgrade to export-grade cryptography (512-bit RSA, 512-bit DH); nation-state-grade attacks against deliberately weakened crypto | [Cryptography](../cryptography/) [Web Security](../web_security/) |
+| 2015 | **libFuzzer released** — LLVM-based in-process fuzzing engine; enables continuous coverage-guided fuzzing integrated into build systems | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
+| 2015 | **Goodfellow et al. "Explaining and Harnessing Adversarial Examples"** — Foundational paper identifying adversarial examples as fundamental property of neural networks; enables adversarial ML as discipline | [AI/ML Security](../ai_security/) |
+| 2015 | **Windows 10 CFG deployment** — Control Flow Guard provides forward-edge CFI for Windows binaries; raises bar for ROP-based exploitation | [Windows Security](../windows_security/) |
 | 2016 | **Dirty COW (CVE-2016-5195)** — 9-year-old race condition in COW page fault handling; any user can write to read-only files; widely exploited for Android rooting | [Linux Kernel](../linux_kernel/) [Android](../android_and_CVEs/) [CPU Rings](../ring_and_vulns/) |
 | 2016 | **Broadpwn (CVE-2017-0561)** — Zero-click wormable WiFi RCE in Broadcom WiFi driver on Android; CVSS 9.8 | [Android](../android_and_CVEs/) |
 | 2016 | **OSX.Flashback** — 600K+ macOS infections via Java CVE-2012-0507; DGA-based C2; one of the largest macOS malware outbreaks | [macOS](../MacOS/) |
+| 2016 | **Mirai DDoS botnet** — IoT-compromised botnet (default credentials on routers/IP cameras) launches largest DDoS attacks to date; DDoS against Dyn DNS disrupts major internet services | [Network Security](../network_security/) [IoT Security](../iot_security/) |
+| 2016 | **DROWN attack** — Cross-protocol attack decrypting TLS connections using SSLv2 servers; 81% of HTTPS servers vulnerable at time of disclosure | [Cryptography](../cryptography/) [Web Security](../web_security/) |
+| 2016 | **OSS-Fuzz launched by Google** — Continuous fuzzing infrastructure for open-source projects; finds thousands of bugs in critical software (OpenSSL, libxml2, libpng, etc.) | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
+| 2016 | **left-pad incident** — 11-line npm package dependency breaks thousands of projects; first major demonstration of npm ecosystem fragility and dependency risk | [Supply Chain](../supply_chain_security/) |
 | 2017 | **Meltdown (CVE-2017-5754) & Spectre (CVE-2017-5753, CVE-2017-5715)** — Speculative execution side-channel vulnerabilities affecting virtually all CPUs; KPTI deployed as Linux kernel mitigation | [Linux Kernel](../linux_kernel/) [CPU Rings](../ring_and_vulns/) |
 | 2017 | **KEpler/KPTI deployed in Linux** — Kernel Page-Table Isolation separates user and kernel page tables; 5-30% performance penalty | [Linux Kernel](../linux_kernel/) |
 | 2017 | **SMEP/SMAP standard in Linux** — Supervisor Mode Execution/Access Prevention prevents kernel from executing/accessing user-space memory | [Linux Kernel](../linux_kernel/) |
 | 2017 | **Chrome CFI deployed** — Control-Flow Integrity enabled on Linux/ChromeOS builds; forward-edge vtable protection | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
+| 2017 | **WPA2 KRACK attacks (CVE-2017-13077)** — Key Reinstallation Attacks break WPA2 protocol; allows decryption and injection on all WiFi networks; forces WPA3 development | [Network Security](../network_security/) |
+| 2017 | **ROBOT attack on RSA** — Return Of Bleichenbacher's Oracle Threat; modern TLS servers still vulnerable to 1998 Bleichenbacher attack; demonstrates persistent cryptographic implementation flaws | [Cryptography](../cryptography/) [Web Security](../web_security/) |
+| 2017 | **ROCA vulnerability (CVE-2017-15361)** — Infineon TPM/SMART card RSA key generation flaw; private key recoverable from public key; affects millions of HSMs and smart cards | [Cryptography](../cryptography/) |
+| 2017 | **SHA-1 collision (SHAttered)** — First practical SHA-1 collision produced; chosen-prefix cost ~$110K in cloud computing; final proof SHA-1 is broken for collision resistance | [Cryptography](../cryptography/) |
+| 2017 | **Carlini-Wagner attack** — L₀, L₂, and L∞ adversarial attacks defeat all major defenses; sets new standard for adversarial ML robustness evaluation | [AI/ML Security](../ai_security/) |
+| 2017 | **Kubernetes 1.7 RBAC** — Role-Based Access Control becomes stable; critical for multi-tenant cluster security; misconfigurations remain top Kubernetes vulnerability | [Cloud & Container Security](../cloud_security/) |
+| 2017 | **Windows Defender ATP** — Advanced Threat Protection moves from signature-based to behavioral detection; marks shift toward EDR in Windows security | [Windows Security](../windows_security/) |
+| 2017 | **Print Spooler vulnerabilities (PrintNightmare precursor)** — Series of privilege escalation bugs in Windows Print Spooler service; foreshadows PrintNightmare sophistication | [Windows Security](../windows_security/) |
+| 2017 | **syzkaller begins finding Linux kernel bugs** — Google's system call fuzzer discovers hundreds of kernel vulnerabilities; demonstrates automated kernel fuzzing at scale | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
 | 2018 | **Chrome Site Isolation enabled** (Chrome 67) — Every cross-site iframe in its own process; defense against Spectre and compromised renderers | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
 | 2018 | **LoJax UEFI bootkit discovered** — First UEFI bootkit seen in the wild; APT28/Sednit implants SPI flash persistence at Ring -2; survives OS reinstall | [CPU Rings](../ring_and_vulns/) |
 | 2018 | **CVE-2018-4407** — Single-packet remote kernel crash on macOS via ICMP heap overflow; no authentication needed | [macOS](../MacOS/) |
 | 2018 | **macOS Mojave: UAKEL/codeless kext system** — User-Approved Kernel Extensions phase-out begins; kext loading restrictions tighten | [macOS](../MacOS/) |
 | 2018 | **KeRanger ransomware** — First functional macOS ransomware; signs itself with valid developer certificate | [macOS](../MacOS/) |
+| 2018 | **Service Mesh (Istio) launch** — Sidecar-based traffic management and mTLS for Kubernetes; introduces new policy enforcement layer and attack surface | [Cloud & Container Security](../cloud_security/) |
+| 2018 | **SameSite cookie changes** — Browsers begin enforcing SameSite=Lax by default; major reduction in CSRF attack prevalence; forces web ecosystem migration | [Web Security](../web_security/) |
+| 2018 | **VPNFilter (500K+ routers)** — Sophisticated SOHO router malware affecting 500K+ devices; capable of traffic interception, DNS poisoning, and device bricking | [Network Security](../network_security/) |
 
 ---
 
@@ -89,8 +133,11 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2019 | **Bad Binder (CVE-2019-2215)** — UAF in Android Binder driver via `binder_thread` + `epoll` interaction; exploited by NSO Group Pegasus spyware | [Android](../android_and_CVEs/) [CVE-2023-20938](../CVE-2023-20938/) |
 | 2019 | **CVE-2019-8605 (SockPuppet)** — UAF in macOS BSD networking `in6_pcbdetach`; enables full jailbreak on iOS | [macOS](../MacOS/) |
 | 2019 | **CVE-2019-15666** — Linux kernel setxattr OOB write; integer overflow leading to kernel compromise | [Linux Kernel](../linux_kernel/) |
-| 2019 | **CVE-2019-5736 (runc escape)** — Container escape via `/proc/self/exe` overwrite; host root from within container | [CPU Rings](../ring_and_vulns/) |
+| 2019 | **CVE-2019-5736 (runc escape)** — Container escape via `/proc/self/exe` overwrite; host root from within container | [CPU Rings](../ring_and_vulns/) [Cloud & Container Security](../cloud_security/) |
 | 2019 | **V8 Sandbox design begins** — Chrome team starts designing memory cage for V8 to constrain corrupted pointer scope | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
+| 2019 | **AFL++ released** — Community-driven successor to AFL; adds custom mutators, better instrumentation, and significantly improved coverage | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
+| 2019 | **Capital One data breach** — SSRF exploitation of AWS IMDSv1 leads to 100M+ customer records exfiltrated; landmark cloud misconfiguration incident | [Cloud & Container Security](../cloud_security/) [Web Security](../web_security/) |
+| 2019 | **Membership inference attacks (Salem et al.)** — Demonstrated practical model inversion and membership inference against production ML models; raises privacy concerns for ML-as-a-service | [AI/ML Security](../ai_security/) |
 
 #### 2020
 
@@ -105,6 +152,11 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2020 | **Chrome network service out-of-process** — Network stack isolated into sandboxed utility process; reduces browser process attack surface | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
 | 2020 | **MoonBounce UEFI bootkit** — Sophisticated UEFI implant modifying DXE driver; discovered in the wild | [CPU Rings](../ring_and_vulns/) |
 | 2020 | **MS-DOS era rootkits to UEFI** — Rootkit evolution: from simple LKMs (adore-ng) → MBR bootkits → UEFI implants (LoJax, MoonBounce) | [CPU Rings](../ring_and_vulns/) |
+| 2020 | **SolarWinds SUNBURST** — APT29 supply chain compromise of SolarWinds Orion; 18,000+ organizations affected; demonstrates cloud supply chain risk at nation-state scale | [Cloud & Container Security](../cloud_security/) [Supply Chain](../supply_chain_security/) |
+| 2020 | **ClusterFuzz 2.0** — Google open-sources continuous fuzzing infrastructure; enables community-driven fuzzing at scale | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
+| 2020 | **Model extraction attacks mature** — Practical model stealing attacks demonstrate intellectual property risk for deployed ML models; proven against production APIs | [AI/ML Security](../ai_security/) |
+| 2020 | **Microsoft Vulnerability Rewards milestone** — MSRC bounty program surpasses significant payouts milestone; signals Microsoft's investment in community-based security | [Windows Security](../windows_security/) |
+| 2020 | **Zigbee vulnerabilities discovery** — Multiple critical vulnerabilities in Zigbee protocol used by IoT devices; enables unauthorized device control and key extraction | [Network Security](../network_security/) [IoT Security](../iot_security/) |
 
 #### 2021
 
@@ -122,6 +174,16 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2021 | **Chrome record year: 14+ in-the-wild exploits** — Highest number of actively exploited Chrome zero-days ever recorded | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
 | 2021 | **macOS Monterey: Accelerated kext deprecation** — Third-party kernel extensions increasingly restricted; DriverKit transition begins | [macOS](../Macos/) |
 | 2021 | **CosmicStrand UEFI bootkit** — Sophisticated firmware implant persisted in SPI flash; attributed to Chinese APT | [CPU Rings](../ring_and_vulns/) |
+| 2021 | **CVE-2021-34527 PrintNightmare** — Windows Print Spooler RCE and LPE; allows arbitrary code execution with SYSTEM privileges; actively exploited in the wild within 48 hours of PoC release | [Windows Security](../windows_security/) |
+| 2021 | **CVE-2021-36934 HiveNightmare** — Windows hive file permissions vulnerability; enables any user to read SAM/SYSTEM/SECURITY registry hives; trivial credential theft | [Windows Security](../windows_security/) |
+| 2021 | **Log4Shell (CVE-2021-44228)** — Apache Log4j JNDI remote code execution; CVSS 10.0; affects millions of Java applications; most widespread vulnerability since Heartbleed | [Web Security](../web_security/) [Supply Chain](../supply_chain_security/) |
+| 2021 | **AWS IMDSv2 rollout** — Amazon requires session tokens for Instance Metadata Service; mitigates SSRF-to-credential-theft attacks (Capital One lesson learned) | [Cloud & Container Security](../cloud_security/) |
+| 2021 | **OpenSSF founded** — Open Source Security Foundation established by Linux Foundation; coordinates industry-wide supply chain security efforts | [Cloud & Container Security](../cloud_security/) [Supply Chain](../supply_chain_security/) |
+| 2021 | **Codecov bash uploader compromise** — Supply chain attack modifying CI/CD credential exfiltration script; demonstrates CI/CD pipeline risk | [Supply Chain](../supply_chain_security/) |
+| 2021 | **PHP git server compromise** — Attackers push malicious commits to PHP source repository; supply chain attack on language runtime | [Supply Chain](../supply_chain_security/) |
+| 2021 | **ua-parser-js compromise** — Popular npm package hijacked to install cryptominers; demonstrates single-maintainer dependency risk | [Supply Chain](../supply_chain_security/) |
+| 2021 | **Alex Birsan dependency confusion research** — Demonstrates namespace confusion between public and private package registries; responsible disclosure leads to industry-wide fixes | [Supply Chain](../supply_chain_security/) |
+| 2021 | **BGP route hijacking incidents increase** — Significant increase in BGP hijacking incidents; highlights fundamental protocol insecurity in internet routing | [Network Security](../network_security/) |
 
 #### 2022
 
@@ -142,6 +204,11 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2022 | **macOS Ventura: kCFI deployed** — Kernel Control-Flow Integrity; 32-bit type hash before function entry | [macOS](../Macos/) |
 | 2022 | **CVE-2022-20421** — Binder UAF in `binder_thread_release`; third major Binder vulnerability exploited in the wild | [Android](../android_and_CVEs/) [CVE-2023-20938](../CVE-2023-20938/) |
 | 2022 | **APT41/ShadowPad** — Supply chain compromise via kernel driver; Ring 3→0 attack in widespread campaign | [CPU Rings](../ring_and_vulns/) |
+| 2022 | **CVE-2022-21882 Win32k type confusion** — Windows kernel Win32k type confusion enabling local privilege escalation; actively exploited in the wild | [Windows Security](../windows_security/) |
+| 2022 | **SLSA framework published** — Supply-chain Levels for Software Artifacts; provides framework for ensuring integrity of software supply chain from source to deployment | [Cloud & Container Security](../cloud_security/) [Supply Chain](../supply_chain_security/) |
+| 2022 | **NIST selects PQC algorithms** — Kyber (ML-KEM), Dilithium (ML-DSA), and SPHINCS+ (SLH-DSA) selected for post-quantum cryptographic standards; begins transition from RSA/ECC | [Cryptography](../cryptography/) |
+| 2022 | **ChatGPT released → prompt injection concerns** — Large language model chatbot demonstrates novel attack surface; prompt injection and jailbreaking emerge as new vulnerability classes | [AI/ML Security](../ai_security/) |
+| 2022 | **colors.js/faker.js protestware** — Maintainer intentionally breaks widely-used npm packages; Marak Squires deletes colors.js and faker.js code; highlights single-point-of-failure dependency risk | [Supply Chain](../supply_chain_security/) |
 
 #### 2023
 
@@ -161,6 +228,12 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2023 | **CVE-2023-38606** — Apple SoC GPU coprocessor MMIO register abuse bypasses PPL/KTRR hardware protections; undocumented hardware registers used for kernel code write | [macOS](../macos/) [CPU Rings](../ring_and_vulns/) |
 | 2023 | **macOS Sonoma: kalloc.type zone isolation** — Type-segregated kernel heap zones prevent cross-type heap grooming attacks | [macOS](../Macos/) |
 | 2023 | **MosaicRegressor UEFI bootkit** — Multi-stage UEFI bootkit discovered in the wild (2020 discovery, 2023 analysis publish) | [CPU Rings](../ring_and_vulns/) |
+| 2023 | **Windows 11 23H2 security features** — Enhanced credential guard, smart app control, and hypervisor-protected code integrity (HVCI) enabled by default on new installations | [Windows Security](../windows_security/) |
+| 2023 | **3CX supply chain attack** — Compromised 3CX desktop app used to distribute trojanized builds; nation-state attribution; first major software supply chain attack on a security vendor | [Cloud & Container Security](../cloud_security/) [Supply Chain](../supply_chain_security/) |
+| 2023 | **OWASP LLM Top 10 published** — First standardized taxonomy of LLM security risks; covers prompt injection, insecure output handling, training data poisoning | [AI/ML Security](../ai_security/) |
+| 2023 | **LLM red teaming becomes mainstream** — Security researchers and organizations adopt systematic red teaming of LLMs; prompt injection, jailbreaking, and data exfiltration tested at scale | [AI/ML Security](../ai_security/) |
+| 2023 | **LLM-guided fuzzing research emerges** — Large language models used to generate targeted fuzzing inputs; improves code coverage in complex parsers and JIT compilers | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
+| 2023 | **QUIC/TLS 1.3 adoption milestone** — Major browsers and CDNs enable QUIC+TLS 1.3 by default; reduces connection latency and eliminates legacy protocol vulnerabilities | [Network Security](../network_security/) [Cryptography](../cryptography/) |
 
 #### 2024
 
@@ -180,6 +253,12 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2024 | **MTE adoption on ARM64** — Memory Tagging Extension deployed on Pixel 8+ and Galaxy S24+; probabilistic UAF/overflow detection at 3-5% overhead | [Android](../android_and_CVEs/) [Linux Kernel](../linux_kernel/) |
 | 2024 | **Google Pixel 9 zero-click chain** — Project Zero demonstrates zero-click exploitation via Dolby audio decoder + BigWave kernel driver | [Android](../android_and_CVEs/) |
 | 2024 | **Striped Fly hypervisor implant** — Cross-ring attack using custom hypervisor implant (Ring 0→-1); discovered by Sophos | [CPU Rings](../ring_and_vulns/) |
+| 2024 | **Rust adoption in Windows kernel announced** — Microsoft announces Rust being used for new kernel-mode drivers; follows Linux kernel Rust adoption trend | [Windows Security](../windows_security/) |
+| 2024 | **XZ Utils backdoor discovered** — Sophisticated supply chain attack on xz/liblzma by "Jia Tan"; obfuscated build system compromise targeting OpenSSH authentication; discovered by Andres Freund | [Supply Chain](../supply_chain_security/) [Cloud & Container Security](../cloud_security/) |
+| 2024 | **HTTP/2 CONTINUATION flood (CVE-2024-27316)** — HTTP/2 CONTINUATION frameDoS attack bypassing default limits; affects most HTTP/2 implementations | [Web Security](../web_security/) [Network Security](../network_security/) |
+| 2024 | **NIST publishes FIPS 203, 204, 205** — Post-quantum cryptographic standards finalized: ML-KEM (Kyber), ML-DSA (Dilithium), SLH-DSA (SPHINCS+); enables migration from RSA/ECC | [Cryptography](../cryptography/) |
+| 2024 | **NIST AI RMF published** — AI Risk Management Framework provides structured approach to AI risk governance; first major government framework for AI trustworthiness | [AI/ML Security](../ai_security/) |
+| 2024 | **Windows Sandbox** — Windows Sandbox provides isolated, temporary desktop environment for untrusted code execution; hardware-based isolation | [Windows Security](../windows_security/) |
 
 #### 2025–2026
 
@@ -190,11 +269,11 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2025 | **Apple PACMAN-inspired attacks** — Speculative execution side-channels used to brute-force PAC values on Apple Silicon; MIT research influences hardening | [macOS](../Macos/) [CPU Rings](../ring_and_vulns/) |
 | 2025 | **Rust expansion in Linux kernel** — Growing adoption in drivers, VFS, and networking subsystems; measurable reduction in memory safety bugs in new Rust code | [Linux Kernel](../linux_kernel/) |
 | 2025 | **Chrome V8 Sandbox hardening** — Ongoing work to eliminate all sandbox violations; type-safe external pointer tables hardened | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
-| 2025 | **AI/ML-assisted fuzzing** — LLM-guided input generation reaches deeper code paths in JIT compilers and IPC handlers | [Zero-Day](../zero_day/) [Chromium](../Chromium_Architecture_and_Vulnerability/) |
+| 2025 | **AI/ML-assisted fuzzing** — LLM-guided input generation reaches deeper code paths in JIT compilers and IPC handlers | [Zero-Day](../zero_day/) [Chromium](../Chromium_Architecture_and_Vulnerability/) [Fuzzing & Vuln Research](../fuzzing_vuln_research/) [AI/ML Security](../ai_security/) |
 | 2025 | **Hardware security (MTE, PAC, CET)** — ARM MTE/PAC and Intel CET deployment expands; shifts exploitation toward data-only attacks and logic bugs | [macOS](../Macos/) [Android](../android_and_CVEs/) [Linux Kernel](../linux_kernel/) |
-| 2025 | **Commercial spyware market matures** — Full Android zero-click chains valued at $2.5M+ on Zerodium; 75% of known zero-days targeting Googleproducts attributed to CSVs | [Android](../android_and_CVEs/) [Zero-Day](../zero_day/) |
+| 2025 | **Commercial spyware market matures** — Full Android zero-click chains valued at $2.5M+ on Zerodium; 75% of known zero-days targeting Google products attributed to CSVs | [Android](../android_and_CVEs/) [Zero-Day](../zero_day/) |
 | 2025 | **kalloc.type hardening on macOS** — Kernel heap zone isolation by C type signature prevents cross-type heap grooming | [macOS](../Macos/) |
-| 2025-2026 | **CVE-2023-20938 upstream fix** — The Binder UAF bounds check patch finally merged to mainline Linux (August 2024), 18 months after Android patch | [CVE-2023-20938](../CVE-2023-20938/) |
+| 2025–2026 | **CVE-2023-20938 upstream fix** — The Binder UAF bounds check patch finally merged to mainline Linux (August 2024), 18 months after Android patch | [CVE-2023-20938](../CVE-2023-20938/) |
 | 2026 | **Confidential Compute expansion** — ARM CCA and Intel TDX hardware-isolated VMs Begin production deployment; new attack surfaces emerge | [Linux Kernel](../linux_kernel/) [CPU Rings](../ring_and_vulns/) |
 | 2026 | **eBPF verifier remains critical** — Syzkaller and manual auditing continue to find verifier bugs; eBPF provides powerful attack surface visible from unprivileged userspace | [Linux Kernel](../linux_kernel/) |
 | 2026 | **7-year Android update commitments** — Samsung, Google, OnePlus commit to 7 years of security updates for flagships; patch fragmentation slowly improving | [Android](../android_and_CVEs/) |
@@ -209,17 +288,20 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | Class | Key CVEs | Track(s) |
 |-------|----------|----------|
 | **Use-After-Free** | CVE-2019-2215, CVE-2022-20421, CVE-2023-20938, CVE-2023-32233, CVE-2024-1086, CVE-2024-43047, CVE-2021-30858 | [Android](../android_and_CVEs/) [Linux Kernel](../linux_kernel/) [CVE-2023-20938](../CVE-2023-20938/) [macOS](../Macos/) [Chromium](../Chromium_Architecture_and_Vulnerability/) |
-| **Type Confusion** | CVE-2020-6418, CVE-2024-4947, CVE-2024-7971, CVE-2021-30883, CVE-2016-4656 | [Chromium](../Chromium_Architecture_and_Vulnerability/) [macOS](../Macos/) |
+| **Type Confusion** | CVE-2020-6418, CVE-2024-4947, CVE-2024-7971, CVE-2021-30883, CVE-2016-4656, CVE-2022-21882 | [Chromium](../Chromium_Architecture_and_Vulnerability/) [macOS](../Macos/) [Windows Security](../windows_security/) |
 | **Race Condition** | CVE-2016-5195 (Dirty COW), CVE-2023-3269 (StackRot), CVE-2019-2215 (Binder+epoll) | [Linux Kernel](../linux_kernel/) [Android](../android_and_CVEs/) |
 | **Integer Overflow** | CVE-2023-32434, CVE-2021-30860, CVE-2023-20938 (bounds check) | [macOS](../Macos/) [CVE-2023-20938](../CVE-2023-20938/) |
 | **Logic Bug** | CVE-2022-0847 (Dirty Pipe), CVE-2021-4034 (PwnKit), CVE-2021-30892 (Shrootless) | [Linux Kernel](../linux_kernel/) [CPU Rings](../ring_and_vulns/) [macOS](../Macos/) |
+| **Injection** (SQL, SSTI, command) | Shellshock, Log4Shell, ua-parser-js, Codecov | [Web Security](../web_security/) [Supply Chain](../supply_chain_security/) |
+| **Padding Oracle** | Bleichenbacher (1998), POODLE, ROBOT | [Cryptography](../cryptography/) [Web Security](../web_security/) |
+| **Supply Chain Injection** | SolarWinds SUNBURST, 3CX, XZ Utils, left-pad, colors.js | [Supply Chain](../supply_chain_security/) |
 
 ### By Mitigation Deployment
 
 | Mitigation | Year | Platform | Track |
 |-----------|------|----------|-------|
-| DEP/NX | 2005 | Windows XP SP2 | [OSEE](../OSEE/) |
-| ASLR | 2007 | Windows Vista, Linux PaX | [OSEE](../OSEE/) [Linux Kernel](../linux_kernel/) |
+| DEP/NX | 2004 | Windows XP SP2 | [OSEE](../OSEE/) [Windows Security](../windows_security/) |
+| ASLR | 2007 | Windows Vista, Linux PaX | [OSEE](../OSEE/) [Linux Kernel](../linux_kernel/) [Windows Security](../windows_security/) |
 | Chrome Sandbox | 2008 | Chrome | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
 | SELinux Enforcing | 2012 | Android 5.0 | [Android](../android_and_CVEs/) |
 | SMEP | 2012 | Linux (Ivy Bridge+) | [Linux Kernel](../linux_kernel/) |
@@ -237,7 +319,11 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | Lockdown Mode | 2022 | macOS | [macOS](../Macos/) |
 | PAC (ARM) | 2020+ | Apple Silicon, ARMv8.3+ | [macOS](../Macos/) [Android](../android_and_CVEs/) |
 | MiraclePtr | 2020-2024 | Chrome | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
-| CFG (Windows) | 2015+ | Windows 10+ | [OSEE](../OSEE/) |
+| CFG (Windows) | 2015+ | Windows 10+ | [OSEE](../OSEE/) [Windows Security](../windows_security/) |
+| Secure Boot | 2012+ | Windows 8+ | [Windows Security](../windows_security/) |
+| IMDSv2 | 2021 | AWS | [Cloud & Container Security](../cloud_security/) |
+| SLSA | 2022 | Software supply chain | [Cloud & Container Security](../cloud_security/) [Supply Chain](../supply_chain_security/) |
+| PQC Standards | 2024 | NIST FIPS 203/204/205 | [Cryptography](../cryptography/) |
 
 ### By Attack Surface
 
@@ -252,16 +338,27 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | **Hypervisor (Ring -1)** | CVE-2015-3456 (VENOM), CVE-2021-28476 (Hyper-V) | [CPU Rings](../ring_and_vulns/) |
 | **SMM/UEFI (Ring -2)** | LoJax, MoonBounce, CosmicStrand, BlackLotus | [CPU Rings](../ring_and_vulns/) |
 | **Intel ME (Ring -3)** | CVE-2017-5705–5715, CVE-2019-0090, CVE-2020-8758 | [CPU Rings](../ring_and_vulns/) |
+| **Active Directory** | PrintNightmare (CVE-2021-34527), HiveNightmare, Win32k type confusion | [Windows Security](../windows_security/) |
+| **Cloud IAM** | Capital One SSRF→IMDS, AWS IMDSv2, Kubernetes RBAC | [Cloud & Container Security](../cloud_security/) |
+| **Container Runtime** | CVE-2019-5736 (runc), CVE-2015-3456 (VENOM/QEMU) | [Cloud & Container Security](../cloud_security/) |
+| **DNS Protocol** | Kaminsky DNS poisoning (2008), BGP hijacking (2021) | [Network Security](../network_security/) |
+| **TLS Protocol** | BEAST, CRIME, POODLE, FREAK, Logjam, DROWN, ROBOT | [Cryptography](../cryptography/) [Network Security](../network_security/) |
+| **IoT Firmware** | Mirai (default credentials), Zigbee vulnerabilities | [IoT Security](../iot_security/) |
+| **Browser Rendering** | libwebp (CVE-2023-4863), WebRTC, Skia, AFL/OSS-Fuzz targets | [Web Security](../web_security/) [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
+| **ML Training Pipeline** | Adversarial examples, membership inference, model extraction, prompt injection | [AI/ML Security](../ai_security/) |
+| **Package Registry** | left-pad, ua-parser-js, colors.js/faker.js, dependency confusion | [Supply Chain](../supply_chain_security/) |
 
 ### By Threat Actor
 
 | Actor | Key CVEs / Campaigns | Primary Target | Track(s) |
 |-------|---------------------|----------------|----------|
 | **NSO Group** | CVE-2019-2215, FORCEDENTRY (CVE-2021-30860), BLASTPASS (CVE-2023-4863) | Mobile/iOS/Android | [Android](../android_and_CVEs/) [macOS](../Macos/) [Chromium](../Chromium_Architecture_and_Vulnerability/) |
-| **DPRK/Lazarus** | CVE-2022-0609, CVE-2024-7971, AppleJeus | Cryptocurrency, media | [Chromium](../Chromium_Architecture_and_Vulnerability/) [macOS](../Macos/) |
+| **DPRK/Lazarus** | CVE-2022-0609, CVE-2024-7971, AppleJeus | Cryptocurrency, media | [Chromium](../Chromium_Architecture_and_Vulnerability/) [macOS](../Macos/) [Windows Security](../windows_security/) [Supply Chain](../supply_chain_security/) |
 | **Candiru/Intellexa** | CVE-2021-30551, CVE-2022-2294, Predator spyware | Journalists, activists | [Android](../android_and_CVEs/) [Chromium](../Chromium_Architecture_and_Vulnerability/) |
 | **APT28/Sednit** | LoJax UEFI bootkit, XAgent | Government, military | [macOS](../Macos/) [CPU Rings](../ring_and_vulns/) |
 | **APT41** | ShadowPad supply chain | Broad espionage | [CPU Rings](../ring_and_vulns/) |
+| **SolarWinds/APT29** | SUNBURST supply chain (2020) | US government, enterprise | [Cloud & Container Security](../cloud_security/) [Supply Chain](../supply_chain_security/) |
+| **TeamTNT** | Container-specific malware, AWS credential theft | Cloud infrastructure | [Cloud & Container Security](../cloud_security/) |
 
 ---
 
@@ -283,6 +380,42 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 
 8. **Patch fragmentation remains the Achilles heel.** While Pixels receive same-day patches, billions of Android devices wait 3-6+ months or never receive updates. [Android](../android_and_CVEs/)
 
+9. **Cloud misconfigurations are the #1 vulnerability.** IAM misconfigurations, exposed metadata services, and overly permissive roles enable the most impactful cloud breaches (Capital One, SolarWinds). Defense requires shift from perimeter to identity-based security models. [Cloud & Container Security](../cloud_security/)
+
+10. **Supply chain attacks bypass traditional security boundaries.** From SolarWinds to XZ Utils, compromise of trusted distribution channels undermines the assumption that upstream code is safe. Zero-trust supply chain verification (SLSA, sigstore) is essential. [Supply Chain](../supply_chain_security/)
+
+11. **Fuzzing is the most productive vulnerability discovery method.** AFL, libFuzzer, OSS-Fuzz, and syzkaller collectively discover thousands of bugs annually; LLM-guided fuzzing promises to further expand coverage in semantic-heavy targets. [Fuzzing & Vuln Research](../fuzzing_vuln_research/)
+
+12. **AI/ML attacks are a rapidly growing attack surface.** Adversarial examples, prompt injection, membership inference, and model extraction represent fundamentally new vulnerability classes that existing mitigations do not address. [AI/ML Security](../ai_security/)
+
+13. **Web applications remain the most attacked vector.** From Shellshock to Log4Shell, injection vulnerabilities in web-facing services consistently enable the most impactful breaches; HTTP/2 CONTINUATION floods show protocol-level attacks persist. [Web Security](../web_security/)
+
 ---
 
-*Timeline compiled from 8 research tracks totaling 300,000+ words of technical analysis. All dates derived from primary source reports in this repository.*
+*Timeline compiled from 18 research tracks totaling 300,000+ words of technical analysis. All dates derived from primary source reports in this repository.*
+
+---
+
+## References
+
+- CVE database — https://cve.mitre.org/ and https://nvd.nist.gov/
+- Google Project Zero blog — https://googleprojectzero.blogspot.com/
+- Microsoft Security Response Center — https://msrc.microsoft.com/blog/
+- Android Security Bulletins — https://source.android.com/security/bulletin
+- Apple Security Updates — https://support.apple.com/security/
+- Chrome Release Blog — https://chromereleases.googleblog.com/
+- Linux Kernel changelogs — https://cdn.kernel.org/
+- NIST National Vulnerability Database — https://nvd.nist.gov/
+- MITRE ATT&CK — https://attack.mitre.org/
+- Kaspersky Securelist — https://securelist.com/
+- Mandiant Threat Intelligence — https://www.mandiant.com/resources
+- Citizen Lab research reports — https://citizenlab.ca/
+- Black Hat / DEF CON presentation archives — https://www.blackhat.com/presentations/ and https://defcon.org/html/links/dc-archives.html
+- KrebsOnSecurity — https://krebsonsecurity.com/
+- Ars Technica security coverage — https://arstechnica.com/security/
+- The Hacker News — https://thehackernews.com/
+- BleepingComputer — https://www.bleepingcomputer.com/
+- Qualys vulnerability research — https://www.qualys.com/research/
+- Rapid7 vulnerability research — https://www.rapid7.com/research/
+- US-CERT advisories — https://www.cisa.gov/news-alerts
+- CERT/CC advisories — https://www.kb.cert.org/vuls/

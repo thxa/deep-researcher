@@ -538,3 +538,13 @@ python3 -c "from pwn import *; print(disasm(b'\x90\x31\xc0\x0f\x05'))"
 # Extract vmlinux from compressed image
 ./scripts/extract-vmlinux /boot/vmlinuz-$(uname -r) > vmlinux
 ```
+## References
+
+- Project Zero Blog — https://googleprojectzero.blogspot.com/
+- Pwn College — https://pwn.college/
+- MITRE CWE — https://cwe.mitre.org/
+- NVD — https://nvd.nist.gov/
+- CVE records as cited: CVE-2016-5195 (Dirty COW), CVE-2022-0847 (Dirty Pipe), CVE-2021-4034 (PwnKit), CVE-2019-2215 (Bad Binder), CVE-2024-1086 (Netfilter), etc.
+- "Fuzzing: Brute Force Vulnerability Discovery," Sutton et al., 2007
+- "Return-Oriented Programming," Roemer et al., 2012
+- Various security research blog posts and conference proceedings (DEF CON, Black Hat, CCC)

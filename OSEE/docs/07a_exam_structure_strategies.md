@@ -759,3 +759,16 @@ These readings are officially recommended by OffSec for EXP-401 preparation:
 ---
 
 *This document was compiled from official OffSec documentation, the OSEE Exam Guide, EXP-401 FAQ, Proctoring Tool Manual, Proctored Exam Requirements FAQ, and General Proctoring FAQ. Always refer to the official OffSec exam guide for the most current and authoritative information, as policies may change. Last updated: April 2026.*
+
+## References
+
+1. Offensive Security, "OSEE Exam Guide," https://help.offsec.com/hc/en-us/articles/360046458732
+2. Offensive Security, "EXP-401 FAQ," https://www.offsec.com/courses/exp-401/
+3. Offensive Security, "Proctoring Tool Manual," https://help.offsec.com/hc/en-us/
+4. Offensive Security, "Proctored Exam Requirements," https://help.offsec.com/hc/en-us/articles/
+5. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
+6. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+7. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
+8. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
+9. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+10. j00ru (Mateusz Jurczyk), Windows Kernel Research, https://j00ru.vexillium.org/

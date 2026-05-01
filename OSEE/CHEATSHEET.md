@@ -124,3 +124,11 @@ OSCP ──→ OSEP ──→ OSED ──→ OSEE
   │        └──────────────────── PEN-300: Advanced Evasion & Breaching
   └───────────────────────────── PEN-200: Foundations of Penetration Testing
 ```
+
+## References
+
+- OffSec OSEE: https://www.offsec.com/courses/osee/
+- Russinovich et al., "Windows Internals," 7th Ed., Microsoft Press
+- Corelan Team: https://www.corelan.be/
+- Connor McGarr: https://connormcgarr.github.io/
+- MSRC Blog: https://msrc.microsoft.com/blog/

@@ -412,3 +412,16 @@ For anyone pursuing the deepest levels of offensive security expertise, OSEE rem
 
 *Document prepared as part of the OSEE certification research project.*
 *Last updated: 2025*
+
+## References
+
+1. Offensive Security, "OSEE Certification," https://www.offsec.com/courses/osee/
+2. Offensive Security, "Advanced Windows Exploitation (AWE) Course History," https://www.offsec.com/courses/exp-401/
+3. Mark Russinovich, David Solomon & Alex Ionescu, "Windows Internals," 7th Edition, Microsoft Press.
+4. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+5. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+6. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
+7. MITRE ATT&CK — Windows Techniques, https://attack.mitre.org/techniques/enterprise/
+8. Microsoft Security Response Center (MSRC) Blog, https://msrc.microsoft.com/blog/
+9. j00ru (Mateusz Jurczyk), Windows Kernel Research, https://j00ru.vexillium.org/
+10. Enrico Perla & Massimiliano Oldani, "A Guide to Kernel Exploitation: Attacking the Core," Syngress, 2010.

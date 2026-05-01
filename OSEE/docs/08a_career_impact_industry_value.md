@@ -775,3 +775,16 @@ The OSEE certification represents one of the highest-return investments availabl
 *Last Updated: April 2026*
 *Author: OSEE Study Guide Project*
 *Disclaimer: Salary figures are estimates based on publicly available data, industry surveys, and market observations. Actual compensation varies by geography, employer, experience, clearance status, and negotiation. This document does not guarantee specific career outcomes.*
+
+## References
+
+1. Offensive Security, "OSEE Certification," https://www.offsec.com/courses/osee/
+2. Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
+3. (ISC)², "Cybersecurity Workforce Study," https://www.isc2.org/Research
+4. CyberSeek, "Cybersecurity Supply/Demand Heat Map," https://www.cyberseek.org/
+5. Glassdoor & LinkedIn Salary Data, https://www.glassdoor.com/, https://www.linkedin.com/salary/
+6. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
+7. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
+8. MITRE ATT&CK Framework, https://attack.mitre.org/
+9. SANS Institute, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+10. Microsoft Security Response Center (MSRC) Blog, https://msrc.microsoft.com/blog/

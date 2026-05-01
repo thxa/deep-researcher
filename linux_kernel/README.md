@@ -37,3 +37,19 @@ The largest track in this repository, covering the full attack surface of the Li
 - **Zero-Day Exploit Development** — [../zero_day/](../zero_day/) — kernel 0-day development methodology and the exploitation pipeline
 - **Ring & Vulnerabilities** — [../ring_and_vulns/](../ring_and_vulns/) — Ring 0 (kernel mode) vulnerability classes and privilege boundary analysis
 - **CVE-2023-20938** — [../CVE-2023-20938/](../CVE-2023-20938/) — A kernel exploitation case study in the Android Binder subsystem
+
+## References
+
+- Robert Love, "Linux Kernel Development," 3rd Edition, Addison-Wesley, 2010.
+- Linux Kernel Documentation, https://www.kernel.org/doc/html/latest/
+- Linux Kernel Source Tree, https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git
+- Phrack Magazine, various articles on kernel exploitation, http://www.phrack.org/
+- NIST National Vulnerability Database (NVD), https://nvd.nist.gov/
+- Linux Kernel Mailing List (LKML), https://lore.kernel.org/lkml/
+- Google Project Zero Blog, https://googleprojectzero.blogspot.com/
+- KASAN Documentation, https://www.kernel.org/doc/html/latest/dev-tools/kasan.html
+- KMSAN Documentation, https://www.kernel.org/doc/html/latest/dev-tools/kmsan.html
+- grsecurity/PaX Documentation, https://grsecurity.net/
+- KSPP (Kernel Self-Protection Project), https://kernsec.org/wiki/
+- LWN.net, https://lwn.net/
+- Black Hat and DEF CON presentations on kernel exploitation (various years)

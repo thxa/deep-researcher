@@ -253,3 +253,15 @@ Starting with macOS 11 (Big Sur), the system volume is cryptographically sealed 
 ## Summary
 
 macOS security is a defense-in-depth architecture where entitlements define what code *may* do, the Sandbox restricts what it *actually can* do, MACF provides the kernel hook infrastructure for policy enforcement, and hardware-backed encryption (via the Secure Enclave) protects data at rest. Each layer reinforces the others: SIP protects the enforcement mechanisms themselves, TCC adds user-consent gates atop Sandbox file restrictions, and Endpoint Security gives third-party security tools a stable, performant interface to monitor it all without resorting to kernel extensions. Understanding the interplay between these layers is essential for both security research and building robust macOS security tooling.
+
+---
+
+## References
+
+- Apple Platform Security Guide: https://support.apple.com/guide/security/
+- Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
+- Apple Sandbox Guide (Seatbelt/SBPL): https://opensource.apple.com/source/sandbox/
+- Apple Entitlements Documentation: https://developer.apple.com/documentation/bundleresources/entitlements/
+- MACF (MAC Framework) in XNU: https://opensource.apple.com/source/xnu/
+- Patrick Wardle, *The Art of Mac Malware* (No Starch Press, 2022)
+- NVD (National Vulnerability Database): https://nvd.nist.gov/
