@@ -1459,7 +1459,7 @@ The choice of algorithm is a function of four key dimensions: **data type** (tab
 
 50. Dosovitskiy, A., Beyer, L., Kolesnikov, A., Weissenborn, D., Zhai, X., Unterthiner, T., Dehghani, M., Minderer, M., Heigold, G., Gelly, S., Uszkoreit, J., & Houlsby, N., "An Image Is Worth 16x16 Words: Transformers for Image Recognition at Scale", *International Conference on Learning Representations (ICLR)*, 2021. arXiv: [2010.11929](https://arxiv.org/abs/2010.11929)
 
-51. Radford, A., Narasimhan, K., Salimans, T., & Sutskever, I., "Improving Language Understanding by Generative Pre-Training", OpenAI Technical Report, 2018. URL: [https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf)
+51. Radford, A., Narasimhan, K., Salimans, T., & Sutskever, I., "Improving Language Understanding by Generative Pre-Training", OpenAI Technical Report, 2018. URL: [https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
 
 52. Smith, L. N., "Cyclical Learning Rates for Training Neural Networks", *Proceedings of the IEEE Winter Conference on Applications of Computer Vision (WACV)*, pp. 464–472, 2017. arXiv: [1506.01186](https://arxiv.org/abs/1506.01186)
 

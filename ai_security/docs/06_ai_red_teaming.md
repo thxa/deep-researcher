@@ -794,7 +794,7 @@ wej
 13. Zou, A., et al. (2023). "Universal and Transferable Adversarial Attacks on Aligned Language Models." *arXiv:2307.15043*.
 14. Weidinger, L., et al. (2022). "Taxonomy of Risks Posed by Language Models." *ACL*.
 15. Qi, X., et al. (2023). "Fine-tuning Aligned Language Models Compromises Safety." *arXiv:2310.03693*.
-16. OpenAI (2023). "GPT-4 System Card." https://openai.com/research/gpt-4-system-card
+16. OpenAI (2023). "GPT-4 System Card." https://cdn.openai.com/papers/gpt-4-system-card.pdf
 17. European Parliament (2024). "Regulation (EU) 2024/1689 — Artificial Intelligence Act." *Official Journal of the European Union*.
 18. NVIDIA (2023). "NeMo Guardrails: Programmable Guardrails for LLMs." https://github.com/NVIDIA/NeMo-Guardrails
 19. Meta (2023). "Llama Guard: LLM-based Input-Output Safeguard." https://huggingface.co/meta-llama/LlamaGuard-7b

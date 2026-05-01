@@ -745,7 +745,7 @@ Three scaling laws govern modern deep learning:
 
 ### Language Models
 
-30. Radford, A., Narasimhan, K., Salimans, T., Sutskever, I., "Improving Language Understanding by Generative Pre-Training", OpenAI, 2018. URL: [https://openai.com/research/language-unsupervised](https://openai.com/research/language-unsupervised)
+30. Radford, A., Narasimhan, K., Salimans, T., Sutskever, I., "Improving Language Understanding by Generative Pre-Training", OpenAI, 2018. URL: [https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf](https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf)
 
 31. Devlin, J., Chang, M.W., Lee, K., Toutanova, K., "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding", *Proc. NAACL-HLT*, 2019. arXiv:1810.04805. DOI: [10.18653/v1/N19-1423](https://doi.org/10.18653/v1/N19-1423)
 
@@ -883,7 +883,7 @@ Three scaling laws govern modern deep learning:
 
 84. Fedus, W., Zoph, B., Shazeer, N., "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity", *Proc. ICML*, 2022. arXiv:2101.03961
 
-85. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., Sutskever, I., "Language Models are Unsupervised Multitask Learners", OpenAI, 2019. URL: [https://openai.com/research/better-language-models](https://openai.com/research/better-language-models)
+85. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., Sutskever, I., "Language Models are Unsupervised Multitask Learners", OpenAI, 2019. URL: [https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf)
 ## References
 
 - Russell, S. & Norvig, P., "Artificial Intelligence: A Modern Approach," 4th Edition, Pearson, 2020.

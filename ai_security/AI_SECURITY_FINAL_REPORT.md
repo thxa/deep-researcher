@@ -255,4 +255,4 @@ Defense approaches range from empirical (no formal guarantee) to certified (math
 28. Liu, Y., et al. (2018). "TrojanNN: Trojanning Neural Networks." *NDSS*.
 29. Wang, B., et al. (2022). "Backdooring Pre-trained Models." *NDSS*.
 30. Abadi, M., et al. (2016). "Deep Learning with Differential Privacy." *ACM CCS*.
-31. OpenAI (2023). "GPT-4 System Card." https://openai.com/research/gpt-4-system-card
+31. OpenAI (2023). "GPT-4 System Card." https://cdn.openai.com/papers/gpt-4-system-card.pdf

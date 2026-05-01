@@ -871,7 +871,7 @@ NVIDIA's framework for adversarial testing of LLMs.
 14. NVIDIA (2023). "NeMo Guardrails: Programmable Guardrails for LLMs." https://github.com/NVIDIA/NeMo-Guardrails
 15. Meta (2023). "Llama Guard: LLM-based Input-Output Safeguard." https://huggingface.co/meta-llama/LlamaGuard-7b
 16. OWASP (2023). "OWASP Top 10 for LLM Applications." https://owasp.org/www-project-top-10-for-large-language-model-applications/
-17. OpenAI (2023). "GPT-4 System Card." https://openai.com/research/gpt-4-system-card
+17. OpenAI (2023). "GPT-4 System Card." https://cdn.openai.com/papers/gpt-4-system-card.pdf
 18. Tramer, F., et al. (2016). "Stealing Machine Learning Models via Prediction APIs." *USENIX Security*.
 19. PEDRSEES (2023). "Token-Level Timing Attacks on LLM APIs." *arXiv*.
 20. Zhu, K., et al. (2023). "AutoDAN: Generating Stealthy Jailbreak Prompts on Aligned Large Language Models." *arXiv*.

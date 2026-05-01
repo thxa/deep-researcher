@@ -1202,7 +1202,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 ### Semi-Supervised & Weak Supervision
 
-12. **Lee, D.-H.** (2013). "Pseudo-Label: The Simple and Efficient Semi-Supervised Learning Method for Deep Neural Networks." *Workshop on Challenges in Representation Learning, ICML 2013*. URL: [https://cdnjs.cloudflare.com/ajax/libs/pseudo-label/2013.pdf](https://cdnjs.cloudflare.com/ajax/libs/pseudo-label/2013.pdf)
+12. **Lee, D.-H.** (2013). "Pseudo-Label: The Simple and Efficient Semi-Supervised Learning Method for Deep Neural Networks." Workshop paper, ICML 2013.
 
 13. **Sohn, K., Berthelot, D., Carlini, N., Zhang, Z., Zhang, H., Raffel, C. A., et al.** (2020). "FixMatch: Simplifying Semi-Supervised Learning with Consistency and Confidence." *Advances in Neural Information Processing Systems (NeurIPS)*, 33. arXiv: [2001.07685](https://arxiv.org/abs/2001.07685)
 
