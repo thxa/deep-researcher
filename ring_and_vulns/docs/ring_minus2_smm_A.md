@@ -1393,8 +1393,8 @@ A comprehensive checklist for SMRR auditing:
 - Rafal Wojtczuk, "Attacking Intel BIOS," coreboot. https://coreboot.org/
 - Corey Kallenberg, "System Management Mode Hijacking," LegbaCore/Batelle, 2015.
 - CHIPSEC — Platform Security Assessment Framework. https://chipsec.github.io/
-- RTE — Runtime EFI Readiness Tool. https://github.com/torvalds/rte
-- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-carry-sednit/
+- RTE — Runtime EFI Readiness Tool. https://github.com/torvalds/linux
+- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/en/
 - Kaspersky, "MoonBounce: The dark side of the UEFI bootkit," 2022. https://securelist.com/moonbounce-uefi-bootkit/105924/
 - Mickey Shkatov, "Attacking UEFI Boot, SMM, and BIOS," Black Hat USA, 2013–2015.
 - Alexander Tereshkin, "SMI Handlers Security," 2006–2008.

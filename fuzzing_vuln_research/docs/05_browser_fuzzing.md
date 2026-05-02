@@ -793,11 +793,11 @@ setInterval(() => {
 
 [2] Google. *ClusterFuzz*. https://github.com/google/clusterfuzz
 
-[3] Google. *Chromium Fuzzing*. https://www.chromium.org/Home/testing/fuzzing/
+[3] Google. *Chromium Fuzzing*. https://www.chromium.org/Home/chromium-security/
 
 [4] Mozilla. *Fuzzing SpiderMonkey*. https://wiki.mozilla.org/Security/Fuzzing
 
-[5] WebKit. *Fuzzing WebKit*. https://trac.webkit.org/wiki/Fuzzing
+[5] WebKit. *Fuzzing WebKit*. https://trac.webkit.org/
 
 [6] Holz, S. & Groß, S. (2023). *JIT-Fuzzing: Attacking JIT Compilers with Compiler Techniques*. USENIX Security.
 

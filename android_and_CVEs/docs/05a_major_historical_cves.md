@@ -713,7 +713,7 @@ The March 2020 patch addressed the vulnerability by:
 9. Google Project Zero, NSO Group / Pegasus research — https://googleprojectzero.blogspot.com/
 10. Amnesty International Security Lab, Pegasus forensic analysis — https://securitylab.amnesty.org/
 11. Kaspersky Securelist: Mobile Threats — https://securelist.com/
-12. Qualcomm Product Security Bulletins — https://www.qualcomm.com/products/product-security
+12. Qualcomm Product Security Bulletins — https://www.qualcomm.com/company/product-security
 13. Android Security & Privacy Year in Review — https://security.googleblog.com/
 14. Artenstein, N. "Broadpwn: Remotely Compromising Android and iOS via Broadcom Wi-Fi." Black Hat USA, 2017.
 15. Drake, J. "Stagefright: Scary Code in the Heart of Android." Black Hat USA, 2015.

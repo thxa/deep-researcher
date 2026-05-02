@@ -303,7 +303,7 @@ STRIDE adapted for IoT adds three domain-specific threat categories to the class
 3. Zigbee 3.0 Specification (05-3474-22). Connectivity Standards Alliance.
 4. Matter 1.2 Core Specification. Connectivity Standards Alliance.
 5. NIST SP 800-183: Networks of Things. Boyes, M. et al. (2016). National Institute of Standards and Technology.
-6. OWASP IoT Top 10 (2014, 2024 drafts). Open Web Application Security Project. https://owasp.org/www-project-iot-top-10/
+6. OWASP IoT Top 10 (2014, 2024 drafts). Open Web Application Security Project. https://owasp.org/www-project-top-ten/
 7. IEC 62443: Industrial Communication Networks — Network and System Security. International Electrotechnical Commission.
 8. JSOF Research Lab. Ripple20: 19 Vulnerabilities Affecting Millions of IoT Devices (2020). https://ripple20.com/
 9. Forescout Research Labs. Amnesia:33 (2020). https://www.forescout.com/blog/amnesia33/

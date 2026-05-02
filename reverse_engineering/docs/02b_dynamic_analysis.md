@@ -1490,7 +1490,7 @@ detect_anti_debug_pe(sys.argv[1])
 3. GDB documentation, https://sourceware.org/gdb/documentation/
 4. Frida documentation, https://frida.re/docs/home/
 5. WinDbg documentation, https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/
-6. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+6. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 7. Chris Eagle, "The IDA Pro Book," No Starch Press, 2011.
 8. Cuckoo Sandbox documentation, https://cuckoosandbox.org/
 9. Eldad Eilam, "Reversing: Secrets of Reverse Engineering," Wiley, 2005.

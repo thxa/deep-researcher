@@ -645,8 +645,8 @@ shodan search "Siemens Healthcare" port:80,443
 
 ## References
 
-1. FDA. Content of Premarket Submissions for Management of Cybersecurity Risks in Medical Devices (2023). https://www.fda.gov/regulatory-information/
-2. FDA. Postmarket Management of Cybersecurity in Medical Devices (2016, updated 2023). https://www.fda.gov/regulatory-information/
+1. FDA. Content of Premarket Submissions for Management of Cybersecurity Risks in Medical Devices (2023). https://www.fda.gov/medical-devices/
+2. FDA. Postmarket Management of Cybersecurity in Medical Devices (2016, updated 2023). https://www.fda.gov/medical-devices/
 3. IEC 62304:2006+A1:2015 — Medical Device Software — Software Life Cycle Processes. International Electrotechnical Commission.
 4. IEC 81001-5-1:2021 — Security Lifecycle Requirements for Health Software. International Electrotechnical Commission.
 5. AAMI SW96: Standard for Security Risk Management in Medical Devices. Association for the Advancement of Medical Instrumentation.
@@ -667,7 +667,7 @@ shodan search "Siemens Healthcare" port:80,443
 20. DEF CON IoT Village / Medical Device Village Presentations. https://iotvillage.org/
 21. Rapid7. "Vulnerabilities in BD Alaris Gateway Workstation" (2019). https://www.rapid7.com/research/
 22. NIST SP 800-183: Networks of Things. National Institute of Standards and Technology.
-23. OWASP IoT Top 10. https://owasp.org/www-project-iot-top-10/
+23. OWASP IoT Top 10. https://owasp.org/www-project-top-ten/
 24. CVE-2019-19478: DCMTK DcmSCP Buffer Overflow. NVD.
 25. CVE-2020-19479: DCMTK DcmSCP Null Pointer Dereference. NVD.
 26. CVE-2018-10534: Omnipod Insulin Pump RF Protocol Vulnerabilities. NVD.

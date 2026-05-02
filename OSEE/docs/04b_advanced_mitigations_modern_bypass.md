@@ -1526,8 +1526,8 @@ _SEP_TOKEN_PRIVILEGES:
 
 ## References
 
-1. Microsoft, "Virtualization-based Security (VBS)," https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/virtualization-based-security
-2. Microsoft, "Hypervisor-Protected Code Integrity (HVCI)," https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/
+1. Microsoft, "Virtualization-based Security (VBS)," https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/
+2. Microsoft, "Hypervisor-Protected Code Integrity (HVCI)," https://docs.microsoft.com/en-us/windows-hardware/drivers/bringup/
 3. Intel, "Control-flow Enforcement Technology (CET) Specification," https://www.intel.com/content/www/us/en/developer/articles/technical/control-flow-enforcement-technology.html
 4. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
 5. Yarden Shafir, "Beyond the Edge: HVCI and Kernel Exploitation Defenses," OffSec, 2023.

@@ -1091,7 +1091,7 @@ analyze_firmware_diff('firmware_v1.bin', 'firmware_v2.bin')
 4. binwalk documentation, https://github.com/ReFirmLabs/binwalk
 5. UEFI Specification, https://uefi.org/specifications
 6. NIST, "SP 800-147B: BIOS Protection Guidelines," 2023.
-7. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+7. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 8. DEF CON conference proceedings, https://www.defcon.org/
 9. Chris Eagle, "The IDA Pro Book," No Starch Press, 2011.
 10. MITRE, "Hardware and Firmware Security," https://www.mitre.org/

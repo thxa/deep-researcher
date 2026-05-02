@@ -711,7 +711,7 @@ The AEAD composition theorem (Bellare & Namprempre 2000) shows that Encrypt-then
 11. Barker, E., Roginsky, A., "Transitioning the Use of Cryptographic Algorithms and Key Lengths," SP 800-131A Rev. 2, March 2019. https://csrc.nist.gov/publications/detail/sp/800-131a/rev-2/final
 12. Bernstein, D.J., "ChaCha, a variant of Salsa20," Workshop Record of SASC, 2008. https://cr.yp.to/chacha/chacha-20080128.pdf
 13. Aumasson, J.-P., Neves, S., Wilcox-O'Hearn, Z., "BLAKE2: simpler, smaller, fast as MD5," Proceedings of ACNS, 2013. https://www.blake2.net/blake2.pdf
-14. Biryukov, A., Dinu, D., Khovratovich, D., "Argon2: the memory-hard function for password hashing and other applications," CS2CO Workshop, 2015. https://www.password-hashing.net/argon2.html
+14. Biryukov, A., Dinu, D., Khovratovich, D., "Argon2: the memory-hard function for password hashing and other applications," CS2CO Workshop, 2015. https://www.password-hashing.net/
 15. Bogdanov, A., Knudsen, L.R., Leander, G., "Biclique Cryptanalysis of the Full AES," ASIACRYPT 2011. https://eprint.iacr.org/2011/498
 16. Barker, E., "Recommendation for Key Management: Transition Planning," SP 800-131A, 2011. https://csrc.nist.gov/publications/detail/sp/800-131a/final
 17. Bellare, M., Canetti, R., Krawczyk, H., "Keying Hash Functions for Message Authentication," CRYPTO 1996. https://link.springer.com/chapter/10.1007/3-540-68697-5_8

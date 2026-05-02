@@ -1058,7 +1058,7 @@ def paired_bootstrap_test(scores_a, scores_b, n_boot=10000, ci=0.95):
 
 17. Cohen, J. (1960). "A Coefficient of Agreement for Nominal Scales." *Educational and Psychological Measurement*, 20(1), pp. 37–46. DOI: [10.1177/001316446002000104](https://doi.org/10.1177/001316446002000104)
 
-18. Krippendorff, K. (2011). "Computing Krippendorff's Alpha-Reliability." *Philadelphia: Annenberg School for Communication, University of Pennsylvania*. URL: [https://www.asc.upenn.edu/resources/comp-krippendorffs-alpha-reliability](https://www.asc.upenn.edu/resources/comp-krippendorffs-alpha-reliability)
+18. Krippendorff, K. (2011). "Computing Krippendorff's Alpha-Reliability." *Philadelphia: Annenberg School for Communication, University of Pennsylvania*. URL: [https://www.asc.upenn.edu/](https://www.asc.upenn.edu/)
 
 ### Statistical Significance Testing for NLP/ML
 

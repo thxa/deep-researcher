@@ -1208,4 +1208,4 @@ For discovering new Win32k vulnerabilities:
 12. Microsoft Learn. "Win32k System Call Filtering." <https://learn.microsoft.com/en-us/windows/win32/api/winuser/> — Win32k API documentation.
 13. Ormandy, T. "Win32k Attack Surface Analysis." *Google Project Zero*, 2017. — Comprehensive audit of Win32k callbacks and race conditions.
 14. Chen, J. "The Old New Thing: Win32k Internals." <https://devblogs.microsoft.com/oldnewthing/> — Win32k design decisions and constraints.
-15. DISA. "Windows 10 STIG — Win32k Hardening." <https://www.stigviewer.com/stig/windows_10/> — Win32k syscall restriction and callback hardening.
+15. DISA. "Windows 10 STIG — Win32k Hardening." <https://www.stigviewer.com/stigs/> — Win32k syscall restriction and callback hardening.

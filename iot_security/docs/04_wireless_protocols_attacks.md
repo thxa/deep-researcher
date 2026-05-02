@@ -635,7 +635,7 @@ reaver -i wlan0 -b <target_bssid> -vv
 12. *Keeloq Cryptanalysis* — Indesteege, S. et al. Crypto (2008).
 13. Flipper Zero Documentation. https://docs.flipper.net/
 14. KillerBee: IEEE 802.15.4/Zigbee Security Research Framework. River Loop Security. https://github.com/riverloopsec/killerbee
-15. OWASP IoT Top 10. https://owasp.org/www-project-iot-top-10/
+15. OWASP IoT Top 10. https://owasp.org/www-project-top-ten/
 16. NIST SP 800-183: Networks of Things. National Institute of Standards and Technology.
 17. IEC 62443: Industrial Communication Networks — Network and System Security.
 18. DEF CON IoT Village Presentations. https://iotvillage.org/

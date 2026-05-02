@@ -603,7 +603,7 @@ The defenders' advantage is that network attacks leave traces — in routing tab
 15. Suricata IDS/IPS Documentation. https://suricata.io/documentation/
 16. Wireshark Network Protocol Analyzer. https://www.wireshark.org/docs/
 17. Bleichenbacher, D., "Chosen Ciphertext Attacks Against Protocols Based on the RSA Encryption Standard PKCS #1," CRYPTO 1998. https://link.springer.com/chapter/10.1007/BFb0055716
-18. Marlinspike, M., "SSL Stripping," Black Hat DC 2009. https://moxie.org/ssl-strip/
+18. Marlinspike, M., "SSL Stripping," Black Hat DC 2009. https://moxie.org/
 19. RFC 6962, "Certificate Transparency," June 2013. https://www.rfc-editor.org/rfc/rfc6962
 20. RFC 6844, "DNS Certification Authority Authorization (CAA)," January 2013. https://www.rfc-editor.org/rfc/rfc6844
 21. RFC 5452, "DNS Source Port Randomization," January 2009. https://www.rfc-editor.org/rfc/rfc5452

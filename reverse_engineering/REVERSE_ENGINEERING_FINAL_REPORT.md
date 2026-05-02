@@ -963,7 +963,7 @@ The unifying thread is this: **every security track requires reading and underst
 
 ## References
 
-1. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+1. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 2. Michael Sikorski & Andrew Honig, "Practical Malware Analysis," No Starch Press, 2012.
 3. Eldad Eilam, "Reversing: Secrets of Reverse Engineering," Wiley, 2005.
 4. Chris Eagle, "The IDA Pro Book," No Starch Press, 2011.
@@ -975,7 +975,7 @@ The unifying thread is this: **every security track requires reading and underst
 10. Cuckoo Sandbox documentation, https://cuckoosandbox.org/
 11. Mandiant (now Google), "APT1: Exposing One of China's Cyber Espionage Units," 2013.
 12. Mandiant, "SUNBURST Backdoor Analysis," 2020.
-13. Kaspersky, "Stuxnet Analysis," 2010, https://securelist.com/stuxnet-analysis/32683/
+13. Kaspersky, "Stuxnet Analysis," 2010, https://securelist.com/
 14. Citizen Lab, "FORCEDENTRY: NSO Group's Zero-Click iMessage Exploit," 2021.
 15. Cliff Stoll, "The Cuckoo's Egg," Doubleday, 1989.
 16. Symantec Security Response, "Stuxnet 0.5: The Missing Link," 2013.

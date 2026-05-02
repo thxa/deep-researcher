@@ -1214,7 +1214,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 16. **Gal, Y., Islam, R., & Ghahramani, Z.** (2017). "Deep Bayesian Active Learning with Image Data." *Proceedings of the 34th International Conference on Machine Learning (ICML)*, 1183–1192. arXiv: [1703.03221](https://arxiv.org/abs/1703.03221)
 
-17. **Houlsby, N., Huszár, F., Ghahramani, Z., & Lengyel, M.** (2011). "Bayesian Active Learning for Classification and Preference Sensing." *Advances in Neural Information Processing Systems (NeurIPS)*, 24. URL: [https://papers.nips.cc/paper/2011/hash/45c77d1a0f6f6f8e3f9c7fc2e4e8f60e-Abstract.html](https://papers.nips.cc/paper/2011/hash/45c77d1a0f6f6f8e3f9c7fc2e4e8f60e-Abstract.html)
+17. **Houlsby, N., Huszár, F., Ghahramani, Z., & Lengyel, M.** (2011). "Bayesian Active Learning for Classification and Preference Sensing." *Advances in Neural Information Processing Systems (NeurIPS)*, 24. URL: [https://proceedings.neurips.cc/paper/2011/hash/45c77d1a0f6f6f8e3f9c7fc2e4e8f60e-Abstract.html](https://proceedings.neurips.cc/paper/2011/hash/45c77d1a0f6f6f8e3f9c7fc2e4e8f60e-Abstract.html)
 
 18. **Sener, O., & Savarese, S.** (2018). "Active Learning for Convolutional Neural Networks: A Core-Set Approach." *Proceedings of the 6th International Conference on Learning Representations (ICLR)*. arXiv: [1708.00489](https://arxiv.org/abs/1708.00489)
 

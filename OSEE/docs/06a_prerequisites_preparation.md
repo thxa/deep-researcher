@@ -644,5 +644,5 @@ If you have gaps, use the resources in this guide to close them systematically. 
 6. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
 7. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
 8. Microsoft, "WinDbg Documentation," https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
-9. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+9. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/
 10. Enrico Perla & Massimiliano Oldani, "A Guide to Kernel Exploitation," Syngress, 2010.

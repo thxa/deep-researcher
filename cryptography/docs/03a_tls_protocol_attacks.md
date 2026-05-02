@@ -543,7 +543,7 @@ These side channels are particularly dangerous in cloud environments where virtu
 2. RFC 5246, "The Transport Layer Security (TLS) Protocol Version 1.2," August 2008. https://www.rfc-editor.org/rfc/rfc5246
 3. Duong, T., Rizzo, J., "Here Come The ⊕ Ninjas," 2011 (BEAST). CVE-2011-3389. https://www.beastAttack.com/
 4. Rizzo, J., Duong, T., "The CRIME Attack," 2012. CVE-2012-4929. https://www.ieee-security.org/
-5. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. CVE-2013-0169. https://www.ieee-security.org/TC/SP2013/papers/4977a026.pdf
+5. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. CVE-2013-0169. https://www.ieee-security.org/TC/SP2013/
 6. CVE-2014-0160, "OpenSSL Heartbeat Information Disclosure (Heartbleed)," April 2014. https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160
 7. Möller, B., Duong, T., Kotowicz, K., "This POODLE Bites: Exploiting the SSLv3 Fallback," 2014. CVE-2014-3566. https://www.openssl.org/~bodo/ssl-poodle.pdf
 8. Beurdouche, B., Bhargavan, K., Delignat-Lavaud, A., "FREAK: Factoring RSA_EXPORT Keys," 2015. CVE-2015-0204. https://freakAttack.com/

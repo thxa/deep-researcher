@@ -1007,7 +1007,7 @@ Future (2027+):
 
 1. Russinovich, M., Solomon, D., & Ionescu, A. *Windows Internals, Part 1*, 7th Edition. Microsoft Press, 2017. — DEP, ASLR, and memory management security mechanisms.
 2. Russinovich, M., Solomon, D., & Ionescu, A. *Windows Internals, Part 2*, 7th Edition. Microsoft Press, 2021. — VBS, HVCI, and Kernel Stack Cookie internals.
-3. Microsoft Learn. "Exploit Protection." <https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-reference/>
+3. Microsoft Learn. "Exploit Protection." <https://learn.microsoft.com/en-us/windows/security/threat-protection/>
 4. Microsoft Learn. "Control Flow Guard (CFG)." <https://learn.microsoft.com/en-us/windows/win32/secbp/control-flow-guard>
 5. Microsoft Security Response Center (MSRC) Blog. "Mitigations and Security Boundaries." <https://msrc.microsoft.com/blog/> — EMET deprecation, Exploit Protection, and HVCI enforcement.
 6. MITRE ATT&CK. "Bypass DEP — T1210." <https://attack.mitre.org/techniques/T1210/> — ROP chains and DEP bypass techniques.
@@ -1020,4 +1020,4 @@ Future (2027+):
 13. Xia, J. "CET Shadow Stack on Windows." *Zero Day Initiative*, 2022. — Hardware-enforced shadow stacks and CET enforcement.
 14. Microsoft. "EMET — Enhanced Mitigation Experience Toolkit." Archived documentation, 2017. — EMET configuration, deprecation path, and migration to Exploit Protection.
 15. Dormann, W. "Analyzing Exploit Mitigation Effectiveness." *CERT/CC Vulnerability Analysis Blog*, 2021. — Real-world effectiveness of DEP, ASLR, CFG, and ACG.
-16. DISA. "Windows 10 STIG — Exploit Protection Settings." <https://www.stigviewer.com/stig/windows_10/> — Mandatory DEP, bottom-up ASLR, and CFG enforcement baselines.
+16. DISA. "Windows 10 STIG — Exploit Protection Settings." <https://www.stigviewer.com/stigs/> — Mandatory DEP, bottom-up ASLR, and CFG enforcement baselines.

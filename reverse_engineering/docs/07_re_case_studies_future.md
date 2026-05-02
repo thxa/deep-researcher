@@ -1204,7 +1204,7 @@ This document connects to multiple other tracks in the Deep Researcher repositor
 
 ## References
 
-1. Kaspersky, "Stuxnet Analysis," 2010, https://securelist.com/stuxnet-analysis/32683/
+1. Kaspersky, "Stuxnet Analysis," 2010, https://securelist.com/
 2. Symantec Security Response, "Stuxnet 0.5: The Missing Link," 2013.
 3. Citizen Lab, "FORCEDENTRY: NSO Group's Zero-Click iMessage Exploit," 2021.
 4. Mandiant, "SUNBURST Backdoor Analysis," 2020.
@@ -1215,7 +1215,7 @@ This document connects to multiple other tracks in the Deep Researcher repositor
 9. Apache, "Log4Shell (CVE-2021-44228) Advisory," 2021.
 10. ESET, "LoJax: First UEFI Rootkit Found in the Wild," 2018.
 11. DEF CON and Black Hat conference proceedings, https://www.defcon.org/ and https://www.blackhat.com/
-12. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+12. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 13. SANS Institute, various RE course materials, https://www.sans.org/
 14. Ghidra documentation, https://ghidra-sre.org/
 15. WebAssembly specification, https://webassembly.github.io/spec/

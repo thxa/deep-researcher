@@ -641,6 +641,6 @@ Understanding this architecture is fundamental to evaluating kernel vulnerabilit
 6. Daniel P. Bovet & Marco Cesati, "Understanding the Linux Kernel," 3rd Edition, O'Reilly, 2005.
 7. Jonathan Corbet, Alessandro Rubini & Greg Kroah-Hartman, "Linux Device Drivers," 3rd Edition, O'Reilly, 2005.
 8. LWN.net, https://lwn.net/
-9. AMD64 Architecture Programmer's Manual, https://developer.amd.com/resources/developer-guides-manuals/
+9. AMD64 Architecture Programmer's Manual, https://developer.amd.com/
 10. Intel 64 and IA-32 Architectures Software Developer's Manual, https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
 11. Andrew Tanenbaum & Linus Torvalds, "The Tanenbaum-Torvalds Debate," comp.os.minix, 1992. https://www.oreilly.com/openbook/opensources/book/appa.html

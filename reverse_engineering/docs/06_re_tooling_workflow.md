@@ -1230,4 +1230,4 @@ VBoxManage snapshot "RE-Analysis" list
 9. Diaphora documentation, https://github.com/joxeankoret/diaphora
 10. SANS Institute, "Reverse Engineering Malware" (FOR610), https://www.sans.org/
 11. DEF CON conference proceedings, https://www.defcon.org/
-12. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+12. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf

@@ -133,14 +133,14 @@ This track is provided for educational and professional development purposes. Th
 1. SLSA Specification v1.0. "Supply-chain Levels for Software Artifacts." https://slsa.dev/spec/v1.0/
 2. OpenSSF. "Securing the Software Supply Chain." https://openssf.org/
 3. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
-4. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/
+4. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
 5. CISA. "Software Bill of Materials (SBOM)." https://www.cisa.gov/sbom
 6. Sonatype. "2023 State of the Software Supply Chain Report." https://www.sonatype.com/state-of-the-software-supply-chain
 7. Birsan, A. "Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
 8. Freund, A. "Backdoor in xz/liblzma." OpenWall oss-security mailing list, March 2024. https://www.openwall.com/lists/oss-security/2024/03/29/4
-9. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://www.microsoft.com/security/blog/2020/12/18/analyzing-solarwinds-compromise/
-10. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://www.mandiant.com/resources/blog/evasive-attacker-leverages-solarwinds-supply-chain
-11. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/specification/
+9. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+10. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+11. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/
 12. SPDX Specification v2.3. Linux Foundation. https://spdx.github.io/spdx-spec/
 13. Sigstore. "Cosign: Container Signing." https://docs.sigstore.dev/cosign/signing/signing_with_containers/
 14. npm Documentation. "Provenance." https://docs.npmjs.com/generating-provenance-statements

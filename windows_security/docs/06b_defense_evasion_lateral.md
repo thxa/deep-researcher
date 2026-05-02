@@ -713,5 +713,5 @@ mimikatz # dpapi::cred /in:C:\Users\admin\AppData\Local\Microsoft\Credentials\<r
 11. Microsoft Learn. "Credential Guard." <https://learn.microsoft.com/en-us/windows/security/identity-protection/credential-guard/> — LSASS protection and dump prevention.
 12. Microsoft Security Response Center (MSRC) Blog. "EDR Evasion Detection." <https://msrc.microsoft.com/blog/> — Defender ATP behavioral detection of unhooking and syscall anomalies.
 13. Dormann, W. "LSASS Protection and Credential Hardening." *CERT/CC Vulnerability Analysis Blog*, 2022. — Credential Guard, LSA Protection, and dump mitigation.
-14. DISA. "Windows 10 STIG — Lateral Movement Mitigation." <https://www.stigviewer.com/stig/windows_10/> — WinRM hardening, SMB signing, and UAC remote restrictions.
+14. DISA. "Windows 10 STIG — Lateral Movement Mitigation." <https://www.stigviewer.com/stigs/> — WinRM hardening, SMB signing, and UAC remote restrictions.
 15. CIS. "Microsoft Windows 11 Benchmark — Endpoint Detection." *Center for Internet Security*, 2023. — EDR configuration, ASR rules for lateral movement, and credential protection.

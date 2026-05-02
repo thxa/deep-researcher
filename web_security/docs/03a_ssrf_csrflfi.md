@@ -788,7 +788,7 @@ GET /page=/tmp/sess_XXXXXXXXXXXXXXXX HTTP/1.1&cmd=id
 
 1. OWASP Foundation. "Server-Side Request Forgery." https://owasp.org/www-community/attacks/Server_Side_Request_Forgery
 2. Orange Tsai. "A New Attack Surface on SSRF." Black Hat USA, 2019. https://blog.orange.tw/
-3. SSRF Bible. "SSRF Payload List." https://github.com/jdonady/ssrf-payloads
+3. SSRF Bible. "SSRF Payload List." https://github.com/swisskyrepo/PayloadsAllTheThings
 4. OWASP Foundation. "Cross-Site Request Forgery (CSRF)." https://owasp.org/www-community/attacks/csrf
 5. OWASP Foundation. "CSRF Prevention Cheat Sheet." https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html
 6. RFC 7049. "SameSite Cookie Attribute." https://www.rfc-editor.org/rfc/rfc6265 (Section 5.3.7)

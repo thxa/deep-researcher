@@ -417,9 +417,9 @@ For organizations that need exploit developers, vulnerability researchers, or ad
 
 ## References
 
-1. Offensive Security, "OSEE Certification," https://www.offsec.com/courses/osee/
+1. Offensive Security, "OSEE Certification," https://www.offsec.com/courses/
 2. Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
-3. SANS Institute, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+3. SANS Institute, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/
 4. Mark Russinovich, David Solomon & Alex Ionescu, "Windows Internals," 7th Edition, Microsoft Press.
 5. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
 6. MITRE ATT&CK Framework, https://attack.mitre.org/

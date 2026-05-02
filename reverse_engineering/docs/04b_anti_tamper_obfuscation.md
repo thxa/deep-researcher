@@ -1220,7 +1220,7 @@ readelf -h target_binary
 
 ## References
 
-1. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+1. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 2. Eldad Eilam, "Reversing: Secrets of Reverse Engineering," Wiley, 2005.
 3. Dennis Andriesse, "Practical Binary Analysis," No Starch Press, 2018.
 4. Chris Eagle, "The IDA Pro Book," No Starch Press, 2011.

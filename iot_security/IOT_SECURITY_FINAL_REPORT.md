@@ -247,9 +247,9 @@ IoT security is a wicked problem — one defined by interconnected systems, conf
 
 ## References
 
-1. OWASP IoT Top 10 (2014, 2024 drafts). Open Web Application Security Project. https://owasp.org/www-project-iot-top-10/
+1. OWASP IoT Top 10 (2014, 2024 drafts). Open Web Application Security Project. https://owasp.org/www-project-top-ten/
 2. NIST SP 800-183: Networks of Things. Boyes, M. et al. (2016). National Institute of Standards and Technology. https://csrc.nist.gov/publications/detail/sp/800-183/final
-3. FDA. Content of Premarket Submissions for Management of Cybersecurity Risks in Medical Devices (2023). U.S. Food and Drug Administration. https://www.fda.gov/regulatory-information/
+3. FDA. Content of Premarket Submissions for Management of Cybersecurity Risks in Medical Devices (2023). U.S. Food and Drug Administration. https://www.fda.gov/medical-devices/
 4. IEC 62443: Industrial Communication Networks — Network and System Security. International Electrotechnical Commission.
 5. ARM Security Technology — Building a Secure System using TrustZone for ARMv8-M (ARM DEN0028A). ARM Limited.
 6. Miller, C. and Valasek, C. "Remote Exploitation of an Unaltered Passenger Vehicle." Black Hat USA (2015).
@@ -263,7 +263,7 @@ IoT security is a wicked problem — one defined by interconnected systems, conf
 14. ETSI EN 303 645: Cyber Security for Consumer Internet of Things. European Telecommunications Standards Institute (2020).
 15. NISTIR 8259: Foundational Cybersecurity Activities for IoT Device Manufacturers (2020). https://csrc.nist.gov/publications/detail/nistir/8259/final
 16. EU Cyber Resilience Act. European Commission (2022). https://digital-strategy.ec.europa.eu/
-17. UK Product Security and Telecommunications Infrastructure Act (PSTI) (2022). https://www.gov.uk/guidance/product-security-and-telecommunications-infrastructure
+17. UK Product Security and Telecommunications Infrastructure Act (PSTI) (2022). https://www.gov.uk/government/collections/product-security-and-telecommunications-infrastructure
 18. *The Hardware Hacking Handbook* by Colin O'Flynn and Jasper van Woudenberg. No Starch Press (2022).
 19. *Practical IoT Hacking* by Fotios Chantzis et al. No Starch Press (2021).
 20. *Car Hacker's Handbook* by Craig Smith. No Starch Press (2016).

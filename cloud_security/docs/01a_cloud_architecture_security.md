@@ -899,10 +899,10 @@ In the following chapters, we will deep-dive into the specific attack and defens
 3. CVE-2017-17558. NVD. https://nvd.nist.gov/vuln/detail/CVE-2017-17558
 4. CVE-2019-5736. NVD. https://nvd.nist.gov/vuln/detail/CVE-2019-5736
 5. AWS. "Shared Responsibility Model." *Amazon Web Services*. 2024. https://aws.amazon.com/compliance/shared-responsibility-model/
-6. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/pubs/sp/800-190/final
+6. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/publications/detail/sp/800-190/final
 7. Microsoft. "Azure Security Architecture." *Microsoft Learn*. 2024. https://learn.microsoft.com/en-us/azure/security/fundamentals/
 8. Google Cloud. "Resource Hierarchy and Organization Policies." *Google Cloud*. 2024. https://cloud.google.com/resource-manager/docs/organization-policy/overview
 9. MITRE. "ATT&CK Cloud Matrix." *MITRE Corporation*. 2024. https://attack.mitre.org/matrices/enterprise/cloud/
 10. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws-privilege-escalation-methods-mitigation/
-11. Praetorian. "GCP IAM Enumeration and Privilege Escalation." *Praetorian*. 2021. https://www.praetorian.com/blog/gcp-iam-privesc/
-12. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/trailofbits/understanding-linux-container-security/
+11. Praetorian. "GCP IAM Enumeration and Privilege Escalation." *Praetorian*. 2021. https://www.praetorian.com/blog/
+12. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/trailofbits/understanding-container-security

@@ -686,7 +686,7 @@ cramfsck -x cramfs_output/ flash_dump.bin
 9. Riscure Fault Injection Tutorials and Whitepapers. https://www.riscure.com/
 10. *DPA on AES: 10 Years Later* — Jovan Dj. Golić.
 11. *Practical IoT Hacking* by Fotios Chantzis et al. No Starch Press (2021).
-12. OWASP IoT Top 10. https://owasp.org/www-project-iot-top-10/
+12. OWASP IoT Top 10. https://owasp.org/www-project-top-ten/
 13. NIST SP 800-183: Networks of Things. National Institute of Standards and Technology.
 14. DEF CON IoT Village Presentations. https://iotvillage.org/
 15. IEC 62443: Industrial Communication Networks — Network and System Security.

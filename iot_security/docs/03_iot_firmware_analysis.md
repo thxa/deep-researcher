@@ -760,7 +760,7 @@ for key in [0xFF, 0xAA, 0x55, 0xCC]:
 - FirmAE: https://github.com/pr0v3rbs/FirmAE
 - binwalk: https://github.com/ReFirmLabs/binwalk
 - AttifyOS: https://github.com/adi0x90/attifyos
-- OWASP Firmware Analysis: https://owasp.org/www-community/Vulnerabilities/Insecure_firmware_update_mechanism
+- OWASP Firmware Analysis: https://owasp.org/www-project-top-ten/
 - *QEMU Emulation of ARM Firmware* — embeddedbits.org
 - *A Survey of IoT Firmware Analysis Techniques* — Anju et al. (2023)
 
@@ -772,14 +772,14 @@ for key in [0xFF, 0xAA, 0x55, 0xCC]:
 4. FirmAE: Towards Large-Scale Emulation of IoT Firmware. Kim, M. et al. (2021). https://github.com/pr0v3rbs/FirmAE
 5. binwalk: Firmware Analysis Tool. ReFirmLabs. https://github.com/ReFirmLabs/binwalk
 6. AttifyOS: IoT Penetration Testing Distribution. https://github.com/adi0x90/attifyos
-7. OWASP Firmware Analysis. https://owasp.org/www-community/Vulnerabilities/Insecure_firmware_update_mechanism
+7. OWASP Firmware Analysis. https://owasp.org/www-project-top-ten/
 8. *QEMU Emulation of ARM Firmware* — embeddedbits.org
 9. *A Survey of IoT Firmware Analysis Techniques* — Anju et al. (2023).
 10. CVE-2017-17562: GoAhead LD_PRELOAD Remote Code Execution. NVD.
 11. CVE-2021-42342: GoAhead Authenticated Remote Code Execution. NVD.
 12. NIST SP 800-183: Networks of Things. National Institute of Standards and Technology.
 13. IEC 62443: Industrial Communication Networks — Network and System Security.
-14. OWASP IoT Top 10. https://owasp.org/www-project-iot-top-10/
+14. OWASP IoT Top 10. https://owasp.org/www-project-top-ten/
 15. DEF CON IoT Village Presentations. https://iotvillage.org/
 16. Ghidra: NSA Reverse Engineering Framework. https://ghidra-svr-03.ghidra-svr.org/
 17. IDA Pro: Hex-Rays Disassembler. https://hex-rays.com/

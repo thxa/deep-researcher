@@ -1510,6 +1510,6 @@ print(f"TLSH: {h}")
 5. Dennis Andriesse, "Practical Binary Analysis," No Starch Press, 2018.
 6. Michael Sikorski & Andrew Honig, "Practical Malware Analysis," No Starch Press, 2012.
 7. YARA documentation, https://virustotal.github.io/yara/
-8. FLIRT signatures, https://hex-rays.com/products/ida/tech/flirt/
-9. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+8. FLIRT signatures, https://hex-rays.com/products/ida/
+9. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 10. Eldad Eilam, "Reversing: Secrets of Reverse Engineering," Wiley, 2005.

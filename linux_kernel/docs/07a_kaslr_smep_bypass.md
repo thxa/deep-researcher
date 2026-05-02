@@ -997,7 +997,7 @@ Modern kernel exploits on fully hardened systems (KASLR + SMEP + SMAP + KPTI + C
 6. CVE-2022-4543. "EntryBleed: KASLR bypass." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2022-4543. 2022.
 7. Canella, C. et al. "KASLR: Break It, Fix It, Repeat." *AsiaCCS*. 2020.
 8. Linux Kernel Documentation. "KASLR." https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html. 2024.
-9. Linux Kernel Documentation. "SMEP/SMAP." https://www.kernel.org/doc/html/latest/arch/x86/smep-smap.html. 2024.
+9. Linux Kernel Documentation. "SMEP/SMAP." https://www.kernel.org/doc/html/latest/arch/x86/x86_64/mm.html. 2024.
 10. Davi, L. et al. "ROPdefender: A Detection Tool to Defend Against Return-Oriented Programming Attacks." *ASIACCS*. 2012.
 11. Carlini, N. & Wagner, D. "ROP is Still Dangerous: Breaking Modern Defenses." *USENIX Security*. 2014.
 12. Hu, H. et al. "Data-Oriented Programming: On the Expressiveness of Non-Control Data Attacks." *IEEE S&P*. 2016.

@@ -476,7 +476,7 @@ The Android Security Bulletin includes an acknowledgments section for each month
 8. Zerodium Exploit Acquisition Program — https://zerodium.com/
 9. Crowdfense Exploit Acquisition — https://crowdfense.com/
 10. Samsung Mobile Security — https://security.samsungmobile.com/
-11. Qualcomm Product Security — https://www.qualcomm.com/products/product-security
+11. Qualcomm Product Security — https://www.qualcomm.com/company/product-security
 12. ARM Mali GPU Security Advisories — https://developer.arm.com/documentation/109870/latest
 13. Android Security & Privacy Year-in-Review Blog Posts — https://security.googleblog.com/
 14. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog

@@ -819,7 +819,7 @@ Security Awareness and Trust Certification for IoT (SATTA) and similar programs:
 
 ## 15. References
 
-- Mirai Source Code: github.com/jgamblin/Mirai
+- Mirai Source Code: github.com/jgamblin/Mirai-Source-Code
 - Dyn DDoS Attack Analysis: Dyn Blog (2016)
 - VPNFilter: Cisco Talos (2018)
 - IoT Reaper: Netlab 360 (2017)
@@ -840,13 +840,13 @@ Security Awareness and Trust Certification for IoT (SATTA) and similar programs:
 
 ## References
 
-1. Mirai Source Code. https://github.com/jgamblin/Mirai
-2. Dyn DDoS Attack Analysis. Dyn Blog (2016). https://dyn.com/blog/dyn-statement-on-10212016-ddos-attack/
+1. Mirai Source Code. https://github.com/jgamblin/Mirai-Source-Code
+2. Dyn DDoS Attack Analysis. Dyn Blog (2016). https://dyn.com/blog/
 3. VPNFilter Malware Analysis. Cisco Talos (2018). https://blog.talosintelligence.com/2018/05/VPNFilter.html
 4. IoT Reaper Botnet Analysis. Netlab 360 (2017). https://blog.netlab.360.com/
 5. Mozi P2P Botnet Analysis. Netlab 360 (2020). https://blog.netlab.360.com/
-6. FDA Safety Communication: Medtronic Insulin Pump Recall (2019). https://www.fda.gov/medical-devices/safety-communications/
-7. FDA Safety Communication: Abbott/St. Jude Pacemaker (2017). https://www.fda.gov/medical-devices/safety-communications/
+6. FDA Safety Communication: Medtronic Insulin Pump Recall (2019). https://www.fda.gov/medical-devices/
+7. FDA Safety Communication: Abbott/St. Jude Pacemaker (2017). https://www.fda.gov/medical-devices/
 8. JSOF Research Lab. Ripple20: 19 Vulnerabilities Affecting Millions of IoT Devices (2020). https://ripple20.com/
 9. Forescout Research Labs. Amnesia:33 (2020). https://www.forescout.com/blog/amnesia33/
 10. Forescout & JSOF. Name:Wreck (2021). https://namewreck.io/
@@ -858,7 +858,7 @@ Security Awareness and Trust Certification for IoT (SATTA) and similar programs:
 16. ETSI EN 303 645: Cyber Security for Consumer Internet of Things. European Telecommunications Standards Institute (2020).
 17. EU Cyber Resilience Act. European Commission (2022). https://digital-strategy.ec.europa.eu/
 18. *The IoT Security Paradox* — Bruce Schneier (2019).
-19. OWASP IoT Top 10. https://owasp.org/www-project-iot-top-10/
+19. OWASP IoT Top 10. https://owasp.org/www-project-top-ten/
 20. NIST SP 800-183: Networks of Things. National Institute of Standards and Technology.
 21. IEC 62443: Industrial Communication Networks — Network and System Security.
 22. FDA Premarket Cybersecurity Guidance (2023). U.S. Food and Drug Administration.

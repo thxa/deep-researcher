@@ -1024,7 +1024,7 @@ def slowloris(target, port, num_connections=500):
 4. OWASP Foundation. "ModSecurity Core Rule Set (CRS)." https://owasp.org/www-project-modsecurity-core-rule-set/
 5. Kettle, J. "HTTP Desync Attacks: Request Smuggling Reborn." PortSwigger Research, 2019. https://portswigger.net/research/http-desync-attacks
 6. PortSwigger Ltd. "Web Security Academy — WAF Bypass." https://portswigger.net/web-security
-7. Lin, Z. "HTTP Parameter Pollution." https://owasp.org/www-community/attacks/HTTP_Parameter_Pollution
+7. Lin, Z. "HTTP Parameter Pollution." https://owasp.org/www-project-top-ten/
 8. RFC 9112. "HTTP/1.1 Message Syntax and Routing." IETF, 2022.
 9. RFC 7541. "HPACK: Header Compression for HTTP/2." IETF, 2015.
 10. Cloudflare Documentation. "WAF Managed Rules." https://developers.cloudflare.com/waf/

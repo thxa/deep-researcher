@@ -103,7 +103,7 @@ Emphasis: Secure defaults, CSP deployment, CI/CD security scanning, SAST/DAST in
 - **HackerOne Top 10 (by bounty):** IDOR, XSS, information disclosure, SSRF, auth bypass
 - **James Kettle — HTTP Request Smuggling (2019):** https://portswigger.net/research/http-desync-attacks
 - **Orange Tsai — SSRF, SSRF + Deserialization, ProxyShell:** https://blog.orange.tw/
-- **Web Security Academy Labs:** https://portswigger.net/web-security/academy
+- **Web Security Academy Labs:** https://portswigger.net/web-security/learning-path
 
 ---
 

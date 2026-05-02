@@ -260,8 +260,8 @@ macOS security is a defense-in-depth architecture where entitlements define what
 
 - Apple Platform Security Guide: https://support.apple.com/guide/security/
 - Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
-- Apple Sandbox Guide (Seatbelt/SBPL): https://opensource.apple.com/source/sandbox/
+- Apple Sandbox Guide (Seatbelt/SBPL): https://github.com/apple-oss-distributions/xnu
 - Apple Entitlements Documentation: https://developer.apple.com/documentation/bundleresources/entitlements/
-- MACF (MAC Framework) in XNU: https://opensource.apple.com/source/xnu/
+- MACF (MAC Framework) in XNU: https://github.com/apple-oss-distributions/xnu
 - Patrick Wardle, *The Art of Mac Malware* (No Starch Press, 2022)
 - NVD (National Vulnerability Database): https://nvd.nist.gov/

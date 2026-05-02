@@ -356,19 +356,19 @@ The time to act is now. Every day without SLSA provenance, without SBOM generati
 1. SLSA Specification v1.0. "Supply-chain Levels for Software Artifacts." https://slsa.dev/spec/v1.0/
 2. OpenSSF. "Securing the Software Supply Chain." https://openssf.org/
 3. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
-4. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/
+4. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
 5. CISA. "Software Bill of Materials (SBOM)." https://www.cisa.gov/sbom
 6. Sonatype. "2023 State of the Software Supply Chain Report." https://www.sonatype.com/state-of-the-software-supply-chain
-7. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain to Compromise Multiple Global Victims." December 2020. https://www.mandiant.com/resources/blog/evasive-attacker-leverages-solarwinds-supply-chain
-8. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://www.microsoft.com/security/blog/2020/12/18/analyzing-solarwinds-compromise/
-9. CISA. "Emergency Directive 21-01: SolarWinds Orion Compromise." December 2020. https://www.cisa.gov/news-events/news/combined-joint-cyber-advisory-aa23-325a
+7. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain to Compromise Multiple Global Victims." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+8. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+9. CISA. "Emergency Directive 21-01: SolarWinds Orion Compromise." December 2020. https://www.cisa.gov/news-events/cybersecurity-advisories
 10. Freund, A. "Backdoor in xz/liblzma." OpenWall oss-security mailing list, March 2024. https://www.openwall.com/lists/oss-security/2024/03/29/4
 11. Birsan, A. "Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
 12. Ladisa, P., et al. "SoK: Taxonomy of Supply Chain Attacks." IEEE Symposium on Security and Privacy, 2023. https://doi.org/10.1109/SP46215.2023.10179316
 13. NVD. "CVE-2024-3094: XZ Utils Backdoor." https://nvd.nist.gov/vuln/detail/CVE-2024-3094
 14. NVD. "CVE-2021-44228: Log4Shell." https://nvd.nist.gov/vuln/detail/CVE-2021-44228
 15. NVD. "CVE-2018-16492: event-stream Compromise." https://nvd.nist.gov/vuln/detail/CVE-2018-16492
-16. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/specification/
+16. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/
 17. SPDX Specification v2.3. Linux Foundation. https://spdx.github.io/spdx-spec/
 18. Sigstore. "Cosign: Container Signing." https://docs.sigstore.dev/cosign/signing/signing_with_containers/
 19. OpenSSF. "Scorecard: Automated Security Assessment." https://github.com/ossf/scorecard

@@ -718,13 +718,13 @@ LAPS Security Best Practices:
 
 ## References
 
-1. DISA. "Windows 10 Security Technical Implementation Guide (STIG)." <https://www.stigviewer.com/stig/windows_10/> — Comprehensive hardening baseline: 1000+ security settings covering Group Policy, Defender, exploit protection, and Credential Guard.
+1. DISA. "Windows 10 Security Technical Implementation Guide (STIG)." <https://www.stigviewer.com/stigs/> — Comprehensive hardening baseline: 1000+ security settings covering Group Policy, Defender, exploit protection, and Credential Guard.
 2. CIS. "Microsoft Windows 11 Benchmark v2.0." *Center for Internet Security*, 2023. — Security configuration baselines for Group Policy, ASR, WDAC, and Defender.
 3. Microsoft Learn. "Windows Security Baselines." <https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-security-configuration-framework/windows-security-baselines>
 4. Microsoft Learn. "Attack Surface Reduction (ASR) Rules." <https://learn.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/attack-surface-reduction>
 5. Microsoft Learn. "Credential Guard." <https://learn.microsoft.com/en-us/windows/security/identity-protection/credential-guard/> — Virtualization-based LSASS protection deployment and configuration.
 6. Microsoft Learn. "Windows Defender Application Control (WDAC)." <https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/>
-7. Microsoft Learn. "Exploit Protection Reference." <https://learn.microsoft.com/en-us/windows/security/threat-protection/windows-defender-exploit-guard/exploit-protection-reference/> — System-wide and per-app DEP, ASLR, CFG, ACG settings.
+7. Microsoft Learn. "Exploit Protection Reference." <https://learn.microsoft.com/en-us/windows/security/threat-protection/> — System-wide and per-app DEP, ASLR, CFG, ACG settings.
 8. MITRE ATT&CK. "Harden System — M1041." <https://attack.mitre.org/mitigations/M1041/> — System hardening mitigations mapped to ATT&CK techniques.
 9. MITRE ATT&CK. "Credential Access Protection — M1013." <https://attack.mitre.org/mitigations/M1013/>
 10. Dormann, W. "Windows Hardening Effectiveness." *CERT/CC Vulnerability Analysis Blog*, 2022. — STIG and CIS baseline effectiveness analysis, exploit protection configuration.
@@ -732,4 +732,4 @@ LAPS Security Best Practices:
 12. Chester, A. "Credential Guard and LSA Protection." *XPN InfoSec Blog*, 2022. — Credential Guard architecture, VBS requirements, and practical deployment challenges.
 13. Microsoft Security Response Center (MSRC) Blog. "Security Baselines and STIG Alignment." <https://msrc.microsoft.com/blog/> — Baseline updates, STIG mapping, and exploit protection guidance.
 14. National Vulnerability Database. CVE-2020-1472. "Zerologon — NetLogon EoP." <https://nvd.nist.gov/vuln/detail/CVE-2020-1472> — Demonstrates necessity of secure channel enforcement in hardening baselines.
-15. DISA. "Windows Server STIG — LAPS Deployment." <https://www.stigviewer.com/stig/active_directory_domain/> — LAPS deployment, fine-grained password policies, and local admin management.
+15. DISA. "Windows Server STIG — LAPS Deployment." <https://www.stigviewer.com/stigs/> — LAPS deployment, fine-grained password policies, and local admin management.

@@ -923,17 +923,17 @@ Security Research Recommendations (2025-2030):
 
 1. Russinovich, M., Solomon, D., & Ionescu, A. *Windows Internals, Part 2*, 7th Edition. Microsoft Press, 2021. — VBS, HVCI, and hardware-enforced stack protection foundations.
 2. Microsoft Security Response Center (MSRC) Blog. "Rust Adoption in Windows Kernel." <https://msrc.microsoft.com/blog/> — Win32k Rust rewrite, DWriteCore, and memory safety initiative.
-3. Microsoft Learn. "Secured-Core PCs." <https://learn.microsoft.com/en-us/windows/security/hardware-security/secured-core-pc/>
-4. Microsoft Learn. "Pluton Security Processor." <https://learn.microsoft.com/en-us/windows/security/hardware-security/pluton-security-processor/>
-5. Microsoft Learn. "Virtualization-Based Security (VBS)." <https://learn.microsoft.com/en-us/windows/security/hardware-security/virtualization-based-security>
-6. MITRE ATT&CK. "Future Threat Landscape." <https://attack.mitre.org/resources/attack-matrix-enterprise/> — Emerging evasion and defense bypass techniques.
+3. Microsoft Learn. "Secured-Core PCs." <https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/>
+4. Microsoft Learn. "Pluton Security Processor." <https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/>
+5. Microsoft Learn. "Virtualization-Based Security (VBS)." <https://learn.microsoft.com/en-us/windows-hardware/drivers/bringup/>
+6. MITRE ATT&CK. "Future Threat Landscape." <https://attack.mitre.org/resources/getting-started/> — Emerging evasion and defense bypass techniques.
 7. McGarr, C. "Evaluating Hardware-Enforced Security." *Connor McGarr's Blog*, 2023. — CET shadow stack, HVCI enforcement, and Pluton security boundaries.
 8. Chester, A. "Smart App Control and WDAC Future." *XPN InfoSec Blog*, 2023. — SAC architecture, AI-based reputation, and WDAC integration.
 9. Dormann, W. "Effectiveness of VBS and HVCI." *CERT/CC Vulnerability Analysis Blog*, 2022. — Real-world effectiveness of hardware-enforced security boundaries.
 10. National Vulnerability Database. CVE-2022-37969. "Windows Kernel UAF — VBS Bypass Analysis." <https://nvd.nist.gov/vuln/detail/CVE-2022-37969>
 11. Yason, M. "Windows Heap Exploitation — Future Directions." *Black Hat USA*, 2019. — Segment heap evolution and future hardening predictions.
 12. Morten, H. "Exploitation in the VBS Era." *Black Hat USA*, 2021. — Pool overflow under HVCI, data-only attacks, and KPTI implications.
-13. DISA. "Windows 11 STIG — Secured-core Requirements." <https://www.stigviewer.com/stig/windows_11/> — VBS, HVCI, and Secured-core PC baseline enforcement.
+13. DISA. "Windows 11 STIG — Secured-core Requirements." <https://www.stigviewer.com/stigs/> — VBS, HVCI, and Secured-core PC baseline enforcement.
 14. CIS. "Microsoft Windows 11 Benchmark v1.0." *Center for Internet Security*, 2023. — Smart App Control, WDAC, and hardware-enforced stack protection baselines.
 15. Microsoft. "Microsoft Security Copilot." <https://www.microsoft.com/en-us/security/business/ai-machine-learning/microsoft-security-copilot> — AI-powered threat detection, investigation, and response.
 16. Tr Walton, P. "Win32k Rewrite in Rust — Microsoft Engineering Blog." *Microsoft Engineering*, 2024. — Win32k-sys GDI rewrite roadmap and Rust safety guarantees in kernel mode.

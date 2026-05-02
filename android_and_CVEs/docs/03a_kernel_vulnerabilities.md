@@ -499,7 +499,7 @@ Stage 6: Post-Exploitation
 3. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
 4. Android Security & Privacy Year in Review — https://security.googleblog.com/
 5. Google Project Zero, "Deleting Unsafe Code" and zero-day tracking — https://googleprojectzero.blogspot.com/
-6. Qualcomm Product Security Bulletins — https://www.qualcomm.com/products/product-security
+6. Qualcomm Product Security Bulletins — https://www.qualcomm.com/company/product-security
 7. ARM Mali GPU Security Advisories — https://developer.arm.com/documentation/109870/latest
 8. Maddie Stone, "Zero-Click Exploits, One Year Later" (Project Zero) — https://googleprojectzero.blogspot.com/
 9. CVE-2019-2215 NVD Entry — https://nvd.nist.gov/vuln/detail/CVE-2019-2215

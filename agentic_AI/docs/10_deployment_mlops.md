@@ -2063,7 +2063,7 @@ helm upgrade --install model-server ./charts/model-server \
 
 ### Security
 
-49. Microsoft, "Azure Machine Learning: Secure Scoring", https://learn.microsoft.com/en-us/azure/machine-learning/how-to-secure-scoring-endpoint
+49. Microsoft, "Azure Machine Learning: Secure Scoring", https://learn.microsoft.com/en-us/azure/machine-learning/concept-enterprise-security
 
 50. Sigstore, "Cosign: Container Signing, Verification, and Storage in an OCI Registry", https://github.com/sigstore/cosign
 
@@ -2094,7 +2094,7 @@ helm upgrade --install model-server ./charts/model-server \
 - TensorRT-LLM — NVIDIA. https://github.com/NVIDIA/TensorRT-LLM
 - TGI — Text Generation Inference, HuggingFace. https://github.com/huggingface/text-generation-inference
 - Triton Inference Server. https://github.com/triton-inference-server/server
-- "ML Ops: Machine Learning Operations," various, Google Cloud. https://cloud.google.com/architecture/mlops
+- "ML Ops: Machine Learning Operations," various, Google Cloud. https://cloud.google.com/architecture/architecture-for-mlops
 - LangServe — Deploy LangChain runnables. https://github.com/langchain-ai/langserve
 - Kubernetes Documentation. https://kubernetes.io/docs/
 - Prometheus Monitoring. https://prometheus.io/

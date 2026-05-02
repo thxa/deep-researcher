@@ -712,12 +712,12 @@ Even the entire Bitcoin mining network would take a billion years to brute-force
 3. Bhargavan, K., Leurent, G., "On the Practical (In-)Security of 64-bit Block Ciphers — Collision Attacks on Sweet32," CCS 2016. CVE-2016-2183. https://sweet32.info/
 4. Duong, T., Rizzo, J., "BEAST: A Practical Attack Against SSL/TLS," 2011. CVE-2011-3389. https://www.beastAttack.com/
 5. Möglen, H., Kocher, P., "SSL 3.0 Protocol — CBC Mode Vulnerability," 2011.
-6. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. CVE-2013-0169. https://www.ieee-security.org/TC/SP2013/papers/4977a026.pdf
+6. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. CVE-2013-0169. https://www.ieee-security.org/TC/SP2013/
 7. Meyer, C., Schwenk, J., "Lessons Learned From Previous SSL/TLS Attacks," IACR Cryptology ePrint Archive, 2013. https://eprint.iacr.org/2013/049
 8. Biryukov, A., Khovratovich, D., "Related-Key Cryptanalysis of the Full AES-192 and AES-256," ASIACRYPT 2009. https://eprint.iacr.org/2009/317
 9. Biryukov, A., Wagner, D., "Slide Attacks," EUROCRYPT 1999. https://link.springer.com/chapter/10.1007/3-540-48910-X_18
 10. Diffie, W., Hellman, M., "Exhaustive Cryptanalysis of the NBS Data Encryption Standard," Computer, 1977. https://doi.org/10.1109/C-M.1977.217750
-11. Electronic Frontier Foundation, "Cracking DES: Secrets of Encryption Research, Wiretap Politics & Chip Design," O'Reilly, 1998. https://www.eff.org/deeplinks/1998/01/cracking-des
+11. Electronic Frontier Foundation, "Cracking DES: Secrets of Encryption Research, Wiretap Politics & Chip Design," O'Reilly, 1998. https://www.eff.org/
 12. NIST, "Transitioning the Use of Cryptographic Algorithms and Key Lengths," SP 800-131A Rev. 2, 2019. https://csrc.nist.gov/publications/detail/sp/800-131a/rev-2/final
 13. Fluhrer, S., Mantin, I., Shamir, A., "Weaknesses in the Key Scheduling Algorithm of RC4," SAC 2001. https://link.springer.com/chapter/10.1007/3-540-45537-X_7
 14. NIST, "Recommendation for Block Cipher Modes of Operation," SP 800-38A, 2001. https://csrc.nist.gov/publications/detail/sp/800-38a/final

@@ -672,7 +672,7 @@ def upgrade_on_login(password, stored_hash):
 8. NIST, "Secure Hash Standard (SHS)," FIPS 180-4, August 2015. https://csrc.nist.gov/publications/detail/fips/180/4/final
 9. NIST, "SHA-3 Standard: Permutation-Based Hash and Extendable-Output Functions," FIPS 202, August 2015. https://csrc.nist.gov/publications/detail/fips/202/final
 10. Oechslin, P., "Making a Faster Cryptanalytic Time-Memory Trade-Off," CRYPTO 2003. https://link.springer.com/chapter/10.1007/978-3-540-45146-4_36
-11. Biryukov, A., Dinu, D., Khovratovich, D., "Argon2: New Generation of Memory-Hard Functions for Password Hashing," IEEE S&P 2016. RFC 9106. https://www.password-hashing.net/argon2.html
+11. Biryukov, A., Dinu, D., Khovratovich, D., "Argon2: New Generation of Memory-Hard Functions for Password Hashing," IEEE S&P 2016. RFC 9106. https://www.password-hashing.net/
 12. Provos, N., Mazières, D., "A Future-Adaptive Password Scheme," USENIX ATC, 1999 (bcrypt). https://www.usenix.org/legacy/events/usenix99/provos.html
 13. RFC 2898, "PKCS #5: Password-Based Cryptography Specification Version 2.0," September 2000. https://www.rfc-editor.org/rfc/rfc2898
 14. Sotirov, A., Stevens, M., Appelbaum, J., "MD5 Considered Harmful Today — Creating a Rogue CA Certificate," CCC, 2008. https://www.win.tue.nl/hashclash/rogue-ca/

@@ -677,7 +677,7 @@ Kernel bugs are often **non-deterministic** (races, timing-dependent). syzkaller
 
 [1] Vyukov, D. (2015). *syzkaller: Kernel Fuzzer*. https://github.com/google/syzkaller
 
-[2] Vyukov, D. (2016). *Coverage-Guided Kernel Fuzzing*. https://lwn.net/Articles/700051/
+[2] Vyukov, D. (2016). *Coverage-Guided Kernel Fuzzing*. https://lwn.net/
 
 [3] Corbet, J. (2016). *KCOV: Kernel Code Coverage*. https://lwn.net/Articles/671640/
 
@@ -703,6 +703,6 @@ Kernel bugs are often **non-deterministic** (races, timing-dependent). syzkaller
 
 [14] CVE-2024-1086. *nf_tables Use-After-Free*. https://nvd.nist.gov/vuln/detail/CVE-2024-1086
 
-[15] Google. *syzkaller Documentation*. https://github.com/google/syzkaller/blob/master/docs/syzlang-format.md
+[15] Google. *syzkaller Documentation*. https://github.com/google/syzkaller/#syzlang-description-format
 
 [16] Tar tourism. *syzkaller: Android Kernel Fuzzing*. https://source.android.com/docs/security/testing/kaslr

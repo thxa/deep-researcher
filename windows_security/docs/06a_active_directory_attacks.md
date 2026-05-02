@@ -807,5 +807,5 @@ MATCH (u:User)-[:SQLAdmin]->(c:Computer) RETURN u.name, c.name
 11. Rasthofer, J. "Rubeus: Kerberos Attack Toolkit." *Harmj0y Blog*, 2021. — Comprehensive Kerberos attack reference including S4U2self/S4U2proxy.
 12. Microsoft Learn. "Kerberos Authentication." <https://learn.microsoft.com/en-us/windows-server/security/kerberos/kerberos-authentication-overview>
 13. Microsoft Learn. "LAPS Overview." <https://learn.microsoft.com/en-us/windows-server/identity/laps/laps-overview>
-14. DISA. "Windows 10 STIG — Active Directory Domain Controller." <https://www.stigviewer.com/stig/active_directory_domain/> — LAPS enforcement, Kerberos hardening, and GPO security baselines.
+14. DISA. "Windows 10 STIG — Active Directory Domain Controller." <https://www.stigviewer.com/stigs/> — LAPS enforcement, Kerberos hardening, and GPO security baselines.
 15. CIS. "Microsoft Windows Server Benchmark — AD Security." *Center for Internet Security*, 2023. — Domain controller hardening, credential protection, and delegation controls.

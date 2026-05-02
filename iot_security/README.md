@@ -91,7 +91,7 @@ This track covers 10 core domains of IoT and embedded security, culminating in a
 
 ## References
 
-1. OWASP IoT Top 10 (2014, 2024 drafts). Open Web Application Security Project. https://owasp.org/www-project-iot-top-10/
+1. OWASP IoT Top 10 (2014, 2024 drafts). Open Web Application Security Project. https://owasp.org/www-project-top-ten/
 2. NIST SP 800-183: Networks of Things. Boyes, M. et al. (2016). National Institute of Standards and Technology. https://csrc.nist.gov/publications/detail/sp/800-183/final
 3. IEC 62443: Industrial Communication Networks — Network and System Security. International Electrotechnical Commission.
 4. FDA. Content of Premarket Submissions for Management of Cybersecurity Risks in Medical Devices (2023). U.S. Food and Drug Administration.

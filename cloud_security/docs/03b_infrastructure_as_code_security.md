@@ -1372,7 +1372,7 @@ jobs:
 
 1. HashiCorp. "Terraform Security Best Practices." *HashiCorp Developer*. 2024. https://developer.hashicorp.com/terraform/tutorials/security
 2. Amazon. "CloudFormation Security." *Amazon Web Services*. 2024. https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/security-best-practices.html
-3. Pulumi. "Pulumi Security." *Pulumi Documentation*. 2024. https://www.pulumi.com/docs/security/
+3. Pulumi. "Pulumi Security." *Pulumi Documentation*. 2024. https://www.pulumi.com/
 4. Open Policy Agent. "OPA Rego Policy Reference." *Open Policy Agent*. 2024. https://www.openpolicyagent.org/docs/latest/policy-reference/
 5. Bridgecrew. "Checkov Documentation." *Bridgecrew by Prisma Cloud*. 2024. https://www.checkov.io/
 6. HashiCorp. "Sentinel Policy-as-Code." *HashiCorp Developer*. 2024. https://developer.hashicorp.com/sentinel

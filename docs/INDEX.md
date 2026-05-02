@@ -992,5 +992,5 @@
 6. Russinovich, M. et al. "Windows Internals." 7th Ed. *Microsoft Press*. 2021.
 7. Love, R. "Linux Kernel Development." 3rd Ed. *Addison-Wesley*. 2010.
 8. Perla, E. & Oldani, M. "A Guide to Kernel Exploitation: Attacking the Core." *Syngress*. 2010.
-9. Offensive Security. "OSEE Certification." https://www.offsec.com/courses/osee/. 2024.
-10. SANS Institute. "SEC760: Advanced Exploit Development." https://www.sans.org/cyber-security-courses/advanced-exploit-development/. 2024.
+9. Offensive Security. "OSEE Certification." https://www.offsec.com/courses/. 2024.
+10. SANS Institute. "SEC760: Advanced Exploit Development." https://www.sans.org/cyber-security-courses/. 2024.

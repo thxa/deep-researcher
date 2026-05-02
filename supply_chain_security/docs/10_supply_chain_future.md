@@ -825,4 +825,4 @@ Nation-state actors are increasingly targeting the supply chain as a strategic v
 - OpenSSF. "Alpha-Omega." https://github.com/ossf/alpha-omega
 - Reproducible Builds. https://reproducible-builds.org/
 - In-Toto. "Software Supply Chain Security Framework." https://in-toto.io/
-- ML-DSA (CRYSTALS-Dilithium). https://csrc.nist.gov/projects/post-quantum-cryptography/selected-algorithms-2024
+- ML-DSA (CRYSTALS-Dilithium). https://csrc.nist.gov/projects/post-quantum-cryptography

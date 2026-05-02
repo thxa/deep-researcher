@@ -1421,5 +1421,5 @@ Students must:
 11. LOLDrivers Project. "Bring Your Own Vulnerable Driver." https://www.loldrivers.io/. 2024.
 12. Perla, E. & Oldani, M. "A Guide to Kernel Exploitation: Attacking the Core." *Syngress*. 2010.
 13. FuzzySecurity. "Windows Exploitation Tutorials." https://www.fuzzysecurity.com/. 2024.
-14. SANS. "SEC760: Advanced Exploit Development." https://www.sans.org/cyber-security-courses/advanced-exploit-development/. 2024.
+14. SANS. "SEC760: Advanced Exploit Development." https://www.sans.org/cyber-security-courses/. 2024.
 15. MITRE. "ATT&CK: Privilege Escalation Techniques." https://attack.mitre.org/techniques/enterprise/. 2024.

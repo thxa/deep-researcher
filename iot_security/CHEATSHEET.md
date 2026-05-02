@@ -452,7 +452,7 @@ Common Vulnerabilities:
 
 ## References
 
-1. OWASP IoT Top 10 (2014, 2024 drafts). Open Web Application Security Project. https://owasp.org/www-project-iot-top-10/
+1. OWASP IoT Top 10 (2014, 2024 drafts). Open Web Application Security Project. https://owasp.org/www-project-top-ten/
 2. NIST SP 800-183: Networks of Things. Boyes, M. et al. (2016). National Institute of Standards and Technology.
 3. *The Hardware Hacking Handbook* by Colin O'Flynn and Jasper van Woudenberg. No Starch Press (2022).
 4. *Practical IoT Hacking* by Fotios Chantzis et al. No Starch Press (2021).

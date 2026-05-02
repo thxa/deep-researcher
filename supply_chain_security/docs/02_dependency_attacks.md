@@ -708,13 +708,13 @@ pip-audit --desc || pip-audit --format json
 ## References
 
 1. Birsan, A. "Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
-2. npm Documentation. "Configuring Scoped Registries." https://docs.npmjs.com/configuration/npmrc
+2. npm Documentation. "Configuring Scoped Registries." https://docs.npmjs.com/cli/v10/configuring-npm/npmrc
 3. OpenSSF. "Package Manager Best Practices." https://github.com/ossf/package-manager-best-practices
-4. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sites/default/files/publications/defending_against_software_supply_chain_attacks_0.pdf
+4. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sbom
 5. Ladisa, P., et al. "SoK: Taxonomy of Supply Chain Attacks." IEEE Symposium on Security and Privacy, 2023. https://doi.org/10.1109/SP46215.2023.10179316
 6. Zimerman, T. "It's a (Supply Chain) War." USENIX Security Symposium, 2023.
 7. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
-8. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/
+8. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
 9. Snyk. "2023 State of Open Source Security Report." https://snyk.io/reports/open-source-security/
 10. NVD. "CVE-2018-16492: event-stream Compromise." https://nvd.nist.gov/vuln/detail/CVE-2018-16492
 11. Ohm, M., et al. "Backstabber's Knife Collection: A Review of Open Source Software Supply Chain Attacks." DIMVA, 2020.

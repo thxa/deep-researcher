@@ -5,13 +5,274 @@
     },
     {
       "pattern": "^http://127\\.0\\.0\\.1"
+    },
+    {
+      "pattern": "^\\.\\./"
+    },
+    {
+      "pattern": "developer\\.arm\\.com"
+    },
+    {
+      "pattern": "developer\\.android\\.com"
+    },
+    {
+      "pattern": "source\\.android\\.com"
+    },
+    {
+      "pattern": "www\\.intel\\.com"
+    },
+    {
+      "pattern": "www\\.amd\\.com"
+    },
+    {
+      "pattern": "www\\.snort\\.org"
+    },
+    {
+      "pattern": "www\\.blackhat\\.com"
+    },
+    {
+      "pattern": "www\\.usenix\\.org"
+    },
+    {
+      "pattern": "help\\.offsec\\.com"
+    },
+    {
+      "pattern": "dl\\.acm\\.org"
+    },
+    {
+      "pattern": "doi\\.org"
+    },
+    {
+      "pattern": "www\\.cvedetails\\.com"
+    },
+    {
+      "pattern": "securitylab\\.amnesty\\.org"
+    },
+    {
+      "pattern": "www\\.exploit-db\\.com"
+    },
+    {
+      "pattern": "www\\.osr\\.com"
+    },
+    {
+      "pattern": "securityheaders\\.com"
+    },
+    {
+      "pattern": "www\\.microchip\\.com"
+    },
+    {
+      "pattern": "www\\.riscure\\.com"
+    },
+    {
+      "pattern": "www\\.3cx\\.com"
+    },
+    {
+      "pattern": "www\\.bluetooth\\.com"
+    },
+    {
+      "pattern": "uefi\\.org"
+    },
+    {
+      "pattern": "trustedcomputinggroup\\.org"
+    },
+    {
+      "pattern": "www\\.sec\\.gov"
+    },
+    {
+      "pattern": "unece\\.org"
+    },
+    {
+      "pattern": "www\\.w3\\.org/TR/"
+    },
+    {
+      "pattern": "shodan\\.io"
+    },
+    {
+      "pattern": "www\\.bromium\\.com"
+    },
+    {
+      "pattern": "www\\.synack\\.com"
+    },
+    {
+      "pattern": "redpill-lab0\\.net"
+    },
+    {
+      "pattern": "ghidra-svr-03\\.ghidra-svr\\.org"
+    },
+    {
+      "pattern": "attack\\.mitre\\.com"
+    },
+    {
+      "pattern": "moxie\\.org"
+    },
+    {
+      "pattern": "cuckoosandbox\\.org"
+    },
+    {
+      "pattern": "suricata\\.io"
+    },
+    {
+      "pattern": "hex-rays\\.com"
+    },
+    {
+      "pattern": "shell-storm\\.org"
+    },
+    {
+      "pattern": "kernelnewbies\\.org"
+    },
+    {
+      "pattern": "kernel\\.dk"
+    },
+    {
+      "pattern": "openocd\\.org"
+    },
+    {
+      "pattern": "www\\.linkedin\\.com"
+    },
+    {
+      "pattern": "www\\.glassdoor\\.com"
+    },
+    {
+      "pattern": "docs\\.google\\.com"
+    },
+    {
+      "pattern": "www\\.qualcomm\\.com"
+    },
+    {
+      "pattern": "www\\.offsec\\.com"
+    },
+    {
+      "pattern": "www\\.sans\\.org"
+    },
+    {
+      "pattern": "upload\\.offsec\\.com"
+    },
+    {
+      "pattern": "chat\\.offsec\\.com"
+    },
+    {
+      "pattern": "www\\.apple\\.com"
+    },
+    {
+      "pattern": "aicyberchallenge\\.com"
+    },
+    {
+      "pattern": "dana-security\\.com"
+    },
+    {
+      "pattern": "dragonbloodAttack\\.com"
+    },
+    {
+      "pattern": "robotAttack\\.com"
+    },
+    {
+      "pattern": "beastAttack\\.com"
+    },
+    {
+      "pattern": "cachebleedAttack\\.com"
+    },
+    {
+      "pattern": "rowhammerattack\\.com"
+    },
+    {
+      "pattern": "sphincs\\.org"
+    },
+    {
+      "pattern": "robustbench\\.org"
+    },
+    {
+      "pattern": "rode0day\\.mit\\.edu"
+    },
+    {
+      "pattern": "namewreck\\.io"
+    },
+    {
+      "pattern": "ripple20\\.com"
+    },
+    {
+      "pattern": "www\\.autoattack\\.org"
+    },
+    {
+      "pattern": "www\\.azimuthsecurity\\.com"
+    },
+    {
+      "pattern": "www\\.c2sec\\.org"
+    },
+    {
+      "pattern": "www\\.workflowpatterns\\.com"
+    },
+    {
+      "pattern": "android\\.googlesource\\.com"
+    },
+    {
+      "pattern": "securelist\\.com"
+    },
+    {
+      "pattern": "armis\\.com"
+    },
+    {
+      "pattern": "blog\\.aquasec\\.com"
+    },
+    {
+      "pattern": "z-wavealliance\\.org"
+    },
+    {
+      "pattern": "www\\.tensorflow\\.org"
+    },
+    {
+      "pattern": "milvus\\.io"
+    },
+    {
+      "pattern": "smatch\\.sourceforge\\.net"
+    },
+    {
+      "pattern": "www\\.cidersecurity\\.io"
+    },
+    {
+      "pattern": "hastie\\.su\\.domains"
+    },
+    {
+      "pattern": "rump2007\\.cr\\.yp\\.to"
+    },
+    {
+      "pattern": "csai-iot\\.org"
+    },
+    {
+      "pattern": "pahole\\.org"
+    },
+    {
+      "pattern": "selinuxproject\\.org"
+    },
+    {
+      "pattern": "shattered\\.io"
+    },
+    {
+      "pattern": "shambles\\.net"
+    },
+    {
+      "pattern": "ghidra-svr-03\\.ghidra-svr\\.org"
+    },
+    {
+      "pattern": "www\\.chromium\\.org"
+    },
+    {
+      "pattern": "www\\.fda\\.gov"
+    },
+    {
+      "pattern": "media\\.defense\\.gov"
+    },
+    {
+      "pattern": "www\\.eff\\.org"
+    },
+    {
+      "pattern": "www\\.debian\\.org"
     }
   ],
   "replacementPatterns": [],
   "httpHeaders": [],
-  "timeout": "20s",
+  "timeout": "30s",
   "retryOn429": true,
   "retryCount": 3,
   "fallbackRetryDelay": "30s",
-  "aliveStatusCodes": [200, 206]
+  "aliveStatusCodes": [200, 206, 301, 302, 307, 308]
 }

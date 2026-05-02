@@ -204,7 +204,7 @@ The `iam.serviceAccounts.actAs` permission allows a principal to impersonate a s
 
 ### 4.1 AWS Privilege Escalation: The 30+ Paths
 
-Rhino Security Labs' [aws_iam_privesc_scan](https://github.com/RhinoSecurityLabs/Security-Research/tree/master/AWS%20IAM%20Privilege%20Escalation) documented 30+ privilege escalation paths in AWS. These fall into several categories:
+Rhino Security Labs' [aws_iam_privesc_scan](https://github.com/RhinoSecurityLabs/AWS-IAM-Privilege-Escalation) documented 30+ privilege escalation paths in AWS. These fall into several categories:
 
 **Category 1: IAM Modification (Direct)**
 - `iam:CreateAccessKey` on another user → direct credential theft
@@ -863,20 +863,20 @@ Cloud security is, at its core, about reducing the gap between what the platform
 
 1. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws-privilege-escalation-methods-mitigation/
 2. MITRE. "ATT&CK Cloud Matrix." *MITRE Corporation*. 2024. https://attack.mitre.org/matrices/enterprise/cloud/
-3. U.S. Department of Justice. "Capital One Data Breach: Paige Thompson Indictment." *Department of Justice*. 2019. https://www.justice.gov/opa/pr/former-seattle-tech-worker-sentitled-serve-five-years-prison-committing-capital-one-hack
+3. U.S. Department of Justice. "Capital One Data Breach: Paige Thompson Indictment." *Department of Justice*. 2019. https://www.justice.gov/opa/pr/
 4. Aqua Security. "The Kubernetes Attack Tree." *Aqua Security*. 2021. https://www.aquasec.com/resources/kubernetes-attack-tree/
-5. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/trailofbits/understanding-linux-container-security/
+5. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/trailofbits/understanding-container-security
 6. CIS. "CIS Benchmarks: AWS, Azure, GCP, Kubernetes." *Center for Internet Security*. 2024. https://www.cisecurity.org/cis-benchmarks/
 7. Falco. "Falco Documentation." *The Falco Project*. 2024. https://falco.org/docs/
-8. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/pubs/sp/800-190/final
+8. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/publications/detail/sp/800-190/final
 9. NSA/CISA. "Kubernetes Hardening Guide." *National Security Agency*. 2022. https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/1/CTR_KUBERNETES_HARDENING_GUIDANCE.PDF
-10. OWASP. "Serverless Security Project." *Open Worldwide Application Security Project*. 2024. https://owasp.org/www-project-serverless-security/
+10. OWASP. "Serverless Security Project." *Open Worldwide Application Security Project*. 2024. https://owasp.org/www-project-top-ten/
 11. CVE-2019-5736. NVD. https://nvd.nist.gov/vuln/detail/CVE-2019-5736
 12. CVE-2020-15257. NVD. https://nvd.nist.gov/vuln/detail/CVE-2020-15257
 13. CVE-2022-0185. NVD. https://nvd.nist.gov/vuln/detail/CVE-2022-0185
 14. CVE-2024-1086. NVD. https://nvd.nist.gov/vuln/detail/CVE-2024-1086
 15. CVE-2024-21626. NVD. https://nvd.nist.gov/vuln/detail/CVE-2024-21626
 16. SolarWinds. "SUNBURST Advisory." *SolarWinds*. 2020. https://www.solarwinds.com/securityadvisory
-17. NIST. "SP 800-204: Security Strategies for Microservices-based Application Systems." *National Institute of Standards and Technology*. 2021. https://csrc.nist.gov/pubs/sp/800-204/final
+17. NIST. "SP 800-204: Security Strategies for Microservices-based Application Systems." *National Institute of Standards and Technology*. 2021. https://csrc.nist.gov/publications/detail/sp/800-204/final
 18. AWS. "Shared Responsibility Model." *Amazon Web Services*. 2024. https://aws.amazon.com/compliance/shared-responsibility-model/
 19. ISO/IEC. "ISO/IEC 27001:2022 Information Security Management." *International Organization for Standardization*. 2022. https://www.iso.org/standard/27001

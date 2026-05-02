@@ -515,7 +515,7 @@ The open bug count has been growing at approximately 100/year despite the high f
 1. Love, R. "Linux Kernel Development." 3rd Ed. *Addison-Wesley*. 2010.
 2. Corbet, J., Rubini, A., & Kroah-Hartman, G. "Linux Device Drivers." 3rd Ed. *O'Reilly*. 2005.
 3. Linux Kernel Documentation. "System Calls." https://www.kernel.org/doc/html/latest/. 2024.
-4. Linux Kernel Documentation. "io_uring." https://www.kernel.org/doc/html/latest/io_uring/. 2024.
+4. Linux Kernel Documentation. "io_uring." https://www.kernel.org/doc/html/latest/io_uring/index.html. 2024.
 5. CVE-2019-2215. "Binder use-after-free." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2019-2215. 2019.
 6. CVE-2024-1086. "Double-free in nft_verdict_init()." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2024-1086. 2024.
 7. Pérez, B. et al. "Your ETag Is Showing: Android Security Through the Lens of Side Channels." *USENIX Security*. 2021.

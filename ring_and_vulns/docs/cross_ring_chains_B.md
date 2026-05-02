@@ -1503,7 +1503,7 @@ echo "my-secret" | tpm2_seal -C 0x01 -i secret_data.bin -c seal_ctx -L sha256:0,
 
 - Intel 64 and IA-32 Architecture Software Developer's Manual. Intel Corporation.
 - AMD64 Architecture Programmer's Manual. AMD.
-- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-carry-sednit/
+- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/en/
 - Kaspersky, "MoonBounce: The dark side of the UEFI bootkit." https://securelist.com/moonbounce-uefi-bootkit/105924/
 - Kaspersky, "CosmicStrand: A sophisticated UEFI bootkit." https://securelist.com/cosmicstrand-uefi-bootkit/106778/
 - CHIPSEC — Platform Security Assessment Framework. https://chipsec.github.io/

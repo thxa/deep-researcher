@@ -2459,4 +2459,4 @@ This pattern — kernel-mode parsing of user-influenced file formats — is a co
 7. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
 8. Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
 9. fuzzing.wordpress.com — Guided fuzzing research and Windows-specific fuzzing techniques
-10. Microsoft, "Attack Surface Analyzer," https://www.microsoft.com/en-us/garage/wall/attack-surface-analyzer/
+10. Microsoft, "Attack Surface Analyzer," https://github.com/Microsoft/AttackSurfaceAnalyzer

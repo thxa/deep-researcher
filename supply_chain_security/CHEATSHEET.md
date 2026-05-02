@@ -455,12 +455,12 @@ extra-index-url = https://pypi.org/simple/
 4. Anchore. "Syft: SBOM Generator." https://github.com/anchore/syft
 5. Aqua Security. "Trivy: Vulnerability Scanner." https://aquasecurity.github.io/trivy/
 6. Sigstore. "Cosign: Container Signing." https://docs.sigstore.dev/cosign/signing/signing_with_containers/
-7. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/specification/
+7. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/
 8. SPDX Specification v2.3. Linux Foundation. https://spdx.github.io/spdx-spec/
 9. npm Documentation. "Provenance." https://docs.npmjs.com/generating-provenance-statements
 10. SLSA GitHub Generator. https://github.com/slsa-framework/slsa-github-generator
 11. Birsan, A. "Dependency Confusion." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
-12. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sites/default/files/publications/defending_against_software_supply_chain_attacks_0.pdf
+12. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sbom
 13. GitHub. "Security hardening for GitHub Actions." https://docs.github.com/en/actions/security-guides
 14. NVD. "CVE-2024-3094: XZ Utils Backdoor." https://nvd.nist.gov/vuln/detail/CVE-2024-3094
 15. NVD. "CVE-2021-44228: Log4Shell." https://nvd.nist.gov/vuln/detail/CVE-2021-44228

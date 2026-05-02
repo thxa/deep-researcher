@@ -415,7 +415,7 @@ For anyone pursuing the deepest levels of offensive security expertise, OSEE rem
 
 ## References
 
-1. Offensive Security, "OSEE Certification," https://www.offsec.com/courses/osee/
+1. Offensive Security, "OSEE Certification," https://www.offsec.com/courses/
 2. Offensive Security, "Advanced Windows Exploitation (AWE) Course History," https://www.offsec.com/courses/exp-401/
 3. Mark Russinovich, David Solomon & Alex Ionescu, "Windows Internals," 7th Edition, Microsoft Press.
 4. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/

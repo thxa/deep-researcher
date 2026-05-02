@@ -1330,7 +1330,7 @@ if __name__ == '__main__':
 3. Microsoft, "PE Format Documentation," https://learn.microsoft.com/en-us/windows/win32/debug/pe-format
 4. Apple Developer, "Mach-O Programming Documentation," https://developer.apple.com/documentation/kernel/mach-o
 5. John R. Levine, "Linkers and Loaders," Morgan Kaufmann, 2000.
-6. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+6. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 7. Michael Sikorski & Andrew Honig, "Practical Malware Analysis," No Starch Press, 2012.
 8. Chris Eagle, "The IDA Pro Book," No Starch Press, 2011.
 9. Android Developers, "DEX Format Specification," https://source.android.com/docs/core/runtime/dex-format

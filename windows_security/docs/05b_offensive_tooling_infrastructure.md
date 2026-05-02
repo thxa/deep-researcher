@@ -870,5 +870,5 @@ pip install impacket
 10. Microsoft Learn. "WinDBG and Kernel Debugging." <https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/>
 11. Russinovich, M. *Sysinternals Suite Reference.* Microsoft Press, 2020. — Process Explorer, Process Monitor, Autoruns, and PsExec reference.
 12. National Vulnerability Database. CVE-2021-34527. "PrintNightmare." <https://nvd.nist.gov/vuln/detail/CVE-2021-34527> — Relevant Print Spooler exploitation lab scenario.
-13. DISA. "Windows 10 STIG — C2 Detection and Hardening." <https://www.stigviewer.com/stig/windows_10/> — PowerShell logging, script block logging, and AMSI enforcement.
+13. DISA. "Windows 10 STIG — C2 Detection and Hardening." <https://www.stigviewer.com/stigs/> — PowerShell logging, script block logging, and AMSI enforcement.
 14. CIS. "Microsoft Windows 11 Benchmark — Logging and Monitoring." *Center for Internet Security*, 2023. — ETW configuration, Defender for Endpoint onboarding, and C2 detection.

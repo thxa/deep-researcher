@@ -42,10 +42,10 @@ Recommended reading order for different backgrounds:
 ## References
 
 1. AWS. "Shared Responsibility Model." *Amazon Web Services*. 2024. https://aws.amazon.com/compliance/shared-responsibility-model/
-2. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/pubs/sp/800-190/final
+2. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/publications/detail/sp/800-190/final
 3. MITRE. "ATT&CK Cloud Matrix." *MITRE Corporation*. 2024. https://attack.mitre.org/matrices/enterprise/cloud/
 4. CIS. "CIS Benchmarks: AWS, Azure, GCP, Kubernetes." *Center for Internet Security*. 2024. https://www.cisecurity.org/cis-benchmarks/
-5. NIST. "SP 800-204: Security Strategies for Microservices-based Application Systems." *National Institute of Standards and Technology*. 2021. https://csrc.nist.gov/pubs/sp/800-204/final
+5. NIST. "SP 800-204: Security Strategies for Microservices-based Application Systems." *National Institute of Standards and Technology*. 2021. https://csrc.nist.gov/publications/detail/sp/800-204/final
 6. NSA/CISA. "Kubernetes Hardening Guide." *National Security Agency*. 2022. https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/1/CTR_KUBERNETES_HARDENING_GUIDANCE.PDF
-7. OWASP. "Cloud Security Resources." *Open Worldwide Application Security Project*. 2024. https://owasp.org/www-project-cloud-security/
+7. OWASP. "Cloud Security Resources." *Open Worldwide Application Security Project*. 2024. https://owasp.org/www-project-top-ten/
 8. Aqua Security. "Container Threat Report." *Aqua Security*. 2023. https://www.aquasec.com/resources/container-threat-report/

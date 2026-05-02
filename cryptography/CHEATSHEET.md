@@ -583,9 +583,9 @@ SecP256r1MLKEM768         # Same as above, IETF naming
 2. NIST FIPS 197, "Advanced Encryption Standard (AES)," November 2001. https://csrc.nist.gov/publications/detail/fips/197/final
 3. NIST FIPS 180-4, "Secure Hash Standard (SHS)," August 2015. https://csrc.nist.gov/publications/detail/fips/180/4/final
 4. NIST FIPS 202, "SHA-3 Standard," August 2015. https://csrc.nist.gov/publications/detail/fips/202/final
-5. NIST FIPS 203, "ML-KEM," August 2024. https://csrc.nist.gov/publications/detail/fips/203/final
-6. NIST FIPS 204, "ML-DSA," August 2024. https://csrc.nist.gov/publications/detail/fips/204/final
-7. NIST FIPS 205, "SLH-DSA," August 2024. https://csrc.nist.gov/publications/detail/fips/205/final
+5. NIST FIPS 203, "ML-KEM," August 2024. https://csrc.nist.gov/pubs/fips/203/final
+6. NIST FIPS 204, "ML-DSA," August 2024. https://csrc.nist.gov/pubs/fips/204/final
+7. NIST FIPS 205, "SLH-DSA," August 2024. https://csrc.nist.gov/pubs/fips/205/final
 8. Bleichenbacher, D., "Chosen Ciphertext Attacks Against Protocols Based on RSA Encryption Standard PKCS #1," CRYPTO 1998. https://link.springer.com/chapter/10.1007/BFb0055716
 9. Kocher, P., "Timing Attacks on Implementations of Diffie-Hellman, RSA, DSS, and Other Systems," CRYPTO 1996. https://link.springer.com/chapter/10.1007/3-540-68697-5_6
 10. RFC 8446, "TLS 1.3," August 2018. https://www.rfc-editor.org/rfc/rfc8446

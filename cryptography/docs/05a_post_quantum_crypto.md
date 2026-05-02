@@ -479,7 +479,7 @@ def derive_hybrid_key(master_secret):
 9. Bernstein, D.J., Hopwood, D., Hülsing, A., et al., "SPHINCS+: Practical Stateless Hash-Based Signatures," 2019. FIPS 205. https://sphincs.org/
 10. Castryck, W., Decru, T., "An Efficient Key Recovery Attack on SIDH," EUROCRYPT 2023. https://eprint.iacr.org/2022/975
 11. Jao, D., De Feo, L., "Towards Quantum-Resistant Cryptosystems from Supersingular Elliptic Curve Isogenies," PQCrypto 2011. https://eprint.iacr.org/2011/506
-12. NIST, "Transition to Quantum-Resistant Cryptographic Algorithms," Draft SP 800-227, 2024. https://csrc.nist.gov/publications/detail/sp/800-227/draft
+12. NIST, "Transition to Quantum-Resistant Cryptographic Algorithms," Draft SP 800-227, 2024. https://csrc.nist.gov/pubs/fips/203/final
 13. Barker, E., "Recommendation for Key Management — Part 1: General," SP 800-57 Rev. 5, 2020. https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-5/final
 14. RFC 9180, "Hybrid Public Key Encryption," February 2022. https://www.rfc-editor.org/rfc/rfc9180
 15. Aviram, N., et al., "Imperfect Forward Secrecy: How Diffie-Hellman Fails in Practice," CCS 2015. https://weakdh.org/

@@ -1636,7 +1636,7 @@ class AgentDebugger:
 
 11. Patil, S., Zhang, T., & Wang, X. (2023). "Gorilla: Large Language Model Connected with Massive APIs." arXiv:2305.15334. https://arxiv.org/abs/2305.15334
 
-12. Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., Lin, Y., Cong, X., He, X., & Zhou, H. (2023). "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs." *International Conference on Learning Representations (ICLR 2024)*. arXiv:2307.16989. https://arxiv.org/abs/2307.16989
+12. Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., Lin, Y., Cong, X., He, X., & Zhou, H. (2023). "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs." *International Conference on Learning Representations (ICLR 2024)*. arXiv:2307.16989. https://arxiv.org/abs/2307.15989
 
 13. OpenAI. (2023). "Function Calling and Other API Updates." OpenAI Blog. https://openai.com/index/function-calling-and-other-api-updates/
 
@@ -1730,7 +1730,7 @@ class AgentDebugger:
 
 48. LangSmith documentation. https://docs.smith.langchain.com/
 
-49. Helicone documentation. https://www.helicone.ai/docs
+49. Helicone documentation. https://www.helicone.ai/
 ## References
 
 - Yao, S. et al., "ReAct: Synergizing Reasoning and Acting in Language Models," ICLR 2023. https://arxiv.org/abs/2210.03629

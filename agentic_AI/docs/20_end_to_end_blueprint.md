@@ -1914,7 +1914,7 @@ This blueprint gives you every layer, every component, every decision point. Sta
 
 40. Redis Documentation, *Redis Ltd.*, 2024. URL: https://redis.io/docs/
 
-41. MinIO Object Storage Documentation, *MinIO Inc.*, 2024. URL: https://min.io/docs/minio/
+41. MinIO Object Storage Documentation, *MinIO Inc.*, 2024. URL: https://min.io/docs/
 
 ### Security & Authentication
 

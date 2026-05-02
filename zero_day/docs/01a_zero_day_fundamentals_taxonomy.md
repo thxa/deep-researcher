@@ -994,7 +994,7 @@ Info leak (heap addr)    →   Defeat ASLR                 →  Precise ROP/JOP 
 4. [MITRE ATT&CK — Exploit Public-Facing Application (T1190)](https://attack.mitre.org/techniques/T1190/) — Adversarial technique reference
 5. [MITRE CWE Top 25 Most Dangerous Software Weaknesses](https://cwe.mitre.org/top25/) — Ranked list of most prevalent and critical weaknesses
 6. Bromium, "Into the Web of Profit," zero-day market economics.
-7. [RAND Corporation — Zero-Day Vulnerability Lifetimes](https://www.rand.org/pubs/research_reports/RR2264.html) — Empirical study on zero-day discovery and lifetimes
+7. [RAND Corporation — Zero-Day Vulnerability Lifetimes](https://www.rand.org/pubs/research_reports/RRA1344-1.html) — Empirical study on zero-day discovery and lifetimes
 8. Xiao et al., "Motive: A Practical Memory Error Vulnerability Mitigation Approach," 2023.
 9. Larabel, "Linux Kernel 2024 Security Report," Phoronix.
 10. [CVE Program — Common Vulnerabilities and Exposures](https://www.cve.org/) — Standardized vulnerability identification system

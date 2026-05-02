@@ -791,4 +791,4 @@ Backported to stable kernels: 6.1.37, 6.3.11, and 6.4.1.
 - CVE-2022-1015/1016: https://blog.dbouman.nl/2022/04/02/How-The-Tables-Have-Turned-CVE-2022-1015-1016/
 - CVE-2022-29582: https://ruia-ruia.github.io/2022/08/05/CVE-2022-29582-io-uring/
 - StackRot: https://github.com/lrh2000/StackRot ; https://www.openwall.com/lists/oss-security/2023/07/05/1
-- Dirty Pagetable: N. Wu, https://yanglingxi1993.github.io/dirty_pagetable/dirty_pagetable.html
+- Dirty Pagetable: N. Wu, https://web.archive.org/web/2024/https://yanglingxi1993.github.io/dirty_pagetable/dirty_pagetable.html

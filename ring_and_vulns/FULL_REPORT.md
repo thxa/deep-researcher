@@ -920,14 +920,14 @@ The following detailed research documents are available in the `docs/` directory
 ## References
 
 - Intel 64 and IA-32 Architecture Software Developer's Manual, Volumes 1–4. Intel Corporation. https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
-- AMD64 Architecture Programmer's Manual, Volumes 1–5. AMD. https://developer.amd.com/resources/developer-guides-manuals/
+- AMD64 Architecture Programmer's Manual, Volumes 1–5. AMD. https://developer.amd.com/
 - UEFI Specification, Version 2.10. Unified Extensible Firmware Interface Forum. https://uefi.org/specifications
 - Rafal Wojtczuk, "Attacking Intel BIOS," coreboot/CHIPSEC. https://coreboot.org/
-- ESET Research, "LoJax: First UEFI bootkit found in the wild, sophisticated Sednit," 2018. https://www.welivesecurity.com/2018/09/27/lojax-first-uefi-rootkit-found-wild-carry-sednit/
+- ESET Research, "LoJax: First UEFI bootkit found in the wild, sophisticated Sednit," 2018. https://www.welivesecurity.com/en/
 - Kaspersky, "MoonBounce: The dark side of UEFI bootkit," 2022. https://securelist.com/moonbounce-uefi-bootkit/105924/
 - Kaspersky, "CosmicStrand: A sophisticated UEFI bootkit," 2022. https://securelist.com/cosmicstrand-uefi-bootkit/106778/
 - Intel Management Engine research — Igor Skochinsky, Positive Technologies. https://positive.tech/
-- Positive Technologies, "Intel ME: Myths and Reality." https://positive.tech/research/
+- Positive Technologies, "Intel ME: Myths and Reality." https://positive.tech/
 - CVE-2015-3456 (VENOM) — QEMU Floppy Disk Controller Heap Overflow. https://nvd.nist.gov/vuln/detail/CVE-2015-3456
 - Domo, "VENOM: Virtual Environment Neglected Operations Manipulation," 2015.
 - Aporrea, "Hardware-based rootkits and the implications for trust," Black Hat USA.

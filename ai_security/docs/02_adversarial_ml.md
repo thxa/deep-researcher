@@ -658,7 +658,7 @@ The robustness evaluation community has converged on several standards:
 
 **VNN-COMP** (Verification Neural Network Competition): Annual competition for certified robustness verification tools.
 
-**ML Safety GitHub** (https://github.com/thestephencasper/ml_safety): Aggregated resources for ML safety evaluation.
+**ML Safety GitHub** (https://github.com/stephen-casper/ai_safety): Aggregated resources for ML safety evaluation.
 
 ### 8.3 Open Problems
 

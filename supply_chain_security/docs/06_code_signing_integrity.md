@@ -814,8 +814,8 @@ slsa-verifier verify-image registry.example.com/my-app:v1.2.3 \
 4. SLSA Specification v1.0. "Provenance Format." https://slsa.dev/provenance/
 5. npm Documentation. "Provenance." https://docs.npmjs.com/generating-provenance-statements
 6. Debian Reproducible Builds Project. https://reproducible-builds.org/
-7. CISA. "Securing the Software Supply Chain: Code Signing." https://www.cisa.gov/sites/default/files/publications/Securing%20the%20Software%20Supply%20Chain%20-%20Code%20Signing.pdf
-8. Microsoft. "Code Signing Best Practices." https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/code-signing-best-practices
+7. CISA. "Securing the Software Supply Chain: Code Signing." https://www.cisa.gov/sbom
+8. Microsoft. "Code Signing Best Practices." https://learn.microsoft.com/en-us/windows-hardware/drivers/dashboard/code-signing-attestation
 9. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
 10. RFC 6962. "Certificate Transparency." https://datatracker.ietf.org/doc/html/rfc6962
 11. RFC 5652. "Cryptographic Message Syntax (CMS)." https://datatracker.ietf.org/doc/html/rfc5652

@@ -949,7 +949,7 @@ WinDBG commands for architecture exploration:
 
 1. Russinovich, M., Solomon, D., & Ionescu, A. *Windows Internals, Part 1*, 7th Edition. Microsoft Press, 2017. — Chapters 1–3: System Architecture, System Mechanisms, and Executive Subsystems.
 2. Russinovich, M., Solomon, D., & Ionescu, A. *Windows Internals, Part 2*, 7th Edition. Microsoft Press, 2021. — Memory Manager, I/O Manager, and Cache Manager internals.
-3. Microsoft Learn. "Windows NT Architecture." <https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/architecture-portal>
+3. Microsoft Learn. "Windows NT Architecture." <https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/overview-of-windows-components>
 4. Yason, M. "Windows Heap Exploitation." *Black Hat USA*, 2019. — Pool allocator internals and segment heap architecture.
 5. Ionescu, A. "What Is It Like to Work on Windows?" *Recon*, 2019. — Executive subsystem design rationale.
 6. Dullien, H. "Windows NT Syscall Interface." *Black Hat Europe*, 2018. — NTAPI system call dispatch and SDT structure.

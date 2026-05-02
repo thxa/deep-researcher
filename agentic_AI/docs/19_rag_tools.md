@@ -1516,7 +1516,7 @@ Together, these form a cognitive architecture where the LLM is the *reasoner*, r
 - Lewis, P. et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," NeurIPS 2020. https://arxiv.org/abs/2005.11401
 - Gao, Y. et al., "Retrieval-Augmented Generation for Large Language Models: A Survey," 2024. https://arxiv.org/abs/2312.10997
 - Schick, T. et al., "Toolformer: Language Models Can Teach Themselves to Use Tools," 2023. https://arxiv.org/abs/2302.04761
-- LangChain Documentation — RAG. https://docs.langchain.com/docs/use_cases/question_answering/
+- LangChain Documentation — RAG. https://python.langchain.com/docs/tutorials/rag/
 - LlamaIndex Documentation. https://docs.llamaindex.ai/
 - Pinecone Documentation. https://docs.pinecone.io/
 - Weaviate Documentation. https://weaviate.io/developers/weaviate

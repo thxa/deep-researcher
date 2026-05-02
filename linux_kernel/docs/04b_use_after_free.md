@@ -1095,4 +1095,4 @@ The fundamental challenge is that UAF is one symptom of the broader problem of *
 9. Linux Kernel Documentation. "KFENCE." https://www.kernel.org/doc/html/latest/dev-tools/kfence.html. 2024.
 10. Serebryany, K. et al. "AddressSanitizer: A Fast Memory Error Detector." *USENIX ATC*. 2012.
 11. Google. "syzkaller: Kernel Fuzzer." https://github.com/google/syzkaller. 2024.
-12. Linux Kernel Documentation. "Slub Freelist Hardening." https://www.kernel.org/doc/html/latest/mm/slab_debug.html. 2024.
+12. Linux Kernel Documentation. "Slub Freelist Hardening." https://www.kernel.org/doc/html/latest/mm/slab.html. 2024.

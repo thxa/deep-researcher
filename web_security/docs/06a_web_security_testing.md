@@ -777,6 +777,6 @@ class BlindWebTester:
 5. ZAP. "OWASP Zed Attack Proxy." https://www.zaproxy.org/
 6. Nuclei Project. "Nuclei: Fast and Customizable Vulnerability Scanner." https://github.com/projectdiscovery/nuclei
 7. OWASP Foundation. "OWASP Dependency-Check." https://owasp.org/www-project-dependency-check/
-8. OWASP Foundation. "OWASP ZAP API Testing." https://www.zaproxy.org/docs/docker/api/
+8. OWASP Foundation. "OWASP ZAP API Testing." https://www.zaproxy.org/docs/docker/
 9. Snyk. "Static Application Security Testing." https://snyk.io/learn/sast-static-application-security-testing/
 10. OWASP Foundation. "DAST vs SAST vs IAST." https://owasp.org/www-community/Source_Code_Analysis_Tools

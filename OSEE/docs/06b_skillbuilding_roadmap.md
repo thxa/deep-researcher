@@ -1510,6 +1510,6 @@ Start with Phase 1. Do every exercise. Build every exploit. Break every HEVD vul
 5. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
 6. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
 7. Microsoft, "WinDbg Documentation," https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
-8. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+8. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/
 9. FuzzySecurity, "Windows Exploitation Tutorials," https://www.fuzzysecurity.com/
 10. RedPill, "Windows Kernel Exploitation," https://redpill-lab0.net/

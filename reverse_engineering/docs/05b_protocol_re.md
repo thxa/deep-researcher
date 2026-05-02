@@ -1256,7 +1256,7 @@ def response(flow: http.HTTPFlow) -> None:
 1. Wireshark documentation, https://www.wireshark.org/docs/
 2. Scapy documentation, https://scapy.readthedocs.io/
 3. Dennis Andriesse, "Practical Binary Analysis," No Starch Press, 2018.
-4. Dennis Yurichev, "Reverse Engineering for Beginners," https://begin.reversing.info/
+4. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 5. SANS Institute, "Network Forensics" (SEC573), https://www.sans.org/
 6. CAN bus specification, Robert Bosch GmbH, "CAN Specification 2.0," 1991.
 7. Bluetooth SIG, "Core Specification," https://www.bluetooth.com/specifications/

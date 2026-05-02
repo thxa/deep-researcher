@@ -692,12 +692,12 @@ EEEEEkkkkkkkkkkkkAAkkkAAkkkkAAAAAAAAAAkkkkkkAAk...
 
 ## References
 
-1. CISA. "SolarWinds Orion Supply Chain Attack: Emergency Directive 21-01." https://www.cisa.gov/news-events/news/combined-joint-cyber-advisory-aa23-325a
-2. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://www.mandiant.com/resources/blog/evasive-attacker-leverages-solarwinds-supply-chain
-3. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://www.microsoft.com/security/blog/2020/12/18/analyzing-solarwinds-compromise/
+1. CISA. "SolarWinds Orion Supply Chain Attack: Emergency Directive 21-01." https://www.cisa.gov/news-events/cybersecurity-advisories
+2. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+3. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
 4. FireEye. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020.
 5. Birsan, A. "Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
-6. 3CX. "Supply Chain Attack." March 2023. https://www.3cx.com/blog/news/security-incident/
+6. 3CX. "Supply Chain Attack." March 2023. https://www.3cx.com/
 7. Freund, A. "Backdoor in xz/liblzma." OpenWall oss-security mailing list, March 2024. https://www.openwall.com/lists/oss-security/2024/03/29/4
 8. NVD. "CVE-2024-3094: XZ Utils Backdoor." https://nvd.nist.gov/vuln/detail/CVE-2024-3094
 9. NVD. "CVE-2021-44228: Log4Shell." https://nvd.nist.gov/vuln/detail/CVE-2021-44228
@@ -706,6 +706,6 @@ EEEEEkkkkkkkkkkkkAAkkkAAkkkkAAAAAAAAAAkkkkkkAAk...
 12. CISA. "Known Exploited Vulnerabilities Catalog." https://www.cisa.gov/known-exploited-vulnerabilities-catalog
 13. SLSA Specification v1.0. "Supply-chain Levels for Software Artifacts." https://slsa.dev/spec/v1.0/
 14. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
-15. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sites/default/files/publications/defending_against_software_supply_chain_attacks_0.pdf
+15. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sbom
 16. Ladisa, P., et al. "SoK: Taxonomy of Supply Chain Attacks." IEEE Symposium on Security and Privacy, 2023. https://doi.org/10.1109/SP46215.2023.10179316
 17. Ohm, M., et al. "Backstabber's Knife Collection: A Review of Open Source Software Supply Chain Attacks." DIMVA, 2020.

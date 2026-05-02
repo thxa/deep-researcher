@@ -740,7 +740,7 @@ http://metadata.google.internal/ # GCP alternative name
 4. Google Cloud. "gcloud CLI Reference." *Google Cloud*. 2024. https://cloud.google.com/sdk/gcloud/reference
 5. Kubernetes. "kubectl Reference." *Kubernetes*. 2024. https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
 6. Kubernetes. "RBAC API Reference." *Kubernetes*. 2024. https://kubernetes.io/docs/reference/access-authn-authz/rbac/
-7. Falco. "Falco CLI Reference." *The Falco Project*. 2024. https://falco.org/docs/getting-started/falco-cli/
+7. Falco. "Falco CLI Reference." *The Falco Project*. 2024. https://falco.org/docs/getting-started/
 8. Open Policy Agent. "OPA CLI Reference." *Open Policy Agent*. 2024. https://www.openpolicyagent.org/docs/latest/cli/
 9. HashiCorp. "Terraform CLI Reference." *HashiCorp Developer*. 2024. https://developer.hashicorp.com/terraform/cli
 10. CIS. "CIS Benchmarks: AWS, Azure, GCP, Kubernetes." *Center for Internet Security*. 2024. https://www.cisecurity.org/cis-benchmarks/

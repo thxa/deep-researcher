@@ -1320,4 +1320,4 @@ spec:
 7. CIS. "CIS Kubernetes Benchmark." *Center for Internet Security*. 2024. https://www.cisecurity.org/cis-benchmarks/
 8. Kubernetes. "Network Policies." *Kubernetes Documentation*. 2024. https://kubernetes.io/docs/concepts/services-networking/network-policies/
 9. Kubernetes. "Kubelet Authentication and Authorization." *Kubernetes Documentation*. 2024. https://kubernetes.io/docs/reference/access-authn-authz/kubelet-authn-authz/
-10. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/pubs/sp/800-190/final
+10. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/publications/detail/sp/800-190/final

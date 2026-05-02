@@ -1242,6 +1242,6 @@ These defenses collectively raise the bar for kernel exploitation from "trivial"
 10. Chester, A. "Analyzing Print Spooler Vulnerabilities." *XPN InfoSec Blog*, 2021. — PrintNightmare root cause analysis.
 11. Dullien, H. "A Guide to Windows Kernel Pool Corruption." *Zero Day Initiative*, 2020. — Pool header structures and corruption detection.
 12. Ormandy, T. "Windows Kernel Attack Surface." *Google Project Zero*, 2019. — Race conditions and TOCTOU in kernel object management.
-13. Microsoft Learn. "Pool Allocation and Tagging." <https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/pool-allocations-and-pool-tags>
-14. DISA. "Windows 10 STIG — Kernel Hardening." <https://www.stigviewer.com/stig/windows_10/> — Kernel pool isolation and driver signing enforcement.
+13. Microsoft Learn. "Pool Allocation and Tagging." <https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/>
+14. DISA. "Windows 10 STIG — Kernel Hardening." <https://www.stigviewer.com/stigs/> — Kernel pool isolation and driver signing enforcement.
 15. CIS. "Microsoft Windows 11 Benchmark." *Center for Internet Security*, 2023. — Kernel-mode hardening baselines.

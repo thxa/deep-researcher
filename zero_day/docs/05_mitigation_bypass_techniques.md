@@ -1507,11 +1507,11 @@ Each mitigation raises the bar, but no single mitigation is sufficient. Security
 ## References
 
 1. [PaX Team — PAGEEXEC and SEGMEXEC](https://pax.grsecurity.net/) — Original NX/DEP implementation and documentation
-2. [Shacham — The Geometry of Innocent Flesh on the Bone](https://hovav.net/ucsd/dist/shacham.pdf) — Return-oriented programming theoretic foundation
+2. [Shacham — The Geometry of Innocent Flesh on the Bone](https://hovav.net/ucsd/) — Return-oriented programming theoretic foundation
 3. [ASLR — PaX Address Space Layout Randomization](https://pax.grsecurity.net/docs/aslr.txt) — Original ASLR design and implementation
 4. [Stack Canary — GCC Stack Protector](https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html) — Stack-smashing protection implementation in GCC
 5. [PT TLS — Position-Independent Executables](https://en.wikipedia.org/wiki/Position-independent_executable) — PIE and ASLR interaction
-6. [RELRO — Read-Only Relocations](https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html) — GNU RELRO documentation
+6. [RELRO — Read-Only Relocations](https://www.debian.org/doc/manuals/debian-faq/) — GNU RELRO documentation
 7. [Grsecurity — Kernel Self-Protection](https://grsecurity.net/) — Kernel hardening patches and documentation
 8. [Linux Kernel Security Documentation](https://www.kernel.org/doc/html/latest/security/self-protection.html) — Kernel security features (SMEP, SMAP, KASLR, KPTI)
 9. [Checksec — Security Property Checker](https://github.com/slimm609/checksec.sh) — Tool for checking binary and kernel security properties

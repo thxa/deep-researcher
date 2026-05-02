@@ -1053,7 +1053,7 @@ Content-Type: application/json
 2. OWASP Foundation. "API Security." https://owasp.org/www-project-api-security/
 3. GraphQL Foundation. "GraphQL Specification." https://spec.graphql.org/
 4. PortSwigger Ltd. "GraphQL API Vulnerabilities." https://portswigger.net/web-security/graphql
-5. Nilesh G. "GraphQL Security — Bypassing Authorization." https://blog.doyensec.com/2021/05/20/graphql-security.html
+5. Nilesh G. "GraphQL Security — Bypassing Authorization." https://doyensec.com/resources/
 6. gRPC Project. "gRPC Security." https://grpc.io/docs/guides/auth/
 7. OWASP Foundation. "Mass Assignment Cheat Sheet." https://cheatsheetseries.owasp.org/cheatsheets/Mass_Assignment_Cheat_Sheet.html
 8. RFC 6749. "The OAuth 2.0 Authorization Framework." IETF, October 2012. https://www.rfc-editor.org/rfc/rfc6749

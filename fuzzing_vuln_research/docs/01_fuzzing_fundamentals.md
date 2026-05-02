@@ -631,4 +631,4 @@ Fuzzing throughput (inputs/second) directly correlates with bug-finding rate. Co
 
 [20] LLVM Project. *UndefinedBehaviorSanitizer*. https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html
 
-[21] Zalewski, M. (2017). *AFL Technical Details*. https://lcamtuf.coredump.cx/afl/technical_details.html
+[21] Zalewski, M. (2017). *AFL Technical Details*. https://lcamtuf.coredump.cx/afl/technical_details.txt

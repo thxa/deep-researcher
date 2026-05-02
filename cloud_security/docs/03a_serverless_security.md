@@ -1243,10 +1243,10 @@ def process_data(data):
 ## References
 
 1. AWS. "Lambda Security Best Practices." *Amazon Web Services*. 2024. https://docs.aws.amazon.com/lambda/latest/dg/lambda-security.html
-2. OWASP. "Serverless Security Project." *Open Worldwide Application Security Project*. 2024. https://owasp.org/www-project-serverless-security/
+2. OWASP. "Serverless Security Project." *Open Worldwide Application Security Project*. 2024. https://owasp.org/www-project-top-ten/
 3. PureSec. "Serverless Security Top 10." *PureSec*. 2019. https://www.puresec.io/serverless-security-top-10
-4. Microsoft. "Azure Functions Security." *Microsoft Learn*. 2024. https://learn.microsoft.com/en-us/azure/azure-functions/security/
+4. Microsoft. "Azure Functions Security." *Microsoft Learn*. 2024. https://learn.microsoft.com/en-us/azure/azure-functions/security-baseline/
 5. Google Cloud. "Cloud Functions Security." *Google Cloud*. 2024. https://cloud.google.com/functions/docs/securing
 6. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws-privilege-escalation-methods-mitigation/
 7. AWS. "Provisioned Concurrency." *Amazon Web Services*. 2024. https://docs.aws.amazon.com/lambda/latest/dg/provisioned-concurrency.html
-8. NIST. "SP 800-204: Security Strategies for Microservices-based Application Systems." *National Institute of Standards and Technology*. 2021. https://csrc.nist.gov/pubs/sp/800-204/final
+8. NIST. "SP 800-204: Security Strategies for Microservices-based Application Systems." *National Institute of Standards and Technology*. 2021. https://csrc.nist.gov/publications/detail/sp/800-204/final

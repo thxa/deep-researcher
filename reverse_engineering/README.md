@@ -59,7 +59,7 @@ A comprehensive, technically deep reference covering reverse engineering methodo
 
 ## References
 
-1. Dennis Yurichev, "Reverse Engineering for Beginners," free online, https://begin.reversing.info/
+1. Dennis Yurichev, "Reverse Engineering for Beginners," free online, https://yurichev.com/writings/RE_for_beginners-en.pdf
 2. Michael Sikorski & Andrew Honig, "Practical Malware Analysis," No Starch Press, 2012.
 3. Eldad Eilam, "Reversing: Secrets of Reverse Engineering," Wiley, 2005.
 4. Chris Eagle, "The IDA Pro Book," No Starch Press, 2011.

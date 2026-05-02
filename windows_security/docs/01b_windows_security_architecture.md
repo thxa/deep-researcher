@@ -1027,6 +1027,6 @@ For defenders, the priority order for implementing Windows security features:
 10. Dormann, W. "Analyzing Windows Security Boundaries." *CERT/CC Vulnerability Analysis Blog*, 2021. — Integrity levels, MIC, and cross-level attack research.
 11. National Vulnerability Database. CVE-2020-1472. "NetLogon Elevation of Privilege (Zerologon)." <https://nvd.nist.gov/vuln/detail/CVE-2020-1472>
 12. National Vulnerability Database. CVE-2021-1675. "Windows Print Spooler EoP." <https://nvd.nist.gov/vuln/detail/CVE-2021-1675>
-13. DISA. "Windows 10 Security Technical Implementation Guide (STIG)." <https://www.stigviewer.com/stig/windows_10/> — UAC, AppLocker, and WDAC hardening guidance.
+13. DISA. "Windows 10 Security Technical Implementation Guide (STIG)." <https://www.stigviewer.com/stigs/> — UAC, AppLocker, and WDAC hardening guidance.
 14. CIS. "Microsoft Windows 11 Benchmark." *Center for Internet Security*, 2023. — Security configuration baselines for tokens, ACLs, and integrity levels.
 15. Microsoft Security Response Center (MSRC) Blog. "Security Boundary and CC Evaluation." <https://msrc.microsoft.com/blog/> — VBS, HVCI, and Credential Guard security boundary definitions.

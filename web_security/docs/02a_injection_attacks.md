@@ -914,13 +914,13 @@ Content-Type: application/xml
 ## References
 
 1. OWASP Foundation. "SQL Injection." https://owasp.org/www-community/attacks/SQL_Injection
-2. OWASP Foundation. "NoSQL Injection." https://owasp.org/www-community/attacks/NoSQL_Injection
+2. OWASP Foundation. "NoSQL Injection." https://owasp.org/www-project-top-ten/
 3. OWASP Foundation. "Command Injection." https://owasp.org/www-community/attacks/Command_Injection
 4. PortSwigger Ltd. "SQL Injection Cheat Sheet." https://portswigger.net/web-security/sql-injection/cheat-sheet
 5. PortSwigger Ltd. "Server-Side Template Injection." https://portswigger.net/research/server-side-template-injection
 6. Halfond, W.G.J., Viegas, J., and Orso, A. "A Classification of SQL Injection Attacks and Countermeasures." IEEE S&P, 2006.
 7. Techtarget. "LDAP Injection." https://owasp.org/www-community/attacks/LDAP_Injection
-8. PDTB. "Polyglot Payloads." https://github.com/payloadbox/sql-injection-payload-list
+8. PDTB. "Polyglot Payloads." https://github.com/swisskyrepo/PayloadsAllTheThings
 9. OWASP Foundation. "LDAP Injection Prevention Cheat Sheet." https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html
 10. OWASP Foundation. "Query Parameterization Cheat Sheet." https://cheatsheetseries.owasp.org/cheatsheets/Query_Parameterization_Cheat_Sheet.html
 11. NIST. "SP 800-53: Security and Privacy Controls." https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final

@@ -379,8 +379,8 @@ For security-conscious users and organizations, the clearest mitigation remains 
 6. Android Enterprise Security — https://www.android.com/enterprise/security/
 7. Samsung Knox Platform — https://www.samsungknox.com/
 8. Samsung Mobile Security Updates — https://security.samsungmobile.com/
-9. Qualcomm Security Bulletins — https://www.qualcomm.com/products/product-security
+9. Qualcomm Security Bulletins — https://www.qualcomm.com/company/product-security
 10. Android Security & Privacy 2024 Year in Review — https://security.googleblog.com/
-11. Google Pixel Update Policy — https://support.google.com/pixelphone/answer/10946406
+11. Google Pixel Update Policy — https://support.google.com/pixelphone/
 12. Android Verified Boot Documentation — https://source.android.com/docs/security/features/verifiedboot
-13. GSMA Mobile Device Security Index — https://www.gsma.com/newsroom/wp-content/uploads/mobile-security-index-2024.pdf
+13. GSMA Mobile Device Security Index — https://www.gsma.com/solutions-and-impact/technologies/network-security/mobile-security-index/

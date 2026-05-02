@@ -39,7 +39,7 @@ If you're preparing for OSEE or want to understand the highest level of hands-on
 
 ## References
 
-- Offensive Security, "OSEE Certification," https://www.offsec.com/courses/osee/
+- Offensive Security, "OSEE Certification," https://www.offsec.com/courses/
 - Offensive Security, "EXP-401: Advanced Windows Exploitation," https://www.offsec.com/courses/exp-401/
 - Mark Russinovich, David Solomon & Alex Ionescu, "Windows Internals," 7th Edition, Microsoft Press.
 - Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/

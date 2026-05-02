@@ -1203,5 +1203,5 @@ at `https://help.offsec.com/hc/en-us/articles/360046458732` as policies may chan
 6. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
 7. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
 8. Offensive Security, "Proctored Exam Requirements FAQ," https://help.offsec.com/hc/en-us/
-9. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/advanced-exploit-development/
+9. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/
 10. j00ru (Mateusz Jurczyk), Windows Kernel Research, https://j00ru.vexillium.org/

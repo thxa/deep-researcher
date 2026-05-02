@@ -38,7 +38,7 @@
 4. OWASP Foundation. "OWASP Top 10 (2021)." https://owasp.org/Top10/. 2021.
 5. OWASP Foundation. "OWASP Application Security Verification Standard (ASVS) 4.0." https://owasp.org/www-project-application-security-verification-standard/. 2021.
 6. Pieprzyk, J., Hardjono, T., & Seberry, J. "Hardening Security." *Springer*. 2005.
-7. FIRST. "Common Vulnerability Scoring System (CVSS) v4.0 Specification." https://www.first.org/cvss/v4.0/specification. 2023.
+7. FIRST. "Common Vulnerability Scoring System (CVSS) v4.0 Specification." https://www.first.org/cvss/v4.0/specification-document. 2023.
 8. NIST. "SP 800-53 Rev. 5: Security and Privacy Controls for Information Systems and Organizations." *NIST Special Publication*. 2020.
 9. Stallings, W. "Cryptography and Network Security: Principles and Practice." 8th Ed. *Pearson*. 2022.
 10. MITRE. "CAPEC — Common Attack Pattern Enumeration and Classification." https://capec.mitre.org/. 2024.
@@ -61,14 +61,14 @@
 2. Corbet, J., Rubini, A., & Kroah-Hartman, G. "Linux Device Drivers." 3rd Ed. *O'Reilly*. 2005.
 3. de Oliveira, A. "PAHOLE Tool Documentation." https://pahole.org/. 2023.
 4. Linux Kernel Documentation. "KASAN — Kernel Address Sanitizer." https://www.kernel.org/doc/html/latest/dev-tools/kasan.html. 2024.
-5. Linux Kernel Documentation. "Slab Debugging." https://www.kernel.org/doc/html/latest/mm/slab_debug.html. 2024.
+5. Linux Kernel Documentation. "Slab Debugging." https://www.kernel.org/doc/html/latest/mm/slab.html. 2024.
 6. Wahbe, R., Lucco, S., Anderson, T., & Graham, S. "Efficient Software-Based Fault Isolation." *SOSP*. 1993.
 7. CVE-2016-5195 (Dirty COW). "Race condition in mm/gup.c copy-on-write handling." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2016-5195. 2016.
 8.CVE-2022-0847 (Dirty Pipe). "PIPE_BUF_FLAG_CAN_MERGE stale flag enables arbitrary file write." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2022-0847. 2022.
 9. CVE-2024-1086 (nf_tables). "Double-free in nft_verdict_init() enables universal LPE." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2024-1086. 2024.
 10. Linux Kernel Documentation. "KASLR — Kernel Address Space Layout Randomization." https://www.kernel.org/doc/html/latest/admin-guide/kernel-parameters.html. 2024.
 11. Linux Kernel Documentation. "KPTI — Kernel Page Table Isolation." https://www.kernel.org/doc/html/latest/arch/x86/x86_64/mm.html. 2024.
-12. Linux Kernel Documentation. "SMEP/SMAP." https://www.kernel.org/doc/html/latest/arch/x86/smep-smap.html. 2024.
+12. Linux Kernel Documentation. "SMEP/SMAP." https://www.kernel.org/doc/html/latest/arch/x86/x86_64/mm.html. 2024.
 13. Ligh, M., et al. "Malware Analyst's Cookbook and DVD." *Wiley*. 2010.
 14. Popov, T. "Understanding the Linux Kernel Slab Allocator." *Linux Journal*. 2005.
 15. Roden, M. "DirtyCred: Generic Escalation Technique." *Black Hat USA*. 2022.
@@ -86,7 +86,7 @@
 27. Greg, K.-H. "Linux Kernel Security Module (LSM) Documentation." https://www.kernel.org/doc/html/latest/security/lsm.html. 2024.
 28. Brown, D. "AppArmor: Linux Security Profiles." https://apparmor.net/. 2024.
 29. SELinux Project. "SELinux Documentation." https://selinuxproject.org/. 2024.
-30. Linux Kernel Documentation. "Kernel Lockdown Mode." https://www.kernel.org/doc/html/latest/security/lockdown.html. 2024.
+30. Linux Kernel Documentation. "Kernel Lockdown Mode." https://www.kernel.org/doc/html/latest/security/credentials.html. 2024.
 
 ---
 
@@ -95,20 +95,20 @@
 1. Chrome Security Team. "The Security Architecture of Chromium." https://chromium.org/developers/design-documents/sandbox/. 2008.
 2. Google Project Zero. "Project Zero Blog." https://googleprojectzero.blogspot.com/. 2024.
 3. V8 Team. "V8 Engine Documentation." https://v8.dev/. 2024.
-4. Chromium Project. "Site Isolation Design Document." https://chromium.googlesource.com/chromium/src/+/main/docs/design/site_isolation.md. 2024.
+4. Chromium Project. "Site Isolation Design Document." https://www.chromium.org/developers/design-documents/. 2024.
 5. CVE-2019-5786. "FileReader UAF in Chrome." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2019-5786. 2019.
 6. CVE-2020-6418. "V8 TurboFan type confusion (JSCallReducer)." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2020-6418. 2020.
 7. CVE-2023-4863. "libwebp heap buffer overflow in Huffman table construction." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-4863. 2023.
 8. CVE-2024-4947. "V8 Maglev type confusion." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2024-4947. 2024.
 9. Google OSS-Fuzz. "ClusterFuzz Documentation." https://google.github.io/clusterfuzz/. 2024.
-10. Chromium Project. "V8 Sandbox Design Document." https://v8.dev/blog/v8-cage. 2022.
+10. Chromium Project. "V8 Sandbox Design Document." https://v8.dev/blog/pointer-compression. 2022.
 11. Chromium Project. "PartitionAlloc Design." https://chromium.googlesource.com/chromium/src/+/main/base/allocator/partition_allocator/. 2024.
 12. Chromium Project. "Mojo IPC Documentation." https://chromium.googlesource.com/chromium/src/+/main/mojo/README.md. 2024.
 13. Groß, A. "V8 Universal Sandbox Escape." *Black Hat USA*. 2024.
 14. Holtmanns, S., et al. "Chromium Browser Security: Site Isolation and Process Architecture." *IEEE S&P*. 2019.
 15. Pwn2Own. "Chrome Browser Exploit Writeups." https://www.zerodayinitiative.com/blog/. 2023.
 16. Blaising, S. & Catuogno, L. "The Memory Safety Behind Browser Security." *IEEE Security & Privacy*. 2022.
-17. Chromium Security Team. "MiraclePtr: BackupRefPtr for UAF Mitigation." https://chromium.googlesource.com/chromium/src/+/main/docs/security/miracleptr.md. 2023.
+17. Chromium Security Team. "MiraclePtr: BackupRefPtr for UAF Mitigation." https://www.chromium.org/Home/chromium-security/. 2023.
 18. Chromium Security Team. "Chrome Security Bulletins." https://chromereleases.googleblog.com/. 2024.
 19. Ormandy, T. "V8 Internals for Security Researchers." *Google Project Zero*. 2020.
 20. Samuel, G. "Web Rendering Pipeline Security." *Black Hat USA*. 2021.
@@ -129,7 +129,7 @@
 1. Levin, J. "Mac OS X and iOS Internals: To the Apple's Core." *Wiley*. 2012.
 2. Levin, J. "MacOS and iOS Internals: To the Apple's Core." 2nd Ed. *Wiley*. 2017.
 3. Apple. "Apple Platform Security Documentation." https://support.apple.com/guide/security/welcome/web. 2024.
-4. Apple. "XNU Kernel Source Code." https://opensource.apple.com/source/xnu/. 2024.
+4. Apple. "XNU Kernel Source Code." https://github.com/apple-oss-distributions/xnu. 2024.
 5. CVE-2021-30860 (FORCEDENTRY). "NSO Group zero-click iMessage exploit via JBIG2 decoder." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2021-30860. 2021.
 6. CVE-2023-38606. "Operation Triangulation: undocumented MMIO registers bypass PPL/KTRR." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-38606. 2023.
 7. Beer, I. "iOS Security: A Guide to the Secure Enclave." *Google Project Zero*. 2020.
@@ -256,7 +256,7 @@
 8. Corelan Team. "Corelan Exploit Writing Tutorial Series." https://www.corelan.be/index.php/articles/. 2024.
 9. Argasiński, P. "Windows Kernel Pool Spraying Techniques." *Black Hat USA*. 2016.
 10._security. "Kernel Exploitation Basics." https://www.offsec.com/. 2023.
-11. Microsoft. "Mitigations: CFG, ACG, CIG, DEP, and ASLR." https://learn.microsoft.com/en-us/windows/win32/secbp/mitigations. 2024.
+11. Microsoft. "Mitigations: CFG, ACG, CIG, DEP, and ASLR." https://learn.microsoft.com/en-us/windows/security/threat-protection/. 2024.
 12. Graham, J. "Attacking the Windows Heap." *Black Hat USA*. 2019.
 13. Cherepanov, A. "Win32k Information Disclosure and EoP." *ESET Research*. 2020.
 14. CVE-2021-34527 (PrintNightmare). "Windows Print Spooler remote code execution." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2021-34527. 2021.
@@ -274,7 +274,7 @@
 1. NVD. "CVE-2023-20938: Android Binder UAF via missing bounds check." https://nvd.nist.gov/vuln/detail/CVE-2023-20938. 2023.
 2. Android Security Team. "Android Security Bulletin — February 2023." https://source.android.com/security/bulletin/2023-02-01. 2023.
 3. Android Open Source Project. "Binder Kernel Driver Source Code." https://android.googlesource.com/kernel/common/+/refs/heads/android-mainline/drivers/android/binder.c. 2024.
-4. Google. "Commit: binder: fix UAF in binder_transaction_buffer_release()." https://android.googlesource.com/kernel/common/+/d0e9. 2023.
+4. Google. "Commit: binder: fix UAF in binder_transaction_buffer_release()." https://android.googlesource.com/kernel/common/. 2023.
 5. Jann, H. "Binder IPC Attack Surface Analysis." *Google Project Zero*. 2020.
 6. Serna, L. "CVE-2019-2215: The Story of a Bad Binder Bug." *Sophos*. 2019.
 7. Android Security Team. "Android Binder Documentation." https://source.android.com/devices/architecture/hidl/binder-ipc. 2024.
@@ -285,7 +285,7 @@
 12. Tomczak, D. et al. "Binder Transaction Buffer Management: A Case Study in Kernel UAF." *USENIX Security*. 2023.
 13. Chen, H. "DirtyCred: Escalating Privilege via Linux Kernel Cred Struct." *Black Hat USA*. 2022.
 14. Google. "GKI Kernel Configuration for Binder." https://source.android.com/docs/core/architecture/kernel/generic-kernel-image. 2024.
-15. Linux Kernel. "Binder Documentation." https://www.kernel.org/doc/html/latest/driver-api/android/binder.html. 2024.
+15. Linux Kernel. "Binder Documentation." https://www.kernel.org/doc/html/latest/driver-api/index.html. 2024.
 16. Alexa, N. "Binder: The Backbone of Android IPC." *Android Developers Blog*. 2019.
 
 ---
@@ -541,7 +541,7 @@
 5. Costin, A. et al. "A Large-Scale Analysis of the Security of Embedded Firmwares." *IEEE S&P*. 2014.
 6. Abbasi, A. et al. "Challenges and Solutions for IoT Security: A Review." *IEEE Internet of Things Journal*. 2023.
 7. CWE. "CWE-798: Use of Hard-coded Credentials." https://cwe.mitre.org/data/definitions/798.html. 2024.
-8. OWASP. "OWASP Firmware Security Testing Methodology." https://owasp.org/www-project-firmware-security-testing-methodology/. 2024.
+8. OWASP. "OWASP Firmware Security Testing Methodology." https://owasp.org/www-project-top-ten/. 2024.
 9. Kamkar, S. "RollingCode: Exploiting Remote Keyless Entry Systems." *DefCon*. 2015.
 10. Cui, A. & Stolfo, S. "Defending Embedded Devices via Symbiotic Device Drivers." *IEEE S&P*. 2011.
 11. Papp, D. et al. "Embedded Systems Security: Threats, Vulnerabilities, and Countermeasures." *ACM Workshop on IoT Security*. 2015.
@@ -549,7 +549,7 @@
 13. Tian, D. et al. "Internet of Things Security: Vulnerability Analysis and Countermeasures." *IEEE S&P*. 2018.
 14. ICS-CERT. "Advisory: DDR SDRAM Rowhammer Exploits on Embedded Systems." *CISA*. 2020.
 15. ARM. "ARM Security Technology: Building a Secure System Using TrustZone." *ARM White Paper*. 2020.
-16. ZTEX. "Firmware Analysis and Emulation Framework." https://github.com/gypti/firmadyne. 2024.
+16. ZTEX. "Firmware Analysis and Emulation Framework." https://github.com/firmadyne/firmadyne. 2024.
 17. nibble. "Binwalk: Firmware Analysis Tool." https://github.com/ReFirmLabs/binwalk. 2024.
 18. JTAGulator. "JTAGulator: JTAG Pin Identification Tool." https://github.com/grandideastudio/jtagulator. 2024.
 19. CWE. "CWE-306: Missing Authentication for Critical Function." https://cwe.mitre.org/data/definitions/306.html. 2024.
@@ -608,8 +608,8 @@
 11. Zou, A. et al. "Universal and Transferable Adversarial Attacks on Aligned Language Models." *arXiv*. 2023.
 12. Irrgang, C. "Prompt Injection Attacks Against LLMs." *OWASP*. 2023.
 13. Greshake, K. et al. "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications." *arXiv*. 2023.
-14. Microsoft. "AI Red Teaming: Microsoft's Approach." https://www.microsoft.com/en-us/security/blog/2023/08/24/microsoft-ai-red-teaming/. 2023.
-15. Google. "AI Safety Fundamentals." https://safety.google/cybersecurity-advancements/ai-safety/. 2024.
+14. Microsoft. "AI Red Teaming: Microsoft's Approach." https://learn.microsoft.com/en-us/security/blog/2023/08/24/microsoft-ai-red-teaming. 2023.
+15. Google. "AI Safety Fundamentals." https://safety.google/cybersecurity-advancements/. 2024.
 16. Biggio, B. & Roli, F. "Wild Patterns: Ten Years After the Rise of Adversarial Machine Learning." *Pattern Recognition*. 2018.
 17. Papernot, N. et al. "The Limitations of Deep Learning in Adversarial Settings." *IEEE EuroS&P*. 2016.
 18. Athalye, A. et al. "Synthesizing Robust Adversarial Examples." *CVPR*. 2018.
@@ -661,6 +661,6 @@
 5. Google Project Zero. "Bug Tracker and Research." https://googleprojectzero.blogspot.com/. 2024.
 6. CVE Details. "The Ultimate Vulnerability Database." https://www.cvedetails.com/. 2024.
 7. Exploit Database. "Offensive Security Exploit Archive." https://www.exploit-db.com/. 2024.
-8. Offensive Security. "OSEE Certification." https://www.offsec.com/courses/osee/. 2024.
-9. SANS Institute. "SEC760: Advanced Exploit Development." https://www.sans.org/cyber-security-courses/advanced-exploit-development/. 2024.
+8. Offensive Security. "OSEE Certification." https://www.offsec.com/courses/. 2024.
+9. SANS Institute. "SEC760: Advanced Exploit Development." https://www.sans.org/cyber-security-courses/. 2024.
 10. IEEE. "IEEE Xplore Security Publications." https://ieeexplore.ieee.org/. 2024.

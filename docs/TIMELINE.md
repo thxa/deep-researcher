@@ -402,7 +402,7 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 - Google Project Zero blog — https://googleprojectzero.blogspot.com/
 - Microsoft Security Response Center — https://msrc.microsoft.com/blog/
 - Android Security Bulletins — https://source.android.com/security/bulletin
-- Apple Security Updates — https://support.apple.com/security/
+- Apple Security Updates — https://support.apple.com/en-us/HT201220
 - Chrome Release Blog — https://chromereleases.googleblog.com/
 - Linux Kernel changelogs — https://cdn.kernel.org/
 - NIST National Vulnerability Database — https://nvd.nist.gov/
@@ -417,5 +417,5 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 - BleepingComputer — https://www.bleepingcomputer.com/
 - Qualys vulnerability research — https://www.qualys.com/research/
 - Rapid7 vulnerability research — https://www.rapid7.com/research/
-- US-CERT advisories — https://www.cisa.gov/news-alerts
+- US-CERT advisories — https://www.cisa.gov/news-events/cybersecurity-advisories
 - CERT/CC advisories — https://www.kb.cert.org/vuls/

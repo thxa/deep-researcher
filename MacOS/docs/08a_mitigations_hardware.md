@@ -171,5 +171,5 @@ The T2 chip on 2018–2020 Intel Macs was a discrete Apple silicon chip (based o
 - Kaspersky Operation Triangulation: https://securelist.com/operation-triangulation/109842/
 - NVD (National Vulnerability Database): https://nvd.nist.gov/
 - Apple Security Releases: https://support.apple.com/en-us/HT201222/
-- PACMAN Attack (MIT): https://gdao118.github.io/pacman_attack/
-- CTFech — Apple Silicon Security: https://cft2e.github.io/
+- PACMAN Attack (MIT): https://vusec.net/projects/
+- CTFech — Apple Silicon Security: https://ctf.thecybercoop.org/lectures/

@@ -784,7 +784,7 @@ This report synthesizes findings from 16 specialized research documents totaling
 7. Android GKI Documentation — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image
 8. Android SELinux — https://source.android.com/docs/security/features/selinux
 9. ARM Mali GPU Security Advisories — https://developer.arm.com/documentation/109870/latest
-10. Qualcomm Product Security Bulletins — https://www.qualcomm.com/products/product-security
+10. Qualcomm Product Security Bulletins — https://www.qualcomm.com/company/product-security
 11. Maddie Stone / Project Zero Android Research — https://googleprojectzero.blogspot.com/
 12. Android Security & Privacy Year-in-Review — https://security.googleblog.com/
 13. Citizen Lab, University of Toronto — https://citizenlab.ca/

@@ -822,15 +822,15 @@ This scenario demonstrates why CI/CD pipeline security is not just a DevOps conc
 
 1. Google. "SLSA: Supply-chain Levels for Software Artifacts." https://slsa.dev/
 2. GitHub. "Security hardening for GitHub Actions." https://docs.github.com/en/actions/security-guides
-3. CISA. "Defending Against Software Supply Chain Attacks." 2021. https://www.cisa.gov/sites/default/files/publications/defending_against_software_supply_chain_attacks_0.pdf
+3. CISA. "Defending Against Software Supply Chain Attacks." 2021. https://www.cisa.gov/sbom
 4. Boyens, J., et al. "Practices for Securing Critical Software Supply Chains." NIST SP 800-218. https://csrc.nist.gov/publications/detail/sp/800-218/final
 5. Lublin, S. "Poisoned Pipeline Execution." Cider Security, 2022. https://www.cidersecurity.io/blog/research/poisoned-pipeline-execution-ppc/
 6. Pfizer, S. "GitHub Actions Security Best Practices." GitHub Security Lab, 2023. https://securitylab.github.com/
 7. SLSA Specification v1.0. "Threat Model." https://slsa.dev/spec/v1.0/threats
 8. OpenSSF. "Scorecard: Automated Security Assessment." https://github.com/ossf/scorecard
 9. NIST SP 800-218. "Secure Software Development Framework." https://csrc.nist.gov/publications/detail/sp/800-218/final
-10. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/
+10. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
 11. Sigstore. "Fulcio: Certificate Authority." https://github.com/sigstore/fulcio
 12. Sigstore. "Rekor: Transparency Log." https://github.com/sigstore/rekor
 13. npm Documentation. "Provenance." https://docs.npmjs.com/generating-provenance-statements
-14. CISA. "Securing the Software Supply Chain: Guide for Developers." https://www.cisa.gov/sites/default/files/publications/Securing%20the%20Software%20Supply%20Chain%20for%20Developers.pdf
+14. CISA. "Securing the Software Supply Chain: Guide for Developers." https://www.cisa.gov/sbom

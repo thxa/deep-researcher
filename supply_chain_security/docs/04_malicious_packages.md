@@ -803,8 +803,8 @@ jobs:
 8. Zahan, N., et al. "A Tasty Treat for Malicious Packages: On the Feasibility of Supply Chain Attacks in PyPI." IEEE Symposium on Security and Privacy, 2024.
 9. NVD. "CVE-2018-16492: event-stream Compromise." https://nvd.nist.gov/vuln/detail/CVE-2018-16492
 10. OpenSSF. "Package Manager Best Practices." https://github.com/ossf/package-manager-best-practices
-11. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sites/default/files/publications/defending_against_software_supply_chain_attacks_0.pdf
+11. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sbom
 12. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
 13. Snyk. "2023 State of Open Source Security Report." https://snyk.io/reports/open-source-security/
-14. PyTorch Security Advisory. "PyTorch Nightly Compromise." December 2022. https://pytorch.org/blog/security-advisory/
+14. PyTorch Security Advisory. "PyTorch Nightly Compromise." December 2022. https://pytorch.org/
 15. NVD. "CVE-2021-44228: Log4Shell." https://nvd.nist.gov/vuln/detail/CVE-2021-44228

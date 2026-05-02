@@ -218,9 +218,9 @@ On Apple Silicon, all code must be signed — even ad-hoc signatures (without an
 - Jonathan Levin, *macOS and iOS Internals* (Volumes I–III) / *OS Internals* (Volumes I–III)
 - XNU Source Code: https://opensource.apple.com/
 - Apple Developer Documentation: launchd, XPC Services, Code Signing
-- Apple Developer Documentation — dyld: https://opensource.apple.com/source/dyld/
+- Apple Developer Documentation — dyld: https://github.com/apple-oss-distributions/dyld
 - Apple File System Reference: https://developer.apple.com/documentation/foundation/file_system/
 - `man launchd.plist`, `man dyld`, `man posix_spawn`
-- launchd man page: https://opensource.apple.com/source/launchd/
+- launchd man page: https://github.com/apple-oss-distributions/launchd
 - APFS Reference (Apple Developer)
 - NVD (National Vulnerability Database): https://nvd.nist.gov/

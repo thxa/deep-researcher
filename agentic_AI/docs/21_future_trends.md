@@ -896,7 +896,7 @@ The next five years will determine whether Agentic AI becomes the dominant parad
 
 25. Jimenez, C. E., et al., "SWE-Bench: Can Language Models Resolve Real GitHub Issues?," ICLR 2024, arXiv:2310.06770.
 
-26. Cognition, "Devin: The First AI Software Engineer," https://www.cognition.ai/blog/devin-ai-first-software-engineer, 2024.
+26. Cognition, "Devin: The First AI Software Engineer," https://www.cognition.ai/, 2024.
 
 27. Austin, J., et al., "Program Synthesis with Large Language Models," arXiv:2108.07732, 2021.
 
@@ -904,7 +904,7 @@ The next five years will determine whether Agentic AI becomes the dominant parad
 
 28. OpenAI, "GPT-4o," https://openai.com/index/hello-gpt-4o/, 2024.
 
-29. Google, "Gemini 1.5: Pushing the Limits of Long Context," https://blog.google/technology/ai/google-gemini-1-5/, 2024.
+29. Google, "Gemini 1.5: Pushing the Limits of Long Context," https://blog.google/technology/ai/gemini/, 2024.
 
 30. Black, K., et al., "π0: A Vision-Language-Action Flow Model for General Robot Control," Physical Intelligence, arXiv:2410.24164, 2024.
 
@@ -928,7 +928,7 @@ The next five years will determine whether Agentic AI becomes the dominant parad
 
 38. Anthropic, "Responsible Scaling Policy," https://www.anthropic.com/news/anthropics-responsible-scaling-policy, 2023.
 
-39. OpenAI, "Preparedness Framework," https://openai.com/safety/preparedness-framework/, 2023.
+39. OpenAI, "Preparedness Framework," https://openai.com/index/preparedness-framework/, 2023.
 
 40. Florian, T., et al., "The GAIA Benchmark: General AI Assistants," ICLR 2024, arXiv:2311.12983.
 

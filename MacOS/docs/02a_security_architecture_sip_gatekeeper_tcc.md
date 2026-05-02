@@ -253,6 +253,6 @@ Each layer adds cost to exploitation. Apple's security model assumes individual 
 - Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
 - Patrick Wardle, *The Art of Mac Malware* (No Starch Press, 2022)
 - Apple Code Signing Guide: https://developer.apple.com/library/archive/documentation/Security/Conceptual/CodeSigningGuide/
-- Gatekeeper and Notarization Documentation: https://developer.apple.com/documentation/security/notarizing_macos_app_before_distribution/
+- Gatekeeper and Notarization Documentation: https://developer.apple.com/documentation/security/notarizing-macos-software-before-distribution/
 - NVD (National Vulnerability Database): https://nvd.nist.gov/
 - Ian Beer / Project Zero: https://googleprojectzero.blogspot.com/

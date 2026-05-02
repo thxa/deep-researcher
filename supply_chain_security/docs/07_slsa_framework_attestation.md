@@ -898,8 +898,8 @@ SLSA Level 0: No Provenance
 7. Google. "SLSA: A Framework for Supply Chain Integrity." June 2021. https://security.googleblog.com/2021/06/introducing-slsa.html
 8. OpenSSF. "S2C2F: Supply-chain Secure Supply Chain Consumption Framework." https://github.com/ossf/s2c2f
 9. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
-10. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/
-11. CISA. "Securing the Software Supply Chain: Guide for Developers." https://www.cisa.gov/sites/default/files/publications/Securing%20the%20Software%20Supply%20Chain%20for%20Developers.pdf
+10. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
+11. CISA. "Securing the Software Supply Chain: Guide for Developers." https://www.cisa.gov/sbom
 12. OpenSSF. "Scorecard: Automated Security Assessment." https://github.com/ossf/scorecard
 13. Google Cloud. "Binary Authorization." https://cloud.google.com/binary-authorization
 14. Sigstore. "Cosign: Container Signing." https://docs.sigstore.dev/cosign/signing/signing_with_containers/

@@ -981,9 +981,9 @@ Emerging Web Security Threats (2024-2030):
 1. RFC 9000. "QUIC: A UDP-Based Multipath and Secure Transport." IETF, May 2021. https://www.rfc-editor.org/rfc/rfc9000
 2. RFC 9114. "HTTP/3." IETF, June 2022. https://www.rfc-editor.org/rfc/rfc9114
 3. W3C. "WebAssembly Specification." https://webassembly.github.io/spec/
-4. W3C. "Trusted Types." https://w3c.github.io/webappsec-trusted-types/
+4. W3C. "Trusted Types." https://www.w3.org/TR/trusted-types/
 5. NIST. "Post-Quantum Cryptography Standardization." https://csrc.nist.gov/projects/post-quantum-cryptography
-6. OWASP Foundation. "OWASP Supply Chain Integrity." https://owasp.org/www-project-supply-chain-integrity/
+6. OWASP Foundation. "OWASP Supply Chain Integrity." https://owasp.org/www-project-top-ten/
 7. Chromium Blog. "Security Chrome Updates." https://blog.chromium.org/
 8. W3C. "Permissions Policy (Feature Policy)." https://www.w3.org/TR/permissions-policy/
 9. CVE-2023-44487. "HTTP/2 Rapid Reset Attack." NVD. https://nvd.nist.gov/vuln/detail/CVE-2023-44487

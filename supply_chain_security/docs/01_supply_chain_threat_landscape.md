@@ -345,15 +345,15 @@ Each trust relationship is a potential attack surface. The challenge of supply c
 5. Google. "Supply Chain Attacks." SLSA Threat Model. https://slsa.dev/spec/v1.0/threats
 6. Ladisa, P., et al. "SoK: Taxonomy of Supply Chain Attacks." IEEE Symposium on Security and Privacy, 2023. https://doi.org/10.1109/SP46215.2023.10179316
 7. Zimerman, T. "It's a (Supply Chain) War." USENIX Security Symposium, 2023.
-8. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/
+8. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
 9. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
 10. Ohm, M., et al. "Backstabber's Knife Collection: A Review of Open Source Software Supply Chain Attacks." DIMVA, 2020.
 11. npm Documentation. "npm Registry Statistics." https://www.npmjs.com/
 12. PyPI Documentation. "Python Package Index." https://pypi.org/
 13. Freund, A. "Backdoor in xz/liblzma." OpenWall oss-security mailing list, March 2024. https://www.openwall.com/lists/oss-security/2024/03/29/4
-14. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://www.mandiant.com/resources/blog/evasive-attacker-leverages-solarwinds-supply-chain
-15. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://www.microsoft.com/security/blog/2020/12/18/analyzing-solarwinds-compromise/
+14. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+15. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
 16. NVD. "CVE-2024-3094: XZ Utils Backdoor." https://nvd.nist.gov/vuln/detail/CVE-2024-3094
 17. NVD. "CVE-2020-10148: SolarWinds Orion API Authentication Bypass." https://nvd.nist.gov/vuln/detail/CVE-2020-10148
 18. NVD. "CVE-2021-44228: Log4Shell." https://nvd.nist.gov/vuln/detail/CVE-2021-44228
-19. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sites/default/files/publications/defending_against_software_supply_chain_attacks_0.pdf
+19. CISA. "Defending Against Software Supply Chain Attacks." https://www.cisa.gov/sbom

@@ -127,7 +127,7 @@ OSCP ──→ OSEP ──→ OSED ──→ OSEE
 
 ## References
 
-- OffSec OSEE: https://www.offsec.com/courses/osee/
+- OffSec OSEE: https://www.offsec.com/courses/
 - Russinovich et al., "Windows Internals," 7th Ed., Microsoft Press
 - Corelan Team: https://www.corelan.be/
 - Connor McGarr: https://connormcgarr.github.io/

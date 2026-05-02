@@ -1105,17 +1105,17 @@ docker login mycompany.jfrog.io
 
 1. OpenSSF. "Scorecard: Automated Security Assessment." https://github.com/ossf/scorecard
 2. OpenSSF. "Best Practices Badge." https://bestpractices.coreinfrastructure.org/
-3. CISA. "Securing the Software Supply Chain: Guide for Developers." https://www.cisa.gov/sites/default/files/publications/Securing%20the%20Software%20Supply%20Chain%20for%20Developers.pdf
+3. CISA. "Securing the Software Supply Chain: Guide for Developers." https://www.cisa.gov/sbom
 4. SLSA Specification v1.0. "Supply-chain Levels for Software Artifacts." https://slsa.dev/spec/v1.0/
 5. Sigstore. "Cosign: Container Signing." https://docs.sigstore.dev/cosign/signing/signing_with_containers/
 6. npm Documentation. "Provenance." https://docs.npmjs.com/generating-provenance-statements
 7. Anchore. "Syft: SBOM Generator." https://github.com/anchore/syft
 8. Aqua Security. "Trivy: Vulnerability Scanner." https://aquasecurity.github.io/trivy/
 9. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
-10. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/
+10. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
 11. Birsan, A. "Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
 12. CISA. "Software Bill of Materials (SBOM)." https://www.cisa.gov/sbom
-13. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/specification/
+13. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/
 14. SPDX Specification v2.3. Linux Foundation. https://spdx.github.io/spdx-spec/
 15. OpenSSF. "S2C2F: Supply-chain Secure Supply Chain Consumption Framework." https://github.com/ossf/s2c2f
 16. SLSA GitHub Generator. https://github.com/slsa-framework/slsa-github-generator

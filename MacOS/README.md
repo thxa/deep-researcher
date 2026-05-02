@@ -48,7 +48,7 @@ A deep technical exploration of macOS security internals — from the XNU hybrid
 - *The Art of Mac Malware* by Patrick Wardle (No Starch Press, 2022)
 - Ian Beer / Project Zero iOS/macOS Research: https://googleprojectzero.blogspot.com/
 - Kaspersky Operation Triangulation Report: https://securelist.com/operation-triangulation/109842/
-- Citizen Lab FORCEDENTRY Report: https://citizenlab.ca/2021/09/forcedentry-nso-group-iphone-zero-click-zero-day-exploit-captured-in-the-wild/
+- Citizen Lab FORCEDENTRY Report: https://citizenlab.ca/
 - NVD (National Vulnerability Database): https://nvd.nist.gov/
 - Objective-See Mac Security Tools: https://objective-see.org/
 - Apple Security Releases: https://support.apple.com/en-us/HT201222

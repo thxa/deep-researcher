@@ -370,7 +370,7 @@ Upcoming and ongoing kernel hardening efforts include:
 3. CISA. "Known Exploited Vulnerabilities Catalog." https://www.cisa.gov/known-exploited-vulnerabilities-catalog. 2026.
 4. Google Security Blog. "Google & Arm — Raising The Bar on GPU Security." https://security.googleblog.com/. 2024.
 5. Google Security Blog. "Eliminating Memory Safety Vulnerabilities at the Source." https://security.googleblog.com/. 2024.
-6. Qualcomm. "Qualcomm Product Security Bulletins." https://www.qualcomm.com/products/product-security. 2024.
+6. Qualcomm. "Qualcomm Product Security Bulletins." https://www.qualcomm.com/company/product-security. 2024.
 7. Arm. "Arm Security Bulletins." https://developer.arm.com/support/Arm-Security-Center. 2024.
 8. Samsung. "Samsung Mobile Security Updates." https://security.samsungmobile.com/. 2024.
 9. Palo Alto Unit 42. "Landfall: New Commercial-Grade Android Spyware." 2025.

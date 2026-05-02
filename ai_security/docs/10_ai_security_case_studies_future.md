@@ -518,12 +518,12 @@ specification = {
 8. Shafahi, A., et al. (2018). "Poison Frogs! Targeted Clean-Label Poisoning Attacks on Neural Networks." NeurIPS.
 9. Wang, B., et al. (2022). "Backdooring Pre-trained Models." NDSS.
 10. Zou, A., et al. (2023). "Universal and Transferable Adversarial Attacks on Aligned Language Models." arXiv.
-11. Microsoft (2023). "Lessons from Red Teaming Language Models." Microsoft Research. https://www.microsoft.com/en-us/security/blog/2023/08/24/microsoft-red-teams-ai/
+11. Microsoft (2023). "Lessons from Red Teaming Language Models." Microsoft Research. https://learn.microsoft.com/en-us/security/blog/2023/08/24/microsoft-ai-red-teaming
 12. Anthropic (2023). "Constitutional AI: Harmlessness from AI Feedback." arXiv. https://arxiv.org/abs/2212.10527
 13. Goodfellow, I., Shlens, J., Szegedy, C., "Explaining and Harnessing Adversarial Examples," ICLR 2015. https://arxiv.org/abs/1412.6572
 14. Carlini, N., Wagner, D., "Towards Evaluating the Robustness of Neural Networks," IEEE S&P 2017. https://arxiv.org/abs/1608.04644
 15. OWASP, "OWASP Top 10 for Large Language Model Applications," 2025. https://owasp.org/www-project-top-10-for-large-language-model-applications/
-16. NIST, "Artificial Intelligence Risk Management Framework (AI RMF 1.0)," January 2023. https://www.nist.gov/artificial-intelligence/risk-management-framework
+16. NIST, "Artificial Intelligence Risk Management Framework (AI RMF 1.0)," January 2023. https://www.nist.gov/itl/ai-risk-management-framework
 17. Microsoft, "Responsible AI Principles and Approach," 2024. https://www.microsoft.com/en-us/ai/responsible-ai
 18. Zou, A., et al., "Universal and Transferable Adversarial Attacks on Aligned Language Models," arXiv, 2023. https://arxiv.org/abs/2307.15043
 19. Rössler, A., et al., "FaceForensics++: Learning to Detect Manipulated Facial Images," ICCV 2019. https://arxiv.org/abs/1901.04029
@@ -547,4 +547,4 @@ specification = {
 12. OpenAI. "GPT-4 Technical Report." *arXiv*. 2023.
 13. Christiano, P. et al. "Deep Reinforcement Learning from Human Preferences." *NeurIPS*. 2017.
 14. Ganguli, D. et al. "Red Teaming Language Models to Reduce Harms." *arXiv*. 2022.
-15. NIST. "AI Risk Management Framework." https://www.nist.gov/artificial-intelligence/ai-risk-management-framework. 2023.
+15. NIST. "AI Risk Management Framework." https://www.nist.gov/itl/ai-risk-management-framework. 2023.

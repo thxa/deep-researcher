@@ -337,16 +337,16 @@ The case studies in `10b_case_studies.md` illustrate these principles in histori
 4. NIST FIPS 197, "Advanced Encryption Standard (AES)," November 2001. https://csrc.nist.gov/publications/detail/fips/197/final
 5. NIST FIPS 180-4, "Secure Hash Standard (SHS)," August 2015. https://csrc.nist.gov/publications/detail/fips/180/4/final
 6. NIST FIPS 202, "SHA-3 Standard," August 2015. https://csrc.nist.gov/publications/detail/fips/202/final
-7. NIST FIPS 203, "ML-KEM (Kyber)," August 2024. https://csrc.nist.gov/publications/detail/fips/203/final
-8. NIST FIPS 204, "ML-DSA (Dilithium)," August 2024. https://csrc.nist.gov/publications/detail/fips/204/final
-9. NIST FIPS 205, "SLH-DSA (SPHINCS+)," August 2024. https://csrc.nist.gov/publications/detail/fips/205/final
+7. NIST FIPS 203, "ML-KEM (Kyber)," August 2024. https://csrc.nist.gov/pubs/fips/203/final
+8. NIST FIPS 204, "ML-DSA (Dilithium)," August 2024. https://csrc.nist.gov/pubs/fips/204/final
+9. NIST FIPS 205, "SLH-DSA (SPHINCS+)," August 2024. https://csrc.nist.gov/pubs/fips/205/final
 10. RFC 8446, "TLS 1.3," August 2018. https://www.rfc-editor.org/rfc/rfc8446
 11. RFC 5246, "TLS 1.2," August 2008. https://www.rfc-editor.org/rfc/rfc5246
 12. NIST SP 800-57 Part 1 Rev. 5, "Recommendation for Key Management," May 2020. https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-5/final
 13. OpenSSL Security Advisories. https://www.openssl.org/news/vulnerabilities.html
 14. Biryukov, A., Khovratovich, D., "Related-Key Cryptanalysis of the Full AES-192 and AES-256," ASIACRYPT 2009. https://eprint.iacr.org/2009/317
 15. Vaudenay, S., "Security Flaws Induced by CBC Padding," EUROCRYPT 2002. https://link.springer.com/chapter/10.1007/3-540-46035-7_4
-16. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. https://www.ieee-security.org/TC/SP2013/papers/4977a026.pdf
+16. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. https://www.ieee-security.org/TC/SP2013/
 17. Aviram, N., et al., "DROWN: Breaking TLS with SSLv2," USENIX Security 2016. https://drownAttack.com/
 18. Böck, H., et al., "Return of Bleichenbacher's Oracle Threat (ROBOT)," USENIX Security 2018. https://robotAttack.com/
 19. Castryck, W., Decru, T., "An Efficient Key Recovery Attack on SIDH," EUROCRYPT 2023. https://eprint.iacr.org/2022/975

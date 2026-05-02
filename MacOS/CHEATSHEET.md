@@ -262,7 +262,7 @@ FORCEDENTRY (NSO Group, 2021):
 - Jonathan Levin, *macOS and iOS Internals* (Volumes I–III)
 - Ian Beer / Project Zero iOS Research: https://googleprojectzero.blogspot.com/
 - Kaspersky Operation Triangulation: https://securelist.com/operation-triangulation/109842/
-- Citizen Lab FORCEDENTRY Report: https://citizenlab.ca/2021/09/forcedentry-nso-group-iphone-zero-click-zero-day-exploit-captured-in-the-wild/
+- Citizen Lab FORCEDENTRY Report: https://citizenlab.ca/
 - Patrick Wardle, *The Art of Mac Malware* (No Starch Press, 2022)
 - Objective-See Tools: https://objective-see.org/
 - NVD (National Vulnerability Database): https://nvd.nist.gov/

@@ -832,7 +832,7 @@ These regulations require:
 12. OpenDBC: CAN Database. https://github.com/commaai/opendbc
 13. DEF CON IoT Village / Car Hacking Village Presentations. https://carhackingvillage.com/
 14. *Practical IoT Hacking* by Fotios Chantzis et al. No Starch Press (2021).
-15. OWASP IoT Top 10. https://owasp.org/www-project-iot-top-10/
+15. OWASP IoT Top 10. https://owasp.org/www-project-top-ten/
 16. NIST SP 800-183: Networks of Things. National Institute of Standards and Technology.
 17. IEC 62443: Industrial Communication Networks — Network and System Security.
 18. Keeloq Cryptanalysis: Bogdanov, A. "Slide Attacks on KeeLoq." FSE (2007); Indesteege, S. et al. "A Practical Attack on KeeLoq." Crypto (2008).
