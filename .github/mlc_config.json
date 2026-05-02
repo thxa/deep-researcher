@@ -319,6 +319,9 @@
       "pattern": "malwaremustdie\\.org"
     },
     {
+      "pattern": "github\\.com/opencontainers"
+    },
+    {
       "pattern": "ai\\.pydantic\\.com"
     },
     {
