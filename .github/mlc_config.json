@@ -314,6 +314,42 @@
     },
     {
       "pattern": "malwaremustdie\\.org"
+    },
+    {
+      "pattern": "ai\\.pydantic\\.com"
+    },
+    {
+      "pattern": "archive\\.darpa\\.mil"
+    },
+    {
+      "pattern": "cr\\.yp\\.to"
+    },
+    {
+      "pattern": "ctf\\.thecybercoop\\.org"
+    },
+    {
+      "pattern": "security\\.oneplus\\.com"
+    },
+    {
+      "pattern": "www\\.aquasec\\.com"
+    },
+    {
+      "pattern": "www\\.coresecurity\\.com"
+    },
+    {
+      "pattern": "www\\.federalregister\\.gov"
+    },
+    {
+      "pattern": "www\\.forescout\\.com"
+    },
+    {
+      "pattern": "www\\.gsma\\.com"
+    },
+    {
+      "pattern": "www\\.whitehatsec\\.com"
+    },
+    {
+      "pattern": "users\\.ece\\.cmu\\.edu"
     }
   ],
   "replacementPatterns": [],

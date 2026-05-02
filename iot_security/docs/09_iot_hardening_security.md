@@ -920,7 +920,7 @@ NISTIR 8259 provides a baseline of cybersecurity requirements for IoT device man
 7. ETSI EN 303 645: Cyber Security for Consumer Internet of Things: Baseline Requirements. European Telecommunications Standards Institute (2020). https://www.etsi.org/
 8. OWASP IoT Top 10 (2014, 2024 drafts). https://owasp.org/www-project-top-ten/
 9. EU Cyber Resilience Act. European Commission (2022). https://digital-strategy.ec.europa.eu/
-10. UK Product Security and Telecommunications Infrastructure Act (PSTI) (2022). https://www.gov.uk/guidance/product-security-and-telecommunications-infrastructure
+10. UK Product Security and Telecommunications Infrastructure Act (PSTI) (2022). https://www.gov.uk/government/publications/product-security-and-telecommunications-infrastructure-act-2022
 11. California SB-327: Information Privacy: Connected Devices. https://leginfo.legislature.ca.gov/
 12. TF-M (Trusted Firmware for Cortex-M). https://trustedfirmware.org/
 13. SWUpdate: Software Update for Embedded Linux. https://swupdate.org/
