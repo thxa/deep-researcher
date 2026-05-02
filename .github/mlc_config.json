@@ -10,6 +10,9 @@
       "pattern": "^\\.\\./"
     },
     {
+      "pattern": "^docs/"
+    },
+    {
       "pattern": "developer\\.arm\\.com"
     },
     {
