@@ -714,7 +714,7 @@ For Curve25519 with $h = 8$, each execution leaks at most 3 bits of $k$. This is
 
 **Defense**: 
 1. Check for the identity point (all-zero output in X25519) and abort if detected.
-2. Use cofactor multiplication: compute $[h]P$ first, then $[k]([h]P)$. Since $hP$ has order $q$ (prime), the small-subgroup attack is eliminated.
+2. Use cofactor multiplication: compute *hP* first, then *k(hP)*. Since *hP* has order *q* (prime), the small-subgroup attack is eliminated.
 3. Use curve25519/X25519, which has cofactor 8 — small enough that the leak is bounded and manageable.
 
 ### 11.3 Invalid Curve Attack on Static ECDH
