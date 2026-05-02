@@ -518,7 +518,7 @@ specification = {
 8. Shafahi, A., et al. (2018). "Poison Frogs! Targeted Clean-Label Poisoning Attacks on Neural Networks." NeurIPS.
 9. Wang, B., et al. (2022). "Backdooring Pre-trained Models." NDSS.
 10. Zou, A., et al. (2023). "Universal and Transferable Adversarial Attacks on Aligned Language Models." arXiv.
-11. Microsoft (2023). "Lessons from Red Teaming Language Models." Microsoft Research. https://learn.microsoft.com/en-us/security/blog/2023/08/24/microsoft-ai-red-teaming
+11. Microsoft (2023). "Lessons from Red Teaming Language Models." Microsoft Research. https://www.microsoft.com/en-us/security/blog/
 12. Anthropic (2023). "Constitutional AI: Harmlessness from AI Feedback." arXiv. https://arxiv.org/abs/2212.10527
 13. Goodfellow, I., Shlens, J., Szegedy, C., "Explaining and Harnessing Adversarial Examples," ICLR 2015. https://arxiv.org/abs/1412.6572
 14. Carlini, N., Wagner, D., "Towards Evaluating the Robustness of Neural Networks," IEEE S&P 2017. https://arxiv.org/abs/1608.04644

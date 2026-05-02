@@ -263,7 +263,7 @@ IoT security is a wicked problem — one defined by interconnected systems, conf
 14. ETSI EN 303 645: Cyber Security for Consumer Internet of Things. European Telecommunications Standards Institute (2020).
 15. NISTIR 8259: Foundational Cybersecurity Activities for IoT Device Manufacturers (2020). https://csrc.nist.gov/publications/detail/nistir/8259/final
 16. EU Cyber Resilience Act. European Commission (2022). https://digital-strategy.ec.europa.eu/
-17. UK Product Security and Telecommunications Infrastructure Act (PSTI) (2022). https://www.gov.uk/government/collections/product-security-and-telecommunications-infrastructure
+17. UK Product Security and Telecommunications Infrastructure Act (PSTI) (2022). https://www.gov.uk/guidance/product-security-and-telecommunications-infrastructure
 18. *The Hardware Hacking Handbook* by Colin O'Flynn and Jasper van Woudenberg. No Starch Press (2022).
 19. *Practical IoT Hacking* by Fotios Chantzis et al. No Starch Press (2021).
 20. *Car Hacker's Handbook* by Craig Smith. No Starch Press (2016).

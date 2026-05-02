@@ -608,7 +608,7 @@
 11. Zou, A. et al. "Universal and Transferable Adversarial Attacks on Aligned Language Models." *arXiv*. 2023.
 12. Irrgang, C. "Prompt Injection Attacks Against LLMs." *OWASP*. 2023.
 13. Greshake, K. et al. "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications." *arXiv*. 2023.
-14. Microsoft. "AI Red Teaming: Microsoft's Approach." https://learn.microsoft.com/en-us/security/blog/2023/08/24/microsoft-ai-red-teaming. 2023.
+14. Microsoft. "AI Red Teaming: Microsoft's Approach." https://www.microsoft.com/en-us/security/blog/. 2023.
 15. Google. "AI Safety Fundamentals." https://safety.google/cybersecurity-advancements/. 2024.
 16. Biggio, B. & Roli, F. "Wild Patterns: Ten Years After the Rise of Adversarial Machine Learning." *Pattern Recognition*. 2018.
 17. Papernot, N. et al. "The Limitations of Deep Learning in Adversarial Settings." *IEEE EuroS&P*. 2016.

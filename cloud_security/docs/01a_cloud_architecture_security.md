@@ -905,4 +905,4 @@ In the following chapters, we will deep-dive into the specific attack and defens
 9. MITRE. "ATT&CK Cloud Matrix." *MITRE Corporation*. 2024. https://attack.mitre.org/matrices/enterprise/cloud/
 10. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws-privilege-escalation-methods-mitigation/
 11. Praetorian. "GCP IAM Enumeration and Privilege Escalation." *Praetorian*. 2021. https://www.praetorian.com/blog/
-12. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/trailofbits/understanding-container-security
+12. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/aquasecurity/kube-hunter

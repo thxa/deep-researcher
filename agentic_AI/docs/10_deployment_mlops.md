@@ -2094,7 +2094,7 @@ helm upgrade --install model-server ./charts/model-server \
 - TensorRT-LLM — NVIDIA. https://github.com/NVIDIA/TensorRT-LLM
 - TGI — Text Generation Inference, HuggingFace. https://github.com/huggingface/text-generation-inference
 - Triton Inference Server. https://github.com/triton-inference-server/server
-- "ML Ops: Machine Learning Operations," various, Google Cloud. https://cloud.google.com/architecture/architecture-for-mlops
+- "ML Ops: Machine Learning Operations," various, Google Cloud. https://cloud.google.com/architecture
 - LangServe — Deploy LangChain runnables. https://github.com/langchain-ai/langserve
 - Kubernetes Documentation. https://kubernetes.io/docs/
 - Prometheus Monitoring. https://prometheus.io/

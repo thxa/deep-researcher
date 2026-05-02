@@ -1749,7 +1749,7 @@ Building production multi-agent systems is fundamentally a systems engineering p
 - Wu, Q. et al., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation," 2023. https://arxiv.org/abs/2308.08155
 - LangSmith — Tracing & Monitoring. https://docs.smith.langchain.com/
 - Redis Documentation. https://redis.io/docs/
-- "ML Ops: Machine Learning Operations," Google Cloud. https://cloud.google.com/architecture/architecture-for-mlops
+- "ML Ops: Machine Learning Operations," Google Cloud. https://cloud.google.com/architecture
 - Prometheus Monitoring. https://prometheus.io/
 - Grafana Dashboard. https://grafana.com/
 - Anthropic Documentation. https://docs.anthropic.com

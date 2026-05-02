@@ -250,9 +250,6 @@
       "pattern": "shambles\\.net"
     },
     {
-      "pattern": "ghidra-svr-03\\.ghidra-svr\\.org"
-    },
-    {
       "pattern": "www\\.chromium\\.org"
     },
     {
@@ -266,6 +263,57 @@
     },
     {
       "pattern": "www\\.debian\\.org"
+    },
+    {
+      "pattern": "access\\.redhat\\.com"
+    },
+    {
+      "pattern": "blogs\\.windows\\.com"
+    },
+    {
+      "pattern": "doyensec\\.com"
+    },
+    {
+      "pattern": "dyn\\.com"
+    },
+    {
+      "pattern": "eclypsium\\.com"
+    },
+    {
+      "pattern": "www\\.nsa\\.gov"
+    },
+    {
+      "pattern": "www\\.npmjs\\.com"
+    },
+    {
+      "pattern": "www\\.oasis-open\\.org"
+    },
+    {
+      "pattern": "www\\.reuters\\.com"
+    },
+    {
+      "pattern": "openai\\.com"
+    },
+    {
+      "pattern": "proceedings\\.neurips\\.cc"
+    },
+    {
+      "pattern": "link\\.springer\\.com"
+    },
+    {
+      "pattern": "www\\.nsa\\.gov"
+    },
+    {
+      "pattern": "www\\.rand\\.org"
+    },
+    {
+      "pattern": "www\\.tau\\.ac\\.il"
+    },
+    {
+      "pattern": "www\\.iacr\\.org"
+    },
+    {
+      "pattern": "malwaremustdie\\.org"
     }
   ],
   "replacementPatterns": [],

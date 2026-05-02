@@ -904,7 +904,7 @@ The next five years will determine whether Agentic AI becomes the dominant parad
 
 28. OpenAI, "GPT-4o," https://openai.com/index/hello-gpt-4o/, 2024.
 
-29. Google, "Gemini 1.5: Pushing the Limits of Long Context," https://blog.google/technology/ai/gemini/, 2024.
+29. Google, "Gemini 1.5: Pushing the Limits of Long Context," https://blog.google/products/gemini/, 2024.
 
 30. Black, K., et al., "π0: A Vision-Language-Action Flow Model for General Robot Control," Physical Intelligence, arXiv:2410.24164, 2024.
 

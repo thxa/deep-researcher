@@ -396,7 +396,7 @@ The most effective career strategy combines several of these: compete in CTFs, p
 
 1. [CVE Program — Common Vulnerabilities and Exposures](https://www.cve.org/) — Standardized vulnerability identifier system
 2. [CVSS — Common Vulnerability Scoring System](https://www.first.org/cvss/) — Quantitative vulnerability severity measurement
-3. [ISO 29147 — Vulnerability Disclosure](https://www.iso.org/standard/73967.html) — International standard for vulnerability disclosure processes
+3. [ISO 29147 — Vulnerability Disclosure](https://www.iso.org/) — International standard for vulnerability disclosure processes
 4. [ISO 30111 — Vulnerability Handling](https://www.iso.org/standard/69325.html) — International standard for vulnerability handling processes
 5. [CISA — Vulnerability Disclosure Policy](https://www.cisa.gov/coordinated-vulnerability-disclosure-process) — US Government VDP template and guidance
 6. [Bugcrowd — Vulnerability Disclosure Programs](https://www.bugcrowd.com/) — Coordinated vulnerability disclosure platform

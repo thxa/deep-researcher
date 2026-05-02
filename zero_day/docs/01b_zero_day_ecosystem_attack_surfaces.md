@@ -940,7 +940,7 @@ struct cred {
 1. [Google syzkaller — Kernel Fuzzer](https://github.com/google/syzkaller) — Unprivileged syscall fuzzing for Linux and other kernels
 2. [Google Project Zero — 0day In the Wild](https://googleprojectzero.blogspot.com/) — Tracking actively exploited zero-day vulnerabilities
 3. [Bromium — Into the Web of Profit](https://www.bromium.com/) — Zero-day market economics and the cybercrime supply chain
-4. [RAND Corporation — Zero-Day Vulnerability Lifetimes](https://www.rand.org/pubs/research_reports/RRA1344-1.html) — Empirical study on how long zero-days remain undiscovered
+4. [RAND Corporation — Zero-Day Vulnerability Lifetimes](https://www.rand.org/) — Empirical study on how long zero-days remain undiscovered
 5. [MITRE ATT&CK Framework](https://attack.mitre.org/) — Adversarial tactics, techniques, and common knowledge base
 6. [ExploitDB](https://www.exploit-db.com/) — Public exploit database and vulnerability archive
 7. [Zerodium — Vulnerability Acquisition Program](https://zerodium.com/) — Zero-day broker pricing and acquisition policies
