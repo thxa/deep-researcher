@@ -824,7 +824,7 @@ This scenario demonstrates why CI/CD pipeline security is not just a DevOps conc
 2. GitHub. "Security hardening for GitHub Actions." https://docs.github.com/en/actions/security-guides
 3. CISA. "Defending Against Software Supply Chain Attacks." 2021. https://www.cisa.gov/sbom
 4. Boyens, J., et al. "Practices for Securing Critical Software Supply Chains." NIST SP 800-218. https://csrc.nist.gov/publications/detail/sp/800-218/final
-5. Lublin, S. "Poisoned Pipeline Execution." Cider Security, 2022. https://www.cidersecurity.io/blog/research/poisoned-pipeline-execution-ppc/
+5. Lublin, S. "Poisoned Pipeline Execution." Cider Security, 2022. https://owasp.org/www-project-top-10-ci-cd-security-risks/CICD-SEC-04-Poisoned-Pipeline-Execution
 6. Pfizer, S. "GitHub Actions Security Best Practices." GitHub Security Lab, 2023. https://securitylab.github.com/
 7. SLSA Specification v1.0. "Threat Model." https://slsa.dev/spec/v1.0/threats
 8. OpenSSF. "Scorecard: Automated Security Assessment." https://github.com/ossf/scorecard

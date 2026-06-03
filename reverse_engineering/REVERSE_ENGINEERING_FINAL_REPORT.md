@@ -972,7 +972,7 @@ The unifying thread is this: **every security track requires reading and underst
 7. Ghidra documentation, https://ghidra-sre.org/
 8. radare2 documentation, https://rada.re/n/
 9. YARA documentation, https://virustotal.github.io/yara/
-10. Cuckoo Sandbox documentation, https://cuckoosandbox.org/
+10. Cuckoo Sandbox documentation, https://github.com/cuckoosandbox/cuckoo
 11. Mandiant (now Google), "APT1: Exposing One of China's Cyber Espionage Units," 2013.
 12. Mandiant, "SUNBURST Backdoor Analysis," 2020.
 13. Kaspersky, "Stuxnet Analysis," 2010, https://securelist.com/

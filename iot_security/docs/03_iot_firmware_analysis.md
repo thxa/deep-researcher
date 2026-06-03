@@ -781,7 +781,7 @@ for key in [0xFF, 0xAA, 0x55, 0xCC]:
 13. IEC 62443: Industrial Communication Networks — Network and System Security.
 14. OWASP IoT Top 10. https://owasp.org/www-project-top-ten/
 15. DEF CON IoT Village Presentations. https://iotvillage.org/
-16. Ghidra: NSA Reverse Engineering Framework. https://ghidra-svr-03.ghidra-svr.org/
+16. Ghidra: NSA Reverse Engineering Framework. https://ghidra-sre.org/
 17. IDA Pro: Hex-Rays Disassembler. https://hex-rays.com/
 18. Angr: Binary Analysis Platform. https://angr.io/
 19. *The Hardware Hacking Handbook* by Colin O'Flynn and Jasper van Woudenberg. No Starch Press (2022).

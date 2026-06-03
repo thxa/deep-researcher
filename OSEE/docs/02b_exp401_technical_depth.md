@@ -779,7 +779,7 @@ EXP-401 uses real-world vulnerabilities in large enterprise applications as case
 | CVE-2019-0539 | Microsoft Edge (Chakra) | Type Confusion | JIT type confusion, fake object construction, arbitrary read/write via corrupted ArrayBuffer |
 | CVE-2019-1208 | Internet Explorer (VBScript) | UAF | VBScript engine UAF, heap spray with typed arrays, code execution via vftable hijack |
 | CVE-2020-0674 | Internet Explorer (JScript) | UAF | JScript variable UAF, controlled reallocation, info leak + code exec |
-| CVE-2021-26411 | Internet Explorer | UAF (double-free) | Use in attributed string handling, reclaim with controlled data |
+| CVE-2021-26411 | Internet Explorer | UAF (double-free) | Double-free in DOM attribute-node handling (clearAttributes in a valueOf callback), reclaim with controlled data |
 | CVE-2021-40449 | Win32k (MysterySnail) | UAF | Win32k callback mechanism UAF, privilege escalation |
 
 ### Kernel-Mode Case Studies
@@ -794,7 +794,7 @@ EXP-401 uses real-world vulnerabilities in large enterprise applications as case
 | CVE-2021-21224 + CVE-2021-31956 | Chrome + NTFS | Type confusion + Pool overflow | Chrome V8 type confusion chained with NTFS pool overflow for sandbox escape |
 | CVE-2021-31955 | Windows Kernel | Information Disclosure | NtQuerySystemInformation leak of kernel addresses used for kASLR bypass |
 | CVE-2022-21882 | Win32k | Type Confusion | Win32k `CreateWindow` type confusion via menu object manipulation |
-| CVE-2023-36802 | MSKSSRV.sys | Pool overflow | Microsoft Kernel Streaming Server driver pool overflow, privilege escalation |
+| CVE-2023-36802 | MSKSSRV.sys | Type confusion (UAF) | Microsoft Kernel Streaming Server FsContext2 object type confusion, privilege escalation |
 | CVE-2024-21338 | appid.sys (AppLocker) | Logic bug | AppLocker driver IOCTL allowing arbitrary kernel read/write |
 
 ### Course-Specific Focus Areas
@@ -1410,8 +1410,8 @@ Students must:
 
 1. Offensive Security. "EXP-401: Advanced Windows Exploitation." https://www.offsec.com/courses/exp-401/. 2024.
 2. Russinovich, M. et al. "Windows Internals." 7th Ed. *Microsoft Press*. 2021.
-3. Schenck, M. "Swimming In The (Kernel) Pool." *Black Hat USA*. 2021.
-4. Shafir, Y. & Bayet, C. "Scoop the Windows 10 Pool!" *Black Hat USA*. 2021.
+3. McGarr, C. "Exploit Development: Swimming In The (Kernel) Pool." *connormcgarr.github.io*. 2021.
+4. Bayet, C. & Fariello, P. "Scoop the Windows 10 Pool!" *SSTIC*. 2020.
 5. Mandt, T. "Kernel Pool Exploitation on Windows 7." *Black Hat DC*. 2011.
 6. j00ru (Jurczyk, M.). "One Font Vulnerability to Rule Them All." *Google Project Zero*. 2015.
 7. McGarr, C. "Windows Kernel Exploitation." https://connormcgarr.github.io/. 2024.

@@ -306,7 +306,7 @@ Based on recurring themes from OSEE holder retrospectives:
    and their exploitation implications is essential.
 
 3. **64-bit kernel exploitation and pool internals.** The kernel pool allocator,
-   particularly post-Windows 10 19H1 with segment heap, is complex. Many candidates wish
+   particularly the kernel segment heap (segment pool, added in Windows 10 19H1), is complex. Many candidates wish
    they had spent more time on pool overflow exploitation, pool spray techniques, and
    understanding `ExAllocatePoolWithTag` / `ExAllocatePool2` internals.
 
@@ -1201,7 +1201,7 @@ at `https://help.offsec.com/hc/en-us/articles/360046458732` as policies may chan
 4. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
 5. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
 6. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
-7. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+7. Connor McGarr, "Exploit Development: Swimming In The (Kernel) Pool," 2021.
 8. Offensive Security, "Proctored Exam Requirements FAQ," https://help.offsec.com/hc/en-us/
 9. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/
 10. j00ru (Mateusz Jurczyk), Windows Kernel Research, https://j00ru.vexillium.org/

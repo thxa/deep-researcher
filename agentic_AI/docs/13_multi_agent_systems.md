@@ -1020,7 +1020,7 @@ If you cannot answer "yes" to at least 7 of these, reconsider whether multi-agen
 
 17. Significant Gravitas, "AutoGPT: An Autonomous GPT-4 Experiment", 2023. https://github.com/Significant-Gravitas/AutoGPT
 
-18. Furlong, L., "Magentic-One: A Generalist Multi-Agent System for Solving Complex Tasks", Microsoft Research Blog, 2024. arXiv:2411.04490
+18. Fourney, A., and others, "Magentic-One: A Generalist Multi-Agent System for Solving Complex Tasks", Microsoft Research, 2024. arXiv:2411.04468
 
 19. Chen, W., Su, Y., Yan, J., Cao, A., Yu, R., Guo, Z., and Lu, Y., "AgentVerse: Facilitating Multi-Agent Collaboration and Exploring Emergent Behaviors", ICLR 2024. arXiv:2308.10848
 
@@ -1036,7 +1036,7 @@ If you cannot answer "yes" to at least 7 of these, reconsider whether multi-agen
 
 24. Du, Y., Li, C., and others, "Improving Factuality and Reasoning in Language Models through Multiagent Debate", ICML 2024. arXiv:2305.14325
 
-25. Liang, T., He, Z., and Jiao, Y., "Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate", EMNLP 2023. arXiv:2305.19118
+25. Liang, T., He, Z., and Jiao, Y., "Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate", EMNLP 2024. arXiv:2305.19118
 
 ### Task Decomposition and Planning
 
@@ -1052,13 +1052,13 @@ If you cannot answer "yes" to at least 7 of these, reconsider whether multi-agen
 
 30. Yao, S., Zhao, J., Yu, D., Du, N., Shafran, I., Narasimhan, K.R., and Cao, Y., "ReAct: Synergizing Reasoning and Acting in Language Models", ICLR 2023. arXiv:2210.03629
 
-31. Shridhar, K., and others, "SWE-Agent: Agent-Computer Interfaces Enable Automated Software Engineering", arXiv:2405.15793, 2024.
+31. Yang, J., and others, "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering", arXiv:2405.15793, 2024.
 
 32. Chen, M., and others, "ChatDev: Communicative Agents for Software Development", ACL 2024. arXiv:2307.07924
 
 33. Qian, C., and others, "Communicative Agents for Software Development: A Software Engineering Approach", arXiv:2307.07924
 
-34. Deb, A., and others, "RoCo: Dialectic Multi-Robot Collaboration with Large Language Models", ICRA 2024. arXiv:2307.04764
+34. Mandi, Z., and others, "RoCo: Dialectic Multi-Robot Collaboration with Large Language Models", ICRA 2024. arXiv:2307.04738
 
 ### Debates and Adversarial Multi-Agent Systems
 
@@ -1074,7 +1074,7 @@ If you cannot answer "yes" to at least 7 of these, reconsider whether multi-agen
 
 39. Tian, E., and others, "Identifying and Mitigating the Security Risks of Multi-Agent Systems", arXiv:2402.08857, 2024.
 
-40. Wu, Y., and others, "Agentic AI Security: Risks, Threats, and Defense Strategies for Multi-Agent Systems", arXiv:2502.14190, 2025.
+40. Chhabra, A., Datta, S., Nahin, S.K., and Mohapatra, P., "Agentic AI Security: Threats, Defenses, Evaluation, and Open Challenges", arXiv:2510.23883, 2025.
 
 ### Empirical Evaluations and Benchmarks
 

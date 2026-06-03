@@ -1280,11 +1280,11 @@ Regardless of the cloud provider, IAM attacks follow similar patterns:
 ## References
 
 1. AWS. "IAM Policy Evaluation Logic." *Amazon Web Services*. 2024. https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html
-2. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws-privilege-escalation-methods-mitigation/
+2. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 3. Microsoft. "Azure AD Conditional Access." *Microsoft Learn*. 2024. https://learn.microsoft.com/en-us/azure/active-directory/conditional-access/
 4. Google Cloud. "IAM Best Practices." *Google Cloud*. 2024. https://cloud.google.com/iam/docs/best-practices-for-managing-service-account-keys
 5. CyberArk. "Golden SAML Attack." *CyberArk*. 2020. https://www.cyberark.com/resources/threat-research-blog/golden-saml-newly-discovered-attack-technique-forges-authentication-to-cloud-apps
-6. Praetorian. "GCP IAM Enumeration and Privilege Escalation." *Praetorian*. 2021. https://www.praetorian.com/blog/
+6. Praetorian. "GCP IAM Enumeration and Privilege Escalation." *Praetorian*. 2021. https://www.praetorian.com/blog/google-cloud-platform-gcp-service-account-based-privilege-escalation-paths/
 7. AWS. "AssumeRole API Reference." *Amazon Web Services*. 2024. https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html
 8. Amazon. "Security Token Service (STS)." *Amazon Web Services*. 2024. https://docs.aws.amazon.com/STS/latest/APIReference/
 9. OWASP. "Broken Access Control." *Open Worldwide Application Security Project*. 2024. https://owasp.org/Top10/A01_2021-Broken_Access_Control/

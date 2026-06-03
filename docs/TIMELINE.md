@@ -83,7 +83,7 @@ SMEP, SMAP, KPTI, CFI, and sophisticated sandboxing raise the exploitation bar d
 | 2014 | **Goodfellow et al. introduce generative adversarial networks** — GANs enable realistic synthetic data generation; later weaponized for deepfakes and adversarial evasion | [AI/ML Security](../ai_security/) |
 | 2014 | **Kubernetes announced by Google** — Container orchestration platform; revolutionizes cloud-native deployment; introduces new RBAC and networking attack surfaces | [Cloud & Container Security](../cloud_security/) |
 | 2015 | **Stagefright (CVE-2015-1538)** — Integer overflows in `libstagefright` media framework; ~950M Android devices vulnerable via MMS zero-click; transforms Android security | [Android](../android_and_CVEs/) |
-| 2015 | **VENOM (CVE-2015-3456)** — QEMU floppy controller heap overflow; VM escape from guest to host via emulated device; CVSS 10.0 | [CPU Rings](../ring_and_vulns/) [Cloud & Container Security](../cloud_security/) |
+| 2015 | **VENOM (CVE-2015-3456)** — QEMU floppy controller heap overflow; VM escape from guest to host via emulated device; CVSS v2 7.7 | [CPU Rings](../ring_and_vulns/) [Cloud & Container Security](../cloud_security/) |
 | 2015 | **Intel SA-00086 (ME vulnerabilities)** — CVE-2017-5705 through CVE-2017-5715; remote code execution on Intel ME processor itself (Ring -3); firmware-level compromise | [CPU Rings](../ring_and_vulns/) |
 | 2015 | **QEMU PCNET heap overflow (CVE-2015-7504)** — Another hypervisor device emulation bug enabling VM escape from guest | [CPU Rings](../ring_and_vulns/) |
 | 2015 | **FREAK and Logjam export-grade attacks** — Forcing downgrade to export-grade cryptography (512-bit RSA, 512-bit DH); nation-state-grade attacks against deliberately weakened crypto | [Cryptography](../cryptography/) [Web Security](../web_security/) |
@@ -94,7 +94,7 @@ SMEP, SMAP, KPTI, CFI, and sophisticated sandboxing raise the exploitation bar d
 | 2016 | **Broadpwn (CVE-2017-0561)** — Zero-click wormable WiFi RCE in Broadcom WiFi driver on Android; CVSS 9.8 | [Android](../android_and_CVEs/) |
 | 2016 | **OSX.Flashback** — 600K+ macOS infections via Java CVE-2012-0507; DGA-based C2; one of the largest macOS malware outbreaks | [macOS](../MacOS/) |
 | 2016 | **Mirai DDoS botnet** — IoT-compromised botnet (default credentials on routers/IP cameras) launches largest DDoS attacks to date; DDoS against Dyn DNS disrupts major internet services | [Network Security](../network_security/) [IoT Security](../iot_security/) |
-| 2016 | **DROWN attack** — Cross-protocol attack decrypting TLS connections using SSLv2 servers; 81% of HTTPS servers vulnerable at time of disclosure | [Cryptography](../cryptography/) [Web Security](../web_security/) |
+| 2016 | **DROWN attack** — Cross-protocol attack decrypting TLS connections using SSLv2 servers; ~33% of HTTPS servers vulnerable at time of disclosure | [Cryptography](../cryptography/) [Web Security](../web_security/) |
 | 2016 | **OSS-Fuzz launched by Google** — Continuous fuzzing infrastructure for open-source projects; finds thousands of bugs in critical software (OpenSSL, libxml2, libpng, etc.) | [Fuzzing & Vuln Research](../fuzzing_vuln_research/) |
 | 2016 | **left-pad incident** — 11-line npm package dependency breaks thousands of projects; first major demonstration of npm ecosystem fragility and dependency risk | [Supply Chain](../supply_chain_security/) |
 | 2017 | **Meltdown (CVE-2017-5754) & Spectre (CVE-2017-5753, CVE-2017-5715)** — Speculative execution side-channel vulnerabilities affecting virtually all CPUs; KPTI deployed as Linux kernel mitigation | [Linux Kernel](../linux_kernel/) [CPU Rings](../ring_and_vulns/) |
@@ -104,7 +104,7 @@ SMEP, SMAP, KPTI, CFI, and sophisticated sandboxing raise the exploitation bar d
 | 2017 | **WPA2 KRACK attacks (CVE-2017-13077)** — Key Reinstallation Attacks break WPA2 protocol; allows decryption and injection on all WiFi networks; forces WPA3 development | [Network Security](../network_security/) |
 | 2017 | **ROBOT attack on RSA** — Return Of Bleichenbacher's Oracle Threat; modern TLS servers still vulnerable to 1998 Bleichenbacher attack; demonstrates persistent cryptographic implementation flaws | [Cryptography](../cryptography/) [Web Security](../web_security/) |
 | 2017 | **ROCA vulnerability (CVE-2017-15361)** — Infineon TPM/SMART card RSA key generation flaw; private key recoverable from public key; affects millions of HSMs and smart cards | [Cryptography](../cryptography/) |
-| 2017 | **SHA-1 collision (SHAttered)** — First practical SHA-1 collision produced; chosen-prefix cost ~$110K in cloud computing; final proof SHA-1 is broken for collision resistance | [Cryptography](../cryptography/) |
+| 2017 | **SHA-1 collision (SHAttered)** — First practical SHA-1 collision produced; identical-prefix collision cost ~$110K in cloud computing; final proof SHA-1 is broken for collision resistance | [Cryptography](../cryptography/) |
 | 2017 | **Carlini-Wagner attack** — L₀, L₂, and L∞ adversarial attacks defeat all major defenses; sets new standard for adversarial ML robustness evaluation | [AI/ML Security](../ai_security/) |
 | 2017 | **Kubernetes 1.7 RBAC** — Role-Based Access Control becomes stable; critical for multi-tenant cluster security; misconfigurations remain top Kubernetes vulnerability | [Cloud & Container Security](../cloud_security/) |
 | 2017 | **Windows Defender ATP** — Advanced Threat Protection moves from signature-based to behavioral detection; marks shift toward EDR in Windows security | [Windows Security](../windows_security/) |
@@ -250,7 +250,7 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2024 | **CVE-2024-44133 (HM Surf)** — Safari TCC bypass via back-forward cache navigation; confused deputy in permission enforcement | [macOS](../Macos/) |
 | 2024 | **DirtyCred technique (2024 adoption)** — Generic mitigation-agnostic UAF exploitation: replace `struct cred`/`struct file` with privileged versions; bypasses KASLR, CFI, slab hardening | [Linux Kernel](../linux_kernel/) |
 | 2024 | **V8 Sandbox enters Chrome VRP** — Bounty program now includes V8 Sandbox bypass category; no successful bypass claim as of mid-2024 | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
-| 2024 | **MTE adoption on ARM64** — Memory Tagging Extension deployed on Pixel 8+ and Galaxy S24+; probabilistic UAF/overflow detection at 3-5% overhead | [Android](../android_and_CVEs/) [Linux Kernel](../linux_kernel/) |
+| 2024 | **MTE adoption on ARM64** — Memory Tagging Extension deployed on Pixel 8+ (Galaxy S24 SoCs are MTE-capable but not enabled in production); probabilistic UAF/overflow detection at ~1-2% overhead (ASYNC mode) | [Android](../android_and_CVEs/) [Linux Kernel](../linux_kernel/) |
 | 2024 | **Google Pixel 9 zero-click chain** — Project Zero demonstrates zero-click exploitation via Dolby audio decoder + BigWave kernel driver | [Android](../android_and_CVEs/) |
 | 2024 | **Striped Fly hypervisor implant** — Cross-ring attack using custom hypervisor implant (Ring 0→-1); discovered by Sophos | [CPU Rings](../ring_and_vulns/) |
 | 2024 | **Rust adoption in Windows kernel announced** — Microsoft announces Rust being used for new kernel-mode drivers; follows Linux kernel Rust adoption trend | [Windows Security](../windows_security/) |
@@ -273,7 +273,7 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | 2025 | **Hardware security (MTE, PAC, CET)** — ARM MTE/PAC and Intel CET deployment expands; shifts exploitation toward data-only attacks and logic bugs | [macOS](../Macos/) [Android](../android_and_CVEs/) [Linux Kernel](../linux_kernel/) |
 | 2025 | **Commercial spyware market matures** — Full Android zero-click chains valued at $2.5M+ on Zerodium; 75% of known zero-days targeting Google products attributed to CSVs | [Android](../android_and_CVEs/) [Zero-Day](../zero_day/) |
 | 2025 | **kalloc.type hardening on macOS** — Kernel heap zone isolation by C type signature prevents cross-type heap grooming | [macOS](../Macos/) |
-| 2025–2026 | **CVE-2023-20938 upstream fix** — The Binder UAF bounds check patch finally merged to mainline Linux (August 2024), 18 months after Android patch | [CVE-2023-20938](../CVE-2023-20938/) |
+| 2023 | **CVE-2023-20938 upstream fix** — The Binder UAF fix shipped via the February 2023 Android Security Bulletin (upstream kernel, multiple commits) | [CVE-2023-20938](../CVE-2023-20938/) |
 | 2026 | **Confidential Compute expansion** — ARM CCA and Intel TDX hardware-isolated VMs Begin production deployment; new attack surfaces emerge | [Linux Kernel](../linux_kernel/) [CPU Rings](../ring_and_vulns/) |
 | 2026 | **eBPF verifier remains critical** — Syzkaller and manual auditing continue to find verifier bugs; eBPF provides powerful attack surface visible from unprivileged userspace | [Linux Kernel](../linux_kernel/) |
 | 2026 | **7-year Android update commitments** — Samsung, Google, OnePlus commit to 7 years of security updates for flagships; patch fragmentation slowly improving | [Android](../android_and_CVEs/) |
@@ -330,7 +330,7 @@ Data-only attacks, GPU driver exploitation, PAC/MTE deployment, commercial spywa
 | Surface | Key Events | Track(s) |
 |---------|-----------|----------|
 | **Binder IPC** | CVE-2019-2215, CVE-2020-0041, CVE-2022-20421, CVE-2023-20938 | [Android](../android_and_CVEs/) [CVE-2023-20938](../CVE-2023-20938/) |
-| **V8 JIT** | CVE-2020-6418, CVE-2024-0519, CVE-2024-4947, CVE-2024-7971 (~60% of ITW Chrome exploits) | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
+| **V8 JIT** | CVE-2020-6418, CVE-2024-0519, CVE-2024-4947, CVE-2024-7971 (~60% of ITW Chrome exploits started from a V8 bug) | [Chromium](../Chromium_Architecture_and_Vulnerability/) |
 | **GPU Drivers** | ARM Mali CVE-2021-28663 through CVE-2023-6241; Qualcomm Adreno CVE-2023-33063, CVE-2024-43047 | [Android](../android_and_CVEs/) |
 | **Linux Netfilter** | CVE-2023-32233, CVE-2024-1086 | [Linux Kernel](../linux_kernel/) |
 | **macOS IOKit** | CVE-2016-4656, CVE-2021-30883, CVE-2024-23222 | [macOS](../Macos/) |

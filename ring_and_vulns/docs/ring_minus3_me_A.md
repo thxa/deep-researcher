@@ -79,9 +79,9 @@ The design philosophy: provide **out-of-band management** and **hardware-rooted 
 The Intel Management Engine is a **complete, autonomous computer system** embedded within the Platform Controller Hub (PCH) or, starting with ME 11+, integrated into the SoC package. Key characteristics:
 
 - **Runs a MINIX 3–based operating system** (confirmed by Positive Technologies' reverse engineering in 2017)
-- **Operates on a separate processor core**: originally a 32-bit SPARC core (ME 1.x–10.x), later a 32-bit ARC (Argonaut RISC Core) processor (ME 11+ on PCH, or on-die ARC on SoCs like Skylake/Kaby Lake)
+- **Operates on a separate processor core**: originally a 32-bit ARC (Argonaut RISC Core) — ARCTangent-A4 (ME 1.x–5.x) then ARCompact (ME 6.x–8.x) running ThreadX — and from ME 11 (Skylake) an Intel Quark x86-based 32-bit core running MINIX 3 (the ME never used a SPARC core)
 - **Always-on**: the ME begins execution as soon as the platform receives standby power (S5 state) and continues running in all power states including S0, S3 (suspend-to-RAM), and S5 (soft-off). Only a hard power disconnect (PSU switch or battery removal) halts it.
-- **Owns its own firmware**: stored in a dedicated region of the SPI flash chip (typically 1.5–7 MB), signed by Intel with RSA-3072 keys
+- **Owns its own firmware**: stored in a dedicated region of the SPI flash chip (typically 1.5–7 MB), signed by Intel (RSA-2048 with SHA-256 through CSME 14.0; RSA-3072 with SHA-384 only from CSME 15.0)
 - **Has dedicated SRAM**: the ME has its own ~1.5 MB (ME 11+) or ~384 KB (earlier) embedded SRAM, not shared with the host
 - **Network stack**: full TCP/IP stack with its own MAC address, independent of the host NIC
 - **Crypto engine**: hardware-accelerated RSA, ECC, AES, SHA, and Intel EPID (Enhanced Privacy ID) operations
@@ -244,7 +244,7 @@ Intel AMT is one of the most significant and controversial ME subsystems. It pro
 - **Serial-over-LAN**: Text console redirection
 - **Hardware inventory**: Read SMBIOS, CPU/mem/disk info without host OS
 - **Event log**: PET (Platform Event Trap) alerts for hardware failures, thermal events, OS hang detection
-- **User-based authorization**: Up to 200 local user accounts with role-based ACL
+- **User-based authorization**: A small number of Digest user ACL entries (7 in Releases 3.0–4.x, 9 in 5.0, 10 in 6.0, 11 in 7.0+) plus up to 32 Kerberos identities, with role-based ACL
 
 ### 2.4 ME's Access to Host Memory: HECI Interface
 
@@ -308,14 +308,14 @@ Beyond HECI, the ME has **unrestricted DMA access** to the entire host physical 
 
 | ME Version | Processor Architecture | Platform | Notes |
 |---|---|---|---|
-| ME 1.x–4.x | **SPARC** (32-bit) | ICH8–ICH10 | First ME; minimal AMT |
-| ME 5.x–7.x | **SPARC** (32-bit) | Ibex Peak–Cougar Point | AMT 5.0+; TPM added |
-| ME 8.x–10.x | **SPARC** (32-bit) | Lynx Point–Sunrise Point | HECI expanded; Boot Guard |
-| ME 11.x+ | **ARC** (32-bit, ARCompact) | Union Point (ME 11.0), Cannon Point (ME 11.8), Comet Point (ME 11.12) | MINIX-based; much larger codebase |
-| **ME 12.x** | **ARC** (32-bit) | Lake Point (cancelled) | Never shipped commercially |
-| ME 14.x+ | **ARC** (HS38) | Tiger Point / Alder Lake | Current generation; DAL improvements |
+| ME 1.x–5.x | **ARC** (ARCTangent-A4, 32-bit) | ICH8–ICH10 | First ME; minimal AMT; ThreadX RTOS |
+| ME 6.x–7.x | **ARC** (ARCompact) | Ibex Peak–Cougar Point | AMT 5.0+; TPM added |
+| ME 8.x–10.x | **ARC** (ARCompact) | Lynx Point–Sunrise Point | HECI expanded; Boot Guard |
+| ME 11.x+ | **Intel Quark / x86** (32-bit) | Union Point (ME 11.0), Cannon Point (ME 11.8), Comet Point (ME 11.12) | MINIX-based; much larger codebase |
+| **ME 12.x** | **Intel Quark / x86** (32-bit) | Lake Point (cancelled) | Never shipped commercially |
+| ME 14.x | **Intel Quark / x86** (MINIX 3) | Comet Lake | DAL improvements |
 
-**Key transition (ME 10 → ME 11):** The move from SPARC to ARC (and from a custom microkernel to MINIX-3) represented a complete architecture overhaul. The ME 11+ firmware is significantly larger (~7 MB vs ~1.5 MB) and more complex, expanding the attack surface considerably.
+**Key transition (ME 10 → ME 11):** The move from ARC to Intel Quark/x86 (and from ThreadX to MINIX-3) represented a complete architecture overhaul. The ME 11+ firmware is significantly larger (~7 MB vs ~1.5 MB) and more complex, expanding the attack surface considerably.
 
 ### 2.6 ME Subsystems Deep Dive
 
@@ -382,7 +382,7 @@ Boot Guard is **immutable once fused**: it cannot be disabled by the end user, m
 
 The Intel ME has been the subject of extensive security research since at least 2009, when the first detailed analysis was published. The ME's complexity (~7 MB of firmware in ME 11+), its MINIX-3 kernel, network stack, and multiple application layers create a massive attack surface. Below is a detailed analysis of the most significant vulnerabilities.
 
-### 3.2 CVE-2017-5705 through CVE-2017-5715 (INSALEM / SKYFALL — Intel SA-00086)
+### 3.2 CVE-2017-5705 through CVE-2017-5712 (INSALEM / SKYFALL — Intel SA-00086)
 
 **Intel Security Advisory SA-00086** (November 2017) was the most critical ME vulnerability disclosure in history. It revealed multiple privilege escalation and arbitrary code execution flaws.
 
@@ -391,12 +391,12 @@ The Intel ME has been the subject of extensive security research since at least 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2017-5705 |
-| **CVSS** | 9.8 (Critical) |
+| **CVSS** | 7.8 (High) |
 | **Component** | ME Kernel (MINIX-3 kernel) |
-| **Affected** | ME 11.0–11.20, SPS 4.0, ISM 7.0–7.5 |
+| **Affected** | ME 11.0–11.20 |
 | **Type** | Buffer overflow → privilege escalation |
 | **Impact** | Arbitrary code execution in ME kernel context |
-| **Attack vector** | Network (AMT) or local (HECI) |
+| **Attack vector** | Local |
 
 The vulnerability existed in the ME kernel's **IPC (Inter-Process Communication) handler**. A MINIX-3 message whose payload exceeded the expected size would overflow a kernel buffer, allowing an attacker to overwrite adjacent kernel memory and hijack control flow.
 
@@ -421,9 +421,9 @@ int me_ipc_handler(struct ipc_msg *msg) {
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2017-5706 |
-| **CVSS** | 8.4 (High) |
-| **Component** | ME Application (AMT) |
-| **Affected** | ME 11.0–11.20 |
+| **CVSS** | 7.8 (High) |
+| **Component** | SPS Firmware 4.0 |
+| **Affected** | SPS 4.0 |
 | **Type** | Privilege escalation (user-space → kernel) |
 | **Impact** | ME kernel compromise from AMT process |
 
@@ -434,11 +434,11 @@ This allowed an AMT application-level vulnerability to escalate into a full ME k
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2017-5707 |
-| **CVSS** | 9.8 (Critical) |
-| **Component** | ME Kernel |
-| **Affected** | ME 11.0–11.20, SPS 4.0 |
-| **Type** | Heap buffer overflow |
-| **Impact** | Arbitrary code execution in ME kernel |
+| **CVSS** | 7.8 (High) |
+| **Component** | TXE Firmware 3.0 |
+| **Affected** | TXE 3.0 |
+| **Type** | Buffer overflow |
+| **Impact** | Arbitrary code execution (local) |
 
 A heap-based buffer overflow in the kernel memory allocator allowed an attacker to corrupt heap metadata and achieve arbitrary write primitives.
 
@@ -447,36 +447,36 @@ A heap-based buffer overflow in the kernel memory allocator allowed an attacker 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2017-5712 |
-| **CVSS** | 9.8 (Critical) |
-| **Component** | AMT web server (lighttpd) |
-| **Affected** | ME 11.x–12.x |
-| **Type** | Remote code execution via AMT web interface |
+| **CVSS** | 7.2 (High) |
+| **Component** | AMT |
+| **Affected** | ME 8.x/9.x/10.x/11.0–11.20 |
+| **Type** | Remote (authenticated Admin) code execution via AMT |
 | **Impact** | Full ME compromise from network |
-| **Attack vector** | Network (TCP/16992 or TCP/16993) |
+| **Attack vector** | Network |
 
-This was a **remotely exploitable** vulnerability in the AMT web server. An unauthenticated attacker on the local network (or via the internet if AMT ports were exposed) could craft an HTTP request that triggered a buffer overflow in the AMT lighttpd server, achieving remote code execution within the ME.
+This was a **remotely exploitable** vulnerability in AMT. An attacker with remote Admin (authenticated) access could craft a request that triggered a buffer overflow in AMT, achieving code execution with AMT execution privilege over the network.
 
-#### CVE-2017-5715 — Information Disclosure in ME
+#### CVE-2017-5715 — Spectre Variant 2 (not an Intel ME / SA-00086 issue)
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2017-5715 |
-| **CVSS** | 5.3 (Medium) |
-| **Component** | ME firmware |
-| **Affected** | ME 11.x |
-| **Type** | Information disclosure |
-| **Impact** | Disclosure of ME memory contents |
+| **CVSS** | 5.6 (Medium) |
+| **Component** | CPU speculative execution (Spectre Variant 2 / branch target injection) |
+| **Affected** | Microprocessors with speculative execution and indirect branch prediction |
+| **Type** | Speculative-execution side channel (information disclosure) |
+| **Impact** | Unauthorized disclosure of information via side-channel analysis |
 
 ### 3.3 CVE-2017-12188 — JTAG Debug Access
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2017-12188 |
-| **CVSS** | 7.5 (High) |
-| **Component** | ME debug infrastructure |
-| **Affected** | ME 11.x |
-| **Type** | Design flaw — exposed JTAG |
-| **Impact** | Full ME compromise via JTAG; read/write ME SRAM |
+| **CVSS** | 7.8 (High) |
+| **Component** | Linux kernel KVM (arch/x86/kvm/mmu.c) |
+| **Affected** | Linux kernel through 4.13.5 |
+| **Type** | Nested-virtualization page-table traversal flaw |
+| **Impact** | L1 guest OS users execute arbitrary code on the host OS or cause DoS |
 
 **Description**: Researchers (including Mark Ermolov and Maxim Goryachy from Positive Technologies) discovered that on certain Intel platforms, the **JTAG debug interface** to the ME processor was left enabled in production silicon. By connecting a JTAG debugger to the appropriate pins on the PCH (or using the DCI — Direct Connect Interface — over USB), an attacker with physical access could:
 
@@ -496,28 +496,28 @@ This was particularly devastating because:
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2019-0090 |
-| **CVSS** | 9.0 (Critical) |
-| **Component** | ME / SPS (Server Platform Services) |
-| **Affected** | ME 11.x–12.x, SPS 4.0+ |
-| **Type** | Logic error enabling privilege escalation |
+| **CVSS** | 7.1 (High) |
+| **Component** | CSME / TXE / SPS |
+| **Affected** | CSME before 12.0.35, TXE 3.x/4.x, SPS before SPS_E3_05.00.04.027.0 |
+| **Type** | Insufficient access control enabling privilege escalation (requires physical access) |
 | **Impact** | Arbitrary code execution in ME context |
 
 **Description**: This was a logic flaw in the ME's firmware update mechanism. The ME's signed firmware update process had a flaw that allowed an attacker with local access (via HECI) to **escalate privileges from a limited ME application to the ME kernel**. Combined with other ME vulnerabilities, this could lead to full ME compromise.
 
-Intel's advisory SA-00213 indicated that the vulnerability could be exploited by "an unprivileged user" on the host system, meaning attack required only local code execution on the host (Ring 3 or Ring 0), not physical access.
+Intel's advisory SA-00213 corresponds to this flaw; per NVD, exploitation requires physical access (AV:P) to the platform.
 
-### 3.5 CVE-2020-8758 — Intel SA-00318
+### 3.5 CVE-2020-8758 — Intel SA-00404
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2020-8758 |
-| **CVSS** | 7.5 (High) |
-| **Component** | AMT / ISM web interface |
-| **Affected** | ME 11.x–12.x, ISM 11.x–12.x |
-| **Type** | Improper input validation in AMT web server |
-| **Impact** | Denial of service or information disclosure via network |
+| **CVSS** | 9.8 (Critical) |
+| **Component** | Network subsystem of provisioned AMT / ISM |
+| **Affected** | AMT/ISM before 11.8.79, 11.12.79, 11.22.79, 12.0.68, 14.0.39 |
+| **Type** | Improper buffer restrictions in network subsystem |
+| **Impact** | Escalation of privilege via network access |
 
-**Description**: A network-adjacent attacker could exploit improper input validation in the AMT web server to cause a denial of service (crash the ME AMT process) or potentially disclose ME memory contents. While not achieving full RCE, this demonstrated continued weaknesses in the AMT web server component.
+**Description**: Improper buffer restrictions in the network subsystem of provisioned AMT and ISM allow an unauthenticated user to potentially enable escalation of privilege via network access (on un-provisioned systems, an authenticated local user). This demonstrated continued weaknesses in the AMT/ISM network subsystem.
 
 ### 3.6 PSAncillary Attack
 
@@ -550,106 +550,102 @@ The PSAncillary attack enables **firmware-level persistence**: an attacker who c
 
 ### 3.7 Additional ME CVEs
 
-#### CVE-2017-3710 — Intel SA-00086 (Variant)
+#### CVE-2017-3710 — Not an Intel ME CVE
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2017-3710 |
-| **CVSS** | 9.8 (Critical) |
-| **Component** | ME Firmware |
-| **Affected** | ME 8.x–10.x (6th Gen and earlier) |
-| **Type** | Privilege escalation via buffer overflow |
-| **Impact** | ME kernel compromise |
+| **CVSS** | Not present in NVD |
+| **Component** | Not an Intel ME / SA-00086 issue |
+| **Affected** | — |
+| **Type** | — |
+| **Impact** | — |
 
-Affected older platforms (pre-ME 11). Demonstrated that the kernel-level vulnerability was not limited to the MINIX-3 rewrite but also existed in the SPARC-based ME.
+CVE-2017-3710 is not present in the NVD and is not an Intel ME firmware / Intel SA-00086 issue. Intel SA-00086 corresponds to exactly eight CVEs (CVE-2017-5705 through CVE-2017-5712), none of which is CVE-2017-3710.
 
 #### CVE-2018-3640 — ME Information Disclosure (Variant of L1TF)
 
 | Field | Detail |
 |-------|--------|
-| **CVE** | CVE-2018-3640 (part of L1 Terminal Fault — L1TF) |
-| **CVSS** | 7.5 (High) |
-| **Component** | ME speculative execution |
-| **Affected** | ME 11.x+ |
+| **CVE** | CVE-2018-3640 (Spectre Variant 3a / Rogue System Register Read — RSRE) |
+| **CVSS** | 5.6 (Medium) |
+| **Component** | CPU speculative execution |
+| **Affected** | Microprocessors performing speculative reads of system registers |
 | **Type** | Side-channel information disclosure |
-| **Impact** | ME SRAM content leak via L1TF |
+| **Impact** | Unauthorized disclosure of system parameters via side-channel analysis |
 
-The L1 Terminal Fault (Foreshadow) vulnerability also affected the ME processor. Because the ME ARC processor has an L1 data cache, a malicious host process could use the L1TF technique to read ME SRAM contents, potentially extracting:
+CVE-2018-3640 is Spectre Variant 3a / Rogue System Register Read (RSRE), covered by Intel-SA-00115. Microprocessors perform speculative reads of system registers, allowing unauthorized disclosure of system parameters to a local attacker via side-channel analysis. It is not part of L1 Terminal Fault (L1TF is CVE-2018-3615/3620/3646 under Intel-SA-00161) and is not an Intel ME / ME-SRAM issue.
 
-- fTPM keys
-- AMT credentials
-- EPID private keys
-
-#### CVE-2019-11091 — Intel SA-00270 (Microarchitectural Data Sampling — MDS)
+#### CVE-2019-11091 — Intel SA-00233 (Microarchitectural Data Sampling Uncacheable Memory — MDSUM)
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2019-11091 |
-| **CVSS** | 6.5 (Medium) |
-| **Component** | ME / SPS speculative execution |
-| **Affected** | ME 11.x, SPS 4.0+ |
-| **Type** | Microarchitectural Data Sampling (MDS) |
-| **Impact** | Potential ME SRAM data leak |
+| **CVSS** | 5.6 (Medium) |
+| **Component** | CPU speculative execution |
+| **Affected** | CPUs vulnerable to MDS via uncacheable memory |
+| **Type** | Microarchitectural Data Sampling Uncacheable Memory (MDSUM) |
+| **Impact** | Local information disclosure via uncacheable memory |
 
-Part of the MDS/ZombieLoad family of speculative execution vulnerabilities. The ME's ARC processor was vulnerable to data sampling attacks, potentially leaking ME-internal data to the host.
+Part of the MDS/ZombieLoad family of speculative execution vulnerabilities. MDSUM is a generic CPU speculative-execution side channel allowing local information disclosure via uncacheable memory; it is not ME/SPS-specific.
 
-#### CVE-2020-0555 — Intel SA-00320 (ME Q3 2020)
+#### CVE-2020-0555 — Intel SA-00337 (Intel Wireless Bluetooth)
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2020-0555 |
-| **CVSS** | 7.1 (High) |
-| **Component** | ME kernel |
-| **Affected** | ME 11.8+ |
-| **Type** | Improper isolation in ME kernel IPC |
-| **Impact** | Privilege escalation from ME application to kernel |
+| **CVSS** | 7.8 (High) |
+| **Component** | Intel Wireless Bluetooth |
+| **Affected** | Some Intel Wireless Bluetooth products |
+| **Type** | Improper input validation |
+| **Impact** | Escalation of privilege via local access (authenticated user) |
 
-Another MINIX-3 kernel IPC vulnerability allowing an ME application to break out of its process isolation and gain kernel-level access.
+An improper-input-validation flaw in some Intel Wireless Bluetooth products that may allow an authenticated user to potentially escalate privilege via local access. It has nothing to do with the Intel ME kernel or ME IPC isolation.
 
-#### CVE-2021-0089 — Intel SA-00528
+#### CVE-2021-0089 — Intel SA-00516 (Speculative Code Store Bypass)
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2021-0089 |
-| **CVSS** | 7.5 (High) |
-| **Component** | ME firmware update mechanism |
-| **Affected** | Multiple ME versions |
-| **Type** | Improper firmware update validation |
-| **Impact** | Potential arbitrary code execution via firmware update |
+| **CVSS** | 6.5 (Medium) |
+| **Component** | Intel processor (speculative/transient execution) |
+| **Affected** | Some Intel processors |
+| **Type** | Observable response discrepancy (SCSB — Speculative Code Store Bypass) |
+| **Impact** | Information disclosure via local access (authorized user) |
 
-A logic flaw in how the ME validated firmware update payloads. An attacker could craft a firmware update that passed signature checks but exploited a parsing vulnerability during the update roll-out process.
+An observable response discrepancy in some Intel processors that may allow an authorized user to potentially enable information disclosure via local access. It is not an ME firmware-update issue.
 
-#### CVE-2022-26075 — Intel SA-00622
+#### CVE-2022-26075 — InHand Networks InRouter302 (not an Intel CVE)
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2022-26075 |
-| **CVSS** | 8.4 (High) |
-| **Component** | ME kernel |
-| **Affected** | ME 11.x–15.x |
-| **Type** | Privilege escalation |
-| **Impact** | ME kernel compromise from application context |
+| **CVSS** | 8.8 (High) |
+| **Component** | InHand Networks InRouter302 (console infactory_wlan) |
+| **Affected** | InRouter302 firmware V3.5.37 |
+| **Type** | OS command injection |
+| **Impact** | Remote code execution via crafted network requests |
 
-Demonstrated that kernel-level privilege escalation remained possible years after SA-00086.
+An OS command injection vulnerability in the console infactory_wlan functionality of InHand Networks InRouter302 firmware V3.5.37; it has no relation to Intel or the Intel ME.
 
 ### 3.8 Summary of Key ME CVEs
 
 | CVE | Year | CVSS | Component | Type | Impact |
 |-----|------|------|-----------|------|--------|
-| CVE-2017-5705 | 2017 | 9.8 | ME Kernel (IPC) | Buffer overflow | RCE in ME kernel |
-| CVE-2017-5706 | 2017 | 8.4 | ME AMT app | Privilege escalation | ME kernel compromise |
-| CVE-2017-5707 | 2017 | 9.8 | ME Kernel (heap) | Heap overflow | RCE in ME kernel |
-| CVE-2017-5712 | 2017 | 9.8 | AMT web server | Remote RCE | Network RCE in ME |
-| CVE-2017-5715 | 2017 | 5.3 | ME firmware | Info disclosure | ME memory leak |
-| CVE-2017-3710 | 2017 | 9.8 | ME Kernel (8-10) | Buffer overflow | RCE in ME kernel |
-| CVE-2017-12188 | 2017 | 7.5 | ME JTAG debug | Design flaw | Full ME compromise |
-| CVE-2018-3640 | 2018 | 7.5 | ME L1 (speculative) | Side channel | ME SRAM data leak |
-| CVE-2019-0090 | 2019 | 9.0 | ME update logic | Privilege escalation | ME kernel compromise |
-| CVE-2019-11091 | 2019 | 6.5 | ME speculative | MDS side channel | ME data leak |
-| CVE-2020-8758 | 2020 | 7.5 | AMT web server | Input validation | DoS / info disclosure |
-| CVE-2020-0555 | 2020 | 7.1 | ME kernel IPC | Isolation bypass | Privilege escalation |
-| CVE-2021-0089 | 2021 | 7.5 | ME firmware update | Update validation | Potential RCE |
-| CVE-2022-26075 | 2022 | 8.4 | ME kernel | Privilege escalation | ME kernel compromise |
+| CVE-2017-5705 | 2017 | 7.8 | ME Kernel (IPC) | Buffer overflow | Code execution in ME kernel (local) |
+| CVE-2017-5706 | 2017 | 7.8 | SPS Firmware 4.0 | Buffer overflow | Code execution (local) |
+| CVE-2017-5707 | 2017 | 7.8 | TXE Firmware 3.0 | Buffer overflow | Code execution (local) |
+| CVE-2017-5712 | 2017 | 7.2 | AMT | Remote (auth) RCE | Network RCE in ME |
+| CVE-2017-5715 | 2017 | 5.6 | CPU (Spectre v2) | Speculative side channel | Information disclosure |
+| CVE-2017-3710 | — | — | Not an Intel ME CVE | — | — |
+| CVE-2017-12188 | 2017 | 7.8 | Linux KVM | Nested-paging flaw | Host code execution / DoS |
+| CVE-2018-3640 | 2018 | 5.6 | CPU (Spectre v3a / RSRE) | Side channel | Information disclosure |
+| CVE-2019-0090 | 2019 | 7.1 | CSME / TXE / SPS | Privilege escalation (physical) | ME kernel compromise |
+| CVE-2019-11091 | 2019 | 5.6 | CPU (MDSUM) | MDS side channel | Local info disclosure |
+| CVE-2020-8758 | 2020 | 9.8 | AMT/ISM network subsystem | Improper buffer restrictions | Escalation of privilege |
+| CVE-2020-0555 | 2020 | 7.8 | Intel Wireless Bluetooth | Improper input validation | Privilege escalation |
+| CVE-2021-0089 | 2021 | 6.5 | Intel processor (SCSB) | Speculative side channel | Information disclosure |
+| CVE-2022-26075 | 2022 | 8.8 | InHand InRouter302 | OS command injection | Remote code execution |
 
 ---
 
@@ -657,7 +653,7 @@ Demonstrated that kernel-level privilege escalation remained possible years afte
 
 ### 4.1 PSP Architecture
 
-AMD's equivalent to the Intel ME is the **Platform Security Processor (PSP)**, integrated into all AMD processors since the Steamroller microarchitecture (2013). Key characteristics:
+AMD's equivalent to the Intel ME is the **Platform Security Processor (PSP)**, first integrated into AMD x86 processors around 2013 via the Jaguar-based Kabini/Temash APUs (not with Steamroller, which debuted in January 2014). Key characteristics:
 
 - **Processor**: ARM Cortex-A5 (32-bit ARMv7-A)
 - **Operating system**: Custom RTOS (not MINIX; AMD's proprietary firmware)
@@ -788,31 +784,31 @@ AMD SEV is one of the most important PSP-driven security features. It uses the P
 
 ### 4.5 PSP Vulnerabilities
 
-#### CVE-2019-1548 — AMD PSP fTPM Information Disclosure
+#### CVE-2019-1548 — REJECTED CVE record
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2019-1548 |
-| **CVSS** | 7.5 (High) |
-| **Component** | PSP fTPM |
-| **Affected** | AMD EPYC, Ryzen, Threadripper (multiple generations) |
-| **Type** | Information disclosure in fTPM implementation |
-| **Impact** | Potential extraction of fTPM keys and attestation data |
+| **CVSS** | None (REJECTED) |
+| **Component** | — |
+| **Affected** | — |
+| **Type** | REJECTED — never assigned to any issue |
+| **Impact** | — |
 
-The PSP's fTPM implementation had a vulnerability where certain TPM commands could be manipulated to leak internal PSP state, potentially disclosing key material or allowing TPM state rollback.
+CVE-2019-1548 is a REJECTED CVE record: it was a candidate number reserved in the OpenSSL CNA pool that was never assigned to any issue during 2019. It has no CVSS score and is not associated with AMD PSP, fTPM, or any product.
 
-#### CVE-2020-8909 — AMD PSP SMM Call-Out Vulnerability
+#### CVE-2020-8909 — RESERVED CVE (no published details)
 
 | Field | Detail |
 |-------|--------|
 | **CVE** | CVE-2020-8909 |
-| **CVSS** | 7.5 (High) |
-| **Component** | PSP → SMM call-out |
-| **Affected** | Multiple AMD platforms |
-| **Type** | Logic flaw in PSP-SMM interaction |
-| **Impact** | Potential SMM code execution from PSP |
+| **CVSS** | None (RESERVED) |
+| **Component** | — |
+| **Affected** | — |
+| **Type** | RESERVED — no published description |
+| **Impact** | — |
 
-A vulnerability in how the PSP could invoke SMI handlers on the host processor, potentially allowing the PSP (or an attacker who compromised the PSP) to inject malicious SMI handlers.
+CVE-2020-8909 is RESERVED in the CVE program with no published details (NVD returns "CVE ID Not Found"). It is not an AMD PSP-to-SMM call-out vulnerability and has no CVSS score or any AMD association.
 
 #### CTS Labs / AMD Flaws (2018)
 
@@ -831,8 +827,8 @@ In March 2018, CTS-Labs disclosed a set of AMD PSP vulnerabilities with dramatic
 
 | CVE | Year | Name | Type | Impact |
 |-----|------|------|------|--------|
-| CVE-2021-46162 | 2021 | — | SEV attestation bypass | Fake attestation reports |
-| CVE-2022-22194 | 2022 | — | SEV key management | Potential key extraction |
+| CVE-2021-46162 | 2021 | — | Siemens Simcenter Femap OOB write (not AMD SEV) | Arbitrary code execution via crafted NEU file |
+| CVE-2022-22194 | 2022 | — | Juniper Junos OS Evolved packetIO DoS (not AMD SEV) | Sustained denial of service |
 | Multiple | 2018-2022 | — | SEV/SEV-ES integrity attacks | VM memory tampering (pre-SNP) |
 | N/A | 2020 | SEVered | SEV page table manipulation | Decrypt VM memory via ASID manipulation |
 
@@ -920,7 +916,7 @@ The host-facing interface allows Ring 0 (and sometimes Ring 3, via the `mei` dri
 - **Local privilege escalation**: Compromised host OS (Ring 0) can send crafted HECI messages to exploit ME application vulnerabilities
 - **Firmware update downgrade**: Malformed HECI firmware update commands (CVE-2019-0090)
 - **Information disclosure**: HECI version queries can leak ME firmware version, build date, and capabilities
-- **MEI driver attack surface**: The Linux `mei` driver itself has had vulnerabilities (CVE-2019-0121) that could allow local privilege escalation
+- **MEI driver attack surface**: The Linux `mei` driver presents a parsing/command attack surface for local privilege escalation (note: CVE-2019-0121 is an Intel Matrix Storage Manager improper-permissions flaw, not a `mei` driver bug)
 
 ### 5.4 JTAG Debug Access
 
@@ -1220,20 +1216,20 @@ intelmetool -s   # Show ME status
 ## 7. References
 
 1. Positive Technologies, "Intel Management Engine: Drive Me Crazy" (2017) — [link to PT research on MINIX-3 in ME]
-2. Intel Security Advisory SA-00086 (November 2017) — CVE-2017-5705 through CVE-2017-5715
-3. Intel Security Advisory SA-00213 (March 2019) — CVE-2019-0090
-4. Intel Security Advisory SA-00318 (June 2020) — CVE-2020-8758
+2. Intel Security Advisory SA-00086 (November 2017) — CVE-2017-5705 through CVE-2017-5712
+3. Intel Security Advisory SA-00213 (May 2019) — CVE-2019-0090
+4. Intel Security Advisory SA-00404 (September 2020) — CVE-2020-8758
 5. Ermolov, M., Goryachy, M. — "How to Hack a Turned-Off Computer, or Running Unsigned Code in Intel Management Engine" (Black Hat Europe 2017)
 6. CTS Labs, "AMD Flaws: RYZENFALL, FALLOUT, CHIMERA, MASTERKEY" (March 2018)
 7. me_cleaner project — https://github.com/corna/me_cleaner
-8. Skochinsky, N. — "Intel ME Secrets" (REcon 2014)
+8. Skochinsky, I. — "Intel ME Secrets" (REcon 2014)
 9. AMD SEV Specification — AMD Developer Documentation
 10. Bulygin, Y., Samyde, D. — "Ring -3: The Hypervisor Nobody Talked About" (2011)
-11. SevVered Attack Paper — "SevVered: Decrypting SEV Encrypted VMs" (2018)
+11. SEVered Attack Paper — Morbitzer et al., "SEVered: Subverting AMD's Virtual Machine Encryption" (EuroSec'18, 2018)
 12. Intel 64 and IA-32 Architectures Software Developer's Manual — Chapter on System Management Mode
 13. coreboot project — https://www.coreboot.org/
 14. Dulau-Narevsky, B. — "PSAncillary: A New Attack Surface in Intel ME" (2018)
-15. Moghimi, D. et al. — "Take A Way: Exploring the Security Implications of AMD's Cache Way Predictors" (2020)
+15. Lipp, M. et al. — "Take A Way: Exploring the Security Implications of AMD's Cache Way Predictors" (2020)
 
 ---
 
@@ -1243,9 +1239,9 @@ intelmetool -s   # Show ME status
 - Intel 64 and IA-32 Architecture Software Developer's Manual, Volume 3B: Intel Corporation.
 - Intel Management Engine (ME) documentation — Intel Corporation. https://www.intel.com/content/www/us/en/support/articles/000026220/technologies.html
 - Igor Skochinsky, "Intel ME: Myths and Reality," REcon, Positive Technologies.
-- Positive Technologies, "Intel Management Engine: From Chipset to Exploitation." https://positive.tech/
+- Positive Technologies, "Intel Management Engine: From Chipset to Exploitation." https://global.ptsecurity.com/en/
 - Maxim Goryachy, Mark Ermolov, "How to Hack a Turned-Off Computer," Black Hat EU, 2017.
-- CVE-2017-5705 through CVE-2017-5715 — Intel-SA-00086. https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00086.html
+- CVE-2017-5705 through CVE-2017-5712 — Intel-SA-00086. https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00086.html
 - ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/en/
 - AMD Platform Security Processor (PSP) documentation — AMD. https://developer.amd.com/
 - me_cleaner — Tool for disabling Intel ME. https://github.com/corna/me_cleaner

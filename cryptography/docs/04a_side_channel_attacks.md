@@ -555,14 +555,14 @@ Shuffling increases the number of required DPA traces by a factor of $O(n!)$ for
 5. Yarom, Y., Falkner, K., "FLUSH+RELOAD: A High Resolution, Low Noise, L3 Cache Side-Channel Attack," USENIX Security 2014. https://www.usenix.org/node/184535
 6. Liu, F., Yarom, Y., Ge, Q., Heiser, G., Lee, R.B., "Last-Level Cache Side-Channel Attacks Are Practical," IEEE S&P 2015. https://ieeexplore.ieee.org/document/7163050
 7. Kocher, P., et al., "Spectre Attacks: Exploiting Speculative Execution," IEEE S&P 2019. CVE-2017-5753, CVE-2017-5715. https://spectreattack.com/
-8. Lipp, M., et al., "Meltdown: Reading Kernel Memory from User Space," USENIX Security 2018. CVE-2017-5754. https://meltdownAttack.com/
+8. Lipp, M., et al., "Meltdown: Reading Kernel Memory from User Space," USENIX Security 2018. CVE-2017-5754. https://meltdownattack.com/
 9. Ge, Q., Yarom, Y., Cock, D., Heiser, G., "A Survey of Microarchitectural Timing Attacks and Countermeasures on Contemporary Hardware," Journal of Cryptographic Engineering, 2018. https://link.springer.com/article/10.1007/s13389-016-0154-1
 10. Genkin, D., Shamir, A., Tromer, E., "RSA Key Extraction via Low-Bandwidth Acoustic Cryptanalysis," CRYPTO 2014. https://www.tau.ac.il/~tromer/
 11. Genkin, D., Pipman, I., Tromer, E., "Get Your Hands Off My Laptop: Physical Side-Channel Key Extraction on PCs," CHES 2015. https://eprint.iacr.org/2014/448
 12. Aciicmez, O., "Yet Another Microarchitectural Attack: Exploiting I-Cache," CHES 2007. https://eprint.iacr.org/2007/063
 13. Percival, C., "Cache Missing for Fun and Profit," BSDCan 2005. https://www.daemonology.net/papers/bsdcan05.pdf
 14. Ragab, H., et al., "Cross-Process Cache Attacks on Android," USENIX Security 2021. https://www.usenix.org/conference/usenixsecurity21/presentation/ragab
-15. PACMAN: Attacking ARM Pointer Authentication with Speculative Execution," ISCA 2022. https://pacmanAttack.com/
+15. PACMAN: Attacking ARM Pointer Authentication with Speculative Execution," ISCA 2022. https://pacmanattack.com/
 16. ARM, "Cache Speculation Side-Channels: Security Guidance," ARMSecurity-036, 2018. https://developer.arm.com/support/security-consulting
 17. Intel, "Preventing Side-Channel Attacks via Speculative Execution," Intel Security Advisory, 2018. https://www.intel.com/content/www/us/en/security-center/advisory.html
 18. Brasser, F., et al., "Software-based Countermeasures Against Cache Attacks," IACR Cryptology ePrint Archive, 2017. https://eprint.iacr.org/2017/052

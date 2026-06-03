@@ -534,8 +534,8 @@ With Kernel Page-Table Isolation (KPTI), returning to userspace is more complex:
 | SMAP               | 3.7 (2012)       | Accessing userspace data from R0    | Medium–Hard       |
 | KPTI               | 4.15 (2018)      | Meltdown-type side channels          | Hard (by design)  |
 | Stack canaries     | 4.x intensified  | Stack buffer overflows               | Medium            |
-| CFI (Clang)        | 5.18 (2022)      | Control-flow hijacking               | Hard              |
-| KASAN              | 4.0 (2014)       | UAF/OOB detection (debug)           | Low (offset-based)|
+| CFI (Clang)        | 5.13 (2021)      | Control-flow hijacking               | Hard              |
+| KASAN              | 4.0 (2015)       | UAF/OOB detection (debug)           | Low (offset-based)|
 | kFREE_HARDENED     | 4.x              | Freelist pointer corruption          | Medium            |
 | RAP/PA            | PaX/Grsecurity   | Arbitrary function pointer calls     | Hard              |
 | RSB/RSB_FILL       | 4.12+            | RSB-based Spectre variants           | Hard              |
@@ -748,11 +748,11 @@ buf->flags = 0;  // Don't inherit old flags
 
 ---
 
-### 3.2 CVE-2021-4154 — cgroupv2 eBPF Out-of-Bounds Write
+### 3.2 CVE-2021-4154 — cgroup v1 Parser Use-After-Free
 
-**Vulnerability:** An out-of-bounds write in the BPF verifier due to incorrect bounds tracking of `rego` (register offset) during pointer arithmetic.
+**Vulnerability:** A use-after-free in `cgroup1_parse_param` (kernel/cgroup/cgroup-v1.c), reachable via the `fsconfig` syscall parameter, allowing local privilege escalation, container breakout, and denial of service (CWE-416).
 
-**Affected Versions:** Linux 5.7 – 5.15.x (pre-5.15.7)
+**Affected Versions:** Linux 5.1 – 5.13.3 (fixed in 5.4.134, 5.10.52, 5.12.19, 5.13.4, and mainline 5.14)
 
 **Root Cause:**
 
@@ -833,9 +833,9 @@ int exploit(struct __sk_buff *skb) {
 
 ### 3.3 CVE-2019-18683 — V4L2 Buffer Use-After-Free
 
-**Vulnerability:** A use-after-free in the `v4l2_m2m` (memory-to-memory) subsystem caused by a race condition between buffer deletion and the device release callback.
+**Vulnerability:** A use-after-free in the `vivid` driver (drivers/media/platform/vivid) of the V4L2 subsystem, caused by race conditions during streaming stop (wrong mutex locking in `vivid_stop_generating_vid_cap()`, `vivid_stop_generating_vid_out()`, `sdr_cap_stop_streaming()` and the corresponding kthreads).
 
-**Affected Versions:** Linux 3.18 – 5.4 (fixed in 5.4-rc8)
+**Affected Versions:** Linux through 5.3.8 (fixed in 4.4.204, 4.9.204, 4.14.157, 4.19.87, 5.3.14, and 5.4.1)
 
 **Root Cause:**
 
@@ -988,7 +988,7 @@ if (!capable(CAP_FSETID) && S_ISREG(stat->mode)) {
 }
 ```
 
-**Significance:** This demonstrates how filesystem stacking (overlayFS) introduces semantic gaps. The VFS layer properly strips setuid bits on write, but overlayFS's copy-up mechanism bypasses this VFS check. This class of bugs (privileged attribute preservation during copy-up) has recurred in overlayFS multiple times (CVE-2015-8660, CVE-2016-1240, CVE-2023-0386).
+**Significance:** This demonstrates how filesystem stacking (overlayFS) introduces semantic gaps. The VFS layer properly strips setuid bits on write, but overlayFS's copy-up mechanism bypasses this VFS check. This class of bugs (privileged attribute preservation during copy-up) has recurred in overlayFS multiple times (CVE-2015-8660, CVE-2023-0386).
 
 ---
 
@@ -996,7 +996,7 @@ if (!capable(CAP_FSETID) && S_ISREG(stat->mode)) {
 
 **Vulnerability:** A local privilege escalation in `pkexec` (part of polkit) due to improper argument handling when called with no arguments, leading to out-of-bounds variable expansion and arbitrary file execution.
 
-**Affected Versions:** polkit 0.100 – 0.120 (all versions since 2012, fixed in 0.120-patch)
+**Affected Versions:** all polkit versions prior to 0.121 (the bug was introduced in 2009; fixed in polkit 0.121)
 
 **Root Cause:**
 
@@ -1099,11 +1099,11 @@ pkexec
 2. Set environment to a clean state before processing (clear all env vars)
 3. CVE-2021-4034 fix validates that `argc >= 2` when processing args
 
-**Significance:** PwnKit affected virtually every Linux distribution since 2012 and required no special privileges — just local access. It's a textbook example of:
+**Significance:** PwnKit affected virtually every Linux distribution since 2009 and required no special privileges — just local access. It's a textbook example of:
 - Memory layout assumptions (argv/envp contiguity)
 - SUID binary argument parsing failures
 - The risk of environment-variable-mediated attacks on privileged binaries
-- The fact that a bug introduced in 2012 can persist for nearly a decade before discovery
+- The fact that a bug introduced in 2009 can persist for over a decade before discovery
 
 ---
 
@@ -1620,13 +1620,13 @@ The legacy 32-bit syscall interface uses software interrupt `int 0x80`:
 2   common  open            sys_open
 3   common  close           sys_close
 ...
-318 common  io_uring_setup  sys_io_uring_setup
-319 common  io_uring_enter  sys_io_uring_enter
-320 common  io_uring_register sys_io_uring_register
+425 common  io_uring_setup  sys_io_uring_setup
+426 common  io_uring_enter  sys_io_uring_enter
+427 common  io_uring_register sys_io_uring_register
 ...
-443 common  map_shadow_stack sys_map_shadow_stack
-444 common  futex_waitv     sys_futex_waitv
-445 common  set_mempolicy_home_node sys_set_mempolicy_home_node
+449 common  futex_waitv     sys_futex_waitv
+450 common  set_mempolicy_home_node sys_set_mempolicy_home_node
+453 common  map_shadow_stack sys_map_shadow_stack
 
 // The dispatch table:
 const sys_call_ptr_t sys_call_table[__NR_syscalls] = {
@@ -1745,10 +1745,10 @@ v4l2_pix_format {
 |------|--------------------------|--------------------|-----------------|
 | 2016 | CVE-2016-0728            | keyctl             | Local LPE       |
 | 2017 | CVE-2017-7308            | packet_set_ring    | Local LPE       |
-| 2018 | CVE-2018-10675           | floppy driver      | DoS/Info leak   |
+| 2018 | CVE-2018-10675           | NUMA mempolicy     | UAF (DoS)       |
 | 2019 | CVE-2019-18683           | v4l2-m2m           | Local LPE       |
-| 2020 | CVE-2020-14333           | eBPF verifier      | Local LPE       |
-| 2021 | CVE-2021-3715            | eBPF verifier      | Local LPE       |
+| 2020 | CVE-2020-14333           | oVirt Engine       | Reflected XSS   |
+| 2021 | CVE-2021-3715            | tc route4 classifier | Local LPE       |
 | 2022 | Multiple io_uring bugs  | io_uring           | LPE/DoS         |
 | 2023 | Various BPF bugs         | bpf verifier       | LPE             |
 
@@ -1818,33 +1818,32 @@ static int packet_set_ring(struct sock *sk, union tpacket_req_u *req_u,
 
 **Impact:** Remote denial of service; mitigated by limiting SACK block processing.
 
-#### 5.3.4 CVE-2020-2555 — io_uring CQ Overflow
+#### 5.3.4 CVE-2020-2555 — Oracle Coherence Insecure Deserialization
 
-**Vulnerability:** Race condition in io_uring completion queue handling leading to memory corruption.
+**Vulnerability:** Insecure deserialization of untrusted data (CWE-502) in the Oracle Coherence product of Oracle Fusion Middleware, allowing unauthenticated remote code execution via the T3 protocol (CVSS 3.x base score 9.8).
 
 ```c
-// In fs/io_uring.c:
-// The completion queue ring buffer could overflow when:
-// 1. Submission queue has N pending entries
-// 2. Completion events are generated faster than consumed
-// 3. The CQ ring head/tail wrap around incorrectly
-// 4. Leading to out-of-bounds write in the CQ ring buffer
+// In Oracle Coherence (Caching, CacheStore, and Invocation components):
+// 1. An unauthenticated attacker with network access sends a crafted
+//    serialized object payload over the T3 protocol
+// 2. Coherence deserializes the untrusted data without validation
+// 3. A gadget chain in the deserialization path is triggered
+// 4. Leading to full takeover of the affected Coherence instance
 
-// io_uring was introduced in 5.1 and had dozens of bugs in
-// its first 2 years. It represents the largest single new
-// attack surface in recent kernels.
+// Affected versions: 3.7.1.0, 12.1.3.0.0, 12.2.1.3.0, 12.2.1.4.0.
+// Listed in CISA's Known Exploited Vulnerabilities Catalog.
 ```
 
 #### 5.3.5 Notable Syscall Interface Design Flaws
 
 | Flaw                     | Description                                              | Examples                            |
 |--------------------------|----------------------------------------------------------|--------------------------------------|
-| Complex state machines   | io_uring, eBPF, v4l2 have deep state complexity         | CVE-2020-29374, CVE-2022-2602       |
+| Complex state machines   | io_uring, eBPF, v4l2 have deep state complexity         | CVE-2022-2602                       |
 | Inconsistent validation | Different paths validate differently                     | CVE-2022-0847 (Dirty Pipe)          |
 | TOCTOU races             | Time-of-check/time-of-use between validation and use     | CVE-2019-18683, many others         |
-| Pointer handling         | Dual-user/kernel pointers easy to mishandle              | CVE-2019-17666                      |
+| Missing bounds check     | Driver buffer overflow from absent upper-bound check     | CVE-2019-17666                      |
 | Integer overflow         | Size calculations overflow before use                    | CVE-2017-7308                       |
-| Uninitialized data       | Leaking stack/heap data through copy_to_user             | CVE-2020-26541                      |
+| Secure Boot bypass       | Improper enforcement of the UEFI Secure Boot dbx          | CVE-2020-26541                      |
 | Reference count bugs     | get/put imbalances leading to UAF                       | CVE-2016-0728                       |
 | Capability checks        | Missing or incorrect capability checks                  | CVE-2021-4034 (PwnKit)              |
 | Copy-up semantics        | OverlayFS copy-up preserving privileged bits             | CVE-2023-0386                       |

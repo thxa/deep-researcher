@@ -1041,17 +1041,17 @@ rules:
   verbs: []  # Deny all exec access
 ```
 
-### 10.2 CVE-2022-3172 — Kubelet Unauthenticated Aggregator
+### 10.2 CVE-2022-3172 — kube-apiserver Aggregated API Server SSRF
 
 | Field | Detail |
 |---|---|
 | **CVE** | CVE-2022-3172 |
 | **CVSS** | 8.2 (High) |
-| **Affected** | Kubernetes 1.22.0 - 1.24.3 |
-| **Type** | Kubelet API proxy authentication bypass |
-| **Impact** | Unauthenticated access to kubelet proxied endpoints |
+| **Affected** | kube-apiserver up to 1.21.14, 1.22.0-1.22.13, 1.23.0-1.23.10, 1.24.0-1.24.4, and 1.25.0 |
+| **Type** | Server-Side Request Forgery (CWE-918) in kube-apiserver |
+| **Impact** | Aggregated API server redirects client traffic, potentially forwarding API server credentials to third parties |
 
-**Technical Details**: The kubelet's aggregated API server endpoint did not properly authenticate requests to aggregated API servers. An attacker could access the kubelet's `/metrics` endpoint and other proxied endpoints without authentication.
+**Technical Details**: An aggregated API server can redirect client traffic to any URL, causing the client to perform unexpected actions and potentially forwarding the client's API server credentials to third parties. Fixed in 1.22.14, 1.23.11, 1.24.5, and 1.25.1.
 
 ### 10.3 CVE-2023-2727 — Kubernetes ImagePolicy Webhook Bypass
 
@@ -1313,10 +1313,10 @@ spec:
 
 1. CVE-2018-1002105. NVD. https://nvd.nist.gov/vuln/detail/CVE-2018-1002105
 2. CVE-2022-3172. NVD. https://nvd.nist.gov/vuln/detail/CVE-2022-3172
-3. NSA/CISA. "Kubernetes Hardening Guide." *National Security Agency*. 2022. https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/1/CTR_KUBERNETES_HARDENING_GUIDANCE.PDF
+3. NSA/CISA. "Kubernetes Hardening Guide." *National Security Agency*. 2022. https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF
 4. Kubernetes. "Pod Security Standards." *Kubernetes Documentation*. 2024. https://kubernetes.io/docs/concepts/security/pod-security-standards/
 5. Kubernetes. "RBAC API Reference." *Kubernetes Documentation*. 2024. https://kubernetes.io/docs/reference/access-authn-authz/rbac/
-6. Aqua Security. "The Kubernetes Attack Tree." *Aqua Security*. 2021. https://www.aquasec.com/resources/kubernetes-attack-tree/
+6. Zola, A. "Kubernetes main attack vectors tree: an explainer guide." *CNCF*. 2021. https://www.cncf.io/blog/2021/11/08/kubernetes-main-attack-vectors-tree-an-explainer-guide/
 7. CIS. "CIS Kubernetes Benchmark." *Center for Internet Security*. 2024. https://www.cisecurity.org/cis-benchmarks/
 8. Kubernetes. "Network Policies." *Kubernetes Documentation*. 2024. https://kubernetes.io/docs/concepts/services-networking/network-policies/
 9. Kubernetes. "Kubelet Authentication and Authorization." *Kubernetes Documentation*. 2024. https://kubernetes.io/docs/reference/access-authn-authz/kubelet-authn-authz/

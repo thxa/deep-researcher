@@ -541,17 +541,17 @@ These side channels are particularly dangerous in cloud environments where virtu
 
 1. RFC 8446, "The Transport Layer Security (TLS) Protocol Version 1.3," August 2018. https://www.rfc-editor.org/rfc/rfc8446
 2. RFC 5246, "The Transport Layer Security (TLS) Protocol Version 1.2," August 2008. https://www.rfc-editor.org/rfc/rfc5246
-3. Duong, T., Rizzo, J., "Here Come The ⊕ Ninjas," 2011 (BEAST). CVE-2011-3389. https://www.beastAttack.com/
-4. Rizzo, J., Duong, T., "The CRIME Attack," 2012. CVE-2012-4929. https://www.ieee-security.org/
-5. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. CVE-2013-0169. https://www.ieee-security.org/TC/SP2013/
+3. Duong, T., Rizzo, J., "Here Come The ⊕ Ninjas," 2011 (BEAST). CVE-2011-3389. https://nvd.nist.gov/vuln/detail/CVE-2011-3389
+4. Rizzo, J., Duong, T., "The CRIME Attack," 2012. CVE-2012-4929. https://nvd.nist.gov/vuln/detail/CVE-2012-4929
+5. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. CVE-2013-0169. https://www.ieee-security.org/TC/SP2013/papers/4977a526.pdf
 6. CVE-2014-0160, "OpenSSL Heartbeat Information Disclosure (Heartbleed)," April 2014. https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-0160
 7. Möller, B., Duong, T., Kotowicz, K., "This POODLE Bites: Exploiting the SSLv3 Fallback," 2014. CVE-2014-3566. https://www.openssl.org/~bodo/ssl-poodle.pdf
-8. Beurdouche, B., Bhargavan, K., Delignat-Lavaud, A., "FREAK: Factoring RSA_EXPORT Keys," 2015. CVE-2015-0204. https://freakAttack.com/
+8. Beurdouche, B., Bhargavan, K., Delignat-Lavaud, A., "FREAK: Factoring RSA_EXPORT Keys," 2015. CVE-2015-0204. https://freakattack.com/
 9. Adrian, D., Bhargavan, K., Durumeric, Z., "Imperfect Forward Secrecy: How Diffie-Hellman Fails in Practice," CCS 2015. CVE-2015-4000. https://weakdh.org/
-10. Aviram, N., Schinzel, S., "DROWN: Breaking TLS with SSLv2," USENIX Security 2016. CVE-2016-0800. https://drownAttack.com/
+10. Aviram, N., Schinzel, S., "DROWN: Breaking TLS with SSLv2," USENIX Security 2016. CVE-2016-0800. https://drownattack.com/
 11. Bhargavan, K., Leurent, G., "On the Practical (In-) Security of 64-bit Block Ciphers," CCS 2016. CVE-2016-2183. https://sweet32.info/
-12. Böck, H., Somorovsky, J., Young, C., "Return Of Bleichenbacher's Oracle Threat (ROBOT)," USENIX Security 2018. https://robotAttack.com/
+12. Böck, H., Somorovsky, J., Young, C., "Return Of Bleichenbacher's Oracle Threat (ROBOT)," USENIX Security 2018. https://robotattack.org/
 13. Bleichenbacher, D., "Chosen Ciphertext Attacks Against Protocols Based on the RSA Encryption Standard PKCS #1," CRYPTO 1998. https://link.springer.com/chapter/10.1007/BFb0055716
-14. Yarom, Y., Genkin, G., Heninger, N., "CacheBleed: A Last-Level Cache Side-Channel Attack," 2016. https://cachebleedAttack.com/
+14. Yarom, Y., Genkin, G., Heninger, N., "CacheBleed: A Last-Level Cache Side-Channel Attack," 2016. https://eprint.iacr.org/2016/224
 15. RFC 4346, "The Transport Layer Security (TLS) Protocol Version 1.1," April 2006. https://www.rfc-editor.org/rfc/rfc4346
 16. RFC 6101, "The Secure Sockets Layer (SSL) Protocol Version 3.0," August 2011. https://www.rfc-editor.org/rfc/rfc6101

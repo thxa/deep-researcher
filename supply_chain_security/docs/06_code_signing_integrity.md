@@ -819,6 +819,6 @@ slsa-verifier verify-image registry.example.com/my-app:v1.2.3 \
 9. NIST SP 800-218. "Secure Software Development Framework (SSDF)." https://csrc.nist.gov/publications/detail/sp/800-218/final
 10. RFC 6962. "Certificate Transparency." https://datatracker.ietf.org/doc/html/rfc6962
 11. RFC 5652. "Cryptographic Message Syntax (CMS)." https://datatracker.ietf.org/doc/html/rfc5652
-12. NVIDIA Security Advisory. "NVIDIA Code Signing Certificate Leak." 2022. https://nvidia.custhelp.com/app/answers/detail/a_id/5427
+12. NVIDIA Security Advisory. "NVIDIA Code Signing Certificate Leak." 2022. https://nvidia.custhelp.com/app/answers/detail/a_id/5333
 13. Lapsus$. "Samsung and NVIDIA Data Leak." 2022.
 14. D-Link Advisory. "Code Signing Certificate Found on Public Server." 2020.

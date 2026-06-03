@@ -527,7 +527,7 @@ blind overwrites could achieve arbitrary write primitives.
 | Windows 8 | Lookaside + pool | Pool header cookies, NX pool introduced |
 | Windows 10 1809 | Lookaside + pool | Safe unlinking for pool free lists |
 | Windows 10 2004 | Segment pool begins | `ExAllocatePool2` API; Segment Heap for kernel pool |
-| Windows 11 | Full segment pool | NT pool allocator fully replaced by segment pool |
+| Windows 11 | Segment pool primary | Segment heap is the primary pool backend (since Win10 1903); legacy pool/`_POOL_HEADER` still coexists (kLFH, CacheAligned, PoolQuota, PoolTrack) |
 
 **Modern kernel pool (Segment Pool) hardening:**
 

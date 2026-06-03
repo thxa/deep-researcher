@@ -200,7 +200,7 @@ The CONSTIFY plugin automatically makes function pointer structures (`ops` struc
 
 ### 2.8 SIZE_OVERFLOW Plugin
 
-This plugin detects and prevents exploitation of a wide range of integer overflow and integer truncation bugs in size expressions of kernel memory allocators. It has been responsible for discovering numerous CVEs, including the $40,000 Pwnium 3 vulnerability in the i915 driver.
+This plugin detects and prevents exploitation of a wide range of integer overflow and integer truncation bugs in size expressions of kernel memory allocators. It detects and blocks exploitation of such bugs at runtime, including the integer overflow behind the $40,000 Pwnium 3 vulnerability in the i915 driver (CVE-2013-0913).
 
 ### 2.9 Respectre Plugin
 
@@ -288,7 +288,7 @@ Android mandates SELinux in enforcing mode on all certified devices:
 - ASLR for all userspace processes since Android 4.0
 - PAN (Privileged Access Never) emulation or hardware support on ARM
 
-**DEFEX (Device Finance EXtended):**
+**DEFEX (Defeat Exploit):**
 
 Samsung's DEFEX security framework (in Samsung's Android builds starting from Android 8/Oreo) restricts root access to applications even after a successful rooting, providing a last line of defense against privilege escalation.
 
@@ -475,7 +475,7 @@ CONFIG_CFI_CLANG=y
 # Shadow Call Stack (ARM64 only)
 CONFIG_SHADOW_CALL_STACK=y
 
-# Intel IBT (x86 only, kernel 6.2+)
+# Intel IBT (x86 only, kernel 5.18+)
 CONFIG_X86_KERNEL_IBT=y
 ```
 
@@ -979,7 +979,7 @@ The Linux kernel's ~30+ million lines of C code are the source of a continuous s
 - **Type confusion**: Casting to an incorrect type
 - **Data races**: Concurrent unsynchronized access to shared data
 
-Google's analysis of Android vulnerabilities found that **~70% of high-severity security bugs** are memory safety issues. Similar patterns exist in the upstream kernel — the majority of CVEs with CVSS scores >= 7.0 involve memory corruption.
+Google's analysis of Android vulnerabilities found that **over 60% of high-severity security bugs** are memory safety issues. Similar patterns exist in the upstream kernel — the majority of CVEs with CVSS scores >= 7.0 involve memory corruption.
 
 ### 9.2 Rust in the Linux Kernel
 

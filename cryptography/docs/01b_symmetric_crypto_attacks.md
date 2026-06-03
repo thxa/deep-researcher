@@ -710,9 +710,9 @@ Even the entire Bitcoin mining network would take a billion years to brute-force
 1. Vaudenay, S., "Security Flaws Induced by CBC Padding — Applications to SSL, IPSEC, WTLS," EUROCRYPT 2002. https://link.springer.com/chapter/10.1007/3-540-46035-7_4
 2. Bardou, R., Focardi, R., Kawahara, Y., Lanet, J.-L., Simionato, L., "Efficient Padding Oracle Attacks on Cryptographic Hardware," CRYPTO 2012. https://eprint.iacr.org/2012/411
 3. Bhargavan, K., Leurent, G., "On the Practical (In-)Security of 64-bit Block Ciphers — Collision Attacks on Sweet32," CCS 2016. CVE-2016-2183. https://sweet32.info/
-4. Duong, T., Rizzo, J., "BEAST: A Practical Attack Against SSL/TLS," 2011. CVE-2011-3389. https://www.beastAttack.com/
+4. Duong, T., Rizzo, J., "BEAST: A Practical Attack Against SSL/TLS," 2011. CVE-2011-3389. https://nvd.nist.gov/vuln/detail/CVE-2011-3389
 5. Möglen, H., Kocher, P., "SSL 3.0 Protocol — CBC Mode Vulnerability," 2011.
-6. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. CVE-2013-0169. https://www.ieee-security.org/TC/SP2013/
+6. AlFardan, N., Paterson, K.G., "Lucky Thirteen: Breaking the TLS and DTLS Protocols," IEEE S&P 2013. CVE-2013-0169. https://www.ieee-security.org/TC/SP2013/papers/4977a526.pdf
 7. Meyer, C., Schwenk, J., "Lessons Learned From Previous SSL/TLS Attacks," IACR Cryptology ePrint Archive, 2013. https://eprint.iacr.org/2013/049
 8. Biryukov, A., Khovratovich, D., "Related-Key Cryptanalysis of the Full AES-192 and AES-256," ASIACRYPT 2009. https://eprint.iacr.org/2009/317
 9. Biryukov, A., Wagner, D., "Slide Attacks," EUROCRYPT 1999. https://link.springer.com/chapter/10.1007/3-540-48910-X_18

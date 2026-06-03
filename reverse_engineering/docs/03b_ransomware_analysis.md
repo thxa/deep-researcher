@@ -1249,7 +1249,7 @@ DECRYPTOR_RESOURCES = {
 1. Michael Sikorski & Andrew Honig, "Practical Malware Analysis," No Starch Press, 2012.
 2. Mandiant, "Ransomware Playbook," 2021.
 3. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
-4. Cuckoo Sandbox documentation, https://cuckoosandbox.org/
+4. Cuckoo Sandbox documentation, https://github.com/cuckoosandbox/cuckoo
 5. IDA Ransomware Decryptor projects, various GitHub repositories.
 6. NIST, "Ransomware Prevention and Response," https://www.nist.gov/
 7. Europol, "Internet Organised Crime Threat Assessment (IOCTA)," 2023.

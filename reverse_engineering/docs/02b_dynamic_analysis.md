@@ -1492,6 +1492,6 @@ detect_anti_debug_pe(sys.argv[1])
 5. WinDbg documentation, https://learn.microsoft.com/en-us/windows-hardware/drivers/debugger/
 6. Dennis Yurichev, "Reverse Engineering for Beginners," https://yurichev.com/writings/RE_for_beginners-en.pdf
 7. Chris Eagle, "The IDA Pro Book," No Starch Press, 2011.
-8. Cuckoo Sandbox documentation, https://cuckoosandbox.org/
+8. Cuckoo Sandbox documentation, https://github.com/cuckoosandbox/cuckoo
 9. Eldad Eilam, "Reversing: Secrets of Reverse Engineering," Wiley, 2005.
 10. SANS Institute, "Reverse Engineering Malware" (FOR610), https://www.sans.org/

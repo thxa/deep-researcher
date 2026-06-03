@@ -1275,11 +1275,11 @@ def train_loop(model, dataloader, optimizer, scheduler, scaler, grad_clip=1.0,
 
 5. Shazeer, N., Stern, M., "Adafactor: Adaptive Learning Rates with Sublinear Memory Cost", ICML 2018. arXiv:1804.04235. https://doi.org/10.48550/arXiv.1804.04235
 
-6. Reddi, S. J., Kale, S., Kumar, S., "On the Convergence of Adam and Beyond", ICLR 2018. arXiv:1704.08459. https://doi.org/10.48550/arXiv.1704.08459
+6. Reddi, S. J., Kale, S., Kumar, S., "On the Convergence of Adam and Beyond", ICLR 2018. arXiv:1904.09237. https://doi.org/10.48550/arXiv.1904.09237
 
 ### Learning Rate Schedules
 
-7. Smith, L. N., "Cyclical Learning Rates for Training Neural Networks", WACV 2017. arXiv:1506.01186. https://doi.org/10.1109/WACV.2017.79
+7. Smith, L. N., "Cyclical Learning Rates for Training Neural Networks", WACV 2017. arXiv:1506.01186. https://doi.org/10.1109/WACV.2017.58
 
 8. Smith, L. N., Topin, N., "Super-Convergence: Very Fast Training of Neural Networks Using Large Learning Rates", arXiv 2018. arXiv:1708.07120. https://doi.org/10.48550/arXiv.1708.07120
 
@@ -1295,7 +1295,7 @@ def train_loop(model, dataloader, optimizer, scheduler, scaler, grad_clip=1.0,
 
 ### Mixed Precision Training
 
-13. Micikevicius, P., Narang, S., Alben, J., Diamos, G., Elsen, E., Garcia, D., Ginsburg, B., Houston, M., Kuchaiev, O., Venkatesh, G., Wu, H., "Mixed Precision Training", ICLR 2018. arXiv:1710.03712. https://doi.org/10.48550/arXiv.1710.03712
+13. Micikevicius, P., Narang, S., Alben, J., Diamos, G., Elsen, E., Garcia, D., Ginsburg, B., Houston, M., Kuchaiev, O., Venkatesh, G., Wu, H., "Mixed Precision Training", ICLR 2018. arXiv:1710.03740. https://doi.org/10.48550/arXiv.1710.03740
 
 14. NVIDIA, "Automatic Mixed Precision (AMP) Documentation", PyTorch AMP. https://pytorch.org/docs/stable/amp.html
 
@@ -1311,7 +1311,7 @@ def train_loop(model, dataloader, optimizer, scheduler, scaler, grad_clip=1.0,
 
 19. Narayanan, D., Shoeybi, M., Casper, J., LeGresley, P., Paul, M., Zhou, W., Li, M., He, Y., "Efficient Large-Scale Language Model Training on GPU Clusters", SC 2021. arXiv:2104.04473. https://doi.org/10.1145/3458817.3476209
 
-20. Zhao, H., et al., "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallelism", VLDB 2023. arXiv:2304.11277. https://doi.org/10.48550/arXiv.2304.11277
+20. Zhao, H., et al., "PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel", VLDB 2023. arXiv:2304.11277. https://doi.org/10.48550/arXiv.2304.11277
 
 21. Ren, Y., Rajbhandari, S., Aminabadi, R. Y., Zhang, Z., Ruwase, O., He, Y., "ZeRO-Offload: Democratizing Billion-Scale Model Training", arXiv 2021. arXiv:2101.06840. https://doi.org/10.48550/arXiv.2101.06840
 
@@ -1345,7 +1345,7 @@ def train_loop(model, dataloader, optimizer, scheduler, scaler, grad_clip=1.0,
 
 32. Chen, T., Xu, B., Zhang, C., Guestrin, C., "Training Deep Nets with Sublinear Memory Cost", arXiv 2016. arXiv:1604.06174. https://doi.org/10.48550/arXiv.1604.06174
 
-33. Dao, T., "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning", arXiv 2023. arXiv:2307.08667. https://doi.org/10.48550/arXiv.2307.08667
+33. Dao, T., "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning", arXiv 2023. arXiv:2307.08691. https://doi.org/10.48550/arXiv.2307.08691
 
 34. Dao, T., Fu, D. Y., Ermon, S., Rudra, A., Re, C., "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness", NeurIPS 2022. arXiv:2205.14135. https://doi.org/10.48550/arXiv.2205.14135
 

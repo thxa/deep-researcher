@@ -407,8 +407,8 @@ Stack canaries are a probabilistic defense -- they can be bypassed if the attack
    ```
 
    In the hxp CTF 2020 kernel-rop challenge, the `hackme_read` function allowed reading
-   up to 0x1000 bytes from a 32-byte stack array, directly leaking the canary at a known
-   offset (index 16 in the 8-byte integer array, at offset `rbp-0x18`).
+   up to 0x1000 bytes from a 128-byte stack array (`int tmp[32]`), directly leaking the
+   canary at a known offset (index 16 in the 8-byte integer array, at offset `rbp-0x20`).
 
 2. **Overwrite without touching the canary**: If the overflow allows writing to
    non-contiguous memory (e.g., an arbitrary write primitive, or a write that skips over
@@ -424,7 +424,8 @@ Stack canaries are a probabilistic defense -- they can be bypassed if the attack
 
 ### 3.5 CONFIG_KSTACK_ERASE
 
-`CONFIG_KSTACK_ERASE` (introduced in Linux 5.10) erases the kernel stack contents on
+`CONFIG_KSTACK_ERASE` (introduced in Linux 6.17 as a rename of the STACKLEAK feature,
+which itself was merged in Linux 4.20) erases the kernel stack contents on
 each return to user space. This prevents information leakage from one syscall's stack
 frames to the next. Without this, a subsequent syscall might be able to read residual
 data (including canary values, kernel pointers, or sensitive data) left on the stack by
@@ -677,7 +678,7 @@ void privesc(void) {
 This directly calls kernel functions from user-space code mapped into the process's
 address space. The attack is blocked by **SMEP** (Supervisor Mode Execution Prevention),
 which prevents the CPU from executing code at user-space addresses when in kernel mode
-(ring 0). SMEP has been enabled by default on supported hardware since Linux 3.7+.
+(ring 0). SMEP has been enabled by default on supported hardware since Linux 3.0.
 
 ### 7.3 Kernel ROP (Return-Oriented Programming)
 

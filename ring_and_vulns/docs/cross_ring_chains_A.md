@@ -163,7 +163,7 @@ vmlaunch                      ; Launch VM with host OS as guest
 If the target runs as a VM under KVM/Xen/VMware, the attacker exploits a VMM bug from inside the guest:
 
 - CVE-2015-2336: VirtualBox VMM escape via crafted HGCM packet
-- CVE-2018-10903: KVM Hyper-V emulation escape
+- CVE-2018-10903: python-cryptography GCM tag-length flaw (not a VM escape)
 - CVE-2019-5595: VMware Workstation VMX process escape
 - CVE-2020-10746: KVM API race condition on KVM_GET_DIRTY_LOG
 - CVE-2022-26730: macOS Virtualization Framework escape
@@ -275,14 +275,14 @@ Stuxnet remains the canonical example of a cross-ring attack with real-world kin
 |-------|------|-----------|--------|
 | 1 | Ring 3 | Initial compromise | Infected USB drives via LNK vulnerability (CVE-2010-2568). Shortcut files with crafted `.lnk` icons triggered automatic execution. |
 | 2 | Ring 3 | Self-propagation | Print Spooler vulnerability (CVE-2010-2729) for network propagation. Windows Share exploitation. |
-| 3 | Ring 3 → Ring 0 | LPE | Two stolen digital certificates (Realtek, JMicron) used to sign kernel drivers. Escalated via `mrxc.sys` and `sys7032.sys` signed kernel drivers. |
-| 4 | Ring 0 | Kernel-level rootkit | Modified `s7otbxdx.dll` (Siemens Step 7 DLL) via API hooking. Intercepted PLCSim communications at kernel level. |
-| 5 | Ring 0 | ICS manipulation | Intercepted and forged Profibus/PROFINET messages to Siemens S7-315 and S7-415 PLCs. Modified centrifuge rotation speeds. |
+| 3 | Ring 3 → Ring 0 | LPE | Two stolen digital certificates (Realtek, JMicron) used to sign kernel drivers. Escalated via `mrxnet.sys` and `mrxcls.sys` signed kernel drivers. |
+| 4 | Ring 0 | Kernel-level rootkit | Replaced `s7otbxdx.dll` (Siemens Step 7 DLL) — renaming the original to `s7otbxsx.dll` and substituting a wrapper DLL. Intercepted PLC block exchange. |
+| 5 | Ring 0 | ICS manipulation | Intercepted and forged Profibus DP messages to Siemens S7-315 and S7-417 PLCs. Modified centrifuge rotation speeds. |
 
 **Key Technical Details:**
 - **CVE-2010-2568**: Windows Shell LNK vulnerability — crafted `.lnk` files with malicious icon handlers executed DLL payloads on USB insertion, requiring zero user interaction beyond browsing the folder.
 - **CVE-2010-2729**: Windows Print Spooler vulnerability — `MsPtSVC` was exploited for lateral movement across air-gapped networks.
-- The kernel drivers (`sys7032.sys`) directly hooked SSDT entries to intercept and modify PLC communication.
+- The kernel drivers (`mrxnet.sys`, `mrxcls.sys`) directly hooked SSDT entries to intercept and modify PLC communication.
 - Rootkit hid malicious files and registry keys in kernel mode via `ZwQueryDirectoryFile` and `ZwQuerySystemInformation` hooks.
 
 **Significance:** Stuxnet demonstrated that Ring 0 compromise enables physical-world damage via ICS manipulation — the first known cyberweapon to cause physical destruction.
@@ -299,7 +299,7 @@ USB (CVE-2010-2568) → Ring 3 → Signed Kernel Driver → Ring 0 →
 
 **Chain: Ring 3 → Ring 0 → SPI Flash / UEFI Implant (effective Ring -2)**
 
-LoJax (identified by ESET) was the first publicly documented UEFI bootkit used in-the-wild, attributed to Sednit/APT28 (Fancy Bear).
+LoJax (identified by ESET) was the first publicly documented UEFI rootkit found in-the-wild, attributed to Sednit/APT28 (Fancy Bear).
 
 **Attack Chain:**
 
@@ -307,7 +307,7 @@ LoJax (identified by ESET) was the first publicly documented UEFI bootkit used i
 |-------|------|-----------|--------|
 | 1 | Ring 3 | Initial compromise | Sednit's usual spear-phishing and 0-day exploits. Downloader deployed. |
 | 2 | Ring 3 → Ring 0 | LPE | Exploited old Windows vulnerabilities for privilege escalation. Used `r77_rootkit` techniques. |
-| 3 | Ring 0 | Driver deployment | LoJax kernel driver (`hddll64.sys`) with stolen/dual-signed certificate. |
+| 3 | Ring 0 | Driver deployment | LoJax abused the legitimately signed `RwDrv.sys` kernel driver (from the RWEverything utility) to access SPI flash. |
 | 4 | Ring 0 → SPI Flash | Bootkit installation | Write to SPI flash via direct hardware access (programmable via `SPI_COMMAND` and `SPI_ADDRESS` registers at MMIO base). |
 | 5 | SPI Flash | UEFI DXE implant | Modified EFI System Partition (ESP) or directly patched UEFI firmware on SPI. The implant runs before OS and survives disk replacement. |
 
@@ -425,7 +425,7 @@ The Equation Group (widely attributed to the NSA TAO) deployed the most sophisti
 | Implant | Ring | Technique | Persistence |
 |---------|------|-----------|-------------|
 | EquationLaser | Ring 3 | Dropper/reconnaissance | Registry, filesystem |
-| EquationDrug | Ring 0 | Kernel-mode driver (`nsalog.sys` — later known as DOUBLEARCS) | Kernel driver with signed certificate |
+| EquationDrug | Ring 0 | Kernel-mode driver (e.g. `mstcp32.sys`, `msndsrv.sys`) | Kernel driver with signed certificate |
 | GrayFish | Ring -2 | SMM implant via re-flashed firmware | Firmware persistence on SPI flash |
 
 **GrayFish SMM Implant — Technical Details:**
@@ -481,17 +481,15 @@ GrayFish is the most advanced component, achieving Ring -2 (SMM) execution:
 
 **Equation Group Key CVEs / Tools:**
 
-The Equation Group toolkit (leaked as "Lost in Translation" / EternalBlue family) includes multiple cross-ring components:
-- **DOUBLEARCS** (EQDRUG): Ring 0 kernel driver
-- **GRAYFISH**: Ring -2 SMM implant
-- **IRONCHEF**: UEFI firmware modification tool
-- **FOSET**: Bootkit framework
-- **YELLLOWBREEZE**: SMM re-flasher component
+The Shadow Brokers' "Lost in Translation" leak (April 2017) contained the FuzzBunch and DanderSpritz frameworks plus SMB/RDP exploits (EternalBlue, EternalRomance, EternalChampion, EternalSynergy) and the DoublePulsar implant. GrayFish and EquationDrug were instead named in Kaspersky's separate February 2015 Equation Group report, and **IRONCHEF** is an NSA ANT-catalog BIOS/SMM implant (HP ProLiant servers) from the 2013 Snowden disclosures:
+- **EquationDrug**: Ring 0 kernel driver
+- **GrayFish**: Ring -2 SMM implant
+- **IRONCHEF**: BIOS/SMM firmware implant (ANT catalog)
 
 ```
 Equation Group Chain (GrayFish):
-Exploit (EternalBlue, etc.) → Ring 3 → DOUBLEARCS driver → Ring 0 →
-  GRAYFISH SPI flash → Ring -2 SMM →
+Exploit (EternalBlue, etc.) → Ring 3 → EquationDrug driver → Ring 0 →
+  GrayFish SPI flash → Ring -2 SMM →
   VFS persistence → Survives OS reinstall + disk replacement
 ```
 
@@ -661,15 +659,15 @@ The attacker escalates from unprivileged (Ring 3) to kernel mode (Ring 0).
 
 | CVE | Vulnerability Type | Windows Version | Technique |
 |-----|--------------------|-----------------|-----------|
-| CVE-2021-1732 | Win32k `xxxCreateWindowEx` UAF | 10/20H2 | Window object type confusion → arbitrary write |
+| CVE-2021-1732 | Win32k `xxxCreateWindowEx` type confusion | 10/20H2 | Window object type confusion → arbitrary write |
 | CVE-2021-31955 | `NtQuerySystemInformation` info leak | 10/2004 | Kernel address leak to defeat KASLR |
-| CVE-2021-31956 | `NtFsControlFile` pool corruption | 10/2004 | Pool fragmentation + overflow → token replace |
+| CVE-2021-31956 | `NtQueryEaFile` integer underflow (NTFS) | 10/2004 | Paged-pool buffer overflow → WNF R/W → EPROCESS token replace |
 | CVE-2020-1054 | Win32k `syscv` integer underflow | 7/10 | Integer underflow → OOB write |
 | CVE-2022-21882 | Win32k `xxxClientAllocWindow` | 10/21H2 | Callback-induced type confusion |
 | CVE-2022-26925 | LSA Spoofing (printnightmare variant) | 10/11 | Authentication relay → local SYSTEM |
 | CVE-2023-21823 | Win32k `xxxDrawGlyphs` overflow | 10/11 | Kernel pool overflow |
-| CVE-2023-21768 | `AF_UNIX` socket double release | 10/11 | UAF → pool corruption → arbitrary write |
-| CVE-2024-21345 | Win32k integer overflow | 10/11 | OOB write in graphics pipeline |
+| CVE-2023-21768 | AFD.sys (`AfdNotifyRemoveIoCompletion`) untrusted pointer dereference | 10/11 | EoP → arbitrary write |
+| CVE-2024-21345 | Windows Kernel `NtQueryInformationThread` double-fetch | 10/11 | Heap-based buffer overflow |
 
 **B. Linux Kernel Exploits:**
 
@@ -861,12 +859,12 @@ When the target runs as a VM, the attacker exploits VMM bugs from inside the gue
 
 | CVE | VMM | Escape Method | Ring Boundary |
 |-----|-----|---------------|---------------|
-| CVE-2015-2336 | VirtualBox | HGCM packet processing | Guest → Host |
-| CVE-2016-6258 | QEMU | Heap overflow in `es1370` | Guest → Host |
+| CVE-2015-2336 | VMware Workstation/Player | Improper memory allocation in `TPView.dll` | Guest → Host |
+| CVE-2016-6258 | Xen | PV pagetable update fast-path flaw (`arch/x86/mm.c`, XSA-182) | Guest → Host |
 | CVE-2018-10903 | KVM | `kvm_vm_ioctl_assign_device` | Guest → Host via VFIO |
 | CVE-2019-5595 | VMware | VMX process memory access | Guest → Host |
-| CVE-2020-10746 | KVM | Race condition in `KVM_GET_DIRTY_LOG` | Guest → Host |
-| CVE-2022-26730 | macOS Hypervisor | Virtualization Framework | Guest → Host |
+| CVE-2020-10746 | Red Hat Infinispan | Missing authorization on REST/HotRod APIs (not a VM escape) | Local |
+| CVE-2022-26730 | macOS ColorSync/CMM | OOB write parsing ICC color profiles | Local code exec |
 | CVE-2023-32629 | Ubuntu kernel (OverlayFS) | Container escape to host | Container → Host |
 | CVE-2024-21626 | runc | Container breakout via `EXEC_PATH` | Container → Host |
 
@@ -876,7 +874,7 @@ When the target runs as a VM, the attacker exploits VMM bugs from inside the gue
 |------|------|--------|-------------|
 | SubVirt | 2006 | Microsoft Research | Academic proof-of-concept VM-based rootkit |
 | Blue Pill | 2006 | Joanna Rutkowska | AMD SVM-based hypervisor rootkit |
-| Vitriol | 2006 | Dino Dai Zovi / Thierry Zoller | Mac OS X hypervisor rootkit |
+| Vitriol | 2006 | Dino A. Dai Zovi | Mac OS X (Intel VT-x) hypervisor rootkit PoC |
 | HyperDbg | 2023 | Open source | Debugging framework using Intel VT-x |
 | HyperHide | 2023 | Open source | Anti-anti-debug using VT-x (hides debugging) |
 
@@ -1085,12 +1083,12 @@ Intel ME (Management Engine) is an independent microcontroller running MINIX 3, 
 | CVE | Year | ME Component | Impact |
 |-----|------|-------------|--------|
 | CVE-2017-3710 (INTEL-SA-00086) | 2017 | AMT / ISM / SBT | Remote code execution in ME, full system takeover |
-| CVE-2017-5705 (INTEL-SA-00088) | 2017 | ME Kernel | RCE via AMT unauthenticated access |
+| CVE-2017-5705 (INTEL-SA-00086) | 2017 | ME Kernel | Buffer overflows in ME firmware kernel, code execution via local access |
 | CVE-2017-5706 | 2017 | ME Kernel | Privilege escalation within ME |
 | CVE-2019-0090 (INTEL-SA-00213) | 2019 | ME / TXE | Local escalation via ME |
-| CVE-2019-0086 (INTEL-SA-00233) | 2019 | ME Active Management | Authentication bypass |
-| CVE-2020-8758 (INTEL-SA-00391) | 2020 | CSME | Buffer overflow in AMT |
-| CVE-2021-0145 (INTEL-SA-00467) | 2021 | TXE / SPS | Local escalation of privilege |
+| CVE-2019-0086 (INTEL-SA-00213) | 2019 | DAL / SPS / CSME / TXE | Local privilege escalation |
+| CVE-2020-8758 (INTEL-SA-00404) | 2020 | AMT / ISM network | Improper buffer restriction, network privilege escalation |
+| CVE-2021-0145 (INTEL-SA-00561) | 2021 | Fast Store Forwarding Predictor | Information disclosure via local access |
 
 **Method 2: ME Firmware Replacement via SPI Flash (from SMM)**
 
@@ -1814,7 +1812,7 @@ is_anomalous = clf.predict(features)
 4. Kaspersky. "CosmicStrand: A sophisticated UEFI bootkit." 2022.
 5. ESET. "BlackLotus: UEFI bootkit that bypasses Secure Boot." 2023.
 6. Positive Technologies. "Intel ME vulnerabilities: INTEL-SA-00086." 2017.
-7. Positive Technologies. "How to hack Intel ME." Black Hat EU, 2017.
+7. Positive Technologies (Ermolov, M., Goryachy, M.). "How to Hack a Turned-Off Computer, or Running Unsigned Code in Intel Management Engine." Black Hat Europe, 2017.
 8. Ermolov, M., Goryachy, M. "Intel ME: The Way of the Static Analysis." 2019.
 9. Rutkowska, J. "Understanding Intel Management Engine." Invisible Things Lab, 2009.
 10. Microsoft. "Kernel Patch Protection (KPP / PatchGuard)." Windows Internals.
@@ -1844,9 +1842,9 @@ is_anomalous = clf.predict(features)
 7. Kocher, P. et al. "Spectre Attacks: Exploiting Speculative Execution." *IEEE S&P*. 2019.
 8. CVE-2022-0847. "Dirty Pipe: stale PIPE_BUF_FLAG_CAN_MERGE." *NVD*. 2022.
 9. CVE-2016-5195. "Dirty COW: race condition in mm/gup.c." *NVD*. 2016.
-10. Roden, M. "DirtyCred: Generic Escalation Technique." *Black Hat USA*. 2022.
+10. Lin, Z., Wu, Y., Xing, X. "Cautious: A New Exploitation Method! No Pipe but as Nasty as Dirty Pipe." *Black Hat USA*. 2022.
 11. Matusiewicz, K. & Pęczkowski, M. "Dirty Page Tables: Unprivileged Memory Corruption." *Black Hat Europe*. 2024.
 12. Triplett, D. "Survey of Remote Attestation Techniques." 2022.
-13. skape. "A Guide to Kernel Exploitation: Attacking the Core." *Phrack*. 2007.
+13. twiz, sgrakkyu. "Attacking the Core: Kernel Exploiting Notes." *Phrack* 64:6. 2007.
 14. MITRE. "ATT&CK: Privilege Escalation Techniques." https://attack.mitre.org/techniques/enterprise/. 2024.
 15. Perla, E. & Oldani, M. "A Guide to Kernel Exploitation: Attacking the Core." *Syngress*. 2010.

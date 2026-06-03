@@ -168,6 +168,6 @@ For researchers investigating protocol vulnerabilities and developing new attack
 11. Suricata IDS/IPS Documentation. https://suricata.io/documentation/
 12. Wireshark Network Protocol Analyzer Documentation. https://www.wireshark.org/docs/
 13. NIST, "Zero Trust Architecture," SP 800-207, August 2020. https://csrc.nist.gov/publications/detail/sp/800-207/final
-14. Vanhoef, M., "Dragonblood: A Security Analysis of WPA3's SAE," IEEE S&P 2020. https://dragonbloodAttack.com
+14. Vanhoef, M., "Dragonblood: A Security Analysis of WPA3's SAE," IEEE S&P 2020. https://wpa3.mathyvanhoef.com/
 15. Armor, Aruba Networks, "802.11 Deauthentication Attack," DEF CON presentations. https://www.defcon.org
 16. RFC 7258, "Pervasive Monitoring Is an Attack," May 2014. https://www.rfc-editor.org/rfc/rfc7258

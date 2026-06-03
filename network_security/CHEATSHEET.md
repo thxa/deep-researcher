@@ -950,7 +950,7 @@ reg add "HKLM\System\CurrentControlSet\Services\NetBT\Parameters\Interfaces\tcpi
 1. Rescorla, E., "The Transport Layer Security (TLS) Protocol Version 1.3," RFC 8446, August 2018. https://www.rfc-editor.org/rfc/rfc8446
 2. Kaminsky, D., "DNS Infrastructure Attacks," 2008. https://www.doxpara.com
 3. Vanhoef, M., "Key Reinstallation Attacks (KRACK)," CCS 2017. https://krackattacks.com
-4. Vanhoef, M., Ronen, E., "Dragonblood: Security Analysis of WPA3's SAE," IEEE S&P 2020. https://dragonbloodAttack.com
+4. Vanhoef, M., Ronen, E., "Dragonblood: Security Analysis of WPA3's SAE," IEEE S&P 2020. https://wpa3.mathyvanhoef.com/
 5. NIST, "Zero Trust Architecture," SP 800-207, August 2020. https://csrc.nist.gov/publications/detail/sp/800-207/final
 6. Suricata IDS/IPS Documentation. https://suricata.io/documentation/
 7. Wireshark Documentation. https://www.wireshark.org/docs/

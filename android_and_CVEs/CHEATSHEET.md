@@ -5,7 +5,7 @@
 | Component | Definition |
 |-----------|-----------|
 | **SELinux (SEAndroid)** | Mandatory access control enforcing type-based policy on all processes and resources since Android 5.0 |
-| **seccomp-BPF** | Syscall filtering reducing kernel attack surface by ~71%; blocks ~271 of ~380 syscalls for apps |
+| **seccomp-BPF** | Syscall filtering for apps; Android's permissive app filter blocks 17 of 271 syscalls on arm64 and 70 of 364 on arm |
 | **Verified Boot (AVB)** | Boot chain integrity via dm-verity Merkle trees, signed vbmeta, and RPMB rollback protection |
 | **GKI (Generic Kernel Image)** | Unified kernel with stable KMI allowing Google to ship kernel patches independently of SoC vendors |
 | **Project Treble** | HAL/framework separation via HIDL/AIDL interfaces, enabling faster OS updates |
@@ -38,9 +38,9 @@
 | CVE-2023-21036 | Pixel Markup | aCropalypse: cropped screenshots leaked original image data |
 | CVE-2023-21273 | Bluetooth | Zero-click Bluetooth RCE |
 | CVE-2023-4211 | ARM Mali GPU | UAF in Mali GPU memory processing; exploited in the wild |
-| CVE-2023-33063 | Qualcomm Adreno | UAF in Adreno DSI handler; exploited in the wild |
+| CVE-2023-33063 | Qualcomm DSP | UAF in DSP Services during HLOS-to-DSP remote call; exploited in the wild |
 | CVE-2023-33107 | Qualcomm Adreno | Integer overflow in Adreno GPU driver; exploited in the wild |
-| CVE-2024-43047 | Qualcomm KGSL | UAF in DMA-buf refcount; CISA KEV listed |
+| CVE-2024-43047 | Qualcomm FastRPC/DSP | UAF in DSP Service memory map handling (DMA handle FD); CISA KEV listed |
 | CVE-2024-36971 | Kernel (net) | UAF in network route management; actively exploited |
 | CVE-2025-54957 | Dolby Unified Decoder | Zero-click RCE via audio decoder in Google Messages |
 | CVE-2025-36934 | Pixel BigWave driver | UAF/kernel arbitrary RW via /dev/bigwave AV1 accelerator |
@@ -156,7 +156,7 @@ adb shell ss -tlnp                                 # Listening TCP sockets
 | Kernel Lockdown | `CONFIG_LOCK_DOWN_KERNEL` | Restricts root from modifying running kernel |
 | Init on Alloc | `CONFIG_INIT_ON_ALLOC_DEFAULT_ON` | Zeroes newly allocated pages |
 | Init on Free | `CONFIG_INIT_ON_FREE_DEFAULT_ON` | Zeroes freed pages (memory sanitization) |
-| seccomp-BPF | `CONFIG_SECCOMP` / `CONFIG_SECCOMP_FILTER` | Syscall filtering; Android blocks ~271/~380 syscalls for apps |
+| seccomp-BPF | `CONFIG_SECCOMP` / `CONFIG_SECCOMP_FILTER` | Syscall filtering; Android's app filter blocks 17/271 syscalls on arm64 and 70/364 on arm |
 | ptrace restriction | `CONFIG_SECURITY_PTRACE_RESTRICT` | Limits ptrace scope |
 | dmesg restrict | `CONFIG_SECURITY_DMESG_RESTRICT` | Blocks unprivileged dmesg access |
 | kptr restrict | `CONFIG_SECURITY_KPTR_RESTRICT` | Hides kernel pointers from userspace |

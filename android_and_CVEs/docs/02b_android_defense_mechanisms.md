@@ -58,7 +58,7 @@ The Android kernel (based on the Android Common Kernel, ACK) applies a substanti
 
 ### 2.1 KASLR (Kernel Address Space Layout Randomization)
 
-KASLR randomizes the kernel's virtual base address at boot time, forcing attackers to discover the kernel's location before they can reliably target specific functions or data structures. On arm64, Android kernels typically provide 13-21 bits of entropy for the kernel image and additional entropy for modules and the linear mapping region.
+KASLR randomizes the kernel's virtual base address at boot time, forcing attackers to discover the kernel's location before they can reliably target specific functions or data structures. On arm64, Android kernels typically provide 13-25 bits of entropy for the kernel image and additional entropy for modules and the linear mapping region.
 
 **Bypasses:** KASLR is undermined by information leaks. Kernel pointer leaks via `/proc`, `dmesg`, or side channels (e.g., timing-based KASLR derandomization, speculative execution attacks like PREFETCH-based oracles) have been repeatedly demonstrated. Android mitigates this with `kptr_restrict=2`, `dmesg_restrict=1`, and restricted `/proc`/`/sys` access via SELinux. However, a single information disclosure vulnerability in a reachable kernel interface can negate KASLR.
 
@@ -74,7 +74,7 @@ These are hardware-enforced and have no known software bypasses — they fundame
 
 ARMv8.3-A introduced Pointer Authentication, which uses spare bits in 64-bit pointers to store a cryptographic authentication code (PAC). The kernel and userspace sign pointers (return addresses, function pointers) using a per-process secret key. Any corruption of a signed pointer invalidates the PAC, causing a fault on use.
 
-**Effectiveness:** PAC provides probabilistic protection — the authentication codes are typically 7-16 bits wide depending on virtual address space configuration. Brute-force attacks against PAC are impractical for single-shot exploits but potentially feasible in scenarios allowing repeated attempts (e.g., forking servers). Google's Pixel devices use PAC for both kernel and userspace from Pixel 6 onward.
+**Effectiveness:** PAC provides probabilistic protection — the authentication codes are typically 7-16 bits wide depending on virtual address space configuration. Brute-force attacks against PAC are impractical for single-shot exploits but potentially feasible in scenarios allowing repeated attempts (e.g., forking servers). Google's Pixel devices first ship PAC-capable silicon with the Pixel 8 (Tensor G3, ARMv9.0-A); earlier Pixels through Pixel 7 use ARMv8.2-A cores that do not implement PAC.
 
 **Known attacks:** The PACMAN attack (MIT, 2022) demonstrated speculative execution can be used to test PAC values without triggering a fault, effectively brute-forcing the PAC in certain microarchitectures. However, PACMAN requires an existing memory corruption vulnerability and a specific speculative execution window, making it a partial weakening rather than a complete bypass.
 
@@ -144,7 +144,7 @@ Android's face authentication supports Class 2 (Weak) and Class 3 (Strong) tiers
 
 **Janus (CVE-2017-13156):** Exploited the fact that the Android runtime could execute DEX files, and the APK (ZIP) format allows prepended data. An attacker could prepend a valid DEX file to a signed APK. The v1 signature remained valid (it only signs ZIP entries, not prepended data), but the runtime would execute the prepended DEX code. This allowed complete replacement of app logic while preserving the original signature. **v2 signing blocks this** because it signs the entire file contents.
 
-**FakeID (CVE-2014-8609):** Exploited a flaw in Android's certificate chain validation for APK signatures. Android did not verify that the issuer of a certificate in the chain actually signed the subject certificate. An attacker could construct a certificate chain claiming to be issued by Adobe (which had special Flash plugin privileges) or other privileged signers. This granted the malicious app elevated privileges. Fixed in Android 4.4/5.0 with proper chain validation.
+**FakeID (CVE-2014-0973):** Exploited a flaw in Android's certificate chain validation for APK signatures. Android did not verify that the issuer of a certificate in the chain actually signed the subject certificate. An attacker could construct a certificate chain claiming to be issued by Adobe (which had special Flash plugin privileges) or other privileged signers. This granted the malicious app elevated privileges. Fixed in Android 4.4/5.0 with proper chain validation.
 
 **Master Key (CVE-2013-4787):** ZIP files can contain duplicate filenames. Android's signature verification read one entry, but the installer extracted a different entry with the same name, allowing substitution of arbitrary files within a signed APK.
 
@@ -203,7 +203,7 @@ The filter operates in strict mode: any blocked syscall kills the process rather
 
 ### 6.3 Attack Surface Reduction
 
-The seccomp filter significantly reduces the kernel attack surface reachable from app context. Many kernel vulnerabilities (particularly in subsystems like perf events, keyrings, and namespaces) become unexploitable from app context because the relevant syscalls are blocked before reaching the kernel. Google has stated that seccomp filters block approximately 271 out of ~380 arm64 syscalls for 64-bit processes, and even more for 32-bit processes.
+The seccomp filter significantly reduces the kernel attack surface reachable from app context. Many kernel vulnerabilities (particularly in subsystems like perf events, keyrings, and namespaces) become unexploitable from app context because the relevant syscalls are blocked before reaching the kernel. Google has stated that the seccomp filter blocks 17 of the 271 arm64 syscalls for 64-bit processes (allowing the remaining ~254), and blocks 70 of 364 syscalls for 32-bit processes.
 
 **Limitations:**
 - Seccomp cannot filter `ioctl` subcommands granularly — it can block the `ioctl` syscall entirely or allow it, but cannot distinguish between `ioctl` command codes. Since many Android drivers communicate via `ioctl`, the syscall must remain permitted, and driver-specific vulnerabilities remain reachable.

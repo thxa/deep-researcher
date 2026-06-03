@@ -96,10 +96,10 @@ This track covers 10 core domains of IoT and embedded security, culminating in a
 3. IEC 62443: Industrial Communication Networks — Network and System Security. International Electrotechnical Commission.
 4. FDA. Content of Premarket Submissions for Management of Cybersecurity Risks in Medical Devices (2023). U.S. Food and Drug Administration.
 5. ARM Security Technology — Building a Secure System using TrustZone for ARMv8-M (ARM DEN0028A). ARM Limited.
-6. JSOF Research Lab. Ripple20: 19 Vulnerabilities Affecting Millions of IoT Devices (2020). https://ripple20.com/
+6. JSOF Research Lab. Ripple20: 19 Vulnerabilities Affecting Millions of IoT Devices (2020). https://www.jsof-tech.com/disclosures/ripple20/
 7. Armis Labs. Urgent/11: Critical Vulnerabilities in VxWorks Affecting Millions of Critical Devices (2019). https://armis.com/urgent11/
 8. Forescout Research Labs. Amnesia:33: TCP/IP Stack Vulnerabilities Affecting Millions of IoT Devices (2020). https://www.forescout.com/blog/amnesia33/
-9. Forescout & JSOF. Name:Wreck: DNS Vulnerabilities Affecting Over 100 Million Devices (2021). https://namewreck.io/
+9. Forescout & JSOF. Name:Wreck: DNS Vulnerabilities Affecting Over 100 Million Devices (2021). https://www.forescout.com/research-labs/namewreck/
 10. Mirai Source Code Analysis. MalwareMustDie. https://malwaremustdie.org/
 11. KrebsOnSecurity. "All Mirai Variants" and DDoS Analysis. https://krebsonsecurity.com/
 12. DEF CON IoT Village Presentations (2015–2024). https://iotvillage.org/

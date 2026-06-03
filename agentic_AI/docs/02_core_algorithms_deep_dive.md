@@ -1411,7 +1411,7 @@ The choice of algorithm is a function of four key dimensions: **data type** (tab
 
 26. Radford, A., Metz, L., & Chintala, S., "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks", *International Conference on Learning Representations (ICLR)*, 2016. arXiv: [1511.06434](https://arxiv.org/abs/1511.06434)
 
-27. Sohl-Dickstein, J., Weiss, E., Maheswaranathan, N., & Ganguli, S., "Deep Unsupervised Learning Using Nonequilibrium Thermodynamics", *Proceedings of the 32nd International Conference on Machine Learning (ICML)*, pp. 2256–2264, 2015. arXiv: [1503.03585](https://arxiv.org/abs/1503.03585)
+27. Sohl-Dickstein, J., Weiss, E., Maheswaranathan, N., & Ganguli, S., "Deep Unsupervised Learning Using Nonequilibrium Thermodynamics", *Proceedings of the 32nd International Conference on Machine Learning (ICML)*, pp. 2256–2265, 2015. arXiv: [1503.03585](https://arxiv.org/abs/1503.03585)
 
 28. Song, Y., Sohl-Dickstein, J., Kingma, D. P., Kumar, A., Ermon, S., & Poole, B., "Score-Based Generative Modeling through Stochastic Differential Equations", *International Conference on Learning Representations (ICLR)*, 2021. arXiv: [2011.13456](https://arxiv.org/abs/2011.13456)
 
@@ -1435,7 +1435,7 @@ The choice of algorithm is a function of four key dimensions: **data type** (tab
 
 38. He, K., Zhang, X., Ren, S., & Sun, J., "Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification", *Proceedings of the IEEE International Conference on Computer Vision (ICCV)*, pp. 1026–1034, 2015. arXiv: [1502.01852](https://arxiv.org/abs/1502.01852)
 
-39. Lin, T., Goyal, P., Girshick, R., He, K., & Dollar, P., "Focal Loss for Dense Object Detection", *Proceedings of the IEEE International Conference on Computer Vision (ICCV)*, pp. 2981–2988, 2017. arXiv: [1708.02002](https://arxiv.org/abs/1708.02002)
+39. Lin, T., Goyal, P., Girshick, R., He, K., & Dollar, P., "Focal Loss for Dense Object Detection", *Proceedings of the IEEE International Conference on Computer Vision (ICCV)*, pp. 2980–2988, 2017. arXiv: [1708.02002](https://arxiv.org/abs/1708.02002)
 
 40. Friedman, J. H., "Greedy Function Approximation: A Gradient Boosting Machine", *Annals of Statistics*, 29(5):1189–1232, 2001. DOI: [10.1214/aos/1013203451](https://doi.org/10.1214/aos/1013203451)
 

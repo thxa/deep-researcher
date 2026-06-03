@@ -865,7 +865,7 @@ YOUR RESPONSE (following system instructions only):
 4. Microsoft (2023). "Lessons from Red Teaming Language Models."
 5. Ruan, W., et al. (2023). "GPT-4 Code Interpreter: Dual-Use Alignment." arXiv.
 6. Deng, B., et al. (2023). "LLM Agent Security: Attack and Defense." arXiv.
-7. Wang, Z., et al. (2023). "Describe, Explain, Plan and Select: Interactive Planning with LLMs." ICML.
+7. Wang, Z., et al. (2023). "Describe, Explain, Plan and Select: Interactive Planning with LLMs." NeurIPS.
 8. Park, J.S., et al. (2023). "Generative Agents: Interactive Simulacra of Human Behavior." UIST.
 
 ## References
@@ -876,7 +876,7 @@ YOUR RESPONSE (following system instructions only):
 4. Microsoft (2023). "Lessons from Red Teaming Language Models." *Microsoft Research*.
 5. Ruan, W., et al. (2023). "GPT-4 Code Interpreter: Dual-Use Alignment." *arXiv*.
 6. Deng, B., et al. (2023). "LLM Agent Security: Attack and Defense." *arXiv*.
-7. Wang, Z., et al. (2023). "Describe, Explain, Plan and Select: Interactive Planning with LLMs." *ICML*.
+7. Wang, Z., et al. (2023). "Describe, Explain, Plan and Select: Interactive Planning with LLMs." *NeurIPS*.
 8. Park, J.S., et al. (2023). "Generative Agents: Interactive Simulacra of Human Behavior." *UIST*.
 9. Zou, A., et al. (2023). "Universal and Transferable Adversarial Attacks on Aligned Language Models." *arXiv:2307.15043*.
 10. OWASP (2023). "OWASP Top 10 for LLM Applications." https://owasp.org/www-project-top-10-for-large-language-model-applications/

@@ -24,7 +24,7 @@
 
 Offensive Security (rebranded to **OffSec** in 2023) was founded around 2006-2007 by **Mati Aharoni** and his wife Iris, with the company formally incorporated as Offensive Security LLC in 2008. From its inception, the organization was built by practitioners for practitioners --- security professionals who had spent years performing real-world penetration tests and vulnerability research, and who recognized that the existing cybersecurity training landscape was fundamentally disconnected from actual offensive operations.
 
-The company's headquarters are in New York City, and it operates internationally. In September 2019, OffSec received its first venture capital investment from Spectrum Equity, and **Ning Wang** was appointed CEO. Key figures in the organization's history include **Jim O'Gorman** (Chief Strategy Officer), **Devon Kearns** (Technical Operations), and **Dr. Matteo Memelli** (R&D), all of whom have contributed to both training content and the broader security research community.
+The company's headquarters are in New York City, and it operates internationally. In September 2018, OffSec received its first growth investment from Spectrum Equity, and **Ning Wang** was appointed CEO in January 2019. Key figures in the organization's history include **Jim O'Gorman** (Chief Strategy Officer), **Devon Kearns** (Technical Operations), and **Dr. Matteo Memelli** (R&D), all of whom have contributed to both training content and the broader security research community.
 
 ### The "Try Harder" Philosophy
 
@@ -206,7 +206,7 @@ OffSec certifications have significant traction in the U.S. Department of Defens
 
 - **DoD 8140 / DoD 8570**: The DoD Directive 8140 (which superseded DoD 8570) establishes baseline certification requirements for the DoD's cybersecurity workforce. While the OSCP has been recognized as meeting requirements for certain work roles in the DoD Cyber Workforce Framework (DCWF), the OSEE's positioning is more nuanced. The OSEE certification is relevant to the most advanced work roles in the framework, particularly those aligned with **Exploitation Analysis (EA)** and **Vulnerability Assessment and Management** categories.
 
-- **Public sector partnerships**: OffSec explicitly partners with **Carahsoft** to provide training to U.S. public sector customers through preferred contract vehicles (GSA Schedule, NASA SEWP, and various state/local government contracts). Their public sector page highlights endorsements from military cyber units, including the U.S. Army Cyber Protection Brigade.
+- **Public sector partnerships**: OffSec explicitly partners with **Carahsoft** to provide training to U.S. public sector customers through preferred contract vehicles (NASA SEWP, ITES-SW2, and various state/local cooperative contracts). Their public sector page highlights endorsements from military cyber units, including the U.S. Army Cyber Protection Brigade.
 
 - **NICE/NIST Framework alignment**: OffSec has mapped its training library to the NICE/NIST Workforce Framework for Cybersecurity, and its content aligns with key job roles defined in the **DoD Cyber Workforce Framework (DCWF)**. For government organizations building cyber teams, this alignment makes OffSec certifications directly mappable to workforce requirements.
 

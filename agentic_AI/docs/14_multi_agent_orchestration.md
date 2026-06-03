@@ -1544,9 +1544,9 @@ Multi-agent orchestration is the backbone of production AI systems. The choice o
 
 3. Microsoft Research. "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation." AutoGen Documentation, 2024. URL: https://microsoft.github.io/autogen/
 
-4. Wu, Q., Bansal, G., Zhang, J., Wu, Y., Li, B., Zhu, E., Jiang, L., Zhang, X., Gonzalez, J., Awadallah, A. H., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation." arXiv preprint arXiv:2308.08155, 2023.
+4. Wu, Q., Bansal, G., Zhang, J., Wu, Y., Li, B., Zhu, E., Jiang, L., Zhang, X., Zhang, S., Liu, J., Awadallah, A. H., White, R. W., Burger, D., Wang, C., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation." arXiv preprint arXiv:2308.08155, 2023.
 
-5. Hong, S., Zhong, M., Chen, Z., Zheng, X., Qi, Y., Wang, J., "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework." In Proceedings of the International Conference on Learning Representations (ICLR 2024), arXiv:2308.00352.
+5. Hong, S., Zhuge, M., Chen, J., Zheng, X., Cheng, Y., Wang, J., "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework." In Proceedings of the International Conference on Learning Representations (ICLR 2024), arXiv:2308.00352.
 
 6. Hohpe, G., Woolf, B., *Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions.* Addison-Wesley, 2003. ISBN: 978-0321200686.
 
@@ -1556,13 +1556,13 @@ Multi-agent orchestration is the backbone of production AI systems. The choice o
 
 9. Harel, D., "Statecharts: A Visual Formalism for Complex Systems." *Science of Computer Programming*, vol. 8, no. 3, pp. 231–274, 1987. DOI: 10.1016/0167-6423(87)90035-9.
 
-10. Dean, J., Ghemawat, S., "MapReduce: Simplified Data Processing on Large Clusters." In *Proceedings of the 6th USENIX Symposium on Operating Systems Design and Implementation (OSDI '04)*, pp. 137–150, 2004. DOI: 10.1145/1327452.1327492.
+10. Dean, J., Ghemawat, S., "MapReduce: Simplified Data Processing on Large Clusters." In *Proceedings of the 6th USENIX Symposium on Operating Systems Design and Implementation (OSDI '04)*, pp. 137–150, 2004.
 
 11. Netflix Technology Blog. "Circuit Breaker Pattern." In *Netflix TechBlog*, 2012. See also: Netflix Hystrix. URL: https://netflixtechblog.com/
 
 12. Richardson, C., *Microservices Patterns: With Examples in Java.* Manning Publications, 2018. ISBN: 978-1617294549. (Covers circuit breaker, retry, and timeout patterns applicable to distributed agent systems.)
 
-13. van der Aalst, W. M. P., ter Hofstede, A. H. M., Kiepuszewski, B., Barros, A. P., "Workflow Patterns." *Distributed and Parallel Databases*, vol. 14, no. 1, pp. 5–51, 2003. DOI: 10.1023/A:1022843620075.
+13. van der Aalst, W. M. P., ter Hofstede, A. H. M., Kiepuszewski, B., Barros, A. P., "Workflow Patterns." *Distributed and Parallel Databases*, vol. 14, no. 1, pp. 5–51, 2003. DOI: 10.1023/A:1022883727209.
 
 14. Russell, N., ter Hofstede, A. H. M., van der Aalst, W. M. P., Mulyar, N., "Workflow Control-Flow Patterns: A Revised View." BPM Center Report BPM-06-22, 2006. URL: https://www.workflowpatterns.com/
 
@@ -1570,27 +1570,27 @@ Multi-agent orchestration is the backbone of production AI systems. The choice o
 
 16. OpenTelemetry Authors. "OpenTelemetry: A Unified Observability Framework." OpenTelemetry Documentation, 2024. URL: https://opentelemetry.io/
 
-17. Park, J. S., O'Brien, J. C., Stern, J., Shu, W., "Generative Agents: Interactive Simulacra of Human Behavior." In *Proceedings of the 28th ACM Symposium on User Interface Software and Technology (UIST 2023)*, arXiv:2304.03442.
+17. Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., Bernstein, M. S., "Generative Agents: Interactive Simulacra of Human Behavior." In *Proceedings of the 36th ACM Symposium on User Interface Software and Technology (UIST 2023)*, arXiv:2304.03442.
 
-18. Qian, C., Wang, J., Zhong, M., Li, W., Wen, Z., Hong, S., Zhang, Y., "ChatDev: Communicative Agents for Software Development." In *Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024)*, arXiv:2307.07924.
+18. Qian, C., Liu, W., Liu, H., Chen, N., Dang, Y., Li, J., Yang, C., Chen, W., Su, Y., Cong, X., Xu, J., Li, D., Liu, Z., Sun, M., "ChatDev: Communicative Agents for Software Development." In *Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024)*, arXiv:2307.07924.
 
-19. Li, J., Chaudhary, V., Zhang, B., "AutoGen Studio: A No-Code Platform for Building Multi-Agent Workflows." Microsoft Research, 2024. arXiv:2402.18378.
+19. Dibia, V., Chen, J., Bansal, G., Syed, S., Fourney, A., Zhu, E., Wang, C., Amershi, S., "AutoGen Studio: A No-Code Platform for Building Multi-Agent Workflows." Microsoft Research, 2024. arXiv:2408.15247.
 
 20. Wang, L., Ma, C., Feng, X., Zhang, Z., Yang, H., Zhang, J., Chen, Z., Tang, J., Chen, X., Lin, Y., Zhao, W. X., Wei, Z., Liu, W., "A Survey on Large Language Model Based Autonomous Agents." *Frontiers of Computer Science*, vol. 18, no. 6, 2024. arXiv:2308.11432.
 
-21. Talebirad, Y., Nadiri, A., "Multi-Agent Collaboration: Harnessing the Power of Cooperative LLM Agents for Complex Task Solving." arXiv preprint arXiv:2304.03266, 2023.
+21. Talebirad, Y., Nadiri, A., "Multi-Agent Collaboration: Harnessing the Power of Cooperative LLM Agents for Complex Task Solving." arXiv preprint arXiv:2306.03314, 2023.
 
 22. Wu, Q., Zhang, J., Wu, Y., Bansal, G., Zhu, E., Gonzalez, J., Awadallah, A. H., "AutoGen + LangGraph: Building Stateful Multi-Agent Workflows." Microsoft Research Blog, 2024.
 
-23. Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., Yao, S., "Reflexion: Language Agents with Verbal Reinforcement Learning." In *Advances in Neural Information Processing Systems (NeurIPS 2023)*, arXiv:2303.11366.
+23. Shinn, N., Cassano, F., Berman, E., Gopinath, A., Narasimhan, K., Yao, S., "Reflexion: Language Agents with Verbal Reinforcement Learning." In *Advances in Neural Information Processing Systems (NeurIPS 2023)*, arXiv:2303.11366.
 
 24. Signficant Gravitas. "AutoGPT: An Autonomous GPT-4 Agent." GitHub Repository, 2023. URL: https://github.com/Significant-Gravitas/AutoGPT
 
 25. Cormen, T. H., Leiserson, C. E., Rivest, R. L., Stein, C., *Introduction to Algorithms*, 4th Edition. MIT Press, 2022. ISBN: 978-0262046305. (Covers DAGs, topological sort, and algorithmic foundations relevant to orchestration dependency resolution.)
 
-26. Dijkstra, E. W., "Solution of a Problem in Concurrent Programming Control." *Communications of the ACM*, vol. 8, no. 9, p. 569, 1965. DOI: 10.1145/365559.366025. (Foundational work on mutual exclusion and concurrency control.)
+26. Dijkstra, E. W., "Solution of a Problem in Concurrent Programming Control." *Communications of the ACM*, vol. 8, no. 9, p. 569, 1965. DOI: 10.1145/365559.365617. (Foundational work on mutual exclusion and concurrency control.)
 
-27. Harel, D., Politi, M., *Modeling Reactive Systems with Statecharts: The Statemate Approach.* McGraw-Hill, 1998. ISBN: 978-0070262051.
+27. Harel, D., Politi, M., *Modeling Reactive Systems with Statecharts: The Statemate Approach.* McGraw-Hill, 1998. ISBN: 978-0070262058.
 
 28. Kleppmann, M., *Designing Data-Intensive Applications.* O'Reilly Media, 2017. ISBN: 978-1449373320. (Covers distributed systems patterns including fan-out/fan-in, map-reduce, and fault tolerance.)
 

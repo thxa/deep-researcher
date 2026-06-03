@@ -1389,15 +1389,15 @@ void spray_bpf_map(int map_fd, unsigned long *data, int data_len) {
 - Allowed out-of-bounds read/write on map values
 - Fix: improved bounds tracking precision
 
-**CVE-2022-0506 (eBPF bounds confusion):**
-- `bpf_skb_{push,pull}` changes packet size but verifier didn't track it
+**eBPF packet-size bounds confusion:**
+- `bpf_skb_{push,pull}` changes packet size but the verifier didn't track it
 - Allowed OOB access on packet data
 
-**CVE-2023-2163 (eBPF pointer leak):**
-- Verifier failed to properly sanitize pointer arithmetic
-- Allowed leaking kernel addresses to unprivileged users
+**CVE-2023-2163 (eBPF incorrect verifier pruning, CWE-682):**
+- Verifier incorrectly marks unsafe paths as safe
+- Allows arbitrary read/write in kernel memory (not just an address leak)
 
-**CVE-2024-1086 (nf_tables eBPF-style UAF):**
+**CVE-2024-1086 (netfilter nf_tables UAF/double-free):**
 - While not eBPF, similar exploitation pattern using netfilter
 - Used nft_set_elem double-free for privilege escalation
 - Demonstrated that BPF-like techniques apply to other subsystems
@@ -1527,13 +1527,13 @@ int main(int argc, char *argv[]) {
 4. Modify a setuid binary to execute a shell
 5. Execute the modified setuid binary → root shell
 
-**Mitigation patch:** Added proper `FAULT_FLAG_ALLOW_RETRY` handling and `page_lock` acquisition in `__get_user_pages()`.
+**Mitigation patch:** Commit 19be0eaffa3a removed the `FOLL_WRITE` games in `__get_user_pages()`, adding a new `FOLL_COW` flag and using the PTE dirty bit (`can_follow_write_pte()`) to validate a prior COW.
 
 ### 6.2 Dirty Pipe (CVE-2022-0847) — Detailed Walkthrough
 
 **Vulnerability:** Missing initialization of the `PIPE_BUF_FLAG_CAN_MERGE` flag in `pipe_buffer` structures, allowing unprivileged overwriting of page cache contents for read-only files.
 
-**Affected kernels:** Linux 5.8 through 5.16.11, 5.10.101+, 5.4.181+.
+**Affected kernels:** Linux 5.8 up to the fixes in 5.16.11, 5.15.25, and 5.10.102. The 5.4.x series is NOT affected (the vulnerable `PIPE_BUF_FLAG_CAN_MERGE` path was introduced in 5.8).
 
 **Root cause:**
 
@@ -1658,7 +1658,7 @@ pipe->bufs[head].flags = 0;  // Clear ALL flags, including CAN_MERGE
 
 ### 6.3 OverlayFS Exploits
 
-**CVE-2023-0386 (OverlayFS setuid copy-up):**
+**CVE-2023-0386 (OverlayFS setuid copy-up — uid-mapping bug, nosuid lower mount):**
 
 When a file with setuid bits is copied up from the lower layer to the upper layer, OverlayFS failed to clear the setuid bit during the copy-up operation.
 

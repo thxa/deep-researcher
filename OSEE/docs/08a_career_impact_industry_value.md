@@ -179,7 +179,7 @@ The Department of Defense Directive 8140 (which replaced 8570) establishes basel
 - **NICE Framework alignment:** OSEE maps to several NICE (National Initiative for Cybersecurity Education) work roles:
   - **Exploitation Analyst (AN-EXP-001):** Identifying vulnerabilities and developing exploits
   - **Cyber Operator (CO-OPS-001):** Conducting offensive operations in cyberspace
-  - **Vulnerability Assessment Analyst (AN-ASA-002):** Assessing systems for exploitable weaknesses
+  - **Vulnerability Assessment Analyst (PR-VAM-001):** Assessing systems for exploitable weaknesses
   - **Research & Development Specialist (SP-TRD-001):** Conducting vulnerability research
 - **Practical differentiator in hiring boards:** Government hiring managers and military selection boards view OSEE as an extreme discriminator. When two candidates both meet the 8140 baseline, the OSEE holder is typically preferred for the most technically demanding billets
 
@@ -345,7 +345,7 @@ The GXPN, associated with SANS SEC660 (Advanced Penetration Testing, Exploit Wri
 | **Depth** | Extremely deep in Windows exploitation | Broad coverage, moderate depth |
 | **Difficulty** | Considered the hardest offensive security exam | Difficult but substantially more accessible than OSEE |
 | **Availability** | In-person only, limited sessions globally | Available year-round in multiple formats |
-| **Cost** | ~$5,000-$8,000+ (course varies by training partner) | ~$9,045 (SANS course + GXPN exam) |
+| **Cost** | ~$5,000-$8,000+ (course varies by training partner) | ~$9,779 (SANS course + GXPN exam) |
 | **Industry perception** | Pinnacle certification; near-universal respect | Highly respected; seen as strong but a tier below OSEE |
 | **Open book** | No (practical exam) | Yes (open book for written portion) |
 | **Renewal** | Does not expire (but may become less current) | Requires renewal every 4 years with CPEs |

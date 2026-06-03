@@ -4,7 +4,7 @@
 
 ### 1.1 The Miller Experiment (1989)
 
-Fuzzing was born in 1989 when Barton P. Miller, Lars Fredriksen, and Bryan So at the University of Wisconsin–Madison published *"An Empirical Study of the Reliability of UNIX Utilities"* (CS TR-899). They fed random character streams to over 90 UNIX utilities via stdin and command-line arguments. The results were staggering: 25–33% of utilities crashed or hung on random input. The paper's core insight was devastating in its simplicity: **software is shockingly fragile when confronted with unexpected input**.
+Fuzzing was born in 1989 when Barton P. Miller, Lars Fredriksen, and Bryan So at the University of Wisconsin–Madison published *"An Empirical Study of the Reliability of UNIX Utilities"* (CS Technical Report #830). They fed random character streams to over 90 UNIX utilities via stdin and command-line arguments. The results were staggering: 25–33% of utilities crashed or hung on random input. The paper's core insight was devastating in its simplicity: **software is shockingly fragile when confronted with unexpected input**.
 
 Miller's original fuzz tool was primitive by modern standards—it generated streams of random bytes, with no feedback from the target, no coverage guidance, no mutation strategy beyond uniform random character generation. Yet it found real-critical bugs in `cc`, `adb`, `bc`, `csh`, `dbx`, `ld`, and many others. The study was replicated in 1995 (CS TR-1070) and again in 2000, each time finding significant failure rates even in supposedly mature code.
 
@@ -591,7 +591,7 @@ Fuzzing throughput (inputs/second) directly correlates with bug-finding rate. Co
 
 ## References
 
-[1] Miller, B.P., Fredriksen, L., & So, B. (1990). *An Empirical Study of the Reliability of UNIX Utilities*. Communications of the ACM, 33(12), 32–44. DOI: 10.1145/96279.96286
+[1] Miller, B.P., Fredriksen, L., & So, B. (1990). *An Empirical Study of the Reliability of UNIX Utilities*. Communications of the ACM, 33(12), 32–44. DOI: 10.1145/96267.96279
 
 [2] Miller, B.P., Koski, D., Lee, C.P., Maganty, V., Murthy, R., Natarajan, A., & Steinfels, P. (1995). *Fuzz Revisited: A Re-examination of the Reliability of UNIX Utilities and Services*. University of Wisconsin CS Technical Report TR-899.
 

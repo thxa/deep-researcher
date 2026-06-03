@@ -243,7 +243,7 @@ Embedding models map text to dense vectors in a high-dimensional space (typicall
 ┌────────────────────────┬────────┬──────────┬────────────┬──────────────────────┐
 │ Model                  │  Dims  │ MTEB avg │ Max tokens │ Best for              │
 ├────────────────────────┼────────┼──────────┼────────────┼──────────────────────┤
-│ OpenAI text-embedding- │  1536  │ ~62.3    │    8191    │ Production, easy API  │
+│ OpenAI text-embedding- │  1536  │ 61.0     │    8191    │ Production, easy API  │
 │ ada-002                │        │          │            │                      │
 ├────────────────────────┼────────┼──────────┼────────────┼──────────────────────┤
 │ OpenAI text-embedding- │  3072  │ ~64.3    │    8191    │ Higher quality, cost │
@@ -505,7 +505,7 @@ After initial retrieval, re-rank candidates using a cross-encoder or LLM for hig
 ```
 
 Common rerankers:
-- **Cohere Rerank v3**: API-based, best-quality, $0.002/1K searches
+- **Cohere Rerank v3**: API-based, best-quality, $2.00/1K searches
 - **bge-reranker-large**: Open-source cross-encoder, strong quality
 - **cross-encoder/ms-marco-MiniLM-L-12-v2**: Fast, decent quality
 - **LLM-as-reranker**: Use GPT-4/Claude to score relevance, expensive but flexible
@@ -1438,19 +1438,19 @@ Together, these form a cognitive architecture where the LLM is the *reasoner*, r
 
 1. Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yen, W., Rocktäschel, T., Kiela, D., & Mikolov, T. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." *Advances in Neural Information Processing Systems (NeurIPS)*, 2020. arXiv:2005.11401
 
-2. Johnson, J., Douze, M., & Jégou, H. "Billion-scale Similarity Search with GPUs." *IEEE Transactions on Big Data*, 7(3):535–547, 2021. arXiv:2002.05655 — Introduces FAISS.
+2. Johnson, J., Douze, M., & Jégou, H. "Billion-scale Similarity Search with GPUs." *IEEE Transactions on Big Data*, 7(3):535–547, 2021. arXiv:1702.08734 — Introduces FAISS.
 
 3. Chen, J., Lin, H., Han, X., & Sun, L. "Benchmarking Large Language Models in Retrieval-Augmented Generation." *arXiv preprint arXiv:2401.18014*, 2024.
 
 4. Asai, A., Wu, Z., Wang, Y., Sil, A., & Hajishirzi, H. "Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection." *International Conference on Learning Representations (ICLR)*, 2024. arXiv:2310.11511
 
-5. Yan, S., Gu, J., Zhu, Y., & Ling, Z. "Corrective Retrieval Augmented Generation." *International Conference on Machine Learning (ICML)*, 2024. arXiv:2401.15884
+5. Yan, S., Gu, J., Zhu, Y., & Ling, Z. "Corrective Retrieval Augmented Generation." *arXiv preprint arXiv:2401.15884*, 2024.
 
 6. Gao, L., Ma, X., Lin, F., &_callaghan, J. "Retrieval-Augmented Generation for Large Language Models: A Survey." *arXiv preprint arXiv:2312.10997*, 2024.
 
 7. Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Hambro, E., Zettlemoyer, L., Cancedda, N., & Scialom, T. "Toolformer: Language Models Can Teach Themselves to Use Tools." *Advances in Neural Information Processing Systems (NeurIPS)*, 2023. arXiv:2302.04761
 
-8. Parisi, A., Zhao, Y., & Fehri, N. "TALM: Tool-Augmented Language Models." *arXiv preprint arXiv:2205.12255*, 2022.
+8. Parisi, A., Zhao, Y., & Fiedel, N. "TALM: Tool-Augmented Language Models." *arXiv preprint arXiv:2205.12255*, 2022.
 
 9. Model Context Protocol (MCP). Anthropic, 2024. https://modelcontextprotocol.io/
 
@@ -1464,7 +1464,7 @@ Together, these form a cognitive architecture where the LLM is the *reasoner*, r
 
 14. ChromaDB Documentation. Chroma, 2024. https://www.trychroma.com/docs
 
-15. Malkov, Y. A., & Yashunin, D. A. "Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs." *IEEE Transactions on Pattern Analysis and Machine Intelligence*, 42(4):824–836, 2020. DOI:10.1109/TPAMI.2018.2883793 — The HNSW algorithm.
+15. Malkov, Y. A., & Yashunin, D. A. "Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs." *IEEE Transactions on Pattern Analysis and Machine Intelligence*, 42(4):824–836, 2020. DOI:10.1109/TPAMI.2018.2889473 — The HNSW algorithm.
 
 16. Karpukhin, V., Oğuz, B., Min, S., Lewis, P., Wu, L., Yih, S., & Hajishirzi, H. "Dense Passage Retrieval for Open-Domain Question Answering." *Proceedings of EMNLP*, 2020, pp. 6769–6781. arXiv:2004.04906
 
@@ -1478,7 +1478,7 @@ Together, these form a cognitive architecture where the LLM is the *reasoner*, r
 
 21. Robertson, S. E., & Zaragoza, H. "The Probabilistic Relevance Framework: BM25 and Beyond." *Foundations and Trends in Information Retrieval*, 3(4):333–389, 2009. DOI:10.1561/1500000019
 
-22. Cormack, G. V., Clarke, C. L. A., & Büttcher, S. "Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Ranking Methods." *Proceedings of SIGIR*, 2009, pp. 758–759. DOI:10.1145/1571941.1572118
+22. Cormack, G. V., Clarke, C. L. A., & Büttcher, S. "Reciprocal Rank Fusion Outperforms Condorcet and Individual Rank Ranking Methods." *Proceedings of SIGIR*, 2009, pp. 758–759. DOI:10.1145/1571941.1572114
 
 23. Edge, D., Trinh, H., Cheng, X., Bradley, J., Chuo, A., Menezes, A., & Amershi, S. "From Local to Global: A Graph RAG Approach to Query-Focused Summarization." *arXiv preprint arXiv:2404.16130*, 2024 — Microsoft GraphRAG.
 
@@ -1508,7 +1508,7 @@ Together, these form a cognitive architecture where the LLM is the *reasoner*, r
 
 36. Guu, K., Lee, K., Tung, Z., Pasupat, P., & Chang, M. "Retrieval Augmented Language Model Pre-Training." *Proceedings of ICML*, 2020, pp. 3929–3938. arXiv:2002.08909 — REALM.
 
-37. Bertsch, A., Abramson, J., Feizi, S., & Akyürek, A. F. "RAGAS: Automated Evaluation of Retrieval Augmented Generation." *Proceedings of EACL*, 2024. arXiv:2309.15217
+37. Es, S., James, J., Espinosa-Anke, L., & Schockaert, S. "RAGAS: Automated Evaluation of Retrieval Augmented Generation." *Proceedings of EACL*, 2024. arXiv:2309.15217
 
 38. Es, S., James, J., Espinosa-Anke, L., & Schockaert, S. "RAGAS: Evaluation Framework for Retrieval-Augmented Generation." *arXiv preprint arXiv:2309.15217*, 2023.
 ## References

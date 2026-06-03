@@ -140,7 +140,7 @@ The VGG design philosophy: use only 3×3 convolutions stacked deeply, doubling c
         ├─ FC-4096
         └─ FC-1000
 
-    Tradeoff: ~143M params, mostly in FC layers.
+    Tradeoff: ~138M params, mostly in FC layers.
     Lesson: depth with small filters is powerful but inefficient.
 ```
 
@@ -1078,8 +1078,8 @@ Every architecture document should contain:
 19. Devlin, J., Chang, M.-W., Lee, K., Toutanova, K., "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding," *NAACL-HLT 2019*, arXiv:1810.04805.  
 20. Radford, A., Wu, J., Child, R., Luan, D., Amodei, D., Sutskever, I., "Language Models are Unsupervised Multitask Learners," *OpenAI Technical Report 2019*.  
 21. Raffel, C., Shazeer, N., Roberts, A., Lee, K., Narang, S., Matena, M., Zhou, Y., Li, W., Liu, P.J., "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer," *JMLR 2020*, arXiv:1910.10683.  
-22. Su, J., Ahmed, M., Lu, Y., Pan, S., Bo, W., Liu, K., "RoFormer: Enhanced Transformer with Rotary Position Embedding," *Neurocomputing 2024*, arXiv:2104.09864.  
-23. Ofir, O., Press, O., Smith, N.A., "Short Universal Context Orderings Are Better Than ALiBi for Length Extrapolation," *arXiv 2024*, arXiv:2407.01800. See also Press, O., Smith, N.A., Lewis, M., "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation," *ICLR 2022*, arXiv:2108.12409.
+22. Su, J., Lu, Y., Pan, S., Murtadha, A., Wen, B., Liu, Y., "RoFormer: Enhanced Transformer with Rotary Position Embedding," *Neurocomputing 2024*, arXiv:2104.09864.  
+23. Press, O., Smith, N.A., Lewis, M., "Train Short, Test Long: Attention with Linear Biases Enables Input Length Extrapolation," *ICLR 2022*, arXiv:2108.12409.
 
 ### Positional Encoding & Normalization
 
@@ -1105,7 +1105,7 @@ Every architecture document should contain:
 37. Chen, X., Xie, L., Wu, J., Tian, Q., "Progressive Differentiable Architecture Search: Bridging the Depth Gap Between Search and Reevaluation," *CVPR 2019*, arXiv:1904.00260. (P-DARTS)  
 38. Xu, Y., Xie, L., Zhang, X., Chen, Z., Qi, G.-J., Tian, Q., Wang, H., "PC-DARTS: Partial Channel Connections for Memory-Efficient Differentiable Architecture Search," *ICLR 2020*, arXiv:1907.05737.  
 39. Cai, H., Zhu, L., Han, S., "ProxylessNAS: Direct Neural Architecture Search on Target Task and Hardware," *ICLR 2019*, arXiv:1812.00332.  
-40. Real, E., Aggarwal, A., Huang, Y., Le, Q.V., "Regularized Evolution for Architectural Design Search: The AmoebaNAS Approach," *AAAI 2019*, arXiv:1802.01548.  
+40. Real, E., Aggarwal, A., Huang, Y., Le, Q.V., "Regularized Evolution for Image Classifier Architecture Search," *AAAI 2019*, arXiv:1802.01548.  
 41. Tan, M., Chen, B., Pang, R., Vasudevan, V., Le, Q.V., "MnasNet: Platform-Aware Neural Architecture Search for Mobile," *CVPR 2019*, arXiv:1807.11626.
 
 ### Scaling Laws & Compute-Optimal Training
@@ -1119,7 +1119,7 @@ Every architecture document should contain:
 
 ### Mixed Precision & Memory Optimization
 
-48. Micikevicius, P., Narang, S., Alben, J., Garcia, G., Ginsburg, B., Houston, T., Kuchaiev, O., et al., "Mixed Precision Training," *ICLR 2018*, arXiv:1710.03712.  
+48. Micikevicius, P., Narang, S., Alben, J., Garcia, G., Ginsburg, B., Houston, T., Kuchaiev, O., et al., "Mixed Precision Training," *ICLR 2018*, arXiv:1710.03740.  
 49. Chen, T., Xu, B., Zhang, C., Guestrin, C., "Training Deep Nets with Sublinear Memory Cost," *arXiv 2016*, arXiv:1604.06174. (Gradient checkpointing)  
 50. Rajbhandari, S., Ruwase, O., Rasley, J., Smith, S., He, Y., "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models," *SC 2020*, arXiv:1910.02054.  
 51. Shoeybi, M., Patwary, M., Puri, R., LeGresley, P., Casper, J., Catanzaro, B., "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism," *arXiv 2019*, arXiv:1909.08053.
@@ -1145,13 +1145,13 @@ Every architecture document should contain:
 62. Woo, S., Park, J., Lee, J.-Y., Kweon, I.S., "CBAM: Convolutional Block Attention Module," *ECCV 2018*, arXiv:1807.06521.
 ## References
 
-- He, K. et al., "Deep Residual Learning for Recognizing Image Sequences," CVPR 2016. https://arxiv.org/abs/1512.03385
+- He, K. et al., "Deep Residual Learning for Image Recognition," CVPR 2016. https://arxiv.org/abs/1512.03385
 - Vaswani, A. et al., "Attention Is All You Need," NeurIPS 2017. https://arxiv.org/abs/1706.03762
-- Huang, Y. et al., "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows," ICCV 2021. https://arxiv.org/abs/2103.14030
+- Liu, Z. et al., "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows," ICCV 2021. https://arxiv.org/abs/2103.14030
 - Dosovitskiy, A. et al., "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale," ICLR 2021. https://arxiv.org/abs/2010.11929
 - Radosavovic, I. et al., "Designing Network Design Spaces," CVPR 2020. https://arxiv.org/abs/2004.05462
 - Tan, M. & Le, Q., "EfficientNet: Rethinking Model Scaling for Convolutional Neural Networks," ICML 2019. https://arxiv.org/abs/1905.11946
 - Brown, T. et al., "Language Models are Few-Shot Learners," NeurIPS 2020. https://arxiv.org/abs/2005.14165
 - Goodfellow, I. et al., "Deep Learning," MIT Press, 2016. https://www.deeplearningbook.org/
-- Li, M. et al., "Scaling Laws for Neural Language Models," 2020. https://arxiv.org/abs/2001.08361
+- Kaplan, J. et al., "Scaling Laws for Neural Language Models," 2020. https://arxiv.org/abs/2001.08361
 - Kaplan, J. et al., "Scaling Laws for Neural Language Models," 2020. https://arxiv.org/abs/2001.08361

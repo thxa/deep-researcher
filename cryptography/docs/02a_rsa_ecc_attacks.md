@@ -107,7 +107,7 @@ A ciphertext is **PKCS#1 v1.5 conformant** if, upon decryption, the plaintext ha
 
 ### 2.2 The Attack
 
-**CVE-1998-0073** (original Bleichenbacher, 1998) and **CVE-2017-13091** (ROBOT, 2017 — see §03a).
+The original Bleichenbacher attack (1998) has no single canonical CVE; its 2017 resurgence is **ROBOT**, tracked under per-vendor CVEs such as **CVE-2017-6168** (F5 — see §03a).
 
 Bleichenbacher's adaptive chosen-ciphertext attack exploits a server that reveals whether a given ciphertext decrypts to a PKCS-conformant plaintext. The attacker can recover the plaintext of any ciphertext $c^*$ in approximately $2^{18}$ oracle queries.
 
@@ -129,10 +129,10 @@ Bleichenbacher's adaptive chosen-ciphertext attack exploits a server that reveal
 
 **ROBOT (Return Of Bleichenbacher's Oracle Threat, 2017)**: Hanno Böck, Juraj Somorovsky, and Craig Young discovered that many modern TLS implementations still had PKCS#1 v1.5 padding oracle vulnerabilities, 19 years after the original attack. Affected implementations included:
 
-- **F5 BIG-IP**: The TLS server returned different TLS alerts for valid vs. invalid padding (CVE-2017-6167).
+- **F5 BIG-IP**: The TLS server returned different TLS alerts for valid vs. invalid padding (CVE-2017-6168).
 - **Cisco ACE**: Similar error message differentiation.
-- **Java JSSE**: Timing side channel in the RSA decryption + PKCS check (CVE-2017-12487).
-- **OpenSSL**: Nested error handling that leaked PKCS conformance through timing differences (CVE-2016-0148, patched but reintroduced).
+- **Java JSSE**: Timing side channel in the RSA decryption + PKCS check (CVE-2012-5081).
+- **OpenSSL**: Nested error handling that leaked PKCS conformance through timing differences (CVE-2016-2107, patched but reintroduced).
 
 The ROBOT paper demonstrated practical session key recovery against these implementations, proving that the Bleichenbacher attack is not merely a theoretical concern.
 
@@ -186,9 +186,9 @@ def bleichenbacher_attack(oracle, n, e, c_star, k):
 
 RSA-OAEP (Optimal Asymmetric Encryption Padding) was designed to be provably IND-CCA secure in the random oracle model. However, **implementation flaws** can still create oracles.
 
-**Manger's attack (2003)** exploits a specific OAEP implementation flaw where the server rejects messages whose first byte after decryption is not $\texttt{0x00}$. This single-byte oracle is sufficient to recover the plaintext.
+**Manger's attack (CRYPTO 2001)** exploits a specific OAEP implementation flaw where the server rejects messages whose first byte after decryption is not $\texttt{0x00}$. This single-byte oracle is sufficient to recover the plaintext.
 
-The attack is significantly faster than Bleichenbacher: $\sim 2^{10}$ queries for a 1024-bit modulus, compared to Bleichenbacher's $\sim 2^{18}$.
+The attack is significantly faster than Bleichenbacher: $\sim 2^{10}$ queries for a 1024-bit modulus, compared to Bleichenbacher's $\sim 2^{20}$.
 
 **Mechanism**: In OAEP, the decrypted message has the form $\texttt{0x00}\|Y\|masked_seed\|masked_db$. If the first byte after OAEP unmasking is not $\texttt{0x00}$, the server returns an error.
 
@@ -466,7 +466,7 @@ def rsa_decrypt_blinded(key, ciphertext):
 
 **Osvik-Shamir-Tromer cache attacks (2006/7)** demonstrate that cache contention during modular exponentiation leaks key bits. The attacker primes the L1 cache with their own data, then triggers a target RSA operation. By measuring the time for their own memory accesses afterward, they determine which cache lines were evicted by the RSA computation, revealing which table indices were accessed — directly revealing key bits in table-based implementations.
 
-**Intel OpenSSL vulnerability (CVE-2018-0734)**: OpenSSL's RSA implementation was found to have a timing side channel in the modular exponentiation that could leak information about the private key. The fix involved switching to constant-time implementations.
+**OpenSSL vulnerability (CVE-2018-0734)**: OpenSSL's DSA signature implementation was found to have a timing side channel in the signing algorithm that could leak information about the private key. The fix involved switching to constant-time implementations.
 
 **Prime+Probe and Flush+Reload** attacks on RSA are detailed in §04a.
 
@@ -479,7 +479,7 @@ def rsa_decrypt_blinded(key, ciphertext):
 If two RSA moduli $N_1 = p \cdot q_1$ and $N_2 = p \cdot q_2$ share a prime factor $p$, then $\gcd(N_1, N_2) = p$, and both keys are instantly broken.
 
 **Large-scale survey (2012)**: Heninger, Durumeric, Wustrow, Halderman, and others scanned the entire IPv4 address space for SSH and TLS public keys and found that:
-- 0.2% of RSA moduli shared a prime factor with another modulus.
+- RSA private keys were recovered for 0.50% of TLS hosts (and 0.03% of SSH hosts) via shared prime factors.
 - Among 1024-bit RSA keys, the collision rate was even higher.
 - The root cause was low-entropy key generation on embedded devices (routers, IoT devices) that seeded their PRNGs with insufficient entropy at boot time.
 
@@ -501,12 +501,12 @@ for i in range(len(moduli)):
 "
 
 # More efficient: batch GCD using product tree
-# See: https://github.com/Heninger/Public-Key-Security
+# See: https://github.com/sagi/fastgcd
 ```
 
 ### 8.2 Weak Random Number Generation
 
-**Debian OpenSSL Bug (CVE-2007-4995, §06)**: The most devastating key generation weakness in history. In 2006, a Debian maintainer removed "uninitialized variable" warnings from OpenSSL's random number generator by commenting out the line that mixed in `/dev/urandom` output. This left the PRNG seeded only with the process ID (PID), reducing the entropy to 15 bits. All SSH and TLS keys generated on Debian/Ubuntu systems between September 2006 and May 2008 were effectively chosen from a set of $2^{15} = 32{,}768$ possible keys for each key size.
+**Debian OpenSSL Bug (CVE-2008-0166, §06)**: The most devastating key generation weakness in history. In 2006, a Debian maintainer removed "uninitialized variable" warnings from OpenSSL's random number generator by commenting out the line that mixed in `/dev/urandom` output. This left the PRNG seeded only with the process ID (PID), reducing the entropy to 15 bits. All SSH and TLS keys generated on Debian/Ubuntu systems between September 2006 and May 2008 were effectively chosen from a set of $2^{15} = 32{,}768$ possible keys for each key size.
 
 **Savage et al. (2018)** extended the survey methodology to find that weak keys persist in the wild:
 - Many embedded devices still generate keys with low-entropy PRNGs.
@@ -656,7 +656,7 @@ If $\prod l_i > \text{order of the correct curve}$, $k$ is fully recovered.
 
 ### 10.2 Practical Exploitation
 
-**CVE-2019-11579 — WordPress Adobe Flash fallback**: The Flash-based XMPP client in WordPress did not validate that ECDH public keys lay on the correct curve, enabling full key recovery via invalid curve attack.
+**Adobe Flash fallback**: A Flash-based XMPP client did not validate that ECDH public keys lay on the correct curve, enabling full key recovery via invalid curve attack.
 
 **TLS ECDH**: Early TLS implementations (some Java, some older OpenSSL versions) did not validate ECDH public key points. This enabled invalid curve attacks against server ephemeral keys.
 
@@ -784,7 +784,7 @@ The Montgomery ladder used in X25519 operates only on the x-coordinate, which me
 
 ## References
 
-1. Bleichenbacher, D., "Chosen Ciphertext Attacks Against Protocols Based on the RSA Encryption Standard PKCS #1," CRYPTO 1998. CVE-1998-0073.
+1. Bleichenbacher, D., "Chosen Ciphertext Attacks Against Protocols Based on the RSA Encryption Standard PKCS #1," CRYPTO 1998.
 2. Böck, H., Somorovsky, J., Young, C., "Return Of Bleichenbacher's Oracle Threat (ROBOT)," USENIX Security 2018. CVE-2017-17382.
 3. Manger, J., "A Chosen Ciphertext Attack on RSA Optimal Asymmetric Encryption Padding (OAEP) as Standardized in PKCS #1 v2.0," CRYPTO 2001.
 4. Coppersmith, D., "Small Solutions to Polynomial Equations, and Low Exponent RSA Vulnerabilities," Journal of Cryptology, 1996.
@@ -794,7 +794,7 @@ The Montgomery ladder used in X25519 operates only on the x-coordinate, which me
 8. Brumley, D., Boneh, D., "Remote Timing Attacks Are Practical," USENIX Security 2003.
 9. Némec, M., Švenda, P., Klinec, V., Švenda, P., "The Return of Coppersmith's Attack: Practical Factorization of Widely Used RSA Moduli," CCS 2017. CVE-2017-15361.
 10. Heninger, N., Durumeric, Z., Wustrow, E., Halderman, J.A., "Mining Your Ps and Qs: Widespread Weak Keys in Network Devices," USENIX Security 2012.
-11. CVE-2007-4995, "Debian OpenSSL Predictable Random Number Generator," 2007.
+11. CVE-2008-0166, "Debian OpenSSL Predictable Random Number Generator," 2008.
 12. Franklin, M.K., Reiter, M.K., "A General Protocol for Natural Number Certificate," CRYPTO 1995.
 13. Boneh, D., DeMillo, R.A., Lipton, R.J., "On the Importance of Checking Computations," EUROCRYPT 1997.
 14. Piret, G., Quisquater, J.-J., "A Differential Fault Attack Technique Against SPN Structures," CHES 2003.

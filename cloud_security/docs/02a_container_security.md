@@ -1254,9 +1254,9 @@ spec:
 2. CVE-2022-0492. NVD. https://nvd.nist.gov/vuln/detail/CVE-2022-0492
 3. CVE-2022-0847 (DirtyPipe). NVD. https://nvd.nist.gov/vuln/detail/CVE-2022-0847
 4. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/publications/detail/sp/800-190/final
-5. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/aquasecurity/kube-hunter
+5. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://www.nccgroup.com/research-blog/understanding-and-hardening-linux-containers/
 6. Docker. "Docker Security." *Docker Documentation*. 2024. https://docs.docker.com/engine/security/
-7. Aqua Security. "Container Threat Report." *Aqua Security*. 2023. https://www.aquasec.com/resources/container-threat-report/
+7. Aqua Security. "Container Threat Report." *Aqua Security*. 2023. https://info.aquasec.com/cloud-native-threat-report
 8. Linux Kernel. "Namespaces Manual." *man7.org*. 2024. https://man7.org/linux/man-pages/man7/namespaces.7.html
 9. Linux Kernel. "Seccomp Manual." *man7.org*. 2024. https://man7.org/linux/man-pages/man2/seccomp.2.html
 10. Open Container Initiative. "OCI Runtime Specification." *Open Container Initiative*. 2024. https://github.com/opencontainers/runtime-spec

@@ -45,7 +45,7 @@ Failures at any of these steps can lead to catastrophic trust failures.
 
 **Failure to verify the full chain**: Many implementations verify the leaf certificate's signature against the intermediate CA's key, but fail to verify the intermediate's signature against the root's key. This allows an attacker to present a self-signed "intermediate CA" certificate that the client accepts.
 
-**CVE-2002-0862 (Microsoft CryptoAPI)**: Windows' `WinVerifyTrust` function skipped revocation checking if the certificate chain could not be built to a trusted root. An attacker could present an untrusted root and bypass revocation entirely.
+**CVE-2002-0862 (Microsoft CryptoAPI)**: Windows' `CertGetCertificateChain`, `CertVerifyCertificateChainPolicy`, and `WinVerifyTrust` APIs did not properly verify the Basic Constraints of intermediate CA-signed X.509 certificates. An attacker could use an end-entity certificate as a valid intermediate CA and spoof the certificates of trusted sites via an SSL man-in-the-middle attack.
 
 **CVE-2013-0726 (Java JSSE)**: Java's `X509TrustManager` in some versions did not verify the `basicConstraints` extension of intermediate certificates. An attacker could create a leaf certificate that also functioned as a CA, issuing rogue certificates for any domain.
 
@@ -350,7 +350,7 @@ The Automatic Certificate Management Environment (ACME, RFC 8555) is the protoco
 
 **CVE-2022-3602 — X.509 Email Address Buffer Overflow**: A stack buffer overflow in OpenSSL's X.509 email address field handling (4-byte overflow in `ossl_punycode_decode`) could cause a crash or, in theory, remote code execution. While this is an OpenSSL bug rather than a Let's Encrypt bug, it affected Let's Encrypt's infrastructure and highlighted the importance of X.509 parsing security.
 
-**Rate limiting bypass (2020)**: Researchers discovered that Let's Encrypt's rate limits (5 certificates per week per domain, 50 per week per account) could be bypassed by creating multiple accounts. Let's Encrypt responded by implementing additional anti-abuse measures (IP-based rate limiting, domain-based rate limiting).
+**Rate limiting (2020)**: Let's Encrypt's principal rate limit is 50 certificates per registered domain per week (a duplicate-certificate limit of 5 per week applies to the exact same set of identifiers). The 50-per-domain limit is global — all order requests count toward it regardless of which account submits them — so it cannot be bypassed by creating multiple accounts. Let's Encrypt also employs additional anti-abuse measures (IP-based and domain-based rate limiting).
 
 ### 7.4 Short-Lived Certificates
 
@@ -498,6 +498,6 @@ example.com. IN HTTPS 1 . ech=AEX+DQB...base64...
 12. RFC 6066, "TLS Extensions Including SNI and OCSP Stapling," January 2011.
 13. IETF Draft, "Encrypted Client Hello (ECH)," draft-ietf-tls-esni-13.
 14. Sheffer, Y., Saint-Andre, P., "Summarizing Known Attacks on TLS," RFC 7457, February 2015.
-15. Clark, J., van Oorschot, P.C., "SoK: SSL and HTTPS: Revisiting Past Challenges and Looking at the Future," ACM CCS, 2013.
+15. Clark, J., van Oorschot, P.C., "SoK: SSL and HTTPS: Revisiting Past Challenges and Evaluating Certificate Trust Model Enhancements," IEEE Symposium on Security and Privacy (S&P), 2013.
 16. CVE-2018-1000001, "OpenSSL Path Building Algorithm Weakness," 2018.
 17. Apple, "iMessage Key Transparency," Security Research, 2023.

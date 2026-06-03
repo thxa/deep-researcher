@@ -704,12 +704,12 @@ User Mode                          Kernel Mode
 
 | Bug Class | Description | Example CVE |
 |-----------|-------------|-------------|
-| **UAF in window objects** | Use-after-free via `DestroyWindow` race with callback dispatch | CVE-2019-1457 |
-| **Desktop heap overflow** | Buffer overflow in desktop heap allocation | CVE-2020-0986 |
+| **Office macro security bypass** | Excel for Mac fails to enforce macro settings on XLM/SYLK documents (CWE-732) | CVE-2019-1457 |
+| **Print Spooler pointer deref** | Arbitrary pointer dereference in splwow64 `GdiPrinterThunk` (attacker-controlled memcpy) | CVE-2020-0986 |
 | **Callback returns to kernel** | User-mode callback re-enters kernel with stale state | CVE-2021-1732 |
-| **Type confusion** | GDI objects reinterpreted as different types | CVE-2020-16908 |
-| **Integer overflow** | Size calculation overflow in bitmap/surface allocation | CVE-2021-27085 |
-| **GDI object pool corruption** | Double-free or corrupt GDI handle table | CVE-2020-1361 |
+| **Windows Setup EoP** | Improper directory handling during feature-update upgrades | CVE-2020-16908 |
+| **Internet Explorer 11 RCE** | Remote code execution in IE11 (CVSS 8.8) | CVE-2021-27085 |
+| **WalletService info disclosure** | Memory-handling flaw in Windows WalletService (requires local code exec) | CVE-2020-1361 |
 
 ```c
 // Classic Win32k UAF pattern:
@@ -722,9 +722,9 @@ User Mode                          Kernel Mode
 // The key primitive: user-mode callback during kernel window procedure
 // allows attacker to modify state in the middle of kernel operation.
 
-// CVE-2021-1732 (PrintNightmare variant in Win32k):
-// win32k!xxxEnableWindowScrollBarTracks
-// Attacker-supplied scrollbar info leads to pool corruption
+// CVE-2021-1732 (Win32k Elevation of Privilege — CWE-787 out-of-bounds write):
+// callback-driven flag/offset desync in win32kfull (xxxClientAllocWindowClassExtraBytes)
+// NOT a PrintNightmare variant (PrintNightmare = CVE-2021-1675 / CVE-2021-34527 in Print Spooler)
 // because validation occurs before user-mode callback,
 // but usage occurs after — classic TOCTOU in kernel callbacks
 ```
@@ -798,9 +798,9 @@ Graphics drivers (particularly `dxgkrnl.sys`, the DirectX graphics kernel) are a
 // 4. Corrupt GPU page tables or system memory via DMA
 // 5. Overwrite a kernel function pointer → RIP control
 
-// CVE-2020-1457 (Microsoft Graphics Components RCE):
-// Win32k rendering path integer overflow → pool overflow
-// in bitmap creation (EngCreateBitmap)
+// CVE-2020-1457 (Microsoft Windows Codecs Library RCE — CWE-787 out-of-bounds write):
+// flaw in how the Windows Codecs Library handles objects in memory
+// (affects Windows 10 1709-2004)
 ```
 
 ### 2.4 NTDLL / KERNEL32 Syscall Interface
@@ -952,7 +952,7 @@ static int adore_hide(pid_t pid) {
 
 // Escalation trigger — send SIG64 to any process owned by the attacker
 static int diamorphine_signal_hook(int sig) {
-    if (sig == SIGSUPER) {   // Custom signal (63)
+    if (sig == SIGSUPER) {   // Custom signal (64; SIGMODINVIS=63, SIGINVIS=31)
         commit_creds(prepare_kernel_cred(0));  // Instant root
     }
     return 0;
@@ -1051,7 +1051,7 @@ void unhook_syscall(void) {
 ```
 
 **Modern challenges**:
-- `CONFIG_STATIC_CALL` (5.10+): Replaces indirect `syscall_table[NR]` calls with static calls, making table modification ineffective
+- `CONFIG_STATIC_CALL` (5.10+): General-purpose runtime-patched replacement for hot indirect function-pointer calls; it does NOT replace the `sys_call_table[NR]` dispatch array (which remains an array of function pointers)
 - `CONFIG_RODATA`: sys_call_table resides in read-only `.rodata` section — CR0.WP bypass is required
 - `kallsyms_lookup_name` no longer exported (5.7+) — must use `kprobes` or `/proc/kallsyms` scanning
 - `CONFIG_CFI_CLANG`: Control Flow Integrity prevents replacing function pointers
@@ -1375,12 +1375,12 @@ Filesystem parsing is a critical attack surface because:
 | Operation | Attack Vector | Example |
 |-----------|--------------|---------|
 | Mount parsing | Malformed superblock, group descriptors | CVE-2022-29581 (btrfs) |
-| Directory traversal | Crafted directory entries with invalid offsets | CVE-2021-4147 (ext4) |
+| libvirt DoS | Guest-triggered libvirtd deadlock/crash in the libxl driver (CWE-667) | CVE-2021-4147 (libvirt) |
 | Extent map handling | Overlapping or circular extent references | CVE-2022-1016 (btrfs) |
-| Journal replay | Corrupt journal entries during recovery | CVE-2019-19377 (ext4) |
-| Extended attributes | Oversized or corrupt xattr entries | CVE-2022-1180 (ext4) |
-| Inline data | Crafted inode with inline data overflow | CVE-2021-4037 (ext4) |
-| XFS attr fork | Malformed attribute fork tree | CVE-2022-4286 (xfs) |
+| btrfs UAF | Use-after-free in `btrfs_queue_work` via a crafted btrfs image | CVE-2019-19377 (btrfs) |
+| (miscited — not a kernel bug) | Reflected XSS in OpenEMR < 6.0.0.4 | CVE-2022-1180 (OpenEMR) |
+| SGID mishandling | `inode_init_owner()` lets local users set SGID on XFS files they do not own | CVE-2021-4037 (xfs) |
+| (miscited — not a kernel bug) | Reflected XSS in B&R Automation Runtime SDM | CVE-2022-4286 (B&R) |
 
 ```c
 // Common vulnerability patterns in filesystem parsing:
@@ -1433,8 +1433,8 @@ The Linux network stack provides a large attack surface due to its complexity an
 #### Netfilter (iptables/nftables)
 
 ```c
-// CVE-2022-32250: nft_set_element double-free
-// Vulnerable code path:
+// CVE-2022-32250: nf_tables use-after-free (CWE-416, NOT a double-free)
+// Incorrect NFT_STATEFUL_EXPR check in nft_set_elem_expr_alloc leaves a dangling expr
 static int nft_setelem_catchall_deactivate(struct nft_set *set) {
     // Element is removed from set but not freed
     // Later, the same element is freed again via
@@ -1490,7 +1490,7 @@ setsockopt(sock, SOL_SOCKET, SO_ATTACH_FILTER, &prog, sizeof(prog));
 | CVE-2022-34918 | nftables | OOB write | LPE |
 | CVE-2022-32250 | nftables | Double-free | LPE |
 | CVE-2022-1016 | nftables | OOB read | Info leak |
-| CVE-2022-4280 | netfilter | OOB write | LPE |
+| CVE-2022-4280 | Dot Tech Smart Campus (not netfilter) | Information disclosure | — |
 | CVE-2023-0179 | netfilter | Stack buffer overflow | LPE |
 | CVE-2021-22555 | netfilter | Heap OOB write | LPE |
 | CVE-2022-2588 | cls_route | Double-free | LPE |
@@ -1529,12 +1529,12 @@ The Linux memory management subsystem (`mm/`) is responsible for page allocation
 
 | CVE | Component | Type | Impact |
 |-----|-----------|------|--------|
-| CVE-2022-32250 | mm/page_alloc | Use-after-free | LPE |
-| CVE-2021-4154 | mm/shmem | Memory corruption | LPE |
+| CVE-2022-32250 | net/netfilter (nf_tables) | Use-after-free | LPE |
+| CVE-2021-4154 | kernel/cgroup (cgroup v1) | Use-after-free | LPE |
 | CVE-2020-29374 | mm/gup | Information leak | KASLR bypass |
 | CVE-2022-4280 | mm/mremap | Race condition | Potential LPE |
-| CVE-2022-4129 | mm/hugetlb | Use-after-free | LPE |
-| CVE-2023-0461 | mm/uffd | UAF in userfaultfd | LPE |
+| CVE-2022-4129 | net/l2tp | NULL-deref via missing `sk_user_data` lock | DoS |
+| CVE-2023-0461 | net/tls (ULP) | Use-after-free in `icsk_ulp_data` | LPE |
 
 ### 4.5 Driver Subsystems (GPU, USB, Network)
 
@@ -1594,9 +1594,8 @@ Drivers are the **most prolific source** of kernel vulnerabilities, comprising r
 // In nf_tables, when evaluating expressions with largepayloads,
 // a stack buffer can be overflowed via nft_payload_copy_vlan()
 
-// CVE-2021-22555: Netfilter heap OOB write
-// In nf_conntrack_sip, when parsing SIP messages,
-// address extraction can write beyond allocated buffer
+// CVE-2021-22555: Netfilter heap OOB write in x_tables (net/netfilter/x_tables.c)
+// compat setsockopt / xt_compat path; present since v2.6.19; local privesc / DoS
 ```
 
 #### Driver Vulnerability Statistics (2020–2024)
@@ -1683,7 +1682,7 @@ BPF_ALU64_IMM(BPF_LSH, BPF_REG_3, 32), // r3 <<= 32 (should be 0)
 // hold a much larger value at runtime → OOB map access
 ```
 
-#### CVE-2022-0500: Pointer Comparison Leak
+#### CVE-2022-0500: eBPF BPF_BTF_LOAD Out-of-Bounds Write
 
 ```c
 // CVE-2022-0500: Incorrect pointer comparison
@@ -1697,17 +1696,17 @@ BPF_ALU64_IMM(BPF_LSH, BPF_REG_3, 32), // r3 <<= 32 (should be 0)
 | CVE | Year | Root Cause | Impact |
 |-----|------|-----------|--------|
 | CVE-2017-16995 | 2017 | Missing ALU sanitation | Arbitrary kernel code execution |
-| CVE-2019-7308 | 2019 | Pointer leak via bpf_spin_lock | Kernel address leak |
+| CVE-2019-7308 | 2019 | eBPF verifier Spectre-v1 OOB speculation on pointer arithmetic | Speculative leak |
 | CVE-2020-8835 | 2020 | Incorrect bounds tracking | OOB read/write |
 | CVE-2020-27194 | 2020 | ALU32 bounds truncation | OOB read |
 | CVE-2021-3444 | 2021 | 32-bit bounds truncation | OOB read/write |
 | CVE-2022-0500 | 2022 | Pointer comparison | Kernel address leak |
-| CVE-2022-23222 | 2022 | Type confusion in PTR_TO_BTF_ID | Kernel memory corruption |
-| CVE-2022-3534 | 2022 | Incorrect scalar bounds | OOB access |
+| CVE-2022-23222 | 2022 | eBPF verifier allows pointer arithmetic on *_OR_NULL types | LPE |
+| CVE-2022-3534 | 2022 | Use-after-free in libbpf `btf_dump_name_dups` | Memory corruption |
 | CVE-2023-2163 | 2023 | Incorrect branch pruning | Arbitrary BPF program execution |
-| CVE-2023-3777 | 2023 | Map value bounds overflow | LPE |
-| CVE-2024-0402 | 2024 | Mismatched speculative bounds | OOB access |
-| CVE-2024-5004 | 2024 | Dead code elimination issue | LPE |
+| CVE-2023-3777 | 2023 | Use-after-free in netfilter nf_tables (`nf_tables_delrule`) | LPE |
+| CVE-2024-0402 | 2024 | GitLab CE/EE arbitrary file write / path traversal (not a kernel bug) | — |
+| CVE-2024-5004 | 2024 | Stored XSS in CM Popup WordPress plugin (not a kernel bug) | — |
 
 ```c
 // eBPF verifier escape exploitation pattern:
@@ -1920,7 +1919,7 @@ Modern kernels apply **constant blinding** (also called **constant folding** or 
 | **RAPPOR/RANDSTRUCT** | Linux 5.13+ | Structure layout randomization | Per-structure info leaks |
 | **KFENCE** | Linux 5.12+ | Linear allocation for UAF detection | Cannot bypass; only detects |
 | **SLAB_FREELIST_HARDENED** | Linux 4.14+ | XOR-obfuscated freelist | Corrupt object payloads instead |
-| **INIT_ON_ALLOC** | Linux 5.4+ | Zero-allocate new slab objects | Use previously freed-with-data objects |
+| **INIT_ON_ALLOC** | Linux 5.3+ | Zero-allocate new slab objects | Use previously freed-with-data objects |
 | **INIT_ON_FREE** | Linux 5.6+ | Zero freed slab objects | Race window before zeroing |
 | **Static Calls** | Linux 5.10+ | Replace indirect calls with direct | Target static call infrastructure |
 | **LOS (Lockdown)** | Linux 5.4+ | Restrict /dev/mem, kexec, BPF | Boot parameter bypass |

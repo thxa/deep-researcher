@@ -255,10 +255,10 @@ IoT security is a wicked problem — one defined by interconnected systems, conf
 6. Miller, C. and Valasek, C. "Remote Exploitation of an Unaltered Passenger Vehicle." Black Hat USA (2015).
 7. KrebsOnSecurity. "KrebsOnSecurity Hit With Record DDoS." https://krebsonsecurity.com/2016/09/krebsonsecurity-hit-with-record-ddos/
 8. MalwareMustDie. Mirai DDoS Botnet Analysis. https://malwaremustdie.org/
-9. JSOF Research Lab. Ripple20: 19 Vulnerabilities Affecting Millions of IoT Devices (2020). https://ripple20.com/
+9. JSOF Research Lab. Ripple20: 19 Vulnerabilities Affecting Millions of IoT Devices (2020). https://www.jsof-tech.com/disclosures/ripple20/
 10. Armis Labs. Urgent/11: Critical Vulnerabilities in VxWorks (2019). https://armis.com/urgent11/
 11. Forescout Research Labs. Amnesia:33 (2020). https://www.forescout.com/blog/amnesia33/
-12. Forescout & JSOF. Name:Wreck (2021). https://namewreck.io/
+12. Forescout & JSOF. Name:Wreck (2021). https://www.forescout.com/research-labs/namewreck/
 13. Cisco Talos. VPNFilter Malware Analysis (2018). https://blog.talosintelligence.com/2018/05/VPNFilter.html
 14. ETSI EN 303 645: Cyber Security for Consumer Internet of Things. European Telecommunications Standards Institute (2020).
 15. NISTIR 8259: Foundational Cybersecurity Activities for IoT Device Manufacturers (2020). https://csrc.nist.gov/publications/detail/nistir/8259/final
@@ -271,7 +271,7 @@ IoT security is a wicked problem — one defined by interconnected systems, conf
 22. KNOB Attack: CVE-2019-9506. Biham, E. and Neumann, L. https://knobattack.com/
 23. BLURtooth: CVE-2020-15802. Bluetooth SIG Security Advisory.
 24. Z-Shaver: CVE-2019-15948. Fouladi, B. and Groll, M. (Z-Wave S2 Downgrade Attack).
-25. Connectivity Standards Alliance. Matter 1.2 Core Specification. https://csai-iot.org/
+25. Connectivity Standards Alliance. Matter 1.2 Core Specification. https://csa-iot.org/
 26. RISC-V Privileged Architecture Specification. RISC-V International. https://riscv.org/
 27. MCUboot Secure Bootloader Documentation. https://mcuboot.com/
 28. ARM Trusted Firmware Documentation. https://trustedfirmware.org/

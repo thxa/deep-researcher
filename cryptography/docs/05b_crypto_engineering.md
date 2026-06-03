@@ -295,7 +295,7 @@ The Automated Certificate Management Environment (ACME, RFC 8555) is the standar
 - **TLS-ALPN-01**: Serve a self-signed certificate with the ACME OID in the ALPN extension. The ACME server verifies the certificate.
 
 **ACME security considerations** (see §03b for detailed analysis):
-- **HTTP-01**: Vulnerable to network-level MITM (the attacker can intercept HTTP requests and answer the challenge). Mitigated by requiring HTTPS for the challenge file (RFC 8737).
+- **HTTP-01**: Vulnerable to network-level MITM (the attacker can intercept HTTP requests and answer the challenge). Mitigated by requiring HTTPS for the challenge file.
 - **DNS-01**: Vulnerable to DNS hijacking or spoofing. Mitigated by DNSSEC and DNS-over-HTTPS.
 - **TLS-ALPN-01**: Vulnerable to TLS MITM (the attacker can present a self-signed certificate with the ACME OID). Mitigated by requiring the certificate to be signed by a trusted CA.
 
@@ -332,7 +332,7 @@ Given $o_i$ (the output), the adversary can try all possible values for the 16 u
 
 **Mitigation**: NIST removed Dual_EC_DRBG from SP 800-90A Rev. 1 (2015). All implementations should use HMAC-DRBG, CTR-DRBG, or Hash-DRBG instead.
 
-### 6.2 Debian OpenSSL Bug (CVE-2007-4995)
+### 6.2 Debian OpenSSL Bug (CVE-2008-0166)
 
 In 2006, a Debian maintainer removed the "uninitialized variable" warning from OpenSSL's `ssleay_rand_add()` function by commenting out the line that mixed `/dev/urandom` output into the PRNG state:
 
@@ -345,7 +345,7 @@ MD_Update(&m,buf,j);        /* mix in the data */
 
 The removed line was the **only source of entropy** in the PRNG seeding. Without it, the PRNG was seeded only with the process ID (PID), which is a 15-bit value (range 0–32768).
 
-**Impact**: All SSH and TLS keys generated on Debian and Ubuntu systems between September 2006 and May 2008 were effectively chosen from a set of $2^{16} = 65{,}536$ possible keys for each key size. This made all such keys trivially breakable by exhaustive search.
+**Impact**: All SSH and TLS keys generated on Debian and Ubuntu systems between September 2006 and May 2008 were effectively chosen from a set of $2^{15} = 32{,}768$ possible keys for each key size. This made all such keys trivially breakable by exhaustive search.
 
 **Discovery**: The bug was discovered in May 2008 by Luciano Bello, a Debian developer, who noticed that SSH keys generated on his system were suspiciously weak.
 
@@ -356,7 +356,7 @@ The removed line was the **only source of entropy** in the PRNG seeding. Without
 2. **CSPRNGs must have strong entropy sources**: Relying on a single entropy source (PID) is catastrophic. Use `/dev/urandom`, `getrandom(2)`, or OS-provided CSPRNGs.
 3. **Test CSPRNG output**: Statistical tests (NIST SP 800-22, Dieharder) would have detected the severely limited entropy, but they were not run on the Debian-patched version.
 
-### 6.3 Android Java CSPRNG Bug (CVE-2013-4787)
+### 6.3 Android Java CSPRNG Bug (CVE-2013-7372)
 
 The Apache Harmony implementation of `java.security.SecureRandom` on Android had a bug where the PRNG state was not properly initialized when the seed was set. The `setSeed()` method did not mix the new seed into the existing state; instead, it replaced the state, discarding any previously accumulated entropy.
 
@@ -663,4 +663,4 @@ In secret sharing-based MPC (BGW protocol, 1988), each party secret-shares their
 18. Gentry, C., "A Fully Homomorphic Encryption Scheme," PhD Thesis, Stanford University, 2009.
 19. Brakerski, Z., "Fully Homomorphic Encryption without Modulus Switching from Classical GapSVP," CRYPTO 2012.
 20. NIST, "Recommendation for Random Number Generation Using Deterministic Random Bit Generators," SP 800-90A Rev. 1, June 2015.
-21. CVE-2007-4995, "Debian OpenSSL Predictable Random Number Generator," 2007.
+21. CVE-2008-0166, "Debian OpenSSL Predictable Random Number Generator," 2008.

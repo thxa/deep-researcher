@@ -1063,7 +1063,7 @@ anonymized = anonymizer.anonymize(text=text, analyzer_results=results)
 
 | Dataset | Task | Size | License |
 |---------|------|------|---------|
-| MMLU | Knowledge reasoning | 15K questions | CC-BY |
+| MMLU | Knowledge reasoning | 15K questions | MIT |
 | HumanEval | Code generation | 164 problems | MIT |
 | GSM8K | Math reasoning | 8.5K problems | MIT |
 | HellaSwag | Commonsense reasoning | 40K examples | CC-BY |
@@ -1079,7 +1079,7 @@ anonymized = anonymizer.anonymize(text=text, analyzer_results=results)
 |---------|------|------|-------|
 | WebArena | Web navigation | 812 tasks | E-commerce, forum, CMS |
 | ToolBench | API reasoning | 16K+ APIs | Multi-tool composition |
-| AgentInstruct | Agent trajectories | 1.8M interactions | Diverse tool usage |
+| AgentInstruct | Agent trajectories | 1,866 interactions | Diverse tool usage |
 | AgentBench | Agent evaluation | 8 environments | Multi-task agent benchmark |
 | OSWorld | Computer use | 369 tasks | Real OS interaction |
 
@@ -1184,11 +1184,9 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 4. **Gao, L., et al.** (2020). "The Pile: An 800GB Dataset of Diverse Text for Language Modeling." *arXiv preprint arXiv:2101.00027*. URL: [https://arxiv.org/abs/2101.00027](https://arxiv.org/abs/2101.00027)
 
-5. **Wenzel, P., & Raschka, S.** (2023). *Python for Data Mining: Web Scraping & Data Collection Techniques*. Packt Publishing. ISBN: 978-1803237300.
-
 ### Data Labeling & Annotation
 
-6. **Ratner, A., Bach, S. H., Ehrenberg, H., Horvitz, Z., Lebescu, R., Ré, C., et al.** (2017). "Snorkel: Rapid Training Data Creation with Weak Supervision." *Proceedings of the VLDB Endowment*, 11(3), 269–282. arXiv: [1711.10160](https://arxiv.org/abs/1711.10160). DOI: [10.14778/3157794.3157797](https://doi.org/10.14778/3157794.3157797)
+6. **Ratner, A., Bach, S. H., Ehrenberg, H., Fries, J., Wu, S., & Ré, C.** (2017). "Snorkel: Rapid Training Data Creation with Weak Supervision." *Proceedings of the VLDB Endowment*, 11(3), 269–282. arXiv: [1711.10160](https://arxiv.org/abs/1711.10160). DOI: [10.14778/3157794.3157797](https://doi.org/10.14778/3157794.3157797)
 
 7. **Settles, B.** (2012). *Active Learning*. Synthesis Lectures on Artificial Intelligence and Machine Learning, Morgan & Claypool Publishers. DOI: [10.2200/S00429ED1V01Y201207AIM018](https://doi.org/10.2200/S00429ED1V01Y201207AIM018)
 
@@ -1214,7 +1212,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 16. **Gal, Y., Islam, R., & Ghahramani, Z.** (2017). "Deep Bayesian Active Learning with Image Data." *Proceedings of the 34th International Conference on Machine Learning (ICML)*, 1183–1192. arXiv: [1703.03221](https://arxiv.org/abs/1703.03221)
 
-17. **Houlsby, N., Huszár, F., Ghahramani, Z., & Lengyel, M.** (2011). "Bayesian Active Learning for Classification and Preference Sensing." *Advances in Neural Information Processing Systems (NeurIPS)*, 24. URL: [https://proceedings.neurips.cc/paper/2011/hash/45c77d1a0f6f6f8e3f9c7fc2e4e8f60e-Abstract.html](https://proceedings.neurips.cc/paper/2011/hash/45c77d1a0f6f6f8e3f9c7fc2e4e8f60e-Abstract.html)
+17. **Houlsby, N., Huszár, F., Ghahramani, Z., & Lengyel, M.** (2011). "Bayesian Active Learning for Classification and Preference Sensing." *Advances in Neural Information Processing Systems (NeurIPS)*, 24. (NeurIPS 2011)(https://proceedings.neurips.cc/paper/2011/hash/45c77d1a0f6f6f8e3f9c7fc2e4e8f60e-Abstract.html)
 
 18. **Sener, O., & Savarese, S.** (2018). "Active Learning for Convolutional Neural Networks: A Core-Set Approach." *Proceedings of the 6th International Conference on Learning Representations (ICLR)*. arXiv: [1708.00489](https://arxiv.org/abs/1708.00489)
 
@@ -1256,7 +1254,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 ### Data Quality & Label Error Detection
 
-34. **Northcutt, C. G., Athalye, A., & Mueller, J.** (2021). "Pervasive Label Errors in Test Destabilize Machine Learning Benchmarks." *Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS) Datasets and Benchmarks Track*. arXiv: [2103.14749](https://arxiv.org/abs/2103.14749)
+34. **Northcutt, C. G., Athalye, A., & Mueller, J.** (2021). "Pervasive Label Errors in Test Sets Destabilize Machine Learning Benchmarks." *Proceedings of the 35th Conference on Neural Information Processing Systems (NeurIPS) Datasets and Benchmarks Track*. arXiv: [2103.14749](https://arxiv.org/abs/2103.14749)
 
 35. **Brodley, C. E., & Friedl, M. A.** (1999). "Identifying Mislabeled Training Data." *Journal of Artificial Intelligence Research (JAIR)*, 11, 131–166. DOI: [10.1613/jair.606](https://doi.org/10.1613/jair.606)
 
@@ -1272,7 +1270,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 ### Bias Detection & Fairness
 
-40. **Buolamwini, J., & Gebru, T.** (2018). "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification." *Proceedings of the 1st Conference on Fairness, Accountability, and Transparency (FAccT)*, 77–91. DOI: [10.1145/3287560.3287572](https://doi.org/10.1145/3287560.3287572)
+40. **Buolamwini, J., & Gebru, T.** (2018). "Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification." *Proceedings of the 1st Conference on Fairness, Accountability, and Transparency (FAccT)*, PMLR Vol. 81, 77–91.
 
 41. **Bellamy, R. K. E., Dey, K., Hind, M., Hoffman, S. C., Houde, S., Kalan, S., et al.** (2019). "AI Fairness 360: An Extensible Toolkit for Detecting, Understanding, and Mitigating Unwanted Algorithmic Bias." *arXiv preprint arXiv:1810.01943*. URL: [https://arxiv.org/abs/1810.01943](https://arxiv.org/abs/1810.01943)
 
@@ -1308,7 +1306,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 ### Data Governance, Ethics & Privacy
 
-54. **Gebru, T., Dodge, J., Andrabi, A., Prabhakaran, V., & Menezes, R.** (2021). "Datasheets for Datasets." *Communications of the ACM*, 64(12), 86–92. DOI: [10.1145/3458723](https://doi.org/10.1145/3458723). Originally arXiv: [1803.09010](https://arxiv.org/abs/1803.09010)
+54. **Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., & Crawford, K.** (2021). "Datasheets for Datasets." *Communications of the ACM*, 64(12), 86–92. DOI: [10.1145/3458723](https://doi.org/10.1145/3458723). Originally arXiv: [1803.09010](https://arxiv.org/abs/1803.09010)
 
 55. **Dwork, C., & Roth, A.** (2014). "The Algorithmic Foundations of Differential Privacy." *Foundations and Trends in Theoretical Computer Science*, 9(3–4), 211–407. DOI: [10.1561/0400000042](https://doi.org/10.1561/0400000042)
 
@@ -1322,9 +1320,9 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 ### Agentic AI Datasets & Benchmarks
 
-60. **Liu, X., Yu, L., Gu, Y., Zhou, Q., Peng, D., Xu, M., et al.** (2023). "WebArena: A Realistic Web Environment for Building Autonomous Agents." *Proceedings of the 2nd Conference on Lifelong Learning Agents (CoLLA)*. arXiv: [2307.13854](https://arxiv.org/abs/2307.13854)
+60. **Zhou, S., Xu, F. F., Zhu, H., Zhou, X., Lo, R., et al.** (2024). "WebArena: A Realistic Web Environment for Building Autonomous Agents." *International Conference on Learning Representations (ICLR)*. arXiv: [2307.13854](https://arxiv.org/abs/2307.13854)
 
-61. **Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., et al.** (2023). "ToolBench: An Open Platform for Training Large Language Models for Tool Usage." *Proceedings of the 37th Conference on Neural Information Processing Systems (NeurIPS) Datasets and Benchmarks Track*. arXiv: [2307.16789](https://arxiv.org/abs/2307.16789)
+61. **Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., et al.** (2024). "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs." *International Conference on Learning Representations (ICLR)*. arXiv: [2307.16789](https://arxiv.org/abs/2307.16789)
 
 62. **Xue, F., et al.** (2024). "AgentInstruct: Toward Generative AI in a Simulated World." *arXiv preprint arXiv:2405.14531*. URL: [https://arxiv.org/abs/2405.14531](https://arxiv.org/abs/2405.14531)
 
@@ -1334,7 +1332,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 ### Datasets & Open Data Platforms
 
-65. **Lhoest, Q., del Moral, A. F., Jernite, Y., Ramaswamy, A., Raff, E., Sileo, L., et al.** (2021). "HuggingFace Datasets: A Community Library for Datasets." *Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP): System Demonstration*, 131–144. DOI: [10.18653/v1/2021.emnlp-demo.21](https://doi.org/10.18653/v1/2021.emnlp-demo.21). Documentation: [https://huggingface.co/docs/datasets](https://huggingface.co/docs/datasets)
+65. **Lhoest, Q., del Moral, A. F., Jernite, Y., Ramaswamy, A., Raff, E., Sileo, L., et al.** (2021). "Datasets: A Community Library for Natural Language Processing." *Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing (EMNLP): System Demonstrations*, 175–184. DOI: [10.18653/v1/2021.emnlp-demo.21](https://doi.org/10.18653/v1/2021.emnlp-demo.21). Documentation: [https://huggingface.co/docs/datasets](https://huggingface.co/docs/datasets)
 
 66. **Bojar, O., Buck, C., Federmann, C., Haddow, B., Koehn, P., Leveling, J., et al.** (2014). "Findings of the 2014 Workshop on Statistical Machine Translation." *Proceedings of the Ninth Workshop on Statistical Machine Translation*, 12–58. DOI: [10.3115/v1/W14-3302](https://doi.org/10.3115/v1/W14-3302)
 
@@ -1342,7 +1340,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 ### Tabular Data Synthesis
 
-68. **Xu, L., Sklar, E. I., & Veeramachaneni, K.** (2019). "Modeling Tabular Data Using Conditional GAN." *Advances in Neural Information Processing Systems (NeuRIPS)*, 32. arXiv: [1907.00503](https://arxiv.org/abs/1907.00503)
+68. **Xu, L., Skoularidou, M., Cuesta-Infante, A., & Veeramachaneni, K.** (2019). "Modeling Tabular Data Using Conditional GAN." *Advances in Neural Information Processing Systems (NeurIPS)*, 32. arXiv: [1907.00503](https://arxiv.org/abs/1907.00503)
 
 69. **He, H., Bai, Y., Garcia, E. A., & Li, S.** (2008). "ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning." *Proceedings of the IEEE International Joint Conference on Neural Networks (IJCNN)*, 1322–1328. DOI: [10.1109/IJCNN.2008.4633969](https://doi.org/10.1109/IJCNN.2008.4633969)
 ## References

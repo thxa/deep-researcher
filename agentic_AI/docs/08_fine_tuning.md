@@ -117,7 +117,7 @@ AdaLoRA dynamically allocates the parameter budget across layers. Instead of a u
 
 The total parameter budget is fixed, but distributed non-uniformly: `Σ r_i = budget`.
 
-### 2.4 IA³ (Infrastructure for Approximating Abstract Adapters)
+### 2.4 IA³ (Infused Adapter by Inhibiting and Amplifying Inner Activations)
 
 IA³ injects three learned vectors rather than matrices — one each to scale keys, values, and feed-forward activations:
 
@@ -962,7 +962,7 @@ trainer.train()
 
 ### 10.3 Unsloth
 
-Unsloth provides 2× faster training and 60% less memory usage through custom CUDA kernels:
+Unsloth provides up to 2× faster training and up to 70% less VRAM usage through custom Triton kernels:
 
 ```python
 from unsloth import FastLanguageModel
@@ -1229,9 +1229,9 @@ The field is evolving rapidly — ORPO and other single-phase methods are making
 
 2. Dettmers, T., Pagnoni, A., Holtzman, A., & Zettlemoyer, L., "QLoRA: Efficient Finetuning of Quantized LLMs", *NeurIPS 2023*, arXiv:2305.14314. https://arxiv.org/abs/2305.14314
 
-3. Zhang, L., Zhang, Y., Guo, D., & He, Z., "AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning", *ICLR 2023*, arXiv:2303.10512. https://arxiv.org/abs/2303.10512
+3. Zhang, Q., Chen, M., Bukharin, A., Karampatziakis, N., He, P., Cheng, Y., Chen, W., & Zhao, T., "AdaLoRA: Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning", *ICLR 2023*, arXiv:2303.10512. https://arxiv.org/abs/2303.10512
 
-4. Liu, H., Tam, D., Muennighoff, N., Raffel, C., &荤 R., "Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning", *NeurIPS 2022* (IA³). https://arxiv.org/abs/2205.05638
+4. Liu, H., Tam, D., Muqeeth, M., Mohta, J., Huang, T., Bansal, M., & Raffel, C., "Few-Shot Parameter-Efficient Fine-Tuning is Better and Cheaper than In-Context Learning", *NeurIPS 2022* (IA³). https://arxiv.org/abs/2205.05638
 
 5. Li, X.L. & Liang, P., "Prefix-Tuning: Optimizing Continuous Prompts for Generation", *ACL 2021*, arXiv:2101.00190. https://arxiv.org/abs/2101.00190
 
@@ -1279,11 +1279,11 @@ The field is evolving rapidly — ORPO and other single-phase methods are making
 
 24. Rafailov, R., Sharma, A., Mitchell, E., Ermon, S., Manning, C.D., & Finn, C., "Direct Preference Optimization: Your Language Model is Secretly a Reward Model" (DPO), *NeurIPS 2023*, arXiv:2305.18290. https://arxiv.org/abs/2305.18290
 
-25. Azar, M.G., Rowland, M., Piot, B., Munos, R., Calandriello, D., Valko, M., & Heess, N., "A General Theoretical Paradigm to Understand Learning from Human Preferences" (IPO), *ICML 2024*, arXiv:2310.03744. https://arxiv.org/abs/2310.03744
+25. Azar, M.G., Rowland, M., Piot, B., Munos, R., Calandriello, D., Valko, M., & Heess, N., "A General Theoretical Paradigm to Understand Learning from Human Preferences" (IPO), *AISTATS 2024* (PMLR 238:4447-4455), arXiv:2310.12036. https://arxiv.org/abs/2310.12036
 
 26. Ethayarajh, K., Xu, W., Muennighoff, N., Jurafsky, D., & Kiela, D., "KTO: Model Alignment as Prospect Theoretic Optimization" (KTO), arXiv:2402.01306. https://arxiv.org/abs/2402.01306
 
-27. Hong, J., Lee, H., & Kim, S., "ORPO: Monolithic Preference Optimization for Preference Alignment" (ORPO), *ACL 2024*, arXiv:2403.07691. https://arxiv.org/abs/2403.07691
+27. Hong, J., Lee, N., & Thorne, J., "ORPO: Monolithic Preference Optimization without Reference Model" (ORPO), *EMNLP 2024*, arXiv:2403.07691. https://arxiv.org/abs/2403.07691
 
 28. Meng, Y., Xia, M., & Chen, D., "SimPO: Simple Preference Optimization with a Reference-Free Reward", arXiv:2405.14734. https://arxiv.org/abs/2405.14734
 
@@ -1301,7 +1301,7 @@ The field is evolving rapidly — ORPO and other single-phase methods are making
 
 33. Ganguli, D., Lovitt, L., Kernion, J., et al., "Red Teaming Language Models to Reduce Harms: Methods, Scaling Behaviors, and Lessons Learned", arXiv:2209.07858. https://arxiv.org/abs/2209.07858
 
-34. Lee, H., Phatale, S., Mansoor, H., Mesgar, K., Huang, L., & Rengarajan, S., "RLAIF: Scaling Reinforcement Learning from Human Feedback with AI Feedback", *ICML 2024*, arXiv:2309.00267. https://arxiv.org/abs/2309.00267
+34. Lee, H., Phatale, S., Mansoor, H., Mesgar, K., Huang, L., & Rengarajan, S., "RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback", *ICML 2024*, arXiv:2309.00267. https://arxiv.org/abs/2309.00267
 
 35. Sun, H., Zhang, W., & Tiu, J., "Self-Alignment with Instruction Backtranslation", *ICLR 2024*, arXiv:2308.06259. https://arxiv.org/abs/2308.06259
 
@@ -1325,7 +1325,7 @@ The field is evolving rapidly — ORPO and other single-phase methods are making
 
 43. Unsloth: 2x Faster LLM Fine-Tuning. https://github.com/unslothai/unsloth
 
-44. Zheng, X., Zhang, R., Zhang, X., Xue, Y., Wu, X., & Guo, T., "LLaMA-Factory: Unified Efficient Fine-Tuning of 100+ Language Models", *ACL 2024*, arXiv:2403.13372. https://arxiv.org/abs/2403.13372
+44. Zheng, Y., Zhang, R., Zhang, X., Xue, Y., Wu, X., & Guo, T., "LlamaFactory: Unified Efficient Fine-Tuning of 100+ Language Models", *Proceedings of the 62nd Annual Meeting of the ACL (Volume 3: System Demonstrations)*, pp. 400-410, 2024, arXiv:2403.13372. https://arxiv.org/abs/2403.13372
 
 ### Evaluation and Benchmarks
 

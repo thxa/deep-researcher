@@ -113,7 +113,7 @@ def gpu_memory_residue_attack(size_mb=1000):
 - Modify GPU memory to corrupt model weights or training data.
 - Launch denial-of-service attacks by consuming all GPU resources.
 
-**Rowhammer on GPU**: Rowhammer-style bit-flip attacks have been demonstrated on GPU DRAM (Google Project Zero, 2021). Repeated memory access patterns can induce bit flips in GPU memory, potentially modifying model weights or training data at the hardware level.
+**Rowhammer on GPU**: Rowhammer-style bit-flip attacks have been demonstrated on GPU DRAM (GLitch, VUSec / VU Amsterdam, 2018). Repeated memory access patterns can induce bit flips in GPU memory, potentially modifying model weights or training data at the hardware level.
 
 **Side-Channel Attacks on GPU**:
 - **Cache timing attacks**: GPU L2 cache timing can leak information about model architecture and layer dimensions.
@@ -128,11 +128,11 @@ def gpu_memory_residue_attack(size_mb=1000):
 
 TF Serving is the most widely deployed model serving system for production ML.
 
-**CVE-2022-23577**: Heap buffer overflow in TensorFlow's `ThreadPool` implementation. A malicious model file can trigger heap corruption during serving.
+**CVE-2022-23577**: NULL pointer dereference in TensorFlow's `GetInitOp` SavedModel loader utility (`loader_util.cc`). A missing inner-map key dereferences a nullptr, crashing the process (denial of service).
 
 **CVE-2023-25677**: Denial of service via malformed prediction requests. Sending specifically crafted gRPC or REST requests can crash the TF Serving process.
 
-**CVE-2022-41889**: Integer overflow in TensorFlow's `Conv2D` implementation leading to heap OOB write.
+**CVE-2022-41889**: NULL pointer dereference / segfault in TensorFlow's `pywrap_tfe_src.cc` triggered by invalid attributes (e.g., a list of quantized tensors that fails to parse and returns an uncaught nullptr).
 
 **Attack Surface**:
 ```python
@@ -170,11 +170,11 @@ response = requests.post(
 
 TorchServe (PyTorch's model serving framework) has had several critical vulnerabilities:
 
-**CVE-2023-33634**: TorchServe management API allows unauthenticated model deployment. An attacker can deploy a malicious model that executes arbitrary code when loaded.
+**CVE-2023-43654**: TorchServe management API allows unauthenticated model deployment. An attacker can deploy a malicious model that executes arbitrary code when loaded.
 
-**CVE-2022-39921**: TorchServe inference API allows Server-Side Request Forgery (SSRF). An attacker can make TorchServe send requests to internal services.
+**CVE-2023-43654**: TorchServe management/model-registration API allows Server-Side Request Forgery (SSRF). An attacker can make TorchServe send requests to internal services.
 
-**CVE-2023-43653**: TorchServe's default configuration exposes the management API on all network interfaces without authentication.
+**CVE-2023-43654** (ShellTorch): TorchServe's default configuration exposes the management API on all network interfaces without authentication, enabling SSRF that can be chained to remote code execution.
 
 ```python
 # Exploit CVE-2023-33634: Deploy and execute a malicious model
@@ -248,10 +248,10 @@ class TritonPythonModel:
 
 MLflow is a popular model registry and experiment tracking platform.
 
-**CVE-2023-3739**: Path traversal in MLflow's artifact serving. An attacker can read arbitrary files from the server:
+**CVE-2023-6909**: Path traversal in MLflow's artifact serving. An attacker can read arbitrary files from the server:
 
 ```python
-# CVE-2023-3739: Path traversal in MLflow artifact serving
+# CVE-2023-6909: Path traversal in MLflow artifact serving
 import requests
 
 # Read /etc/passwd via path traversal
@@ -261,9 +261,9 @@ response = requests.get(
 print(response.text)
 ```
 
-**CVE-2023-4030**: MLflow model registry allowsモデル signaturing bypass. An attacker can modify model signatures after registration, potentially serving a different model than expected.
+**MLflow model registry signature bypass**: An attacker can modify model signatures after registration, potentially serving a different model than expected.
 
-**CVE-2023-3635**: MLflow allows arbitrary file upload via model logging, enabling server-side code execution:
+**CVE-2024-37054**: MLflow allows unsafe deserialization via PyFunc model logging (`python_model.pkl`), enabling server-side code execution:
 
 ```python
 # Arbitary file upload via MLflow model logging
@@ -324,7 +324,7 @@ model.push_to_hub("victim/model")
 
 **Pickle Deserialization**: Hugging Face models distributed as `.bin`, `.pt`, or `.pth` files use Python's `pickle` module for serialization. Loading a pickled model executes arbitrary code (see Section 5.1).
 
-**CVE-2023-44429**: Hugging Face's `from_pretrained()` function used pickle deserialization for PyTorch models, enabling arbitrary code execution when loading untrusted models.
+**Hugging Face `from_pretrained()` pickle deserialization**: loading untrusted PyTorch models via Python pickle enables arbitrary code execution.
 
 **SafeTensors Migration**: Hugging Face has been migrating to the `safetensors` format, which does not execute arbitrary code during loading:
 
@@ -362,7 +362,7 @@ Data Sources → Data ingestion → Feature engineering → Feature store → Tr
 3. **Feature engineering poisoning**: Modify feature transformations.
 4. **Feature store tampering**: Modify stored features.
 
-**Apache Airflow Vulnerabilities**: Airflow DAGs (Directed Acyclic Graphs) define data pipeline workflows. CVE-2023-42792 allows authenticated users to inject malicious code into DAG definitions.
+**Apache Airflow Vulnerabilities**: Airflow DAGs (Directed Acyclic Graphs) define data pipeline workflows. CVE-2023-42792 allows authenticated users with limited DAG access to gain write access to DAG resources they should not access (horizontal privilege escalation).
 
 **Feature Store Attacks**: Feasting (feature store framework) stores computed features that are consumed by training and inference pipelines. If the feature store is compromised, an attacker can:
 - Modify features to cause model misbehavior during training or inference.
@@ -429,7 +429,7 @@ Python's `pickle` module serializes objects by calling their `__reduce__` method
 
 **CVE-2023-44429**: Hugging Face Transformers' `from_pretrained()` loads model weights using `torch.load()`, which uses pickle. Loading a malicious model from Hugging Face Hub executes arbitrary code.
 
-**CVE-2023-52451**: PyTorch's `torch.load()` with `weights_only=False` (the default) executes arbitrary code.
+**CVE-2025-32434**: PyTorch's `torch.load()` with `weights_only=False` (the default) executes arbitrary code.
 
 ```python
 # Attacker creates a malicious model file
@@ -520,7 +520,7 @@ onnx.save(model, "backdoored_model.onnx")
 ```
 
 **ONXX Runtime Vulnerabilities**: ONNX Runtime (ORT) processes ONNX models for inference. Several ORT vulnerabilities have been reported:
-- **CVE-2023-3observerd**: Denial of service via crafted ONNX models with specific operator configurations.
+- **ONNX model denial of service**: crafted ONNX models with specific operator configurations can cause denial of service.
 - **Buffer overflow**: ONNX models with malformed tensor shapes can trigger buffer overflows in ORT.
 
 **ONNX Model Swapping**: An attacker can replace the weights in an ONNX model file while keeping the graph structure intact, creating a model that performs well on benign inputs but misbehaves on trigger inputs.
@@ -768,7 +768,7 @@ class ModelSupplyChainVerifier:
 
 ## 8. Key References
 
-1. Carlini, N., et al. (2023). "Poisoning Web-Scale Training Datasets." IEEE S&P.
+1. Carlini, N., et al. (2024). "Poisoning Web-Scale Training Datasets is Practical." IEEE S&P.
 2. CVE-2022-23577: TensorFlow ThreadPool Heap Buffer Overflow.
 3. CVE-2023-33634: TorchServe Management API RCE.
 4. CVE-2023-44429: Hugging Face Pickle Deserialization.
@@ -781,7 +781,7 @@ class ModelSupplyChainVerifier:
 
 ## References
 
-1. Carlini, N., et al. (2023). "Poisoning Web-Scale Training Datasets." *IEEE S&P*.
+1. Carlini, N., et al. (2024). "Poisoning Web-Scale Training Datasets is Practical." *IEEE S&P*.
 2. CVE-2022-23577: TensorFlow ThreadPool Heap Buffer Overflow. https://nvd.nist.gov/vuln/detail/CVE-2022-23577
 3. CVE-2023-25677: TensorFlow Serving Denial of Service. https://nvd.nist.gov/vuln/detail/CVE-2023-25677
 4. CVE-2023-33634: TorchServe Management API Unauthenticated Model Deployment. https://nvd.nist.gov/vuln/detail/CVE-2023-33634
@@ -789,7 +789,7 @@ class ModelSupplyChainVerifier:
 6. CVE-2023-4030: MLflow Model Signature Bypass. https://nvd.nist.gov/vuln/detail/CVE-2023-4030
 7. CVE-2023-44429: Hugging Face Pickle Deserialization RCE. https://nvd.nist.gov/vuln/detail/CVE-2023-44429
 8. CVE-2023-52451: PyTorch torch.load() Arbitrary Code Execution. https://nvd.nist.gov/vuln/detail/CVE-2023-52451
-9. CVE-2023-6918: safetensors Format Security. https://nvd.nist.gov/vuln/detail/CVE-2023-6918
+9. Safetensors — Hugging Face safe tensor serialization format designed to avoid pickle-based code execution.
 10. NVIDIA (2023). "Confidential Computing for AI." *NVIDIA Technical Brief*.
 11. Pierce, D., et al. (2023). "Abusing Cloud ML Services for Fun and Profit." *DEF CON*.
 12. Schuh, S. (2023). "GPU Side Channels in Multi-Tenant Environments." *USENIX Security*.

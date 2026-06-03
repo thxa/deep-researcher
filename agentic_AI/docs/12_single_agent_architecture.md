@@ -1616,19 +1616,19 @@ class AgentDebugger:
 
 2. Shinn, N., Cassilio, A., & Narasimhan, K. (2023). "Reflexion: Language Agents with Verbal Reinforcement Learning." *Advances in Neural Information Processing Systems (NeurIPS 2023)*. arXiv:2303.11366. https://arxiv.org/abs/2303.11366
 
-3. Zhou, A., Gu, Q., Smah, K., & Narasimhan, K. (2023). "Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models." arXiv:2310.04406. https://arxiv.org/abs/2310.04406
+3. Zhou, A., Yan, K., Shlapentokh-Rothman, M., Wang, H., & Wang, Y.-X. (2023). "Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models." arXiv:2310.04406. https://arxiv.org/abs/2310.04406
 
 4. Richards, T. (2023). "AutoGPT: An Autonomous GPT-4 Experiment." GitHub repository. https://github.com/Significant-Gravitas/AutoGPT
 
-5. Wang, L., Ma, C., Feng, X., Zhang, Z., Yang, H., Zhang, J., Chen, Z., Tang, J., Chen, X., Lin, Z., Zhao, W. X., & Wei, Z. (2024). "A Survey on Large Language Model Based Autonomous Agents." *Frontiers of Computer Science*, 18(6), 186352. arXiv:2308.11432. https://arxiv.org/abs/2308.11432
+5. Wang, L., Ma, C., Feng, X., Zhang, Z., Yang, H., Zhang, J., Chen, Z., Tang, J., Chen, X., Lin, Z., Zhao, W. X., & Wei, Z. (2024). "A Survey on Large Language Model Based Autonomous Agents." *Frontiers of Computer Science*, 18(6), 186345. arXiv:2308.11432. https://arxiv.org/abs/2308.11432
 
 6. Yao, S., Yu, D., Zhao, J., Shafran, I., Griffiths, T., Cao, Y., & Narasimhan, K. (2024). "Tree of Thoughts: Deliberate Problem Solving with Large Language Models." *Advances in Neural Information Processing Systems (NeurIPS 2023)*. arXiv:2305.10601. https://arxiv.org/abs/2305.10601
 
-7. Shinn, N., Zafrin, N., Ashaly, A., & Narasimhan, K. (2024). "Reflexion: Language Agents with Verbal Reinforcement Learning — Extended Analysis." arXiv:2303.11366. https://arxiv.org/abs/2303.11366
+7. Shinn, N., Cassano, F., Berman, E., Gopinath, A., Narasimhan, K., & Yao, S. (2023). "Reflexion: Language Agents with Verbal Reinforcement Learning." *Advances in Neural Information Processing Systems (NeurIPS 2023)*. arXiv:2303.11366. https://arxiv.org/abs/2303.11366
 
 ### Tool Calling and Tool-Augmented LLMs
 
-8. Schick, T., Dwivedi-Yu, J., Joublin, R., Bosselut, A., & Schüz, R. (2023). "Toolformer: Language Models Can Teach Themselves to Use Tools." *Advances in Neural Information Processing Systems (NeurIPS 2023)*. arXiv:2302.04761. https://arxiv.org/abs/2302.04761
+8. Schick, T., Dwivedi-Yu, J., Dessì, R., Raileanu, R., Lomeli, M., Hambro, E., Zettlemoyer, L., Cancedda, N., & Scialom, T. (2023). "Toolformer: Language Models Can Teach Themselves to Use Tools." *Advances in Neural Information Processing Systems (NeurIPS 2023)*. arXiv:2302.04761. https://arxiv.org/abs/2302.04761
 
 9. Parisi, A., Zhao, Y., & Fiedel, N. (2022). "TALM: Tool-Augmented Language Models." arXiv:2205.12255. https://arxiv.org/abs/2205.12255
 
@@ -1636,7 +1636,7 @@ class AgentDebugger:
 
 11. Patil, S., Zhang, T., & Wang, X. (2023). "Gorilla: Large Language Model Connected with Massive APIs." arXiv:2305.15334. https://arxiv.org/abs/2305.15334
 
-12. Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., Lin, Y., Cong, X., He, X., & Zhou, H. (2023). "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs." *International Conference on Learning Representations (ICLR 2024)*. arXiv:2307.16989. https://arxiv.org/abs/2307.15989
+12. Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., Lin, Y., Cong, X., He, X., & Zhou, H. (2023). "ToolLLM: Facilitating Large Language Models to Master 16000+ Real-world APIs." *International Conference on Learning Representations (ICLR 2024)*. arXiv:2307.16789. https://arxiv.org/abs/2307.16789
 
 13. OpenAI. (2023). "Function Calling and Other API Updates." OpenAI Blog. https://openai.com/index/function-calling-and-other-api-updates/
 
@@ -1644,7 +1644,7 @@ class AgentDebugger:
 
 ### Retrieval-Augmented Generation (RAG)
 
-15. Lewis, P., Perez, E., Pikus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yen, W., Rocktäschel, T., Kiela, D., & Bordes, A. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." *Advances in Neural Information Processing Systems (NeurIPS 2020)*. arXiv:2005.11401. https://arxiv.org/abs/2005.11401
+15. Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Küttler, H., Lewis, M., Yih, W., Rocktäschel, T., Kiela, D., & Bordes, A. (2020). "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." *Advances in Neural Information Processing Systems (NeurIPS 2020)*. arXiv:2005.11401. https://arxiv.org/abs/2005.11401
 
 16. Gao, Y., Xiong, Y., Gao, X., Jia, K., Pan, J., Bi, Y., Dai, Y., Su, J., & Wang, H. (2024). "Retrieval-Augmented Generation for Large Language Models: A Survey." *Communications of the ACM*. arXiv:2312.10997. https://arxiv.org/abs/2312.10997
 
@@ -1668,11 +1668,11 @@ class AgentDebugger:
 
 ### Code Generation and Execution
 
-25. Li, Y., Choi, D., Chung, J., Kushman, N., Schrittwieser, J., Leblond, R., Eccles, T., Keeling, J., Lemerc — et al. (2022). "Competition-Level Code Generation with AlphaCode." *Science*, 378(6624). https://doi.org/10.1126/science.abq0080
+25. Li, Y., Choi, D., Chung, J., Kushman, N., Schrittwieser, J., Leblond, R., Eccles, T., Keeling, J., Lemerc — et al. (2022). "Competition-Level Code Generation with AlphaCode." *Science*, 378(6624). https://doi.org/10.1126/science.abq1158
 
 26. Chen, M., Tworek, J., Jun, H., Yuan, Q., Pinto, H. P. de O., Sridhar, J., & Kaplan, J. (2021). "Evaluating Large Language Models Trained on Code." arXiv:2107.03374. https://arxiv.org/abs/2107.03374
 
-27. Yang, Z., Liu, A., & Liu, J. (2023). "InterCode: Standardizing and Benchmarks for Interactive Coding with Large Language Models." *Advances in Neural Information Processing Systems (NeurIPS 2023)*. arXiv:2306.07877. https://arxiv.org/abs/2306.07877
+27. Yang, J., Prabhakar, A., Narasimhan, K., & Yao, S. (2023). "InterCode: Standardizing and Benchmarking Interactive Coding with Execution Feedback." *Advances in Neural Information Processing Systems (NeurIPS 2023)*. arXiv:2306.14898. https://arxiv.org/abs/2306.14898
 
 ### Memory and Context Management
 
@@ -1684,19 +1684,17 @@ class AgentDebugger:
 
 ### Evaluation and Benchmarking
 
-31. Liu, X., Yu, Q., & Zhang, Y. (2023). "AgentBench: Evaluating LLMs as Agents." *International Conference on Learning Representations (ICLR 2024)*. arXiv:2308.03688. https://arxiv.org/abs/2308.03688
+31. Liu, X., Yu, H., & Zhang, H. (2023). "AgentBench: Evaluating LLMs as Agents." *International Conference on Learning Representations (ICLR 2024)*. arXiv:2308.03688. https://arxiv.org/abs/2308.03688
 
-32. Zhu, X., Wang, L., & Wei, Z. (2023). "AgentEval: A Multi-faceted Evaluation of LLM-based Autonomous Agents." arXiv:2310.12668. https://arxiv.org/abs/2310.12668
+32. Arabzadeh, N., Huo, S., Mehta, N., Wu, Q., Wang, C., Awadallah, A., Clarke, C. L. A., & Kiseleva, J. (2024). "Assessing and Verifying Task Utility in LLM-Powered Applications (AgentEval)." *Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing (EMNLP 2024)*. arXiv:2405.02178. https://arxiv.org/abs/2405.02178
 
-33. Huang, Q., & others. (2023). "WebArena: A Realistic Web Environment for Building Autonomous Agents." *International Conference on Learning Representations (ICLR 2024)*. arXiv:2307.13854. https://arxiv.org/abs/2307.13854
+33. Zhou, S., Xu, F. F., Zhu, H., Zhou, X., Lo, R., Sridhar, A., Cheng, X., Ou, T., Bisk, Y., Fried, D., Alon, U., & Neubig, G. (2023). "WebArena: A Realistic Web Environment for Building Autonomous Agents." *International Conference on Learning Representations (ICLR 2024)*. arXiv:2307.13854. https://arxiv.org/abs/2307.13854
 
 ### Safety, Guardrails, and Alignment
 
 34. Zeng, Y., Xia, H., & Lam, M. (2024). "Agent Safety: A Holistic Analysis of Security and Safety Risks in LLM-based Agents." arXiv:2402.08517. https://arxiv.org/abs/2402.08517
 
 35. Ruan, W., & others. (2024). "Identifying the Risks of LLM Agents: An End-to-End Framework for Safety and Trustworthiness." arXiv:2402.08517. https://arxiv.org/abs/2402.08517
-
-36. Dong, Z., Li, S., & Xu, H. (2023). "Building Safe, Reliable, and Controllable AI Agents." arXiv:2312.09598. https://arxiv.org/abs/2312.09598
 
 ### Agent Frameworks and Infrastructure
 
@@ -1706,7 +1704,7 @@ class AgentDebugger:
 
 39. CrewAI documentation. https://docs.crewai.com/
 
-40. Pydantic AI documentation. https://ai.pydantic.com/
+40. Pydantic AI documentation. https://ai.pydantic.dev/
 
 41. Wu, Q., Bansal, G., Zhang, J., Wu, Y., Li, B., Zhu, E., Jiang, L., Zhang, X., Zhang, S., Liu, J., Awadallah, A. H., & Zhang, R. (2023). "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation." *Microsoft Research*. arXiv:2308.08155. https://arxiv.org/abs/2308.08155
 

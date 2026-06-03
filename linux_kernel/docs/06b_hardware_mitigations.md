@@ -1281,7 +1281,7 @@ lockdown constraints.
 
 ## References
 
-1. Intel Control-flow Enforcement Technology (CET) Specification, https://www.intel.com/content/www/us/en/en/develop/articles/control-flow-enforcement-technology.html
+1. Intel Control-flow Enforcement Technology (CET) Specification, https://www.intel.com/content/www/us/en/developer/articles/technical/technical-look-control-flow-enforcement-technology.html
 2. ARM Architecture Reference Manual, ARMv8-A, https://developer.arm.com/documentation/
 3. Intel 64 and IA-32 Architectures Software Developer's Manual, https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html
 4. Linux Kernel Documentation — Security Self-Protection, https://www.kernel.org/doc/html/latest/security/self-protection.html

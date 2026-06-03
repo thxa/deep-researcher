@@ -192,7 +192,7 @@ The memory controller (MCH/IMC) provides **hardware-based SMRAM locking**:
 
 ### 2.3 SMBASE Relocation
 
-On power-on or reset, all CPU cores share the **default SMBASE** of `0x30000` (on Intel; `0xA0000` on some AMD platforms). This creates a problem: if multiple cores enter SMM simultaneously, they would all use the same stack and state save area, causing corruption.
+On power-on or reset, all CPU cores share the **default SMBASE** of `0x30000` (the architectural default on both Intel and AMD). This creates a problem: if multiple cores enter SMM simultaneously, they would all use the same stack and state save area, causing corruption.
 
 **SMBASE relocation** solves this. Upon first SMI entry, the firmware:
 
@@ -385,20 +385,20 @@ Below is an extensive catalog of notable SMM-related CVEs.
 
 ### 3.1 Intel AMT/ME/SMM Bugs (CVE-2017-5701 through CVE-2017-5715)
 
-In January 2018, Intel disclosed a cluster of firmware vulnerabilities tracked as **SA-00086** affecting Intel Active Management Technology (AMT), Intel Standard Manageability (ISM), and Intel Small Business Technology (SBT) — but notably also affecting **SMM**:
+On November 20, 2017, Intel disclosed a cluster of firmware vulnerabilities tracked as **SA-00086** affecting Intel Management Engine (ME), Intel Server Platform Services (SPS), and Intel Trusted Execution Engine (TXE) firmware:
 
 | CVE | Component | Severity | Description |
 |-----|-----------|----------|-------------|
-| **CVE-2017-5701** | Intel ME Firmware | Critical | Multiple buffer overflows in Intel ME firmware enabling remote code execution in ME/SMM context |
+| **CVE-2017-5701** | Intel NUC BIOS | High | Insecure platform configuration in Intel NUC system firmware allowing an attacker with physical presence to run arbitrary code during BIOS Recovery (INTEL-SA-00084) |
 | **CVE-2017-5702** | Intel ME Firmware | Critical | Privilege escalation in Intel ME allowing local escalation to SMM |
 | **CVE-2017-5703** | Intel ME Firmware | Critical | Intel ME failure to properly restrict debug features, enabling SMM access |
 | **CVE-2017-5704** | Intel AMT | High | Intel AMT buffer overflow enabling network-based code execution |
 | **CVE-2017-5705** | Intel AMT/ME | High | Improper input validation in Intel AMT firmware |
-| **CVE-2017-5706** | Intel Server Platform | High | SMM vulnerability in Intel Xeon server firmware allowing escalation to SMM |
+| **CVE-2017-5706** | Intel SPS Firmware | High | Buffer overflows in Intel Server Platform Services (SPS) Firmware 4.0 allowing a local attacker to execute arbitrary code |
 | **CVE-2017-5707** | Intel ME | High | Integer overflow in Intel ME firmware |
 | **CVE-2017-5708** | Intel AMT | High | Denial of service via Intel AMT web interface |
 | **CVE-2017-5709** | Intel SPS | High | Intel Server Platform Services firmware vulnerability |
-| **CVE-2017-5710** | Intel SMM | Critical | SMM callout vulnerability allowing Ring 0 code to execute arbitrary SMM code |
+| **CVE-2017-5710** | Intel TXE Firmware | High | Privilege escalation in Intel TXE Firmware 3.0 allowing an unauthorized process to access privileged content (INTEL-SA-00086) |
 | **CVE-2017-5711** | Intel ME | High | Intel ME improper isolation of firmware modules |
 | **CVE-2017-5712** | Intel ME | High | Buffer overflow in Intel ME network services |
 | **CVE-2017-5713** | Intel ME | High | Improper privilege management in Intel ME |
@@ -417,7 +417,7 @@ The **EDK II (EFI Development Kit II)** is the open-source reference implementat
 Vulnerability:  SMM variable service callout
 Affected:       Edk2 SmmVariable module
 Impact:         arbitrary code execution in SMM
-CVSS:           8.2 (High)
+CVSS:           5.4 (Medium)
 ```
 
 The `SmmVariable` module did not sufficiently validate that pointers passed to `GetVariable()`, `SetVariable()`, and `NextVariableName()` resided within SMRAM. An attacker with Ring 0 access could craft a pointer to attacker-controlled memory outside SMRAM, causing the SMM handler to:
@@ -434,7 +434,7 @@ This is a classic **SMM callout vulnerability** (see Section 4.1).
 Vulnerability:  Buffer overflow in SMM communication handler
 Affected:       Edk2 PiSmmCommunicationSmm
 Impact:         SMM code execution, SMRAM corruption
-CVSS:           7.9 (High)
+CVSS:           5.3 (Medium)
 ```
 
 The SMM communication buffer (used by `EFI_SMM_COMMUNICATION_PROTOCOL`) did not validate that the communication buffer resided within SMRAM and did not check buffer bounds. An attacker could:
@@ -450,7 +450,7 @@ CVE:            CVE-2022-0002
 Vulnerability:  Bounds Check Bypass in SMM (Spectre-class)
 Affected:       Intel processors with SMM (multiple families)
 Impact:         Local privilege escalation from Ring 0 to Ring -2
-CVSS:           6.7 (Medium)
+CVSS:           6.5 (Medium)
 ```
 
 This vulnerability is a **Spectre-variant (Bounds Check Bypass)** applicable to SMM code. The attack:
@@ -500,29 +500,29 @@ chipsec.modules.common.spi      - SPI flash lock check
 
 | CVE | Severity | Description |
 |-----|----------|-------------|
-| **CVE-2019-6170** | High | Buffer overflow in Lenovo SMM driver for ThinkPad systems; enables SMM code execution |
+| **CVE-2019-6170** | Medium | SMI callout in the Legacy USB driver SMI callback on some Lenovo ThinkPad models; may allow arbitrary code execution under SMM |
 | **CVE-2019-6171** | High | Improper input validation in Lenovo ThinkPad SMM module; allows SMM privilege escalation |
-| **CVE-2020-4467** | High | Stack-based buffer overflow in Lenovo SMM driver for certain ThinkPad models |
-| **CVE-2021-3929** | High | SMM callout in Lenovo firmware; SMI handler dereferences OS-controlled pointer |
-| **CVE-2022-33068** | High | Lenovo SMM driver vulnerability enabling arbitrary SMM code execution from Ring 0 |
-| **CVE-2023-3423** | High | Potential SMM privilege escalation in Lenovo Notebook BIOS |
+| **CVE-2020-4467** | High | Out-of-bounds write in IBM i2 Analyst's Notebook 9.2.1 allowing arbitrary code execution when opening a crafted document (unrelated to Lenovo/SMM) |
+| **CVE-2021-3929** | High | DMA reentrancy use-after-free in QEMU NVMe controller emulation allowing a guest to crash QEMU or execute code on the host (unrelated to Lenovo/SMM) |
+| **CVE-2022-33068** | Medium | Integer overflow in HarfBuzz 4.3.0 (hb-ot-shape-fallback.cc) causing a denial of service (unrelated to Lenovo/SMM) |
+| **CVE-2023-3423** | High | Weak password requirements in CloudExplorer Lite prior to v1.2.0 (unrelated to Lenovo/BIOS/SMM) |
 
 #### 3.5.2 Dell SMM CVEs
 
 | CVE | Severity | Description |
 |-----|----------|-------------|
-| **CVE-2021-21551** | High | Dell dbutil_2_3.sys driver improper memory access, potentially enabling SMM interaction from Ring 3 |
+| **CVE-2021-21551** | High | Dell dbutil_2_3.sys driver exposes an IOCTL with insufficient access control, allowing a Ring 3 local user to read/write kernel (Ring 0) memory and escalate privileges (no SMM component) |
 | **CVE-2021-21552** | Medium | Dell Platform Security vulnerability affecting SMM handler |
 | **CVE-2022-24415** | High | Dell SMM firmware vulnerability; improper access control allows Ring 0 to SMM escalation |
 | **CVE-2022-24416** | High | Dell BIOS SMM callout; insufficient parameter validation in SMM handler |
-| **CVE-2022-26900** | High | Race condition in Dell SMM driver enabling SMM code execution |
+| **CVE-2022-26900** | High | Elevation of privilege in Microsoft Edge (Chromium-based) prior to 100.0.1185.29 (unrelated to Dell/SMM) |
 | **CVE-2023-28024** | Medium | Dell SMM variable service improper validation |
 
 #### 3.5.3 HP SMM CVEs
 
 | CVE | Severity | Description |
 |-----|----------|-------------|
-| **CVE-2021-39238** | High | HP SMM driver buffer overflow; allows SMM privilege escalation |
+| **CVE-2021-39238** | Critical | Buffer overflow in HP Enterprise LaserJet/PageWide printer FutureSmart firmware (unrelated to SMM) |
 | **CVE-2022-23927** | High | Potential SMM escalation in HP PC BIOS firmware |
 | **CVE-2022-23930** | High | Improper SMM memory operations in HP firmware |
 | **CVE-2023-0623** | High | HP SMM code execution vulnerability |
@@ -532,15 +532,15 @@ chipsec.modules.common.spi      - SPI flash lock check
 
 | CVE | Severity | Affected | Description |
 |-----|----------|----------|-------------|
-| **CVE-2020-0549** | Medium | Intel CPU | L1D cache evict (special register) side channel leaking SMM data (CrossTalk) |
+| **CVE-2020-0549** | Medium | Intel CPU | L1D Eviction Sampling (L1DES) side channel leaking data across boundaries (CacheOut) |
 | **CVE-2020-0543** | Medium | Intel CPU | Special Register Buffer Data Sampling (SRBDS) affecting SMM |
 | **CVE-2020-10713** | High | Multiple (GRUB) | BootHole: Secure Boot bypass enabling attacker-controlled code before SMM lock |
-| **CVE-2021-4183** | High | Insyde | SMM callout vulnerability in Insyde H2O firmware |
-| **CVE-2022-29265** | High | AMI | SMM stack overflow in AMI Aptio firmware SMM module |
+| **CVE-2021-4183** | Medium | Wireshark | Crash in the pcapng file parser in Wireshark 3.6.0 allowing denial of service (unrelated to Insyde/SMM) |
+| **CVE-2022-29265** | High | Apache NiFi | XML External Entity (XXE) injection in Apache NiFi 0.0.1–1.16.0 (unrelated to AMI/SMM) |
 | **CVE-2022-33102** | High | Dell | Memory corruption in Dell SMM firmware |
-| **CVE-2022-34347** | High | AMI | SMM callout in AMI BIOS firmware |
-| **CVE-2023-22642** | High | Insyde | SMM callout in Insyde H2O System Firmware |
-| **CVE-2023-38160** | High | AMI | Potential SMM privilege escalation in AMI Aptio |
+| **CVE-2022-34347** | High | WordPress | Cross-Site Request Forgery (CSRF) in the Download Manager WordPress plugin <= 3.2.48 (unrelated to AMI/SMM) |
+| **CVE-2023-22642** | High | Fortinet | Improper certificate validation in FortiAnalyzer/FortiManager enabling a man-in-the-middle attack (unrelated to Insyde/SMM) |
+| **CVE-2023-38160** | Medium | Windows | Windows TCP/IP information disclosure vulnerability (unrelated to AMI/SMM) |
 | **CVE-2024-24961** | High | EDK II | SMM heap overflow in MdeModulePkg SmmMemoryAllocationProfile |
 
 ### 3.7 Summary: 15 Most Notable SMM CVEs
@@ -883,11 +883,11 @@ At each stage, vulnerabilities can be introduced — either accidentally or inte
 | Attack | Year | Description |
 |--------|------|-------------|
 | **Hacking Team** | 2015 | UEFI firmware rootkit framework using SMM persistence; leaked in Hacking Team dump |
-| **LoJax** | 2018 | First UEFI rootkit seen in the wild (APT28/Sednit); used SMM for persistence |
+| **LoJax** | 2018 | First UEFI rootkit seen in the wild (APT28/Sednit); persisted by writing a malicious UEFI/DXE module to SPI flash |
 | **MosaicRegressor** | 2020 | UEFI bootkit using SMM-related firmware modification for persistence |
 | **ESPectre** | 2022 | UEFI bootkit targeting ESP, leveraging Secure Boot bypass for firmware modification |
 | **BlackLotus** | 2023 | UEFI bootkit bypassing Secure Boot; can be used to modify firmware before SMM locks |
-| **CosmicStrand** | 2022-2023 | Sophisticated UEFI rootkit found in MSI and Gigabyte firmware; modifies boot flow |
+| **CosmicStrand** | 2022 | Sophisticated UEFI rootkit found in ASUS and Gigabyte firmware; modifies boot flow |
 
 #### 4.6.3 Firmware Implant Persistence Model
 
@@ -1138,8 +1138,8 @@ The **System Management Range Register (SMRR)** is a pair of Model-Specific Regi
 
 | MSR | Name | Purpose |
 |-----|------|---------|
-| `0x1FE` | `IA32_SMRR_PHYSBASE` | SMRAM base address + memory type |
-| `0x1FF` | `IA32_SMRR_PHYSMASK` | SMRAM address mask + valid bit |
+| `0x1F2` | `IA32_SMRR_PHYSBASE` | SMRAM base address + memory type |
+| `0x1F3` | `IA32_SMRR_PHYSMASK` | SMRAM address mask + valid bit |
 
 #### 6.1.1 SMRR Register Format
 
@@ -1366,7 +1366,7 @@ A comprehensive checklist for SMRR auditing:
 - **LegbaCore / Eclypsium** — Firmware security research (Ron Minnich, Alex Matrosov, Yuriy Bulygin)
 - **Rafal Wojtczuk**, "Attacking Intel BIOS" — SMM cache poisoning research
 - **Corey Kallenberg**, "SMM Callout Vulnerabilities" — Systematic SMM callout analysis
-- **Mitre ATT&CK** — Technique T1542.001: System Firmware (SMM implant)
+- **Mitre ATT&CK** — Technique T1542.001: Pre-OS Boot: System Firmware (BIOS/UEFI firmware modification)
 - **NIST NVD** — CVE entries for SMM-related vulnerabilities
 - **Intel Security Advisories** — SA-00086, SA-00598, and related SMM advisories
 
@@ -1374,9 +1374,9 @@ A comprehensive checklist for SMRR auditing:
 
 | Year | Title | Authors | Topic |
 |------|-------|---------|-------|
-| 2006 | "Attacking Intel BIOS" | Heasman | SMM cache poisoning |
+| 2006 | "Implementing and Detecting an ACPI BIOS Rootkit" | Heasman | ACPI-based BIOS rootkits |
 | 2009 | "Attacking Intel Trusted Execution Technology" | Wojtczuk, Rutkowska | TXT/SMM interaction |
-| 2015 | "How Many Million BIOSes Would You Like to Infect?" | Bulygin, Matrosov, et al. | SMM security landscape |
+| 2015 | "How Many Million BIOSes Would You Like to Infect?" | Kallenberg, Kovah | SMM security landscape |
 | 2017 | "Intel SA-00086" | Intel | ME/AMT/SMM vulnerability cluster |
 | 2019 | "Safeguarding SMM with STM" | Intel | SMM Monitor (STM) for SMM hardening |
 | 2020 | "CosmicStrand" | Kaspersky | UEFI rootkit with SMM components |
@@ -1393,9 +1393,9 @@ A comprehensive checklist for SMRR auditing:
 - Rafal Wojtczuk, "Attacking Intel BIOS," coreboot. https://coreboot.org/
 - Corey Kallenberg, "System Management Mode Hijacking," LegbaCore/Batelle, 2015.
 - CHIPSEC — Platform Security Assessment Framework. https://chipsec.github.io/
-- RTE — Runtime EFI Readiness Tool. https://github.com/torvalds/linux
+- Linux kernel source tree (Linus Torvalds). https://github.com/torvalds/linux
 - ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/en/
-- Kaspersky, "MoonBounce: The dark side of the UEFI bootkit," 2022. https://securelist.com/moonbounce-uefi-bootkit/105924/
+- Kaspersky, "MoonBounce: the dark side of UEFI firmware," 2022. https://securelist.com/moonbounce-the-dark-side-of-uefi-firmware/105468/
 - Mickey Shkatov, "Attacking UEFI Boot, SMM, and BIOS," Black Hat USA, 2013–2015.
 - Alexander Tereshkin, "SMI Handlers Security," 2006–2008.
 - SMRAM (System Management RAM) — Intel BIOS Writer's Guide and SMM programming documentation.

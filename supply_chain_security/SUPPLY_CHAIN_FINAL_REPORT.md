@@ -359,8 +359,8 @@ The time to act is now. Every day without SLSA provenance, without SBOM generati
 4. US Executive Order 14028. "Improving the Nation's Cybersecurity." May 2021. https://www.federalregister.gov/documents/2021/05/17/2021-10460/improving-the-nations-cybersecurity
 5. CISA. "Software Bill of Materials (SBOM)." https://www.cisa.gov/sbom
 6. Sonatype. "2023 State of the Software Supply Chain Report." https://www.sonatype.com/state-of-the-software-supply-chain
-7. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain to Compromise Multiple Global Victims." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
-8. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+7. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain to Compromise Multiple Global Victims." December 2020. https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor
+8. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://www.microsoft.com/en-us/security/blog/2020/12/18/analyzing-solorigate-the-compromised-dll-file-that-started-a-sophisticated-cyberattack-and-how-microsoft-defender-helps-protect/
 9. CISA. "Emergency Directive 21-01: SolarWinds Orion Compromise." December 2020. https://www.cisa.gov/news-events/cybersecurity-advisories
 10. Freund, A. "Backdoor in xz/liblzma." OpenWall oss-security mailing list, March 2024. https://www.openwall.com/lists/oss-security/2024/03/29/4
 11. Birsan, A. "Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610

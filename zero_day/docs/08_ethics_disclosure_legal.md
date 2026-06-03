@@ -401,7 +401,7 @@ The most effective career strategy combines several of these: compete in CTFs, p
 5. [CISA — Vulnerability Disclosure Policy](https://www.cisa.gov/coordinated-vulnerability-disclosure-process) — US Government VDP template and guidance
 6. [Bugcrowd — Vulnerability Disclosure Programs](https://www.bugcrowd.com/) — Coordinated vulnerability disclosure platform
 7. [HackerOne — Bug Bounty Platform](https://www.hackerone.com/) — Vulnerability coordination and bug bounty platform
-8. [C2 — Council to Secure the Digital Economy](https://www.c2sec.org/) — Vulnerability disclosure framework and best practices
+8. [CSDE — Council to Secure the Digital Economy](https://csde.org/) — Vulnerability disclosure framework and best practices
 9. [EFF — CFAA Legal Guide](https://www.eff.org/issues/cfaa) — Computer Fraud and Abuse Act legal resource
 10. [NIST — Vulnerability Disclosure Framework](https://www.nist.gov/) — National vulnerability disclosure and coordination standards
 

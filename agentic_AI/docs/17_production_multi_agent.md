@@ -962,7 +962,7 @@ class TokenBudget:
     max_tokens_per_agent: int = 20_000
     max_cost_per_run_usd: float = 2.00
     max_cost_per_day_usd: float = 50.00
-    cost_per_1k_input_tokens: float = 0.0025   # GPT-4o mini pricing
+    cost_per_1k_input_tokens: float = 0.00015   # GPT-4o mini pricing
     cost_per_1k_output_tokens: float = 0.01
     
     tokens_used: int = 0
@@ -1609,9 +1609,9 @@ Building production multi-agent systems is fundamentally a systems engineering p
 
 5. OpenAI Swarm: Educational Framework for Exploring Ergonomic, Lightweight Multi-Agent Orchestration, OpenAI, 2024. URL: https://github.com/openai/swarm
 
-6. Fountoukis, K., & others, "CrewAI: A Framework for Orchestrating Role-Playing, Autonomous AI Agents", CrewAI, 2024. URL: https://github.com/crewAIInc/crewAI
+6. crewAIInc, "CrewAI: A Framework for Orchestrating Role-Playing, Autonomous AI Agents", CrewAI, 2024. URL: https://github.com/crewAIInc/crewAI
 
-7. Talebirad, Y., & Nadiri, A., "Multi-Agent Collaboration: Harnessing the Power of Intelligent LLM Agents", *arXiv preprint arXiv:2302.03461*, 2023.
+7. Talebirad, Y., & Nadiri, A., "Multi-Agent Collaboration: Harnessing the Power of Intelligent LLM Agents", *arXiv preprint arXiv:2306.03314*, 2023.
 
 8. Park, J. S., O'Brien, J. C., Cai, C. J., Morris, M. R., Liang, P., & Bernstein, M. S., "Generative Agents: Interactive Simulacra of Human Behavior", *Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST)*, 2023. DOI: 10.1145/3586183.3606763
 
@@ -1621,7 +1621,7 @@ Building production multi-agent systems is fundamentally a systems engineering p
 
 ### Magentic-One and Orchestration Patterns
 
-11. Farias, A., Gupta, R., & others, "Magentic-One: A Generalist Multi-Agent System for Solving Complex Tasks", Microsoft Research, 2024. URL: https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system/
+11. Fourney, A., et al., "Magentic-One: A Generalist Multi-Agent System for Solving Complex Tasks", Microsoft Research, 2024. URL: https://www.microsoft.com/en-us/research/articles/magentic-one-a-generalist-multi-agent-system/
 
 12. Xia, Y., Zhang, Y., Xu, M., & He, J., "AgentOK: Multi-Agent Orchestration Framework", 2024.
 
@@ -1641,27 +1641,27 @@ Building production multi-agent systems is fundamentally a systems engineering p
 
 ### Machine Learning Systems: Technical Debt and MLOps
 
-18. Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J., & Dennison, D., "Hidden Technical Debt in Machine Learning Systems", *Advances in Neural Information Processing Systems (NeurIPS)*, 2015. DOI: 10.5555/2969442.2969504
+18. Sculley, D., Holt, G., Golovin, D., Davydov, E., Phillips, T., Ebner, D., Chaudhary, V., Young, M., Crespo, J., & Dennison, D., "Hidden Technical Debt in Machine Learning Systems", *Advances in Neural Information Processing Systems (NeurIPS)*, 2015. DOI: 10.5555/2969442.2969519
 
-19. Amershi, S., Begel, A., Bird, C., DeLine, R., Gall, H., Kamar, E., Nagappan, N., Nushi, B., & Zimmermann, T., "Software Engineering for Machine Learning: A Case Study", *Proceedings of the 41st International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)*, 2019. DOI: 10.1109/ICSE-SEIP.2019.00012
+19. Amershi, S., Begel, A., Bird, C., DeLine, R., Gall, H., Kamar, E., Nagappan, N., Nushi, B., & Zimmermann, T., "Software Engineering for Machine Learning: A Case Study", *Proceedings of the 41st International Conference on Software Engineering: Software Engineering in Practice (ICSE-SEIP)*, 2019. DOI: 10.1109/ICSE-SEIP.2019.00042
 
-20. Kreuzberger, D., Kühl, N., & Hirschl, S., "Machine Learning Operations (MLOps): Overview, Definition, and Architecture", *IEEE Access*, vol. 11, 2023. DOI: 10.1109/ACCESS.2023.3264400
+20. Kreuzberger, D., Kühl, N., & Hirschl, S., "Machine Learning Operations (MLOps): Overview, Definition, and Architecture", *IEEE Access*, vol. 11, 2023. DOI: 10.1109/ACCESS.2023.3262138
 
 ### Software Architecture and Production Systems
 
-21. Nygard, M., *Release It!: Design and Deploy Production-Ready Software*, 2nd ed., Pragmatic Bookshelf, 2018. ISBN: 978-1680502397
+21. Nygard, M., *Release It!: Design and Deploy Production-Ready Software*, 2nd ed., Pragmatic Bookshelf, 2018. ISBN: 978-1680502398
 
 22. Kleppmann, M., *Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems*, O'Reilly Media, 2017. ISBN: 978-1449373320
 
 23. Newman, S., *Building Microservices: Designing Fine-Grained Systems*, 2nd ed., O'Reilly Media, 2021. ISBN: 978-1492034018
 
-24. Richards, M., *Fundamentals of Software Architecture*, O'Reilly Media, 2020. ISBN: 978-1492047988
+24. Richards, M., *Fundamentals of Software Architecture*, O'Reilly Media, 2020. ISBN: 978-1492043454
 
 ### Security in AI Systems
 
-25. Perez, F., & Ribeiro, I., "Ignore Previous Prompt: Attack Techniques For Language Models", *arXiv preprint arXiv:2211.03544*, 2022.
+25. Perez, F., & Ribeiro, I., "Ignore Previous Prompt: Attack Techniques For Language Models", *arXiv preprint arXiv:2211.09527*, 2022.
 
-26. Greshake, K., Abdelnabi, S., Mishra, S., Endres, V., Holz, T., & Fritz, M., "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications via Indirect Prompt Injection", *IEEE Security and Privacy Workshop on Offensive AI (OAI)*, 2023.
+26. Greshake, K., Abdelnabi, S., Mishra, S., Endres, V., Holz, T., & Fritz, M., "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications via Indirect Prompt Injection", *Proceedings of the 16th ACM Workshop on Artificial Intelligence and Security (AISec '23)*, 2023. DOI: 10.1145/3605764.3623985
 
 27. Wei, J., Wang, X., Schuurmans, D., Bosma, M., Ichter, B., Xia, F., Chi, E., Le, Q., & Zhou, D., "Chain-of-Thought Prompting Elicits Reasoning in Large Language Models", *Advances in Neural Information Processing Systems (NeurIPS)*, 2022. arXiv:2201.11903
 
@@ -1689,7 +1689,7 @@ Building production multi-agent systems is fundamentally a systems engineering p
 
 35. Kleppmann, M., *Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems*, O'Reilly Media, 2017. (Chapters on message queues, stream processing, and consistency.)
 
-36. Helland, P., "Immutability Changes Everything", *Communications of the ACM*, vol. 59, no. 1, 2015. DOI: 10.1145/2700861
+36. Helland, P., "Immutability Changes Everything", *Communications of the ACM*, vol. 59, no. 1, 2015. DOI: 10.1145/2844112
 
 37. RabbitMQ Documentation, VMware, 2024. URL: https://www.rabbitmq.com/documentation.html
 
@@ -1699,13 +1699,13 @@ Building production multi-agent systems is fundamentally a systems engineering p
 
 ### Container Orchestration and Infrastructure
 
-40. Burns, B., Grant, B., Oppenheimer, D., Brewer, E., & Wilkes, J., "Borg, Omega, and Kubernetes", *ACM Queue*, vol. 14, no. 1, 2016. DOI: 10.1145/2898412.2898444
+40. Burns, B., Grant, B., Oppenheimer, D., Brewer, E., & Wilkes, J., "Borg, Omega, and Kubernetes", *ACM Queue*, vol. 14, no. 1, 2016. DOI: 10.1145/2898442.2898444
 
 41. Kubernetes Documentation, Cloud Native Computing Foundation, 2024. URL: https://kubernetes.io/docs/
 
 ### Monitoring and Observability
 
-42. Sridharan, C., *Distributed Systems Observability*, O'Reilly Media, 2018. ISBN: 978-1492034247
+42. Sridharan, C., *Distributed Systems Observability*, O'Reilly Media, 2018. ISBN: 978-1492033424
 
 43. Prometheus Documentation, Prometheus Authors, 2024. URL: https://prometheus.io/docs/
 
@@ -1735,7 +1735,7 @@ Building production multi-agent systems is fundamentally a systems engineering p
 
 ### Human-in-the-Loop and Agent Alignment
 
-53. Wu, S., Irvin, B., Yu, H., Chen, J., He, J., Tow, J., & Bai, J., "Chain of Agents: Large Language Models Collaborating on Complex Problem Solving", *arXiv preprint arXiv:2307.02721*, 2023.
+53. Zhang, Y., Sun, R., Chen, Y., Pfister, T., Zhang, R., & Arık, S. Ö., "Chain of Agents: Large Language Models Collaborating on Long-Context Tasks", *Advances in Neural Information Processing Systems (NeurIPS)*, 2024. arXiv:2406.02818
 
 54. Ziegler, D. M., Stiennon, N., Wu, J., Bai, J., Vous, V., & Christiano, P., "Fine-Tuning Language Models from Human Preferences", *arXiv preprint arXiv:1909.08593*, 2019.
 

@@ -1390,7 +1390,7 @@ Choosing the right multi-agent architecture pattern requires evaluating your sys
 
 1. OpenAI, "Swarm: Educational framework exploring ergonomic, lightweight multi-agent orchestration," GitHub, 2024. https://github.com/openai/swarm
 
-2. Chen, B., et al., "AgentLite: A Lightweight Library for Building and Advancing Task-Oriented LLM Agent System," arXiv:2402.14338, 2024. https://arxiv.org/abs/2402.14338
+2. Liu, Z., et al., "AgentLite: A Lightweight Library for Building and Advancing Task-Oriented LLM Agent System," arXiv:2402.15538, 2024. https://arxiv.org/abs/2402.15538
 
 3. Significant Gravitas, "AutoGPT: An Autonomous GPT-4 Experiment," GitHub, 2023. https://github.com/Significant-Gravitas/AutoGPT
 
@@ -1398,11 +1398,11 @@ Choosing the right multi-agent architecture pattern requires evaluating your sys
 
 5. Gamma, E., Helm, R., Johnson, R., Vlissides, J., *Design Patterns: Elements of Reusable Object-Oriented Software*, Addison-Wesley, 1994. ISBN: 978-0201633610
 
-6. Liu, X., et al., "Dynamic LLM-Agent Network: An LLM-agent Collaboration Framework on Dynamic Interaction Topologies," arXiv:2403.06069, 2024. https://arxiv.org/abs/2403.06069
+6. Liu, Z., et al., "A Dynamic LLM-Powered Agent Network for Task-Oriented Agent Collaboration" (DyLAN), arXiv:2310.02170, 2023. https://arxiv.org/abs/2310.02170
 
 7. Park, J.S., et al., "Generative Agents: Interactive Simulacra of Human Behavior," in Proceedings of the 36th Annual ACM Symposium on User Interface Software and Technology (UIST 2023), arXiv:2304.03442, 2023. https://arxiv.org/abs/2304.03442
 
-8. Li, J., et al., "CAMEL: Communicative Agents for Mind Exploration of Large Language Model Society," in Advances in Neural Information Processing Systems (NeurIPS 2023), arXiv:2303.17760, 2023. https://arxiv.org/abs/2303.17760
+8. Li, G., et al., "CAMEL: Communicative Agents for Mind Exploration of Large Language Model Society," in Advances in Neural Information Processing Systems (NeurIPS 2023), arXiv:2303.17760, 2023. https://arxiv.org/abs/2303.17760
 
 9. Wu, Q., et al., "AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation," arXiv:2308.08155, 2023. https://arxiv.org/abs/2308.08155
 
@@ -1410,15 +1410,15 @@ Choosing the right multi-agent architecture pattern requires evaluating your sys
 
 11. Talebirad, Y., Nadiri, A., "Multi-Agent Collaboration: Harnessing the Power of Intelligent LLM Agents," arXiv:2306.03314, 2023. https://arxiv.org/abs/2306.03314
 
-12. Guo, T., et al., "Large Language Model based Multi-Agents: A Survey of Emergent Complexity," arXiv:2402.05180, 2024. https://arxiv.org/abs/2402.05180
+12. Guo, T., et al., "Large Language Model based Multi-Agents: A Survey of Progress and Challenges," arXiv:2402.01680, 2024. https://arxiv.org/abs/2402.01680
 
-13. Smith, R.G., "The Contract Net Protocol: High-Level Communication and Control in a Distributed Problem Solver," *IEEE Transactions on Computers*, vol. C-29, no. 12, pp. 1104–1113, 1980. DOI: 10.1109/TC.1980.1675558
+13. Smith, R.G., "The Contract Net Protocol: High-Level Communication and Control in a Distributed Problem Solver," *IEEE Transactions on Computers*, vol. C-29, no. 12, pp. 1104–1113, 1980. DOI: 10.1109/TC.1980.1675516
 
-14. Erman, L.D., Hayes-Roth, F., Lesser, V.R., Reddy, D.R., "The Hearsay-II Speech-Understanding System: Integrating Knowledge to Resolve Uncertainty," *ACM Computing Surveys*, vol. 12, no. 2, pp. 213–253, 1980. DOI: 10.1145/356810.356814
+14. Erman, L.D., Hayes-Roth, F., Lesser, V.R., Reddy, D.R., "The Hearsay-II Speech-Understanding System: Integrating Knowledge to Resolve Uncertainty," *ACM Computing Surveys*, vol. 12, no. 2, pp. 213–253, 1980. DOI: 10.1145/356810.356816
 
-15. Nii, H.P., "Blackboard Systems, Part I: The Blackboard Architecture," *AI Magazine*, vol. 7, no. 2, pp. 38–53, 1986. DOI: 10.1609/aimag.v7i2.635
+15. Nii, H.P., "Blackboard Systems, Part I: The Blackboard Architecture," *AI Magazine*, vol. 7, no. 2, pp. 38–53, 1986. DOI: 10.1609/aimag.v7i2.537
 
-16. Nii, H.P., "Blackboard Systems, Part II: Blackboard Application Systems," *AI Magazine*, vol. 7, no. 3, pp. 82–106, 1986. DOI: 10.1609/aimag.v7i3.637
+16. Nii, H.P., "Blackboard Systems, Part II: Blackboard Application Systems," *AI Magazine*, vol. 7, no. 3, pp. 82–106, 1986. DOI: 10.1609/aimag.v7i3.550
 
 17. Ongaro, D., Ousterhout, J., "In Search of an Understandable Consensus Algorithm," in *Proceedings of the 2014 USENIX Annual Technical Conference (ATC '14)*, pp. 305–319, 2014. https://www.usenix.org/conference/atc14/technical-sessions/presentation/ongaro
 
@@ -1430,21 +1430,21 @@ Choosing the right multi-agent architecture pattern requires evaluating your sys
 
 21. Kreps, D.M., *A Course in Microeconomic Theory*, Princeton University Press, 1990. ISBN: 978-0691042640
 
-22. Woolf, B., "Enterprise Integration Patterns Revisited," *Communications of the ACM*, vol. 61, no. 11, pp. 36–40, 2018. DOI: 10.1145/3275197
+22. Zimmermann, O., Pautasso, C., Hohpe, G., Woolf, B., "A Decade of Enterprise Integration Patterns: A Conversation with the Authors," *IEEE Software*, vol. 33, no. 1, pp. 13–19, 2016.
 
 23. Fowler, M., "CQRS Pattern," martinfowler.com, 2011. https://martinfowler.com/bliki/CQRS.html
 
 24. Vernon, V., *Implementing Domain-Driven Design*, Addison-Wesley, 2013. ISBN: 978-0321834577
 
-25. Du, Y., et al., "A Survey on Multi-Agent Reinforcement Learning: From the Perspective of Algorithms and/Hardware," *ACM Computing Surveys*, vol. 55, no. 9, Article 189, 2023. DOI: 10.1145/3569795
+25. Du, W., Ding, S., "A Survey on Multi-Agent Deep Reinforcement Learning: From the Perspective of Challenges and Applications," *Artificial Intelligence Review*, vol. 54, pp. 3215–3238, 2021. DOI: 10.1007/s10462-020-09938-y
 
-26. Durfee, E.H., Lesser, V.R., "Negotiating Task Decomposition and Allocation Using Partial Global Planning," in *Proceedings of the 10th International Joint Conference on Artificial Intelligence (IJCAI '87)*, pp. 756–761, 1987.
+26. Durfee, E.H., Lesser, V.R., "Using Partial Global Plans to Coordinate Distributed Problem Solvers," in *Proceedings of the 10th International Joint Conference on Artificial Intelligence (IJCAI '87)*, pp. 875–883, 1987.
 
 27. Decker, K.S., Lesser, V.R., "Designing a Family of Coordination Algorithms," in *Proceedings of the First International Conference on Multi-Agent Systems (ICMAS '95)*, pp. 73–80, 1995.
 
 28. Jennings, N.R., "Coordination Techniques for Distributed Artificial Intelligence," in *Foundations of Distributed Artificial Intelligence*, G.M.P. O'Hare and N.R. Jennings (Eds.), Wiley, 1996. ISBN: 978-0471965782
 
-29. Tamma, M., et al., "Ontology-Based Interaction in Multi-Agent Systems," in *Knowledge Engineering Review*, vol. 20, no. 2, pp. 157–178, 2005. DOI: 10.1017/S0269888905000361
+29. Tamma, V., Bench-Capon, T., "An ontology model to facilitate knowledge-sharing in multi-agent systems," in *The Knowledge Engineering Review*, vol. 17, no. 1, pp. 41–60, 2002. DOI: 10.1017/S0269888902000371
 
 30. Wang, L., et al., "A Survey of Large Language Model Based Autonomous Agents," *Frontiers of Computer Science*, vol. 18, no. 6, 2024. arXiv:2308.11432. https://arxiv.org/abs/2308.11432
 
@@ -1456,17 +1456,15 @@ Choosing the right multi-agent architecture pattern requires evaluating your sys
 
 34. Nakajima, Y., "BabyAGI," GitHub, 2023. https://github.com/yoheinakajima/babyagi
 
-35. Kakar, S., et al., "Multi-Agent Systems for Healthcare: A Survey of Architectures, Applications, and Challenges," arXiv:2402.15180, 2024. https://arxiv.org/abs/2402.15180
+35. Kim, H., Yuk, S., Cho, H., "Break the Breakout: Reinventing LM Defense Against Jailbreak Attacks with Self-Refinement," arXiv:2402.15180, 2024. https://arxiv.org/abs/2402.15180
 
-36. Helbing, D., et al., "Swarm Intelligence: Systems That Follow Simple Rules Self-Organize Without a Master Controller," in *Social Self-Organization*, Springer, pp. 73–92, 2012. DOI: 10.1007/978-3-642-24004-6_4
+36. Helbing, D., "Self-organization in Pedestrian Crowds," in *Social Self-Organization*, Springer, pp. 71–99, 2012. DOI: 10.1007/978-3-642-24004-1_3
 
 37. Bonabeau, E., Dorigo, M., Theraulaz, G., *Swarm Intelligence: From Natural to Artificial Systems*, Oxford University Press, 1999. ISBN: 978-0195131598
 
 38. Reynolds, C.W., "Flocks, Herds and Schools: A Distributed Behavioral Model," *ACM SIGGRAPH Computer Graphics*, vol. 21, no. 4, pp. 25–34, 1987. DOI: 10.1145/37402.37406
 
-39. Schwaber, K., Beedle, M., *Agile Software Development with Scrum*, Prentice Hall, 2001. ISBN: 978-0130676104
-
-40. Rinard, M., "Cranky: A System for Multi-Agent Negotiation Over Shared Resources," *ACM Transactions on Programming Languages and Systems*, vol. 23, no. 6, pp. 681–733, 2001. DOI: 10.1145/503702.503703
+39. Schwaber, K., Beedle, M., *Agile Software Development with Scrum*, Prentice Hall, 2001. ISBN: 978-0130676344
 ## References
 
 - OpenAI, "Swarm: Educational framework for exploring lightweight multi-agent orchestration," 2024. https://github.com/openai/swarm

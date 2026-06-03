@@ -138,8 +138,8 @@ This track is provided for educational and professional development purposes. Th
 6. Sonatype. "2023 State of the Software Supply Chain Report." https://www.sonatype.com/state-of-the-software-supply-chain
 7. Birsan, A. "Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
 8. Freund, A. "Backdoor in xz/liblzma." OpenWall oss-security mailing list, March 2024. https://www.openwall.com/lists/oss-security/2024/03/29/4
-9. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
-10. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+9. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://www.microsoft.com/en-us/security/blog/2020/12/18/analyzing-solorigate-the-compromised-dll-file-that-started-a-sophisticated-cyberattack-and-how-microsoft-defender-helps-protect/
+10. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor
 11. CycloneDX Specification v1.5. OWASP. https://cyclonedx.org/
 12. SPDX Specification v2.3. Linux Foundation. https://spdx.github.io/spdx-spec/
 13. Sigstore. "Cosign: Container Signing." https://docs.sigstore.dev/cosign/signing/signing_with_containers/

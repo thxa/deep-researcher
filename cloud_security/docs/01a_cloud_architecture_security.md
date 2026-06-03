@@ -903,6 +903,6 @@ In the following chapters, we will deep-dive into the specific attack and defens
 7. Microsoft. "Azure Security Architecture." *Microsoft Learn*. 2024. https://learn.microsoft.com/en-us/azure/security/fundamentals/
 8. Google Cloud. "Resource Hierarchy and Organization Policies." *Google Cloud*. 2024. https://cloud.google.com/resource-manager/docs/organization-policy/overview
 9. MITRE. "ATT&CK Cloud Matrix." *MITRE Corporation*. 2024. https://attack.mitre.org/matrices/enterprise/cloud/
-10. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws-privilege-escalation-methods-mitigation/
-11. Praetorian. "GCP IAM Enumeration and Privilege Escalation." *Praetorian*. 2021. https://www.praetorian.com/blog/
-12. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/aquasecurity/kube-hunter
+10. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
+11. Praetorian. "GCP IAM Enumeration and Privilege Escalation." *Praetorian*. 2021. https://www.praetorian.com/blog/google-cloud-platform-gcp-service-account-based-privilege-escalation-paths/
+12. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://www.nccgroup.com/research-blog/understanding-and-hardening-linux-containers/

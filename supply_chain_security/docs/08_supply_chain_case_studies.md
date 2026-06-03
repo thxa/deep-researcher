@@ -693,8 +693,8 @@ EEEEEkkkkkkkkkkkkAAkkkAAkkkkAAAAAAAAAAkkkkkkAAk...
 ## References
 
 1. CISA. "SolarWinds Orion Supply Chain Attack: Emergency Directive 21-01." https://www.cisa.gov/news-events/cybersecurity-advisories
-2. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
-3. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+2. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor
+3. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://www.microsoft.com/en-us/security/blog/2020/12/18/analyzing-solorigate-the-compromised-dll-file-that-started-a-sophisticated-cyberattack-and-how-microsoft-defender-helps-protect/
 4. FireEye. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020.
 5. Birsan, A. "Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies." February 2021. https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610
 6. 3CX. "Supply Chain Attack." March 2023. https://www.3cx.com/

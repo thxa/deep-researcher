@@ -63,7 +63,7 @@
 
 | Dimension | Details |
 |-----------|---------|
-| **Primary Threats** | VM escapes (VMBus, virtio, Xen PV), hypercall injection, nested virtualization exploits, MMU paravirtualization bugs, QEMU device emulation bugs (CVE-2015-5161/7504), hypervisor overlay attacks, side-channel (L1TF, MDS) |
+| **Primary Threats** | VM escapes (VMBus, virtio, Xen PV), hypercall injection, nested virtualization exploits, MMU paravirtualization bugs, QEMU device emulation bugs (CVE-2015-7504), hypervisor overlay attacks, side-channel (L1TF, MDS) |
 | **Available Defenses** | Hypervisor isolation, sVirt (SELinux for VMs), KVM kernel address space isolation, Secure Encrypted Virtualization (SEV/SEV-ES/SEV-SNP), Intel TDX, VT-x EPT/NPT controls, IOMMU passthrough restrictions, cloud-hypervisor minimal VMM |
 | **Configuration Guidance** | Enable SEV-SNP where hardware supports it, use `sVirt` with SELinux MCS labels per-VM, minimize QEMU device model (use `virtio` not emulated hardware), enable IOMMU (`intel_iommu=on`), disable nested virt unless required, apply hypervisor patches, use OVMF with Secure Boot |
 | **Detection Methods** | Hypervisor introspection (Ether, XenAccess), VMCS/VMCB integrity checks, TPM-based attestation of guest launch state, VMI event monitoring, hypervisor audit logs (QEMU monitor, libvirt), IOMMU fault forwarding, side-channel anomaly detection |
@@ -515,7 +515,7 @@ mei-amt-check
 #   - Intel ME Update Tool (OEM-provided)
 
 # Critical CVEs to patch:
-#   SA-00086: Remote privilege escalation in ME (INTEL-SA-00086)
+#   SA-00086: Local privilege escalation in ME (INTEL-SA-00086)
 #   SA-00118: Buffer overflow in ME firmware (INTEL-SA-00118)
 #   SA-00213: Privilege escalation in ME (INTEL-SA-00213)
 ```
@@ -1201,7 +1201,7 @@ cat /sys/firmware/kvm_sev/availability
 ├──────────┬───────────────────────────────────────────────────┤
 │ MKTME   │ Multi-Key Total Memory Encryption                 │
 │         │ - Per-process or per-VM memory encryption keys    │
-│         │ - Uses MKTME keys (up to 256 keys on Ice Lake+)  │
+│         │ - Uses MKTME keys (up to 64 keys on Ice Lake)    │
 │         │ - Requires BIOS support + key allocation           │
 │         │ - Transparent to applications                      │
 ├──────────┼───────────────────────────────────────────────────┤
@@ -1250,7 +1250,7 @@ qemu-system-x86_64 \
 │ Technology         │ Status / Notes                              │
 ├────────────────────┼────────────────────────────────────────────┤
 │ AMD SEV-SNP        │ GA — Production ready (EPYC Milan+, Genoa) │
-│ Intel TDX          │ GA — Sapphire Rapids+ (4th Gen Xeon)       │
+│ Intel TDX          │ GA — Emerald Rapids+ (5th Gen Xeon)        │
 │ ARM CCA            │ GA — ARMv9.2 Realm Management Extensions  │
 │ IBM SE             │ GA — Secure Execution on z16               │
 │ Intel SGX          │ GA — Enclave-level, not VM-level          │
@@ -1363,11 +1363,11 @@ echo "my-secret" | tpm2_seal -C 0x01 -i secret_data.bin -c seal_ctx -L sha256:0,
 |------|------|----------------|----------------|-------------|-------------|---------------------------|-----------------|
 | 3 | User Space | CPL=3 | Applications, containers, user daemons | ASLR, PIE, stack canaries, NX, RELRO, seccomp-bpf, AppArmor/SELinux, capabilities, `ptrace_scope`, Fortify Source, FORTIFY, `-fcf-protection` | CVE-2023-4911 (Looney Tunables), CVE-2021-4034 (PwnKit), CVE-2016-0728, CVE-2019-18634 | Buffer overflow → ROP chain → privilege escalation; `sudo`/`pkexec` LPE; dynamic linker abuse | Auditd, Falco, eBPF monitoring, seccomp violations, process ancestry |
 | 2 | I/O Privilege | IOPL | Legacy hardware I/O (mostly unused on x86-64) | IOPB, VT-d/IOMMU, `STRICT_DEVMEM`, `ioport` restrictions | Rare; mostly historical | Direct port I/O abuse, DMA via misconfigured IOMMU, `/dev/mem` write → kernel corruption | IOMMU fault logs, `/dev/port` audit, `iopl` syscall monitoring |
-| 1 | Kernel Services | CPL=1 (unused on x86-64) | Nothing (deprecated on x86-64) | Flat kernel model (Ring 0 only), LDT restrictions | CVE-2022-2588 (cls_route LDT), historical call gate attacks | `modify_ldt` abuse for local privilege escalation | `modify_ldt` syscall auditing, GDT/LDT integrity checks |
-| 0 | Kernel | CPL=0 | Linux kernel, drivers, LSM, BPF verifier, io_uring | SMEP, SMAP, KASLR, KPTI, KASAN, KFENCE, CFI (IBT/kCFI/RAP), Lockdown, `RANDSTRUCT`, `SLUB_HARDENED`, stackleak, `STRICT_KERNEL_RWX`, signed modules | CVE-2022-2602 (io_uring), CVE-2023-0398 (nftables), CVE-2021-4059 (PMU), CVE-2021-22555 (netfilter), CVE-2023-32233 (nf_tables UAF) | LPE via UAF/double-free in kernel subsystems; BPF verifier escape; io_uring race conditions; netfilter UAF; `/dev/mem` write | eBPF (Tetragon/Falco), kallsyms baseline, module loading audit, kprobes, Volatility memory forensics |
-| -1 | Hypervisor | VMX Root / -1 | KVM, Xen, Hyper-V, VMware hypervisor | sVirt/SELinux MCS, SEV/SEV-ES/SEV-SNP, TDX, IOMMU, VT-x EPT, minimal device model, nested virt disable | CVE-2015-5161 (QEMU heap overflow), CVE-2015-7504 (QEMU rat buffer overflow), CVE-2018-12382, CVE-2022-21123 (L1TF), CVE-2019-12258 (VMSA off-core) | VM escape via emulated device bugs; hypercall injection; VMBus/virtio race; L1TF/MDS side channels; QEMU device model exploitation | VMI (LibVMI), VMCS integrity, TPM attestation, IOMMU fault forwarding, QEMU process auditing |
-| -2 | SMM / Firmware | SMM (-2) | UEFI/BIOS, SMI handlers, Option ROMs, BMC/IPMI | Secure Boot, Measured Boot, BIOS Guard, SPI flash write-protect, SMRR, `SMM_FEATURES_CONTROL` lock, SMM Code chk | CVE-2017-9683 (ThinkPwn), CVE-2018-12130 (RIDL), LightEater, LoJax, Vault 7 EFI, CVE-2019-11098 (SMM call-out) | SMI handler exploit → SMM code execution; SPI flash implant; UEFI bootkit (LoJax); BIOS Guard bypass; Option ROM shadowing | chipsec SPI dump vs baseline, TCG Event Log PCR comparison, SMI count monitoring, SMM handler integrity, NVRAM audit |
-| -3 | ME / Hardware | ME/PSP (-3) | Intel ME/CSME, AMD PSP, BMC, CPU microcode, CPLD/FPGA | ME firmware signing, HAP bit, BIOS Guard, CPU microcode updates, JTAG fusing, chassis intrusion, TPM/PTT, silicon RoT | INTEL-SA-00086 (ME remote root), SA-00118 (ME buffer overflow), SA-00213 (ME LPE), AMD PSP (various), Spectre/Meltdown/L1TF/MDS class | ME network exploitation (AMT); firmware supply chain implant; JTAG debug access; side-channel (Spectre-class); CPLD bitstream modification | ME version audit, JTAG port status, TPM attestation failure, power analysis, CPUID/microcode revision check, hardware inspection |
+| 1 | Kernel Services | CPL=1 (unused on x86-64) | Nothing (deprecated on x86-64) | Flat kernel model (Ring 0 only), LDT restrictions | CVE-2022-2588 (cls_route UAF), historical call gate attacks | `modify_ldt` abuse for local privilege escalation | `modify_ldt` syscall auditing, GDT/LDT integrity checks |
+| 0 | Kernel | CPL=0 | Linux kernel, drivers, LSM, BPF verifier, io_uring | SMEP, SMAP, KASLR, KPTI, KASAN, KFENCE, CFI (IBT/kCFI/RAP), Lockdown, `RANDSTRUCT`, `SLUB_HARDENED`, stackleak, `STRICT_KERNEL_RWX`, signed modules | CVE-2022-2602 (io_uring), CVE-2021-4059 (PMU), CVE-2021-22555 (netfilter), CVE-2023-32233 (nf_tables UAF) | LPE via UAF/double-free in kernel subsystems; BPF verifier escape; io_uring race conditions; netfilter UAF; `/dev/mem` write | eBPF (Tetragon/Falco), kallsyms baseline, module loading audit, kprobes, Volatility memory forensics |
+| -1 | Hypervisor | VMX Root / -1 | KVM, Xen, Hyper-V, VMware hypervisor | sVirt/SELinux MCS, SEV/SEV-ES/SEV-SNP, TDX, IOMMU, VT-x EPT, minimal device model, nested virt disable | CVE-2015-7504 (QEMU pcnet buffer overflow), CVE-2018-12382, CVE-2022-21123 (SBDR/MMIO Stale Data), CVE-2019-12258 (VMSA off-core) | VM escape via emulated device bugs; hypercall injection; VMBus/virtio race; L1TF/MDS side channels; QEMU device model exploitation | VMI (LibVMI), VMCS integrity, TPM attestation, IOMMU fault forwarding, QEMU process auditing |
+| -2 | SMM / Firmware | SMM (-2) | UEFI/BIOS, SMI handlers, Option ROMs, BMC/IPMI | Secure Boot, Measured Boot, BIOS Guard, SPI flash write-protect, SMRR, `SMM_FEATURES_CONTROL` lock, SMM Code chk | ThinkPwn (SMM), LightEater, LoJax, Vault 7 EFI, CVE-2019-11098 (SMM call-out) | SMI handler exploit → SMM code execution; SPI flash implant; UEFI bootkit (LoJax); BIOS Guard bypass; Option ROM shadowing | chipsec SPI dump vs baseline, TCG Event Log PCR comparison, SMI count monitoring, SMM handler integrity, NVRAM audit |
+| -3 | ME / Hardware | ME/PSP (-3) | Intel ME/CSME, AMD PSP, BMC, CPU microcode, CPLD/FPGA | ME firmware signing, HAP bit, BIOS Guard, CPU microcode updates, JTAG fusing, chassis intrusion, TPM/PTT, silicon RoT | INTEL-SA-00086 (ME local privilege escalation), SA-00118 (ME buffer overflow), SA-00213 (ME LPE), AMD PSP (various), Spectre/Meltdown/L1TF/MDS class | ME network exploitation (AMT); firmware supply chain implant; JTAG debug access; side-channel (Spectre-class); CPLD bitstream modification | ME version audit, JTAG port status, TPM attestation failure, power analysis, CPUID/microcode revision check, hardware inspection |
 
 ---
 
@@ -1480,7 +1480,7 @@ echo "my-secret" | tpm2_seal -C 0x01 -i secret_data.bin -c seal_ctx -L sha256:0,
 
 | Resource | Description |
 |----------|-------------|
-| KSPP (Kernel Self Protection Project) | https://kernsec.org/wiki/index.php/Kernel_Self_Protection_Project |
+| KSPP (Kernel Self Protection Project) | https://kspp.github.io/ |
 | chipsec | https://github.com/chipsec/chipsec |
 | lockdown LSM | https://www.kernel.org/doc/html/latest/security/index.html |
 | AMD SEV SNP | https://developer.amd.com/sev/ |
@@ -1492,7 +1492,7 @@ echo "my-secret" | tpm2_seal -C 0x01 -i secret_data.bin -c seal_ctx -L sha256:0,
 | NIST SP 800-193 (Platform Firmware Resiliency) | https://csrc.nist.gov/publications/detail/sp/800-193/final |
 | INTEL-SA-00086 Detection Tool | https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00086.html |
 | CVE-2021-4034 (PwnKit) | https://nvd.nist.gov/vuln/detail/CVE-2021-4034 |
-| LoJax (UEFI Bootkit) | ESET Research, 2018 |
+| LoJax (UEFI Rootkit) | ESET Research, 2018 |
 | ThinkPwn (SMM) | https://github.com/Cr4sh/ThinkPwn |
 | Spectre/Meltdown | https://spectreattack.com/ |
 
@@ -1503,7 +1503,7 @@ echo "my-secret" | tpm2_seal -C 0x01 -i secret_data.bin -c seal_ctx -L sha256:0,
 
 - Intel 64 and IA-32 Architecture Software Developer's Manual. Intel Corporation.
 - AMD64 Architecture Programmer's Manual. AMD.
-- ESET Research, "LoJax: First UEFI bootkit found in the wild," 2018. https://www.welivesecurity.com/en/
+- ESET Research, "LoJax: First UEFI rootkit found in the wild," 2018. https://www.welivesecurity.com/en/
 - Kaspersky, "MoonBounce: The dark side of the UEFI bootkit." https://securelist.com/moonbounce-uefi-bootkit/105924/
 - Kaspersky, "CosmicStrand: A sophisticated UEFI bootkit." https://securelist.com/cosmicstrand-uefi-bootkit/106778/
 - CHIPSEC — Platform Security Assessment Framework. https://chipsec.github.io/

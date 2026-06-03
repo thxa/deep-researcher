@@ -1555,8 +1555,8 @@ sharing:
 
 | Instance | GPU | $/hr On-Demand | $/hr 1yr RI | $/hr Spot | GPU Memory |
 |---|---|---|---|---|---|
-| p4d.24xlarge | 8× A100 80GB | $32.77 | $20.50 | ~$10.00 | 640 GB |
-| p5.48xlarge | 8× H100 80GB | $98.32 | $61.00 | ~$30.00 | 640 GB |
+| p4d.24xlarge | 8× A100 40GB | $21.96 | $13.92 | ~$9–12 | 320 GB |
+| p5.48xlarge | 8× H100 80GB | $55.04 | $23.05 | ~$23.78 | 640 GB |
 | g5.12xlarge | 4× A10G 24GB | $5.67 | $3.50 | ~$1.70 | 96 GB |
 | g6.12xlarge | 4× L4 24GB | $4.50 | $2.80 | ~$1.35 | 96 GB |
 
@@ -1971,7 +1971,7 @@ helm upgrade --install model-server ./charts/model-server \
 
 9. Kwon, W., Li, Z., Zhuang, S., et al., "Efficient Memory Management for Large Language Model Serving with PagedAttention", *SOSP 2023*, arXiv:2309.06180. https://arxiv.org/abs/2309.06180
 
-10. Xia, H., Zhou, Z., Zheng, Z., & Chen, W., "Speculative Decoding: Exploiting Draft Models for Fast LLM Inference", arXiv:2302.01318. https://arxiv.org/abs/2302.01318
+10. Chen, C., Borgeaud, S., Irving, G., Lespiau, J.-B., Sifre, L., & Jumper, J., "Accelerating Large Language Model Decoding with Speculative Sampling", arXiv:2302.01318. https://arxiv.org/abs/2302.01318
 
 11. Kim, G., Xiao, G., Wu, H., et al., "Full Stack Optimization for Serving LLMs with TensorRT-LLM", NVIDIA Developer, https://developer.nvidia.com/tensorrt-llm
 
@@ -1995,7 +1995,7 @@ helm upgrade --install model-server ./charts/model-server \
 
 ### Containerization & Kubernetes
 
-20. Burns, B., Grant, B., Oppenheimer, D., Brewer, E., & Wilkes, J., "Borg, Omega, and Kubernetes", *ACM Queue*, vol. 14, no. 1, pp. 70–93, 2016. DOI: 10.1145/2898442.2898443
+20. Burns, B., Grant, B., Oppenheimer, D., Brewer, E., & Wilkes, J., "Borg, Omega, and Kubernetes", *ACM Queue*, vol. 14, no. 1, pp. 70–93, 2016. DOI: 10.1145/2898442.2898444
 
 21. Kubernetes Documentation, "Horizontal Pod Autoscaler", https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/
 
@@ -2021,9 +2021,9 @@ helm upgrade --install model-server ./charts/model-server \
 
 ### CI/CD & MLOps
 
-31. Sculley, D., Holt, G., Golovin, D., et al., "Hidden Technical Debt in Machine Learning Systems", *NeurIPS 2015*, arXiv:1506.06476. https://arxiv.org/abs/1506.06476
+31. Sculley, D., Holt, G., Golovin, D., et al., "Hidden Technical Debt in Machine Learning Systems", *NeurIPS 2015*. https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems
 
-32. Amershi, S., Begel, A., Bird, C., et al., "Software Engineering for Machine Learning: A Case Study", *ICSE 2019—SEIP*, DOI: 10.1109/ICSE-SEIP.2019.00009. https://www.microsoft.com/en-us/research/publication/software-engineering-for-machine-learning-a-case-study/
+32. Amershi, S., Begel, A., Bird, C., et al., "Software Engineering for Machine Learning: A Case Study", *ICSE 2019—SEIP*, DOI: 10.1109/ICSE-SEIP.2019.00042. https://www.microsoft.com/en-us/research/publication/software-engineering-for-machine-learning-a-case-study/
 
 33. MLflow Documentation, "MLflow: A Platform for the Machine Learning Lifecycle", https://mlflow.org/docs/latest
 
@@ -2031,7 +2031,7 @@ helm upgrade --install model-server ./charts/model-server \
 
 35. Great Expectations Documentation, "Great Expectations: Always Know What to Expect from Your Data", https://greatexpectations.io/
 
-36. Zaharia, M., Chen, R., Ghodsi, A., et al., "Accelerating the Machine Learning Lifecycle with MLflow", *IEEE Data Engineering Bulletin*, vol. 41, no. 4, pp. 13–27, 2018.
+36. Zaharia, M., Chen, R., Ghodsi, A., et al., "Accelerating the Machine Learning Lifecycle with MLflow", *IEEE Data Engineering Bulletin*, vol. 41, no. 4, pp. 39–45, 2018.
 
 37. Polydoros, D., & Bajic, N., "Argo Workflows: Container-Native Workflow Engine for Kubernetes", https://argoproj.github.io/argo-workflows/
 
@@ -2045,9 +2045,9 @@ helm upgrade --install model-server ./charts/model-server \
 
 41. Webb, S., et al., "Population Stability Index and Model Monitoring", *SAS Global Forum 2020*, paper SASGF2020-104.
 
-42. Google SRE Team, "Site Reliability Engineering: How Google Runs Production Systems", O'Reilly Media, ISBN: 978-1-491-92911-8, 2016.
+42. Google SRE Team, "Site Reliability Engineering: How Google Runs Production Systems", O'Reilly Media, ISBN: 978-1-491-92912-4, 2016.
 
-43. Netflix Technology Blog, "Chaos Engineering", https://netflix.github.io/chaosmonkey/ ; Rosenthal, C., & Jones, N., "Chaos Engineering: Building Confidence in System Behavior", *O'Reilly Media*, ISBN: 978-1-492-043727-6, 2020.
+43. Netflix Technology Blog, "Chaos Engineering", https://netflix.github.io/chaosmonkey/ ; Rosenthal, C., & Jones, N., "Chaos Engineering: Building Confidence in System Behavior", *O'Reilly Media*, ISBN: 978-1-492-04386-7, 2020.
 
 44. NVIDIA, "DCGM Exporter: GPU Metrics for Prometheus", https://github.com/NVIDIA/dcgm-exporter
 

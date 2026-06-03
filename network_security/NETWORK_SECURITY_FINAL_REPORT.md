@@ -590,7 +590,7 @@ The defenders' advantage is that network attacks leave traces — in routing tab
 2. Dierks, T., Rescorla, E., "The Transport Layer Security (TLS) Protocol Version 1.2," RFC 5246, August 2008. https://www.rfc-editor.org/rfc/rfc5246
 3. Kaminsky, D., "DNS Infrastructure Attacks," Black Hat USA 2008. https://www.doxpara.com
 4. Vanhoef, M., "Key Reinstallation Attacks: Forcing Nonce Reuse in WPA2," CCS 2017. https://krackattacks.com
-5. Vanhoef, M., Ronen, E., "Dragonblood: A Security Analysis of WPA3's SAE," IEEE S&P 2020. https://dragonbloodAttack.com
+5. Vanhoef, M., Ronen, E., "Dragonblood: A Security Analysis of WPA3's SAE," IEEE S&P 2020. https://wpa3.mathyvanhoef.com/
 6. RFC 4271, "A Border Gateway Protocol 4 (BGP-4)," January 2006. https://www.rfc-editor.org/rfc/rfc4271
 7. RFC 6811, "BGP Origin Validation," January 2013. https://www.rfc-editor.org/rfc/rfc6811
 8. RFC 8205, "BGPsec," September 2017. https://www.rfc-editor.org/rfc/rfc8205

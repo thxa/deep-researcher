@@ -28,7 +28,7 @@ A `PendingIntent` wraps an intent and grants the recipient the right to execute 
 
 **CVE-2020-0188** affected the Android Settings application. The `SettingsSliceProvider` created a `PendingIntent` with an implicit base intent. A local attacker could obtain this `PendingIntent` through the Slice API, modify the target component, and launch arbitrary activities with the Settings app's elevated privileges, including toggling device security settings without user consent. The root cause was the use of `PendingIntent.getActivity()` with an empty (implicit) base intent.
 
-**CVE-2020-0389** was a similar flaw in the `NotificationManagerService`. A `PendingIntent` used for notification actions was constructed without specifying an explicit component. A malicious application installed on the same device could intercept the `PendingIntent`, fill in its own component, and perform actions --- such as dismissing or interacting with notifications --- under the system's identity. The fix involved making the base intent explicit and setting the `PendingIntent` as immutable via `PendingIntent.FLAG_IMMUTABLE`.
+**CVE-2020-0389** was a similar flaw in `createSaveNotification` of `RecordingService.java` (the SystemUI Screen Record save notification). A mutable `PendingIntent` was constructed whose base/content intent could be modified by a malicious app. A malicious application installed on the same device (e.g., via a NotificationListener) could modify the base intent to redirect at protected SystemUI content providers, yielding a permission bypass and local information disclosure with user-level (PR:L) privileges. The fix involved making the base intent explicit and setting the `PendingIntent` as immutable via `PendingIntent.FLAG_IMMUTABLE`.
 
 ### 4.2.4 Intent Spoofing
 
@@ -36,7 +36,7 @@ Intent spoofing is the converse of hijacking: rather than intercepting an outgoi
 
 ### 4.2.5 Intent Redirection
 
-Intent redirection occurs when an application receives an intent that itself contains a nested intent (often as a `Parcelable` extra), and then forwards or starts the nested intent without validation. The attacker supplies a nested intent pointing at a non-exported component of the victim application, bypassing export restrictions. **CVE-2021-0928** and related bugs in the Android framework exploited exactly this pattern, allowing access to non-exported activities in system apps.
+Intent redirection occurs when an application receives an intent that itself contains a nested intent (often as a `Parcelable` extra), and then forwards or starts the nested intent without validation. The attacker supplies a nested intent pointing at a non-exported component of the victim application, bypassing export restrictions. Related bugs in the Android framework exploited exactly this pattern, allowing access to non-exported activities in system apps.
 
 ---
 
@@ -71,7 +71,7 @@ public ParcelFileDescriptor openFile(Uri uri, String mode) {
 }
 ```
 
-An attacker supplies `content://authority/..%2F..%2Fetc%2Fpasswd` and escapes the base directory. **CVE-2021-0591** in the Telecom framework allowed path traversal through a content provider's `openFile()` implementation to read files belonging to the telephony process. The fix required canonicalizing paths and ensuring the resolved file remained within the intended directory.
+An attacker supplies `content://authority/..%2F..%2Fetc%2Fpasswd` and escapes the base directory. The fix required canonicalizing paths and ensuring the resolved file remained within the intended directory.
 
 ### 4.3.4 Unprotected Content Providers
 
@@ -129,7 +129,7 @@ WebView can handle `intent://` scheme URLs to launch activities. If not properly
 
 ### 4.5.2 SQLite Databases
 
-Unencrypted SQLite databases in `/data/data/<package>/databases/` are readable via backup extraction (`adb backup`), root access, or content-provider vulnerabilities. Sensitive apps (password managers, banking) must use encrypted storage such as SQLCipher or the Jetpack Security library. **CVE-2019-10875** in a major messaging application stored messages in a plaintext SQLite database accessible through the Android backup mechanism, allowing trivial offline extraction.
+Unencrypted SQLite databases in `/data/data/<package>/databases/` are readable via backup extraction (`adb backup`), root access, or content-provider vulnerabilities. Sensitive apps (password managers, banking) must use encrypted storage such as SQLCipher or the Jetpack Security library. Major messaging applications have stored messages in a plaintext SQLite database accessible through the Android backup mechanism, allowing trivial offline extraction.
 
 ### 4.5.3 External Storage
 
@@ -171,7 +171,7 @@ TrustManager[] trustAll = new TrustManager[]{
 };
 ```
 
-This enables trivial man-in-the-middle attacks. **CVE-2015-3837** and numerous findings from the CERT/CC Tapioca testing tool documented that thousands of Android apps in the Play Store shipped with disabled certificate validation. Android 7.0 introduced Network Security Configuration to provide a declarative way to enforce certificate pinning and restrict cleartext traffic, partially mitigating developer error.
+This enables trivial man-in-the-middle attacks. Numerous findings from the CERT/CC Tapioca testing tool documented that thousands of Android apps in the Play Store shipped with disabled certificate validation. Android 7.0 introduced Network Security Configuration to provide a declarative way to enforce certificate pinning and restrict cleartext traffic, partially mitigating developer error.
 
 ---
 
@@ -181,7 +181,7 @@ This enables trivial man-in-the-middle attacks. **CVE-2015-3837** and numerous f
 
 An activity with `android:exported="true"` (or one that declares an intent filter, which implicitly exports it) can be launched by any application. If the activity performs a privileged operation --- displaying sensitive data, modifying settings, processing payment --- without verifying the caller, any app on the device can invoke it.
 
-**CVE-2020-0108** in the `ActivityManagerService` allowed a malicious application to launch activities in a way that hijacked the victim application's task stack, enabling phishing by presenting a fake UI on top of a legitimate app. This is known as **StrandHogg 2.0**, building on the original StrandHogg vulnerability (CVE-2020-0096) that exploited task affinity manipulation to overlay malicious activities onto legitimate ones.
+**CVE-2020-0096**, known as **StrandHogg 2.0**, was a confused-deputy escalation-of-privilege vulnerability in `startActivities` of `ActivityStartController.java`. It abused `Context.startActivities()` with crafted Intent arrays to launch activities in a way that enabled phishing by presenting a fake UI on top of a legitimate app. This is a code-based variant building on the original StrandHogg task-hijacking vulnerability, which exploited `taskAffinity`/`allowTaskReparenting` manipulation to overlay malicious activities onto legitimate ones.
 
 ### 4.7.2 Exported Services
 
@@ -217,7 +217,7 @@ At the time of disclosure, the `SYSTEM_ALERT_WINDOW` permission was automaticall
 
 ### 4.8.3 CVE Examples
 
-**CVE-2017-0752** was a tapjacking vulnerability in the Android framework where a malicious overlay could intercept touches intended for the system permission dialog. **CVE-2020-0096** (StrandHogg) also incorporated overlay-like behavior through task-affinity manipulation, achieving similar visual spoofing without the `SYSTEM_ALERT_WINDOW` permission. Android 12 introduced further mitigations by blocking touches that pass through overlays for security-critical system dialogs.
+**CVE-2017-0752** was a tapjacking vulnerability in the Android framework where a malicious overlay could intercept touches intended for the system permission dialog. **CVE-2020-0096** (StrandHogg 2.0) also incorporated overlay-like behavior through a confused-deputy abuse of `Context.startActivities()`, achieving similar visual spoofing without the `SYSTEM_ALERT_WINDOW` permission. Android 12 introduced further mitigations by blocking touches that pass through overlays for security-critical system dialogs.
 
 ---
 
@@ -263,9 +263,9 @@ The impact was staggering: nearly 950 million devices were vulnerable at the tim
 
 Despite significant hardening (moving `mediaserver` to its own sandbox, enabling ASLR and CFI, decomposing media services into `mediaextractor`, `mediacodec`, and `mediadrmserver`), media parsing continues to be a rich vulnerability source:
 
-- **CVE-2019-2107**: A heap buffer overflow in the Android framework's HEVC (H.265) decoder allowed remote code execution via a crafted video file. The vulnerability existed in the `ihevcd_parse_slice_data()` function and could be triggered by viewing a malicious video in any app using the system media framework.
+- **CVE-2019-2107**: A heap buffer overflow in the Android framework's HEVC (H.265) decoder allowed remote code execution via a crafted video file. The vulnerability existed in the `ihevcd_parse_pps()` function and could be triggered by viewing a malicious video in any app using the system media framework.
 - **CVE-2020-0069**: While primarily a MediaTek-specific command queue vulnerability, it demonstrated how media HAL (Hardware Abstraction Layer) interactions could be exploited for privilege escalation.
-- **CVE-2023-21282**: A critical RCE in the MPEG4 extractor component of the media framework, patched in the August 2023 security bulletin.
+- **CVE-2023-21282**: A critical RCE in the AAC audio codec (an out-of-bounds write in `TRANSPOSER_SETTINGS` of `lpp_tran.h`) of the media framework, patched in the August 2023 security bulletin.
 
 ### 4.10.3 Image Parser Vulnerabilities
 
@@ -289,11 +289,11 @@ Modern Android applications include dozens to hundreds of third-party libraries.
 |---------|--------------|--------|
 | **OkHttp** (pre-3.12.1) | Certificate pinning bypass (CVE-2018-20200) | MitM attacks against apps relying on OkHttp's pinning |
 | **Apache Cordova** (pre-4.1.1) | Bridge hijacking, secondary WebView exploitation | RCE within the Cordova WebView context |
-| **Facebook SDK** | Token leakage through `logcat` (CVE-2018-6758) | OAuth token theft on shared devices |
+| **Facebook SDK** | Token leakage through `logcat` | OAuth token theft on shared devices |
 | **Zip4j / various ZIP libs** | ZipSlip path traversal (CVE-2018-1000544) | Arbitrary file write during extraction, leading to code execution |
 | **ExoPlayer** (pre-2.11.5) | Buffer overflow in FMP4 parser | Potential RCE via crafted media streams |
 | **libpng** (bundled in apps) | Multiple integer overflows (CVE-2015-8126) | Crash or code execution via malicious PNG |
-| **Bouncy Castle** (pre-1.56) | Bleichenbacher-style RSA padding oracle (CVE-2016-1000338) | Plaintext recovery in RSA-encrypted communications |
+| **Bouncy Castle** (pre-1.56) | DSA signature verification flaw from improper ASN.1 validation (CVE-2016-1000338) | Injection of extra elements into a signature that still validates |
 | **Google Play Core Library** (pre-1.7.3) | Local code execution (CVE-2020-8913) | Arbitrary code execution via path traversal in SplitCompat |
 
 ### 4.11.3 CVE-2020-8913: Google Play Core Library

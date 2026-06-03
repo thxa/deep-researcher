@@ -258,20 +258,20 @@ def detect_model_extraction(query_log, threshold_queries=50000, threshold_agreem
 
 | ID | Description | Severity | Year |
 |---|---|---|---|
-| CVE-2023-44429 | Hugging Face pickle deserialization RCE | Critical | 2023 |
-| CVE-2023-52451 | PyTorch torch.load() arbitrary code execution | Critical | 2023 |
-| CVE-2023-33634 | TorchServe management API unauthenticated model deployment | Critical | 2023 |
+| CVE-2023-44429 | GStreamer AV1 codec parser heap buffer overflow (OOB write, RCE) | High | 2023 |
+| CVE-2023-52451 | Linux kernel powerpc/pseries memory hotplug slab-out-of-bounds | High | 2024 |
+| CVE-2023-33634 | H3C Magic R300 router stack overflow (OOB write) via EdittriggerList | High | 2023 |
 | CVE-2023-25677 | TF Serving DoS via malformed prediction request | High | 2023 |
-| CVE-2022-23577 | TF Serving heap buffer overflow in ThreadPool | High | 2022 |
-| CVE-2022-41889 | TF integer overflow in Conv2D (OOB write) | High | 2022 |
-| CVE-2023-3739 | MLflow path traversal in artifact serving | High | 2023 |
-| CVE-2023-4030 | MLflow model signature bypass | Medium | 2023 |
-| CVE-2023-42792 | Airflow DAG code injection | High | 2023 |
-| CVE-2023-6918 | safetensors format security (mitigation for pickle) | Info | 2023 |
+| CVE-2022-23577 | TensorFlow NULL pointer dereference in GetInitOp (SavedModel loader) | Medium | 2022 |
+| CVE-2022-41889 | TensorFlow NULL pointer dereference on quantized tensor attribute | High | 2022 |
+| CVE-2023-3739 | Chrome on ChromeOS (Chromad) command injection | Medium | 2023 |
+| CVE-2023-4030 | Lenovo ThinkPad BIOS fails open to insecure settings on corruption | High | 2023 |
+| CVE-2023-42792 | Apache Airflow improper access control / DAG privilege escalation | Medium | 2023 |
+| CVE-2023-6918 | libssh unchecked MD return values (NULL deref / DoS) | Medium | 2023 |
 
-**OWASP ML Top 10 (2023)**: ML01 Input Manipulation, ML02 Data Poisoning, ML03 Model Inversion, ML04 Model Extraction, ML05 Supply Chain, ML06 Availability, ML07 Membership Inference, ML08 ML Software Vulns, ML09 Model Tampering, ML10 Transfer Learning
+**OWASP ML Top 10 (2023)**: ML01 Input Manipulation, ML02 Data Poisoning, ML03 Model Inversion, ML04 Membership Inference, ML05 Model Theft, ML06 AI Supply Chain Attacks, ML07 Transfer Learning, ML08 Model Skewing, ML09 Output Integrity, ML10 Model Poisoning
 
-**OWASP LLM Top 10 (2023)**: LLM01 Prompt Injection, LLM02 Insecure Output Handling, LLM03 Training Data Poisoning, LLM04 Model Denial of Service, LLM05 Supply Chain, LLM06 Sensitive Information Disclosure, LLM07 Insecure Plugin Design, LLM08 Excessive Agency, LLM09 Overreliance, LLM10 Steganography
+**OWASP LLM Top 10 (2023)**: LLM01 Prompt Injection, LLM02 Insecure Output Handling, LLM03 Training Data Poisoning, LLM04 Model Denial of Service, LLM05 Supply Chain, LLM06 Sensitive Information Disclosure, LLM07 Insecure Plugin Design, LLM08 Excessive Agency, LLM09 Overreliance, LLM10 Model Theft
 
 **MITRE ATLAS Tactics**: Reconnaissance, Resource Development, Initial Access, ML Supply Chain, Execution, Persistence, Privilege Escalation, Defense Evasion, Credential Access, Discovery, Lateral Movement, Collection, Exfiltration, Impact
 
@@ -290,7 +290,7 @@ def detect_model_extraction(query_log, threshold_queries=50000, threshold_agreem
 11. Meta (2023). "Llama Guard: LLM-based Input-Output Safeguard." https://huggingface.co/meta-llama/LlamaGuard-7b
 12. RobustBench (2023). "Adversarial Robustness Leaderboard." https://robustbench.org
 13. MITRE (2023). "ATLAS: Adversarial Threat Landscape for AI Systems." https://atlas.mitre.org
-14. Wang, H., et al. (2022). "β-CROWN: Efficient Bound Propagation for Neural Network Verification." *NeurIPS*.
+14. Wang, S., et al. (2021). "β-CROWN: Efficient Bound Propagation with Per-neuron Split Constraints for Neural Network Robustness Verification." *NeurIPS*.
 15. Zhang, H., et al. (2019). "Theoretically Grounded Tradeoff Between Robustness and Accuracy." *ICML*.
 16. Zou, A., et al. (2023). "Universal and Transferable Adversarial Attacks on Aligned Language Models." *arXiv:2307.15043*.
 17. Greshake, K., et al. (2023). "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection." *AISec*.

@@ -808,6 +808,6 @@ spec:
 3. Microsoft. "Azure Sentinel Documentation." *Microsoft Learn*. 2024. https://learn.microsoft.com/en-us/azure/sentinel/
 4. Google Cloud. "Cloud Audit Logs." *Google Cloud*. 2024. https://cloud.google.com/logging/docs/audit/
 5. Falco. "Falco Documentation." *The Falco Project*. 2024. https://falco.org/docs/
-6. Isovalent. "Tetragon Documentation." *Isovalent/Cilium*. 2024. https://tetragon.cilium.io/
+6. Isovalent. "Tetragon Documentation." *Isovalent/Cilium*. 2024. https://tetragon.io/
 7. MITRE. "ATT&CK Cloud Matrix." *MITRE Corporation*. 2024. https://attack.mitre.org/matrices/enterprise/cloud/
-8. Aqua Security. "Container Threat Report." *Aqua Security*. 2023. https://www.aquasec.com/resources/container-threat-report/
+8. Aqua Security. "Container Threat Report." *Aqua Security*. 2023. https://info.aquasec.com/cloud-native-threat-report

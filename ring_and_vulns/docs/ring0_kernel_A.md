@@ -415,24 +415,24 @@ static int packet_set_ring(struct sock *sk, ...)
 
 | # | CVE | Year | Component | Type | Impact | CVSS |
 |---|-----|------|-----------|------|--------|------|
-| 1 | CVE-2016-5195 | 2016 | mm/cow.c | Race condition | Local Privilege Escalation (LPE) | 7.8 |
+| 1 | CVE-2016-5195 | 2016 | mm/gup.c | Race condition | Local Privilege Escalation (LPE) | 7.0 |
 | 2 | CVE-2022-0847 | 2022 | pipe.c | Missing initialization | LPE | 7.8 |
-| 3 | CVE-2017-1000364 | 2017 | mm/mmap.c | Stack clash/VDMA | LPE | 7.2 |
+| 3 | CVE-2017-1000364 | 2017 | mm/mmap.c | Stack clash | LPE | 7.4 |
 | 4 | CVE-2021-4034 | 2021 | pkexec (polkit) | SUID binary abuse | LPE | 7.8 |
-| 5 | CVE-2019-13272 | 2019 | kernel/ptrace.c | Race condition | LPE | 7.8 |
+| 5 | CVE-2019-13272 | 2019 | kernel/ptrace.c | Improper privilege/credential handling | LPE | 7.8 |
 | 6 | CVE-2016-0728 | 2016 | keyctl | UAF / refcount overflow | LPE | 7.2 |
-| 7 | CVE-2019-18683 | 2019 | vboxvideo | Race condition | LPE | 7.0 |
+| 7 | CVE-2019-18683 | 2019 | V4L2 vivid driver | Race condition | LPE | 7.0 |
 | 8 | CVE-2020-8835 | 2020 | BPF verifier | Incorrect bounds | LPE | 7.8 |
 | 9 | CVE-2021-22555 | 2021 | Netfilter | Heap OOB write | LPE | 7.8 |
-| 10 | CVE-2019-13279 | 2019 | ptrace | UAF | LPE / DoS | 6.7 |
+| 10 | CVE-2019-13279 | 2019 | TRENDnet TEW-827DRU router | Stack-based buffer overflow | Remote code execution | 9.8 |
 | 11 | CVE-2020-14314 | 2020 | ext4 | OOB read | Info leak | 5.5 |
 | 12 | CVE-2024-1086 | 2024 | Netfilter nf_tables | UAF | LPE | 7.8 |
 | 13 | CVE-2023-0386 | 2023 | overlayfs | Copy-up permission bypass | LPE | 7.8 |
-| 14 | CVE-2022-0185 | 2022 | cgroup/proc | Integer overflow | LPE / Container Escape | 7.0 |
+| 14 | CVE-2022-0185 | 2022 | fs/fs_context.c | Integer underflow | LPE / Container Escape | 8.4 |
 | 15 | CVE-2021-33909 | 2021 | seq_file | Heap overflow | LPE | 7.8 |
 | 16 | CVE-2023-32233 | 2023 | Netfilter nf_tables | UAF | LPE | 7.8 |
-| 17 | CVE-2022-4279 | 2022 | Netfilter | UAF | DoS / LPE | 7.5 |
-| 18 | CVE-2020-25710 | 2020 | BPF verifier | OOB access | LPE | 7.1 |
+| 17 | CVE-2022-4279 | 2022 | SourceCodester HRMS (employeeview.php) | Reflected XSS | Cross-site scripting | 6.1 |
+| 18 | CVE-2020-25710 | 2020 | OpenLDAP (csnNormalize23) | Reachable assertion | Denial of service | 7.5 |
 
 ---
 
@@ -440,7 +440,7 @@ static int packet_set_ring(struct sock *sk, ...)
 
 #### CVE-2016-5195 — DirtyCOW
 
-**Component**: `mm/cow.c` (Copy-On-Write fault handler)
+**Component**: `mm/gup.c` (get_user_pages COW path)
 **Type**: Race condition (TOCTOU)
 **Impact**: Local privilege escalation — write to any read-only file (including setuid binaries)
 
@@ -472,7 +472,7 @@ while (1) {
 // Impact: Modify /usr/bin/sudo, /etc/passwd, or setuid binaries
 ```
 
-**Patch**: `9192768a358e` — Added `FAULT_FLAG_ALLOW_RETRY` handling and proper COW locking to prevent the race.
+**Patch**: `19be0eaffa3a` — Removed the `FOLL_WRITE` games from `__get_user_pages()`, introducing the internal `FOLL_COW` flag validated via the `pte_dirty` bit to prevent the race.
 
 #### CVE-2022-0847 — DirtyPipe
 
@@ -507,7 +507,7 @@ write(p[1], exploit_data, exploit_len);
 // Overwrite /etc/passwd, /usr/bin/sudo, etc.
 ```
 
-**Patch**: `9d2231c88d6e` — Clear `pipe_buffer.flags` in `copy_page_to_iter_pipe()`.
+**Patch**: `9d2231c5d74e` — Initialize `pipe_buffer.flags` (via `buf->flags = 0`) in `copy_page_to_iter_pipe()`.
 
 #### CVE-2017-1000364 — Stack Clash
 
@@ -539,7 +539,7 @@ void jump_guard_page() {
 // Function pointers, return addresses in the collided region → code exec
 ```
 
-**Patch**: `a077e872c31e` — Increased the minimum stack guard gap to 256 pages (1MB) and made it configurable via `/proc/sys/vm/stack_guard_gap`.
+**Patch**: `1be7107fbe18` — Increased the stack guard gap to 256 pages (1MB) and made it configurable via `/proc/sys/vm/stack_guard_gap`.
 
 #### CVE-2021-4034 — PwnKit (polkit pkexec)
 
@@ -937,7 +937,7 @@ SLUB hardened mode (`CONFIG_SLAB_FREELIST_HARDENED`) XORs freelist pointers with
 The kernel stack is limited (16KB on x86-64 by default, `THREAD_SIZE_ORDER=2`). Stack-based exploits in the kernel differ from userspace because:
 
 1. **No ASLR per-stack**: KASLR randomizes the kernel base, but stack locations are somewhat predictable relative to the `task_struct`.
-2. **Stack canaries**: Present since Linux 4.15 (`CONFIG_STACKPROTECTOR`), but may be bypassed.
+2. **Stack canaries**: Present since Linux 2.6.19 (`CONFIG_CC_STACKPROTECTOR`; the `CONFIG_STACKPROTECTOR` symbol appears in 4.18), but may be bypassed.
 3. **No NX on kernel stack**: Actually, kernel stack pages ARE executable (this is changing with `CONFIG_VMAP_STACK`).
 
 #### Kernel Stack Overflow Exploitation
@@ -1308,7 +1308,7 @@ With KPTI:
 
 ### 6.5 Stack Canaries in Kernel
 
-**Mechanism**: GCC's `-fstack-protector-strong` (enabled by default since Linux 5.0) inserts canary values on the kernel stack between local variables and the saved return address. The canary is checked on function return; if corrupted (by a buffer overflow), the kernel panics.
+**Mechanism**: GCC's `-fstack-protector-strong` (added as `CONFIG_CC_STACKPROTECTOR_STRONG` in Linux 3.14, with the strongest-available protector auto-selected by default via `CONFIG_CC_STACKPROTECTOR_AUTO` in Linux 4.16) inserts canary values on the kernel stack between local variables and the saved return address. The canary is checked on function return; if corrupted (by a buffer overflow), the kernel panics.
 
 ```c
 // Kernel stack canary layout:
@@ -1476,8 +1476,8 @@ Beyond basic text randomization, modern Linux implements:
 5. Shacham, H. "The Geometry of Innocent Flesh on the Bone: Return-Oriented Programming." CCS, 2007.
 6. Abadi, M., et al. "Control-Flow Integrity." CCS, 2005.
 7. NIST. "National Vulnerability Database." CVE entries: CVE-2016-5195 (Dirty COW), CVE-2022-0847 (Dirty Pipe), CVE-2017-1000364 (Stack Clash), CVE-2021-22555, CVE-2020-8835, CVE-2016-8655.
-8. Pawlicki, A., et al. "STACKDETECT: Automatic Stack Clash Detection." AsiaCCS, 2018.
-9. Dullien, T. "A Brief History of Linux Kernel Exploitation." OffensiveCon, 2020.
+8. Qualys Security Research Team. "The Stack Clash." Security Advisory, June 19, 2017.
+9. Dullien, T. (Halvar Flake). "Why I Love Offensive Work, Why I don't Love Offensive Work." Keynote, OffensiveCon, 2020.
 10. KASLR original paper: Team, P. "KASLR: Kernel Address Space Layout Randomization." 2005.
 
 ---

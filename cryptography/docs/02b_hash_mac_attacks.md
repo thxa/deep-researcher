@@ -665,7 +665,7 @@ def upgrade_on_login(password, stored_hash):
 1. Wang, X., Feng, D., Lai, X., Yu, H., "Collisions for Hash Functions MD4, MD5, HAVAL-128, and RIPEMD," CRYPTO Rump Session, 2004. https://eprint.iacr.org/2004/199
 2. Stevens, M., Lenstra, A., de Weger, B., "Chosen-Prefix Collisions for MD5 and Colliding X.509 Certificates for Different Identities," EUROCRYPT 2007. https://eprint.iacr.org/2006/105
 3. Stevens, M., Karpinski, M., Gorbunov, I., Lenstra, A., de Weger, B., "The First Collision for Full SHA-1," CRYPTO 2017 (SHAttered). https://shattered.io/
-4. Leurent, G., Peyrin, T., "SHA-1 is a Shambles — Chosen-Prefix Collisions for SHA-1," CRYPTO 2020. https://shambles.net/
+4. Leurent, G., Peyrin, T., "SHA-1 is a Shambles — Chosen-Prefix Collisions for SHA-1," CRYPTO 2020. https://sha-mbles.github.io/
 5. RFC 1321, "The MD5 Message-Digest Algorithm," April 1992. https://www.rfc-editor.org/rfc/rfc1321
 6. RFC 2104, "HMAC: Keyed-Hashing for Message Authentication," February 1997. https://www.rfc-editor.org/rfc/rfc2104
 7. Bellare, M., Canetti, R., Krawczyk, H., "Keying Hash Functions for Message Authentication," CRYPTO 1996. https://link.springer.com/chapter/10.1007/3-540-68697-5_8

@@ -1160,7 +1160,7 @@ def partition_data_non_iid(dataset, num_clients, num_classes_per_client=2):
 
 24. Chawla, N.V., Bowyer, K.W., Hall, L.O., Kegelmeyer, W.P., "SMOTE: Synthetic Minority Over-sampling Technique," *Journal of Artificial Intelligence Research (JAIR)*, 16:321–357, 2002. DOI: 10.1613/jair.953
 
-25. Fernández, A., García, S., Herrera, F., Chawla, N.V., "SMOTE for Learning from Imbalanced Data: Progress and Challenges, Marking the 15-year Anniversary," *Journal of Artificial Intelligence Research*, 61:863–905, 2018. DOI: 10.1613/jair.1.11271
+25. Fernández, A., García, S., Herrera, F., Chawla, N.V., "SMOTE for Learning from Imbalanced Data: Progress and Challenges, Marking the 15-year Anniversary," *Journal of Artificial Intelligence Research*, 61:863–905, 2018. DOI: 10.1613/jair.1.11192
 
 26. He, H., Bai, Y., Garcia, E.A., Li, S., "ADASYN: Adaptive Synthetic Sampling Approach for Imbalanced Learning," *IEEE International Joint Conference on Neural Networks (IJCNN)*, 2008. DOI: 10.1109/IJCNN.2008.4633969
 

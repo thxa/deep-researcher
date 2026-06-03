@@ -519,16 +519,16 @@ specification = {
 9. Wang, B., et al. (2022). "Backdooring Pre-trained Models." NDSS.
 10. Zou, A., et al. (2023). "Universal and Transferable Adversarial Attacks on Aligned Language Models." arXiv.
 11. Microsoft (2023). "Lessons from Red Teaming Language Models." Microsoft Research. https://www.microsoft.com/en-us/security/blog/
-12. Anthropic (2023). "Constitutional AI: Harmlessness from AI Feedback." arXiv. https://arxiv.org/abs/2212.10527
+12. Anthropic (2023). "Constitutional AI: Harmlessness from AI Feedback." arXiv. https://arxiv.org/abs/2212.08073
 13. Goodfellow, I., Shlens, J., Szegedy, C., "Explaining and Harnessing Adversarial Examples," ICLR 2015. https://arxiv.org/abs/1412.6572
 14. Carlini, N., Wagner, D., "Towards Evaluating the Robustness of Neural Networks," IEEE S&P 2017. https://arxiv.org/abs/1608.04644
 15. OWASP, "OWASP Top 10 for Large Language Model Applications," 2025. https://owasp.org/www-project-top-10-for-large-language-model-applications/
 16. NIST, "Artificial Intelligence Risk Management Framework (AI RMF 1.0)," January 2023. https://www.nist.gov/itl/ai-risk-management-framework
 17. Microsoft, "Responsible AI Principles and Approach," 2024. https://www.microsoft.com/en-us/ai/responsible-ai
 18. Zou, A., et al., "Universal and Transferable Adversarial Attacks on Aligned Language Models," arXiv, 2023. https://arxiv.org/abs/2307.15043
-19. Rössler, A., et al., "FaceForensics++: Learning to Detect Manipulated Facial Images," ICCV 2019. https://arxiv.org/abs/1901.04029
+19. Rössler, A., et al., "FaceForensics++: Learning to Detect Manipulated Facial Images," ICCV 2019. https://arxiv.org/abs/1901.08971
 20. Shafahi, A., et al., "Poison Frogs! Targeted Clean-Label Poisoning Attacks on Neural Networks," NeurIPS 2018. https://arxiv.org/abs/1804.00792
-21. Wang, B., et al., "Backdooring Pre-trained Models," NDSS 2022. https://arxiv.org/abs/2105.11156
+21. Wang, B., et al., "Backdooring Pre-trained Models," NDSS 2022.
 22. Greshake, K., et al., "Not What You've Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection," AISec 2023. https://arxiv.org/abs/2302.12173
 
 ## References

@@ -535,7 +535,7 @@ alarm(0);  // Will fire SIGALRM soon
 // leaving kernel state partially modified
 ```
 
-This technique was used in exploiting `CVE-2016-4557` (BPF race condition).
+Note that `CVE-2016-4557` is sometimes mislabeled in this context; it is actually a BPF use-after-free (double-fdput in `replace_map_fd_with_map_ptr`), not a race condition, and it is not triggered via signal-based interruption.
 
 ---
 
@@ -841,7 +841,7 @@ Dirty COW (Dirty Copy-On-Write) is a race condition vulnerability in the Linux k
 
 - **CVE:** CVE-2016-5195
 - **Affected versions:** Linux kernel 2.6.22 through 4.8.2
-- **Severity:** HIGH (CVSS 7.8)
+- **Severity:** HIGH (CVSS v3.1 7.0)
 - **Discoverer:** Phil Oester (found exploited in the wild)
 - **Exploitation in the wild:** Yes -- confirmed via HTTP packet capture
 
@@ -1022,7 +1022,7 @@ Dirty COW was used for:
 
 ### 9.1 Overview
 
-DirtyCred is a novel exploitation technique presented by Zhenpeng Lin, Yuhang Wu, and Xinyu Xing at USENIX Security 2022. Unlike traditional kernel exploitation that targets specific kernel data structures (e.g., `task_struct`, `cred`, `tty_struct`), DirtyCred operates by **swapping unprivileged credential objects with privileged ones** -- turning any kernel vulnerability that can free an in-use object into a privilege escalation, analogous to how Dirty COW swapped unprivileged file pages with privileged ones.
+DirtyCred is a novel exploitation technique presented by Zhenpeng Lin, Yuhang Wu, and Xinyu Xing at ACM CCS 2022. Unlike traditional kernel exploitation that targets specific kernel data structures (e.g., `task_struct`, `cred`, `tty_struct`), DirtyCred operates by **swapping unprivileged credential objects with privileged ones** -- turning any kernel vulnerability that can free an in-use object into a privilege escalation, analogous to how Dirty COW swapped unprivileged file pages with privileged ones.
 
 The key insight: kernel credentials (`struct cred`) and file credentials (`struct file`) are allocated from generic slab caches. A vulnerability that allows freeing such an object while it is still in use can be exploited by allocating a privileged credential in the freed slot.
 
@@ -1239,7 +1239,7 @@ CONFIG_KASAN_GENERIC=y
 Many distributions restrict unprivileged io_uring access:
 
 ```bash
-# Disable unprivileged io_uring (Linux 5.12+)
+# Disable unprivileged io_uring (Linux 6.6+)
 echo 0 > /proc/sys/kernel/io_uring_disabled
 
 # Values:
@@ -1281,7 +1281,7 @@ refcount_dec_and_test(&obj->refcnt);  // Saturates at 0, WARNS
 6. Dirty COW (CVE-2016-5195): https://dirtycow.ninja/
 7. Fix commit for Dirty COW: `19be0eaffa3ac7d8eb6784ad9bdbc7d67ed8e619`
 8. Original (reverted) fix attempt: `4ceb5db9757a` (Linus Torvalds, 2005)
-9. Lin, Wu, Xing. "DirtyCred: Escalating Privilege in Linux Kernel." USENIX Security 2022.
+9. Lin, Wu, Xing. "DirtyCred: Escalating Privilege in Linux Kernel." ACM CCS 2022.
 10. LWN: "Blocking userfaultfd() kernel-fault handling" - https://lwn.net/Articles/819834/
 11. userfaultfd(2) man page: https://man7.org/linux/man-pages/man2/userfaultfd.2.html
 12. Google Project Zero: Various kernel race condition analyses

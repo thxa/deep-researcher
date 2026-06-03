@@ -351,8 +351,8 @@ Each trust relationship is a potential attack surface. The challenge of supply c
 11. npm Documentation. "npm Registry Statistics." https://www.npmjs.com/
 12. PyPI Documentation. "Python Package Index." https://pypi.org/
 13. Freund, A. "Backdoor in xz/liblzma." OpenWall oss-security mailing list, March 2024. https://www.openwall.com/lists/oss-security/2024/03/29/4
-14. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
-15. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://msrc.microsoft.com/blog/2020/12/analyzing-the-solarwinds-compromise/
+14. Mandiant. "Highly Evasive Attacker Leverages SolarWinds Supply Chain." December 2020. https://cloud.google.com/blog/topics/threat-intelligence/evasive-attacker-leverages-solarwinds-supply-chain-compromises-with-sunburst-backdoor
+15. Microsoft. "Analyzing the SolarWinds Compromise." December 2020. https://www.microsoft.com/en-us/security/blog/2020/12/18/analyzing-solorigate-the-compromised-dll-file-that-started-a-sophisticated-cyberattack-and-how-microsoft-defender-helps-protect/
 16. NVD. "CVE-2024-3094: XZ Utils Backdoor." https://nvd.nist.gov/vuln/detail/CVE-2024-3094
 17. NVD. "CVE-2020-10148: SolarWinds Orion API Authentication Bypass." https://nvd.nist.gov/vuln/detail/CVE-2020-10148
 18. NVD. "CVE-2021-44228: Log4Shell." https://nvd.nist.gov/vuln/detail/CVE-2021-44228

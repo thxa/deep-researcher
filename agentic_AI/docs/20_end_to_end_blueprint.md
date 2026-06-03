@@ -1856,9 +1856,9 @@ This blueprint gives you every layer, every component, every decision point. Sta
 
 ### Vector Databases & Embedding Search
 
-19. Johnson, J., Douze, M., & Jégou, H., "Billion-Scale Similarity Search with GPUs", *IEEE Transactions on Big Data*, 2021. DOI: 10.1109/TBDATA.2021.3068432, arXiv:1702.08734
+19. Johnson, J., Douze, M., & Jégou, H., "Billion-Scale Similarity Search with GPUs", *IEEE Transactions on Big Data*, 2021. DOI: 10.1109/TBDATA.2019.2921572, arXiv:1702.08734
 
-20. Malkov, Y.A., & Yashunin, D.A., "Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs", *IEEE Transactions on Pattern Analysis and Machine Intelligence*, 2020. DOI: 10.1109/TPAMI.2018.2890948, arXiv:1603.09220
+20. Malkov, Y.A., & Yashunin, D.A., "Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs", *IEEE Transactions on Pattern Analysis and Machine Intelligence*, 2020. DOI: 10.1109/TPAMI.2018.2889473, arXiv:1603.09320
 
 21. Qdrant Vector Database Documentation, *Qdrant*, 2024. URL: https://qdrant.tech/documentation/
 

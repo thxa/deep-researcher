@@ -182,7 +182,7 @@ Endpoint Security (ES), introduced in macOS 10.15, is the sanctioned replacement
 
 ES distinguishes two event delivery modes:
 
-- **AUTH events**: Synchronous. The kernel blocks the operation until the ES client responds with `ES_AUTH_RESULT_ALLOW` or `ES_AUTH_RESULT_DENY`. Subject to a configurable deadline (default ~60s). Used for real-time prevention (e.g., blocking malware execution).
+- **AUTH events**: Synchronous. The kernel blocks the operation until the ES client responds with `ES_AUTH_RESULT_ALLOW` or `ES_AUTH_RESULT_DENY`. Subject to a per-message deadline (not configurable). Used for real-time prevention (e.g., blocking malware execution).
 - **NOTIFY events**: Asynchronous. The client receives a notification after the operation completes. Used for telemetry, auditing, and detection without impacting system performance.
 
 Key event types include `ES_EVENT_TYPE_AUTH_EXEC`, `ES_EVENT_TYPE_AUTH_OPEN`, `ES_EVENT_TYPE_NOTIFY_FORK`, `ES_EVENT_TYPE_NOTIFY_EXIT`, `ES_EVENT_TYPE_AUTH_MMAP`, and `ES_EVENT_TYPE_NOTIFY_WRITE`.
@@ -206,7 +206,7 @@ Muting is critical for EDR performance — without it, system daemons like `mdwo
 | Can block operations | Yes (with caveats) | No (audit only) | Yes (AUTH events) |
 | Stability guarantee | None (KPI) | Stable but limited | Stable API, versioned |
 | Process context | Limited | Full audit token | Full, including cdhash |
-| Modern support | Removed (macOS 15) | Reduced scope | Actively developed |
+| Modern support | Unsupported for third-party kexts (Big Sur 11.0) | Reduced scope | Actively developed |
 
 ---
 

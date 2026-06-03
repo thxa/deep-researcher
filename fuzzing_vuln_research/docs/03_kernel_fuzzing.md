@@ -685,7 +685,7 @@ Kernel bugs are often **non-deterministic** (races, timing-dependent). syzkaller
 
 [5] Wiktor, M. & Kwiatkowski, D. (2024). *CVE-2024-1086 Exploitation*. https://pwning.tech/nftables/
 
-[6] Miller, B.P., Fredriksen, L., & So, B. (1990). *An Empirical Study of the Reliability of UNIX Utilities*. Communications of the ACM, 33(12). DOI: 10.1145/96279.96286
+[6] Miller, B.P., Fredriksen, L., & So, B. (1990). *An Empirical Study of the Reliability of UNIX Utilities*. Communications of the ACM, 33(12). DOI: 10.1145/96267.96279
 
 [7] Serebryany, K., Bruening, D., Potapenko, A., & Vyukov, D. (2012). *AddressSanitizer: A Fast Address Sanity Checker*. USENIX ATC.
 

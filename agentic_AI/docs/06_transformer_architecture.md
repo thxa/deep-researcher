@@ -773,9 +773,9 @@ This encourages uniform expert utilization. fᵢ is discrete (non-differentiable
 | Model | Experts | Active | Params | Active Params |
 |-------|---------|--------|--------|---------------|
 | Mixtral 8x7B | 8 | 2 | 46.7B | 12.9B |
-| Switch Transformer | 128 | 1 | 1.6T | ~1.6B/tok |
+| Switch Transformer | 2048 | 1 | 1.6T | ~1.6B/tok |
 | DeepSeek-V3 | 256 | 8 | 671B | 37B |
-| GLaM | 64 | 2 | 1.375T | ~39.5B |
+| GLaM | 64 | 2 | 1.2T | ~96.6B |
 
 ---
 
@@ -1372,7 +1372,7 @@ masked so tokens cannot see the future.
 
 24. Dao, T. "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning." *International Conference on Learning Representations (ICLR)*, 2024. arXiv:2307.08691. https://arxiv.org/abs/2307.08691
 
-25. Shah, J., Yu, B., Dao, T., & Ré, C. "FlashAttention-3: Fast and Approximate Attention with Asynchrony and Low-Precision." *arXiv preprint arXiv:2407.08655*, 2024. https://arxiv.org/abs/2407.08655
+25. Shah, J., Bikshandi, G., Zhang, Y., Thakkar, V., Ramani, P., & Dao, T. "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision." *arXiv preprint arXiv:2407.08608*, 2024. https://arxiv.org/abs/2407.08608
 
 26. Lepikhin, D., Lee, H., Xu, Y., Chen, D., Dai, Z., Roy, A., et al. "GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding." *arXiv preprint arXiv:2006.16668*, 2020. https://arxiv.org/abs/2006.16668
 
@@ -1402,7 +1402,7 @@ masked so tokens cannot see the future.
 
 39. Touvron, H., Lavril, T., Izacard, G., Martinet, X., Lachaux, M.-A., Lacroix, T., et al. "LLaMA: Open and Efficient Foundation Language Models." *arXiv preprint arXiv:2302.13971*, 2023. https://arxiv.org/abs/2302.13971
 
-40. Su, J. "Rectified Rotary Position Embedding." *arXiv preprint arXiv:2311.14788*, 2023. https://arxiv.org/abs/2311.14788
+40. Su, J. et al. "RoFormer: Enhanced Transformer with Rotary Position Embedding." *arXiv preprint arXiv:2104.09864*, 2021. https://arxiv.org/abs/2104.09864
 ## References
 
 - Vaswani, A. et al., "Attention Is All You Need," NeurIPS 2017. https://arxiv.org/abs/1706.03762

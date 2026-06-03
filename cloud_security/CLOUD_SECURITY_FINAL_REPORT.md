@@ -85,7 +85,7 @@ The critical insight is that **every abstraction layer the cloud provider absorb
 
 Cloud environments are multi-tenant by design. A single physical host may run VMs belonging to hundreds of customers, separated only by the hypervisor. The isolation model has been repeatedly probed:
 
-- **VM Escape via Hyper-V (CVE-2018-0959, CVE-2019-0631):** Multiple Windows Hyper-V vulnerabilities allowed guest-to-host escape, violating the fundamental isolation boundary.
+- **VM Escape via Hyper-V (CVE-2018-0959):** A Windows Hyper-V remote code execution vulnerability allowed an authenticated guest-OS user to execute code on the host (guest-to-host escape), violating the fundamental isolation boundary.
 - **Rowhammer in Cloud (2016-2020):** DRAM bit-flip attacks proved feasible across co-located VMs on public cloud infrastructure, though cloud providers now deploy ECC memory and rate-limit `CLFLUSH` instructions.
 - **NetSpectre (2018):** Spectre-variant network-based side channel demonstrated across VM boundaries, enabling information leakage without shared execution context.
 - **Cloudbleed (2017):** A buffer overflow in Cloudflare's reverse proxy leaked memory from one customer's requests into another's cached responses — a multi-tenant isolation failure at the application layer, not the hypervisor.
@@ -156,7 +156,7 @@ Cloud environments introduce attack surfaces that do not exist in on-premises in
 
 The subtlety that trips up many engineers is that **resource-based policies are treated differently from identity-based policies** for cross-account access. When a principal in Account A accesses a resource in Account B, the request must be allowed by *both* the principal's identity-based policies in Account A *and* the resource-based policy in Account B — but if the resource-based policy explicitly allows it, the identity-based policy doesn't need an explicit Allow (it just must not have an explicit Deny). This asymmetry creates unexpected privilege escalation paths.
 
-**Azure RBAC** uses a flat role assignment model: a principal (user, group, service principal, managed identity) is assigned a role (built-in or custom) at a scope (management group, subscription, resource group, resource). The evaluation is simpler than AWS — it's additive across all applicable role assignments, with no explicit Deny mechanism (until Azure added deny assignments in 2022). The danger is **scope creep**: a `Contributor` role at the subscription level grants excessive permissions across all resource groups.
+**Azure RBAC** uses a flat role assignment model: a principal (user, group, service principal, managed identity) is assigned a role (built-in or custom) at a scope (management group, subscription, resource group, resource). The evaluation is simpler than AWS — it's additive across all applicable role assignments, with no explicit Deny mechanism (until Azure introduced deny assignments in preview in 2018). The danger is **scope creep**: a `Contributor` role at the subscription level grants excessive permissions across all resource groups.
 
 Azure also has **Azure AD roles** (Directory Readers, Global Administrator, etc.) that are distinct from **Azure RBAC roles** (Owner, Contributor, Reader, etc.). The Global Administrator in Azure AD can elevate to User Access Administrator in RBAC, effectively gaining root access to all Azure subscriptions. This cross-domain escalation path is frequently overlooked.
 
@@ -280,7 +280,7 @@ Containers are not virtual machines. They are processes isolated by Linux kernel
 
 ### 5.2 Capabilities: The Fine-Grained Privilege Model
 
-Linux capabilities divide the monolithic root privilege (all 37 capabilities on x86-64) into discrete units. Docker drops all capabilities by default and adds back a specific set:
+Linux capabilities divide the monolithic root privilege (41 capabilities, numbered 0–40, on a modern x86-64 kernel) into discrete units. Docker drops all capabilities by default and adds back a specific set:
 
 **Docker default capabilities:** `AUDIT_WRITE`, `CHOWN`, `DAC_OVERRIDE`, `FCHOWN`, `FSETID`, `FOWNER`, `MKNOD`, `NET_RAW`, `SETGID`, `SETUID`, `SETFCAP`, `SETPCAP`, `NET_BIND_SERVICE`, `SYS_CHROOT`, `KILL`
 
@@ -544,11 +544,11 @@ Serverless architectures (AWS Lambda, Azure Functions, Google Cloud Functions, G
 
 4. **Shared Responsibility Shift:** In serverless, the customer is responsible for application code, IAM permissions, and data classification. The provider manages the runtime, infrastructure, and scaling. But the customer often cannot inspect the runtime for compromise, install agents, or configure network rules at the instance level.
 
-5. **Logging Gaps:** Lambda functions have a 50-minute maximum execution time, but logging is not enabled by default for all event sources. SQS-triggered functions, for example, do not log the message payload by default. This creates blind spots in detection.
+5. **Logging Gaps:** Lambda functions have a 15-minute (900-second) maximum execution time, but logging is not enabled by default for all event sources. SQS-triggered functions, for example, do not log the message payload by default. This creates blind spots in detection.
 
 ### 9.2 Lambda-Specific Attacks
 
-**SSRF in Lambda:** Lambda functions running in a VPC can reach the EC2 metadata service. If a Lambda function processes HTTP requests (via API Gateway) and has an SSRF vulnerability, the attacker can retrieve the Lambda's IAM credentials from the metadata service. These credentials are temporary (lasting up to 12 hours by default, configurable to 1 hour) but sufficient for data exfiltration.
+**SSRF in Lambda:** Lambda functions running in a VPC can reach the EC2 metadata service. If a Lambda function processes HTTP requests (via API Gateway) and has an SSRF vulnerability, the attacker can retrieve the Lambda's IAM credentials from the metadata service. These credentials are temporary (lasting 1 hour by default, configurable up to a maximum of 12 hours) but sufficient for data exfiltration.
 
 **Environment Variable Exfiltration:** Lambda environment variables are accessible within the function via `process.env` (Node.js) or `os.environ` (Python). If the function has a vulnerability that allows reading environment variables (SSRF via `file:///proc/self/environ`, or code injection), the attacker can extract database credentials, API keys, and other secrets stored as environment variables.
 
@@ -861,22 +861,22 @@ Cloud security is, at its core, about reducing the gap between what the platform
 
 ## References
 
-1. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws-privilege-escalation-methods-mitigation/
+1. Rhino Security Labs. "AWS IAM Privilege Escalation Methods." *Rhino Security Labs*. 2019. https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/
 2. MITRE. "ATT&CK Cloud Matrix." *MITRE Corporation*. 2024. https://attack.mitre.org/matrices/enterprise/cloud/
-3. U.S. Department of Justice. "Capital One Data Breach: Paige Thompson Indictment." *Department of Justice*. 2019. https://www.justice.gov/opa/pr/
-4. Aqua Security. "The Kubernetes Attack Tree." *Aqua Security*. 2021. https://www.aquasec.com/resources/kubernetes-attack-tree/
-5. Trail of Bits. "Understanding and Hardening Linux Containers." *Trail of Bits*. 2020. https://github.com/aquasecurity/kube-hunter
+3. U.S. Department of Justice. "Capital One Data Breach: Paige Thompson Indictment." *Department of Justice*. 2019. https://www.justice.gov/usao-wdwa/united-states-v-paige-thompson
+4. Aqua Security. "The Kubernetes Attack Tree." *Aqua Security*. 2021. https://www.cncf.io/blog/2021/11/08/kubernetes-main-attack-vectors-tree-an-explainer-guide/
+5. Grattafiori, A. "Understanding and Hardening Linux Containers." *NCC Group*. 2016. https://www.nccgroup.com/research-blog/understanding-and-hardening-linux-containers/
 6. CIS. "CIS Benchmarks: AWS, Azure, GCP, Kubernetes." *Center for Internet Security*. 2024. https://www.cisecurity.org/cis-benchmarks/
 7. Falco. "Falco Documentation." *The Falco Project*. 2024. https://falco.org/docs/
 8. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/publications/detail/sp/800-190/final
-9. NSA/CISA. "Kubernetes Hardening Guide." *National Security Agency*. 2022. https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/1/CTR_KUBERNETES_HARDENING_GUIDANCE.PDF
-10. OWASP. "Serverless Security Project." *Open Worldwide Application Security Project*. 2024. https://owasp.org/www-project-top-ten/
+9. NSA/CISA. "Kubernetes Hardening Guide." *National Security Agency*. 2022. https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF
+10. OWASP. "Serverless Security Project." *Open Worldwide Application Security Project*. 2024. https://owasp.org/www-project-serverless-top-10/
 11. CVE-2019-5736. NVD. https://nvd.nist.gov/vuln/detail/CVE-2019-5736
 12. CVE-2020-15257. NVD. https://nvd.nist.gov/vuln/detail/CVE-2020-15257
 13. CVE-2022-0185. NVD. https://nvd.nist.gov/vuln/detail/CVE-2022-0185
 14. CVE-2024-1086. NVD. https://nvd.nist.gov/vuln/detail/CVE-2024-1086
 15. CVE-2024-21626. NVD. https://nvd.nist.gov/vuln/detail/CVE-2024-21626
-16. SolarWinds. "SUNBURST Advisory." *SolarWinds*. 2020. https://www.solarwinds.com/securityadvisory
+16. SolarWinds. "SUNBURST Advisory." *SolarWinds*. 2020. https://www.solarwinds.com/sa-overview
 17. NIST. "SP 800-204: Security Strategies for Microservices-based Application Systems." *National Institute of Standards and Technology*. 2021. https://csrc.nist.gov/publications/detail/sp/800-204/final
 18. AWS. "Shared Responsibility Model." *Amazon Web Services*. 2024. https://aws.amazon.com/compliance/shared-responsibility-model/
 19. ISO/IEC. "ISO/IEC 27001:2022 Information Security Management." *International Organization for Standardization*. 2022. https://www.iso.org/standard/27001

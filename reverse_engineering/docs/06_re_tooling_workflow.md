@@ -131,7 +131,7 @@ pipx install one_gadget
 # Essential IDA Pro plugins and configurations
 
 # Plugin: Ghidra Decompiler for IDA (bridge between IDA and Ghidra decompiler)
-# Download: https://github.com/nikitalytyuk/ghidra-decompiler-ida-plugin
+# Download: https://github.com/Cisco-Talos/GhIDA
 
 # Plugin: LazyIDA (workflow improvements)
 # Download: https://github.com/L4ys/LazyIDA
@@ -140,13 +140,13 @@ pipx install one_gadget
 # Download: https://github.com/keystone-engine/keypatch
 
 # Plugin: ida-signsrch (signature search for crypto constants)
-# Download: https://github.com/nihilus/idt_signsrch
+# Download: https://github.com/nihilus/IDA_Signsrch
 
 # Plugin: FindCrypt (find crypto constants)
 # Download: https://github.com/polymorf/findcrypt-yara
 
 # Plugin: D-810 (deobfuscation)
-# Download: https://github.com/seriezhliao/D-810
+# Download: https://gitlab.com/eshard/d810
 
 # Plugin: Diaphora (binary diffing)
 # Download: https://github.com/joxeankoret/diaphora

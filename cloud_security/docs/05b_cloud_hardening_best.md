@@ -992,12 +992,12 @@ class CSPMChecker:
 ## References
 
 1. CIS. "CIS Benchmarks: AWS, Azure, GCP, Kubernetes." *Center for Internet Security*. 2024. https://www.cisecurity.org/cis-benchmarks/
-2. NSA/CISA. "Kubernetes Hardening Guide." *National Security Agency*. 2022. https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/1/CTR_KUBERNETES_HARDENING_GUIDANCE.PDF
+2. NSA/CISA. "Kubernetes Hardening Guide." *National Security Agency*. 2022. https://media.defense.gov/2022/Aug/29/2003066362/-1/-1/0/CTR_KUBERNETES_HARDENING_GUIDANCE_1.2_20220829.PDF
 3. NIST. "SP 800-190: Application Container Security Guide." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/publications/detail/sp/800-190/final
 4. NIST. "SP 800-53: Security and Privacy Controls." *National Institute of Standards and Technology*. 2024. https://csrc.nist.gov/publications/detail/sp/800-53/rev-5/final
 5. AWS. "KMS Documentation." *Amazon Web Services*. 2024. https://docs.aws.amazon.com/kms/
 6. HashiCorp. "Vault Documentation." *HashiCorp*. 2024. https://developer.hashicorp.com/vault/docs
 7. SLSA. "Supply Chain Levels for Software Artifacts." *SLSA Framework*. 2024. https://slsa.dev/spec/
 8. ISO/IEC. "ISO 27001:2022 Information Security Management." *International Organization for Standardization*. 2022. https://www.iso.org/standard/27001
-9. AICPA. "SOC 2 Trust Services Criteria." *American Institute of Certified Public Accountants*. 2024. https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-sup-2640-soc2-reporting
+9. AICPA. "SOC 2 Trust Services Criteria." *American Institute of Certified Public Accountants*. 2024. https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2
 10. FedRAMP. "Federal Risk and Authorization Management Program." *FedRAMP*. 2024. https://www.fedramp.gov/

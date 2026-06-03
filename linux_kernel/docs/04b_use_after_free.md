@@ -859,7 +859,7 @@ for (int attempt = 0; attempt < MAX_ATTEMPTS; attempt++) {
 - Combined with a KASLR leak, this provided arbitrary code execution in kernel context
 - Used `commit_creds(prepare_kernel_cred(0))` to escalate to root
 
-**Impact:** Local privilege escalation from unprivileged user. Affected kernel versions 5.1 through 5.15.
+**Impact:** Local privilege escalation from unprivileged user. Affected kernel versions 5.1 through 5.13.3 (fixed in 5.14).
 
 ### 8.2 CVE-2022-2588: Netfilter `cls_route` Double-Free / UAF
 
@@ -941,7 +941,7 @@ This exploit is one of the most technically sophisticated published kernel explo
 
 **Bug class:** Heap out-of-bounds write in Netfilter's compat layer.
 
-**Exploitation:** Andy Nguyen's exploit used a 2-byte heap OOB write in `kmalloc-64` to corrupt a `msg_msg` header (specifically the `m_list.next` field), building arbitrary read/write primitives. This demonstrated that even tiny corruptions can be escalated through `msg_msg` manipulation:
+**Exploitation:** Andy Nguyen's exploit used a 2-byte heap OOB write in `kmalloc-512` to corrupt a `msg_msg` header (specifically the `m_list.next` field), building arbitrary read/write primitives. This demonstrated that even tiny corruptions can be escalated through `msg_msg` manipulation:
 
 ```
 2-byte OOB write -> msg_msg->m_list.next corruption
@@ -1086,9 +1086,9 @@ The fundamental challenge is that UAF is one symptom of the broader problem of *
 
 1. CVE-2022-29582. "io_uring UAF in timeout handling." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2022-29582. 2022.
 2. CVE-2023-32233. "UAF in nf_tables anonymous sets." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-32233. 2023.
-3. CVE-2021-4159. "io_uring UAF." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2021-4159. 2021.
-4. CVE-2023-0266. "ALSA PCM sound timer UAF." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-0266. 2023.
-5. Roden, M. "DirtyCred: Generic Escalation Technique." *Black Hat USA*. 2022.
+3. CVE-2021-4159. "eBPF verifier information disclosure." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2021-4159. 2021.
+4. CVE-2023-0266. "ALSA PCM control element UAF (missing controls_rwsem in snd_ctl_elem_read)." *NVD*. https://nvd.nist.gov/vuln/detail/CVE-2023-0266. 2023.
+5. Lin, Z., Wu, Y. & Xing, X. "Cautious: A New Exploitation Method! No Pipe but as Nasty as Dirty Pipe." *Black Hat USA*. 2022.
 6. Matusiewicz, K. & Pęczkowski, M. "Dirty Page Tables: Unprivileged Memory Corruption." *Black Hat Europe*. 2024.
 7. Bhattacharya, P. "Linux Kernel Exploit Development — SLUB Allocator Internals." *Phrack*. 2021.
 8. Linux Kernel Documentation. "KASAN." https://www.kernel.org/doc/html/latest/dev-tools/kasan.html. 2024.

@@ -571,11 +571,11 @@ ULONG64 systemToken = *(PULONG64)((PCHAR)systemEprocess + tokenOffset);
 ### Windows Kernel / Win32k EoP
 | CVE | Component | Type | CVSS | Notes |
 |-----|-----------|------|------|-------|
-| CVE-2021-1732 | Win32k SURFACE | Integer overflow → LPE | 7.8 | Most studied modern win32k exploit |
+| CVE-2021-1732 | win32kfull | Callback desync (OOB write) → LPE | 7.8 | xxxCreateWindowEx callback; in-the-wild, CISA KEV |
 | CVE-2022-21882 | Win32k | 1732 variant | 7.8 | Variant of 1732, bypassed fix |
 | CVE-2020-17087 | cng.sys | Pool overflow | 7.8 | Google PZ tracked |
-| CVE-2019-1458 | Win32k | UAF → LPE | 7.8 | Win32k UAF |
-| CVE-2020-1054 | Win32k | GDI overflow | 7.0 | Bitmap corruption |
+| CVE-2019-1458 | Win32k | Uninitialized var / arbitrary ptr deref → LPE | 7.8 | Operation WizardOpium (chained w/ Chrome CVE-2019-13720) |
+| CVE-2020-1054 | Win32k | OOB write via DrawIconEx (SURFOBJ pvbits) | 7.8 | Bitmap corruption |
 | CVE-2018-8440 | ALPC | TOCTOU | 7.8 | Task scheduler race |
 | CVE-2021-1648 | Print Spooler | TOCTOU | 7.8 | Driver load race |
 
@@ -583,14 +583,14 @@ ULONG64 systemToken = *(PULONG64)((PCHAR)systemEprocess + tokenOffset);
 | CVE | Component | Type | CVSS | Notes |
 |-----|-----------|------|------|-------|
 | CVE-2021-1673 | Print Spooler | Auth RCE | 7.8 | Original PrintNightmare |
-| CVE-2021-34527 | Print Spooler | Auth/unauth RCE | 9.8 | Remote variant |
-| CVE-2021-36958 | Print Spooler | Info disclosure | 4.7 | Print spooler recon |
+| CVE-2021-34527 | Print Spooler | Authenticated RCE (PR:L) | 8.8 | PrintNightmare, remote variant |
+| CVE-2021-36958 | Print Spooler | RCE as SYSTEM (PrintNightmare family) | 7.8 | Print spooler RCE |
 
 ### Remote / Browser
 | CVE | Component | Type | CVSS | Notes |
 |-----|-----------|------|------|-------|
 | CVE-2021-40444 | MSHTML | Remote code execution | 8.8 | Office + HTML RCE |
-| CVE-2024-21412 | SmartScreen | Bypass | 8.8 | SmartScreen bypass |
+| CVE-2024-21412 | SmartScreen / MOTW | Internet Shortcut security feature bypass | 8.1 | SmartScreen bypass |
 | CVE-2023-36884 | Office/HTML | RCE | 8.8 | Office chain |
 | CVE-2023-44487 | HTTP/2 | DDoS | 7.5 | HTTP/2 Rapid Reset |
 
@@ -599,14 +599,14 @@ ULONG64 systemToken = *(PULONG64)((PCHAR)systemEprocess + tokenOffset);
 |-----|-----------|------|------|-------|
 | CVE-2022-26923 | AD CS | Privilege escalation | 8.8 | AD CS template abuse |
 | CVE-2021-42287 | AD | Privilege escalation | 8.8 | sAMAccountName confusion |
-| CVE-2025-21298 | NTLM | NTLM relay | 8.1 | NTLM reflection |
+| CVE-2025-21298 | OLE (ole32.dll) | Zero-click UAF RCE via RTF in Outlook | 9.8 | OLE RCE |
 
 ### BYOVD Drivers
 | CVE | Driver | Primitive | Notes |
 |-----|--------|-----------|-------|
-| CVE-2021-21551 | Dell dbutil_2_3.sys | Kernel R/W | MSI Afterburner variant |
-| CVE-2023-32545 | Dell dbutil_2_3.sys | Kernel R/W | Latest variant |
-| CVE-2019-16098 | HTC HwOs2X64.sys | Kernel R/W | Gaming driver |
+| CVE-2021-21551 | Dell dbutil_2_3.sys | Kernel R/W | Write-what-where via exposed IOCTL |
+| CVE-2023-32545 | (miscited: actually Horner Cscape OOB read, not Dell dbutil) | — | — |
+| CVE-2019-16098 | MSI Afterburner RTCore64.sys | Kernel R/W (arbitrary MSR/IO) | Gaming driver |
 | N/A | Capcom.sys | Kernel R/W | Intentionally vulnerable |
 | N/A | RTCore64.sys | Kernel R/W | MSI Afterburner |
 | N/A | atillk64.sys | Kernel R/W | ASUS GPU Tweak |
@@ -622,7 +622,7 @@ ULONG64 systemToken = *(PULONG64)((PCHAR)systemEprocess + tokenOffset);
 | SweetPotato | 2020 | All potato techniques in one | `SeImpersonatePrivilege` | All versions |
 | RoguePotato | 2020 | NTLM relay via port 135 redirector | `SeImpersonatePrivilege` | Win2019+ |
 | PrintSpoofer | 2020 | Named pipe impersonation via Spooler | `SeImpersonatePrivilege` | All versions |
-| GodPotato | 2022 | NTLM relay via Notification COM interface | `SeImpersonatePrivilege` | All versions |
+| GodPotato | 2023 | DCOM/RPCSS OXID resolver abuse (BeichenDream) | `SeImpersonatePrivilege` | All versions |
 | RemotePotato | 2021 | NTLM relay across machines | `SeImpersonatePrivilege` + relay target | Domain environments |
 
 ## References

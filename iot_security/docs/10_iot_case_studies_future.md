@@ -826,12 +826,12 @@ Security Awareness and Trust Certification for IoT (SATTA) and similar programs:
 - Mozi P2P Botnet: Netlab 360 (2020)
 - Medtronic Insulin Pump Recall: FDA Safety Communication (2019)
 - Abbott/St. Jude Pacemaker: FDA Safety Communication (2017)
-- Ripple20: JSOF Research Lab (2020) — ripple20.com
+- Ripple20: JSOF Research Lab (2020) — jsof-tech.com/disclosures/ripple20
 - Amnesia:33: Forescout Research Labs (2020) — forescout.com
-- Name:Wreck: Forescout & JSOF (2021) — namewreck.io
+- Name:Wreck: Forescout & JSOF (2021) — forescout.com/research-labs/namewreck
 - Urgent/11: Armis Labs (2019) — armis.com/urgent11
 - BrickerBot: Radware (2017)
-- Matter Specification: csai-iot.org
+- Matter Specification: csa-iot.org
 - RISC-V Privileged Specification: riscv.org
 - NISTIR 8259: csrc.nist.gov
 - ETSI EN 303 645: etsi.org
@@ -847,12 +847,12 @@ Security Awareness and Trust Certification for IoT (SATTA) and similar programs:
 5. Mozi P2P Botnet Analysis. Netlab 360 (2020). https://blog.netlab.360.com/
 6. FDA Safety Communication: Medtronic Insulin Pump Recall (2019). https://www.fda.gov/medical-devices/
 7. FDA Safety Communication: Abbott/St. Jude Pacemaker (2017). https://www.fda.gov/medical-devices/
-8. JSOF Research Lab. Ripple20: 19 Vulnerabilities Affecting Millions of IoT Devices (2020). https://ripple20.com/
+8. JSOF Research Lab. Ripple20: 19 Vulnerabilities Affecting Millions of IoT Devices (2020). https://www.jsof-tech.com/disclosures/ripple20/
 9. Forescout Research Labs. Amnesia:33 (2020). https://www.forescout.com/blog/amnesia33/
-10. Forescout & JSOF. Name:Wreck (2021). https://namewreck.io/
+10. Forescout & JSOF. Name:Wreck (2021). https://www.forescout.com/research-labs/namewreck/
 11. Armis Labs. Urgent/11: Critical Vulnerabilities in VxWorks (2019). https://armis.com/urgent11/
 12. BrickerBot Analysis. Radware (2017). https://www.radware.com/
-13. Matter Specification. Connectivity Standards Alliance. https://csai-iot.org/
+13. Matter Specification. Connectivity Standards Alliance. https://csa-iot.org/
 14. RISC-V Privileged Architecture Specification. RISC-V International. https://riscv.org/
 15. NISTIR 8259: Foundational Cybersecurity Activities for IoT Device Manufacturers. National Institute of Standards and Technology (2020).
 16. ETSI EN 303 645: Cyber Security for Consumer Internet of Things. European Telecommunications Standards Institute (2020).

@@ -411,7 +411,7 @@ Self-evolving agents modify their own behavior over time — updating their prom
 
 ### 5.3 Key Approaches
 
-**ADAS (Automated Design of Agentic Systems)**: Researchers at CMU demonstrated that meta-agents can automatically discover novel agentic system designs that outperform human-designed ones. The meta-agent searches over a space of agent architectures, evaluates them on held-out tasks, and iteratively improves.
+**ADAS (Automated Design of Agentic Systems)**: Researchers at the University of British Columbia and the Vector Institute demonstrated that meta-agents can automatically discover novel agentic system designs that outperform human-designed ones. The meta-agent searches over a space of agent architectures, evaluates them on held-out tasks, and iteratively improves.
 
 **Self-Refine**: Agents that iteratively generate, critique, and refine their own outputs. The refinement strategy itself can be evolved over time using genetic programming over prompts.
 
@@ -489,7 +489,7 @@ Multi-modality breaks the "text-in, text-out" abstraction that most agent framew
 ### 7.3 Frontier Projects
 
 - **GPT-4o Realtime API**: Enables real-time voice conversation with function calling — a voice agent that can simultaneously listen, think, and act.
-- **Gemini 1.5 Pro with Video**: Processes up to 1 hour of video (10M tokens), enabling agents that can "watch" and reason over long temporal sequences.
+- **Gemini 1.5 Pro with Video**: Processes up to 1 hour of video (1M tokens), enabling agents that can "watch" and reason over long temporal sequences.
 - **Pi0 (Physical Intelligence)**: A vision-language-action model for robotics that takes visual input and outputs motor commands.
 - **MovieGen (Meta)**: Video generation model that can serve as a "world simulator" for training embodied agents.
 
@@ -870,19 +870,19 @@ The next five years will determine whether Agentic AI becomes the dominant parad
 
 14. Rawles, C., et al., "WebArena: A Realistic Web Environment for Building Autonomous Agents," ICLR 2024, arXiv:2307.13854.
 
-15. Yang, Y., et al., "Set-of-Mark Prompting Unlocks Spatial Reasoning in Large Language Models," arXiv:2310.08111, 2023.
+15. Yang, J., et al., "Set-of-Mark Prompting Unleashes Extraordinary Visual Grounding in GPT-4V," arXiv:2310.11441, 2023.
 
 16. Gur, I., et al., "A Real-World WebAgent with Planning, Long Context Understanding, and Program Synthesis," ICLR 2024, arXiv:2307.13856.
 
 ### Self-Evolving & Self-Improving Agents
 
-17. Hu, S., et al., "ADAS: Automated Design of Agentic Systems," arXiv:2501.05851, 2025.
+17. Hu, S., et al., "Automated Design of Agentic Systems," arXiv:2408.08435, 2024.
 
 18. Madaan, A., et al., "Self-Refine: Iterative Refinement with Self-Feedback," NeurIPS 2023, arXiv:2303.17651.
 
-19. Wang, L., et al., "Voyager: An Open-Ended Embodied Agent with Large Language Models," NeurIPS 2023, arXiv:2305.16291.
+19. Wang, L., et al., "Voyager: An Open-Ended Embodied Agent with Large Language Models," Transactions on Machine Learning Research (TMLR), 2024, arXiv:2305.16291.
 
-20. Zhou, A., et al., "Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models," arXiv:2404.06652, 2024.
+20. Zhou, A., et al., "Language Agent Tree Search Unifies Reasoning, Acting, and Planning in Language Models," arXiv:2310.04406, 2023.
 
 ### Agentic Coding Assistants
 
@@ -892,7 +892,7 @@ The next five years will determine whether Agentic AI becomes the dominant parad
 
 23. Yang, J., et al., "SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering," arXiv:2405.15793, 2024.
 
-24. Wang, G., et al., "OpenHands: An Open Platform for AI Software Developers," arXiv:2407.16741, 2024.
+24. Wang, X., et al., "OpenHands: An Open Platform for AI Software Developers as Generalist Agents," arXiv:2407.16741, 2024.
 
 25. Jimenez, C. E., et al., "SWE-Bench: Can Language Models Resolve Real GitHub Issues?," ICLR 2024, arXiv:2310.06770.
 
@@ -916,7 +916,7 @@ The next five years will determine whether Agentic AI becomes the dominant parad
 
 33. Ziegler, D. M., et al., "Fine-Tuning Language Models from Human Preferences," arXiv:1909.08593, 2019.
 
-34. Debenedetti, E., et al., "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents," arXiv:2406.05601, 2024.
+34. Debenedetti, E., et al., "AgentDojo: A Dynamic Environment to Evaluate Prompt Injection Attacks and Defenses for LLM Agents," arXiv:2406.13352, 2024.
 
 35. Ruan, Y., et al., "Identifying the Risks of LM Agents with an LM-Emulated Sandbox," NeurIPS 2023, arXiv:2309.01217.
 
@@ -930,11 +930,11 @@ The next five years will determine whether Agentic AI becomes the dominant parad
 
 39. OpenAI, "Preparedness Framework," https://openai.com/index/preparedness-framework/, 2023.
 
-40. Florian, T., et al., "The GAIA Benchmark: General AI Assistants," ICLR 2024, arXiv:2311.12983.
+40. Mialon, G., et al., "GAIA: a benchmark for General AI Assistants," ICLR 2024, arXiv:2311.12983.
 
 ### Benchmark & Evaluation Platforms
 
-41. Koh, J. S., et al., "WebArena: A Realistic Web Environment for Building Autonomous Agents," arXiv:2307.13854, 2023.
+41. Zhou, S., et al., "WebArena: A Realistic Web Environment for Building Autonomous Agents," arXiv:2307.13854, 2023.
 
 42. Mialon, G., et al., "Augmented Language Models: A Survey," Transactions on Machine Learning Research, arXiv:2302.07842, 2023.
 

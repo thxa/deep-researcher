@@ -1066,7 +1066,7 @@ Supported deobfuscation patterns:
 - Math identity application (x * 1 = x, x + 0 = x, etc.)
 
 Installation:
-1. Download D-810 from https://github.com/AXONLabs/D-810
+1. Download D-810 from https://gitlab.com/eshard/d810
 2. Copy d810.py and d810 directory to IDA plugins folder
 3. Restart IDA
 4. Edit → Plugins → D-810
@@ -1107,7 +1107,7 @@ EOF
 # Control flow simplification
 
 # Step 3: Control flow deflattening
-# Using tool: https://github.com/JonathanSalwan/deflat
+# Using tool: https://github.com/cq674350529/deflat
 # Or manual approach in IDA:
 # 1. Identify the state variable (typically on stack or in register)
 # 2. Remove the switch/dispatch structure

@@ -1084,7 +1084,7 @@ The key principle: **the broader the agent's decision space, the tighter the gua
 
 4. Besta, M., Blach, N., Kubicek, A., Gerstenberger, R., Podstawski, M., Gajda, A., Niewiadomski, A., & Hoefler, T. "Graph of Thoughts: Solving Elaborate Problems with Large Language Models." *AAAI 2024*. arXiv:2308.09687. https://arxiv.org/abs/2308.09687
 
-5. Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery, A., & Zhou, D. "Self-Consistency Improves Chain of Thought Reasoning in Language Models." *ICML 2023*. arXiv:2203.11171. https://arxiv.org/abs/2203.11171
+5. Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., Chowdhery, A., & Zhou, D. "Self-Consistency Improves Chain of Thought Reasoning in Language Models." *ICLR 2023*. arXiv:2203.11171. https://arxiv.org/abs/2203.11171
 
 6. Shinn, N., Cassano, F., Gopinath, A., Narasimhan, K., & Yao, S. "Reflexion: Language Agents with Verbal Reinforcement Learning." *NeurIPS 2023*. arXiv:2303.11366. https://arxiv.org/abs/2303.11366
 
@@ -1114,7 +1114,7 @@ The key principle: **the broader the agent's decision space, the tighter the gua
 
 19. Park, J. S., O'Brien, J. C., Cai, C., Morris, M. R., Liang, P., & Bernstein, M. S. "Generative Agents: Interactive Simulacra of Human Behavior." *UIST 2023*. arXiv:2304.03442. https://arxiv.org/abs/2304.03442
 
-20. Hao, S., Liu, T., Wang, Z., Hu, Z., Fu, J., Mei, J., & Valiant, G. "Tool Learning with Foundation Models." *IEEE Intelligent Systems*, 2024. arXiv:2304.08354. https://arxiv.org/abs/2304.08354
+20. Qin, Y., Hu, S., Lin, Y., Chen, W., Ding, N., Cui, G., et al. "Tool Learning with Foundation Models." *ACM Computing Surveys*, 2024. arXiv:2304.08354. https://arxiv.org/abs/2304.08354
 
 21. Qin, Y., Liang, S., Ye, Y., Zhu, K., Yan, L., Lu, Y., Lin, Y., Cong, X., Tang, X., Qian, B., Zhao, S., Hong, L., Liu, Z., & Sun, M. "ToolBench: A Large Language Model-Based Tool Learning Benchmark." *ICLR 2024*. arXiv:2307.16789. https://arxiv.org/abs/2307.16789
 
@@ -1122,7 +1122,7 @@ The key principle: **the broader the agent's decision space, the tighter the gua
 
 23. Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., Kütting, H., Lewis, M., Yen, W.-t., Rocktäschel, T., Kiela, D., & Strubell, E. "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks." *NeurIPS 2020*. arXiv:2005.11401. https://arxiv.org/abs/2005.11401
 
-24. Guu, K., Lee, K., Tung, Z., Parmar, N., & Chang, M.-W. "Retrieval Augmented Language Model Pre-Training." *ICML 2020*. https://proceedings.mlr.press/v119/guu20a.html
+24. Guu, K., Lee, K., Tung, Z., Pasupat, P., & Chang, M.-W. "Retrieval Augmented Language Model Pre-Training." *ICML 2020*. https://proceedings.mlr.press/v119/guu20a.html
 
 25. Kwon, W., Li, Z., Zhuang, S., Sheng, Y., Zheng, L., Yu, C. H., Gonzalez, J. E., Zhang, H., & Stoica, I. "Efficient Memory Management for Large Language Model Serving with PagedAttention." *SOSP 2023*. arXiv:2309.06180. https://arxiv.org/abs/2309.06180
 
@@ -1142,13 +1142,13 @@ The key principle: **the broader the agent's decision space, the tighter the gua
 
 33. Gao, L., Madaan, A., Zhou, S., Alon, U., Liu, P., Yang, Y., Callan, J., & Neubig, G. "PAL: Program-Aided Language Models." *ICML 2023*. arXiv:2211.10435. https://arxiv.org/abs/2211.10435
 
-34. Ghorbani, B., et al. "Scaling Laws for Neural Language Models." arXiv:2001.08361 (Referenced for scaling context). https://arxiv.org/abs/2001.08361
+34. Ghorbani, B., et al. "Scaling Laws for Neural Machine Translation." 2021. arXiv:2109.07740 (Referenced for scaling context). https://arxiv.org/abs/2109.07740
 
-35. Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Dohan, R., Gray, S., Radford, A., Sutskever, I., & Amodei, D. "Scaling Laws for Neural Language Models." *arXiv preprint*, 2020. arXiv:2001.08361. https://arxiv.org/abs/2001.08361
+35. Kaplan, J., McCandlish, S., Henighan, T., Brown, T. B., Chess, B., Child, R., Gray, S., Radford, A., Wu, J., & Amodei, D. "Scaling Laws for Neural Language Models." *arXiv preprint*, 2020. arXiv:2001.08361. https://arxiv.org/abs/2001.08361
 
-36. Huang, W., Xia, F., Xiao, T., Dickinson, B., Liang, Y., Hausman, P., Finn, C., & Levine, S. "Inner Monologue: Embodied Reasoning through Planning with Language Models." *CoRL 2023*. arXiv:2207.05608. https://arxiv.org/abs/2207.05608
+36. Huang, W., Xia, F., Xiao, T., Chan, H., Liang, J., Florence, P., Zeng, A., Tompson, J., Mordatch, I., Chebotar, Y., Sermanet, P., Brown, N., Jackson, T., Luu, L., Levine, S., Hausman, K., & Ichter, B. "Inner Monologue: Embodied Reasoning through Planning with Language Models." *CoRL 2022*. arXiv:2207.05608. https://arxiv.org/abs/2207.05608
 
-37. Li, G. N., & Liang, P. "Selective Annotation Makes Language Models Better Few-Shot Learners." *EMNLP 2023*. arXiv:2109.11026. https://arxiv.org/abs/2109.11026
+37. Su, H., Kasai, J., Wu, C. H., Shi, W., Wang, T., Xin, J., Zhang, R., Ostendorf, M., Zettlemoyer, L., Smith, N. A., & Yu, T. "Selective Annotation Makes Language Models Better Few-Shot Learners." *ICLR 2023*. arXiv:2209.01975. https://arxiv.org/abs/2209.01975
 
 38. Press, O., Zhang, M., Min, S., Schmidt, L., Smith, N. A., & Lewis, M. "Measuring and Narrowing the Compositionality Gap in Language Models." *EMNLP 2023*. arXiv:2210.03350. https://arxiv.org/abs/2210.03350
 ## References

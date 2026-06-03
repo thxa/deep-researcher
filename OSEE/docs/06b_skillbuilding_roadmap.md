@@ -772,7 +772,7 @@ After you have attempted each exercise independently, compare your solution:
 | CVE | Application | Vulnerability Type |
 |-----|-------------|--------------------|
 | CVE-2004-1626 | Ability FTP Server | Stack overflow |
-| CVE-2009-1437 | WinAmp | Stack overflow |
+| CVE-2009-1437 | CoolPlayer Portable | Stack overflow |
 | CVE-2010-1297 | Adobe Flash Player | Memory corruption |
 | Various | Easy File Sharing Web Server | Multiple overflow types |
 | Various | WarFTPD | Stack overflow |
@@ -1340,11 +1340,11 @@ Since there are no official OSEE practice exams, construct your own:
 
 | Tool | Cost | Notes |
 |------|------|-------|
-| **IDA Pro** (Professional) | ~$1,400 - $2,600/year (named license) | Essential for binary analysis. IDA Free or Ghidra can substitute for learning, but IDA Pro is standard |
-| **IDA Pro + Hex-Rays Decompiler** | ~$2,700 - $5,200/year | x86 + x64 decompiler is strongly recommended |
+| **IDA Pro Essential** | ~$1,099/year (subscription) | Essential for binary analysis. IDA Free or Ghidra can substitute for learning, but IDA Pro is standard |
+| **IDA Pro Expert-2** (local decompilers) | ~$2,999/year | Local decompiler tiers are strongly recommended |
 | **Ghidra** | Free (NSA) | Viable free alternative to IDA for learning; less polished but capable |
-| **Binary Ninja** | $299 (personal) - $2,499 (commercial) | Another alternative to IDA |
-| **VMware Workstation Pro** | Free for personal use (since Nov 2024) | Required by the course. VMware Workstation 15 or higher |
+| **Binary Ninja** | $299 (personal) - $1,499 (commercial) | Another alternative to IDA |
+| **VMware Workstation Pro** | Free for personal use (since May 2024) | Required by the course. VMware Workstation 15 or higher |
 | **Windows 10/11 Pro licenses** | $0 - $200 | Evaluation VMs are free from Microsoft; full licenses for long-term use |
 | **Windows SDK / WDK** | Free | Required for kernel development / debugging symbols |
 | **WinDbg Preview** | Free (Microsoft Store) | Primary debugger |
@@ -1507,9 +1507,9 @@ Start with Phase 1. Do every exercise. Build every exploit. Break every HEVD vul
 2. Corelan Team, "Exploit Writing Tutorials," https://www.corelan.be/
 3. Mark Russinovich et al., "Windows Internals," 7th Edition, Microsoft Press.
 4. Connor McGarr, Windows Kernel Exploitation Blog, https://connormcgarr.github.io/
-5. Morten Schenk, "Swimming In The (Kernel) Pool," 2021.
+5. Connor McGarr, "Exploit Development: Swimming In The (Kernel) Pool," 2021.
 6. HEVD (HackSysExtremeVulnerableDriver), https://github.com/hacksysteam/HackSysExtremeVulnerableDriver
 7. Microsoft, "WinDbg Documentation," https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/
 8. SANS, "SEC760: Advanced Exploit Development," https://www.sans.org/cyber-security-courses/
 9. FuzzySecurity, "Windows Exploitation Tutorials," https://www.fuzzysecurity.com/
-10. RedPill, "Windows Kernel Exploitation," https://redpill-lab0.net/
+10. Abatchy (Mohamed Shahat), "Kernel Exploitation Tutorial Series," https://www.abatchy.com/2018/01/kernel-exploitation-1

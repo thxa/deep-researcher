@@ -875,13 +875,13 @@ The future of cloud security lies at the intersection of automation, identity, a
 
 ## References
 
-1. U.S. Department of Justice. "Former Seattle Tech Worker Sentenced for Capital One Hack." *Department of Justice*. 2022. https://www.justice.gov/opa/pr/
-2. Capital One. "Data Breach Disclosure." *U.S. Securities and Exchange Commission*. 2019. https://www.sec.gov/Archives/edgar/data/927611/000092761119000092/
-3. SolarWinds. "SUNBURST Advisory." *SolarWinds*. 2020. https://www.solarwinds.com/securityadvisory
-4. Microsoft. "SolarWinds Threat Analysis." *Microsoft Security Response Center*. 2020. https://msrc.microsoft.com/blog/2020/12/customer-guidance-on-the-nation-state-cyber-attack/
+1. U.S. Department of Justice. "Former Seattle Tech Worker Sentenced for Capital One Hack." *Department of Justice*. 2022. https://www.justice.gov/usao-wdwa/pr/former-hacker-sentenced-stealing-computer-power-mine-cryptocurrency-and-stealing
+2. Capital One. "Data Breach Disclosure." *U.S. Securities and Exchange Commission*. 2019. https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000927628&type=8-K&dateb=&owner=include&count=40
+3. SolarWinds. "SUNBURST Advisory." *SolarWinds*. 2020. https://www.solarwinds.com/sa-overview
+4. Microsoft. "SolarWinds Threat Analysis." *Microsoft Security Response Center*. 2020. https://www.microsoft.com/en-us/msrc/blog/2020/12/customer-guidance-on-recent-nation-state-cyber-attacks
 5. CyberArk. "Golden SAML Attack." *CyberArk*. 2020. https://www.cyberark.com/resources/threat-research-blog/golden-saml-newly-discovered-attack-technique-forges-authentication-to-cloud-apps
-6. Aqua Security. "TeamTNT Analysis." *Aqua Security*. 2021. https://www.aquasec.com/resources/threat-research-teamtnt/
-7. Isovalent. "Tetragon: eBPF-Based Security." *Isovalent/Cilium*. 2024. https://tetragon.cilium.io/
-8. AMD. "SEV-SNP Documentation." *AMD Developer*. 2024. https://www.amd.com/en/developer/
-9. Intel. "TDX Documentation." *Intel Developer*. 2024. https://www.intel.com/content/www/us/en/developer/tools/sgx.html
+6. Aqua Security. "TeamTNT Analysis." *Aqua Security*. 2021. https://www.aquasec.com/blog/threat-alert-teamtnts-docker-gatling-gun-campaign/
+7. Isovalent. "Tetragon: eBPF-Based Security." *Isovalent/Cilium*. 2024. https://tetragon.io/
+8. AMD. "SEV-SNP Documentation." *AMD Developer*. 2024. https://www.amd.com/en/developer/sev.html
+9. Intel. "TDX Documentation." *Intel Developer*. 2024. https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html
 10. NIST. "SP 800-207: Zero Trust Architecture." *National Institute of Standards and Technology*. 2020. https://csrc.nist.gov/publications/detail/sp/800-207/final

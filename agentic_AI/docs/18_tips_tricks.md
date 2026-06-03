@@ -1426,7 +1426,7 @@ Model outputs in wrong language          │  Data contamination         │  Fi
 
 14. Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., Killeen, T., Lin, Z., Gimelshein, N., Antiga, L., et al., "PyTorch: An Imperative Style, High-Performance Deep Learning Library", *Advances in Neural Information Processing Systems (NeurIPS)*, 2019.
 
-15. Micikevicius, P., Narang, S., Alben, J., Diamos, G., Elsen, E., Garcia, D., Ginsburg, B., Houston, M., Kuchaiev, O., Venkatesh, G., Wu, H., "Mixed Precision Training", *International Conference on Learning Representations (ICLR)*, 2018. arXiv:1710.03754
+15. Micikevicius, P., Narang, S., Alben, J., Diamos, G., Elsen, E., Garcia, D., Ginsburg, B., Houston, M., Kuchaiev, O., Venkatesh, G., Wu, H., "Mixed Precision Training", *International Conference on Learning Representations (ICLR)*, 2018. arXiv:1710.03740
 
 16. Polyak, B.T., Juditsky, A.B., "Acceleration of Stochastic Approximation by Averaging" (Exponential Moving Average), *SIAM Journal on Control and Optimization*, 30(4):838–855, 1992.
 
@@ -1438,9 +1438,9 @@ Model outputs in wrong language          │  Data contamination         │  Fi
 
 20. Kirkpatrick, J., Pascanu, R., Rabinowitz, N., Veness, J., Desjardins, G., Rusu, A.A., Milan, K., Quan, J., Ramalho, T., Grabska-Barwinska, A., et al., "Overcoming Catastrophic Forgetting in Neural Networks" (EWC), *Proceedings of the National Academy of Sciences (PNAS)*, 114(13):3521–3526, 2017.
 
-21. Xiao, G., Lin, J., Seznec, S., Wu, H., Tian, Y., Demas, G., Han, S., "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models", *Proceedings of the 60th ACM/IEEE Design Automation Conference (DAC)*, 2023. arXiv:2211.10438
+21. Xiao, G., Lin, J., Seznec, S., Wu, H., Tian, Y., Demas, G., Han, S., "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models", *International Conference on Machine Learning (ICML)*, 2023. arXiv:2211.10438
 
-22. Leviathan, Y., Kalman, M., Matias, Y., "Fast Inference from Transformers via Speculative Decoding", *International Conference on Machine Learning (ICML)*, 2023. arXiv:2302.01318
+22. Leviathan, Y., Kalman, M., Matias, Y., "Fast Inference from Transformers via Speculative Decoding", *International Conference on Machine Learning (ICML)*, 2023. arXiv:2211.17192
 
 23. Brown, T.B., Mann, B., Ryder, N., Subbiah, M., Kaplan, J., Dhariwal, P., Neelakantan, A., Shyam, P., Sastry, G., Askell, A., et al., "Language Models are Few-Shot Learners" (GPT-3), *Advances in Neural Information Processing Systems (NeurIPS)*, 2020. arXiv:2005.14165
 
@@ -1452,7 +1452,7 @@ Model outputs in wrong language          │  Data contamination         │  Fi
 
 27. Hong, S., Zhuge, M., Chen, J., Zheng, X., Qiu, Y., Wang, G., "MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework", *International Conference on Learning Representations (ICLR)*, 2024. arXiv:2308.00352
 
-28. Keskar, N.S., McCann, B., Socher, R., "SoK: The Sound of Knocking—Content-Aware Data Augmentation for Character-Level and Word-Level Noise", *arXiv preprint*, 2017. arXiv:1703.07347
+28. Singh, J., McCann, B., Keskar, N.S., Xiong, C., Socher, R., "XLDA: Cross-Lingual Data Augmentation for Natural Language Inference and Question Answering", *arXiv preprint*, 2019. arXiv:1905.11471
 
 29. Wei, J., Zou, K., "EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks", *Conference on Empirical Methods in Natural Language Processing (EMNLP)*, 2019.
 
@@ -1480,7 +1480,7 @@ Model outputs in wrong language          │  Data contamination         │  Fi
 
 41. Taori, R., Gulrajani, I., Zhang, T., Dubey, Y., Li, L., Saab, K., Weng, L., Hashimoto, T., "Alpaca: A Strong, Replicable Instruction-Following Model", *Stanford CRFM*, 2023. URL: https://crfm.stanford.edu/2023/03/13/alpaca.html
 
-42. Chaudhary, S., "Code Llama: Open Foundation Models for Code", Meta AI, 2024. URL: https://ai.meta.com/blog/code-llama-large-language-model-coding/
+42. Meta AI, "Introducing Code Llama, a state-of-the-art large language model for coding", August 2023. URL: https://ai.meta.com/blog/code-llama-large-language-model-coding/
 
 43. OpenAI, "GPT-4 Technical Report", *arXiv preprint*, 2023. arXiv:2303.08774
 
@@ -1498,7 +1498,7 @@ Model outputs in wrong language          │  Data contamination         │  Fi
 
 50. Xu, Y., Lee, H., Chen, D., Glass, M., "Curriculum Learning for Natural Language Understanding", *Conference of the Association for Computational Linguistics (ACL)*, 2020. arXiv:2001.09495
 
-51. Gao, L., Tow, J., Abbasi, B., Biderman, S., Black, S., DiPofi, A., Foster, C., Goldstein, L., Hsu, J., Le Noac'h, A., et al., "A Framework for Few-shot Language Model Evaluation" (EleutherAI LM Evaluation Harness), *Zenodo*, 2024. DOI: 10.5281/zenodo.10657352
+51. Gao, L., Tow, J., Abbasi, B., Biderman, S., Black, S., DiPofi, A., Foster, C., Goldstein, L., Hsu, J., Le Noac'h, A., et al., "A Framework for Few-shot Language Model Evaluation" (EleutherAI LM Evaluation Harness), *Zenodo*, 2024. DOI: 10.5281/zenodo.12608602
 
 52. Zheng, L., Chiang, W.-L., Sheng, Y., Zhuang, S., Wu, Z., Zhu, Y., Li, Z., Li, Z., Xing, E.P., Gonzalez, I., Stoica, I., Zhang, H., "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena", *Advances in Neural Information Processing Systems (NeurIPS)*, 2023. arXiv:2306.05685
 
@@ -1516,7 +1516,7 @@ Model outputs in wrong language          │  Data contamination         │  Fi
 
 59. Christiano, P.F., Leike, J., Brown, T.B., Martic, M., Legg, S., Amodei, D., "Deep Reinforcement Learning from Human Preferences", *Advances in Neural Information Processing Systems (NeurIPS)*, 2017. arXiv:1706.03741
 
-60. Wang, J., Liu, Z., Wang, Y., Benssasson, E., Zhuang, S., Zhang, H.,"Self-Playing Adversarial Language Model (SPIN): Iterative Self-Play Reinforcement Learning", *arXiv preprint*, 2024. arXiv:2401.01335
+60. Chen, Z., Deng, Y., Yuan, H., Ji, K., Gu, Q., "Self-Play Fine-Tuning Converts Weak Language Models to Strong Language Models" (SPIN), *arXiv preprint*, 2024. arXiv:2401.01335
 
 61. Belouadi, J., Eger, S., "Automatic Instruction Prefix Optimization for LLMs", *arXiv preprint*, 2023. arXiv:2305.11472
 
@@ -1524,19 +1524,19 @@ Model outputs in wrong language          │  Data contamination         │  Fi
 
 63. Ziegler, D.M., Stiennon, N., Wu, J., "Fine-Tuning Language Models from Human Preferences", *arXiv preprint*, 2019. arXiv:1909.08593
 
-64. He, K., Zhang, X., Ren, S., Sun, J., "Deep Residual Learning for Recognizing Visual Patterns" (ResNets), *IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 2016. arXiv:1512.03385
+64. He, K., Zhang, X., Ren, S., Sun, J., "Deep Residual Learning for Image Recognition" (ResNets), *IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 2016. arXiv:1512.03385
 
 65. Glorot, X., Bordes, A., Bengio, Y., "Deep Sparse Rectifier Neural Networks", *International Conference on Artificial Intelligence and Statistics (AISTATS)*, 2011.
 
 66. Ioffe, S., Szegedy, C., "Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift", *International Conference on Machine Learning (ICML)*, 2015. arXiv:1502.03167
 
-67. Pozzi, S., Dettmers, T., Zettlemoyer, L.,"An Empirical Comparison of Best Practices for Low-Rank Fine-Tuning of LLMs", *arXiv preprint*, 2024. arXiv:2402.04eng
+67. Biderman, D., Portes, J., Ortiz, J.J.G., Paul, M., Greengard, P., Jennings, C., King, D., Havens, S., Chiley, V., Frankle, J., Blakeney, C., Cunningham, J.P., "LoRA Learns Less and Forgets Less", *arXiv preprint*, 2024. arXiv:2405.09673
 
 68. Wu, S., Zhu, A., Zhang, J., Zhuang, S., Zhang, H.,"LLM Culture: Multi-Agent Debate Society for Cultural Value Alignment", *arXiv preprint*, 2024. arXiv:2401.10599
 
 69. Shazeer, N., "GLU Variants Improve Transformer", *arXiv preprint*, 2020. arXiv:2002.05202
 
-70. Shen, Y., Hu, E.J., "LoRA+: Efficient Low Rank Adaptation of Large Models", *arXiv preprint*, 2024. arXiv:2402.12354
+70. Hayou, S., Ghosh, N., Yu, B., "LoRA+: Efficient Low Rank Adaptation of Large Models", *arXiv preprint*, 2024. arXiv:2402.12354
 ## References
 
 - Vaswani, A. et al., "Attention Is All You Need," NeurIPS 2017. https://arxiv.org/abs/1706.03762

@@ -987,7 +987,7 @@ def check_access(subject, action, resource, environment):
 3. Jones, M., Bradley, J., Sakimura, N. "JSON Web Token (JWT) RFC 7519." IETF, May 2015. https://www.rfc-editor.org/rfc/rfc7519
 4. Hardt, D. "The OAuth 2.0 Authorization Framework RFC 6749." IETF, October 2012. https://www.rfc-editor.org/rfc/rfc6749
 5. Sakimura, N., Bradley, J., Jones, M., et al. "OpenID Connect Core 1.0." OpenID Foundation, 2014. https://openid.net/specs/openid-connect-core-1_0.html
-6. Cantor, S., Kemp, J., Philpott, R., Maler, E. "SAML 2.0 Core." OASIS, 2005. https://www.oasis-open.org/committees/download.php/56785/
+6. Cantor, S., Kemp, J., Philpott, R., Maler, E. "Assertions and Protocols for the OASIS SAML V2.0 (SAML Core)." OASIS Standard, 2005. https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf
 7. PortSwigger Ltd. "JWT Attacks." https://portswigger.net/web-security/jwt
 8. OAuth 2.0 Security Workshop. "OAuth 2.0 Threat Model and Security Considerations RFC 6819." IETF, 2013. https://www.rfc-editor.org/rfc/rfc6819
 9. NIST. "SP 800-63B: Digital Identity Guidelines — Authentication and Lifecycle Management." https://pages.nist.gov/800-63-3/sp800-63b.html

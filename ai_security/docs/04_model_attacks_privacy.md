@@ -58,7 +58,7 @@ def equation_solving_extraction_binary(n_features, predict_fn, n_queries=None):
 
 ### 1.3 Active Learning-Based Extraction
 
-Active learning-based extraction (Pal et al., 2020, "ActiveThief: Scalable Extraction of Black-Box Models") trains a substitute model by strategically selecting queries that maximize information gain from the target API.
+Active learning-based extraction (Pal et al., 2020, "ActiveThief: Model Extraction Using Active Learning and Unannotated Public Data") trains a substitute model by strategically selecting queries that maximize information gain from the target API.
 
 **Algorithm**:
 1. Initialize a substitute model $f_{\hat{\theta}}$ with random parameters.
@@ -520,7 +520,7 @@ Geiping et al. (2020, "Inverting Gradients — How Easy Is It to Break Privacy i
 - Including prior knowledge about the data distribution (natural image priors).
 - Using batch normalization statistics to constrain the reconstruction.
 
-iDLG achieves faithful reconstruction of ImageNet images from gradients computed on batch sizes of up to 48 samples.
+The DLG/iDLG line of work is most effective when the gradient is computed on a single sample (batch size = 1); larger batches average gradients and degrade reconstruction.
 
 ### 4.3 GradLeak and Batch-Level Leakage
 
@@ -737,7 +737,7 @@ After adding noise, normalize to produce valid probability distributions. This r
 4. Fredrikson, M., et al. (2015). "Model Inversion Attacks for Privacy Extraction." CCS.
 5. Geiping, J., et al. (2020). "Inverting Gradients — How Easy Is It to Break Privacy in Federated Learning?" NeurIPS.
 6. Jagielski, M., et al. (2020). "High Accuracy and High Fidelity Extraction of Neural Networks." USENIX Security.
-7. Pal, S., et al. (2020). "ActiveThief: Scalable Extraction of Black-Box Models." AAAI Workshop.
+7. Pal, S., et al. (2020). "ActiveThief: Model Extraction Using Active Learning and Unannotated Public Data." AAAI.
 8. Shokri, R., et al. (2017). "Membership Inference Attacks Against Machine Learning Models." IEEE S&P.
 9. Tramer, F., et al. (2016). "Stealing Machine Learning Models via Prediction APIs." USENIX Security.
 10. Zhu, L., et al. (2019). "Deep Leakage from Gradients." NeurIPS.
@@ -751,12 +751,12 @@ After adding noise, normalize to produce valid probability distributions. This r
 5. Fredrikson, M., et al. (2015). "Model Inversion Attacks for Privacy Extraction." *CCS*.
 6. Geiping, J., et al. (2020). "Inverting Gradients — How Easy Is It to Break Privacy in Federated Learning?" *NeurIPS*.
 7. Jagielski, M., et al. (2020). "High Accuracy and High Fidelity Extraction of Neural Networks." *USENIX Security*.
-8. Krishna, K., et al. (2020). "Thieving DNN: Stealing Knowledge from Pre-trained Models." *NeurIPS*.
+8. Krishna, K., et al. (2020). "Thieves on Sesame Street! Model Extraction of BERT-based APIs." *ICLR*.
 9. Li, X., et al. (2022). "Large Language Models Can Be Strong Differentially Private Learners." *ICLR*.
 10. Li, X., et al. (2023). "Privacy-Preserving Parameter-Efficient Fine-Tuning via Differential Privacy." *arXiv*.
 11. Lyu, L., et al. (2020). "DP-LoRA: Privacy-Preserving Parameter-Efficient Fine-Tuning." *arXiv*.
 12. Opacus (2023). "Opacus: PyTorch Differential Privacy Library." https://opacus.ai
-13. Pal, S., et al. (2020). "ActiveThief: Scalable Extraction of Black-Box Models." *AAAI Workshop*.
+13. Pal, S., et al. (2020). "ActiveThief: Model Extraction Using Active Learning and Unannotated Public Data." *AAAI*.
 14. Rolnick, D., & Kording, K. (2020). "Reverse-Engineering Deep ReLU Networks." *ICLR*.
 15. Shokri, R., et al. (2017). "Membership Inference Attacks Against Machine Learning Models." *IEEE S&P*.
 16. Tramer, F., et al. (2016). "Stealing Machine Learning Models via Prediction APIs." *USENIX Security*.

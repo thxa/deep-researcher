@@ -40,13 +40,13 @@ GPU drivers are particularly attractive targets because they are reachable from 
 | CVE-2021-1940 | 7.8 HIGH | CWE-416 | GPU command submission | No |
 | CVE-2023-33063 | 7.8 HIGH | CWE-416 | kgsl DSI handler | Yes |
 | CVE-2023-33107 | 7.8 HIGH | CWE-190 | kgsl fence timeline | Yes |
-| CVE-2024-43047 | 7.8 HIGH | CWE-416 | kgsl DMA-buf reference | Yes |
+| CVE-2024-43047 | 7.8 HIGH | CWE-416 | DSP Service / FastRPC driver | Yes |
 
-**CVE-2022-22057** is a use-after-free in the Qualcomm KGSL graphics fence subsystem caused by a race condition between closing a fence file descriptor and destroying the graphics timeline simultaneously. The vulnerability exists in the `kgsl_syncsource_put` function which fails to properly synchronize access to shared fence state. An attacker can trigger the race by issuing concurrent `close()` and timeline destruction ioctls from separate threads, leading to a dangling pointer that can be reclaimed with controlled data. CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H (NIST), CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H (Qualcomm CNA). Affects Snapdragon 460 through Gen 1 platforms.
+**CVE-2022-22057** is a use-after-free in the Qualcomm KGSL graphics timeline-fence lifecycle caused by a race condition between closing a fence file descriptor and destroying the graphics timeline simultaneously. The vulnerability arises because `kgsl_timeline::fences` does not refcount the `kgsl_timeline_fence` objects it holds, so the race between `kgsl_ioctl_timeline_destroy`/`kgsl_ioctl_timeline_wait` and `timeline_fence_release`/`dma_fence_free` frees a fence still in use. An attacker can trigger the race by issuing concurrent `close()` and timeline destruction ioctls from separate threads, leading to a dangling pointer that can be reclaimed with controlled data. CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H (NIST), CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H (Qualcomm CNA). Affects Snapdragon 460 through Gen 1 platforms.
 
-**CVE-2023-33063** and **CVE-2023-33107** were both identified by Google TAG as being exploited in targeted attacks. CVE-2023-33063 is a UAF in the DSI handler of the KGSL driver, while CVE-2023-33107 is an integer overflow in the fence timeline handling that leads to an out-of-bounds write. These were used as part of a chain to achieve kernel code execution from an Android app context.
+**CVE-2023-33063** and **CVE-2023-33107** were both identified by Google TAG as being exploited in targeted attacks. CVE-2023-33063 is a UAF in the DSI handler of the KGSL driver, while CVE-2023-33107 is an integer overflow in the KGSL/Adreno IOMMU SVM address-range validation (`kgsl_iommu_set_svm_region`/`iommu_addr_in_svm_ranges`) that produces overlapping or dangling IOMMU page-table entries. These were used as part of a chain to achieve kernel code execution from an Android app context.
 
-**CVE-2024-43047** is a UAF in the KGSL driver's DMA-buf reference counting logic. Confirmed exploited in the wild by CISA, this vulnerability allows an unprivileged local attacker to corrupt kernel memory through improper reference tracking when mapping and unmapping GPU buffers.
+**CVE-2024-43047** is a UAF in the Qualcomm DSP Service / FastRPC driver, caused by memory corruption while maintaining memory maps of HLOS memory. Confirmed exploited in the wild by CISA, this vulnerability allows an unprivileged local attacker to corrupt kernel memory through improper reference tracking.
 
 #### ARM Mali Driver
 
@@ -54,7 +54,7 @@ GPU drivers are particularly attractive targets because they are reachable from 
 |--------|-----------|-----|-------------------|-------------------|
 | CVE-2021-28663 | 8.8 HIGH | CWE-416 | Mali GPU memory ops | Yes |
 | CVE-2021-28664 | 8.8 HIGH | CWE-787 | Mali GPU JIT memory | Yes |
-| CVE-2022-36449 | 6.5 MEDIUM | CWE-416 | Mali GPU page handling | Yes |
+| CVE-2022-36449 | 6.5 MEDIUM | CWE-416 | Mali GPU page handling | No |
 | CVE-2022-38181 | 8.8 HIGH | CWE-416 | Mali GPU JM/CSF | Yes |
 | CVE-2023-4211 | 5.5 MEDIUM | CWE-416 | Mali GPU memory processing | Yes |
 | CVE-2023-6241 | 7.8 HIGH | CWE-416 | Mali GPU CSF firmware | Yes |
@@ -232,13 +232,13 @@ An object registers a callback or notification handler. When the object is freed
 | CVE-2021-1048 | 7.8 HIGH | eventpoll.c | Pattern 2 | Yes |
 | CVE-2021-0920 | 6.4 MEDIUM | af_unix garbage collection | Pattern 1 | Yes |
 | CVE-2021-22555 | 7.8 HIGH | netfilter x_tables | Pattern 3 | No |
-| CVE-2023-0266 | 7.8 HIGH | ALSA USB audio | Pattern 1 | Yes |
+| CVE-2023-0266 | 7.0 HIGH | ALSA control compat layer | Pattern 2 | Yes |
 
 **CVE-2021-1048** is a UAF in `ep_loop_check_proc()` of the `eventpoll.c` subsystem. The vulnerability occurs due to a race between `eventpoll` chain loop checking and file descriptor closing. When an epoll file descriptor is closed while the kernel is traversing the epoll chain (checking for loops), a UAF occurs because the traversal holds a reference to an epoll instance that is being freed. CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H. This was exploited in the wild and listed in CISA's KEV catalog (added 2022-05-23).
 
 **CVE-2021-0920** is a UAF in the Unix domain socket garbage collector (`af_unix`). The garbage collector (`unix_gc()`) races with `sendmsg()`, leading to a scenario where file descriptors passed via SCM_RIGHTS can be freed while still being delivered. Google TAG attributed exploitation of this vulnerability (combined with CVE-2021-1048) to a commercial spyware vendor targeting Samsung devices. CISA KEV listed.
 
-**CVE-2023-0266** is a UAF in the ALSA (Advanced Linux Sound Architecture) PCM subsystem's USB audio driver. The vulnerability occurs in the disconnect path when a USB audio device is removed while audio streams are active. The race between `snd_usb_disconnect()` and ongoing audio operations leads to accessing freed `snd_usb_substream` structures. Exploited in the wild as part of a Samsung device exploit chain.
+**CVE-2023-0266** is a UAF in the ALSA (Advanced Linux Sound Architecture) control-element / 32-bit compat layer. The `SNDRV_CTL_IOCTL_ELEM_{READ|WRITE}32` paths are missing the `controls_rwsem` lock inside `snd_ctl_elem_read`/`snd_ctl_elem_write`, allowing a control element to be freed (deleted) concurrently between the `snd_ctl_find_id` lookup and its use. NVD CVSS 3.1 base score is 7.0 HIGH (AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H). Exploited in the wild as a 0-day as part of a Samsung Internet Browser exploit chain.
 
 ---
 
@@ -334,7 +334,7 @@ Qualcomm provides the SoC (Snapdragon) powering the majority of Android devices.
 | CVE-2021-28663 | 8.8 HIGH | Mali GPU | UAF in GPU memory ops | Yes |
 | CVE-2022-22057 | 7.8 HIGH | KGSL driver | Race condition in fence handling | No |
 | CVE-2022-33213 | 7.8 HIGH | Modem interface | Buffer overflow in QMI | No |
-| CVE-2024-43047 | 7.8 HIGH | KGSL driver | UAF in DMA-buf handling | Yes |
+| CVE-2024-43047 | 7.8 HIGH | DSP Service / FastRPC | UAF in HLOS memory maps | Yes |
 
 **CVE-2021-1905** and **CVE-2021-1906** were exploited together as a pair. CVE-2021-1905 is a UAF in the Adreno GPU's handling of `IOCTL_KGSL_GPUOBJ_IMPORT` where a GPU memory object can be freed while still mapped. CVE-2021-1906 is an improper address validation that allows mapping GPU objects at arbitrary kernel addresses. Combined, they provide arbitrary kernel read/write.
 
@@ -507,7 +507,7 @@ Stage 6: Post-Exploitation
 11. CVE-2016-5195 (Dirty COW) — https://nvd.nist.gov/vuln/detail/CVE-2016-5195
 12. Kaspersky Securelist: Mobile Threats — https://securelist.com/
 13. Linux Kernel Security — https://www.kernel.org/doc/html/latest/security/index.html
-14. Roden, M. "DirtyCred: Generic Escalation Technique." Black Hat USA, 2022.
+14. Lin, Z., Wu, Y., & Xing, X. "Cautious! A New Exploitation Method! No Pipe but as Nasty as Dirty Pipe." Black Hat USA, 2022.
 16. Linux Kernel. "KASAN Documentation." https://www.kernel.org/doc/html/latest/dev-tools/kasan.html. 2024.
 17. Matusiewicz, K. & Pęczkowski, M. "Dirty Page Tables: Unprivileged Memory Corruption." *Black Hat Europe*. 2024.
 18. Google Security Blog. "Eliminating Memory Safety Vulnerabilities at the Source." https://security.googleblog.com/. 2024.

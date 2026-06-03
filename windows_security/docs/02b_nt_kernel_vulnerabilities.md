@@ -438,7 +438,7 @@ Kernel objects use reference counting for lifetime management. The Windows Objec
 //    ObReferenceObjectByHandle() without first calling ObReferenceObject()
 ```
 
-### 5.2 Reference Count Underflow (CVE-2010-0232 class)
+### 5.2 KiTrap0D — #GP Handler / NTVDM Privilege Escalation (CVE-2010-0232 class)
 
 A reference count underflow causes an object to be freed while references still exist:
 
@@ -931,7 +931,7 @@ Get-ChildItem C:\Windows\System32\config\SAM |
 
 ### 10.1 Vulnerability Overview
 
-**CVE-2022-37969** is a Windows kernel EoP vulnerability in the CLFS (Common Log File System) driver (`clfs.sys`). It was exploited in the wild and is notable for being a non-paged pool use-after-free with sophisticated exploitation.
+**CVE-2022-37969** is a Windows kernel EoP vulnerability in the CLFS (Common Log File System) driver (`clfs.sys`). It was exploited in the wild and is an out-of-bounds write (CWE-787) caused by a missing bounds check on a base-block field with sophisticated exploitation.
 
 | Attribute | Value |
 |-----------|-------|
@@ -1235,7 +1235,7 @@ These defenses collectively raise the bar for kernel exploitation from "trivial"
 3. Morten, H. "Windows 10 Pool Overflow Exploitation." *Black Hat USA*, 2021. — Pool overflow primitives in paged and non-paged pools.
 4. National Vulnerability Database. CVE-2021-34527. "PrintNightmare." <https://nvd.nist.gov/vuln/detail/CVE-2021-34527>
 5. National Vulnerability Database. CVE-2021-36934. "HiveNightmare." <https://nvd.nist.gov/vuln/detail/CVE-2021-36934>
-6. National Vulnerability Database. CVE-2022-37969. "Windows Kernel UAF." <https://nvd.nist.gov/vuln/detail/CVE-2022-37969>
+6. National Vulnerability Database. CVE-2022-37969. "Windows CLFS Driver Elevation of Privilege (out-of-bounds write)." <https://nvd.nist.gov/vuln/detail/CVE-2022-37969>
 7. McGarr, C. "Kernel Pool Exploitation on Windows 10." *Connor McGarr's Blog*, 2022. — Pool feng shui, token replacement, and type confusion.
 8. Microsoft Security Response Center (MSRC) Blog. "Kernel Pool Telemetry and Hardening." <https://msrc.microsoft.com/blog/> — Pool zero-overwrite, pool tagging, and arbitrary pool access.
 9. MITRE ATT&CK. "Exploitation for Privilege Escalation — T1068." <https://attack.mitre.org/techniques/T1068/>

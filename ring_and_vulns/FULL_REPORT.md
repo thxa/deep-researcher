@@ -926,8 +926,8 @@ The following detailed research documents are available in the `docs/` directory
 - ESET Research, "LoJax: First UEFI bootkit found in the wild, sophisticated Sednit," 2018. https://www.welivesecurity.com/en/
 - Kaspersky, "MoonBounce: The dark side of UEFI bootkit," 2022. https://securelist.com/moonbounce-uefi-bootkit/105924/
 - Kaspersky, "CosmicStrand: A sophisticated UEFI bootkit," 2022. https://securelist.com/cosmicstrand-uefi-bootkit/106778/
-- Intel Management Engine research — Igor Skochinsky, Positive Technologies. https://positive.tech/
-- Positive Technologies, "Intel ME: Myths and Reality." https://positive.tech/
+- Intel Management Engine research — Igor Skochinsky, Positive Technologies. https://global.ptsecurity.com/en/
+- Positive Technologies, "Intel ME: Myths and Reality." https://github.com/skochinsky/papers/blob/master/2017-12%20%5B34C3%5D%20Intel%20ME%20Myths%20and%20Reality.pdf
 - CVE-2015-3456 (VENOM) — QEMU Floppy Disk Controller Heap Overflow. https://nvd.nist.gov/vuln/detail/CVE-2015-3456
 - Domo, "VENOM: Virtual Environment Neglected Operations Manipulation," 2015.
 - Aporrea, "Hardware-based rootkits and the implications for trust," Black Hat USA.

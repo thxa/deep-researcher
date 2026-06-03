@@ -25,7 +25,7 @@
 
 ### 1.1 The Bug
 
-On September 12, 2006, Debian maintainer Lucas Nussbaum reported a Valgrind warning about uninitialized memory usage in OpenSSL's random number generator. The OpenSSL function `MD_Update(&m, buf, j)` in `ssleay_rand_add()` mixed `buf` (a stack-allocated buffer) into the PRNG state. Valgrind flagged the use of uninitialized bytes in `buf` as a memory error.
+On April 19, 2006, Richard Kettlewell reported a Valgrind warning about uninitialized memory usage in OpenSSL's random number generator. The OpenSSL function `MD_Update(&m, buf, j)` in `ssleay_rand_add()` mixed `buf` (a stack-allocated buffer) into the PRNG state. Valgrind flagged the use of uninitialized bytes in `buf` as a memory error.
 
 Debian's OpenSSL maintainer, Kurt Roeckx, responded by **commenting out the offending line**:
 
@@ -181,7 +181,7 @@ In 2007, Microsoft researchers Dan Shumow and Niels Ferguson presented "On the P
 
 Given one 30-byte output block $o_i = \phi_x([s_i]Q)$ (truncated to 30 bytes), the internal state $s_{i+1} = \phi_x([s_i]P)$ can be recovered by trying $2^{16}$ candidates for the missing 16 bits of $[s_i]Q$. For each candidate, compute $[s_i]P$ and check if the next output matches. This requires $\sim 2^{16}$ EC operations — trivially feasible.
 
-The Snowden leaks (2013) confirmed that NSA had paid RSA Security $10 million to make Dual_EC_DRBG the default DRBG in BSAFE (RSA's cryptographic library). The BSAFE default was Dual_EC_DRBG until RSA changed it to CTR-DRBG in September 2013.
+The Snowden leaks (2013) confirmed that NSA had paid RSA Security $10 million to make Dual_EC_DRBG the default DRBG in BSAFE (RSA's cryptographic library). The BSAFE default was Dual_EC_DRBG until RSA changed it to HMAC_DRBG (SHA-256) in November 2013.
 
 ### 4.3 Impact and Lessons
 
@@ -205,8 +205,8 @@ $$p = k \cdot M + (65537^a \mod M)$$
 where $M$ is a product of the first 39 primes (the primorial of 167) and $a$ is a small integer ($a < 2^{25}$ for 1024-bit primes). This structure allows Coppersmith's lattice reduction to efficiently factor $N = pq$ when both $p$ and $q$ have this form.
 
 **Factoring complexity**:
-- 512-bit keys: $\sim 1$ CPU-hour (trivial).
-- 1024-bit keys: $\sim 72$ CPU-days (practical on a cluster).
+- 512-bit keys: $\sim 2$ CPU-hours (trivial).
+- 1024-bit keys: $\sim 97$ CPU-days (practical on a cluster).
 - 2048-bit keys: $\sim 140$ CPU-years (borderline practical for nation-states).
 
 ### 5.2 Affected Systems
@@ -216,7 +216,7 @@ where $M$ is a product of the first 39 primes (the primorial of 167) and $a$ is 
 - **Microsoft Azure Key Vault**: Used Infineon HSMs for key storage.
 - **Estonian ID cards**: Used Infineon chips for citizen digital identity.
 
-Estonia revoked and reissued 750,000 ID cards in response to the vulnerability — one of the largest certificate reissuance operations in history.
+Estonia suspended the certificates of ~750,000 affected ID cards in response to the vulnerability, allowing holders to renew the certificates remotely rather than replacing the physical cards — one of the largest certificate renewal operations in history.
 
 ### 5.3 Detection and Mitigation
 
@@ -251,7 +251,7 @@ def is_roca_vulnerable(n):
 
 ### 6.1 The Vulnerability
 
-EFAIL (CVE-2018-10677, CVE-2018-10678) is a class of attacks against OpenPGP and S/MIME email encryption that exploits the interaction between encryption and MIME (Multipurpose Internet Mail Extensions) handling. EFAIL enables a attacker who can modify an encrypted email in transit (a MITM position) to exfiltrate the plaintext.
+EFAIL (CVE-2017-17688, CVE-2017-17689) is a class of attacks against OpenPGP and S/MIME email encryption that exploits the interaction between encryption and MIME (Multipurpose Internet Mail Extensions) handling. EFAIL enables a attacker who can modify an encrypted email in transit (a MITM position) to exfiltrate the plaintext.
 
 There are two EFAIL attack variants:
 

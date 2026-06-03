@@ -763,7 +763,7 @@ Three scaling laws govern modern deep learning:
 
 37. Hoffmann, J., Borgeaud, S., Mensch, A., et al., "Training Compute-Optimal Large Language Models" (Chinchilla), arXiv:2203.15556, 2022. URL: [https://arxiv.org/abs/2203.15556](https://arxiv.org/abs/2203.15556)
 
-38. Wei, J., Tay, Y., Bommasani, R., et al., "Emergent Abilities of Large Language Models", *Transactions on Machine Learning Research*, 2022. arXiv:2206.11707
+38. Wei, J., Tay, Y., Bommasani, R., et al., "Emergent Abilities of Large Language Models", *Transactions on Machine Learning Research*, 2022. arXiv:2206.07682
 
 ### Reinforcement Learning
 

@@ -172,4 +172,4 @@ The T2 chip on 2018–2020 Intel Macs was a discrete Apple silicon chip (based o
 - NVD (National Vulnerability Database): https://nvd.nist.gov/
 - Apple Security Releases: https://support.apple.com/en-us/HT201222/
 - PACMAN Attack (MIT): https://vusec.net/projects/
-- CTFech — Apple Silicon Security: https://ctf.thecybercoop.org/lectures/
+- Brandon Azad / Project Zero — Examining Pointer Authentication on the iPhone XS (Apple Silicon PAC): https://googleprojectzero.blogspot.com/2019/02/examining-pointer-authentication-on.html

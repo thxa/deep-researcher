@@ -554,7 +554,7 @@ This recovers one prime factor, completely breaking the key. The fault requires 
 7. TPM 2.0 Specification, Trusted Computing Group, "TPM Library Specification, Level 00, Revision 01.59," November 2019. https://trustedcomputinggroup.org/resource/tpm-library-specification/
 8. Némec, M., Švenda, P., Klinec, V., "The Return of Coppersmith's Attack: Practical Factorization of Widely Used RSA Moduli," CCS 2017. CVE-2017-15361 (ROCA). https://eprint.iacr.org/2017/1159
 9. Moghimi, D., et al., "TPM-FAIL: TPM meets Timing Attacks," CCS 2020. CVE-2019-11090. https://tpm.fail/
-10. Van Bulck, J., et al., "Foreshadow: Extracting the Keys to the Intel SGX Kingdom with Transient Out-of-Order Execution," USENIX Security 2018. CVE-2018-3615. https://foreshadowAttack.com/
+10. Van Bulck, J., et al., "Foreshadow: Extracting the Keys to the Intel SGX Kingdom with Transient Out-of-Order Execution," USENIX Security 2018. CVE-2018-3615. https://foreshadowattack.eu/
 11. Lee, J., et al., "Infineon Vulnerability: RSA Key Generation via TPM," ROCA, 2017. https://eprint.iacr.org/2017/1159
 12. Anderson, R., Kuhn, M., "Low Cost Attacks on Tamper Resistant Devices," Security Protocols Workshop, 1997. https://www.cl.cam.ac.uk/~rja14/tamper.html
 13. Skorobogatov, S., "Semi-Invasive Attacks — A New Approach to Hardware Security Analysis," Technical Report, University of Cambridge, 2005. https://www.cl.cam.ac.uk/~sps32/
