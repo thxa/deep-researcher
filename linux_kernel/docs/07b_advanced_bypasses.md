@@ -19,6 +19,7 @@
 7. [Page-Level Exploitation Techniques](#7-page-level-exploitation-techniques)
 8. [Elastic Objects Technique](#8-elastic-objects-technique)
 9. [State of the Art (2024-2026)](#9-state-of-the-art-2024-2026)
+10. [Hardware Memory Safety Bypasses (MTE, kCFI, PAC, RANDOM_KMALLOC_CACHES)](#10-hardware-memory-safety-bypasses-mte-kcfi-pac-random_kmalloc_caches)
 
 ---
 
@@ -576,6 +577,55 @@ A typical 2024-2026 kernel exploit follows this general pattern:
 ```
 
 The trend is clearly toward **data-only attacks** that avoid control flow hijacking entirely, combined with **cross-cache / page-level techniques** that defeat per-cache isolation. As hardware memory tagging (ARM MTE) matures, the next frontier will likely involve tag oracle attacks, tag bypass via speculative execution, and further exploitation of coprocessor/firmware attack surfaces that exist outside the memory safety boundary.
+
+---
+
+## 10. Hardware Memory Safety Bypasses (MTE, kCFI, PAC, RANDOM_KMALLOC_CACHES)
+
+Modern hardened kernels (Android GKI on Pixel 8+, upstream with Clang) deploy multiple hardware-assisted and compiler-based mitigations. This section catalogs verified bypass techniques for each.
+
+### 10.1 MTE Bypass via GPU Memory
+
+ARM Memory Tagging Extension (MTE) assigns a 4-bit tag to each 16-byte memory granule. On Pixel 8+, kernel heap allocations are tagged by the SLUB allocator. However, **GPU driver allocations are untagged** -- the Mali GPU memory allocator does not apply MTE tags.
+
+**CVE-2025-0072 (Man Yue Mo, May 2025)** is the first production MTE bypass on Pixel 8. The vulnerability in the Mali GPU driver creates a page use-after-free and accesses freed pages through user-space mappings (`mgm_vmf_insert_pfn_prot`), completely evading MTE tag checking. Unlike the earlier CVE-2023-6241 which used GPU operations to access freed memory, CVE-2025-0072 operates through direct page mappings. Fixed in Mali driver r54p0 and the Android May 2025 security update; affects Pixel 7, 8, and 9 series.
+
+**Additional MTE bypass vectors:**
+- **Tag brute-force:** MTE tags are 4 bits (16 values). Fork before each attempt; tag mismatch kills the child (SIGSEGV). Expected successes: ~16 attempts on average.
+- **TikTag speculative leak (IEEE S&P 2025):** Uses Spectre-style speculative execution to leak MTE tags without faulting. Speculative accesses do not trigger MTE faults; a cache timing side-channel reveals the correct tag. Demonstrated >95% tag leak success rate in under 4 seconds.
+- **Async mode race window:** Android uses MTE in asynchronous mode for performance. Tag check failures are deferred, creating a window where corrupt data is accessible before the fault fires.
+
+### 10.2 kCFI Bypass Techniques
+
+Kernel Control-Flow Integrity (kCFI, Linux 6.1+, Android 14+ GKI) places a 32-bit type hash before each function entry and checks indirect call targets against the expected hash. Three practical bypass strategies exist:
+
+**a) Data-only attacks (bypass entirely):** kCFI only checks indirect call targets. Modifying kernel data (cred UIDs, `modprobe_path`, `selinux_state.enforcing`, pipe_buffer fields) requires no indirect calls and never triggers a kCFI check. Dirty Pagetable combined with data-only escalation is completely immune to kCFI.
+
+**b) Same-type function replacement:** kCFI validates only that the target function's type signature matches the call site -- not which specific function is called. The kernel contains thousands of functions with identical prototypes (e.g., all `unlocked_ioctl` handlers share type `long (*)(struct file *, unsigned int, unsigned long)`). Overwriting a function pointer to any type-compatible function passes the kCFI check.
+
+**c) JOP via indirect branches:** kCFI protects `BLR` (indirect call) but not all `BR` (indirect jump) instructions. Tail calls and jump table entries using `BR` may not be checked, providing jump-oriented programming (JOP) gadgets. The available gadget set is smaller than for ROP, but sufficient for short chains.
+
+### 10.3 PAC Bypass Catalog
+
+Pointer Authentication (PAC, ARMv8.3-A) signs return addresses with a cryptographic tag stored in unused upper pointer bits. Android GKI compiles with `-mbranch-protection=pac-ret`, protecting return addresses (LR) via `PACIASP`/`AUTIASP`. Function pointers stored in structs, vtable pointers, and data pointers are **not** PAC-protected.
+
+| Strategy | Difficulty | Applicability |
+|----------|-----------|---------------|
+| **Signing oracle** | Medium | Find a kernel path that signs an attacker-controlled value with PAC and stores the result somewhere readable |
+| **Pointer substitution** | Medium | Swap a PAC'd pointer with another signed under the same key + context (e.g., two functions at the same stack depth share identical PACIASP signatures) |
+| **Brute force** | Low (48-bit VA) | PAC field = 55 - VA_size bits. With 48-bit VA: 7 PAC bits = 128 combinations. Fork per attempt; ~64 expected guesses |
+| **Context mismatch** | Low-Medium | If the modifier/context value used for signing is predictable or controllable |
+| **Data-only attack** | Low | Avoid PAC entirely. PAC protects code pointers only; data values (creds, flags) are unprotected. Arbitrary kernel R/W via Dirty Pagetable provides zero additional protection from PAC |
+
+### 10.4 CONFIG_RANDOM_KMALLOC_CACHES Bypass
+
+`CONFIG_RANDOM_KMALLOC_CACHES` (kernel 6.6+, Android 15+ GKI) creates 16 copies of each kmalloc cache bucket. Cache selection is deterministic per call site: `hash(caller_return_addr, random_seed) % 16`. Two allocations from different call sites land in the same cache with probability 1/16.
+
+**Bypass via brute-force spray:** Spray 64+ objects from multiple different syscall paths (each hitting a different cache index). With 64 spray objects the probability of at least one landing in the victim's cache exceeds 98.4% (`1 - (15/16)^64`). With 128 objects: >99.97%.
+
+**Bypass via Dirty Pagetable:** The page-level technique operates at the buddy allocator level, entirely below the SLUB slab allocator. `RANDOM_KMALLOC_CACHES` randomizes slab cache selection but has no effect on page allocator behavior. Dirty Pagetable exploits are completely unaffected by this mitigation.
+
+**Bypass via dedicated-cache objects:** Objects allocated from dedicated caches (`pipe_bufs`, `skbuff_head_cache`, `filp`, `cred_jar`, `msg_msg`) are not subject to random kmalloc cache selection and are unaffected by this mitigation.
 
 ---
 

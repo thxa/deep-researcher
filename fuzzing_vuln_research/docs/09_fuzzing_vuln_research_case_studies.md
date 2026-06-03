@@ -590,18 +590,39 @@ Disclosure Timeline:
 2024-04-15: Public disclosure (90 days)
 ```
 
-## 10. Cross-Cutting Lessons
+## 10. CVE-2025-0072: MTE Bypass via Mali GPU on Pixel 8 (2025)
 
-### 10.1 From All Case Studies
+### 10.1 The Bug
+
+CVE-2025-0072 demonstrated the second production MTE bypass on Pixel 8. Man Yue Mo discovered a Mali GPU CSF (Command Stream Frontend) queue binding vulnerability that creates a page use-after-free. Unlike CVE-2023-6241 which used GPU operations to access freed memory, CVE-2025-0072 exploits the fact that freed pages remain accessible through user-space mappings established by `mgm_vmf_insert_pfn_prot`.
+
+### 10.2 MTE Bypass Mechanism
+
+The key insight is that GPU memory is NOT tagged by MTE. When a Mali GPU page is freed at the kernel level but remains mapped in user-space through the GPU driver's memory management, accessing it through the user-space mapping completely bypasses MTE tag checking. The exploit chain proceeds:
+
+1. Allocate GPU memory regions via Mali GPU driver
+2. Trigger the CSF queue binding bug, causing a page-level UAF
+3. The freed page is reclaimed as a kernel page table page
+4. Access the page through the still-valid user-space GPU mapping (no MTE check)
+5. Corrupt page table entries to gain arbitrary physical memory read/write
+
+### 10.3 Significance
+
+This case study demonstrates a fundamental limitation of MTE on devices with complex GPU subsystems: the GPU driver's memory management creates a parallel path that circumvents MTE protections. Any vulnerability in the GPU driver can potentially serve as an MTE bypass, making the GPU attack surface critical for MTE-protected devices.
+
+## 11. Cross-Cutting Lessons
+
+### 11.1 From All Case Studies
 
 1. **Fuzzing works**: The most impactful vulnerabilities of the last decade were found by fuzzing
 2. **Variant analysis multiplies value**: Finding one bug should lead to finding many variants
 3. **Operational monitoring finds bugs too**: DirtyPipe was found from production anomalies
 4. **Small changes cause big vulnerabilities**: DirtyPipe was a one-line bug
 5. **Race conditions are under-explored**: Most fuzzers are single-threaded; race-aware fuzzing is an open problem
-6. **GPU drivers are the new kernel**: High-value, under-fuzzed, complex code
+6. **GPU drivers are the new kernel**: High-value, under-fuzzed, complex code. GPU memory paths bypass MTE on hardened devices.
 7. **Crash triage is critical**: 40,000 OSS-Fuzz crashes are useless without good triage
 8. **Disclosure matters**: Responsible disclosure saves users from exploitation
+9. **Mitigations create bypass markets**: Each new mitigation (MTE, kCFI, PAC) spawns research into bypass techniques. The GPU attack surface is the current primary bypass vector for MTE-protected Android devices.
 
 ## References
 

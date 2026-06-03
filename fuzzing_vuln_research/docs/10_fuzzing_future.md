@@ -54,7 +54,19 @@ def rag_fuzz(target_api, bug_database):
     return llm.generate(prompt)
 ```
 
-### 1.3 ChatGPT/AutoFuzz
+### 1.3 LLM-Enhanced Kernel Fuzzing (SyzAgent, KernelGPT, SyzParam)
+
+Three systems have demonstrated practical LLM integration with kernel fuzzing:
+
+**KernelGPT** automates syzlang description generation -- the primary bottleneck in kernel fuzzing. It parses kernel driver source code to identify ioctl commands, struct definitions, and flag constants, then uses an LLM to generate semantically correct syzkaller descriptions. This eliminates the weeks of manual effort typically needed to fuzz a new kernel subsystem.
+
+**SyzAgent** wraps syzkaller with an LLM-guided feedback loop. When coverage plateaus, SyzAgent analyzes the corpus and uncovered branches, then generates targeted syscall programs designed to satisfy the constraints needed to reach new code paths. The LLM acts as a constraint-solving oracle complementing syzkaller's random mutation.
+
+**SyzParam** focuses on parameter value selection. Instead of random values bounded by type constraints, it uses an LLM to suggest arguments more likely to trigger edge cases, based on analysis of the target function's source code and known bug patterns.
+
+These three approaches target different stages of the fuzzing pipeline: KernelGPT handles interface description, SyzAgent handles exploration strategy, and SyzParam handles input quality. They are complementary and can be combined.
+
+### 1.4 ChatGPT/AutoFuzz
 
 AutoFuzz (2023) uses GPT models to generate fuzz harnesses for arbitrary targets:
 
@@ -89,7 +101,7 @@ def autofuzz(target_headers, api_docs):
     return harness
 ```
 
-### 1.4 Neural Program Synthesis for Test Generation
+### 1.5 Neural Program Synthesis for Test Generation
 
 Neural program synthesis generates programs (test cases) rather than raw byte inputs. This is particularly effective for:
 - **JavaScript engine fuzzing**: Generate JS programs with type transitions that trigger JIT bugs

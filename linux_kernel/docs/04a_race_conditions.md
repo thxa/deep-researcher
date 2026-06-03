@@ -721,6 +721,8 @@ The sysctl `vm.unprivileged_userfaultfd` controls access:
 
 Many distributions now set `vm.unprivileged_userfaultfd = 0`, forcing exploits to find alternative methods (FUSE, io_uring, etc.) to achieve controlled kernel pausing.
 
+**Android-specific restrictions:** Android 12+ sets `vm.unprivileged_userfaultfd = 0` and requires `CAP_SYS_PTRACE` for userfaultfd. However, the `UFFD_USER_MODE_ONLY` flag still allows unprivileged userfaultfd for user-mode faults only -- kernel-originated faults (the ones useful for exploitation) are blocked. Android 14+ further restricts userfaultfd, making FUSE the preferred stalling technique on modern Android.
+
 ---
 
 ## 7. FUSE-Based Race Exploitation
@@ -830,6 +832,28 @@ Thread A (triggers vulnerability):     FUSE daemon:
    but data buffer is 0x1000 bytes     
    -> overflow or other corruption     
 ```
+
+---
+
+## 7.7 fallocate/tmpfs Race Extension (2025)
+
+A newer stalling technique that requires no special permissions was published by Faith (November 2025). It exploits the interaction between `fallocate(FALLOC_FL_PUNCH_HOLE)` on tmpfs and concurrent page faults.
+
+**Mechanism:** When `fallocate(FALLOC_FL_PUNCH_HOLE)` is called on a tmpfs file, the kernel's `shmem_fallocate()` calls `shmem_undo_range()`, which acquires the page folio lock for each page in the punched range. If another thread has a pending page fault on the same folio (triggered by accessing a `madvise(MADV_DONTNEED)`-invalidated page of the same file), it blocks in `filemap_fault()` waiting for the folio lock. This stalls the kernel thread for a duration proportional to the punch-hole range size.
+
+**Advantages over userfaultfd and FUSE:**
+- No special permissions or capabilities required
+- Works on any tmpfs-backed file (though `/dev/shm` is absent on stock Android)
+- Stall duration is controllable by adjusting the range size (4096 pages produces approximately 1ms stall on typical hardware)
+- Not detectable by the same mechanisms that flag userfaultfd or FUSE usage
+
+**Comparison of stalling techniques:**
+
+| Technique | Stall Duration | Permissions Required | Availability |
+|---|---|---|---|
+| userfaultfd | Infinite | `CAP_SYS_PTRACE` (5.11+) | Restricted on Android 12+ |
+| FUSE | Infinite | FUSE mount access | Available in user namespaces |
+| fallocate/tmpfs | Finite, controllable | None | Any tmpfs mount |
 
 ---
 

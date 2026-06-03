@@ -149,12 +149,23 @@ The following table consolidates Android-ecosystem CVEs that were confirmed as *
 | CVE-2025-54957 | 2025 | Dolby Unified Decoder | Demonstrated by Project Zero as part of full 0-click chain |
 | CVE-2026-3909 | 2026 | Google Skia | CISA KEV, affects Android via Chrome and system rendering |
 
+### Additional Confirmed In-the-Wild Exploits (2025-2026)
+
+| CVE ID | Year | Component | Description |
+|--------|------|-----------|-------------|
+| CVE-2025-0072 | 2025 | ARM Mali GPU CSF | First public MTE bypass on production Pixel 8. UAF in CSF queue binding exploited via GPU memory (untagged by MTE). |
+| CVE-2025-38352 | 2025 | Linux POSIX CPU timers | Chronomaly: race condition (handle_posix_cpu_timers UAF) exploited ITW on 32-bit Android devices. Notable for not requiring kernel symbol offsets. |
+| CVE-2026-21385 | 2026 | Qualcomm Graphics | Integer overflow exploited ITW (March 2026 bulletin). Affects 235+ Qualcomm chipsets. |
+| CVE-2025-48595 | 2026 | Android Framework | Integer overflow exploited ITW (June 2026 bulletin). 124 vulnerabilities fixed in same bulletin. |
+
 ### Key Observations on In-the-Wild Exploitation
 
 1. **Commercial spyware dominance**: The majority of confirmed in-the-wild Android exploits during this period are attributed to commercial spyware vendors. Google TAG and Amnesty International's Security Lab have been the primary disclosers.
-2. **GPU drivers as preferred targets**: GPU kernel drivers (both Arm Mali and Qualcomm Adreno) have become the most targeted component class for privilege escalation, replacing older attack surfaces like Binder or media frameworks.
+2. **GPU drivers as preferred targets**: GPU kernel drivers (both Arm Mali and Qualcomm Adreno) have become the most targeted component class for privilege escalation, replacing older attack surfaces like Binder or media frameworks. GPU drivers combine three critical properties: reachable from untrusted app sandbox, complex memory management, and a separate MMU that bypasses CPU-side mitigations like MTE and PAN.
 3. **Zero-click via AI features**: The introduction of automatic audio transcription and image analysis features in messaging apps has expanded the zero-click attack surface, enabling exploitation without any user interaction.
 4. **Forensic exploitation**: A distinct category of exploitation emerged targeting Pixel bootloader and firmware (CVE-2024-29745, CVE-2024-29748), used by law enforcement forensic tools rather than traditional spyware.
+5. **Data-only exploitation dominates**: Five of seven major exploit chains documented in 2024-2026 use purely data-only techniques (Dirty Pagetable, DirtyCred, modprobe_path overwrite) that never hijack control flow. On modern devices with kCFI and PAC, data-only is often the only viable path.
+6. **Mitigation gaps over mitigation breaks**: No modern exploit breaks MTE's cryptographic tag checking or kCFI's type matching. Instead, all find coverage gaps: untagged GPU memory (MTE gap), unprotected AVC cache (RKP gap), allowed syscalls from sandboxed contexts (seccomp gap).
 
 ---
 

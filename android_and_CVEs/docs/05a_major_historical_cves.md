@@ -671,6 +671,58 @@ The March 2020 patch addressed the vulnerability by:
 
 ---
 
+## 5.13 CVE-2024-1086 --- nf_tables Verdict UAF (Dirty Pagedirectory)
+
+| Attribute | Details |
+|---|---|
+| **CVE ID** | CVE-2024-1086 |
+| **CVSS v3.1** | 7.8 (High) --- AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H |
+| **CWE** | CWE-416 (Use After Free) |
+| **Affected Versions** | Linux kernel 5.14 through 6.6 |
+| **Discovered By** | notselwyn |
+| **Exploited in Wild** | Yes |
+
+### Technical Root Cause
+
+A double-free in nf_tables verdict handling. The `nft_verdict_init()` function allows a positive value for `NF_DROP`, which is then cast to a drop error via `NF_DROP_GETERR()`. This corrupts the verdict structure and leads to a double-free when the associated object is cleaned up.
+
+### Exploitation Innovation
+
+The exploit by notselwyn achieved a 99.4% success rate on kernel 6.4.16 using a Dirty Pagedirectory technique (PMD-level corruption, where one corrupted PMD entry controls 2MB of physical memory). Key innovations include:
+
+1. **sk_buff spray for page-level reclaim:** sk_buff data is allocated from the page allocator (not SLUB), making cross-allocator to PMD pages natural.
+2. **KSMA (Kernel Space Mirroring Attack):** PMD control used to mirror kernel memory in userspace for direct R/W without syscalls.
+3. **Fileless execution via `modprobe_path`:** Overwrites `/sbin/modprobe` to an attacker script that is executed as root when an unknown binary format is triggered. Zero disk changes required.
+
+While nftables is available in the Android kernel, it is typically not reachable from the app sandbox due to `CAP_NET_ADMIN` requirements. However, the exploitation techniques pioneered here (Dirty Pagedirectory, KSMA, `modprobe_path`) have become standard patterns in Android kernel exploitation.
+
+---
+
+## 5.14 CVE-2025-0072 --- Mali GPU MTE Bypass on Pixel 8
+
+| Attribute | Details |
+|---|---|
+| **CVE ID** | CVE-2025-0072 |
+| **CVSS v3.1** | High |
+| **CWE** | CWE-416 (Use After Free) |
+| **Affected Versions** | ARM Mali GPU driver (CSF-based variants) |
+| **Discovered By** | Man Yue Mo, GitHub Security Lab |
+| **Significance** | First public MTE bypass on a production device |
+
+### Technical Root Cause
+
+A use-after-free in Mali CSF (Command Stream Frontend) queue binding. A race between queue rebinding and mmap causes `kbase_csf_user_io_pages_vm_close` to free pages that are still mapped to a VMA.
+
+### Why MTE Was Bypassed
+
+The Mali GPU driver manages its own memory pool via the buddy allocator rather than SLUB. MTE tagging is implemented at the SLUB level: `kmalloc()` sets a 4-bit tag on each granule. GPU driver allocations never pass through SLUB, so memory tags are always 0 and pointer tags are always 0 --- MTE checks (0 == 0) always pass. This is not a bug in MTE but a fundamental coverage gap. Any subsystem with its own memory allocator (GPU, DMA, ION/CMA, vmalloc) is likely unprotected by MTE.
+
+### Exploitation
+
+The freed GPU page was returned to the buddy allocator and reclaimed with `pipe_buffer` objects. Corrupted `pipe_buffer` operations yielded arbitrary kernel R/W. The exploit bypassed kCFI (data-only attack), PAC (no signed pointers corrupted), MTE (GPU memory untagged), and SELinux (enforcing flag overwritten).
+
+---
+
 ## Summary: Comparative Analysis of Major Android CVEs
 
 | CVE | Year | Type | CVSS | Remote? | 0-Click? | In-Wild Exploit | Legacy Impact |
@@ -687,6 +739,8 @@ The March 2020 patch addressed the vulnerability by:
 | Samsung Qmage | 2020 | Memory Corruption | ~9.8 | Yes | Yes | Not confirmed | Custom codec auditing |
 | Achilles | 2020 | DSP Buffer Overflow | 6.0-8.4 | No | N/A | Not confirmed | DSP interface hardening |
 | MediaTek-SU | 2020 | OOB Write | 7.8 | No | N/A | Yes | SELinux for driver nodes |
+| CVE-2024-1086 | 2024 | Double-Free (UAF) | 7.8 | No | N/A | Yes | Dirty Pagedirectory technique |
+| CVE-2025-0072 | 2025 | UAF | High | No | N/A | Research | First MTE bypass on production device |
 
 ### Key Themes
 
@@ -699,6 +753,10 @@ The March 2020 patch addressed the vulnerability by:
 4. **OEM customizations** (Samsung Qmage, Certifi-gate, Samsung Phone app) consistently introduce vulnerabilities absent from stock Android. The Android security team has expanded CTS (Compatibility Test Suite) security requirements and encouraged OEMs to minimize custom native code.
 
 5. **The patching gap** remains the most persistent challenge. MediaTek-SU was publicly known for 14 months before appearing in an official Android Security Bulletin. Project Mainline (APEX modules) and GKI aim to decouple critical security components from OEM update cycles, allowing Google to deliver fixes directly through Play System Updates.
+
+6. **Data-only exploitation** has become the dominant strategy on modern hardened devices (2024-2026). Techniques like Dirty Pagetable, DirtyCred, and `modprobe_path` overwrite never touch function pointers, automatically bypassing kCFI, PAC, and BTI. Samsung RKP/KDP is the strongest defense against data-only attacks, as it hypervisor-protects credential structures and page tables.
+
+7. **Mitigation gaps outweigh mitigation breaks.** No modern exploit breaks MTE's cryptographic tag checking or kCFI's type matching. Instead, exploits consistently find coverage gaps: untagged GPU memory (MTE gap), unprotected AVC cache (RKP gap), and allowed syscalls from sandboxed contexts (seccomp gap). This pattern emerged clearly in the CVE-2025-0072 MTE bypass and the CVE-2025-38236 Chrome renderer-to-kernel chain.
 
 ## References
 

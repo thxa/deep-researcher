@@ -8,32 +8,34 @@ syzkaller is a coverage-guided kernel fuzzer developed by Dmitry Vyukov at Googl
 
 ### 1.2 Core Components
 
+> **Architecture note (2024+):** The original syzkaller had a 3-process model: syz-manager (host) spawned syz-fuzzer (VM) which managed syz-executor (VM). The syz-fuzzer process has been **merged into syz-manager**. The current architecture is a 2-process model where syz-manager on the host directly manages syz-executor instances in VMs via RPC.
+
 ```
 ┌──────────────────────────────────────────────────────┐
-│  syzkaller (Host)                                    │
+│  Host Machine                                        │
 │                                                      │
-│  ┌───────────┐  ┌───────────┐  ┌──────────────┐   │
-│  │ Corpus    │  │ Mutation  │  │ Minimization │   │
-│  │ Manager   │  │ Engine    │  │ & Triaging   │   │
-│  └─────┬─────┘  └─────┬─────┘  └──────┬───────┘   │
-│        │               │                │            │
-│        └───────────────┼────────────────┘            │
-│                        ↓                             │
-│  ┌─────────────────────────────────────────┐        │
-│  │           RPC Interface                  │        │
-│  └───────────────────┬─────────────────────┘        │
-│                      ↓                               │
-│  ┌─────────────────────────────────────────┐        │
-│  │  VM Manager (QEMU/GCE/Android)         │        │
-│  └───────────────────┬─────────────────────┘        │
-└──────────────────────┼──────────────────────────────┘
-                       ↓
+│  ┌────────────────────────────────────────────┐     │
+│  │  syz-manager                                │     │
+│  │  (includes fuzzing logic, formerly syz-fuzzer)│     │
+│  │                                              │     │
+│  │  ┌───────────┐  ┌───────────┐  ┌────────┐ │     │
+│  │  │ Corpus    │  │ Mutation  │  │Minimize│ │     │
+│  │  │ Manager   │  │ Engine    │  │& Triage│ │     │
+│  │  └─────┬─────┘  └─────┬─────┘  └───┬────┘ │     │
+│  │        └───────────────┼────────────┘       │     │
+│  │                        ↓                    │     │
+│  │  ┌──────────────────────────────────┐      │     │
+│  │  │  VM Manager (QEMU/GCE/Android)  │      │     │
+│  │  └──────────────┬───────────────────┘      │     │
+│  └─────────────────┼─────────────────────────┘     │
+└────────────────────┼────────────────────────────────┘
+                     ↓  RPC
 ┌──────────────────────────────────────────────────────┐
 │  Target VM (Guest)                                   │
 │                                                      │
 │  ┌───────────┐  ┌───────────┐  ┌──────────────┐   │
-│  │ syz-exec  │  │ syz-exec  │  │ KCOV/KASAN   │   │
-│  │ utor (F)  │  │ utor (C)  │  │ Instrument.  │   │
+│  │syz-executor│  │syz-executor│  │ KCOV/KASAN   │   │
+│  │ (forking) │  │ (collide) │  │ Instrument.  │   │
 │  └───────────┘  └───────────┘  └──────────────┘   │
 │                                                      │
 │  Kernel with KCOV + KASAN/KMSAN                     │
@@ -42,21 +44,21 @@ syzkaller is a coverage-guided kernel fuzzer developed by Dmitry Vyukov at Googl
 
 **Key components:**
 
-1. **Fuzzer**: The main loop that selects programs from the corpus, mutates them, sends them to the executor, and processes coverage/crash results
-2. **Executor**: A minimal user-space program running inside the VM that receives syscall sequences from the fuzzer and executes them
-3. **VM Manager**: Manages VM lifecycle (boot, snapshot, reboot after crash)
-4. **Corpus Manager**: Stores and retrieves test programs (system call sequences)
-5. **Minimizer**: Reduces crashing programs to the minimal sequence that still triggers the bug
+1. **syz-manager**: The single host process that handles program generation/mutation, corpus management, coverage processing, crash triaging, and VM management. It communicates directly with syz-executor instances via RPC.
+2. **syz-executor**: A minimal user-space program running inside each VM that receives syscall sequences from syz-manager and executes them. Reports back coverage data and crash information.
+3. **VM Manager**: Integrated into syz-manager; manages VM lifecycle (boot, snapshot, reboot after crash).
+4. **Corpus Manager**: Stores and retrieves test programs (system call sequences).
+5. **Minimizer**: Reduces crashing programs to the minimal sequence that still triggers the bug.
 
 ### 1.3 Operation Flow
 
-1. **Boot VM**: Start a fresh QEMU/GCE/Android instance with the instrumented kernel
-2. **Initialize**: The executor connects to the fuzzer via RPC
-3. **Select program**: The fuzzer selects a program from the corpus
+1. **Boot VM**: syz-manager starts fresh QEMU/GCE/Android instances with the instrumented kernel
+2. **Initialize**: syz-executor connects to syz-manager via RPC
+3. **Select program**: syz-manager selects a program from the corpus
 4. **Mutate program**: Apply mutation operators (insert/remove/change syscalls and arguments)
-5. **Execute program**: The executor runs the syscall sequence in the VM
-6. **Collect coverage**: KCOV reports covered PCs to the fuzzer
-7. **Check for crashes**: The executor checks for kernel panics, hangs, and KASAN reports
+5. **Execute program**: syz-manager sends the program to syz-executor, which runs the syscall sequence in the VM
+6. **Collect coverage**: KCOV reports covered PCs back to syz-manager
+7. **Check for crashes**: syz-executor checks for kernel panics, hangs, and KASAN reports
 8. **Update corpus**: If new coverage was discovered, add the program to the corpus
 9. **If crash**: Save the program, reboot the VM, continue fuzzing
 
@@ -239,6 +241,19 @@ KASAN detects memory safety violations in kernel code:
 - **Use-after-free**
 - **Double-free**
 - **Invalid free**
+
+**KASAN shadow memory model:** For every 8 bytes of kernel memory, KASAN maintains 1 byte of shadow metadata:
+
+| Shadow Value | Meaning |
+|---|---|
+| `0x00` | All 8 bytes accessible (valid) |
+| `0x01`-`0x07` | First N bytes accessible (partial) |
+| `0xFB` | `KASAN_SLAB_FREE` — freed slab object (UAF detection) |
+| `0xFC` | `KASAN_SLAB_REDZONE` — slab out-of-bounds detection zone |
+| `0xFE` | `KASAN_PAGE_REDZONE` — page-level redzone |
+| `0xFF` | `KASAN_PAGE_FREE` — freed page |
+
+On every memory access, KASAN checks the shadow byte. If the shadow indicates the access is invalid, `kasan_report()` is called with the address, access size, and read/write direction.
 
 **Kernel configuration:**
 ```makefile
@@ -672,6 +687,54 @@ Kernel bugs are often **non-deterministic** (races, timing-dependent). syzkaller
 **Discovery**: syzkaller generated a sequence of netfilter netlink commands combined with eBPF operations that triggered the UAF.
 
 **Impact**: Privilege escalation from unprivileged user to root. Actively exploited in the wild. The exploit was publicly available within weeks of the CVE being published.
+
+## 13. LLM-Enhanced Kernel Fuzzing (2024-2025)
+
+### 13.1 Overview
+
+Large language models are transforming kernel fuzzing by automating the most labor-intensive step: writing syzlang descriptions for new kernel interfaces. Three systems have emerged as particularly impactful.
+
+### 13.2 KernelGPT: Automatic Syzlang Description Generation
+
+KernelGPT uses LLMs to automatically generate syzkaller syzlang descriptions from kernel driver source code. Instead of a human reverse-engineering ioctl handlers and writing syzlang by hand, KernelGPT:
+
+1. Parses kernel driver source code to identify ioctl commands, struct definitions, and flag constants
+2. Uses an LLM to generate semantically correct syzlang descriptions
+3. Validates the generated descriptions by compiling them with syzkaller's `syz-extract`
+
+This eliminates the primary bottleneck in kernel fuzzing: new drivers often go unfuzzed for months because nobody writes the descriptions. KernelGPT can generate working descriptions in minutes.
+
+### 13.3 SyzAgent: LLM-Guided Syzkaller
+
+SyzAgent wraps syzkaller with an LLM-based agent that observes coverage feedback and dynamically adjusts the fuzzing strategy. When syzkaller hits a coverage plateau, SyzAgent:
+
+1. Analyzes the current corpus and coverage map
+2. Identifies uncovered branches and the constraints needed to reach them
+3. Generates targeted syscall programs designed to satisfy those constraints
+4. Feeds them back to syzkaller as seed programs
+
+This creates a feedback loop where the LLM acts as a constraint-solving oracle, complementing syzkaller's random mutation.
+
+### 13.4 SyzParam: Runtime Parameter Injection
+
+SyzParam focuses on a narrower problem: the values passed as arguments to syscalls. Standard syzkaller uses random values bounded by type constraints. SyzParam uses an LLM to suggest parameter values that are more likely to trigger edge cases, based on analysis of the target function's source code and known bug patterns.
+
+## 14. KernelCTF: Current Rules and Attack Surface (2025-2026)
+
+### 14.1 Overview
+
+Google's KernelCTF program pays bounties for working kernel exploits against hardened GKI targets. The rules have tightened significantly in 2025:
+
+### 14.2 Key Rule Changes
+
+- **io_uring disabled** (mid-2025): The io_uring subsystem, which accounted for a disproportionate share of kernel CVEs, was removed from KernelCTF targets
+- **nftables disabled** (mid-2025): The nf_tables subsystem was also disabled, closing another common attack surface
+- **Unprivileged user namespaces OFF** (July 2025): Exploits can no longer create user namespaces for capability escalation
+- **KernelXDK required** (October 2025): Submissions must include a KernelXDK exploit description showing the exploit's strategy and primitives used
+
+### 14.3 Impact on Exploitation Research
+
+These restrictions force researchers toward harder attack surfaces: core kernel subsystems (VFS, memory management, networking core), vendor-specific drivers, and less-explored interfaces. The removal of io_uring and nftables eliminates the two subsystems that historically provided the easiest UAF/double-free primitives.
 
 ## References
 

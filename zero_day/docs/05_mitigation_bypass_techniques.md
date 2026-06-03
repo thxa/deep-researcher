@@ -1253,6 +1253,66 @@ sendmsg(sock, &msg, 0);
 // may exceed slab limits at larger pipe capacities
 ```
 
+### 6.8 ARM64 kCFI (Kernel Control-Flow Integrity) Bypass
+
+kCFI is enabled on Android GKI kernels since Android 13 (Clang's `-fsanitize=kcfi`). Before every indirect call (`BLR`), the compiler inserts a check that loads a 32-bit type hash from `(target_address - 4)` and compares it to the expected hash for that call site. A mismatch triggers `BRK #0x8228` (kernel panic).
+
+**Bypass 1: Data-only attacks (avoid kCFI entirely)**
+
+kCFI only checks indirect **call** targets. Modifying kernel data (credentials, flags, page table entries) requires no indirect calls. Techniques like Dirty Pagetable, DirtyCred, and direct `cred` overwrite are completely unaffected by kCFI.
+
+**Bypass 2: Same-type function replacement**
+
+kCFI hashes depend only on the C function type signature. Two functions with the same prototype share the same hash and are interchangeable from kCFI's perspective. For example, all `unlocked_ioctl` handlers share the type `long (*)(struct file *, unsigned int, unsigned long)` and the same kCFI hash. Redirecting one ioctl handler to another passes kCFI validation.
+
+**Bypass 3: JOP via unconditional branches (BR)**
+
+kCFI protects `BLR` (indirect calls) but does NOT protect `BR` (indirect jumps). Tail calls, jump tables, and other `BR`-based control transfers skip the kCFI hash check. An attacker who can control the register used by a `BR` instruction achieves arbitrary jump targets without triggering kCFI.
+
+**Bypass 4: Text patching via arbitrary write (USMA/KSMA)**
+
+With arbitrary kernel write, the kCFI check instructions (typically 5-6 instructions before the `BLR`) can be NOP'd out by writing `0xD503201F` (ARM64 NOP) over each check instruction. This requires a preceding arbitrary write primitive.
+
+### 6.9 ARM64 PAC (Pointer Authentication) Bypass
+
+PAC embeds a cryptographic signature in the unused upper bits of pointers. On ARMv8.3+ (Pixel 4+), return addresses are signed with PACIASP (key=IA, context=SP). PAC width depends on VA size: 48-bit VA gives ~7 PAC bits (128 combinations); 39-bit VA gives ~16 PAC bits (65,536 combinations).
+
+**Bypass 1: Data-only attacks**
+
+PAC protects code pointers (return addresses, function pointers). Data values (credentials, SELinux flags, page table entries) are not signed. With arbitrary kernel read/write, an attacker can overwrite `current->cred->uid` to 0 without ever touching a PAC-signed pointer.
+
+**Bypass 2: Signing oracle**
+
+Find a kernel code path that takes an attacker-controlled value, signs it with PACIA/PACDA, and stores the result in readable memory. If such a path exists (e.g., a callback registration ioctl), the attacker can sign arbitrary pointers on demand.
+
+**Bypass 3: Pointer substitution**
+
+Reuse already-signed pointers from another context. If two functions execute at the same stack depth, their PACIASP return addresses use the same PAC signature (same key + same SP context). An attacker can overwrite a saved LR with a LR from a different call at the same stack depth.
+
+**Bypass 4: Brute force (48-bit VA)**
+
+With 48-bit VA (common on modern kernels), PAC is only 7 bits = 128 combinations. Using `fork()` before each attempt (child crashes on wrong PAC, parent retries), the expected number of attempts is ~64. This is highly feasible.
+
+### 6.10 ARM MTE (Memory Tagging Extension) Bypass
+
+MTE (Pixel 8+) assigns a 4-bit tag to each 16-byte memory granule. Pointer tags must match memory tags on access. Android uses asynchronous mode (ASYNC) for performance, where tag check faults are deferred.
+
+**Bypass 1: GPU memory path (preferred on Pixel 8)**
+
+Mali GPU driver allocations do **not** apply MTE tags. By exploiting a Mali GPU vulnerability, the attacker works with untagged memory where MTE is irrelevant. CVE-2023-6241 and CVE-2025-0072 demonstrated this on production Pixel 8, achieving kernel code execution by exploiting Mali CSF (Command Stream Frontend) bugs where freed GPU pages are accessed through user-space mappings that bypass MTE tag checking.
+
+**Bypass 2: Tag brute-force**
+
+MTE tag = 4 bits = 16 possible values, giving a 1/16 chance of correct tag per attempt. Using `fork()` before each UAF access (child crashes on tag mismatch, parent retries), the expected number of attempts is ~16. This is reliable and fast.
+
+**Bypass 3: Speculative tag leak (TikTag)**
+
+TikTag (IEEE S&P 2025) uses Spectre-style speculative execution to leak MTE tags without triggering a fault. Speculative accesses do not raise MTE faults (faults are only raised on committed instructions). A cache timing side-channel reveals whether the speculative access hit or missed, allowing tag inference. Once the tag is known, the pointer tag is set to match, and MTE passes deterministically.
+
+**Bypass 4: Async mode race window**
+
+In ASYNC mode, there is a window between the memory access with the wrong tag and the fault delivery. If the exploit completes its critical operations (e.g., modifying a page table entry) before the fault fires, MTE is effectively bypassed. This is harder than the GPU or brute-force paths but demonstrates that ASYNC MTE is weaker than SYNC MTE.
+
 ---
 
 ## 7. Sandbox & Seccomp Bypass

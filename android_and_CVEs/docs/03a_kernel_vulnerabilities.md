@@ -430,21 +430,51 @@ Stage 6: Post-Exploitation
 
 **msg_msg Exploitation:** The `msg_msg` structure used by System V message queues is highly flexible for exploitation. Its variable-size allocation (`kmalloc`-based) allows targeting specific slab caches, and the `msg_msg->next` pointer can be corrupted to build arbitrary read primitives.
 
-**Cross-Cache Attacks:** Modern exploits increasingly use cross-cache techniques where an object is freed from one slab cache and the physical page is reallocated to a different cache. This bypasses same-cache hardening measures like `CONFIG_SLAB_FREELIST_HARDENED` and `CONFIG_RANDOM_KMALLOC_CACHES` introduced in recent Android kernels.
+**Cross-Cache Attacks:** Modern exploits increasingly use cross-cache techniques where an object is freed from one slab cache and the physical page is reallocated to a different cache. This bypasses same-cache hardening measures like `CONFIG_SLAB_FREELIST_HARDENED` and `CONFIG_RANDOM_KMALLOC_CACHES` introduced in recent Android kernels. The technique works because when all objects in a SLUB slab page are freed, the page returns to the buddy allocator and can be reclaimed by any cache. Standard cross-cache achieves roughly 40% success; SLUBStick (USENIX Security 2024) uses timing side-channels to reach over 99% reliability.
+
+**Dirty Pagetable:** A technique that converts a page-level UAF (obtained via cross-cache) into arbitrary physical memory read/write by corrupting Page Table Entries (PTEs). The freed page is reclaimed as a user page table page, then written through the UAF to modify PTE entries, mapping attacker-chosen physical addresses into userspace. This is a pure data-only attack that bypasses kCFI, PAC, and PXN. Samsung RKP blocks this on Samsung devices by write-protecting page tables at the hypervisor level (EL2).
+
+**DirtyCred:** A data-only exploitation technique that swaps a low-privilege kernel credential object (`struct cred` or `struct file`) with a high-privilege one using a heap UAF. Because it never touches function pointers, DirtyCred automatically bypasses kCFI, PAC, BTI, SMEP, and SMAP. There are two sub-techniques: credential swapping (replace uid=1000 cred with uid=0 cred in the same slab slot) and file struct swapping (replace a read-only `struct file` with a writable one to bypass permission checks). Both `cred_jar` and `files_cache` are dedicated slab caches, so cross-cache is typically required to reach them from a vulnerability in a different cache.
 
 ---
 
-## 10. Summary and Mitigation Strategies
+## 10. Recent Developments (2025-2026)
+
+### New CVEs Exploited in the Wild
+
+| CVE ID | Component | Severity | Description |
+|--------|-----------|----------|-------------|
+| CVE-2025-0072 | ARM Mali GPU CSF | High | UAF in Mali CSF queue binding, exploited to bypass MTE on Pixel 8. First public MTE bypass on a production device. |
+| CVE-2025-38352 | Linux Kernel POSIX CPU timers | High | Race condition (handle_posix_cpu_timers UAF) exploited ITW on 32-bit Android devices. Notable for not requiring kernel symbol offsets. |
+| CVE-2026-21385 | Qualcomm Graphics | High | Integer overflow exploited ITW (March 2026 bulletin). Affects 235+ Qualcomm chipsets. |
+| CVE-2025-38236 | Linux Kernel UNIX sockets | High | UAF in MSG_OOB handling for stream-oriented UNIX domain sockets (Linux >= 6.9). Discovered by Project Zero's Jann Horn. Reachable from Chrome renderer sandbox. |
+| CVE-2025-54957 | Dolby Unified Decoder | Critical | Memory corruption reachable zero-click through Google Messages audio transcription. Part of Project Zero's Pixel 9 zero-click chain. |
+
+### New Exploitation Techniques
+
+**PhantomMap (NDSS 2026):** GPU-assisted kernel exploitation using Mali GPU to transform heap vulnerabilities into physical memory R/W primitives. Demonstrated on 13 real CVEs.
+
+**CROSS-X (CCS 2025):** First systematic, automated cross-cache framework achieving over 99% success under idle workloads and approximately 85% under busy workloads. Developed by Dong-ok Kim et al. at KAIST.
+
+**PCPLost / PCP Massaging (NDSS 2026):** Uses Per-CPU Page (PCP) list side channels to infer allocator state, bypassing mainline mitigations including `CONFIG_RANDOM_KMALLOC_CACHES`. Validated on 6 real CVEs.
+
+### MTE Coverage Gap
+
+The CVE-2025-0072 exploit demonstrated a fundamental gap in MTE deployment: Mali GPU driver memory allocations use their own allocator (not SLUB) and are therefore not tagged by MTE. Any subsystem managing its own memory pool (GPU, DMA, ION, CMA, vmalloc) is likely MTE-unprotected, making these the primary bypass vector as MTE adoption grows.
+
+---
+
+## 11. Summary and Mitigation Strategies
 
 ### Vulnerability Distribution by Class
 
 | Vulnerability Class | Count (in this report) | % Exploited in Wild |
 |---------------------|----------------------|---------------------|
-| Use-After-Free | 24 | ~58% |
-| Race Condition | 8 | ~50% |
+| Use-After-Free | 26+ | ~58% |
+| Race Condition | 9+ | ~50% |
 | Out-of-Bounds Write | 10 | ~30% |
 | Improper Initialization | 2 | ~50% |
-| Integer Overflow | 4 | ~25% |
+| Integer Overflow | 5+ | ~25% |
 | Buffer Overflow | 5 | ~20% |
 
 ### Key Observations
@@ -467,12 +497,14 @@ Stage 6: Post-Exploitation
 | PAN (Privileged Access Never) | ARM hardware | High -- prevents kernel from accessing user memory |
 | CFI (Control Flow Integrity) | Android 9 | High -- prevents ROP/JOP attacks |
 | Shadow Call Stack | Android 10 | High -- protects return addresses |
-| Memory Tagging (MTE) | Android 14 (ARM v8.5+) | Very High -- probabilistic UAF/overflow detection |
+| Memory Tagging (MTE) | Android 14 (ARM v8.5+) | High -- probabilistic UAF/overflow detection, but GPU/DMA allocations are untagged |
 | `CONFIG_SLAB_FREELIST_HARDENED` | Android 10 | Moderate -- detects slab metadata corruption |
-| `CONFIG_RANDOM_KMALLOC_CACHES` | Android 14 | Moderate -- randomizes slab allocation |
+| `CONFIG_RANDOM_KMALLOC_CACHES` | Android 14 | Moderate -- randomizes slab allocation (16 cache copies, bypassed by PCPLost) |
 | io_uring restriction | Android 13+ | High -- removes entire attack surface |
 | GKI (Generic Kernel Image) | Android 12 | Moderate -- ensures consistent security patches |
 | seccomp-bpf | Android 8.0 | High -- filters dangerous syscalls |
+| Samsung RKP/KDP | Samsung Knox devices | Very High -- hypervisor-level protection of creds and page tables |
+| `CONFIG_SLAB_VIRTUAL` | Under development | High -- virtual memory isolation for slab caches (aims to prevent cross-cache) |
 
 ### Recommendations
 

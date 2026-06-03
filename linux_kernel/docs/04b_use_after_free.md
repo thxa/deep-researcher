@@ -10,6 +10,7 @@
 6. [Cross-Cache UAF Exploitation Techniques](#6-cross-cache-uaf-exploitation-techniques)
 7. [Stabilizing UAF Exploitation](#7-stabilizing-uaf-exploitation)
 8. [Real-World UAF CVEs and Their Exploitation](#8-real-world-uaf-cves-and-their-exploitation)
+8b. [Modern UAF Exploitation via Page Tables](#8b-modern-uaf-exploitation-via-page-tables)
 9. [Mitigations and Defenses](#9-mitigations-and-defenses)
 10. [References](#10-references)
 
@@ -969,6 +970,72 @@ Refcount skew -> struct pid freed prematurely
 ```
 
 This exploit is noteworthy for its minimal requirements: no information leak, no ROP chain, no instruction pointer hijack.
+
+---
+
+## 8b. Modern UAF Exploitation via Page Tables
+
+### 8b.1 Dirty Pagetable: Reclaiming Freed Pages as Page Tables
+
+The Dirty Pagetable technique (N. Wu, 2023) represents a paradigm shift in UAF exploitation. Instead of replacing a freed slab object with another slab object, the attacker frees the entire slab page back to the buddy allocator and has it reclaimed as a **user page table page**. Writing through the original UAF primitive then overwrites Page Table Entries (PTEs), granting arbitrary physical memory read/write.
+
+**Core mechanism:**
+
+```
+1. Trigger UAF in a dedicated cache (e.g., a driver-specific cache)
+2. Free ALL objects on the victim slab page → page returns to buddy allocator
+3. Spray mmap regions + page faults → buddy allocator hands out the freed page
+   as a PTE page for userspace mappings
+4. Write through the UAF to overwrite PTE entries with attacker-controlled values
+5. Each forged PTE maps a userspace virtual address to an arbitrary physical address
+6. Read/write any physical memory from userspace (kernel data, creds, modprobe_path)
+```
+
+**Forging a PTE (x86_64):**
+
+```c
+#define PAGE_PRESENT   (1UL << 0)
+#define PAGE_RW        (1UL << 1)
+#define PAGE_USER      (1UL << 2)
+#define PAGE_ACCESSED  (1UL << 5)
+#define PAGE_DIRTY     (1UL << 6)
+#define PAGE_NX        (1UL << 63)
+
+uint64_t craft_pte(uint64_t physical_addr) {
+    return (physical_addr & ~0xFFFUL)
+         | PAGE_PRESENT | PAGE_RW | PAGE_USER | PAGE_ACCESSED | PAGE_DIRTY | PAGE_NX;
+}
+```
+
+The technique is purely data-only: no function pointers are corrupted, no kCFI violations occur, and no KASLR leak is needed for the initial PTE corruption step. The CVE-2024-1086 exploit (notselwyn, 2024) extended this to the **Dirty Pagedirectory** variant, where a page is double-allocated as both a PTE page and a PMD page, achieving unlimited physical memory access with 99.4% reliability (n=1000).
+
+**Key constraints:** Page table pages are order-0 (4 KiB). The source slab must also use order-0 pages for the cross-cache to succeed. After modifying PTEs, the TLB must be flushed (via `madvise(MADV_DONTNEED)` or `munmap`/`mmap`) before the CPU uses the new translations.
+
+### 8b.2 PageJack: Page-Level UAF via Bridge Objects
+
+PageJack (Black Hat USA 2024, also published in Phrack #71) provides a more targeted alternative to the standard cross-cache drain. Instead of freeing an entire slab to the buddy allocator, PageJack exploits **bridge objects** -- kernel structures that contain a `struct page *` pointer. Corrupting that pointer causes the kernel to free the wrong physical page when the bridge object is cleaned up, yielding a page-level UAF without the heavy heap feng shui of traditional cross-cache.
+
+**Bridge objects found in the kernel:**
+
+| Structure | Field | Cleanup Path |
+|-----------|-------|-------------|
+| `struct bio_vec` | `bv_page` | Block I/O completion |
+| `skb_frag_t` | `bv_page.p` | Network packet free |
+| `struct pipe_buffer` | `page` | `pipe_buf_release()` via `close()` |
+
+**Attack flow:**
+
+```
+1. Identify a bridge object reachable from the vulnerability
+2. Corrupt the struct page * field to point at a victim page
+   (victim page address computed via vmemmap: VMEMMAP_BASE + pfn * 64)
+3. Trigger cleanup of the bridge object (e.g., close pipe fds)
+   → kernel calls put_page() on the corrupted pointer
+   → victim page is freed while still referenced elsewhere → page UAF
+4. Reclaim the freed page as a PTE page → Dirty Pagetable from here
+```
+
+PageJack is more reliable than full cross-cache draining because it requires corrupting only a single pointer rather than orchestrating the freeing of every object on a slab page. The original paper demonstrated higher success rates compared to standard cross-cache (~40% baseline).
 
 ---
 

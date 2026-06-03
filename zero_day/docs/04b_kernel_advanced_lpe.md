@@ -1778,6 +1778,8 @@ void io_uring_uaf_exploit(void) {
 | CVE-2023-2598 | OOB | overflow in io_msg | Stack corruption |
 | CVE-2024-0582 | UAF | io_uring_cmd UAF | msg_msg spray → RIP control |
 
+> **KernelCTF note (2025-2026):** Since mid-2025, both io_uring and nftables have been disabled in Google KernelCTF targets. Unprivileged user namespaces were also disabled in July 2025. Since October 2025, submissions require KernelXDK exploit descriptions. These changes force exploitation research toward core kernel subsystems, vendor drivers, and less-explored interfaces. The io_uring attack surface remains relevant for real-world Android/Linux exploitation, but no longer qualifies for KernelCTF bounties.
+
 ---
 
 ## Appendix A: Kernel Module Practice Target

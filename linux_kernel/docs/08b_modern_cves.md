@@ -8,6 +8,7 @@
 4. [Android Kernel Exploits: Binder, ION, and DMA-BUF](#4-android-kernel-exploits)
 5. [Container Escape Exploits via Kernel Vulnerabilities](#5-container-escape-exploits)
 6. [eBPF Verifier Bypass CVEs](#6-ebpf-verifier-bypass-cves)
+6b. [Notable CVEs (2024-2026)](#6b-notable-cves-2024-2026)
 7. [Trends in Kernel Vulnerability Discovery (2020-2026)](#7-trends-in-kernel-vulnerability-discovery)
 8. [Comparison of Kernel Exploit Complexity Over the Years](#8-exploit-complexity-comparison)
 9. [The Role of Kernel Vulnerabilities in Privilege Escalation Chains](#9-kernel-vulns-in-privilege-escalation-chains)
@@ -532,6 +533,55 @@ However, this does not eliminate the risk entirely:
 - Container runtimes may grant `CAP_BPF` to workloads
 - eBPF is increasingly used for observability (Cilium, Falco, bpftrace) and networking, expanding the set of privileged processes that load eBPF programs
 - A compromised privileged process (e.g., through a supply chain attack on an eBPF-based tool) can still exploit verifier bugs
+
+---
+
+## 6b. Notable CVEs (2024-2026)
+
+### 6b.1 CVE-2024-50264: AF_VSOCK Use-After-Free (Pwnie Award 2025)
+
+| Field | Detail |
+|-------|--------|
+| **CVE** | CVE-2024-50264 |
+| **Subsystem** | vsock (AF_VSOCK) — virtual machine socket transport |
+| **Bug Class** | Use-after-free due to improper socket lifecycle management |
+| **Discoverer** | Alexander Popov (a13xp0p0v) |
+| **Recognition** | Pwnie Award 2025 for Best Privilege Escalation |
+
+CVE-2024-50264 is a use-after-free in the AF_VSOCK virtual socket subsystem. The vulnerability arises from a race condition in the vsock transport reassignment path, where a socket's transport structure can be freed while concurrent operations still reference it. Popov's exploit (published as "kernel-hack-drill") demonstrated a complete local privilege escalation chain using Dirty Pagetable: the UAF on the vsock object is converted to a page-level UAF via cross-cache, the freed page is reclaimed as a PTE page, and forged PTE entries provide arbitrary physical memory read/write for a data-only cred overwrite. The exploit won the 2025 Pwnie Award for Best Privilege Escalation.
+
+### 6b.2 CVE-2025-38617: Packet Sockets Race Condition
+
+| Field | Detail |
+|-------|--------|
+| **CVE** | CVE-2025-38617 |
+| **Subsystem** | AF_PACKET — raw packet sockets |
+| **Bug Class** | Race condition (TOCTOU) |
+| **Age** | ~20 years (bug existed in code dating back to early 2.6.x era) |
+
+CVE-2025-38617 is a race condition in the AF_PACKET socket subsystem that had been present in the kernel for approximately 20 years before discovery. The bug involves a time-of-check-time-of-use (TOCTOU) race in the packet socket ring buffer management path. The long latency between introduction and discovery underscores how deeply embedded concurrency bugs can persist in stable, heavily audited subsystems. The AF_PACKET subsystem has historically been a rich source of kernel vulnerabilities (CVE-2020-14386, CVE-2017-7308) due to its direct interaction with the page allocator and complex ring buffer management.
+
+### 6b.3 CVE-2026-31431: Copy Fail (Page-Cache Write)
+
+| Field | Detail |
+|-------|--------|
+| **CVE** | CVE-2026-31431 |
+| **Subsystem** | Kernel page cache / copy-on-write |
+| **Bug Class** | Page-cache write via copy failure path |
+| **PoC Size** | 732-byte Python script |
+
+CVE-2026-31431 ("Copy Fail") exploits a flaw in the kernel's page cache write path triggered during a copy failure condition. When a `copy_from_user()` operation partially fails during a page cache write, the error handling path does not properly revert changes to the page cache page, leaving attacker-controlled data in the page cache of a read-only file. This is conceptually similar to DirtyPipe (CVE-2022-0847) -- it achieves writes to the page cache of files the attacker can only read -- but through a different mechanism (copy failure rather than pipe buffer flag inheritance). The 732-byte Python proof-of-concept demonstrates the minimal complexity required to trigger the vulnerability.
+
+### 6b.4 CVE-2026-43284 / CVE-2026-43500: Dirty Frag (Page-Cache Write)
+
+| Field | Detail |
+|-------|--------|
+| **CVE** | CVE-2026-43284, CVE-2026-43500 |
+| **Subsystem** | ESP (IPsec) / RxRPC network fragmentation |
+| **Bug Class** | Page-cache write via network fragment handling |
+| **Variant** | DirtyPipe-class page-cache corruption |
+
+The "Dirty Frag" vulnerabilities are a pair of related bugs in the ESP (Encapsulating Security Payload, IPsec) and RxRPC subsystems where network packet fragmentation handling can write attacker-controlled data into page cache pages of read-only files. The bugs arise from incorrect handling of `skb_frag` structures (network scatter-gather fragments) that reference page cache pages: when network protocol processing modifies fragment data, those writes propagate to the underlying page cache pages rather than copy-on-write copies. Like DirtyPipe and Copy Fail, these achieve persistent writes to read-only file content through the page cache, but the trigger is network protocol processing rather than pipe operations or copy failures. The two CVEs correspond to the ESP and RxRPC instances of the same underlying pattern.
 
 ---
 
