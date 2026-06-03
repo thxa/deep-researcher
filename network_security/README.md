@@ -171,3 +171,27 @@ For researchers investigating protocol vulnerabilities and developing new attack
 14. Vanhoef, M., "Dragonblood: A Security Analysis of WPA3's SAE," IEEE S&P 2020. https://wpa3.mathyvanhoef.com/
 15. Armor, Aruba Networks, "802.11 Deauthentication Attack," DEF CON presentations. https://www.defcon.org
 16. RFC 7258, "Pervasive Monitoring Is an Attack," May 2014. https://www.rfc-editor.org/rfc/rfc7258
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-22457 — Ivanti Connect Secure unauthenticated RCE (stack overflow), exploited by UNC5221** *(2025-04)* — A stack-based buffer overflow in Ivanti Connect Secure (before 22.7R2.6), Policy Secure, and ZTA Gateways allows a remote unauthenticated attacker to achieve remote code execution, scored CVSS 9.8 and published April 3, 2025. Google Threat Intelligence observed in-the-wild exploitation as early as mid-March 2025 and attributed it to the suspected China-nexus espionage group UNC5221, and CISA added it to the Known Exploited Vulnerabilities catalog. This extends the track's VPN-appliance attack-surface section (which currently stops at CVE-2024-21762) with the dominant 2025 edge-device exploitation pattern. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-22457)
+- **CVE-2025-59718 — Fortinet FortiOS/FortiProxy SAML authentication bypass (CVSS 9.8), in CISA KEV** *(2025-12)* — An improper verification of cryptographic signature flaw (CWE-347) in FortiOS, FortiProxy, and FortiSwitchManager lets an unauthenticated attacker bypass FortiCloud SSO login by sending a crafted SAML response message, scored CVSS 9.8 and published December 9, 2025. CISA added it to the Known Exploited Vulnerabilities catalog with active exploitation reported against internet-exposed FortiGate devices. It illustrates a signature-validation/SAML trust failure rather than the memory-corruption bugs the track documents for Fortinet. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-59718)
+- **QUIC-LEAK (CVE-2025-54939) — pre-handshake memory-exhaustion DoS in LSQUIC** *(2025-08)* — QUIC-LEAK is a pre-handshake remote denial-of-service in LSQUIC (the second most widely deployed QUIC implementation, used by OpenLiteSpeed and LiteSpeed Web Server) disclosed by Imperva and published as CVE-2025-54939 on August 1, 2025. The attack smuggles malformed coalesced QUIC Initial packets with invalid Destination Connection IDs into a single UDP datagram, causing unbounded memory allocation before the handshake completes and bypassing QUIC's connection limits and flow control. It is a concrete new entry for the track's QUIC future-attack-surface discussion. [[source]](https://www.imperva.com/blog/quic-leak-cve-2025-54939-new-high-risk-pre-handshake-remote-denial-of-service-in-lsquic-quic-implementation/)
+
+### Incidents & In-the-Wild Exploitation
+
+- **Cloudflare mitigates a record 31.4 Tbps DDoS — 700% growth in hyper-volumetric network-layer floods** *(2026-02)* — Cloudflare's Q4 2025 DDoS threat report (published February 5, 2026) documents an autonomously mitigated 31.4 Tbps attack lasting about 35 seconds, the largest publicly disclosed at the time, surpassing the 7.3 Tbps (May 2025) and 11.5 Tbps (September 2025) UDP-flood records earlier in the year. The report states DDoS volume more than doubled in 2025 with hyper-volumetric network-layer attacks growing roughly 700%. This quantifies the modern volumetric DDoS threat the track's hardening and case-study sections address. [[source]](https://blog.cloudflare.com/ddos-threat-report-2025-q4/)
+
+### Tools
+
+- **NIST releases BRIO test tools to accelerate ASPA route-leak mitigation adoption** *(2025-08)* — On August 11, 2025, NIST released the BGP RPKI IO (BRIO) test tools to facilitate conformance testing of IETF Autonomous System Provider Authorization (ASPA) AS_PATH verification, alongside scripted scenarios for Route Origin Validation (ROV) and BGPsec path validation. The release targets the long-standing gap the track describes between RPKI origin validation (which only protects the origin AS) and full AS_PATH/route-leak protection. It is a directly actionable tooling development for BGP-security defenders. [[source]](https://www.nist.gov/news-events/news/2025/08/nist-releases-test-tools-accelerate-adoption-emerging-route-leak-mitigation)
+
+### Standards & Frameworks
+
+- **ASPA reaches production deployment — RIPE NCC dashboard integration and IETF AS_SET deprecation** *(2026-02)* — Autonomous System Provider Authorization (ASPA), which uses RPKI to validate the BGP AS_PATH against customer-to-provider relationships and detect route leaks per the valley-free principle (RFC 7908), advanced to production in 2025-2026: the IETF formally deprecated AS_SET in May 2025 and RIPE NCC integrated ASPA into its production RPKI Dashboard in December 2025. As of early 2026 ASPA publishing is production-ready in the ARIN and RIPE regions, though published records still cover well under 1% of global ASNs. This is the most significant routing-security standardization step beyond the origin-only RPKI coverage the track documents. [[source]](https://labs.ripe.net/author/tim_bruijnzeels/aspa-in-the-rpki-dashboard-a-new-layer-of-routing-security/)

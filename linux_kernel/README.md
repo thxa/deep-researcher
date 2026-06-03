@@ -53,3 +53,25 @@ The largest track in this repository, covering the full attack surface of the Li
 - KSPP (Kernel Self-Protection Project), https://kernsec.org/wiki/
 - LWN.net, https://lwn.net/
 - Black Hat and DEF CON presentations on kernel exploitation (various years)
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-38617: af_packet Use-After-Free Race ('A Race Within A Race')** *(2026-03)* — A use-after-free in the Linux packet-socket subsystem caused by a race between packet_set_ring() and packet_notifier() when po->bind_lock is released, present since Linux 2.6.12 and fixed in 6.16. Quang Le of Calif weaponized it for a kernelCTF submission, chaining a deterministic race (stretched by sleeping while holding pg_vec_lock) with a probabilistic tpacket_rcv() race to reach a freed ring buffer, yielding LPE/container escape from only CAP_NET_RAW (obtainable via user namespaces). [[source]](https://blog.calif.io/p/a-race-within-a-race-exploiting-cve)
+- **CVE-2025-21836: io_uring/kbuf Buffer-List Reuse Use-After-Free** *(2025)* — IORING_REGISTER_PBUF_RING could reuse a stale struct io_buffer_list created for a legacy selected buffer after it was emptied, violating the requirement that the structure stays stable after publish; the fix always reallocates it. It affects Linux 5.19 through 6.14-rc2 (CVSS 5.5) and was presented at Hexacon 2025 by Pumpkin Chang in 'Deja Vu in Linux io_uring: Breaking Memory Sharing Again After Generations of Fixes.' [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-21836)
+- **CVE-2025-38001: HFSC qdisc Use-After-Free Powers Record kernelCTF Exploit** *(2025)* — A reentrant-enqueue bug in the net_sched HFSC scheduler adds a class to the eligible-tree (eltree) RBTree twice, causing a use-after-free and infinite loop; it affects kernels from 5.x through 6.15 and is fixed by an explicit eltree membership check. Researcher D3vil (with FizzBuzz101) turned it into a page-level data-only attack over RBTree transformations that defeated all Google kernelCTF instances (LTS 6.6, COS 105/109) and Debian 12 for roughly $82,000, including the fastest submission in kernelCTF history. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-38001)
+- **CVE-2026-43494 'PinTheft': RDS + io_uring Page-Cache Root via Refcount Bug** *(2026-05)* — A reference-counting/double-free flaw in the Linux RDS zerocopy send path (op_nents not reset when a page pin fails in rds_message_zcopy_from_user), present since Linux 4.17, is chained with io_uring fixed buffers to overwrite page-cache bytes of a SUID-root binary and gain root without touching the filesystem. Disclosed by Aaron Esau of V12 Security in May 2026 with a candidate netdev patch posted May 5, 2026; public PoC exists and requires RDS/RDS_TCP loadable plus io_uring enabled. [[source]](https://tuxcare.com/blog/cve-pintheft/)
+
+### Incidents & In-the-Wild Exploitation
+
+- **kernelCTF / CISA KEV Signal: Old Kernel LPEs Re-Exploited and Cataloged in 2025** *(2025)* — CISA added the long-standing nftables LPE CVE-2021-22555 to its Known Exploited Vulnerabilities catalog on 2025-10-06 (over four years after disclosure), while CVE-2024-1086 was tied to in-the-wild ransomware abuse, underscoring rapid PoC turnaround (2-7 days) for kernel LPEs in 2025-2026. This reflects an operational trend of weaponizing previously-known kernel bugs reachable by unprivileged users through user namespaces. [[source]](https://linuxsecurity.com/news/security-vulnerabilities/7-linux-kernel-vulnerabilities-exploited-in-2025)
+
+### Research
+
+- **USENIX Security 2025: Defense-Amplified TLB Side-Channel Leaks Break KASLR/Heap Isolation** *(2025-08)* — Lukas Maar, Lukas Giner, Daniel Gruss, and Stefan Mangard show in 'When Good Kernel Defenses Go Bad' that enabling certain hardening defenses (strict memory permissions, kernel heap virtualization, or stack virtualization) ironically exposes fine-grained TLB-contention patterns. Across a study of 127 defenses, these leaks reveal the locations of security-critical kernel objects, enabling reliable, stable exploitation even with state-of-the-art mitigations on. [[source]](https://www.usenix.org/conference/usenixsecurity25/presentation/maar-kernel)
+- **CCS 2025: 'Reviving Discarded Vulnerabilities' via Control Metadata Fields (MetaXploit)** *(2025)* — Xiaochen Zou, Guoren Li, Weiteng Chen, Hang Zhang, and Zhiyun Qian (CCS '25) introduce exploitation of Control Metadata Fields (CMFs) inside kernel objects rather than traditional data/function pointers, reviving bugs previously triaged as unexploitable. The work argues many discarded Linux kernel vulnerabilities warrant re-evaluation because corrupting these metadata fields yields usable primitives. [[source]](https://dl.acm.org/doi/10.1145/3719027.3744841)

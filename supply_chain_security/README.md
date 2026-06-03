@@ -146,3 +146,27 @@ This track is provided for educational and professional development purposes. Th
 14. npm Documentation. "Provenance." https://docs.npmjs.com/generating-provenance-statements
 15. OpenSSF Scorecard. https://github.com/ossf/scorecard
 16. GUAC. "Graph for Understanding Artifact Composition." https://github.com/guacsec/guac
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-10894: Nx build-system 's1ngularity' npm compromise** *(2025-09)* — Beginning August 26, 2025, attackers exploited a vulnerable GitHub Actions workflow in the Nx monorepo build-system repository to steal an npm publishing token and publish trojanized versions of Nx and several plugins. The malware scanned local filesystems, exfiltrated credentials, and uploaded them to attacker-created GitHub repositories under compromised accounts; it was also notable for abusing local AI CLI tools to aid reconnaissance. Red Hat assigned CVSS 3.1 base score 9.6 (Critical); published September 24, 2025. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-10894)
+
+### Incidents & In-the-Wild Exploitation
+
+- **Shai-Hulud: First self-replicating npm worm (CISA alert, Sept 2025)** *(2025-09)* — In September 2025 a self-propagating worm dubbed Shai-Hulud compromised hundreds of npm packages (starting with @ctrl/tinycolor) by stealing maintainer npm tokens and GitHub/cloud credentials, then automatically publishing malicious versions of any packages the stolen tokens could access. CISA issued a public alert on the widespread npm compromise, and a far larger 'Shai-Hulud 2.0' campaign in November 2025 affected tens of thousands of GitHub repositories. This is the first large-scale worm-style attack on an open-source package ecosystem and is not in the current track. [[source]](https://unit42.paloaltonetworks.com/npm-supply-chain-attack/)
+- **Chalk/debug crypto-clipper attack via Qix maintainer phishing (Sept 8, 2025)** *(2025-09)* — On September 8, 2025, attackers phished npm maintainer Josh Junon ('Qix-') with a fake 2FA-reset email from the spoofed domain npmjs.help and, within ~16 minutes, pushed malicious versions of foundational packages including chalk, debug, ansi-regex, strip-ansi and color-convert (collectively over 2 billion weekly downloads). The injected payload was a browser crypto-clipper that hooked fetch(), XMLHttpRequest and window.ethereum to swap cryptocurrency wallet addresses. Malicious versions were live ~2.5 hours, with a potential blast radius covering roughly 34% of the npm ecosystem. [[source]](https://www.wiz.io/blog/widespread-npm-supply-chain-attack-breaking-down-impact-scope-across-debug-chalk)
+
+### Techniques
+
+- **GitHub announces mandatory npm publishing hardening after 2025 attacks** *(2025)* — In response to the Shai-Hulud and Qix account-takeover attacks, GitHub published a plan to restrict npm publishing to three methods: local publishing with mandatory 2FA, granular tokens with a maximum seven-day lifetime, and OIDC-based trusted publishing. Classic tokens and TOTP-based 2FA are being deprecated in favor of FIDO/WebAuthn, and token-bypass options for local publishing are being removed. This is a structural ecosystem defense change not reflected in the current track. [[source]](https://github.blog/security/supply-chain-security/our-plan-for-a-more-secure-npm-supply-chain/)
+
+### Standards & Frameworks
+
+- **SLSA v1.2 adds the Source Track (Nov 2025)** *(2025-11)* — Announced November 24, 2025, SLSA v1.2 introduces the Source Track, extending the framework beyond build provenance to address threats in source code authoring, review, and management. It maintains backward compatibility with v1.1 (itself approved April 21, 2025), and the community is now developing Build Environment and Dependency tracks. The track currently documents only SLSA v1.0, so v1.1 and the v1.2 Source Track are new. [[source]](https://slsa.dev/blog/2025/11/announce-slsa-v1.2)
+- **CISA 2025 SBOM Minimum Elements draft revision** *(2025-08)* — In August 2025 CISA released a public-comment draft updating the SBOM Minimum Elements (superseding the 2021 NTIA baseline) to reflect maturing tooling and implementation. It adds four new data fields (Component Hash, License, Tool Name, and Generation Context), removes the separate Access Controls element by folding it into Distribution and Delivery, and refines fields such as Software Producer and Software Identifiers. This updates the SBOM/regulatory guidance referenced in chapters 05 and 10. [[source]](https://www.cisa.gov/resources-tools/resources/2025-minimum-elements-software-bill-materials-sbom)

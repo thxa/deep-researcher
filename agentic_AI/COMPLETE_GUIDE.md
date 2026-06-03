@@ -584,3 +584,31 @@ docs/
 - Hu, E.J. et al., "LoRA: Low-Rank Adaptation of Large Language Models," ICLR 2022. https://arxiv.org/abs/2106.09685
 - Rafailov, R. et al., "Direct Preference Optimization: Your Language Model is Secretly a Reward Model," NeurIPS 2023. https://arxiv.org/abs/2305.18290
 - Lewis, P. et al., "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks," NeurIPS 2020. https://arxiv.org/abs/2005.11401
+
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-49596: Critical RCE in Anthropic's MCP Inspector (CVSS 9.4)** *(2025-06)* — MCP Inspector, Anthropic's developer UI and local proxy for testing Model Context Protocol servers, lacked authentication between client and proxy in versions below 0.14.1, allowing unauthenticated requests to launch MCP commands over stdio. Discovered by Oligo Security, it was exploitable via the browser through DNS rebinding and CSRF (the '0.0.0.0-day' class), enabling code execution on a developer's machine. Fixed in 0.14.1 by adding session tokens and allowed-origin verification. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-49596)
+- **CVE-2025-54136 (MCPoison): Persistent RCE in Cursor via trusted MCP config swap** *(2025-08)* — Check Point Research disclosed 'MCPoison,' a trust-on-first-use flaw in the Cursor AI code editor where MCP approval was bound to a config file's identity rather than its contents. An attacker with repo write access could get a benign .cursor/rules/mcp.json approved, then silently swap in malicious commands (reverse shells, exfiltration) that run without re-prompting. NVD scored it 8.8 (GitHub CNA 7.2); Cursor fixed it in version 1.3 (July 29, 2025) by requiring approval for any MCP config change. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-54136)
+
+### Incidents & In-the-Wild Exploitation
+
+- **CVE-2025-32711 (EchoLeak): First real-world zero-click prompt injection in a production LLM agent** *(2025-06)* — EchoLeak is a zero-click indirect prompt injection in Microsoft 365 Copilot, discovered by Aim Labs, that exfiltrated organizational data (chats, OneDrive, SharePoint, Teams) via a single crafted email with no user interaction. Microsoft rated it 9.3 Critical (NVD scored it 7.5) and patched it server-side; researchers describe a novel 'LLM Scope Violation' technique that bypassed the XPIA classifier, link redaction, and CSP. It is widely cited as the first real-world zero-click prompt-injection exploit against a production agentic system. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-32711)
+
+### Techniques
+
+- **CaMeL: Google DeepMind's design-based defense against agent prompt injection** *(2025-03)* — In 'Defeating Prompt Injections by Design' (arXiv:2503.18813), Google DeepMind researchers introduced CaMeL, which wraps the LLM in a protective system layer that extracts control and data flows from the trusted user query so untrusted retrieved data can never alter program flow, and enforces capability-based policies on tool calls to block data exfiltration. On the AgentDojo benchmark it blocked close to 100% of attacks while preserving utility, and code was released at github.com/google-research/camel-prompt-injection. [[source]](https://arxiv.org/abs/2503.18813)
+
+### Research
+
+- **MCPTox: benchmark for tool poisoning attacks on real-world MCP servers** *(2025-08)* — MCPTox (arXiv:2508.14925) is a 2025 benchmark that systematically evaluates Tool Poisoning Attacks against real-world MCP servers, where malicious instructions are embedded in tool metadata/descriptions that agents pass to the model with no provenance or sanitization. It quantifies how susceptible deployed MCP-integrated agents are to context-level poisoning, complementing CVE-level findings like MCPoison and CurXecute (CVE-2025-54135) by showing the class is systemic rather than isolated. [[source]](https://arxiv.org/pdf/2508.14925)
+
+### Standards & Frameworks
+
+- **OWASP Top 10 for Agentic Applications released** *(2025-12)* — On December 9, 2025, the OWASP GenAI Security Project released the OWASP Top 10 for Agentic Applications, the first dedicated security framework for autonomous, goal-driven AI agents, distinct from the LLM Top 10. It uses an ASI (Agentic Security Issue) prefix and covers ASI01 Agent Goal Hijack, Tool Misuse, Identity & Privilege Abuse, Agentic Supply Chain, Unexpected Code Execution, Memory & Context Poisoning, Insecure Inter-Agent Communication, Cascading Failures, Human-Agent Trust Exploitation, and Rogue Agents, with contributions from 100+ practitioners. [[source]](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/)

@@ -120,3 +120,30 @@ Emphasis: Secure defaults, CSP deployment, CI/CD security scanning, SAST/DAST in
 9. RFC 6455. "The WebSocket Protocol." IETF, 2011.
 10. Chromium Project. "Chromium Security Architecture." https://www.chromium.org/Home/chromium-security/
 11. NIST. "SP 800-63B: Digital Identity Guidelines — Authentication and Lifecycle Management." https://pages.nist.gov/800-63-3/sp800-63b.html
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-29927: Next.js Middleware Authorization Bypass** *(2025-03)* — A critical (CVSS 9.1) flaw in the Next.js framework lets attackers bypass middleware-based authorization by spoofing the internal x-middleware-subrequest HTTP header, which the framework blindly trusted to prevent recursive middleware loops. It affects Next.js versions 11.1.4 through those before 12.3.5, 13.5.9, 14.2.25, and 15.2.3, allowing access to protected/admin routes and enabling cache poisoning or DoS in some cases. The fix strips the header; reverse proxies can also remove it at the edge. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-29927)
+- **CVE-2025-55182 (React2Shell): Pre-Auth RCE in React Server Components** *(2025-12)* — A maximum-severity (CVSS 10.0) unauthenticated remote code execution flaw in React Server Components that unsafely deserializes payloads sent to Server Function endpoints, affecting react-server-dom-* packages (React 19.0.0-19.2.0) and Next.js 15.0.0 through 16.0.x. Disclosed by Meta on December 3, 2025 and added to CISA's Known Exploited Vulnerabilities catalog on December 5, 2025, it was quickly weaponized with ~145 public PoCs (including WAF bypasses) and mass-scanning, drawing comparisons to Log4Shell. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-55182)
+
+### Incidents & In-the-Wild Exploitation
+
+- **ToolShell: SharePoint Zero-Day CVE-2025-53770 Mass-Exploited** *(2025-07)* — A critical (CVSS 9.8) deserialization-of-untrusted-data flaw in on-premises Microsoft SharePoint Server (2016/2019/Subscription Edition), published July 19, 2025 and immediately added to CISA's KEV catalog. Dubbed 'ToolShell' (chained with a patch-bypass CVE-2025-53771), it gave unauthenticated attackers RCE; by late July over 4,600 compromise attempts hit 300+ organizations, with Microsoft attributing activity to China-linked actors Linen Typhoon, Violet Typhoon, and Storm-2603, some deploying Warlock ransomware. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-53770)
+
+### Research
+
+- **PortSwigger Top 10 Web Hacking Techniques of 2025** *(2026-02)* — The 19th annual community-ranked list of the most significant web security research, drawn from 63 nominations. The #1 technique was Vladislav Korchagin's 'Successful Errors: New Code Injection and SSTI Techniques' (error-based blind SSTI exploitation with polyglot detection and an open-source toolkit), followed by ORM Leak expansion, a novel HTTP-redirect-loop SSRF technique by Shubham Shah, Unicode normalization exploitation, and SOAPwn (.NET WSDL/HTTP-client RCE), with side-channels and XS-leaks recurring as primitives. [[source]](https://portswigger.net/research/top-10-web-hacking-techniques-of-2025)
+
+### Tools
+
+- **Shadow Repeater: AI-Enhanced Manual Web Testing for Burp Suite** *(2025-02)* — Released by PortSwigger (Gareth Heyes) on February 20, 2025, Shadow Repeater is an open-source Burp Suite extension that monitors requests sent through Burp Repeater, identifies changing parameters, and uses AI to automatically generate and test payload variations in the background. It surfaces unconventional findings such as novel XSS vectors, path traversal, and email-splitting bugs, reporting them via Organizer, and is distributed through the BApp Store for the Burp Pro Early Adopter channel. [[source]](https://portswigger.net/research/shadow-repeater-ai-enhanced-manual-testing)
+
+### Standards & Frameworks
+
+- **OWASP Top 10:2025 Adds Supply Chain and Exceptional-Conditions Categories** *(2025)* — The 8th edition of the OWASP Top 10 keeps Broken Access Control at #1 and introduces two new categories: A03:2025 Software Supply Chain Failures (expanding the old 'Vulnerable and Outdated Components' to dependencies, build systems, and distribution, and ranked the top concern by 50% of survey respondents) and A10:2025 Mishandling of Exceptional Conditions (24 CWEs on improper error handling and fail-open logic). SSRF was consolidated and the list shifts focus from symptoms toward root causes. [[source]](https://owasp.org/Top10/2025/0x00_2025-Introduction/)

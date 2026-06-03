@@ -89,3 +89,33 @@ Focus on novel cryptography and emerging threats: 01a → 02a → 03a → 04a �
 13. Carlini, N., Wagner, D., "Towards Evaluating the Robustness of Neural Networks," IEEE S&P 2017. https://arxiv.org/abs/1608.04644
 14. Goodfellow, I., et al., "Explaining and Harnessing Adversarial Examples," ICLR 2015. https://arxiv.org/abs/1412.6572
 15. NIST SP 800-57 Part 1 Rev. 5, "Recommendation for Key Management," May 2020. https://csrc.nist.gov/publications/detail/sp/800-57-part-1/rev-5/final
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-9231: SM2 timing side-channel in OpenSSL allows private-key recovery on 64-bit ARM** *(2025-09)* — Disclosed September 30, 2025, CVE-2025-9231 (CVSS 6.5) is a timing side-channel in SM2 signature computations on 64-bit ARM platforms in OpenSSL 3.0 through 3.5 that could allow an attacker to recover the private key. It was fixed alongside CVE-2025-9230 (CMS PWRI out-of-bounds read/write) and CVE-2025-9232; FIPS modules are unaffected since SM2 is not FIPS-approved. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-9231)
+
+### Incidents & In-the-Wild Exploitation
+
+- **Post-quantum key agreement crosses 50% of human web traffic (Cloudflare 2025 state-of-PQ)** *(2025-10)* — Per Cloudflare's October 28, 2025 report, over half of human-initiated TLS connections to its network now use hybrid post-quantum key agreement (X25519MLKEM768), and 39% of the top 100,000 domains support post-quantum connections, while only 3.7% of origin servers do. Milestones cited include Chrome enabling PQC by default on desktop and Android, OpenSSL enabling it by default (April 2025), and Apple beginning rollout with iOS/macOS 26 (October 2025); PQC certificates/signatures remain the major unsolved migration challenge. [[source]](https://blog.cloudflare.com/pq-2025/)
+
+### Techniques
+
+- **Signal Triple Ratchet / Sparse Post-Quantum Ratchet (SPQR) adds continuous PQC to the message ratchet** *(2025-10)* — On October 2, 2025, Signal announced the Sparse Post-Quantum Ratchet (SPQR), which runs alongside the existing Double Ratchet to form a Triple Ratchet that provides continuous post-quantum forward secrecy and post-compromise security throughout a conversation, using ML-KEM-768 with a bandwidth-saving 'ML-KEM Braid' chunking technique. This goes beyond the earlier PQXDH upgrade (handshake-only) already in the knowledge base, and was built on research published at Eurocrypt 2025 and USENIX Security 2025. [[source]](https://signal.org/blog/spqr/)
+
+### Research
+
+- **SLAP and FLOP: speculative side-channel attacks on Apple Silicon load predictors** *(2025-01)* — Researchers from Georgia Tech and Ruhr University Bochum disclosed SLAP (exploiting the Load Address Predictor, M2/A15 and later) and FLOP (exploiting the Load Value Predictor, M3/A17 and later) in January 2025. The attacks break browser site-isolation under speculative execution, enabling cross-origin data recovery demonstrated end-to-end against Safari (e.g. recovering email content). SLAP appeared at IEEE S&P 2025 and FLOP at USENIX Security 2025. [[source]](https://predictors.fail/)
+
+### Tools
+
+- **OpenSSL 3.5.0 LTS ships native ML-KEM, ML-DSA and SLH-DSA with PQC hybrid TLS by default** *(2025-04)* — OpenSSL 3.5.0, released April 8-9, 2025 as a long-term support release (supported until April 2030), is the first OpenSSL to add native implementations of the NIST PQC standards ML-KEM, ML-DSA and SLH-DSA. It changes the default TLS keyshares to offer X25519MLKEM768 and X25519, enabling hybrid post-quantum key agreement by default, and also adds server-side QUIC (RFC 9000) support. [[source]](https://openssl-library.org/post/2025-04-08-openssl-35-final-release/)
+
+### Standards & Frameworks
+
+- **NIST selects HQC as fifth PQC algorithm (code-based KEM backup to ML-KEM)** *(2025-03)* — On March 11, 2025, NIST selected HQC (Hamming Quasi-Cyclic) as a fifth post-quantum standard, a code-based key encapsulation mechanism to serve as a backup for the lattice-based ML-KEM (FIPS 203) in case lattice cryptography is broken. NIST plans a draft standard around 2026 with a finalized standard expected in 2027. This is a distinct mathematical foundation (error-correcting codes) from the lattice-based standards already documented in the knowledge base. [[source]](https://www.nist.gov/news-events/news/2025/03/nist-selects-hqc-fifth-algorithm-post-quantum-encryption)

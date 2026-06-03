@@ -83,3 +83,27 @@ A comprehensive deep-research track covering the security landscape of artificia
 18. MITRE (2023). "ATLAS: Adversarial Threat Landscape for AI Systems." https://atlas.mitre.org
 19. Opacus (2023). "Opacus: PyTorch Differential Privacy Library." https://opacus.ai
 20. Hugging Face (2023). "safetensors: Safe Model Serialization." https://github.com/huggingface/safetensors
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **EchoLeak (CVE-2025-32711): first real-world zero-click prompt injection in a production LLM system** *(2025-06)* — Aim Labs disclosed a zero-click indirect prompt injection in Microsoft 365 Copilot that exfiltrated organizational data (chat logs, OneDrive, SharePoint, Teams content) via a single crafted email with no user interaction. The chain bypassed Microsoft's XPIA classifier, evaded link redaction using reference-style Markdown, and abused auto-fetched images plus a CSP-allowed Teams proxy. Microsoft rated it 9.3 critical (NVD CVSS 7.5, CWE-74) and patched it server-side; NVD published it June 11, 2025. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-32711)
+- **CVE-2025-6514: critical RCE in mcp-remote MCP proxy (CVSS 9.6)** *(2025-07)* — JFrog Security Research disclosed an OS command injection in mcp-remote (versions 0.0.5 to 0.1.15) that achieves arbitrary command execution on a client when it connects to a malicious or untrusted MCP server. The flaw stems from unsafe handling of a crafted authorization_endpoint URL during OAuth setup via the npm 'open' package, giving full shell control on Windows. It was disclosed July 9, 2025 and fixed in version 0.1.16, marking one of the first full client compromises via the Model Context Protocol ecosystem. [[source]](https://jfrog.com/blog/2025-6514-critical-mcp-remote-rce-vulnerability/)
+- **CVE-2025-68664 (LangGrinch): serialization injection in LangChain Core** *(2025-12)* — A CWE-502 deserialization flaw in LangChain's dumps()/dumpd() functions fails to escape dictionaries containing 'lc' keys, letting user- or LLM-controlled data be rehydrated as legitimate LangChain objects on load. This enables extraction of sensitive secrets/environment variables and unsafe object instantiation in AI workflows. NVD rated it 8.2 HIGH (vendor 9.3 critical), published December 23, 2025; fixed in LangChain 0.3.81 and 1.2.5. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-68664)
+
+### Incidents & In-the-Wild Exploitation
+
+- **NullifAI: malicious ML models on Hugging Face evade Picklescan via broken pickle format** *(2025-02)* — In February 2025 ReversingLabs identified two malicious PyTorch models on Hugging Face that smuggled reverse-shell payloads inside pickle files. Attackers compressed the models with 7z instead of the expected ZIP and used corrupted/truncated pickle streams so that torch.load() still executed the payload while Picklescan failed to flag it, a defense-evasion technique dubbed nullifAI. The incident underscored the systemic risk of pickle-based model serialization in the ML supply chain. [[source]](https://www.reversinglabs.com/press-releases/reversinglabs-identifies-novel-ml-malware-hosted-on-leading-hugging-face-ai-model-platform)
+
+### Techniques
+
+- **Prompt injection as a code-execution primitive: RCE in AI agent frameworks (Semantic Kernel)** *(2026-05)* — Microsoft security research demonstrated that prompt injection can cross from a content-safety problem into remote code execution in agent frameworks, disclosing two Semantic Kernel CVEs. CVE-2026-26030 abuses unsafe string interpolation using eval() in filter functions (with blocklist bypass), and CVE-2026-25592 exploits an unvalidated file-writing tool (SessionsPythonPlugin) to drop a payload into the Windows Startup folder. The research, published May 7, 2026, frames these as architectural agent-design flaws rather than model defects. [[source]](https://www.microsoft.com/en-us/security/blog/2026/05/07/prompts-become-shells-rce-vulnerabilities-ai-agent-frameworks/)
+
+### Standards & Frameworks
+
+- **NIST AI 100-2 E2025: updated adversarial machine learning taxonomy with GenAI coverage** *(2025-03)* — NIST finalized the 2025 edition of 'Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations' (NIST AI 100-2 E2025) on March 24, 2025, updating the 2023 version. The revision integrates generative AI throughout, adding attack and mitigation taxonomy specific to large language models, RAG systems, and agent-based deployments, alongside the existing evasion, poisoning, and privacy categories. It provides unified terminology intended for those who design, evaluate, and govern AI systems. [[source]](https://csrc.nist.gov/pubs/ai/100/2/e2025/final)

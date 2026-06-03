@@ -112,3 +112,26 @@ The track references 50+ CVEs, 30+ tools, and 20+ research papers. Key sources i
 [14] GitHub. *CodeQL Documentation*. https://codeql.github.com/docs/
 
 [15] Return to Corporation. *Semgrep Documentation*. https://semgrep.dev/docs/
+
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-6965: SQLite memory corruption found by Google's Big Sleep AI agent before in-the-wild exploitation** *(2025-07)* — Google's Big Sleep AI agent (a collaboration of DeepMind and Project Zero) identified CVE-2025-6965, a numeric-truncation/memory-corruption flaw in SQLite versions before 3.50.2 in the aggregate-handling path, where an index can be truncated to a signed 16-bit value yielding out-of-bounds reads/writes. NVD rates it CVSS 9.8 (CWE-197), published July 15, 2025. Google states this is the first time an AI agent directly foiled an exploitation effort: combined with Threat Intelligence signals, the bug was known only to threat actors and imminently going to be used. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-6965)
+
+### Incidents & In-the-Wild Exploitation
+
+- **DARPA AI Cyber Challenge (AIxCC) finals: Team Atlanta's ATLANTIS wins automated find-and-patch competition** *(2025-08)* — DARPA announced AIxCC final results at DEF CON 33 on August 8, 2025, with Team Atlanta (Georgia Tech, Samsung Research, KAIST, POSTECH) winning $4M for its ATLANTIS cyber reasoning system, ahead of Trail of Bits ($3M) and Theori ($1.5M). Across the finals the autonomous systems identified 86% of synthetic vulnerabilities and patched 68%, while also finding 18 real-world zero-days (6 C, 12 Java) at an average cost of about $152 per task. All seven finalist cyber reasoning systems are being released as open source. [[source]](https://www.darpa.mil/news/2025/aixcc-results)
+
+### Research
+
+- **KernelGPT (ASPLOS 2025): LLM-inferred Syzkaller specifications merged into upstream kernel fuzzer** *(2025)* — KernelGPT uses LLMs to automatically infer and refine Syzkaller (Syzlang) specifications from kernel source, with validation feedback to repair generated specs, extending syscall-description coverage that previously required manual effort. The project reports 24 new Linux kernel bugs (11 assigned CVEs, 12 fixes deployed) and states numerous KernelGPT-generated specifications have been merged into the official Syzkaller repository. Published at ASPLOS 2025. [[source]](https://github.com/ise-uiuc/KernelGPT)
+
+### Tools
+
+- **Buttercup: Trail of Bits' AIxCC cyber reasoning system released as open source** *(2025-08)* — Trail of Bits open-sourced Buttercup, the AI-driven find-and-patch system that won 2nd place ($3M) at AIxCC, on August 8, 2025. Buttercup combines conventional fuzzing and static analysis with LLMs (notably using only cheaper non-reasoning models) and in the final round found 28 vulnerabilities and applied 19 patches across 23 open-source repositories. Trail of Bits shipped a standalone laptop-runnable version tuned for per-project AI budgets. [[source]](https://blog.trailofbits.com/2025/08/08/buttercup-is-now-open-source/)

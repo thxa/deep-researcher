@@ -48,3 +48,23 @@ If you're preparing for OSEE or want to understand the highest level of hands-on
 - MITRE ATT&CK — Windows Techniques, https://attack.mitre.org/techniques/enterprise/
 - Microsoft Security Response Center (MSRC) Blog, https://msrc.microsoft.com/blog/
 - j00ru (Mateusz Jurczyk), Windows Kernel Research, https://j00ru.vexillium.org/
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-29824 — Windows CLFS driver use-after-free zero-day exploited for SYSTEM privilege escalation (Storm-2460 / PipeMagic ransomware)** *(2025-04)* — Microsoft patched an actively exploited use-after-free (CWE-416) elevation-of-privilege vulnerability in the Windows Common Log File System (CLFS) kernel driver on April 8, 2025. The exploit, deployed via PipeMagic malware and attributed to Storm-2460, leaked kernel addresses through NtQuerySystemInformation and used RtlSetAllBits to overwrite the process token with 0xFFFFFFFF for full privileges before deploying ransomware; Windows 11 24H2 was not affected because the needed information classes were restricted to SeDebugPrivilege. It was added to the CISA Known Exploited Vulnerabilities catalog on April 8, 2025. [[source]](https://www.microsoft.com/en-us/security/blog/2025/04/08/exploitation-of-clfs-zero-day-leads-to-ransomware-activity/)
+- **CVE-2025-62215 — Windows kernel race-condition/double-free zero-day actively exploited (November 2025 Patch Tuesday)** *(2025-11)* — Microsoft's November 11, 2025 Patch Tuesday fixed CVE-2025-62215 (CVSS 7.0), an actively exploited local privilege escalation in the Windows Kernel caused by improper synchronization of a shared resource (CWE-362) leading to a double free (CWE-415). A local attacker forces multiple threads to touch the same kernel resource without synchronization, freeing the same block twice to corrupt the kernel heap and seize execution flow to escalate to SYSTEM. It affects all currently supported Windows editions including Windows 10 Extended Security Updates. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-62215)
+- **CVE-2025-32709 — AFD.sys (WinSock Ancillary Function Driver) use-after-free zero-day, CISA KEV** *(2025-05)* — CVE-2025-32709 is a use-after-free (CWE-416) elevation-of-privilege vulnerability in the Windows Ancillary Function Driver for WinSock (afd.sys), published May 13, 2025 with a CVSS 3.1 base score of 7.8 (AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H). An authorized local attacker can elevate privileges to SYSTEM; it was added to the CISA Known Exploited Vulnerabilities catalog with a remediation deadline of June 3, 2025, and is one of multiple afd.sys driver CVEs disclosed across 2025. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-32709)
+
+### Incidents & In-the-Wild Exploitation
+
+- **Pwn2Own Berlin 2025: multiple fresh Windows 11 SYSTEM privilege-escalation zero-days demonstrated** *(2025-05)* — At Pwn2Own Berlin 2025 (mid-May 2025, organized by Trend Micro's Zero Day Initiative), researchers earned $1,078,750 disclosing 28 previously unknown vulnerabilities. Windows 11 SYSTEM escalations were demonstrated using a chained use-after-free plus integer overflow (Chen Le Qi, STAR Labs), an out-of-bounds write (Marcin Wiązowski), a type confusion, and race-condition bugs (e.g. Miloš Ivanović); a VirtualBox-escape-to-Windows-EoP chain earned $70,000. These represent the current state of practical Windows kernel/driver EoP techniques at the OSEE level. [[source]](https://www.securityweek.com/hackers-earn-over-1-million-at-pwn2own-berlin-2025/)
+
+### Techniques
+
+- **Synacktiv: analysis of the Windows kernel-mode shadow stack (Intel CET) mitigation with PoCs — SSTIC 2025** *(2025-06)* — At SSTIC 2025 (June 2025), Synacktiv researchers published static and dynamic analysis of Windows 11 24H2's kernel-mode hardware-enforced stack protection (Intel CET shadow stacks), reverse-engineering how Windows maintains kernel shadow-stack integrity on CET-capable hardware. The accompanying GitHub repository provides proof-of-concept driver/client code demonstrating return-address misalignment crashes, frame manipulation, disabling CET via CR4 modification, and writes to shadow-stack memory and PTEs. The work is directly relevant to OSEE's coverage of modern kernel mitigation bypasses, noting kernel shadow-stack protection is not enabled by default in 24H2. [[source]](https://github.com/synacktiv/windows_kernel_shadow_stack)

@@ -95,3 +95,24 @@ Full deep-dive for researchers who want comprehensive understanding.
 6. Hacker, H. "HackSys Extreme Vulnerable Driver." https://github.com/hacksysteam/HackSysExtremeVulnerableDriver. 2024.
 7. Corelan Team. "Exploit Writing Tutorials." https://www.corelan.be/. 2024.
 8. Offensive Security. "EXP-401: Advanced Windows Exploitation." https://www.offsec.com/courses/exp-401/. 2024.
+
+---
+
+## Recent Developments (2025–2026)
+
+*Independently verified against primary sources (NVD / vendor advisories / papers) during the 2026-06 accuracy audit. Each CVE was confirmed to exist with the stated characterization.*
+
+### Vulnerabilities (CVEs)
+
+- **CVE-2025-29824 — Windows CLFS use-after-free zero-day exploited in ransomware attacks** *(2025-04)* — A use-after-free flaw (CWE-416, CVSS 7.8) in the Windows Common Log File System (CLFS) kernel driver allowed local privilege escalation to SYSTEM. Microsoft observed in-the-wild post-compromise exploitation by the Storm-2460 group using the PipeMagic backdoor to deploy RansomEXX ransomware against targets in the US, Venezuela, Spain, and Saudi Arabia; Play ransomware was also linked to its abuse. Windows 11 24H2 was not affected by the observed exploitation; patched April 8, 2025. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-29824)
+- **CVE-2025-33073 — Reflective Kerberos/NTLM relay against the Windows SMB client (CISA KEV)** *(2025-06)* — RedTeam Pentesting disclosed a reflective relay flaw (CWE-284 improper access control, CVSS 8.8) in the Windows SMB client that bypasses prior NTLM-reflection mitigations. By coercing a host to authenticate (e.g., PrinterBug/EFSRPC) and relaying its own Kerberos/NTLM authentication back via SMB, an attacker gains NT AUTHORITY\SYSTEM on the target. Patched June 10, 2025, and later added to CISA's Known Exploited Vulnerabilities catalog; SMB signing mitigates it. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-33073)
+- **CVE-2025-49667 — Win32k ICOMP double-free kernel privilege escalation** *(2025-07)* — A double-free vulnerability (CWE-415, CVSS 7.8) in the Windows Win32k graphics driver's ICOMP composition component allows a local authenticated attacker to elevate to SYSTEM. Crafted graphical syscalls create objects with interdependencies whose improper state tracking during destruction frees the same kernel heap block twice. Published July 8, 2025, it continues the Win32k pool-corruption lineage already covered in the track (e.g., CVE-2021-1732). [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-49667)
+
+### Techniques
+
+- **CVE-2025-53779 ("BadSuccessor") — dMSA abuse for domain privilege escalation in Windows Server 2025** *(2025-08)* — Akamai researcher Yuval Gordon disclosed BadSuccessor, abusing the new delegated Managed Service Account (dMSA) feature in Windows Server 2025. By writing the msDS-ManagedAccountPrecededByLink and msDS-DelegatedMSAState attributes on an attacker-creatable dMSA, a low-privileged user with CreateChild rights on an OU can have the KDC issue them the privileges and Kerberos keys of any account, including Domain Admin. Microsoft assigned CVE-2025-53779 (Kerberos path traversal, CVSS 7.2) and patched it on August 12, 2025. [[source]](https://nvd.nist.gov/vuln/detail/CVE-2025-53779)
+- **Embedded BYOVD goes mainstream as a ransomware EDR-killer technique (2024-2025)** *(2025)* — Bring-Your-Own-Vulnerable-Driver attacks became a standard pre-encryption step in ransomware operations during 2024-2025, with a single campaign using the TrueSight (RentDrv/Adlice) driver deploying over 2,500 signed driver variants to unregister kernel callbacks, disable ETW, and terminate EDR processes. The trend shifted from BYOVD as a separate staging step toward drivers embedded directly in payloads, shrinking the detection window. [[source]](https://www.vectra.ai/topics/edr-evasion)
+
+### Tools
+
+- **BloodHound Community Edition 8.0 released with OpenGraph** *(2025-07)* — SpecterOps released BloodHound Community Edition 8.0 on July 29, 2025, introducing OpenGraph, which extends attack-path mapping beyond Active Directory and Entra ID to arbitrary identity sources (initially GitHub, Snowflake, 1Password, and Microsoft SQL Server). It supports custom relationship modeling and Cypher querying across hybrid identity graphs, expanding both offensive attack-path discovery and defensive attack-path elimination. [[source]](https://specterops.io/blog/2025/07/29/bloodhound-community-edition-v8-launches-with-opengraph-identity-attack-paths-beyond-active-directory-entra-id/)
