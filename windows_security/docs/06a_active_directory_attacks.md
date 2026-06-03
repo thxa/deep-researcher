@@ -603,7 +603,7 @@ findstr /S cpassword \\DC01\SYSVOL\corp.local\Policies\*.xml
 
 # Decrypt GPP cpassword:
 # GPP passwords are encrypted with AES-256 using a publicly known key
-# Microsoft published the key: https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gpp/
+# Microsoft published the key: https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-gppref/b8aff061-5014-484a-84c3-0165be5fb4b1
 # The key is: 4e 99 06 e8 fc b6 6b c9 ba 0d 1c 96 52 92 3f 95 b8 4e 6a 2e 32 3c 3f c7 fd 06 79 7e 0a e5 cc 7d
 ```
 

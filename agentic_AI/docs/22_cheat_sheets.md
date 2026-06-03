@@ -561,14 +561,14 @@ Yes                         No
 | Hugging Face Transformers                 | https://huggingface.co/docs/transformers     |
 | Hugging Face PEFT                         | https://huggingface.co/docs/peft             |
 | Hugging Face TRL                          | https://huggingface.co/docs/trl              |
-| bitsandbytes                              | https://github.com/TimDettmann/bitsandbytes  |
+| bitsandbytes                              | https://github.com/TimDettmers/bitsandbytes  |
 | vLLM                                      | https://github.com/vllm-project/vllm         |
 | LangGraph                                 | https://langchain-ai.github.io/langgraph/     |
 | LlamaIndex                                | https://docs.llamaindex.ai/                  |
 | DeepSpeed                                 | https://github.com/microsoft/DeepSpeed        |
-| Open LLM Leaderboard                      | https://huggingface.co/spaces/open-llm-      |
+| Open LLM Leaderboard                      | https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard      |
 |                                           | leaderboard/open_llm_leaderboard             |
-| LM Evaluation Harness                    | https://github.com/EleutherAI/lm-evaluation-  |
+| LM Evaluation Harness                    | https://github.com/EleutherAI/lm-evaluation-harness  |
 |                                           | harness                                      |
 | Qdrant Vector DB                          | https://qdrant.tech/documentation/            |
 | CrewAI                                    | https://docs.crewai.com/                     |

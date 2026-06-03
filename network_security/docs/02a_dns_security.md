@@ -215,8 +215,8 @@ class RebindingDNSHandler:
         else:
             return "169.254.169.254"  # AWS metadata (SSRF target)
 
-# Python rebinding tool: https://github.com/sensepost/rebind
-# Or use: https://lock.cmpxchg8b.com/rebind.html
+# Python rebinding tool: https://gitlab.com/kalilinux/packages/rebind
+# Or use: https://lock.cmpxchg8b.com/rebinder.html
 
 # Node.js rebinding server example:
 # First resolution: attacker external IP

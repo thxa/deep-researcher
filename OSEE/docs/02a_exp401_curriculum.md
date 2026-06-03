@@ -455,7 +455,7 @@ OffSec officially recommends the following reading materials:
 | DEP Bypass | [Uninformed - Bypassing DEP](http://uninformed.org/?v=2&a=4) |
 | Advanced DEP Bypass | [The Geometry of Innocent Flesh on the Bone](https://hovav.net/ucsd/dist/geometry.pdf) |
 | ASLR Bypass | [The Info Leak Era - Black Hat US 2012 (Fermin Serna)](https://media.blackhat.com/bh-us-12/Briefings/Serna/BH_US_12_Serna_Leak_Era_Slides.pdf) |
-| Sandboxing | [Wikipedia: Sandbox (computer security)](https://en.wikipedia.org/wiki/Sandbox_(computer_security)) |
+| Sandboxing | [Wikipedia: Sandbox (computer security)](https://en.wikipedia.org/wiki/Sandbox_(computer_security))) |
 | Windows 10 Mitigations | [Windows 10 Mitigation Improvements - Black Hat US 2016 (Matt Miller, David Weston)](https://www.blackhat.com/docs/us-16/materials/us-16-Weston-Windows-10-Mitigation-Improvements.pdf) |
 | Edge Mitigations | [Mitigating Arbitrary Native Code Execution in Edge](https://blogs.windows.com/msedgedev/2017/02/23/mitigating-arbitrary-native-code-execution/) |
 | CFG Bypass | [Bypassing Control Flow Guard in Windows 10 (Improsec)](https://blog.improsec.com/tech-blog/bypassing-control-flow-guard-in-windows-10) |

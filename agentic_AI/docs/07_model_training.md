@@ -1301,7 +1301,7 @@ def train_loop(model, dataloader, optimizer, scheduler, scaler, grad_clip=1.0,
 
 ### Distributed Training & Parallelism
 
-15. Rajbhandari, S., Rasley, J., Ruwase, O., He, Y., "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models", SC 2020. arXiv:1910.02054. https://doi.org/10.5555/3433701.3433727
+15. Rajbhandari, S., Rasley, J., Ruwase, O., He, Y., "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models", SC 2020. arXiv:1910.02054.
 
 16. Li, M., Rollings, N., Wu, Q., Ruwase, O., He, Y., "Efficient Large-Scale Language Model Training on GPU Clusters Using Megatron-LM", SC 2021. arXiv:2104.04473. https://doi.org/10.1145/3458817.3476209
 
@@ -1329,7 +1329,7 @@ def train_loop(model, dataloader, optimizer, scheduler, scaler, grad_clip=1.0,
 
 26. Srivastava, N., Hinton, G., Krizhevsky, A., Sutskever, I., Salakhutdinov, R., "Dropout: A Simple Way to Prevent Neural Networks from Overfitting", JMLR 2014. http://jmlr.org/papers/v15/srivastava14a.html
 
-27. Huang, G., Sun, L., Liu, Z., Sedra, D., Weinberger, K., "Deep Networks with Stochastic Depth", ECCV 2016. arXiv:1603.09382. https://doi.org/10.1007/978-3-319-46493-4_46
+27. Huang, G., Sun, L., Liu, Z., Sedra, D., Weinberger, K., "Deep Networks with Stochastic Depth", ECCV 2016. arXiv:1603.09382.
 
 28. Szegedy, C., Vanhoucke, V., Ioffe, S., Shlens, J., Wojna, Z., "Rethinking the Inception Architecture for Computer Vision", CVPR 2016. arXiv:1512.00567. https://doi.org/10.1109/CVPR.2016.308
 

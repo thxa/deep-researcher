@@ -79,7 +79,7 @@ A comprehensive deep-research track covering the security landscape of artificia
 14. Tramer, F., et al. (2016). "Stealing Machine Learning Models via Prediction APIs." *USENIX Security*.
 15. Gu, T., et al. (2019). "BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain." *IEEE Access*.
 16. Anthropic (2023). "Constitutional AI: Harmlessness from AI Feedback." *arXiv:2212.08073*.
-17. RobustBench (2023). "Adversarial Robustness Leaderboard." https://robustbench.org
+17. RobustBench (2023). "Adversarial Robustness Leaderboard." https://robustbench.github.io/
 18. MITRE (2023). "ATLAS: Adversarial Threat Landscape for AI Systems." https://atlas.mitre.org
 19. Opacus (2023). "Opacus: PyTorch Differential Privacy Library." https://opacus.ai
 20. Hugging Face (2023). "safetensors: Safe Model Serialization." https://github.com/huggingface/safetensors

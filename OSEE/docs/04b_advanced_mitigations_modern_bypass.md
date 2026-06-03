@@ -1508,7 +1508,7 @@ _SEP_TOKEN_PRIVILEGES:
 ## Appendix C — References and Further Reading
 
 1. **Microsoft: Virtualization-based Security** — https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-vbs
-2. **Microsoft: Kernel Data Protection** — https://www.microsoft.com/security/blog/2020/07/08/introducing-kernel-data-protection-a-new-platform-security-technology-for-preventing-data-corruption/
+2. **Microsoft: Kernel Data Protection** — https://www.microsoft.com/en-us/security/blog/2020/07/08/introducing-kernel-data-protection-a-new-platform-security-technology-for-preventing-data-corruption/
 3. **Microsoft: Secured-Core PC** — https://learn.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-highly-secure
 4. **Intel CET Specification** — https://www.intel.com/content/www/us/en/developer/articles/technical/technical-look-control-flow-enforcement-technology.html
 5. **Alex Ionescu: Windows Internals, Part 1 & 2** (7th Edition) — Essential reference for kernel structures

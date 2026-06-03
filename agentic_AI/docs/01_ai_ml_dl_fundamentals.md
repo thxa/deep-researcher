@@ -727,7 +727,7 @@ Three scaling laws govern modern deep learning:
 
 ### Generative Models
 
-23. Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., Courville, A., Bengio, Y., "Generative Adversarial Nets", *Advances in Neural Information Processing Systems (NeurIPS)*, 27, 2014. URL: [https://proceedings.neurips.cc/paper/2014/hash/5ca3e9b122f61f8f06494c97b1afccf3-Abstract.html](https://proceedings.neurips.cc/paper/2014/hash/5ca3e9b122f61f8f06494c97b1afccf3-Abstract.html)
+23. Goodfellow, I., Pouget-Abadie, J., Mirza, M., Xu, B., Warde-Farley, D., Ozair, S., Courville, A., Bengio, Y., "Generative Adversarial Nets", *Advances in Neural Information Processing Systems (NeurIPS)*, 27, 2014. URL: [https://proceedings.neurips.cc/paper/2019/hash/5ca3e9b122f61f8f06494c97b1afccf3-Abstract.html](https://proceedings.neurips.cc/paper/2019/hash/5ca3e9b122f61f8f06494c97b1afccf3-Abstract.html)
 
 24. Kingma, D.P., Welling, M., "Auto-Encoding Variational Bayes", *Proc. ICLR*, 2014. arXiv:1312.6114
 

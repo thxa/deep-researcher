@@ -550,13 +550,13 @@ Shuffling increases the number of required DPA traces by a factor of $O(n!)$ for
 
 1. Kocher, P., "Timing Attacks on Implementations of Diffie-Hellman, RSA, DSS, and Other Systems," CRYPTO 1996. https://link.springer.com/chapter/10.1007/3-540-68697-5_6
 2. Kocher, P., Jaffe, J., Jun, B., "Differential Power Analysis," CRYPTO 1999. https://link.springer.com/chapter/10.1007/3-540-48405-1_25
-3. Brumley, D., Boneh, D., "Remote Timing Attacks Are Practical," USENIX Security 2003. https://www.usenix.org/conference/usenix-security-2003
+3. Brumley, D., Boneh, D., "Remote Timing Attacks Are Practical," USENIX Security 2003. https://www.usenix.org/conference/12th-usenix-security-symposium
 4. Osvik, D.A., Shamir, A., Tromer, E., "Cache Attacks and Countermeasures: The Case of AES," CT-RSA 2006. https://eprint.iacr.org/2005/271
 5. Yarom, Y., Falkner, K., "FLUSH+RELOAD: A High Resolution, Low Noise, L3 Cache Side-Channel Attack," USENIX Security 2014. https://www.usenix.org/node/184535
 6. Liu, F., Yarom, Y., Ge, Q., Heiser, G., Lee, R.B., "Last-Level Cache Side-Channel Attacks Are Practical," IEEE S&P 2015. https://ieeexplore.ieee.org/document/7163050
 7. Kocher, P., et al., "Spectre Attacks: Exploiting Speculative Execution," IEEE S&P 2019. CVE-2017-5753, CVE-2017-5715. https://spectreattack.com/
 8. Lipp, M., et al., "Meltdown: Reading Kernel Memory from User Space," USENIX Security 2018. CVE-2017-5754. https://meltdownattack.com/
-9. Ge, Q., Yarom, Y., Cock, D., Heiser, G., "A Survey of Microarchitectural Timing Attacks and Countermeasures on Contemporary Hardware," Journal of Cryptographic Engineering, 2018. https://link.springer.com/article/10.1007/s13389-016-0154-1
+9. Ge, Q., Yarom, Y., Cock, D., Heiser, G., "A Survey of Microarchitectural Timing Attacks and Countermeasures on Contemporary Hardware," Journal of Cryptographic Engineering, 2018.
 10. Genkin, D., Shamir, A., Tromer, E., "RSA Key Extraction via Low-Bandwidth Acoustic Cryptanalysis," CRYPTO 2014. https://www.tau.ac.il/~tromer/
 11. Genkin, D., Pipman, I., Tromer, E., "Get Your Hands Off My Laptop: Physical Side-Channel Key Extraction on PCs," CHES 2015. https://eprint.iacr.org/2014/448
 12. Aciicmez, O., "Yet Another Microarchitectural Attack: Exploiting I-Cache," CHES 2007. https://eprint.iacr.org/2007/063

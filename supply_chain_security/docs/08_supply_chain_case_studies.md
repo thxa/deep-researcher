@@ -195,7 +195,7 @@ echo "expected-sha256-hash codecov.sh" | sha256sum --check
 bash codecov.sh
 
 # SAFEST: Use a pinned version from a verified source
-curl -s https://raw.githubusercontent.com/codecov/codecov-bash/v1.0.7/codecov.sh -o codecov.sh
+curl -s https://raw.githubusercontent.com/codecov/codecov-bash/v1.0/codecov -o codecov.sh
 echo "abc123def456 codecov.sh" | sha256sum --check
 bash codecov.sh -t $CODECOV_TOKEN
 ```

@@ -705,4 +705,4 @@ Kernel bugs are often **non-deterministic** (races, timing-dependent). syzkaller
 
 [15] Google. *syzkaller Documentation*. https://github.com/google/syzkaller/#syzlang-description-format
 
-[16] Tar tourism. *syzkaller: Android Kernel Fuzzing*. https://source.android.com/docs/security/testing/kaslr
+[16] Tar tourism. *syzkaller: Android Kernel Fuzzing*. https://source.android.com/docs/security/enhancements

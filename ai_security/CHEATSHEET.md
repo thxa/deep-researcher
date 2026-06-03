@@ -288,7 +288,7 @@ def detect_model_extraction(query_log, threshold_queries=50000, threshold_agreem
 9. NVIDIA (2023). "NeMo Guardrails: Programmable Guardrails for LLMs." https://github.com/NVIDIA/NeMo-Guardrails
 10. Hugging Face (2023). "safetensors: Safe Model Serialization." https://github.com/huggingface/safetensors
 11. Meta (2023). "Llama Guard: LLM-based Input-Output Safeguard." https://huggingface.co/meta-llama/LlamaGuard-7b
-12. RobustBench (2023). "Adversarial Robustness Leaderboard." https://robustbench.org
+12. RobustBench (2023). "Adversarial Robustness Leaderboard." https://robustbench.github.io/
 13. MITRE (2023). "ATLAS: Adversarial Threat Landscape for AI Systems." https://atlas.mitre.org
 14. Wang, S., et al. (2021). "β-CROWN: Efficient Bound Propagation with Per-neuron Split Constraints for Neural Network Robustness Verification." *NeurIPS*.
 15. Zhang, H., et al. (2019). "Theoretically Grounded Tradeoff Between Robustness and Accuracy." *ICML*.

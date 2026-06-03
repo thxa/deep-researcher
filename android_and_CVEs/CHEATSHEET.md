@@ -199,7 +199,7 @@ adb shell ss -tlnp                                 # Listening TCP sockets
 7. CISA Known Exploited Vulnerabilities Catalog — https://www.cisa.gov/known-exploited-vulnerabilities-catalog
 8. Google Project Zero Blog — https://googleprojectzero.blogspot.com/
 9. Android Kernel Config Hardening — https://source.android.com/docs/security/features/kernel
-10. Android Control-Flow Integrity — https://source.android.com/docs/security/features/cfi
+10. Android Control-Flow Integrity — https://source.android.com/docs/security/test/cfi
 11. ARM MTE Documentation — https://developer.arm.com/documentation/109870/latest
 12. Project Treble — https://source.android.com/docs/core/architecture/treble
 13. CVE-2022-0847 (Dirty Pipe) — https://dirtypipe.cm4all.com/

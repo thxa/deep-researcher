@@ -59,7 +59,7 @@
 
 1. Love, R. "Linux Kernel Development." 3rd Ed. *Addison-Wesley*. 2010.
 2. Corbet, J., Rubini, A., & Kroah-Hartman, G. "Linux Device Drivers." 3rd Ed. *O'Reilly*. 2005.
-3. de Oliveira, A. "PAHOLE Tool Documentation." https://pahole.org/. 2023.
+3. de Oliveira, A. "PAHOLE Tool Documentation." https://github.com/acmel/dwarves. 2023.
 4. Linux Kernel Documentation. "KASAN — Kernel Address Sanitizer." https://www.kernel.org/doc/html/latest/dev-tools/kasan.html. 2024.
 5. Linux Kernel Documentation. "Slab Debugging." https://www.kernel.org/doc/html/latest/mm/slab.html. 2024.
 6. Wahbe, R., Lucco, S., Anderson, T., & Graham, S. "Efficient Software-Based Fault Isolation." *SOSP*. 1993.

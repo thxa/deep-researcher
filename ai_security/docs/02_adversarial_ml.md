@@ -654,7 +654,7 @@ The robustness evaluation community has converged on several standards:
 
 **AutoAttack** (Croce & Hein, 2020): The default evaluation suite for $L_\infty$ and $L_2$ robustness. Combines APGD-CE, APGD-DLR, FAB, and Square Attack. If a defense claims robustness, it should be evaluated against AutoAttack.
 
-**RobustBench** (https://robustbench.org): Standardized benchmark for adversarial robustness. Provides leaderboard rankings of models by AutoAttack accuracy on CIFAR-10, CIFAR-100, and ImageNet.
+**RobustBench** (https://robustbench.github.io/): Standardized benchmark for adversarial robustness. Provides leaderboard rankings of models by AutoAttack accuracy on CIFAR-10, CIFAR-100, and ImageNet.
 
 **VNN-COMP** (Verification Neural Network Competition): Annual competition for certified robustness verification tools.
 
@@ -728,4 +728,4 @@ The robustness evaluation community has converged on several standards:
 33. Grosse, K., et al. (2017). "Adversarial Examples for Malware Detection." *EuroS&P*.
 34. Papernot, N., et al. (2016). "CleverHans: An Adversarial Example Library." https://github.com/cleverhans-lab/cleverhans
 35. Nicolae, M., et al. (2019). "Adversarial Robustness Toolbox v1.0.0." *IBM Research*. https://github.com/Trusted-AI/adversarial-robustness-toolbox
-36. RobustBench (2023). "Adversarial Robustness Leaderboard." https://robustbench.org
+36. RobustBench (2023). "Adversarial Robustness Leaderboard." https://robustbench.github.io/

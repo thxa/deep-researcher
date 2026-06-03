@@ -382,12 +382,12 @@ Each layer is designed to assume the others may be compromised. SELinux constrai
 2. Android SELinux Documentation — https://source.android.com/docs/security/features/selinux
 3. Android Verified Boot (AVB) — https://source.android.com/docs/security/features/verifiedboot
 4. Android File-Based Encryption — https://source.android.com/docs/security/features/encryption
-5. Android Seccomp-BPF Filter — https://source.android.com/docs/security/features/selinux/seccomp
+5. Android Seccomp-BPF Filter — https://source.android.com/docs/security/enhancements
 6. ARM Memory Tagging Extension (MTE) — https://developer.arm.com/documentation/109870/latest
 7. ARM Pointer Authentication on ARMv8.3 — https://developer.arm.com/documentation/100690/latest
 8. Android Security & Privacy 2024 Year in Review — https://security.googleblog.com/2025/02/android-security-privacy-2024-year-in.html
 9. Google Project Zero Blog — https://googleprojectzero.blogspot.com/
-10. Android Control-Flow Integrity (CFI) — https://source.android.com/docs/security/features/cfi
+10. Android Control-Flow Integrity (CFI) — https://source.android.com/docs/security/test/cfi
 11. Android Play Integrity API — https://developer.android.com/google/play/integrity
 12. Android GKI Documentation — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image
 13. Strazzere, T. "Android Security Internals: Digging into the Android OS." No Starch Press, 2014.
@@ -395,11 +395,11 @@ Each layer is designed to assume the others may be compromised. SELinux constrai
 2. Android SELinux Documentation — https://source.android.com/docs/security/features/selinux
 3. Android Verified Boot (AVB) — https://source.android.com/docs/security/features/verifiedboot
 4. Android File-Based Encryption — https://source.android.com/docs/security/features/encryption
-5. Android Seccomp-BPF Filter — https://source.android.com/docs/security/features/selinux/seccomp
+5. Android Seccomp-BPF Filter — https://source.android.com/docs/security/enhancements
 6. ARM Memory Tagging Extension (MTE) — https://developer.arm.com/documentation/109870/latest
 7. ARM Pointer Authentication on ARMv8.3 — https://developer.arm.com/documentation/100690/latest
 8. Android Security & Privacy 2024 Year in Review — https://security.googleblog.com/2025/02/android-security-privacy-2024-year-in.html
 9. Google Project Zero Blog — https://googleprojectzero.blogspot.com/
-10. Android Control-Flow Integrity (CFI) — https://source.android.com/docs/security/features/cfi
+10. Android Control-Flow Integrity (CFI) — https://source.android.com/docs/security/test/cfi
 11. Android Play Integrity API — https://developer.android.com/google/play/integrity
 12. Android GKI Documentation — https://source.android.com/docs/core/architecture/kernel/generic-kernel-image

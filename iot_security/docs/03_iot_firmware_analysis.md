@@ -16,7 +16,7 @@ Many IoT manufacturers publish firmware updates on their support pages. This is 
 ```
 https://www.tp-link.com/en/support/download/ARCHER-C7/
 https://dlcdnets.asus.com/pub/ASUS/wireless/RT-AC68U/FW_RT_AC68U_300438643604.zip
-https://www.dlink.com/en/tech-support/product-registration
+https://supportproductregistration.dlink.com/
 https://security-camera-ip.com/firmware/IPC_FW_2.600.0000.0.bin
 ```
 
@@ -135,7 +135,7 @@ For filesystems that binwalk can't handle:
 
 ```bash
 # Install firmware-mod-kit
-git clone https://github.com/rickcarlson/firmware-mod-kit.git
+git clone https://github.com/rampageX/firmware-mod-kit
 cd firmware-mod-kit/src
 
 # Extract firmware

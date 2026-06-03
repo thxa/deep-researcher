@@ -694,7 +694,7 @@ These readings are officially recommended by OffSec for EXP-401 preparation:
 1. **DEP Bypass:** http://uninformed.org/?v=2&a=4
 2. **Return-Oriented Programming:** https://hovav.net/ucsd/dist/geometry.pdf
 3. **ASLR Bypass:** BlackHat US 2012 - Serna "Leak Era" slides
-4. **Sandboxing:** https://en.wikipedia.org/wiki/Sandbox_(computer_security)
+4. **Sandboxing:** https://en.wikipedia.org/wiki/Sandbox_(computer_security))
 5. **Windows 10 Mitigations:** BlackHat US 2016 - Weston "Windows 10 Mitigation Improvements"
 6. **Microsoft Edge Mitigations:** Microsoft Edge Dev Blog - "Mitigating Arbitrary Native Code Execution"
 7. **CFG Bypass:** Improsec - "Bypassing Control Flow Guard in Windows 10"

@@ -1212,7 +1212,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 16. **Gal, Y., Islam, R., & Ghahramani, Z.** (2017). "Deep Bayesian Active Learning with Image Data." *Proceedings of the 34th International Conference on Machine Learning (ICML)*, 1183–1192. arXiv: [1703.03221](https://arxiv.org/abs/1703.03221)
 
-17. **Houlsby, N., Huszár, F., Ghahramani, Z., & Lengyel, M.** (2011). "Bayesian Active Learning for Classification and Preference Sensing." *Advances in Neural Information Processing Systems (NeurIPS)*, 24. (NeurIPS 2011)(https://proceedings.neurips.cc/paper/2011/hash/45c77d1a0f6f6f8e3f9c7fc2e4e8f60e-Abstract.html)
+17. **Houlsby, N., Huszár, F., Ghahramani, Z., & Lengyel, M.** (2011). "Bayesian Active Learning for Classification and Preference Sensing." *Advances in Neural Information Processing Systems (NeurIPS)*, 24. (NeurIPS 2011)
 
 18. **Sener, O., & Savarese, S.** (2018). "Active Learning for Convolutional Neural Networks: A Core-Set Approach." *Proceedings of the 6th International Conference on Learning Representations (ICLR)*. arXiv: [1708.00489](https://arxiv.org/abs/1708.00489)
 
@@ -1284,7 +1284,7 @@ wandb artifact put --name my-dataset:v1 --type dataset data/train.csv
 
 45. **Sheng, V. S., Provost, F., & Ipeirotis, P. G.** (2008). "Get Another Label? Improving Data Quality and Data Mining Using Multiple, Noisy Labelers." *Proceedings of the 14th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, 614–622. DOI: [10.1145/1401890.1401965](https://doi.org/10.1145/1401890.1401965)
 
-46. **Dow, S., Kulkarni, A., Klemmer, S., & Hartmann, B.** (2012). "Shepherding the Crowd Yields Better Work." *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI)*, 1669–1672. DOI: [10.1145/2207676.2208277](https://doi.org/10.1145/2207676.2208277)
+46. **Dow, S., Kulkarni, A., Klemmer, S., & Hartmann, B.** (2012). "Shepherding the Crowd Yields Better Work." *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI)*, 1669–1672. DOI: [10.1145/2207676.2208277]
 
 ### Data Versioning & MLOps Tools
 

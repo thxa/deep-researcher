@@ -874,7 +874,7 @@ git clone https://github.com/google/clusterfuzz
 cd clusterfuzz
 
 # Follow deployment guide
-# https://google.github.io/clusterfuzz/getting-started/deployment/
+# https://google.github.io/clusterfuzz/production-setup/clusterfuzz/
 ```
 
 ## 16. Advanced libFuzzer Features

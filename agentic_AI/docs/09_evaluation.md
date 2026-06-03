@@ -1022,7 +1022,7 @@ def paired_bootstrap_test(scores_a, scores_b, n_boot=10000, ci=0.95):
 
 2. Lin, C.-Y. (2004). "ROUGE: A Package for Automatic Evaluation of Summaries." *Text Summarization Branches Out: Proceedings of the ACL 2004 Workshop*, pp. 74–81. DOI: [10.3115/1218955.1218960](https://doi.org/10.3115/1218955.1218960)
 
-3. Banerjee, S. & Lavie, A. (2005). "METEOR: An Automatic Metric for MT Evaluation with Improved Correlation with Human Judgments." *Proceedings of the ACL Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization*, pp. 65–72. DOI: [10.3115/1626521.1626532](https://doi.org/10.3115/1626521.1626532)
+3. Banerjee, S. & Lavie, A. (2005). "METEOR: An Automatic Metric for MT Evaluation with Improved Correlation with Human Judgments." *Proceedings of the ACL Workshop on Intrinsic and Extrinsic Evaluation Measures for Machine Translation and/or Summarization*, pp. 65–72. DOI: [10.3115/1626521.1626532]
 
 4. Popović, M. (2015). "chrF: Character n-gram F-score for Automatic MT Evaluation." *Proceedings of the Tenth Workshop on Statistical Machine Translation (WMT 2015)*, pp. 392–395. DOI: [10.18653/v1/W15-3049](https://doi.org/10.18653/v1/W15-3049)
 

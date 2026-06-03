@@ -473,7 +473,7 @@ def derive_hybrid_key(master_secret):
 3. Chen, L., et al., "Report on Post-Quantum Cryptography," NIST IR 8105, April 2016. https://csrc.nist.gov/publications/detail/nistir/8105/final
 4. NIST, "Post-Quantum Cryptography Standardization Process," FIPS 203 (ML-KEM), FIPS 204 (ML-DSA), FIPS 205 (SLH-DSA), August 2024. https://csrc.nist.gov/projects/post-quantum-cryptography
 5. Ajtai, M., "Generating Hard Instances of Lattice Problems," STOC 1996. https://doi.org/10.1145/237814.237838
-6. Regev, O., "On Lattices, Learning with Errors, Random Linear Codes, and Cryptography," STOC 2005. https://doi.org/10.1145/1060590.1060605
+6. Regev, O., "On Lattices, Learning with Errors, Random Linear Codes, and Cryptography," STOC 2005.
 7. Lyubashevsky, V., Peikert, C., Regev, O., "On Ideal Lattices and Learning with Errors over Rings," EUROCRYPT 2010. https://eprint.iacr.org/2012/230
 8. McEliece, R.J., "A Public-Key Cryptosystem Based on Algebraic Coding Theory," DSN Progress Report, 1978. https://doi.org/10.1109/TIT.1978.1055875
 9. Bernstein, D.J., Hopwood, D., Hülsing, A., et al., "SPHINCS+: Practical Stateless Hash-Based Signatures," 2019. FIPS 205. https://sphincs.org/

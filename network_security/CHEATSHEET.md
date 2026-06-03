@@ -827,7 +827,7 @@ set dns.spoof.address 10.0.0.5
 dns.spoof on
 
 # DNS cache poisoning (Kaminsky-style, requires MITM position)
-# Use tool: https://github.com/qzaidi/dnsamp
+# Use tool: dnsamp
 # Requires: ability to observe/modify DNS traffic on path
 
 # DNS rebinding (attacker-controlled NS)
