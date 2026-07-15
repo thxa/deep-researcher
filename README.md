@@ -1,6 +1,6 @@
 # deep-researcher
 
-> **~1,200,000+ words** of security research documentation across **19 interconnected tracks** — 300+ Markdown files.
+> **~1,240,000+ words** of security research documentation across **20 interconnected tracks** — 310+ Markdown files.
 
 Document-first security research repository covering browser, operating system, cloud, web, network, cryptography, reverse engineering, supply chain, IoT, fuzzing, AI/ML security, and exploit-development topics. The repo is organized as long-form Markdown reports and chaptered notes rather than as an application or library codebase.
 
@@ -26,6 +26,7 @@ Document-first security research repository covering browser, operating system, 
 - 📲 **IoT & Embedded Security** — hardware interfaces, firmware analysis, wireless protocols, automotive, medical devices, and botnets
 - 🐛 **Fuzzing & Vulnerability Research** — AFL++, libFuzzer, kernel/browser/protocol fuzzing, harnessing, and vulnerability research methodology
 - 🧠 **AI/ML Security & Adversarial AI** — adversarial ML, data poisoning, LLM security, AI red teaming, and AI agent security
+- 🔰 **ARM64 Exception Levels & CVEs** — EL0–EL3 security boundaries, cross-EL attack chains, TrustZone/TEE vulnerabilities, hardware mitigation bypasses (PAC, MTE, BTI)
 
 ## What this repository is not
 
@@ -41,7 +42,7 @@ Document-first security research repository covering browser, operating system, 
 | [`docs/TIMELINE.md`](docs/TIMELINE.md) | Chronological map of vulnerabilities, exploits, and mitigations across all tracks (pre-2005 → 2026) |
 | [`docs/REFERENCES.md`](docs/REFERENCES.md) | Complete bibliography across all 19 tracks |
 
-Every directory also has its own **cheat sheet** for fast lookup during research or CTFs:
+Every directory also has its own **cheat sheet** for fast lookup during research or CTFs (except `most_complex_exploit_ever/`):
 
 | Track | Cheat sheet |
 |-------|-------------|
@@ -64,6 +65,7 @@ Every directory also has its own **cheat sheet** for fast lookup during research
 | IoT & Embedded Security | [`iot_security/CHEATSHEET.md`](iot_security/CHEATSHEET.md) |
 | Fuzzing & Vulnerability Research | [`fuzzing_vuln_research/CHEATSHEET.md`](fuzzing_vuln_research/CHEATSHEET.md) |
 | AI/ML Security & Adversarial AI | [`ai_security/CHEATSHEET.md`](ai_security/CHEATSHEET.md) |
+| ARM64 Exception Levels & CVEs | [`Exception_levels_cves/CHEATSHEET.md`](Exception_levels_cves/CHEATSHEET.md) |
 
 ## Learning paths
 
@@ -79,7 +81,7 @@ Start with foundational concepts and work toward professional exploitation skill
 
 Understand the full Android attack surface from architecture to specific exploits:
 
-> **android_and_CVEs** (Android architecture & landscape) → **CVE-2023-20938** (concrete kernel UAF case study) → **linux_kernel** (kernel exploitation deep dive)
+> **android_and_CVEs** (Android architecture & landscape) → **CVE-2023-20938** (concrete kernel UAF case study) → **linux_kernel** (kernel exploitation deep dive) → **Exception_levels_cves** (ARM64 EL0–EL3 boundary exploitation & TrustZone)
 
 ### 🌐 Browser Security Researcher
 
@@ -91,7 +93,13 @@ Cover browser internals, sandboxing, and the modern browser exploit chain:
 
 Deep comparative study of kernel security across operating systems:
 
-> **linux_kernel** (Linux kernel architecture & hardening) → **MacOS** (XNU & macOS mitigations) → **android_and_CVEs** (Android's kernel hardening: GKI, SELinux, seccomp) → **ring_and_vulns** (Ring 0 → Ring −3 escalation) → **windows_security** (Windows kernel vulnerabilities & memory protections)
+> **linux_kernel** (Linux kernel architecture & hardening) → **MacOS** (XNU & macOS mitigations) → **android_and_CVEs** (Android’s kernel hardening: GKI, SELinux, seccomp) → **Exception_levels_cves** (ARM64 mitigations: PAC, MTE, BTI, pKVM) → **ring_and_vulns** (Ring 0 → Ring −3 escalation) → **windows_security** (Windows kernel vulnerabilities & memory protections)
+
+### 🔰 ARM64 Exception Level Security
+
+From app sandbox to TrustZone — understand every privilege boundary on ARM64:
+
+> **Exception_levels_cves** (EL0–EL3 architecture, CVEs, and cross-EL chains) → **android_and_CVEs** (Android-specific context) → **linux_kernel** (kernel exploitation deep dive) → **ring_and_vulns** (comparative x86 privilege rings)
 
 ### 🏆 CTF Competitor
 
@@ -103,7 +111,7 @@ Practical exploit development for competition:
 
 From userland down to the Management Engine:
 
-> **ring_and_vulns** (Ring −3 to Ring 3 coverage) → **linux_kernel** (kernel attack surface) → **MacOS** (Apple Silicon & Secure Enclave) → **iot_security** (embedded & firmware analysis) → **cryptography** (hardware crypto & side channels)
+> **ring_and_vulns** (Ring −3 to Ring 3 coverage) → **linux_kernel** (kernel attack surface) → **Exception_levels_cves** (ARM64 EL0–EL3 & TrustZone) → **MacOS** (Apple Silicon & Secure Enclave) → **iot_security** (embedded & firmware analysis) → **cryptography** (hardware crypto & side channels)
 
 ### 🎓 OSEE Exam Preparation
 
@@ -167,6 +175,7 @@ If you are new to the repo, start with one of these entry documents:
 | IoT & Embedded Security | 🟡 Intermediate | [`iot_security/`](iot_security/) |
 | Fuzzing & Vulnerability Research | 🟡→🔴 Progressive | [`fuzzing_vuln_research/`](fuzzing_vuln_research/) |
 | AI/ML Security & Adversarial AI | 🟡 Intermediate→Advanced | [`ai_security/`](ai_security/) |
+| ARM64 Exception Levels & CVEs | 🔴 Advanced | [`Exception_levels_cves/`](Exception_levels_cves/) |
 
 Each directory has its own **README.md** with reading order, prerequisites, and estimated reading time (except `most_complex_exploit_ever/` and `agentic_AI/`, which start directly from their top-level reports).
 
@@ -286,6 +295,13 @@ deep-researcher/
 │   ├── AI_SECURITY_FINAL_REPORT.md
 │   └── docs/                                  10 numbered chapter documents (01–10)
 │
+├── Exception_levels_cves/                     🔰 ARM64 EL0–EL3 security boundaries & CVEs (~38,600 words)
+│   ├── README.md                              Entry point, reading order, prerequisites
+│   ├── CHEATSHEET.md                          Quick reference: EL model, CVEs, mitigations, exploit patterns
+│   ├── FINAL_REPORT.md                        Compiled report: executive summary, CVE table, recommendations
+│   ├── VERIFICATION.md                        Quality audit of the final report
+│   └── docs/                                  12 research documents (01–06, technical + practical per topic)
+│
 └── docs/                                      📚 Cross-cutting reference material
     ├── GLOSSARY.md                            320+ term glossary across all tracks
     └── TIMELINE.md                            Chronological vulnerability & mitigation map (1982–2026)
@@ -340,7 +356,7 @@ Every track in this repository includes proper references and citations to real,
 
 ## Notes
 
-- This repo is a living reference collection of approximately **1,200,000+ words** across **300+ Markdown files** spanning 19 tracks.
+- This repo is a living reference collection of approximately **1,240,000+ words** across **310+ Markdown files** spanning 20 tracks.
 - Depth and document structure vary by topic. Some tracks are polished report sets; others are more handbook-like study material.
 - Tracks cross-reference each other. When a concept is covered more deeply in another track, you'll find a link.
 - Each directory's README provides prerequisites, estimated reading time, and a complete reading-order table.
